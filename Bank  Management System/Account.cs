@@ -39,10 +39,9 @@ namespace Bank__Management_System
 
 
                 cmd.ExecuteNonQuery();
+                con.close();
             }
 
-            MessageBox.Show("Saved");
-            LoadCustomerData();
         }
     }
 }
