@@ -19,14 +19,15 @@ namespace Bank__Management_System
 
         private void LoadAccounts()
         {
-            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+            string connString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
+            using (SqlConnection con = new SqlConnection(connString))
             {
                 con.Open();
                 SqlCommand cmd = new SqlCommand("SELECT * FROM accounts", con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable table = new DataTable();
-                da.Fill(table);
-                dataGridView1.DataSource = table;
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
             }
         }
 
