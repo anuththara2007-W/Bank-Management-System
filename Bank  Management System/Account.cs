@@ -11,9 +11,9 @@ using System.Data.SqlClient;
 
 namespace Bank__Management_System
 {
-    public partial class txtDateOpened : Form
+    public partial class AccountForm : Form
     {
-        public txtDateOpened()
+        public Account()
         {
             InitializeComponent();
         }

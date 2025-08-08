@@ -1,6 +1,6 @@
 ﻿namespace Bank__Management_System
 {
-    partial class txtDateOpened
+    partial class Account
     {
         /// <summary>
         /// Required designer variable.
