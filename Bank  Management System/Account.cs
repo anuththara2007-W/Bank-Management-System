@@ -138,6 +138,12 @@ namespace Bank__Management_System
             SqlCommand cnn = new SqlCommand("SELECT * FROM accounts where customer_name= @customer_name", con);
             
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Main admin = new Main();
+            admin.Show();
+        }
     }
 }
  
