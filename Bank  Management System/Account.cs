@@ -81,7 +81,7 @@ namespace Bank__Management_System
                 con.Open();
 
                 SqlCommand cmd = new SqlCommand(
-                    "UPDATE accounts SET Account_Type = @Account_Type, Balance = @Balance, Date_Opened = @Date_Opened, Customer_name = @Customer_name", con);
+                    "UPDATE accounts SET Account_Type = @Account_Type, Balance = @Balance, Date_Opened = @Date_Opened, Customer_name = @Customer_name where account_id = @account_id", con);
 
                 cmd.Parameters.AddWithValue("@Account_ID", int.Parse(txtAccountID.Text));
                 cmd.Parameters.AddWithValue("@Account_Type", txtAccountType.Text);
