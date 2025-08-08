@@ -37,13 +37,13 @@ namespace Bank__Management_System
             {
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO accounts (Account_ID, Account_Type, Balance, Date_Opened, Customer_Name) VALUES (@Account_ID, @Account_Type, @Balance, @Date_Opened, @Customer_Name)", con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO accounts (Account_ID, Account_Type, Balance, Date_Opened, Customer_Name) VALUES (@account_id, @account_type, @balance, @date_opened, @customer_name)", con);
 
                 cmd.Parameters.AddWithValue("@Account_ID", int.Parse(txtAccountID.Text));
                 cmd.Parameters.AddWithValue("@Account_Type", txtAccountType.Text);
                 cmd.Parameters.AddWithValue("@Balance", decimal.Parse(txtBalance.Text));
                 cmd.Parameters.AddWithValue("@Date_Opened", dateTimePicker1.Value);
-                cmd.Parameters.AddWithValue("@Customer_Name", txtCustomerName.Text);
+                cmd.Parameters.AddWithValue("@Customer_Name", txtCustomerNae.Text);
 
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -63,7 +63,7 @@ namespace Bank__Management_System
                 cmd.Parameters.AddWithValue("@account_type", txtAccountType.Text);
                 cmd.Parameters.AddWithValue("@balance", txtBalance.Text);
                 cmd.Parameters.AddWithValue("@date_opened", dateTimePicker1.Value);
-                cmd.Parameters.AddWithValue("@customer_name", txtCustomerName.Text);
+                cmd.Parameters.AddWithValue("@customer_name", txtCustoerName.Text);
 
                 cmd.ExecuteNonQuery();
             }
@@ -91,7 +91,7 @@ namespace Bank__Management_System
             {
                 con.Open();
                 SqlCommand cmd = new SqlCommand("SELECT * FROM accounts WHERE customer_name = @customer_name", con);
-                cmd.Parameters.AddWithValue("@customer_name", txtCustomerName.Text);
+                cmd.Parameters.AddWithValue("@customer_name", txtCustomeName.Text);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable table = new DataTable();
                 da.Fill(table);
