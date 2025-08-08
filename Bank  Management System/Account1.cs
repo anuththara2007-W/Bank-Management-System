@@ -2,7 +2,7 @@
 
 namespace Bank__Management_System
 {
-    internal class Account
+    internal partial class Account
     {
         internal void Show()
         {
