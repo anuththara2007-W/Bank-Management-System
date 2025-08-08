@@ -76,8 +76,8 @@ namespace Bank__Management_System
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
-            {
+            SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False")
+            
                 con.Open();
 
                SqlCommand cnn = new SqlCommand("SELECT * FROM accounts", con);
@@ -85,7 +85,7 @@ namespace Bank__Management_System
                 DataTable table = new DataTable();
                 da.Fill(table);
                 dataGridView1.DataSource = table;
-            }
+            
 
             MessageBox.Show("Record added Successfully");
             LoadAccounts();
@@ -129,6 +129,20 @@ namespace Bank__Management_System
 
             MessageBox.Show("Record Deleted Successfully");
             LoadAccounts();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False")
+
+
+                con.Open();
+
+            SqlCommand cnn = new SqlCommand("SELECT * FROM accounts", con);
+            SqlDataAdapter da = new SqlDataAdapter(cnn);
+            DataTable table = new DataTable();
+            da.Fill(table);
+            dataGridView1.DataSource = table;
         }
     }
 }
