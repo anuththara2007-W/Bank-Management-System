@@ -12,7 +12,7 @@ namespace Bank__Management_System
             InitializeComponent();
 
             // Hook the DataGridView CellClick event here
-            dataGridView1.CellClick += dataGridView1_CellClick;
+            
         }
 
         // Save / Add
@@ -118,19 +118,6 @@ namespace Bank__Management_System
         }
 
         // New: DataGridView CellClick to load selected row data into form fields for update/delete
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                txtCustomerID.Text = row.Cells["Customer_ID"].Value.ToString();
-                txtCustomerName.Text = row.Cells["Customer_Name"].Value.ToString();
-                txtPhoneNo.Text = row.Cells["Phone"].Value.ToString();
-                txtEmail.Text = row.Cells["Email"].Value.ToString();
-                txtAddress.Text = row.Cells["Address"].Value.ToString();
-                txtUsername.Text = row.Cells["Username"].Value.ToString();
-                txtPassword.Text = row.Cells["Password"].Value.ToString();
-            }
-        }
+      
     }
 }
