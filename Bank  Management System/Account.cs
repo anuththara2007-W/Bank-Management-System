@@ -193,5 +193,21 @@ namespace Bank__Management_System
             }
             return true;
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            // Clear all input fields
+            txtAccountID.Clear();
+            txtAccountType.Clear();
+            txtBalance.Clear();
+            txtname.Clear();
+
+            // Reset the date picker to today or default
+            dateTimePicker1.Value = DateTime.Today;
+            dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+
+            // Optionally, set focus to the first field for convenience
+            txtAccountID.Focus();
+        }
     }
 }
