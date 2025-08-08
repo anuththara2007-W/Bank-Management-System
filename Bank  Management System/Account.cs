@@ -135,7 +135,7 @@ namespace Bank__Management_System
         {
             SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False")
              con.Open();
-            SqlCommand cnn = new SqlCommand("SELECT * FROM accounts", con);
+            SqlCommand cnn = new SqlCommand("SELECT * FROM accounts where customer_name= @customer_name", con);
             
         }
     }
