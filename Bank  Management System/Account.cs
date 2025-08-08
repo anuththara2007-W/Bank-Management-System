@@ -179,7 +179,7 @@ namespace Bank__Management_System
         {
             Main admins = new Main();
             admins.Show();
-            
+            this.Hide();
         }
     }
 }
