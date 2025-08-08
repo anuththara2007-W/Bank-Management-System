@@ -95,6 +95,7 @@ namespace Bank__Management_System
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable table = new DataTable();
                 da.Fill(table);
+                con.Close();
                 dataGridView1.DataSource = table;
             }
         }
