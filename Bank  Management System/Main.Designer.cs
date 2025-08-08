@@ -71,6 +71,7 @@
             this.btnAccount.TabIndex = 2;
             this.btnAccount.Text = "Account";
             this.btnAccount.UseVisualStyleBackColor = false;
+            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
             // btnTransaction
             // 

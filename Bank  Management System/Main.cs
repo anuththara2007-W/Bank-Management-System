@@ -28,5 +28,11 @@ namespace Bank__Management_System
             Customer cr = new Customer();
             cr.Show();
         }
+
+        private void btnAccount_Click(object sender, EventArgs e)
+        {
+            Account acc = new Account();
+            acc.Show();
+        }
     }
 }
