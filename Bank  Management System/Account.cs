@@ -39,7 +39,8 @@ namespace Bank__Management_System
 
 
                 cmd.ExecuteNonQuery();
-                con.close();
+                con.Close();
+                MessageBox.Show("Account Created Successfully");
             }
 
         }
