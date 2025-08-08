@@ -64,11 +64,14 @@ namespace Bank__Management_System
             {
                 con.Open();
 
-               SqlCommand cnn = 
+               SqlCommand cnn = new SqlCommand("SELECT * FROM accounts", con);
+                SqlDataAdapter da = new SqlDataAdapter(cnn);
+                DataTable table = new DataTable();
+                da.Fill(table);
+                dataGridView1.DataSource = table;
             }
 
-            MessageBox.Show("Record Deleted Successfully");
-            LoadCustomerData();
+            MessageBox.Show("Record added Successfully");
         }
     }
 }
