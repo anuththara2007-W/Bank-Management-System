@@ -36,7 +36,7 @@ namespace Bank__Management_System
                 cmd.Parameters.AddWithValue("@Balance", txtBalance.Text);
                 cmd.Parameters.AddWithValue("@Date_Opened", txtDateOpened.Text);
                 cmd.Parameters.AddWithValue("@Customer_name", txtCustomerName.Text);
-              
+
 
                 cmd.ExecuteNonQuery();
             }
