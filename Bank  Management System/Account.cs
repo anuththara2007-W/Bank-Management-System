@@ -38,7 +38,16 @@ namespace Bank__Management_System
 
         private void LoadAccounts()
         {
-            throw new NotImplementedException();
+            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+            {
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("SELECT * FROM accounts", con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable table = new DataTable();
+                da.Fill(table);
+                dataGridView1.DataSource = table;
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
