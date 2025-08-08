@@ -97,25 +97,58 @@ namespace Bank__Management_System
         {
             try
             {
+                if (!int.TryParse(txtAccountID.Text, out int accountId))
+                {
+                    MessageBox.Show("Invalid Account ID");
+                    return;
+                }
+                if (!decimal.TryParse(txtBalance.Text, out decimal balance))
+                {
+                    MessageBox.Show("Invalid Balance");
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtAccountType.Text))
+                {
+                    MessageBox.Show("Account Type is required");
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtname.Text))
+                {
+                    MessageBox.Show("Customer Name is required");
+                    return;
+                }
+
                 using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("UPDATE accounts SET account_type = @account_type, balance = @balance, date_opened = @date_opened, customer_name = @customer_name WHERE account_id = @account_id", con);
 
-                    cmd.Parameters.AddWithValue("@account_id", int.Parse(txtAccountID.Text));
-                    cmd.Parameters.AddWithValue("@account_type", txtAccountType.Text);
-                    cmd.Parameters.AddWithValue("@balance", decimal.Parse(txtBalance.Text));
-                    cmd.Parameters.AddWithValue("@date_opened", dateTimePicker1.Value);
-                    cmd.Parameters.AddWithValue("@customer_name", txtname.Text);
+                    string sql = "UPDATE accounts SET account_type = @account_type, balance = @balance, date_opened = @date_opened, customer_name = @customer_name WHERE account_id = @account_id";
 
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Record updated successfully");
-                    LoadAccounts();
+                    using (SqlCommand cmd = new SqlCommand(sql, con))
+                    {
+                        cmd.Parameters.AddWithValue("@account_id", accountId);
+                        cmd.Parameters.AddWithValue("@account_type", txtAccountType.Text.Trim());
+                        cmd.Parameters.AddWithValue("@balance", balance);
+                        cmd.Parameters.AddWithValue("@date_opened", dateTimePicker1.Value);
+                        cmd.Parameters.AddWithValue("@customer_name", txtname.Text.Trim());
+
+                        int rows = cmd.ExecuteNonQuery();
+
+                        if (rows > 0)
+                        {
+                            MessageBox.Show("Record updated successfully.");
+                            LoadAccounts();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No record updated. Check Account ID.");
+                        }
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error while updating: " + ex.Message);
+                MessageBox.Show("Update error: " + ex.Message);
             }
         }
 
