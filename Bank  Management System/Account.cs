@@ -36,26 +36,60 @@ namespace Bank__Management_System
 
             try
             {
+                // Validate inputs first:
+                if (!int.TryParse(txtAccountID.Text, out int accountId))
+                {
+                    MessageBox.Show("Invalid Account ID");
+                    return;
+                }
+                if (!decimal.TryParse(txtBalance.Text, out decimal balance))
+                {
+                    MessageBox.Show("Invalid Balance");
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtAccountType.Text))
+                {
+                    MessageBox.Show("Account Type is required");
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtname.Text))
+                {
+                    MessageBox.Show("Customer Name is required");
+                    return;
+                }
+
                 using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
                 {
                     con.Open();
 
-                    SqlCommand cmd = new SqlCommand("INSERT INTO accounts (Account_ID, Account_Type, Balance, Date_Opened, Customer_Name) VALUES (@account_id, @account_type, @balance, @date_opened, @customer_name)", con);
+                    string sql = "INSERT INTO accounts (Account_ID, Account_Type, Balance, Date_Opened, Customer_Name) " +
+                                 "VALUES (@account_id, @account_type, @balance, @date_opened, @customer_name)";
 
-                    cmd.Parameters.AddWithValue("@account_id", int.Parse(txtAccountID.Text));
-                    cmd.Parameters.AddWithValue("@account_type", txtAccountType.Text);
-                    cmd.Parameters.AddWithValue("@balance", decimal.Parse(txtBalance.Text));
-                    cmd.Parameters.AddWithValue("@date_opened", dateTimePicker1.Value);
-                    cmd.Parameters.AddWithValue("@customer_name", txtname.Text);
+                    using (SqlCommand cmd = new SqlCommand(sql, con))
+                    {
+                        cmd.Parameters.AddWithValue("@account_id", accountId);
+                        cmd.Parameters.AddWithValue("@account_type", txtAccountType.Text.Trim());
+                        cmd.Parameters.AddWithValue("@balance", balance);
+                        cmd.Parameters.AddWithValue("@date_opened", dateTimePicker1.Value);
+                        cmd.Parameters.AddWithValue("@customer_name", txtname.Text.Trim());
 
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Record saved Successfully");
-                    LoadAccounts();
+                        int rows = cmd.ExecuteNonQuery();
+
+                        if (rows > 0)
+                        {
+                            MessageBox.Show("Record saved successfully.");
+                            LoadAccounts();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No record inserted.");
+                        }
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error while saving: " + ex.Message);
+                MessageBox.Show("Save error: " + ex.Message);
             }
         }
 
