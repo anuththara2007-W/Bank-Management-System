@@ -34,7 +34,7 @@ namespace Bank__Management_System
                 cmd.Parameters.AddWithValue("@Account_ID", int.Parse(txtAccountID.Text));
                 cmd.Parameters.AddWithValue("@Account_Type", txtAccountType.Text);
                 cmd.Parameters.AddWithValue("@Balance", txtBalance.Text);
-                cmd.Parameters.AddWithValue("@Date_Opened", txtDateOpened.Text);
+                cmd.Parameters.AddWithValue("@Date_Opened", dateTimePicker1.Value);
                 cmd.Parameters.AddWithValue("@Customer_name", txtCustomerName.Text);
 
 
