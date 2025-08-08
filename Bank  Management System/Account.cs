@@ -134,9 +134,7 @@ namespace Bank__Management_System
         private void btnSearch_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False")
-
-
-                con.Open();
+             con.Open();
 
             SqlCommand cnn = new SqlCommand("SELECT * FROM accounts", con);
             SqlDataAdapter da = new SqlDataAdapter(cnn);
