@@ -40,7 +40,7 @@ namespace Bank__Management_System
 
                 cmd.ExecuteNonQuery();
                 con.Close();
-                MessageBox.Show("Account Created Successfully");
+                MessageBox.Show("Record saved Successfully");
             }
 
         }
