@@ -57,6 +57,12 @@ namespace Bank__Management_System
                 dateTimePicker1.CustomFormat = " ";
             }
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd = new SqlCommand("INSERT INTO accounts values(@account_id, @account_type, @balance, @date_opened, @customer_name)", con);
+
+        }
     }
 }
  
