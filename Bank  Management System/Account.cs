@@ -30,10 +30,11 @@ namespace Bank__Management_System
                 DataTable table = new DataTable();
                 da.Fill(table);
                 dataGridView1.DataSource = table;
+                MessageBox.Show("Record added Successfully");
+                LoadAccounts();
             }
 
-            MessageBox.Show("Record added Successfully");
-            LoadAccounts();
+          
         }
 
         private void LoadAccounts()
