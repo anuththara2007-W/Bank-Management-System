@@ -27,6 +27,7 @@ namespace Bank__Management_System
         {
             Customer cr = new Customer();
             cr.Show();
+            this.Close();
         }
 
         private void btnAccount_Click(object sender, EventArgs e)
