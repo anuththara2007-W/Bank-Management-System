@@ -27,14 +27,14 @@ namespace Bank__Management_System
         {
             Customer cr = new Customer();
             cr.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
             Account acc = new Account();
             acc.Show();
-            this.Close();
+            this.Hide();
         }
     }
 }
