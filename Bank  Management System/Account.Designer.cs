@@ -165,7 +165,7 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(343, 35);
             this.textBox5.TabIndex = 12;
-            this.textBox5.Text = "Search....";
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // txtCustomerName
             // 
@@ -274,7 +274,7 @@
             this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
             this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearch.Location = new System.Drawing.Point(950, 138);
+            this.btnSearch.Location = new System.Drawing.Point(950, 137);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(34, 35);
             this.btnSearch.TabIndex = 20;
