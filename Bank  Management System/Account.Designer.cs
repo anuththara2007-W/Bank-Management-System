@@ -33,8 +33,8 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.txtCustomerID = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtAccountID = new System.Windows.Forms.TextBox();
+            this.txtAccountType = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -64,7 +64,6 @@
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnCustomer_Click);
             // 
             // btnDelete
             // 
@@ -117,25 +116,25 @@
             this.button4.Text = "Go Back";
             this.button4.UseVisualStyleBackColor = false;
             // 
-            // txtCustomerID
+            // txtAccountID
             // 
-            this.txtCustomerID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCustomerID.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCustomerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerID.Location = new System.Drawing.Point(827, 224);
-            this.txtCustomerID.Name = "txtCustomerID";
-            this.txtCustomerID.Size = new System.Drawing.Size(319, 27);
-            this.txtCustomerID.TabIndex = 7;
+            this.txtAccountID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAccountID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtAccountID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAccountID.Location = new System.Drawing.Point(827, 224);
+            this.txtAccountID.Name = "txtAccountID";
+            this.txtAccountID.Size = new System.Drawing.Size(319, 27);
+            this.txtAccountID.TabIndex = 7;
             // 
-            // textBox1
+            // txtAccountType
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(827, 280);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(319, 27);
-            this.textBox1.TabIndex = 8;
+            this.txtAccountType.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAccountType.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtAccountType.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAccountType.Location = new System.Drawing.Point(827, 280);
+            this.txtAccountType.Name = "txtAccountType";
+            this.txtAccountType.Size = new System.Drawing.Size(319, 27);
+            this.txtAccountType.TabIndex = 8;
             // 
             // textBox2
             // 
@@ -277,8 +276,8 @@
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.txtCustomerID);
+            this.Controls.Add(this.txtAccountType);
+            this.Controls.Add(this.txtAccountID);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDelete);
@@ -302,8 +301,8 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox txtCustomerID;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtAccountID;
+        private System.Windows.Forms.TextBox txtAccountType;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
