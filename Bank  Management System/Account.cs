@@ -106,6 +106,7 @@ namespace Bank__Management_System
                 cmd.Parameters.AddWithValue("@Customer_ID", int.Parse(txtCustomerID.Text));
 
                 cmd.ExecuteNonQuery();
+                con.Close();
             }
 
             MessageBox.Show("Record Deleted Successfully");
