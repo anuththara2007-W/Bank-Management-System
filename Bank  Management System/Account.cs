@@ -33,6 +33,12 @@ namespace Bank__Management_System
             }
 
             MessageBox.Show("Record added Successfully");
+            LoadAccounts();
+        }
+
+        private void LoadAccounts()
+        {
+            throw new NotImplementedException();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -53,6 +59,7 @@ namespace Bank__Management_System
                 cmd.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("Record saved Successfully");
+                LoadAccounts();
             }
 
         }
@@ -84,6 +91,7 @@ namespace Bank__Management_System
             }
 
             MessageBox.Show("Record added Successfully");
+            LoadAccounts();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -106,6 +114,7 @@ namespace Bank__Management_System
             }
 
             MessageBox.Show("Record Updated Successfully");
+            LoadAccounts();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -122,6 +131,7 @@ namespace Bank__Management_System
             }
 
             MessageBox.Show("Record Deleted Successfully");
+            LoadAccounts();
         }
     }
 }
