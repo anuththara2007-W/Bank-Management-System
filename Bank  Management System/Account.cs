@@ -33,22 +33,29 @@ namespace Bank__Management_System
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+
+            try
             {
-                con.Open();
+                using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+                {
+                    con.Open();
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO accounts (Account_ID, Account_Type, Balance, Date_Opened, Customer_Name) VALUES (@account_id, @account_type, @balance, @date_opened, @customer_name)", con);
+                    SqlCommand cmd = new SqlCommand("INSERT INTO accounts (Account_ID, Account_Type, Balance, Date_Opened, Customer_Name) VALUES (@account_id, @account_type, @balance, @date_opened, @customer_name)", con);
 
-                cmd.Parameters.AddWithValue("@Account_ID", int.Parse(txtAccountID.Text));
-                cmd.Parameters.AddWithValue("@Account_Type", txtAccountType.Text);
-                cmd.Parameters.AddWithValue("@Balance", decimal.Parse(txtBalance.Text));
-                cmd.Parameters.AddWithValue("@Date_Opened", dateTimePicker1.Value);
-                cmd.Parameters.AddWithValue("@Customer_Name", txtname.Text);
+                    cmd.Parameters.AddWithValue("@account_id", int.Parse(txtAccountID.Text));
+                    cmd.Parameters.AddWithValue("@account_type", txtAccountType.Text);
+                    cmd.Parameters.AddWithValue("@balance", decimal.Parse(txtBalance.Text));
+                    cmd.Parameters.AddWithValue("@date_opened", dateTimePicker1.Value);
+                    cmd.Parameters.AddWithValue("@customer_name", txtname.Text);
 
-                cmd.ExecuteNonQuery();
-                con.Close();
-                MessageBox.Show("Record saved Successfully");
-                LoadAccounts();
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Record saved Successfully");
+                    LoadAccounts();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error while saving: " + ex.Message);
             }
         }
 
