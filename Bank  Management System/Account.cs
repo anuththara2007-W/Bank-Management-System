@@ -35,7 +35,7 @@ namespace Bank__Management_System
             using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO accounts (account_id, account_type, balance, date_opened, customer_name) VALUES (@account_id, @account_type, @balance, @date_opened, @customer_name)", con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO accounts (Account_ID, Account_Type, Balance, Date_Opened, Customer_Name) VALUES (@Account_ID, @Account_Type, @Balance, @Date_Opened, @Customer_Name)", con);
 
                 cmd.Parameters.AddWithValue("@account_id", int.Parse(txtAccountID.Text));
                 cmd.Parameters.AddWithValue("@account_type", txtAccountType.Text);
