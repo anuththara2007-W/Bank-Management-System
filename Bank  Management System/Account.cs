@@ -60,8 +60,15 @@ namespace Bank__Management_System
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("INSERT INTO accounts values(@account_id, @account_type, @balance, @date_opened, @customer_name)", con);
-            con.Open();
+            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+            {
+                con.Open();
+
+               
+            }
+
+            MessageBox.Show("Record Deleted Successfully");
+            LoadCustomerData();
         }
     }
 }
