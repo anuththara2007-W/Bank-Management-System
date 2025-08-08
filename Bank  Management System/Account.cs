@@ -11,7 +11,8 @@ using System.Data.SqlClient;
 
 namespace Bank__Management_System
 {
-    public partial class Account : Form
+    internal partial class Account : Form
+
     {
         public Account()
         {
