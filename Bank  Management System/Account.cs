@@ -11,20 +11,20 @@ using System.Data.SqlClient;
 
 namespace Bank__Management_System
 {
-    public partial class AccountForm : Form
+    public partial class txtDateOpened : Form
     {
-        public Account()
+        public txtDateOpened()
         {
             InitializeComponent();
         }
 
         private void Account_Load(object sender, EventArgs e)
         {
-            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+             using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
             {
                 con.Open();
 
-                SqlCommand cnn = new SqlCommand("SELECT * FROM accounts", con);
+               SqlCommand cnn = new SqlCommand("SELECT * FROM accounts", con);
                 SqlDataAdapter da = new SqlDataAdapter(cnn);
                 DataTable table = new DataTable();
                 da.Fill(table);
