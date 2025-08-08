@@ -102,7 +102,7 @@ namespace Bank__Management_System
             {
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("DELETE FROM Customer WHERE Customer_ID = @Customer_ID", con);
+                SqlCommand cmd = new SqlCommand("DELETE accounts WHERE account_id = @account_id", con);
                 cmd.Parameters.AddWithValue("@Customer_ID", int.Parse(txtCustomerID.Text));
 
                 cmd.ExecuteNonQuery();
