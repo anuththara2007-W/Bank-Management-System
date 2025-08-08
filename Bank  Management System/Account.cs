@@ -37,11 +37,12 @@ namespace Bank__Management_System
                 con.Open();
                 SqlCommand cmd = new SqlCommand("INSERT INTO accounts (Account_ID, Account_Type, Balance, Date_Opened, Customer_Name) VALUES (@Account_ID, @Account_Type, @Balance, @Date_Opened, @Customer_Name)", con);
 
-                cmd.Parameters.AddWithValue("@account_id", int.Parse(txtAccountID.Text));
-                cmd.Parameters.AddWithValue("@account_type", txtAccountType.Text);
-                cmd.Parameters.AddWithValue("@balance", txtBalance.Text);
-                cmd.Parameters.AddWithValue("@date_opened", dateTimePicker1.Value);
-                cmd.Parameters.AddWithValue("@customer_name", txtCustomerName.Text);
+                cmd.Parameters.AddWithValue("@Account_ID", int.Parse(txtAccountID.Text));
+                cmd.Parameters.AddWithValue("@Account_Type", txtAccountType.Text);
+                cmd.Parameters.AddWithValue("@Balance", decimal.Parse(txtBalance.Text));
+                cmd.Parameters.AddWithValue("@Date_Opened", dateTimePicker1.Value);
+                cmd.Parameters.AddWithValue("@Customer_Name", txtCustomerName.Text);
+
 
                 cmd.ExecuteNonQuery();
             }
