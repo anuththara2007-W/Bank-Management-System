@@ -20,11 +20,11 @@ namespace Bank__Management_System
 
         private void Account_Load(object sender, EventArgs e)
         {
-            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+             using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
             {
                 con.Open();
 
-                SqlCommand cnn = new SqlCommand("SELEC * FROM accounts", con); // Error: "SELECT" misspelled as "SELEC"
+               SqlCommand cnn = new SqlCommand("SELECT * FROM accounts", con);
                 SqlDataAdapter da = new SqlDataAdapter(cnn);
                 DataTable table = new DataTable();
                 da.Fill(table);
@@ -39,10 +39,10 @@ namespace Bank__Management_System
             using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
             {
                 con.Open();
-
+                 
                 SqlCommand cmd = new SqlCommand("INSERT INTO accounts values(@account_id, @account_type, @balance, @date_opened, @customer_name)", con);
 
-                cmd.Parameters.AddWithValue("@Account_ID", txtAccountID.Text); // Error: missing int.Parse for Account_ID
+                cmd.Parameters.AddWithValue("@Account_ID", int.Parse(txtAccountID.Text));
                 cmd.Parameters.AddWithValue("@Account_Type", txtAccountType.Text);
                 cmd.Parameters.AddWithValue("@Balance", txtBalance.Text);
                 cmd.Parameters.AddWithValue("@Date_Opened", dateTimePicker1.Value);
@@ -58,14 +58,14 @@ namespace Bank__Management_System
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            dateTimePicker1.CustomFormat = "dd-MM-yyyy"; // Error: wrong format, original is dd/MM/yyyy
+            dateTimePicker1.CustomFormat = "dd/MM/yyyy";
         }
 
         private void dateTimePicker1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Back)
             {
-                dateTimePicker1.CustomFormat = ""; // Error: original was " ", empty string here may cause issues
+                dateTimePicker1.CustomFormat = " ";
             }
         }
 
@@ -75,7 +75,7 @@ namespace Bank__Management_System
             {
                 con.Open();
 
-                SqlCommand cnn = new SqlCommand("SELECT * FROM accounts", con);
+               SqlCommand cnn = new SqlCommand("SELECT * FROM accounts", con);
                 SqlDataAdapter da = new SqlDataAdapter(cnn);
                 DataTable table = new DataTable();
                 da.Fill(table);
@@ -94,7 +94,7 @@ namespace Bank__Management_System
                 SqlCommand cmd = new SqlCommand(
                     "UPDATE accounts SET Account_Type = @Account_Type, Balance = @Balance, Date_Opened = @Date_Opened, Customer_name = @Customer_name where account_id = @account_id", con);
 
-                cmd.Parameters.AddWithValue("@Account_ID", txtAccountID.Text); // Error: missing int.Parse
+                cmd.Parameters.AddWithValue("@Account_ID", int.Parse(txtAccountID.Text));
                 cmd.Parameters.AddWithValue("@Account_Type", txtAccountType.Text);
                 cmd.Parameters.AddWithValue("@Balance", txtBalance.Text);
                 cmd.Parameters.AddWithValue("@Date_Opened", dateTimePicker1.Value);
@@ -113,7 +113,7 @@ namespace Bank__Management_System
             {
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("DELETE accounts WHERE account_id = @account_id", con); // Error: missing FROM in DELETE
+                SqlCommand cmd = new SqlCommand("DELETE accounts WHERE account_id = @account_id", con);
                 cmd.Parameters.AddWithValue("@Account_ID", int.Parse(txtAccountID.Text));
 
                 cmd.ExecuteNonQuery();
@@ -124,3 +124,4 @@ namespace Bank__Management_System
         }
     }
 }
+ 
