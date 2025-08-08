@@ -11,10 +11,7 @@ namespace Bank__Management_System
         {
             InitializeComponent();
 
-            // Wire up btnAdd click event
-            btnAdd.Click += btnAdd_Click;
-            btnSave.Click += btnSave_Click;
-            btnUpdate.Click += btnUpdate_Click;
+     
         }
 
         private void Account_Load(object sender, EventArgs e)
