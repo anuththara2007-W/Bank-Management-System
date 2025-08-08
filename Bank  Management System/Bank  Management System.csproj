@@ -60,7 +60,9 @@
     <Compile Include="Account.Designer.cs">
       <DependentUpon>Account.cs</DependentUpon>
     </Compile>
-    <Compile Include="Account1.cs" />
+    <Compile Include="Account1.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="BankDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
