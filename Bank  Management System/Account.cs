@@ -90,6 +90,7 @@ namespace Bank__Management_System
                 cmd.Parameters.AddWithValue("@Customer_name", txtCustomerName.Text);
 
                 cmd.ExecuteNonQuery();
+                con.Close();
             }
 
             MessageBox.Show("Record Updated Successfully");
