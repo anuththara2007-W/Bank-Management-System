@@ -33,6 +33,7 @@ namespace Bank__Management_System
         {
             Account acc = new Account();
             acc.Show();
+            this.Close();
         }
     }
 }
