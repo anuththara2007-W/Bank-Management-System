@@ -118,22 +118,28 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Black and White Modern Login and Sign-up Website Page UI Desktop Prototype (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Black and White Modern Login and Sign-up Website Page UI Desktop Prototype (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Black and White Modern Login and Sign-up Website Page UI Desktop Prototype (1298 x 832 px)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Black and White Modern Login and Sign-up Website Page UI Desktop Prototype (1298 x 832 px).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Black and White Modern Login and Sign-up Website Page UI Desktop Prototype (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Black and White Modern Login and Sign-up Website Page UI Desktop Prototype (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="admin dash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\admin dash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Black and White Modern Login and Sign-up Website Page UI Desktop Prototype (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Black and White Modern Login and Sign-up Website Page UI Desktop Prototype (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Black and White Modern Login and Sign-up Website Page UI Desktop Prototype (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Black and White Modern Login and Sign-up Website Page UI Desktop Prototype (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Black and White Modern Login and Sign-up Website Page UI Desktop Prototype (1298 x 832 px)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Black and White Modern Login and Sign-up Website Page UI Desktop Prototype (1298 x 832 px).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Black and White Modern Login and Sign-up Website Page UI Desktop Prototype (1298 x 832 px) (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Black and White Modern Login and Sign-up Website Page UI Desktop Prototype (1298 x 832 px) (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Black and White Modern Login and Sign-up Website Page UI Desktop Prototype (1298 x 832 px) (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Black and White Modern Login and Sign-up Website Page UI Desktop Prototype (1298 x 832 px) (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Black and White Modern Login and Sign-up Website Page UI Desktop Prototype (1298 x 832 px) (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Black and White Modern Login and Sign-up Website Page UI Desktop Prototype (1298 x 832 px) (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Admin dash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Admin dash1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
