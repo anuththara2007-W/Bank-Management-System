@@ -1,6 +1,6 @@
 ﻿namespace Bank__Management_System
 {
-    partial class Account
+    internal partial class Account
     {
         /// <summary>
         /// Required designer variable.
