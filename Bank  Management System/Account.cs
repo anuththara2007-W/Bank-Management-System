@@ -64,7 +64,7 @@ namespace Bank__Management_System
             {
                 con.Open();
 
-               
+               SqlCommand cnn = 
             }
 
             MessageBox.Show("Record Deleted Successfully");
