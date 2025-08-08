@@ -7,6 +7,8 @@ namespace Bank__Management_System
 {
     public partial class Account : Form
     {
+        private string connString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
+
         public Account()
         {
             InitializeComponent();
@@ -15,16 +17,15 @@ namespace Bank__Management_System
         private void Account_Load(object sender, EventArgs e)
         {
             LoadAccounts();
+            dateTimePicker1.CustomFormat = "dd/MM/yyyy"; // set default format
         }
 
         private void LoadAccounts()
         {
-            string connString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
             using (SqlConnection con = new SqlConnection(connString))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM accounts", con);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM accounts", con);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 dataGridView1.DataSource = dt;
@@ -33,70 +34,117 @@ namespace Bank__Management_System
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+            if (!ValidateInputs(out int accountId, out decimal balance)) return;
+
+            using (SqlConnection con = new SqlConnection(connString))
             {
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO accounts (Account_ID, Account_Type, Balance, Date_Opened, Customer_Name) VALUES (@account_id, @account_type, @balance, @date_opened, @customer_name)", con);
+                string sql = "INSERT INTO accounts (Account_ID, Account_Type, Balance, Date_Opened, Customer_Name) " +
+                             "VALUES (@account_id, @account_type, @balance, @date_opened, @customer_name)";
 
-                cmd.Parameters.AddWithValue("@Account_ID", int.Parse(txtAccountID.Text));
-                cmd.Parameters.AddWithValue("@Account_Type", txtAccountType.Text);
-                cmd.Parameters.AddWithValue("@Balance", decimal.Parse(txtBalance.Text));
-                cmd.Parameters.AddWithValue("@Date_Opened", dateTimePicker1.Value);
-                cmd.Parameters.AddWithValue("@Customer_Name", txtname.Text);
+                using (SqlCommand cmd = new SqlCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@account_id", accountId);
+                    cmd.Parameters.AddWithValue("@account_type", txtAccountType.Text.Trim());
+                    cmd.Parameters.AddWithValue("@balance", balance);
+                    cmd.Parameters.AddWithValue("@date_opened", dateTimePicker1.Value);
+                    cmd.Parameters.AddWithValue("@customer_name", txtname.Text.Trim());
 
-                cmd.ExecuteNonQuery();
-                con.Close();
-                MessageBox.Show("Record saved Successfully");
-                LoadAccounts();
+                    int rows = cmd.ExecuteNonQuery();
+                    if (rows > 0)
+                    {
+                        MessageBox.Show("Record saved successfully.");
+                        LoadAccounts();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Save failed.");
+                    }
+                }
             }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+            if (!ValidateInputs(out int accountId, out decimal balance)) return;
+
+            using (SqlConnection con = new SqlConnection(connString))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE accounts SET account_type = @account_type, balance = @balance, date_opened = @date_opened, customer_name = @customer_name WHERE account_id = @account_id", con);
 
-                cmd.Parameters.AddWithValue("@account_id", int.Parse(txtAccountID.Text));
-                cmd.Parameters.AddWithValue("@account_type", txtAccountType.Text);
-                cmd.Parameters.AddWithValue("@balance", txtBalance.Text);
-                cmd.Parameters.AddWithValue("@date_opened", dateTimePicker1.Value);
-                cmd.Parameters.AddWithValue("@customer_name", txtname.Text);
-                con.Close();
-                cmd.ExecuteNonQuery();
+                string sql = "UPDATE accounts SET account_type = @account_type, balance = @balance, date_opened = @date_opened, customer_name = @customer_name WHERE account_id = @account_id";
+
+                using (SqlCommand cmd = new SqlCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@account_id", accountId);
+                    cmd.Parameters.AddWithValue("@account_type", txtAccountType.Text.Trim());
+                    cmd.Parameters.AddWithValue("@balance", balance);
+                    cmd.Parameters.AddWithValue("@date_opened", dateTimePicker1.Value);
+                    cmd.Parameters.AddWithValue("@customer_name", txtname.Text.Trim());
+
+                    int rows = cmd.ExecuteNonQuery();
+                    if (rows > 0)
+                    {
+                        MessageBox.Show("Record updated successfully.");
+                        LoadAccounts();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Update failed. Check Account ID.");
+                    }
+                }
             }
-            MessageBox.Show("Record updated successfully");
-            LoadAccounts();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+            if (!int.TryParse(txtAccountID.Text, out int accountId))
+            {
+                MessageBox.Show("Invalid Account ID for deletion.");
+                return;
+            }
+
+            using (SqlConnection con = new SqlConnection(connString))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("DELETE FROM accounts WHERE account_id = @account_id", con);
-                cmd.Parameters.AddWithValue("@account_id", int.Parse(txtAccountID.Text));
-
-                cmd.ExecuteNonQuery();
+                using (SqlCommand cmd = new SqlCommand("DELETE FROM accounts WHERE account_id = @account_id", con))
+                {
+                    cmd.Parameters.AddWithValue("@account_id", accountId);
+                    int rows = cmd.ExecuteNonQuery();
+                    if (rows > 0)
+                    {
+                        MessageBox.Show("Record deleted successfully.");
+                        LoadAccounts();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Delete failed. Check Account ID.");
+                    }
+                }
             }
-            MessageBox.Show("Record deleted successfully");
-            LoadAccounts();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+            string customerName = txtname.Text.Trim();
+            if (string.IsNullOrEmpty(customerName))
+            {
+                MessageBox.Show("Please enter a Customer Name to search.");
+                return;
+            }
+
+            using (SqlConnection con = new SqlConnection(connString))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM accounts WHERE customer_name = @customer_name", con);
-                cmd.Parameters.AddWithValue("@customer_name", txtname.Text);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable table = new DataTable();
-                da.Fill(table);
-                con.Close();
-                dataGridView1.DataSource = table;
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM accounts WHERE customer_name LIKE @customer_name", con))
+                {
+                    cmd.Parameters.AddWithValue("@customer_name", "%" + customerName + "%");
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                }
             }
         }
 
@@ -108,9 +156,7 @@ namespace Bank__Management_System
         private void dateTimePicker1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Back)
-            {
                 dateTimePicker1.CustomFormat = " ";
-            }
         }
 
         private void btnGoBack_Click(object sender, EventArgs e)
@@ -120,45 +166,32 @@ namespace Bank__Management_System
             this.Close();
         }
 
-        private void btnSave_Click_1(object sender, EventArgs e)
+        private bool ValidateInputs(out int accountId, out decimal balance)
         {
-            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+            accountId = 0;
+            balance = 0;
+
+            if (!int.TryParse(txtAccountID.Text.Trim(), out accountId))
             {
-                con.Open();
-
-                SqlCommand cmd = new SqlCommand("INSERT INTO accounts (Account_ID, Account_Type, Balance, Date_Opened, Customer_Name) VALUES (@account_id, @account_type, @balance, @date_opened, @customer_name)", con);
-
-                cmd.Parameters.AddWithValue("@Account_ID", int.Parse(txtAccountID.Text));
-                cmd.Parameters.AddWithValue("@Account_Type", txtAccountType.Text);
-                cmd.Parameters.AddWithValue("@Balance", decimal.Parse(txtBalance.Text));
-                cmd.Parameters.AddWithValue("@Date_Opened", dateTimePicker1.Value);
-                cmd.Parameters.AddWithValue("@Customer_Name", txtname.Text);
-
-                cmd.ExecuteNonQuery();
-                con.Close();
-                MessageBox.Show("Record saved Successfully");
-                LoadAccounts();
+                MessageBox.Show("Invalid Account ID.");
+                return false;
             }
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+            if (string.IsNullOrWhiteSpace(txtAccountType.Text))
             {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE accounts SET account_type = @account_type, balance = @balance, date_opened = @date_opened, customer_name = @customer_name WHERE account_id = @account_id", con);
-
-                cmd.Parameters.AddWithValue("@account_id", int.Parse(txtAccountID.Text));
-                cmd.Parameters.AddWithValue("@account_type", txtAccountType.Text);
-                cmd.Parameters.AddWithValue("@balance", txtBalance.Text);
-                cmd.Parameters.AddWithValue("@date_opened", dateTimePicker1.Value);
-                cmd.Parameters.AddWithValue("@customer_name", txtname.Text);
-               
-                cmd.ExecuteNonQuery();
-                con.Close();
+                MessageBox.Show("Account Type is required.");
+                return false;
             }
-            MessageBox.Show("Record updated successfully");
-            LoadAccounts();
+            if (!decimal.TryParse(txtBalance.Text.Trim(), out balance))
+            {
+                MessageBox.Show("Invalid Balance.");
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtname.Text))
+            {
+                MessageBox.Show("Customer Name is required.");
+                return false;
+            }
+            return true;
         }
     }
 }
