@@ -10,6 +10,11 @@ namespace Bank__Management_System
         public Account()
         {
             InitializeComponent();
+
+            // Wire up btnAdd click event
+            btnAdd.Click += btnAdd_Click;
+            btnSave.Click += btnSave_Click;
+            btnUpdate.Click += btnUpdate_Click;
         }
 
         private void Account_Load(object sender, EventArgs e)
@@ -31,62 +36,118 @@ namespace Bank__Management_System
             }
         }
 
+        // Clear all input fields
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            txtAccountID.Clear();
+            txtAccountType.Clear();
+            txtBalance.Clear();
+            txtname.Clear();
+            dateTimePicker1.Value = DateTime.Today;
+            dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+
+            txtAccountID.Focus();
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
-            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+            try
             {
-                con.Open();
+                using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+                {
+                    con.Open();
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO accounts (Account_ID, Account_Type, Balance, Date_Opened, Customer_Name) VALUES (@account_id, @account_type, @balance, @date_opened, @customer_name)", con);
+                    SqlCommand cmd = new SqlCommand("INSERT INTO accounts (Account_ID, Account_Type, Balance, Date_Opened, Customer_Name) VALUES (@account_id, @account_type, @balance, @date_opened, @customer_name)", con);
 
-                cmd.Parameters.AddWithValue("@Account_ID", int.Parse(txtAccountID.Text));
-                cmd.Parameters.AddWithValue("@Account_Type", txtAccountType.Text);
-                cmd.Parameters.AddWithValue("@Balance", decimal.Parse(txtBalance.Text));
-                cmd.Parameters.AddWithValue("@Date_Opened", dateTimePicker1.Value);
-                cmd.Parameters.AddWithValue("@Customer_Name", txtname.Text);
+                    cmd.Parameters.AddWithValue("@account_id", int.Parse(txtAccountID.Text));
+                    cmd.Parameters.AddWithValue("@account_type", txtAccountType.Text);
+                    cmd.Parameters.AddWithValue("@balance", decimal.Parse(txtBalance.Text));
+                    cmd.Parameters.AddWithValue("@date_opened", dateTimePicker1.Value);
+                    cmd.Parameters.AddWithValue("@customer_name", txtname.Text);
 
-                cmd.ExecuteNonQuery();
-                con.Close();
-                MessageBox.Show("Record saved Successfully");
-                LoadAccounts();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+
+                    MessageBox.Show("Record saved successfully");
+
+                    // Clear inputs after saving
+                    btnAdd_Click(null, null);
+
+                    LoadAccounts();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error saving record: " + ex.Message);
             }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+            try
             {
-                con.Open();
+                using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+                {
+                    con.Open();
 
-                SqlCommand cmd = new SqlCommand(
-                    "UPDATE accounts SET account_type = @account_type, balance = @balance, date_opened = @date_opened, customer_name = @customer_name WHERE account_id = @account_id",
-                    con);
+                    SqlCommand cmd = new SqlCommand(
+                        "UPDATE accounts SET account_type = @account_type, balance = @balance, date_opened = @date_opened, customer_name = @customer_name WHERE account_id = @account_id",
+                        con);
 
-                cmd.Parameters.AddWithValue("@account_id", int.Parse(txtAccountID.Text));
-                cmd.Parameters.AddWithValue("@account_type", txtAccountType.Text);
-                cmd.Parameters.AddWithValue("@balance", decimal.Parse(txtBalance.Text));  // <-- Fix here: parse decimal
-                cmd.Parameters.AddWithValue("@date_opened", dateTimePicker1.Value);
-                cmd.Parameters.AddWithValue("@customer_name", txtname.Text);
+                    cmd.Parameters.AddWithValue("@account_id", int.Parse(txtAccountID.Text));
+                    cmd.Parameters.AddWithValue("@account_type", txtAccountType.Text);
+                    cmd.Parameters.AddWithValue("@balance", decimal.Parse(txtBalance.Text));
+                    cmd.Parameters.AddWithValue("@date_opened", dateTimePicker1.Value);
+                    cmd.Parameters.AddWithValue("@customer_name", txtname.Text);
 
-                cmd.ExecuteNonQuery();  // Execute after setting parameters
-                con.Close();
+                    int rows = cmd.ExecuteNonQuery();
+                    con.Close();
+
+                    if (rows > 0)
+                    {
+                        MessageBox.Show("Record updated successfully");
+                        LoadAccounts();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No record found with the specified Account ID.");
+                    }
+                }
             }
-            MessageBox.Show("Record updated successfully");
-            LoadAccounts();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating record: " + ex.Message);
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+            try
             {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("DELETE FROM accounts WHERE account_id = @account_id", con);
-                cmd.Parameters.AddWithValue("@account_id", int.Parse(txtAccountID.Text));
+                using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("DELETE FROM accounts WHERE account_id = @account_id", con);
+                    cmd.Parameters.AddWithValue("@account_id", int.Parse(txtAccountID.Text));
 
-                cmd.ExecuteNonQuery();
+                    int rows = cmd.ExecuteNonQuery();
+                    con.Close();
+
+                    if (rows > 0)
+                    {
+                        MessageBox.Show("Record deleted successfully");
+                        LoadAccounts();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No record found with the specified Account ID.");
+                    }
+                }
             }
-            MessageBox.Show("Record deleted successfully");
-            LoadAccounts();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error deleting record: " + ex.Message);
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
