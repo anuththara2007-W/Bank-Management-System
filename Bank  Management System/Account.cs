@@ -95,6 +95,21 @@ namespace Bank__Management_System
 
             MessageBox.Show("Record Updated Successfully");
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+            {
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("DELETE FROM Customer WHERE Customer_ID = @Customer_ID", con);
+                cmd.Parameters.AddWithValue("@Customer_ID", int.Parse(txtCustomerID.Text));
+
+                cmd.ExecuteNonQuery();
+            }
+
+            MessageBox.Show("Record Deleted Successfully");
+        }
     }
 }
  
