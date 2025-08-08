@@ -184,25 +184,18 @@ namespace Bank__Management_System
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            // Get what the user typed
-            string text = txtSearch.Text.ToLower();
+            string searchText = txtSearch.Text;
 
-            // Check each row
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                // Skip empty new row
-                if (row.IsNewRow) continue;
+            SqlConnection con = new SqlConnection(
+                @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False");
 
-                // If the first column has what the user typed, show it
-                if (row.Cells[0].Value.ToString().ToLower().Contains(text))
-                {
-                    row.Visible = true;
-                }
-                else
-                {
-                    row.Visible = false;
-                }
-            }
+            SqlDataAdapter da = new SqlDataAdapter(
+                "SELECT * FROM Customers WHERE Name LIKE '%" + searchText + "%'", con);
+
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            dataGridView1.DataSource = dt;
         }
 
     }
