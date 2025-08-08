@@ -43,7 +43,7 @@ namespace Bank__Management_System
             using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
             {
                 con.Open();
-                 
+
                 SqlCommand cmd = new SqlCommand("INSERT INTO accounts (account_id, account_type, balance, date_opened, customer_name) VALUES (@account_id, @account_type, @balance, @date_opened, @customer_name)\r\n)", con);
 
                 cmd.Parameters.AddWithValue("@Account_ID", int.Parse(txtAccountID.Text));
@@ -77,15 +77,15 @@ namespace Bank__Management_System
         private void btnAdd_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False");
-            
-                con.Open();
 
-               SqlCommand cnn = new SqlCommand("SELECT * FROM accounts", con);
-                SqlDataAdapter da = new SqlDataAdapter(cnn);
-                DataTable table = new DataTable();
-                da.Fill(table);
-                dataGridView1.DataSource = table;
-            
+            con.Open();
+
+            SqlCommand cnn = new SqlCommand("SELECT * FROM accounts", con);
+            SqlDataAdapter da = new SqlDataAdapter(cnn);
+            DataTable table = new DataTable();
+            da.Fill(table);
+            dataGridView1.DataSource = table;
+
 
             MessageBox.Show("Record added Successfully");
             LoadAccounts();
@@ -134,16 +134,11 @@ namespace Bank__Management_System
         private void btnSearch_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False");
-             con.Open();
+            con.Open();
             SqlCommand cnn = new SqlCommand("SELECT * FROM accounts where customer_name= @customer_name", con);
-            
+
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Main admin = new Main();
-            admin.Show();
-        }
     }
 }
  
