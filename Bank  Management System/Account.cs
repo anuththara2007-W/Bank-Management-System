@@ -11,9 +11,9 @@ using System.Data.SqlClient;
 
 namespace Bank__Management_System
 {
-    public partial class Account : Form
+    public partial class txtDateOpened : Form
     {
-        public Account()
+        public txtDateOpened()
         {
             InitializeComponent();
         }
@@ -32,10 +32,10 @@ namespace Bank__Management_System
                 SqlCommand cmd = new SqlCommand("INSERT INTO accounts values(@account_id, @account_type, @balance, @date_opened, @customer_name)", con);
 
                 cmd.Parameters.AddWithValue("@Account_ID", int.Parse(txtAccountID.Text));
-                cmd.Parameters.AddWithValue("@Account_Type", txtAccountID.Text);
-                cmd.Parameters.AddWithValue("@Balance", txtAccountType.Text);
-                cmd.Parameters.AddWithValue("@Date_Opened", txtEmail.Text);
-                cmd.Parameters.AddWithValue("@Customer_name", txtAddress.Text);
+                cmd.Parameters.AddWithValue("@Account_Type", txtAccountType.Text);
+                cmd.Parameters.AddWithValue("@Balance", txtBalance.Text);
+                cmd.Parameters.AddWithValue("@Date_Opened", txtDateOpened.Text);
+                cmd.Parameters.AddWithValue("@Customer_name", txtCustomerName.Text);
               
 
                 cmd.ExecuteNonQuery();

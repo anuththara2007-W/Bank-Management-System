@@ -1,6 +1,6 @@
 ﻿namespace Bank__Management_System
 {
-    partial class Account
+    partial class txtDateOpened
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Account));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(txtDateOpened));
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.txtAccountID = new System.Windows.Forms.TextBox();
             this.txtAccountType = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtBalance = new System.Windows.Forms.TextBox();
+            this.txtx = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.txtCustomerName = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -136,25 +136,25 @@
             this.txtAccountType.Size = new System.Drawing.Size(319, 27);
             this.txtAccountType.TabIndex = 8;
             // 
-            // textBox2
+            // txtBalance
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(827, 333);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(319, 27);
-            this.textBox2.TabIndex = 9;
+            this.txtBalance.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBalance.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBalance.Location = new System.Drawing.Point(827, 333);
+            this.txtBalance.Name = "txtBalance";
+            this.txtBalance.Size = new System.Drawing.Size(319, 27);
+            this.txtBalance.TabIndex = 9;
             // 
-            // textBox4
+            // txtx
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(827, 437);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(319, 27);
-            this.textBox4.TabIndex = 11;
+            this.txtx.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtx.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtx.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtx.Location = new System.Drawing.Point(827, 437);
+            this.txtx.Name = "txtx";
+            this.txtx.Size = new System.Drawing.Size(319, 27);
+            this.txtx.TabIndex = 11;
             // 
             // textBox5
             // 
@@ -170,17 +170,17 @@
             this.textBox5.TabIndex = 12;
             this.textBox5.Text = "Search....";
             // 
-            // label5
+            // txtCustomerName
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.label5.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(617, 441);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 25);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Address";
+            this.txtCustomerName.AutoSize = true;
+            this.txtCustomerName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.txtCustomerName.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCustomerName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtCustomerName.Location = new System.Drawing.Point(617, 441);
+            this.txtCustomerName.Name = "txtCustomerName";
+            this.txtCustomerName.Size = new System.Drawing.Size(153, 25);
+            this.txtCustomerName.TabIndex = 17;
+            this.txtCustomerName.Text = "Customer Name";
             // 
             // label4
             // 
@@ -260,7 +260,7 @@
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
             // 
-            // Account
+            // txtDateOpened
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -268,14 +268,14 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1280, 785);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtCustomerName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtx);
+            this.Controls.Add(this.txtBalance);
             this.Controls.Add(this.txtAccountType);
             this.Controls.Add(this.txtAccountID);
             this.Controls.Add(this.button4);
@@ -285,7 +285,7 @@
             this.Controls.Add(this.btnSave);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Account";
+            this.Name = "txtDateOpened";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Account";
             this.Load += new System.EventHandler(this.Account_Load);
@@ -303,10 +303,10 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox txtAccountID;
         private System.Windows.Forms.TextBox txtAccountType;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtBalance;
+        private System.Windows.Forms.TextBox txtx;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label txtCustomerName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
