@@ -186,16 +186,16 @@ namespace Bank__Management_System
         {
             string searchText = txtSearch.Text;
 
-            SqlConnection con = new SqlConnection(
-                @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False");
+            using (SqlConnection con = new SqlConnection(
+                @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+            {
+                SqlDataAdapter da = new SqlDataAdapter(
+                    "SELECT * FROM accounts WHERE customer_name LIKE '%" + searchText + "%'", con);
 
-            SqlDataAdapter da = new SqlDataAdapter(
-                "SELECT * FROM Customers WHERE Full_Name LIKE '%" + searchText + "%'", con);
-
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-
-            dataGridView1.DataSource = dt;
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+            }
         }
 
     }
