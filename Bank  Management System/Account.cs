@@ -139,6 +139,11 @@ namespace Bank__Management_System
 
         }
 
+        private void btnGoBack_Click(object sender, EventArgs e)
+        {
+            Main admin = new Main();
+            admin.Show();
+        }
     }
 }
  

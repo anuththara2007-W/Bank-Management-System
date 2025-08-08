@@ -32,7 +32,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnGoBack = new System.Windows.Forms.Button();
             this.txtAccountID = new System.Windows.Forms.TextBox();
             this.txtAccountType = new System.Windows.Forms.TextBox();
             this.txtBalance = new System.Windows.Forms.TextBox();
@@ -104,22 +104,23 @@
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // button4
+            // btnGoBack
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(203)))), ((int)(((byte)(105)))));
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(183, 437);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(265, 38);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Go Back";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnGoBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(203)))), ((int)(((byte)(105)))));
+            this.btnGoBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGoBack.FlatAppearance.BorderSize = 0;
+            this.btnGoBack.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btnGoBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnGoBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGoBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGoBack.Location = new System.Drawing.Point(183, 437);
+            this.btnGoBack.Name = "btnGoBack";
+            this.btnGoBack.Size = new System.Drawing.Size(265, 38);
+            this.btnGoBack.TabIndex = 6;
+            this.btnGoBack.Text = "Go Back";
+            this.btnGoBack.UseVisualStyleBackColor = false;
+            this.btnGoBack.Click += new System.EventHandler(this.btnGoBack_Click);
             // 
             // txtAccountID
             // 
@@ -309,7 +310,7 @@
             this.Controls.Add(this.txtBalance);
             this.Controls.Add(this.txtAccountType);
             this.Controls.Add(this.txtAccountID);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
@@ -331,7 +332,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnGoBack;
         private System.Windows.Forms.TextBox txtAccountID;
         private System.Windows.Forms.TextBox txtAccountType;
         private System.Windows.Forms.TextBox txtBalance;
