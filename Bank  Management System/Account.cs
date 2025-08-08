@@ -36,6 +36,7 @@ namespace Bank__Management_System
             using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
             {
                 con.Open();
+
                 SqlCommand cmd = new SqlCommand("INSERT INTO accounts (Account_ID, Account_Type, Balance, Date_Opened, Customer_Name) VALUES (@Account_ID, @Account_Type, @Balance, @Date_Opened, @Customer_Name)", con);
 
                 cmd.Parameters.AddWithValue("@Account_ID", int.Parse(txtAccountID.Text));
@@ -44,11 +45,11 @@ namespace Bank__Management_System
                 cmd.Parameters.AddWithValue("@Date_Opened", dateTimePicker1.Value);
                 cmd.Parameters.AddWithValue("@Customer_Name", txtCustomerName.Text);
 
-
                 cmd.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Record saved Successfully");
+                LoadAccounts();
             }
-            MessageBox.Show("Record saved successfully");
-            LoadAccounts();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
