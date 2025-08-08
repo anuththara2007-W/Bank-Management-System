@@ -36,7 +36,6 @@
             this.txtAccountType = new System.Windows.Forms.TextBox();
             this.txtBalance = new System.Windows.Forms.TextBox();
             this.txtname = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.txtCustomerName = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -153,19 +152,6 @@
             this.txtname.Name = "txtname";
             this.txtname.Size = new System.Drawing.Size(319, 27);
             this.txtname.TabIndex = 11;
-            // 
-            // textBox5
-            // 
-            this.textBox5.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.ForeColor = System.Drawing.SystemColors.Info;
-            this.textBox5.Location = new System.Drawing.Point(604, 138);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(343, 35);
-            this.textBox5.TabIndex = 12;
             // 
             // txtCustomerName
             // 
@@ -298,11 +284,12 @@
             this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.SystemColors.Info;
-            this.txtSearch.Location = new System.Drawing.Point(469, 375);
+            this.txtSearch.Location = new System.Drawing.Point(601, 137);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(343, 35);
             this.txtSearch.TabIndex = 21;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // Account
             // 
@@ -320,7 +307,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox5);
             this.Controls.Add(this.txtname);
             this.Controls.Add(this.txtBalance);
             this.Controls.Add(this.txtAccountType);
@@ -351,7 +337,6 @@
         private System.Windows.Forms.TextBox txtAccountType;
         private System.Windows.Forms.TextBox txtBalance;
         private System.Windows.Forms.TextBox txtname;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label txtCustomerName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

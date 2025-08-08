@@ -182,6 +182,28 @@ namespace Bank__Management_System
             this.Hide();
         }
 
-      
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            // Get what the user typed
+            string text = txtSearch.Text.ToLower();
+
+            // Check each row
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                // Skip empty new row
+                if (row.IsNewRow) continue;
+
+                // If the first column has what the user typed, show it
+                if (row.Cells[0].Value.ToString().ToLower().Contains(text))
+                {
+                    row.Visible = true;
+                }
+                else
+                {
+                    row.Visible = false;
+                }
+            }
+        }
+
     }
 }
