@@ -61,21 +61,28 @@ namespace Bank__Management_System
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+            try
             {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE accounts SET account_type = @account_type, balance = @balance, date_opened = @date_opened, customer_name = @customer_name WHERE account_id = @account_id", con);
+                using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("UPDATE accounts SET account_type = @account_type, balance = @balance, date_opened = @date_opened, customer_name = @customer_name WHERE account_id = @account_id", con);
 
-                cmd.Parameters.AddWithValue("@account_id", int.Parse(txtAccountID.Text));
-                cmd.Parameters.AddWithValue("@account_type", txtAccountType.Text);
-                cmd.Parameters.AddWithValue("@balance", txtBalance.Text);
-                cmd.Parameters.AddWithValue("@date_opened", dateTimePicker1.Value);
-                cmd.Parameters.AddWithValue("@customer_name", txtname.Text);
-                con.Close();
-                cmd.ExecuteNonQuery();
+                    cmd.Parameters.AddWithValue("@account_id", int.Parse(txtAccountID.Text));
+                    cmd.Parameters.AddWithValue("@account_type", txtAccountType.Text);
+                    cmd.Parameters.AddWithValue("@balance", decimal.Parse(txtBalance.Text));
+                    cmd.Parameters.AddWithValue("@date_opened", dateTimePicker1.Value);
+                    cmd.Parameters.AddWithValue("@customer_name", txtname.Text);
+
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Record updated successfully");
+                    LoadAccounts();
+                }
             }
-            MessageBox.Show("Record updated successfully");
-            LoadAccounts();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error while updating: " + ex.Message);
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
