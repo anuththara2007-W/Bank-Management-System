@@ -64,7 +64,7 @@ namespace Bank__Management_System
                 cmd.Parameters.AddWithValue("@balance", txtBalance.Text);
                 cmd.Parameters.AddWithValue("@date_opened", dateTimePicker1.Value);
                 cmd.Parameters.AddWithValue("@customer_name", txtname.Text);
-
+                con.Close();
                 cmd.ExecuteNonQuery();
             }
             MessageBox.Show("Record updated successfully");
