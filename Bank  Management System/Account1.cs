@@ -4,9 +4,10 @@ namespace Bank__Management_System
 {
     public partial class Account
     {
-        internal void Show()
+        internal void ShowDetails()
         {
             throw new NotImplementedException();
         }
+
     }
 }
