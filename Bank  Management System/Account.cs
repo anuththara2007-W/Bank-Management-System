@@ -43,7 +43,7 @@ namespace Bank__Management_System
                 cmd.Parameters.AddWithValue("@Account_Type", txtAccountType.Text);
                 cmd.Parameters.AddWithValue("@Balance", decimal.Parse(txtBalance.Text));
                 cmd.Parameters.AddWithValue("@Date_Opened", dateTimePicker1.Value);
-                cmd.Parameters.AddWithValue("@Customer_Name", txtCustomerNae.Text);
+                cmd.Parameters.AddWithValue("@Customer_Name", txtname.Text);
 
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -63,7 +63,7 @@ namespace Bank__Management_System
                 cmd.Parameters.AddWithValue("@account_type", txtAccountType.Text);
                 cmd.Parameters.AddWithValue("@balance", txtBalance.Text);
                 cmd.Parameters.AddWithValue("@date_opened", dateTimePicker1.Value);
-                cmd.Parameters.AddWithValue("@customer_name", txtCustoerName.Text);
+                cmd.Parameters.AddWithValue("@customer_name", txtname.Text);
 
                 cmd.ExecuteNonQuery();
             }
@@ -91,7 +91,7 @@ namespace Bank__Management_System
             {
                 con.Open();
                 SqlCommand cmd = new SqlCommand("SELECT * FROM accounts WHERE customer_name = @customer_name", con);
-                cmd.Parameters.AddWithValue("@customer_name", txtCustomeName.Text);
+                cmd.Parameters.AddWithValue("@customer_name", txtname.Text);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable table = new DataTable();
                 da.Fill(table);

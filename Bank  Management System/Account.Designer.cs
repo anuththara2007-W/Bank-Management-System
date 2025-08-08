@@ -33,10 +33,9 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnGoBack = new System.Windows.Forms.Button();
-            this.txtAccountID = new System.Windows.Forms.TextBox();
             this.txtAccountType = new System.Windows.Forms.TextBox();
             this.txtBalance = new System.Windows.Forms.TextBox();
-            this.txtx = new System.Windows.Forms.TextBox();
+            this.txtname = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.txtCustomerName = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,6 +46,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnSearch = new System.Windows.Forms.PictureBox();
+            this.txtAccountID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
             this.SuspendLayout();
@@ -122,16 +122,6 @@
             this.btnGoBack.UseVisualStyleBackColor = false;
             this.btnGoBack.Click += new System.EventHandler(this.btnGoBack_Click);
             // 
-            // txtAccountID
-            // 
-            this.txtAccountID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtAccountID.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtAccountID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAccountID.Location = new System.Drawing.Point(827, 224);
-            this.txtAccountID.Name = "txtAccountID";
-            this.txtAccountID.Size = new System.Drawing.Size(319, 27);
-            this.txtAccountID.TabIndex = 7;
-            // 
             // txtAccountType
             // 
             this.txtAccountType.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -152,15 +142,15 @@
             this.txtBalance.Size = new System.Drawing.Size(319, 27);
             this.txtBalance.TabIndex = 9;
             // 
-            // txtx
+            // txtname
             // 
-            this.txtx.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtx.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtx.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtx.Location = new System.Drawing.Point(827, 437);
-            this.txtx.Name = "txtx";
-            this.txtx.Size = new System.Drawing.Size(319, 27);
-            this.txtx.TabIndex = 11;
+            this.txtname.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtname.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtname.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtname.Location = new System.Drawing.Point(827, 437);
+            this.txtname.Name = "txtname";
+            this.txtname.Size = new System.Drawing.Size(319, 27);
+            this.txtname.TabIndex = 11;
             // 
             // textBox5
             // 
@@ -289,6 +279,16 @@
             this.btnSearch.TabStop = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
+            // txtAccountID
+            // 
+            this.txtAccountID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAccountID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtAccountID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAccountID.Location = new System.Drawing.Point(827, 224);
+            this.txtAccountID.Name = "txtAccountID";
+            this.txtAccountID.Size = new System.Drawing.Size(319, 27);
+            this.txtAccountID.TabIndex = 7;
+            // 
             // Account
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -305,7 +305,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.txtx);
+            this.Controls.Add(this.txtname);
             this.Controls.Add(this.txtBalance);
             this.Controls.Add(this.txtAccountType);
             this.Controls.Add(this.txtAccountID);
@@ -332,10 +332,9 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnGoBack;
-        private System.Windows.Forms.TextBox txtAccountID;
         private System.Windows.Forms.TextBox txtAccountType;
         private System.Windows.Forms.TextBox txtBalance;
-        private System.Windows.Forms.TextBox txtx;
+        private System.Windows.Forms.TextBox txtname;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label txtCustomerName;
         private System.Windows.Forms.Label label4;
@@ -346,5 +345,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.PictureBox btnSearch;
+        private System.Windows.Forms.TextBox txtAccountID;
     }
 }
