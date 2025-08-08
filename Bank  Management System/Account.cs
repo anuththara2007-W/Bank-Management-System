@@ -166,34 +166,7 @@ namespace Bank__Management_System
             this.Close();
         }
 
-        private bool ValidateInputs(out int accountId, out decimal balance)
-        {
-            accountId = 0;
-            balance = 0;
-
-            if (!int.TryParse(txtAccountID.Text.Trim(), out accountId))
-            {
-                MessageBox.Show("Invalid Account ID.");
-                return false;
-            }
-            if (string.IsNullOrWhiteSpace(txtAccountType.Text))
-            {
-                MessageBox.Show("Account Type is required.");
-                return false;
-            }
-            if (!decimal.TryParse(txtBalance.Text.Trim(), out balance))
-            {
-                MessageBox.Show("Invalid Balance.");
-                return false;
-            }
-            if (string.IsNullOrWhiteSpace(txtname.Text))
-            {
-                MessageBox.Show("Customer Name is required.");
-                return false;
-            }
-            return true;
-        }
-
+       
         private void btnAdd_Click(object sender, EventArgs e)
         {
             // Clear all input fields
