@@ -48,7 +48,7 @@ namespace Bank__Management_System
                     cmd.Parameters.AddWithValue("@Transaction_Type", txtTransactionType.Text);
                     cmd.Parameters.AddWithValue("@Amount", decimal.Parse(txtAmount.Text));
                     cmd.Parameters.AddWithValue("@Transaction_Date", dateTimePicker1.Value);
-                    cmd.Parameters.AddWithValue("@Account_ID", txtAccountID.Text);
+                    cmd.Parameters.AddWithValue("@Account_ID", int.Parse(txtAccountID.Text));
 
                     cmd.ExecuteNonQuery();
                     con.Close();
