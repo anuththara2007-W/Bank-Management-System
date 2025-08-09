@@ -56,7 +56,7 @@ namespace Bank__Management_System
                     MessageBox.Show("Record saved successfully");
 
                     // Clear inputs after saving
-                    btnAdd_Click(null, null);
+                    btnSave_Click(null, null);
 
                     LoadTransactions();
                 }
