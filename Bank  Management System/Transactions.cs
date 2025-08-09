@@ -66,6 +66,11 @@ namespace Bank__Management_System
                 MessageBox.Show("Error saving record: " + ex.Message);
             }
         }
+
+        private void LoadTransactions()
+        {
+            throw new NotImplementedException();
+        }
     }
     }
 
