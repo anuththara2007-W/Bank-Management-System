@@ -73,7 +73,7 @@ namespace Bank__Management_System
             using (SqlConnection con = new SqlConnection(connString))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM accounts", con);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Transactions", con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
