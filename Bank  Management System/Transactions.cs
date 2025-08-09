@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+using System.Xml.Linq;
 
 namespace Bank__Management_System
 {
@@ -29,6 +30,40 @@ namespace Bank__Management_System
             if (e.KeyCode == Keys.Back)
             {
                 dateTimePicker1.CustomFormat = " ";
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+                {
+                    con.Open();
+
+                    SqlCommand cmd = new SqlCommand("INSERT INTO accounts (Account_ID, Account_Type, Balance, Date_Opened, Customer_Name) VALUES (@account_id, @account_type, @balance, @date_opened, @customer_name)", con);
+
+                    cmd.Parameters.AddWithValue("@account_id", int.Parse(txtAccountID.Text));
+                    cmd.Parameters.AddWithValue("@account_type", txtAccountType.Text);
+                    cmd.Parameters.AddWithValue("@balance", decimal.Parse(txtBalance.Text));
+                    cmd.Parameters.AddWithValue("@date_opened", dateTimePicker1.Value);
+                    cmd.Parameters.AddWithValue("@customer_name", txtname.Text);
+
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+
+                    MessageBox.Show("Record saved successfully");
+
+                    // Clear inputs after saving
+                    btnAdd_Click(null, null);
+
+                    LoadTransactions();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error saving record: " + ex.Message);
             }
         }
     }
