@@ -92,6 +92,45 @@ namespace Bank__Management_System
 
             txtAccountID.Focus();
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+                {
+                    con.Open();
+
+                    SqlCommand cmd = new SqlCommand(
+                        "UPDATE accounts SET account_type = @account_type, balance = @balance, date_opened = @date_opened, customer_name = @customer_name WHERE account_id = @account_id",
+                        con);
+
+                    cmd.Parameters.AddWithValue("@account_id", int.Parse(txtTransactionID.Text));
+                    cmd.Parameters.AddWithValue("@account_type", txtTransactionType.Text);
+                    cmd.Parameters.AddWithValue("@balance", decimal.Parse(txtAmount.Text));
+                    cmd.Parameters.AddWithValue("@date_opened", dateTimePicker1.Value);
+                    cmd.Parameters.AddWithValue("@customer_name", txtAccountID.Clear();
+.Text);
+
+                    int rows = cmd.ExecuteNonQuery();
+                    con.Close();
+
+                    if (rows > 0)
+                    {
+                        MessageBox.Show("Record updated successfully");
+                        LoadTransactions();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No record found with the specified Account ID.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating record: " + ex.Message);
+            }
+        }
     }
     }
 
