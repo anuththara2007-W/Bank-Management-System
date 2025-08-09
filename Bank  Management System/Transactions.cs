@@ -16,5 +16,20 @@ namespace Bank__Management_System
         {
             InitializeComponent();
         }
+
+       
+             private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+        
+
+        private void dateTimePicker1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Back)
+            {
+                dateTimePicker1.CustomFormat = " ";
+            }
+        }
+    }
     }
 }
