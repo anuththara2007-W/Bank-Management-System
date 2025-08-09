@@ -106,7 +106,7 @@ namespace Bank__Management_System
                         "UPDATE accounts SET account_type = @account_type, balance = @balance, date_opened = @date_opened, customer_name = @customer_name WHERE account_id = @account_id",
                         con);
 
-                    cmd.Parameters.AddWithValue("@account_id", int.Parse(txtTransactionID.Text));
+                    cmd.Parameters.AddWithValue("@TID", int.Parse(txtTransactionID.Text));
                     cmd.Parameters.AddWithValue("@account_type", txtTransactionType.Text);
                     cmd.Parameters.AddWithValue("@balance", decimal.Parse(txtAmount.Text));
                     cmd.Parameters.AddWithValue("@date_opened", dateTimePicker1.Value);
