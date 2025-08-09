@@ -42,7 +42,7 @@ namespace Bank__Management_System
                 {
                     con.Open();
 
-                    SqlCommand cmd = new SqlCommand("INSERT INTO accounts (Account_ID, Account_Type, Balance, Date_Opened, Customer_Name) VALUES (@account_id, @account_type, @balance, @date_opened, @customer_name)", con);
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Transactions (txtTransactionID, txtTransactionType, txtAmount, txtAccountID) VALUES (@account_id, @account_type, @balance, @date_opened, @customer_name)", con);
 
                     cmd.Parameters.AddWithValue("@account_id", int.Parse(txtAccountID.Text));
                     cmd.Parameters.AddWithValue("@account_type", txtAccountType.Text);
