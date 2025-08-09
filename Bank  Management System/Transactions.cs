@@ -81,7 +81,7 @@ namespace Bank__Management_System
             }
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
         {
             txtTransactionID.Clear();
             txtTransactionType.Clear();
@@ -89,6 +89,7 @@ namespace Bank__Management_System
             txtAccountID.Clear();
             dateTimePicker1.Value = DateTime.Today;
             dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+
 
             txtAccountID.Focus();
         }
