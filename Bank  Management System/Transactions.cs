@@ -80,6 +80,18 @@ namespace Bank__Management_System
                 dataGridView1.DataSource = dt;
             }
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            txtTransactionID.Clear();
+            txtTransactionType.Clear();
+            txtAmount.Clear();
+            txtAccountID.Clear();
+            dateTimePicker1.Value = DateTime.Today;
+            dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+
+            txtAccountID.Focus();
+        }
     }
     }
 
