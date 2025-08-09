@@ -44,11 +44,11 @@ namespace Bank__Management_System
 
                     SqlCommand cmd = new SqlCommand("INSERT INTO Transactions  VALUES (@TID, @Transaction_Type, @Amount, @Transaction_Date, @Account_ID)", con);
 
-                    cmd.Parameters.AddWithValue("@account_id", int.Parse(txtAccountID.Text));
-                    cmd.Parameters.AddWithValue("@account_type", txtAccountType.Text);
-                    cmd.Parameters.AddWithValue("@balance", decimal.Parse(txtBalance.Text));
-                    cmd.Parameters.AddWithValue("@date_opened", dateTimePicker1.Value);
-                    cmd.Parameters.AddWithValue("@customer_name", txtname.Text);
+                    cmd.Parameters.AddWithValue("@TID", int.Parse(txtAccountID.Text));
+                    cmd.Parameters.AddWithValue("@Transaction_Type", txtAccountType.Text);
+                    cmd.Parameters.AddWithValue("@Amount", decimal.Parse(txtBalance.Text));
+                    cmd.Parameters.AddWithValue("@Transaction_Date", dateTimePicker1.Value);
+                    cmd.Parameters.AddWithValue("@Account_ID", txtname.Text);
 
                     cmd.ExecuteNonQuery();
                     con.Close();
