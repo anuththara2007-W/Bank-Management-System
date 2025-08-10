@@ -17,14 +17,12 @@ namespace Bank__Management_System
             InitializeComponent();
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
+
+       
     }
 }
