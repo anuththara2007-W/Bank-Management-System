@@ -32,11 +32,11 @@ namespace Bank__Management_System
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            try
+            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
             {
-                using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+                con.Open();
+                try
                 {
-                    con.Open();
                     SqlCommand cmd = new SqlCommand("INSERT INTO Loan VALUES (@LoanID,@LoanType,@Amount,@InterestRate,@LoanDate,@CustomerName)", con);
 
                     cmd.Parameters.AddWithValue("@LoanID", int.Parse(txtLoanID.Text));
@@ -49,14 +49,13 @@ namespace Bank__Management_System
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Loan record saved successfully");
-
                     btnClear_Click(null, null);
                     LoadLoans();
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error saving record: " + ex.Message);
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error saving record: " + ex.Message);
+                }
             }
         }
 
