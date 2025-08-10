@@ -154,5 +154,7 @@ namespace Bank__Management_System
                 txtCustomerName.Text = row.Cells["CustomerName"].Value.ToString();
             }
         }
+
+    
     }
 }
