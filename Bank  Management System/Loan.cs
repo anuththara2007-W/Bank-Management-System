@@ -74,7 +74,7 @@
                         cmd.Parameters.AddWithValue("@Amount", decimal.Parse(txtAmount.Text));
                         cmd.Parameters.AddWithValue("@InterestRate", decimal.Parse(txtInterestRate.Text));
                         cmd.Parameters.AddWithValue("@LoanDate", dateTimePicker1.Value);
-                        cmd.Parameters.AddWithValue("@CustomerName", txtCustomerName.Text);
+                        cmd.Parameters.AddWithValue("@CustomerName", txtCusName.Text);
 
                         int rows = cmd.ExecuteNonQuery();
 
