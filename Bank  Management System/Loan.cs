@@ -61,11 +61,11 @@ namespace Bank__Management_System
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            try
+            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
             {
-                using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+                con.Open();
+                try
                 {
-                    con.Open();
                     SqlCommand cmd = new SqlCommand(
                         "UPDATE Loan SET LoanType=@LoanType, Amount=@Amount, InterestRate=@InterestRate, LoanDate=@LoanDate, CustomerName=@CustomerName WHERE LoanID=@LoanID", con);
 
@@ -85,10 +85,10 @@ namespace Bank__Management_System
 
                     LoadLoans();
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error updating record: " + ex.Message);
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error updating record: " + ex.Message);
+                }
             }
         }
 
