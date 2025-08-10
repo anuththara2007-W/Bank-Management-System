@@ -35,12 +35,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtname = new System.Windows.Forms.TextBox();
-            this.txtBalance = new System.Windows.Forms.TextBox();
+            this.txtInterestRate = new System.Windows.Forms.TextBox();
+            this.txtAmount = new System.Windows.Forms.TextBox();
             this.txtLoanType = new System.Windows.Forms.TextBox();
             this.txtLoanID = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCusName = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -117,25 +117,25 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "Loan ID";
             // 
-            // txtname
+            // txtInterestRate
             // 
-            this.txtname.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtname.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtname.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtname.Location = new System.Drawing.Point(355, 314);
-            this.txtname.Name = "txtname";
-            this.txtname.Size = new System.Drawing.Size(344, 27);
-            this.txtname.TabIndex = 23;
+            this.txtInterestRate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtInterestRate.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtInterestRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInterestRate.Location = new System.Drawing.Point(355, 314);
+            this.txtInterestRate.Name = "txtInterestRate";
+            this.txtInterestRate.Size = new System.Drawing.Size(344, 27);
+            this.txtInterestRate.TabIndex = 23;
             // 
-            // txtBalance
+            // txtAmount
             // 
-            this.txtBalance.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBalance.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBalance.Location = new System.Drawing.Point(357, 260);
-            this.txtBalance.Name = "txtBalance";
-            this.txtBalance.Size = new System.Drawing.Size(344, 27);
-            this.txtBalance.TabIndex = 22;
+            this.txtAmount.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAmount.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAmount.Location = new System.Drawing.Point(357, 260);
+            this.txtAmount.Name = "txtAmount";
+            this.txtAmount.Size = new System.Drawing.Size(344, 27);
+            this.txtAmount.TabIndex = 22;
             // 
             // txtLoanType
             // 
@@ -169,15 +169,15 @@
             this.label5.TabIndex = 30;
             this.label5.Text = "Customer Name";
             // 
-            // textBox1
+            // txtCusName
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(355, 423);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(344, 27);
-            this.textBox1.TabIndex = 31;
+            this.txtCusName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCusName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCusName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCusName.Location = new System.Drawing.Point(355, 423);
+            this.txtCusName.Name = "txtCusName";
+            this.txtCusName.Size = new System.Drawing.Size(344, 27);
+            this.txtCusName.TabIndex = 31;
             // 
             // dateTimePicker1
             // 
@@ -212,7 +212,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 785);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtCusName);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.txtCustomerName);
@@ -220,8 +220,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtname);
-            this.Controls.Add(this.txtBalance);
+            this.Controls.Add(this.txtInterestRate);
+            this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.txtLoanType);
             this.Controls.Add(this.txtLoanID);
             this.Controls.Add(this.pictureBox1);
@@ -242,12 +242,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtname;
-        private System.Windows.Forms.TextBox txtBalance;
+        private System.Windows.Forms.TextBox txtInterestRate;
+        private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.TextBox txtLoanType;
         private System.Windows.Forms.TextBox txtLoanID;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCusName;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DataGridView dataGridView1;
     }
