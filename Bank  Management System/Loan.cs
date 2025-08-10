@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -40,5 +41,35 @@ namespace Bank__Management_System
             }
         }
 
+        private void btnSave_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand(
+                        "INSERT INTO Loan VALUES (@LoanID,@LoanType,@Amount,@InterestRate,@LoanDate,@CustomerName)", con);
+
+                    cmd.Parameters.AddWithValue("@LoanID", int.Parse(txtLoanID.Text));
+                    cmd.Parameters.AddWithValue("@LoanType", txtLoanType.Text);
+                    cmd.Parameters.AddWithValue("@Amount", decimal.Parse(txtAmount.Text));
+                    cmd.Parameters.AddWithValue("@InterestRate", decimal.Parse(txtInterestRate.Text));
+                    cmd.Parameters.AddWithValue("@LoanDate", dateTimePicker1.Value);
+                    cmd.Parameters.AddWithValue("@CustomerName", txtCustomerName.Text);
+
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+
+                    MessageBox.Show("Loan record saved successfully");
+                    btnClear_Click(null, null);
+                    LoadLoans();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error saving record: " + ex.Message);
+            }
+        }
     }
 }
