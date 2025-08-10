@@ -94,11 +94,11 @@ namespace Bank__Management_System
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            try
+            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
             {
-                using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+                con.Open();
+                try
                 {
-                    con.Open();
                     SqlCommand cmd = new SqlCommand("DELETE FROM Loan WHERE LoanID=@LoanID", con);
                     cmd.Parameters.AddWithValue("@LoanID", int.Parse(txtLoanID.Text));
 
@@ -114,10 +114,10 @@ namespace Bank__Management_System
 
                     LoadLoans();
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error deleting record: " + ex.Message);
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error deleting record: " + ex.Message);
+                }
             }
         }
 
