@@ -160,5 +160,12 @@ namespace Bank__Management_System
                 MessageBox.Show("Error deleting record: " + ex.Message);
             }
         }
+
+        private void btnGoBack_Click(object sender, EventArgs e)
+        {
+            Main admins = new Main();
+            admins.Show();
+            this.Hide();
+        }
     }
 }
