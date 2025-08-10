@@ -89,6 +89,7 @@
             this.btnTransaction.TabIndex = 3;
             this.btnTransaction.Text = "Transaction";
             this.btnTransaction.UseVisualStyleBackColor = false;
+            this.btnTransaction.Click += new System.EventHandler(this.btnTransaction_Click);
             // 
             // btnLoan
             // 
