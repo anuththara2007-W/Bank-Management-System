@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bank__Management_System
@@ -18,63 +12,14 @@ namespace Bank__Management_System
             InitializeComponent();
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        private void Loan_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged_1(object sender, EventArgs e)
-        {
+            LoadLoans();
             dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-
-        }
-        private void dateTimePicker1_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Back)
-            {
-                dateTimePicker1.CustomFormat = " ";
-            }
-        }
-
-        private void btnSave_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand(
-                        "INSERT INTO Loan VALUES (@LoanID,@LoanType,@Amount,@InterestRate,@LoanDate,@CustomerName)", con);
-
-                    cmd.Parameters.AddWithValue("@LoanID", int.Parse(txtLoanID.Text));
-                    cmd.Parameters.AddWithValue("@LoanType", txtLoanType.Text);
-                    cmd.Parameters.AddWithValue("@Amount", decimal.Parse(txtAmount.Text));
-                    cmd.Parameters.AddWithValue("@InterestRate", decimal.Parse(txtInterestRate.Text));
-                    cmd.Parameters.AddWithValue("@LoanDate", dateTimePicker1.Value);
-                    cmd.Parameters.AddWithValue("@CustomerName", txtCustomerName.Text);
-
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-
-                    MessageBox.Show("Loan record saved successfully");
-                    
-                    LoadLoans();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error saving record: " + ex.Message);
-            }
         }
 
         private void LoadLoans()
         {
-
             using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
             {
                 con.Open();
@@ -85,28 +30,34 @@ namespace Bank__Management_System
             }
         }
 
-        private void Loan_Load(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
-            string connString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
-            using (SqlConnection con = new SqlConnection(connString))
+            try
             {
-                con.Open();
-                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Loan", con);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dataGridView1.DataSource = dt;
-            }
-        }
+                using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Loan VALUES (@LoanID,@LoanType,@Amount,@InterestRate,@LoanDate,@CustomerName)", con);
 
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            txtLoanID.Clear();
-            txtLoanType.Clear();
-            txtAmount.Clear();
-            txtInterestRate.Clear();
-            dateTimePicker1.Value = DateTime.Today;
-            dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            txtLoanID.Focus();
+                    cmd.Parameters.AddWithValue("@LoanID", int.Parse(txtLoanID.Text));
+                    cmd.Parameters.AddWithValue("@LoanType", txtLoanType.Text);
+                    cmd.Parameters.AddWithValue("@Amount", decimal.Parse(txtAmount.Text));
+                    cmd.Parameters.AddWithValue("@InterestRate", decimal.Parse(txtInterestRate.Text));
+                    cmd.Parameters.AddWithValue("@LoanDate", dateTimePicker1.Value);
+                    cmd.Parameters.AddWithValue("@CustomerName", txtCustomerName.Text);
+
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Loan record saved successfully");
+
+                    btnClear_Click(null, null);
+                    LoadLoans();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error saving record: " + ex.Message);
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -127,17 +78,13 @@ namespace Bank__Management_System
                     cmd.Parameters.AddWithValue("@CustomerName", txtCustomerName.Text);
 
                     int rows = cmd.ExecuteNonQuery();
-                    con.Close();
 
                     if (rows > 0)
-                    {
                         MessageBox.Show("Loan record updated successfully");
-                        LoadLoans();
-                    }
                     else
-                    {
-                        MessageBox.Show("No record found with the specified Loan ID.");
-                    }
+                        MessageBox.Show("No record found with that Loan ID.");
+
+                    LoadLoans();
                 }
             }
             catch (Exception ex)
@@ -146,7 +93,6 @@ namespace Bank__Management_System
             }
         }
 
-      
         private void btnDelete_Click(object sender, EventArgs e)
         {
             try
@@ -158,18 +104,16 @@ namespace Bank__Management_System
                     cmd.Parameters.AddWithValue("@LoanID", int.Parse(txtLoanID.Text));
 
                     int rows = cmd.ExecuteNonQuery();
-                    con.Close();
 
                     if (rows > 0)
                     {
                         MessageBox.Show("Loan record deleted successfully");
-                        LoadLoans();
                         btnClear_Click(null, null);
                     }
                     else
-                    {
-                        MessageBox.Show("No record found with the specified Loan ID.");
-                    }
+                        MessageBox.Show("No record found with that Loan ID.");
+
+                    LoadLoans();
                 }
             }
             catch (Exception ex)
@@ -177,6 +121,39 @@ namespace Bank__Management_System
                 MessageBox.Show("Error deleting record: " + ex.Message);
             }
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            foreach (Control c in this.Controls)
+                if (c is TextBox) ((TextBox)c).Clear();
+
+            dateTimePicker1.Value = DateTime.Today;
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+        }
+
+        private void dateTimePicker1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Back)
+                dateTimePicker1.CustomFormat = " ";
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Avoid header row click
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                txtLoanID.Text = row.Cells["LoanID"].Value.ToString();
+                txtLoanType.Text = row.Cells["LoanType"].Value.ToString();
+                txtAmount.Text = row.Cells["Amount"].Value.ToString();
+                txtInterestRate.Text = row.Cells["InterestRate"].Value.ToString();
+                dateTimePicker1.Value = Convert.ToDateTime(row.Cells["LoanDate"].Value);
+                txtCustomerName.Text = row.Cells["CustomerName"].Value.ToString();
+            }
+        }
     }
 }
-  
