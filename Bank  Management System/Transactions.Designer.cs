@@ -240,7 +240,6 @@
             this.btnClear.TabIndex = 24;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // dataGridView1
             // 
