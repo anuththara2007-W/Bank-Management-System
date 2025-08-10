@@ -12,9 +12,9 @@ using System.Xml.Linq;
 
 namespace Bank__Management_System
 {
-    public partial class Loan : Form
+    public partial class Transactions : Form
     {
-        public Loan()
+        public Transactions()
         {
             InitializeComponent();
         }
@@ -40,23 +40,25 @@ namespace Bank__Management_System
                 {
                     con.Open();
 
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Loan VALUES (@LoanID,@LoanType,@Amount,@InterestRate,@LoanDate,@CustomerName)", con);
+                    SqlCommand cmd = new SqlCommand(
+                        "INSERT INTO Transactions (TID, Transaction_Type, Amount, Transaction_Date, Account_ID) " +
+                        "VALUES (@TID, @Transaction_Type, @Amount, @Transaction_Date, @Account_ID)", con);
 
-                    cmd.Parameters.AddWithValue("@LoanID", int.Parse(txtLoanID.Text));
-                    cmd.Parameters.AddWithValue("@LoanType", txtLoanType.Text);
+                    cmd.Parameters.AddWithValue("@TID", int.Parse(txtTransactionID.Text));
+                    cmd.Parameters.AddWithValue("@Transaction_Type", txtTransactionType.Text);
                     cmd.Parameters.AddWithValue("@Amount", decimal.Parse(txtAmount.Text));
-                    cmd.Parameters.AddWithValue("@InterestRate", decimal.Parse(txtInterestRate.Text));
-                    cmd.Parameters.AddWithValue("@LoanDate", dateTimePicker1.Value);
-                    cmd.Parameters.AddWithValue("@CustomerName", txtCustomerName.Text);
+                    cmd.Parameters.AddWithValue("@Transaction_Date", dateTimePicker1.Value);
+                    cmd.Parameters.AddWithValue("@Account_ID", int.Parse(txtAccountID.Text));
 
                     cmd.ExecuteNonQuery();
                     con.Close();
 
-                    MessageBox.Show("Loan record saved successfully");
+                    MessageBox.Show("Record saved successfully");
 
+                    // Clear inputs after saving
                     btnClear_Click(null, null);
 
-                    LoadLoans();
+                    LoadTransactions();
                 }
             }
             catch (Exception ex)
@@ -65,13 +67,13 @@ namespace Bank__Management_System
             }
         }
 
-        private void LoadLoans()
+        private void LoadTransactions()
         {
             string connString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
             using (SqlConnection con = new SqlConnection(connString))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Loan", con);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Transactions", con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -81,14 +83,13 @@ namespace Bank__Management_System
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtLoanID.Clear();
-            txtLoanType.Clear();
+            txtTransactionID.Clear();
+            txtTransactionType.Clear();
             txtAmount.Clear();
-            txtInterestRate.Clear();
-            txtCustomerName.Clear();
+            txtAccountID.Clear();
             dateTimePicker1.Value = DateTime.Today;
             dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            txtLoanID.Focus();
+            txtTransactionID.Focus();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -100,27 +101,26 @@ namespace Bank__Management_System
                     con.Open();
 
                     SqlCommand cmd = new SqlCommand(
-                        "UPDATE Loan SET LoanType=@LoanType, Amount=@Amount, InterestRate=@InterestRate, LoanDate=@LoanDate, CustomerName=@CustomerName WHERE LoanID=@LoanID",
+                        "UPDATE Transactions SET Transaction_Type = @Transaction_Type, Amount = @Amount, Transaction_Date = @Transaction_Date, Account_ID = @Account_ID WHERE TID = @TID",
                         con);
 
-                    cmd.Parameters.AddWithValue("@LoanID", int.Parse(txtLoanID.Text));
-                    cmd.Parameters.AddWithValue("@LoanType", txtLoanType.Text);
+                    cmd.Parameters.AddWithValue("@TID", int.Parse(txtTransactionID.Text));
+                    cmd.Parameters.AddWithValue("@Transaction_Type", txtTransactionType.Text);
                     cmd.Parameters.AddWithValue("@Amount", decimal.Parse(txtAmount.Text));
-                    cmd.Parameters.AddWithValue("@InterestRate", decimal.Parse(txtInterestRate.Text));
-                    cmd.Parameters.AddWithValue("@LoanDate", dateTimePicker1.Value);
-                    cmd.Parameters.AddWithValue("@CustomerName", txtCustomerName.Text);
+                    cmd.Parameters.AddWithValue("@Transaction_Date", dateTimePicker1.Value);
+                    cmd.Parameters.AddWithValue("@Account_ID", int.Parse(txtAccountID.Text));
 
                     int rows = cmd.ExecuteNonQuery();
                     con.Close();
 
                     if (rows > 0)
                     {
-                        MessageBox.Show("Loan record updated successfully");
-                        LoadLoans();
+                        MessageBox.Show("Record updated successfully");
+                        LoadTransactions();
                     }
                     else
                     {
-                        MessageBox.Show("No record found with the specified Loan ID.");
+                        MessageBox.Show("No record found with the specified Transaction ID.");
                     }
                 }
             }
@@ -137,21 +137,21 @@ namespace Bank__Management_System
                 using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("DELETE FROM Loan WHERE LoanID=@LoanID", con);
-                    cmd.Parameters.AddWithValue("@LoanID", int.Parse(txtLoanID.Text));
+                    SqlCommand cmd = new SqlCommand("DELETE FROM Transactions WHERE TID = @TID", con);
+                    cmd.Parameters.AddWithValue("@TID", int.Parse(txtTransactionID.Text));
 
                     int rows = cmd.ExecuteNonQuery();
                     con.Close();
 
                     if (rows > 0)
                     {
-                        MessageBox.Show("Loan record deleted successfully");
-                        LoadLoans();
+                        MessageBox.Show("Record deleted successfully");
+                        LoadTransactions();
                         btnClear_Click(null, null);
                     }
                     else
                     {
-                        MessageBox.Show("No record found with the specified Loan ID.");
+                        MessageBox.Show("No record found with the specified Transaction ID.");
                     }
                 }
             }
