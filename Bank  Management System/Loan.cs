@@ -71,5 +71,18 @@ namespace Bank__Management_System
                 MessageBox.Show("Error saving record: " + ex.Message);
             }
         }
+
+        private void Loan_Load(object sender, EventArgs e)
+        {
+            string connString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
+            using (SqlConnection con = new SqlConnection(connString))
+            {
+                con.Open();
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Loan", con);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+            }
+        }
     }
 }

@@ -305,6 +305,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "Loan";
             this.Text = "Loan";
+            this.Load += new System.EventHandler(this.Loan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
