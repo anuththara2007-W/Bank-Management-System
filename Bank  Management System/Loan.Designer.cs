@@ -299,6 +299,7 @@
             this.btnGoBack.TabIndex = 37;
             this.btnGoBack.Text = "Go Back";
             this.btnGoBack.UseVisualStyleBackColor = false;
+            this.btnGoBack.Click += new System.EventHandler(this.btnGoBack_Click);
             // 
             // Loan
             // 
