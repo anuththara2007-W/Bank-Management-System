@@ -107,10 +107,10 @@ namespace Bank__Management_System
                         con);
 
                     cmd.Parameters.AddWithValue("@TID", int.Parse(txtTransactionID.Text));
-                    cmd.Parameters.AddWithValue("@account_type", txtTransactionType.Text);
-                    cmd.Parameters.AddWithValue("@balance", decimal.Parse(txtAmount.Text));
-                    cmd.Parameters.AddWithValue("@date_opened", dateTimePicker1.Value);
-                    cmd.Parameters.AddWithValue("@customer_name", txtAccountID.Clear();
+                    cmd.Parameters.AddWithValue("@Transaction_Type", txtTransactionType.Text);
+                    cmd.Parameters.AddWithValue("@Amount", decimal.Parse(txtAmount.Text));
+                    cmd.Parameters.AddWithValue("@Transaction_Date", dateTimePicker1.Value);
+                    cmd.Parameters.AddWithValue("@Account_ID", int.Parse(txtAccountID.Text));
 .Text);
 
                     int rows = cmd.ExecuteNonQuery();
