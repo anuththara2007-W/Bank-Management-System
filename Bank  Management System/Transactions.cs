@@ -139,8 +139,8 @@ namespace Bank__Management_System
                 using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("DELETE FROM transactions WHERE account_id = @account_id", con);
-                    cmd.Parameters.AddWithValue("@account_id", int.Parse(txtAccountID.Text));
+                    SqlCommand cmd = new SqlCommand("DELETE FROM transactions WHERE tid = @tid", con);
+                    cmd.Parameters.AddWithValue("@tid", int.Parse(txtAccountID.Text));
 
                     int rows = cmd.ExecuteNonQuery();
                     con.Close();
