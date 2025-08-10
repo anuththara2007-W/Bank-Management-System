@@ -140,7 +140,7 @@ namespace Bank__Management_System
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("DELETE FROM transactions WHERE tid = @tid", con);
-                    cmd.Parameters.AddWithValue("@tid", int.Parse(txtAccountID.Text));
+                    cmd.Parameters.AddWithValue("@tid", int.Parse(txtTransactionID.Text));
 
                     int rows = cmd.ExecuteNonQuery();
                     con.Close();
@@ -148,7 +148,7 @@ namespace Bank__Management_System
                     if (rows > 0)
                     {
                         MessageBox.Show("Record deleted successfully");
-                        LoadAccounts();
+                        LoadTransactions();
                     }
                     else
                     {
