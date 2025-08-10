@@ -131,6 +131,36 @@ namespace Bank__Management_System
                 MessageBox.Show("Error updating record: " + ex.Message);
             }
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("DELETE FROM transactions WHERE account_id = @account_id", con);
+                    cmd.Parameters.AddWithValue("@account_id", int.Parse(txtAccountID.Text));
+
+                    int rows = cmd.ExecuteNonQuery();
+                    con.Close();
+
+                    if (rows > 0)
+                    {
+                        MessageBox.Show("Record deleted successfully");
+                        LoadAccounts();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No record found with the specified Account ID.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error deleting record: " + ex.Message);
+            }
+        }
     }
     }
 
