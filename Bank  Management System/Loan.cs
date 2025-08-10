@@ -89,5 +89,17 @@ namespace Bank__Management_System
                 dataGridView1.DataSource = dt;
             }
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtLoanID.Clear();
+            txtLoanType.Clear();
+            txtAmount.Clear();
+            txtInterestRate.Clear();
+            txtCustomerName.Clear();
+            dateTimePicker1.Value = DateTime.Today;
+            dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+            txtLoanID.Focus();
+        }
     }
 }
