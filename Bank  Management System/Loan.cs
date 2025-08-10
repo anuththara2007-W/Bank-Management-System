@@ -127,6 +127,7 @@
                 txtLoanType.Clear();
                 txtAmount.Clear();
                 txtInterestRate.Clear();
+                txtCusName.Clear();
                 dateTimePicker1.Value = DateTime.Today;
             }
 
