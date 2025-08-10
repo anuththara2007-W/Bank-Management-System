@@ -103,7 +103,7 @@ namespace Bank__Management_System
                     con.Open();
 
                     SqlCommand cmd = new SqlCommand(
-                        "UPDATE transactions SET transaction_type = @transaction_type, balance = @balance, date_opened = @date_opened, customer_name = @customer_name WHERE account_id = @account_id",
+                        "UPDATE transactions SET transaction_type = @transaction_type, amount = @amount, date_opened = @date_opened, customer_name = @customer_name WHERE account_id = @account_id",
                         con);
 
                     cmd.Parameters.AddWithValue("@TID", int.Parse(txtTransactionID.Text));
