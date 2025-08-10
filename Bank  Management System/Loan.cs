@@ -137,5 +137,39 @@ namespace Bank__Management_System
                 MessageBox.Show("Error updating record: " + ex.Message);
             }
         }
+
+      
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("DELETE FROM Loan WHERE LoanID=@LoanID", con);
+                    cmd.Parameters.AddWithValue("@LoanID", int.Parse(txtLoanID.Text));
+
+                    int rows = cmd.ExecuteNonQuery();
+                    con.Close();
+
+                    if (rows > 0)
+                    {
+                        MessageBox.Show("Loan record deleted successfully");
+                        LoadLoans();
+                        btnClear_Click(null, null);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No record found with the specified Loan ID.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error deleting record: " + ex.Message);
+            }
+        }
+    }
+}
     }
 }
