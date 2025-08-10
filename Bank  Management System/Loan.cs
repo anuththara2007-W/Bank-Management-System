@@ -72,6 +72,11 @@ namespace Bank__Management_System
             }
         }
 
+        private void LoadLoans()
+        {
+            throw new NotImplementedException();
+        }
+
         private void Loan_Load(object sender, EventArgs e)
         {
             string connString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
