@@ -123,9 +123,11 @@ namespace Bank__Management_System
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            foreach (Control c in this.Controls)
-                if (c is TextBox) ((TextBox)c).Clear();
-
+            txtLoanID.Clear();
+            txtLoanType.Clear();
+            txtAmount.Clear();
+            txtInterestRate.Clear();
+            txtCustomerName.Clear();
             dateTimePicker1.Value = DateTime.Today;
         }
 
@@ -142,7 +144,6 @@ namespace Bank__Management_System
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Avoid header row click
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
