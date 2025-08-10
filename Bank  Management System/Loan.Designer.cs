@@ -47,6 +47,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.btnGoBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -282,11 +283,29 @@
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // btnGoBack
+            // 
+            this.btnGoBack.BackColor = System.Drawing.Color.White;
+            this.btnGoBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGoBack.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnGoBack.FlatAppearance.BorderSize = 0;
+            this.btnGoBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnGoBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGoBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGoBack.Location = new System.Drawing.Point(828, 475);
+            this.btnGoBack.Name = "btnGoBack";
+            this.btnGoBack.Size = new System.Drawing.Size(300, 38);
+            this.btnGoBack.TabIndex = 37;
+            this.btnGoBack.Text = "Go Back";
+            this.btnGoBack.UseVisualStyleBackColor = false;
+            // 
             // Loan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 785);
+            this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
@@ -335,5 +354,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnGoBack;
     }
 }
