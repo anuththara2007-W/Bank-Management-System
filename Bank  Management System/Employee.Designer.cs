@@ -57,6 +57,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(1282, 788);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btnGoBack
             // 
@@ -91,6 +92,7 @@
             this.btnClear.TabIndex = 53;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnDelete
             // 
