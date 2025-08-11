@@ -33,7 +33,7 @@
             this.lblCount1 = new System.Windows.Forms.Label();
             this.btnGoBack = new System.Windows.Forms.Button();
             this.lblCount2 = new System.Windows.Forms.Label();
-            this.lblCount = new System.Windows.Forms.Label();
+            this.lblCount3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -85,16 +85,16 @@
             this.lblCount2.TabIndex = 56;
             this.lblCount2.Text = "0";
             // 
-            // lblCount
+            // lblCount3
             // 
-            this.lblCount.AutoSize = true;
-            this.lblCount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.lblCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCount.Location = new System.Drawing.Point(967, 171);
-            this.lblCount.Name = "lblCount";
-            this.lblCount.Size = new System.Drawing.Size(64, 69);
-            this.lblCount.TabIndex = 57;
-            this.lblCount.Text = "0";
+            this.lblCount3.AutoSize = true;
+            this.lblCount3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.lblCount3.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCount3.Location = new System.Drawing.Point(967, 171);
+            this.lblCount3.Name = "lblCount3";
+            this.lblCount3.Size = new System.Drawing.Size(64, 69);
+            this.lblCount3.TabIndex = 57;
+            this.lblCount3.Text = "0";
             // 
             // Dashboard
             // 
@@ -103,7 +103,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1280, 785);
-            this.Controls.Add(this.lblCount);
+            this.Controls.Add(this.lblCount3);
             this.Controls.Add(this.lblCount2);
             this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.lblCount1);
@@ -122,6 +122,6 @@
         private System.Windows.Forms.Label lblCount1;
         private System.Windows.Forms.Button btnGoBack;
         private System.Windows.Forms.Label lblCount2;
-        private System.Windows.Forms.Label lblCount;
+        private System.Windows.Forms.Label lblCount3;
     }
 }
