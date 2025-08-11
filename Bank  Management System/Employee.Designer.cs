@@ -39,7 +39,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtInterestRate = new System.Windows.Forms.TextBox();
+            this.txtSalary = new System.Windows.Forms.TextBox();
             this.txtPosition = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtEmpId = new System.Windows.Forms.TextBox();
@@ -189,15 +189,15 @@
             this.label1.TabIndex = 42;
             this.label1.Text = "Employee ID";
             // 
-            // txtInterestRate
+            // txtSalary
             // 
-            this.txtInterestRate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtInterestRate.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtInterestRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInterestRate.Location = new System.Drawing.Point(359, 366);
-            this.txtInterestRate.Name = "txtInterestRate";
-            this.txtInterestRate.Size = new System.Drawing.Size(344, 27);
-            this.txtInterestRate.TabIndex = 41;
+            this.txtSalary.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSalary.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSalary.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSalary.Location = new System.Drawing.Point(359, 366);
+            this.txtSalary.Name = "txtSalary";
+            this.txtSalary.Size = new System.Drawing.Size(344, 27);
+            this.txtSalary.TabIndex = 41;
             // 
             // txtPosition
             // 
@@ -244,7 +244,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtInterestRate);
+            this.Controls.Add(this.txtSalary);
             this.Controls.Add(this.txtPosition);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.txtEmpId);
@@ -268,7 +268,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtInterestRate;
+        private System.Windows.Forms.TextBox txtSalary;
         private System.Windows.Forms.TextBox txtPosition;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtEmpId;
