@@ -50,5 +50,12 @@ namespace Bank__Management_System
             dash.Show();
             this.Hide();
         }
+
+        private void btnEmployee_Click(object sender, EventArgs e)
+        {
+            Employee emp = new Transactions();
+            acc.Show();
+            this.Hide();
+        }
     }
 }

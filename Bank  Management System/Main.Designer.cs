@@ -124,6 +124,7 @@
             this.btnEmployee.TabIndex = 5;
             this.btnEmployee.Text = "Employee";
             this.btnEmployee.UseVisualStyleBackColor = false;
+            this.btnEmployee.Click += new System.EventHandler(this.btnEmployee_Click);
             // 
             // btnDashboard
             // 
