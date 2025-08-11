@@ -53,8 +53,8 @@ namespace Bank__Management_System
 
         private void btnEmployee_Click(object sender, EventArgs e)
         {
-            Employee emp = new Transactions();
-            acc.Show();
+            Employee emp = new Employee();
+            emp.Show();
             this.Hide();
         }
     }
