@@ -26,11 +26,10 @@ namespace Bank__Management_System
         private void Employee_Load(object sender, EventArgs e)
         {
 
-            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
-            {
+            
                
                 LoadEmployee();
-            }
+            
         }
 
         public void LoadEmployee()
