@@ -76,7 +76,7 @@ namespace Bank__Management_System
             txtName.Clear();
             txtPosition.Clear();
             txtSalary.Clear();
-           
+            txtEmpId.Focus();
         }
     }
 }
