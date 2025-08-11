@@ -20,8 +20,8 @@ namespace Bank__Management_System
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-           
-            }
+            UpdateAllLabels();
+        }
 
 
         private void display1()
