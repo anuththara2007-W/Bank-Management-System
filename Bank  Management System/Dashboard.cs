@@ -33,11 +33,7 @@ namespace Bank__Management_System
                 Int32 count = Convert.ToInt32(comm.ExecuteScalar());
                 if (count > 0)
                 {
-                    SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM emptab", con);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-                    dataGridView1.DataSource = dt;
-                }
+                    lblCount1.Text = count.ToString();
                 else
                 {
                     MessageBox.Show("No records found.");
