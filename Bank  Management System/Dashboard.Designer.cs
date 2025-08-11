@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.label1 = new System.Windows.Forms.Label();
-            this.lblcount1 = new System.Windows.Forms.Label();
+            this.lblCount1 = new System.Windows.Forms.Label();
             this.btnGoBack = new System.Windows.Forms.Button();
             this.lblCount2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -45,16 +45,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
-            // lblcount1
+            // lblCount1
             // 
-            this.lblcount1.AutoSize = true;
-            this.lblcount1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(255)))), ((int)(((byte)(237)))));
-            this.lblcount1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcount1.Location = new System.Drawing.Point(410, 171);
-            this.lblcount1.Name = "lblcount1";
-            this.lblcount1.Size = new System.Drawing.Size(64, 69);
-            this.lblcount1.TabIndex = 1;
-            this.lblcount1.Text = "0";
+            this.lblCount1.AutoSize = true;
+            this.lblCount1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(255)))), ((int)(((byte)(237)))));
+            this.lblCount1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCount1.Location = new System.Drawing.Point(410, 171);
+            this.lblCount1.Name = "lblCount1";
+            this.lblCount1.Size = new System.Drawing.Size(64, 69);
+            this.lblCount1.TabIndex = 1;
+            this.lblCount1.Text = "0";
             // 
             // btnGoBack
             // 
@@ -106,7 +106,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblCount2);
             this.Controls.Add(this.btnGoBack);
-            this.Controls.Add(this.lblcount1);
+            this.Controls.Add(this.lblCount1);
             this.Controls.Add(this.label1);
             this.Name = "Dashboard";
             this.Text = "Dashboard";
@@ -119,7 +119,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblcount1;
+        private System.Windows.Forms.Label lblCount1;
         private System.Windows.Forms.Button btnGoBack;
         private System.Windows.Forms.Label lblCount2;
         private System.Windows.Forms.Label label4;
