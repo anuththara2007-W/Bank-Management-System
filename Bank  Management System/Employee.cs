@@ -63,5 +63,10 @@ namespace Bank__Management_System
                 }
             }
         }
+
+        private void LoadEmployee()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
