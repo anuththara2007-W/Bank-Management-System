@@ -73,8 +73,8 @@ namespace Bank__Management_System
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtEmpId.Clear();
-            txt.Clear();
-            txtAmount.Clear();
+            txtName.Clear();
+            txtPosition.Clear();
             txtInterestRate.Clear();
             txtCusName.Clear();
             dateTimePicker1.Value = DateTime.Today;
