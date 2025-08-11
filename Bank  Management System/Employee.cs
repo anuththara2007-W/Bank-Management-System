@@ -29,7 +29,7 @@ namespace Bank__Management_System
             
         }
 
-        public void LoadEmployee()
+        private void LoadEmployee()
         {
             using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
             {
