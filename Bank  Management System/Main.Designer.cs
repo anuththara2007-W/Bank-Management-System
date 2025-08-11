@@ -107,6 +107,7 @@
             this.btnLoan.TabIndex = 4;
             this.btnLoan.Text = "Loan";
             this.btnLoan.UseVisualStyleBackColor = false;
+            this.btnLoan.Click += new System.EventHandler(this.btnLoan_Click);
             // 
             // btnEmployee
             // 

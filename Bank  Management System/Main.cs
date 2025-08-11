@@ -57,5 +57,10 @@ namespace Bank__Management_System
             emp.Show();
             this.Hide();
         }
+
+        private void btnLoan_Click(object sender, EventArgs e)
+        {
+            Loan 
+        }
     }
 }
