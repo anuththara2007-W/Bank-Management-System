@@ -24,7 +24,7 @@ namespace Bank__Management_System
             }
 
 
-        private void display()
+        private void display1()
         {
             using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
             {
@@ -45,7 +45,7 @@ namespace Bank__Management_System
             }
         }
 
-        private void display()
+        private void display2()
         {
             using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
             {
@@ -66,7 +66,7 @@ namespace Bank__Management_System
             }
         }
 
-        private void display()
+        private void display3()
         {
             using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
             {
