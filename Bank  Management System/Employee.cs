@@ -129,7 +129,7 @@ namespace Bank__Management_System
                         btnClear_Click(null, null);
                     }
                     else
-                        MessageBox.Show("No record found with that Loan ID.");
+                        MessageBox.Show("No record found with that Employee ID.");
 
                     LoadEmployee();
                 }
