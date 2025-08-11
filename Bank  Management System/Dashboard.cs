@@ -24,7 +24,14 @@ namespace Bank__Management_System
             }
 
 
-        private  void 
+        private  void display()
+        {
+            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+            {
+                con.Open();
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Employee", con);
+            }
+        }
         private void btnGoBack_Click(object sender, EventArgs e)
         {
             Login gonow = new Login();
