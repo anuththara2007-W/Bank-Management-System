@@ -13,64 +13,43 @@ namespace Bank__Management_System
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            display1();
-            display2();
-            display3();
+            displayCustomers();
+            displayEmployees();
+            displayLoans();
         }
 
-        private void display1()
+        private void displayCustomers()
         {
             using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
             {
                 con.Open();
-                SqlCommand comm = new SqlCommand("SELECT COUNT(*) FROM Employee", con);
-                Int32 count = Convert.ToInt32(comm.ExecuteScalar());
-                if (count > 0)
-                {
-                    lblCount1.Text = count.ToString();
-                }
-                else
-                {
-                    lblCount1.Text = "0";
-                }
+                SqlCommand comm = new SqlCommand("SELECT COUNT(*) FROM customertab", con);
+                int count = Convert.ToInt32(comm.ExecuteScalar());
+                lblCount1.Text = count > 0 ? count.ToString() : "0";
                 con.Close();
             }
         }
 
-        private void display2()
+        private void displayEmployees()
         {
             using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
             {
                 con.Open();
-                SqlCommand comm = new SqlCommand("SELECT COUNT(*) FROM Loan", con);
-                Int32 count = Convert.ToInt32(comm.ExecuteScalar());
-                if (count > 0)
-                {
-                    lblCount2.Text = count.ToString();
-                }
-                else
-                {
-                    lblCount2.Text = "0";
-                }
+                SqlCommand comm = new SqlCommand("SELECT COUNT(*) FROM emptab", con);
+                int count = Convert.ToInt32(comm.ExecuteScalar());
+                lblCount2.Text = count > 0 ? count.ToString() : "0";
                 con.Close();
             }
         }
 
-        private void display3()
+        private void displayLoans()
         {
             using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
             {
                 con.Open();
-                SqlCommand comm = new SqlCommand("SELECT COUNT(*) FROM Customer", con);
-                Int32 count = Convert.ToInt32(comm.ExecuteScalar());
-                if (count > 0)
-                {
-                    lblCount3.Text = count.ToString();
-                }
-                else
-                {
-                    lblCount3.Text = "0";
-                }
+                SqlCommand comm = new SqlCommand("SELECT COUNT(*) FROM loantab", con);
+                int count = Convert.ToInt32(comm.ExecuteScalar());
+                lblCount3.Text = count > 0 ? count.ToString() : "0";
                 con.Close();
             }
         }
