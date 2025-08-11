@@ -100,7 +100,7 @@ namespace Bank__Management_System
                     if (rows > 0)
                         MessageBox.Show("Employee record updated successfully");
                     else
-                        MessageBox.Show("No record found with that Loan ID.");
+                        MessageBox.Show("No record found with that Employee ID.");
 
                     LoadEmployee();
                 }
