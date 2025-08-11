@@ -72,8 +72,8 @@ namespace Bank__Management_System
      
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtLoanID.Clear();
-            txtLoanType.Clear();
+            txtEmpId.Clear();
+            txt.Clear();
             txtAmount.Clear();
             txtInterestRate.Clear();
             txtCusName.Clear();
