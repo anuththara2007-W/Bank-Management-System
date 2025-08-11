@@ -287,6 +287,7 @@
             this.Controls.Add(this.txtEmpId);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Employee";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Employee";
             this.Load += new System.EventHandler(this.Employee_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
