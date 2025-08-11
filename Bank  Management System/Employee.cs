@@ -90,7 +90,7 @@ namespace Bank__Management_System
                         "UPDATE Loan SET name=@name, position=@posiion, salary=@salary WHERE eid=@eid", con);
 
                     cmd.Parameters.AddWithValue("@EmpID", int.Parse(txtEmpId.Text));
-                    cmd.Parameters.AddWithValue("@LoanType", txtLoanType.Text);
+                    cmd.Parameters.AddWithValue("@LoanType", txtName.Text);
                     cmd.Parameters.AddWithValue("@Amount", decimal.Parse(txtAmount.Text));
                     cmd.Parameters.AddWithValue("@InterestRate", decimal.Parse(txtInterestRate.Text));
                     cmd.Parameters.AddWithValue("@LoanDate", dateTimePicker1.Value);
