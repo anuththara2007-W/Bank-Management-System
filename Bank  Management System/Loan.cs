@@ -119,7 +119,7 @@
                         MessageBox.Show("Error deleting record: " + ex.Message);
                     }
                 }
-            }
+            
 
             private void btnClear_Click(object sender, EventArgs e)
             {
