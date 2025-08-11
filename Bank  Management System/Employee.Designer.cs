@@ -43,7 +43,9 @@
             this.txtPosition = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtEmpId = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -230,11 +232,27 @@
             this.txtEmpId.Size = new System.Drawing.Size(344, 27);
             this.txtEmpId.TabIndex = 38;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.WindowText;
+            this.dataGridView1.Location = new System.Drawing.Point(79, 513);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1128, 233);
+            this.dataGridView1.TabIndex = 55;
+            // 
             // Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 785);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnDelete);
@@ -252,6 +270,7 @@
             this.Name = "Employee";
             this.Text = "Employee";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,5 +291,6 @@
         private System.Windows.Forms.TextBox txtPosition;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtEmpId;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
