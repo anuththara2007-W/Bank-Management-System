@@ -68,6 +68,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BankDBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="BankDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BankDBDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Bank__Management_System\Properties\Resources.cs" />
     <Compile Include="Customer.cs">
       <SubType>Form</SubType>
@@ -131,6 +136,17 @@
     </None>
     <None Include="BankDBDataSet.xss">
       <DependentUpon>BankDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BankDBDataSet1.xsc">
+      <DependentUpon>BankDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BankDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BankDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BankDBDataSet1.xss">
+      <DependentUpon>BankDBDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
