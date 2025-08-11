@@ -25,10 +25,22 @@ namespace Bank__Management_System
 
         private void Employee_Load(object sender, EventArgs e)
         {
-            LoadEmployee();
-           
+
+            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+            {
+                con.Open();
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Loan", con);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+                LoadEmployee();
+            }
         }
 
+        public void LoadEmployee()
+        {
+
+        }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
