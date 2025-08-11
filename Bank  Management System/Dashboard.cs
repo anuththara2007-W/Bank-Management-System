@@ -44,6 +44,48 @@ namespace Bank__Management_System
                 con.Close();
             }
         }
+
+        private void display()
+        {
+            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+            {
+                con.Open();
+                SqlCommand comm = new SqlCommand("SELECT COUNT(*) FROM emptab", con);
+                Int32 count = Convert.ToInt32(comm.ExecuteScalar());
+                if (count > 0)
+                {
+                    lblCount1.Text = count.ToString(count.ToString());
+
+
+                }
+                else
+                {
+                    lblCount1.Text = "0";
+                }
+                con.Close();
+            }
+        }
+
+        private void display()
+        {
+            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+            {
+                con.Open();
+                SqlCommand comm = new SqlCommand("SELECT COUNT(*) FROM emptab", con);
+                Int32 count = Convert.ToInt32(comm.ExecuteScalar());
+                if (count > 0)
+                {
+                    lblCount1.Text = count.ToString(count.ToString());
+
+
+                }
+                else
+                {
+                    lblCount1.Text = "0";
+                }
+                con.Close();
+            }
+        }
         private void btnGoBack_Click(object sender, EventArgs e)
         {
             Login gonow = new Login();
