@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bank__Management_System
@@ -16,11 +10,6 @@ namespace Bank__Management_System
         public Employee()
         {
             InitializeComponent();
-        }
-
-        private void txtAmount_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void Employee_Load(object sender, EventArgs e)
@@ -38,7 +27,6 @@ namespace Bank__Management_System
                 da.Fill(dt);
                 dataGridView1.DataSource = dt;
             }
-
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -48,16 +36,17 @@ namespace Bank__Management_System
                 con.Open();
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Employee VALUES (@LoanID,@LoanType,@Amount,@InterestRate,@LoanDate,@CustomerName)", con);
+                    SqlCommand cmd = new SqlCommand(
+                        "INSERT INTO Employee (EID, Name, Position, Salary) VALUES (@EID, @Name, @Position, @Salary)", con);
 
-                    cmd.Parameters.AddWithValue("@LoanID", int.Parse(txtEmpId.Text));
-                    cmd.Parameters.AddWithValue("@LoanType", txtName.Text);
-                    cmd.Parameters.AddWithValue("@InterestRate", decimal.Parse(txtPosition.Text));
-                    cmd.Parameters.AddWithValue("@CustomerName", txtSalary.Text);
+                    cmd.Parameters.AddWithValue("@EID", int.Parse(txtEmpId.Text));
+                    cmd.Parameters.AddWithValue("@Name", txtName.Text);
+                    cmd.Parameters.AddWithValue("@Position", txtPosition.Text);
+                    cmd.Parameters.AddWithValue("@Salary", txtSalary.Text);
 
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Loan record saved successfully");
+                    MessageBox.Show("Employee record saved successfully");
                     btnClear_Click(null, null);
                     LoadEmployee();
                 }
@@ -68,21 +57,6 @@ namespace Bank__Management_System
             }
         }
 
-        private void LoadEmployee()
-        {
-            throw new NotImplementedException();
-        }
-
-     
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            txtEmpId.Clear();
-            txtName.Clear();
-            txtPosition.Clear();
-            txtSalary.Clear();
-            txtEmpId.Focus();
-        }
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
@@ -91,13 +65,12 @@ namespace Bank__Management_System
                 try
                 {
                     SqlCommand cmd = new SqlCommand(
-                        "UPDATE Employee SET name=@name, position=@posiion, salary=@salary WHERE eid=@eid", con);
+                        "UPDATE Employee SET Name=@Name, Position=@Position, Salary=@Salary WHERE EID=@EID", con);
 
-                    cmd.Parameters.AddWithValue("@EmpID", int.Parse(txtEmpId.Text));
-                    cmd.Parameters.AddWithValue("@LoanType", txtName.Text);
-                    cmd.Parameters.AddWithValue("@Amount", txtPosition.Text);
-                    cmd.Parameters.AddWithValue("@InterestRate", decimal.Parse(txtSalary.Text));
-                   
+                    cmd.Parameters.AddWithValue("@EID", int.Parse(txtEmpId.Text));
+                    cmd.Parameters.AddWithValue("@Name", txtName.Text);
+                    cmd.Parameters.AddWithValue("@Position", txtPosition.Text);
+                    cmd.Parameters.AddWithValue("@Salary", txtSalary.Text);
 
                     int rows = cmd.ExecuteNonQuery();
 
@@ -122,14 +95,14 @@ namespace Bank__Management_System
                 con.Open();
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("DELETE FROM Loan WHERE EID=@EID", con);
-                    cmd.Parameters.AddWithValue("@LoanID", int.Parse(txtEmpId.Text));
+                    SqlCommand cmd = new SqlCommand("DELETE FROM Employee WHERE EID=@EID", con);
+                    cmd.Parameters.AddWithValue("@EID", int.Parse(txtEmpId.Text));
 
                     int rows = cmd.ExecuteNonQuery();
 
                     if (rows > 0)
                     {
-                        MessageBox.Show("Loan record deleted successfully");
+                        MessageBox.Show("Employee record deleted successfully");
                         btnClear_Click(null, null);
                     }
                     else
@@ -142,6 +115,15 @@ namespace Bank__Management_System
                     MessageBox.Show("Error deleting record: " + ex.Message);
                 }
             }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtEmpId.Clear();
+            txtName.Clear();
+            txtPosition.Clear();
+            txtSalary.Clear();
+            txtEmpId.Focus();
         }
     }
 }
