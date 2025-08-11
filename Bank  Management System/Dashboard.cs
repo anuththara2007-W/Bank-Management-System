@@ -31,6 +31,7 @@ namespace Bank__Management_System
                 con.Open();
                 SqlCommand conn = new SqlCommand("SELECT COUNT(*) FROM emptab", con);
 
+
             }
         }
         private void btnGoBack_Click(object sender, EventArgs e)
