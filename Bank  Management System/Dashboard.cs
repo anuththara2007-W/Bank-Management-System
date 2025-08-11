@@ -30,7 +30,7 @@ namespace Bank__Management_System
             {
                 con.Open();
                 SqlCommand conn = new SqlCommand("SELECT COUNT(*) FROM emptab", con);
-                int32 count = (int)conn.ExecuteScalar();
+                int32 count = Convert.ExecuteScalar();
 
             }
         }
