@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Employee));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnGoBack = new System.Windows.Forms.Button();
@@ -44,8 +45,12 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtEmpId = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.bankDBDataSet1 = new Bank__Management_System.BankDBDataSet1();
+            this.bankDBDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bankDBDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bankDBDataSet1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -74,6 +79,7 @@
             this.btnGoBack.TabIndex = 54;
             this.btnGoBack.Text = "Go Back";
             this.btnGoBack.UseVisualStyleBackColor = false;
+            this.btnGoBack.Click += new System.EventHandler(this.btnGoBack_Click);
             // 
             // btnClear
             // 
@@ -238,10 +244,12 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.DataSource = this.bankDBDataSet1BindingSource;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.WindowText;
             this.dataGridView1.Location = new System.Drawing.Point(79, 513);
             this.dataGridView1.Name = "dataGridView1";
@@ -249,6 +257,16 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1128, 233);
             this.dataGridView1.TabIndex = 55;
+            // 
+            // bankDBDataSet1
+            // 
+            this.bankDBDataSet1.DataSetName = "BankDBDataSet1";
+            this.bankDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bankDBDataSet1BindingSource
+            // 
+            this.bankDBDataSet1BindingSource.DataSource = this.bankDBDataSet1;
+            this.bankDBDataSet1BindingSource.Position = 0;
             // 
             // Employee
             // 
@@ -275,6 +293,8 @@
             this.Load += new System.EventHandler(this.Employee_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bankDBDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bankDBDataSet1BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,5 +316,7 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtEmpId;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource bankDBDataSet1BindingSource;
+        private BankDBDataSet1 bankDBDataSet1;
     }
 }

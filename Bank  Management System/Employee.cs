@@ -125,5 +125,12 @@ namespace Bank__Management_System
             txtSalary.Clear();
             txtEmpId.Focus();
         }
+
+        private void btnGoBack_Click(object sender, EventArgs e)
+        {
+            Main admins = new Main();
+            admins.Show();
+            this.Hide();
+        }
     }
 }
