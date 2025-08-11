@@ -34,13 +34,10 @@ namespace Bank__Management_System
                 if (count > 0)
                 {
                     lblCount1.Text = count.ToString(count.ToString());
-                else
-                {
-                    MessageBox.Show("No records found.");
-                }
 
+
+                }
             }
-        }
         private void btnGoBack_Click(object sender, EventArgs e)
         {
             Login gonow = new Login();
