@@ -34,6 +34,7 @@
             this.btnGoBack = new System.Windows.Forms.Button();
             this.lblCount2 = new System.Windows.Forms.Label();
             this.lblCount3 = new System.Windows.Forms.Label();
+            this.btnGo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -96,6 +97,24 @@
             this.lblCount3.TabIndex = 57;
             this.lblCount3.Text = "0";
             // 
+            // btnGo
+            // 
+            this.btnGo.BackColor = System.Drawing.Color.White;
+            this.btnGo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGo.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnGo.FlatAppearance.BorderSize = 0;
+            this.btnGo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnGo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnGo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGo.Location = new System.Drawing.Point(48, 605);
+            this.btnGo.Name = "btnGo";
+            this.btnGo.Size = new System.Drawing.Size(171, 31);
+            this.btnGo.TabIndex = 58;
+            this.btnGo.Text = "Go Back";
+            this.btnGo.UseVisualStyleBackColor = false;
+            this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -103,6 +122,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1280, 785);
+            this.Controls.Add(this.btnGo);
             this.Controls.Add(this.lblCount3);
             this.Controls.Add(this.lblCount2);
             this.Controls.Add(this.btnGoBack);
@@ -123,5 +143,6 @@
         private System.Windows.Forms.Button btnGoBack;
         private System.Windows.Forms.Label lblCount2;
         private System.Windows.Forms.Label lblCount3;
+        private System.Windows.Forms.Button btnGo;
     }
 }
