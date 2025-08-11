@@ -47,8 +47,7 @@ namespace Bank__Management_System
                     SqlCommand cmd = new SqlCommand("INSERT INTO Employee VALUES (@LoanID,@LoanType,@Amount,@InterestRate,@LoanDate,@CustomerName)", con);
 
                     cmd.Parameters.AddWithValue("@LoanID", int.Parse(txtEmpId.Text));
-                    cmd.Parameters.AddWithValue("@LoanType", txtLoanType.Text);
-                    cmd.Parameters.AddWithValue("@Amount", decimal.Parse(txtAmount.Text));
+                    cmd.Parameters.AddWithValue("@LoanType", txtName.Text);
                     cmd.Parameters.AddWithValue("@InterestRate", decimal.Parse(txtInterestRate.Text));
                     cmd.Parameters.AddWithValue("@LoanDate", dateTimePicker1.Value);
                     cmd.Parameters.AddWithValue("@CustomerName", txtCusName.Text);
