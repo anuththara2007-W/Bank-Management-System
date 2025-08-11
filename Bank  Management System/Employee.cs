@@ -98,7 +98,7 @@ namespace Bank__Management_System
                     int rows = cmd.ExecuteNonQuery();
 
                     if (rows > 0)
-                        MessageBox.Show("Loan record updated successfully");
+                        MessageBox.Show("Employee record updated successfully");
                     else
                         MessageBox.Show("No record found with that Loan ID.");
 
