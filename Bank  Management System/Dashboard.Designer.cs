@@ -129,6 +129,7 @@
             this.Controls.Add(this.lblCount1);
             this.Controls.Add(this.label1);
             this.Name = "Dashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.ResumeLayout(false);
