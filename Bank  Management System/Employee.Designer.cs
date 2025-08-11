@@ -269,6 +269,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "Employee";
             this.Text = "Employee";
+            this.Load += new System.EventHandler(this.Employee_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
