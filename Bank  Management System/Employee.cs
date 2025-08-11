@@ -87,7 +87,7 @@ namespace Bank__Management_System
                 try
                 {
                     SqlCommand cmd = new SqlCommand(
-                        "UPDATE Loan SET name=@name, position=@posiion, salary=@salary WHERE eid=@eid", con);
+                        "UPDATE Employee SET name=@name, position=@posiion, salary=@salary WHERE eid=@eid", con);
 
                     cmd.Parameters.AddWithValue("@EmpID", int.Parse(txtEmpId.Text));
                     cmd.Parameters.AddWithValue("@LoanType", txtName.Text);
@@ -107,6 +107,35 @@ namespace Bank__Management_System
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error updating record: " + ex.Message);
+                }
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+            {
+                con.Open();
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("DELETE FROM Loan WHERE LoanID=@LoanID", con);
+                    cmd.Parameters.AddWithValue("@LoanID", int.Parse(txtLoanID.Text));
+
+                    int rows = cmd.ExecuteNonQuery();
+
+                    if (rows > 0)
+                    {
+                        MessageBox.Show("Loan record deleted successfully");
+                        btnClear_Click(null, null);
+                    }
+                    else
+                        MessageBox.Show("No record found with that Loan ID.");
+
+                    LoadLoans();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error deleting record: " + ex.Message);
                 }
             }
         }
