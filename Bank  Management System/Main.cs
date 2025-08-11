@@ -46,7 +46,7 @@ namespace Bank__Management_System
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            Transactions acc = new Transactions();
+           Dashboard acc = new Dashboard();
             acc.Show();
             this.Hide();
         }
