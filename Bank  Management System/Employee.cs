@@ -75,9 +75,8 @@ namespace Bank__Management_System
             txtEmpId.Clear();
             txtName.Clear();
             txtPosition.Clear();
-            txt.Clear();
-            txtCusName.Clear();
-            dateTimePicker1.Value = DateTime.Today;
+            txtSalary.Clear();
+           
         }
     }
 }
