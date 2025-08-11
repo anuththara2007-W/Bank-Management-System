@@ -91,7 +91,7 @@ namespace Bank__Management_System
 
                     cmd.Parameters.AddWithValue("@EmpID", int.Parse(txtEmpId.Text));
                     cmd.Parameters.AddWithValue("@LoanType", txtName.Text);
-                    cmd.Parameters.AddWithValue("@Amount", txtPosition.Text));
+                    cmd.Parameters.AddWithValue("@Amount", txtPosition.Text);
                     cmd.Parameters.AddWithValue("@InterestRate", decimal.Parse(txtSalary.Text));
                    
 
