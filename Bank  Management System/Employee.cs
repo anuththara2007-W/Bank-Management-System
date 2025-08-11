@@ -92,7 +92,7 @@ namespace Bank__Management_System
                     cmd.Parameters.AddWithValue("@EmpID", int.Parse(txtEmpId.Text));
                     cmd.Parameters.AddWithValue("@LoanType", txtName.Text);
                     cmd.Parameters.AddWithValue("@Amount", decimal.Parse(txtAmount.Text));
-                    cmd.Parameters.AddWithValue("@InterestRate", decimal.Parse(txtInterestRate.Text));
+                    cmd.Parameters.AddWithValue("@InterestRate", decimal.Parse(txtSalary.Text));
                     cmd.Parameters.AddWithValue("@LoanDate", dateTimePicker1.Value);
                     cmd.Parameters.AddWithValue("@CustomerName", txtCusName.Text);
 
