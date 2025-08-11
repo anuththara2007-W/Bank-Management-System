@@ -26,7 +26,6 @@ namespace Bank__Management_System
         private void Employee_Load(object sender, EventArgs e)
         {
             LoadEmployee();
-            
         }
 
         private void LoadEmployee()
