@@ -173,9 +173,9 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Location = new System.Drawing.Point(114, 343);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 25);
+            this.label2.Size = new System.Drawing.Size(65, 25);
             this.label2.TabIndex = 43;
-            this.label2.Text = "Interest Rate";
+            this.label2.Text = "Salary";
             // 
             // label1
             // 
