@@ -102,7 +102,7 @@ namespace Bank__Management_System
                     else
                         MessageBox.Show("No record found with that Loan ID.");
 
-                    LoadLoans();
+                    LoadEmployee();
                 }
                 catch (Exception ex)
                 {
