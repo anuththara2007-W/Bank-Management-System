@@ -16,5 +16,10 @@ namespace Bank__Management_System
         {
             InitializeComponent();
         }
+
+        private void txtAmount_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
