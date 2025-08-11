@@ -16,5 +16,17 @@ namespace Bank__Management_System
         {
             InitializeComponent();
         }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGoBack_Click(object sender, EventArgs e)
+        {
+            Form1
+            admins.Show();
+            this.Hide();
+        }
     }
 }
