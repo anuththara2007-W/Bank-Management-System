@@ -149,9 +149,9 @@
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label4.Location = new System.Drawing.Point(114, 233);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 25);
+            this.label4.Size = new System.Drawing.Size(64, 25);
             this.label4.TabIndex = 45;
-            this.label4.Text = "Loan Type";
+            this.label4.Text = "Name";
             // 
             // label3
             // 
@@ -161,9 +161,9 @@
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.Location = new System.Drawing.Point(114, 287);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 25);
+            this.label3.Size = new System.Drawing.Size(88, 25);
             this.label3.TabIndex = 44;
-            this.label3.Text = "Amount";
+            this.label3.Text = "Position ";
             // 
             // label2
             // 
