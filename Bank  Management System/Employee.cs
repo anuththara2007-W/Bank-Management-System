@@ -39,6 +39,11 @@ namespace Bank__Management_System
 
         public void LoadEmployee()
         {
+            con.Open();
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Loan", con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
 
         }
 
