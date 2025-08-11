@@ -20,13 +20,11 @@ namespace Bank__Management_System
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
-            {
-                con.Open();
-                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Employee", con);
-            }
+           
             }
 
+
+        private  void 
         private void btnGoBack_Click(object sender, EventArgs e)
         {
             Login gonow = new Login();
