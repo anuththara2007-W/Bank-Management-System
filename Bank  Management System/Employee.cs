@@ -55,7 +55,7 @@ namespace Bank__Management_System
 
                     MessageBox.Show("Loan record saved successfully");
                     btnClear_Click(null, null);
-                    LoadLoans();
+                    LoadEmployee();
                 }
                 catch (Exception ex)
                 {
