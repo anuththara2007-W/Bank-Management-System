@@ -29,7 +29,7 @@ namespace Bank__Management_System
             using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
             {
                 con.Open();
-                SqlCommand conn = new SqlCommand("SELECT COUNT(*) FROM Customer", con);
+                SqlCommand conn = new SqlCommand("SELECT COUNT(*) FROM emptab", con);
 
             }
         }
