@@ -147,7 +147,7 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.label4.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(114, 233);
+            this.label4.Location = new System.Drawing.Point(160, 246);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 25);
             this.label4.TabIndex = 45;
@@ -159,7 +159,7 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(114, 287);
+            this.label3.Location = new System.Drawing.Point(160, 311);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 25);
             this.label3.TabIndex = 44;
@@ -171,7 +171,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(114, 343);
+            this.label2.Location = new System.Drawing.Point(160, 371);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 25);
             this.label2.TabIndex = 43;
@@ -183,7 +183,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(114, 181);
+            this.label1.Location = new System.Drawing.Point(160, 183);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 25);
             this.label1.TabIndex = 42;
