@@ -259,7 +259,7 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.DataSource = this.bankDBDataSet1BindingSource;
+            this.dataGridView1.DataSource = this.bankDBDataSet1;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.WindowText;
             this.dataGridView1.Location = new System.Drawing.Point(79, 513);
             this.dataGridView1.Name = "dataGridView1";
