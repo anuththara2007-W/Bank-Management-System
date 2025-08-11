@@ -44,7 +44,7 @@ namespace Bank__Management_System
                 con.Open();
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Employees VALUES (@LoanID,@LoanType,@Amount,@InterestRate,@LoanDate,@CustomerName)", con);
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Employee VALUES (@LoanID,@LoanType,@Amount,@InterestRate,@LoanDate,@CustomerName)", con);
 
                     cmd.Parameters.AddWithValue("@LoanID", int.Parse(txtLoanID.Text));
                     cmd.Parameters.AddWithValue("@LoanType", txtLoanType.Text);
