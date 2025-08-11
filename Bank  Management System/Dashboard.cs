@@ -54,13 +54,13 @@ namespace Bank__Management_System
                 Int32 count = Convert.ToInt32(comm.ExecuteScalar());
                 if (count > 0)
                 {
-                    lblCount1.Text = count.ToString(count.ToString());
+                    lblCount2.Text = count.ToString(count.ToString());
 
 
                 }
                 else
                 {
-                    lblCount1.Text = "0";
+                    lblCount2.Text = "0";
                 }
                 con.Close();
             }
