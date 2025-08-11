@@ -31,6 +31,17 @@ namespace Bank__Management_System
                 con.Open();
                 SqlCommand comm = new SqlCommand("SELECT COUNT(*) FROM emptab", con);
                 Int32 count = Convert.ToInt32(comm.ExecuteScalar());
+                if (count > 0)
+                {
+                    SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM emptab", con);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                }
+                else
+                {
+                    MessageBox.Show("No records found.");
+                }
 
             }
         }
