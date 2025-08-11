@@ -38,6 +38,9 @@ namespace Bank__Management_System
 
                 }
                 else
+                {
+                    lblCount1.Text = "0";
+                }
             }
         }
         private void btnGoBack_Click(object sender, EventArgs e)
