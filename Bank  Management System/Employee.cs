@@ -87,7 +87,7 @@ namespace Bank__Management_System
                 try
                 {
                     SqlCommand cmd = new SqlCommand(
-                        "UPDATE Loan SET name=@name, position=@posiion, salary=@salary WHERE LoanID=@LoanID", con);
+                        "UPDATE Loan SET name=@name, position=@posiion, salary=@salary WHERE eid=@eid", con);
 
                     cmd.Parameters.AddWithValue("@LoanID", int.Parse(txtLoanID.Text));
                     cmd.Parameters.AddWithValue("@LoanType", txtLoanType.Text);
