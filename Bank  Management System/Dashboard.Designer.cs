@@ -32,7 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblcount1 = new System.Windows.Forms.Label();
             this.btnGoBack = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblCount2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -74,16 +74,16 @@
             this.btnGoBack.UseVisualStyleBackColor = false;
             this.btnGoBack.Click += new System.EventHandler(this.btnGoBack_Click);
             // 
-            // label3
+            // lblCount2
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(687, 171);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 69);
-            this.label3.TabIndex = 56;
-            this.label3.Text = "0";
+            this.lblCount2.AutoSize = true;
+            this.lblCount2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            this.lblCount2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCount2.Location = new System.Drawing.Point(687, 171);
+            this.lblCount2.Name = "lblCount2";
+            this.lblCount2.Size = new System.Drawing.Size(64, 69);
+            this.lblCount2.TabIndex = 56;
+            this.lblCount2.Text = "0";
             // 
             // label4
             // 
@@ -104,7 +104,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1280, 785);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblCount2);
             this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.lblcount1);
             this.Controls.Add(this.label1);
@@ -121,7 +121,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblcount1;
         private System.Windows.Forms.Button btnGoBack;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblCount2;
         private System.Windows.Forms.Label label4;
     }
 }
