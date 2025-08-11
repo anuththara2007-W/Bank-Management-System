@@ -24,7 +24,7 @@ namespace Bank__Management_System
 
         private void btnGoBack_Click(object sender, EventArgs e)
         {
-            Login gonow = new Form1();
+            Login gonow = new Login();
             gonow.Show();
             this.Hide();
         }
