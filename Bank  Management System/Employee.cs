@@ -78,5 +78,38 @@ namespace Bank__Management_System
             txtSalary.Clear();
             txtEmpId.Focus();
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+            {
+                con.Open();
+                try
+                {
+                    SqlCommand cmd = new SqlCommand(
+                        "UPDATE Loan SET name=@name, position=@posiion, InterestRate=@InterestRate, LoanDate=@LoanDate, CustomerName=@CustomerName WHERE LoanID=@LoanID", con);
+
+                    cmd.Parameters.AddWithValue("@LoanID", int.Parse(txtLoanID.Text));
+                    cmd.Parameters.AddWithValue("@LoanType", txtLoanType.Text);
+                    cmd.Parameters.AddWithValue("@Amount", decimal.Parse(txtAmount.Text));
+                    cmd.Parameters.AddWithValue("@InterestRate", decimal.Parse(txtInterestRate.Text));
+                    cmd.Parameters.AddWithValue("@LoanDate", dateTimePicker1.Value);
+                    cmd.Parameters.AddWithValue("@CustomerName", txtCusName.Text);
+
+                    int rows = cmd.ExecuteNonQuery();
+
+                    if (rows > 0)
+                        MessageBox.Show("Loan record updated successfully");
+                    else
+                        MessageBox.Show("No record found with that Loan ID.");
+
+                    LoadLoans();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error updating record: " + ex.Message);
+                }
+            }
+        }
     }
 }
