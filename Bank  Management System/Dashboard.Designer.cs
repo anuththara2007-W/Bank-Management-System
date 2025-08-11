@@ -68,7 +68,7 @@
             this.btnGoBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGoBack.Location = new System.Drawing.Point(48, 682);
             this.btnGoBack.Name = "btnGoBack";
-            this.btnGoBack.Size = new System.Drawing.Size(92, 31);
+            this.btnGoBack.Size = new System.Drawing.Size(171, 31);
             this.btnGoBack.TabIndex = 55;
             this.btnGoBack.Text = "Log Out";
             this.btnGoBack.UseVisualStyleBackColor = false;
