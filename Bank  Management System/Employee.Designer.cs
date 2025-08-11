@@ -40,9 +40,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtInterestRate = new System.Windows.Forms.TextBox();
-            this.txtAmount = new System.Windows.Forms.TextBox();
-            this.txtLoanType = new System.Windows.Forms.TextBox();
-            this.txtLoanID = new System.Windows.Forms.TextBox();
+            this.txtPosition = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtEmpId = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -199,36 +199,36 @@
             this.txtInterestRate.Size = new System.Drawing.Size(344, 27);
             this.txtInterestRate.TabIndex = 41;
             // 
-            // txtAmount
+            // txtPosition
             // 
-            this.txtAmount.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtAmount.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAmount.Location = new System.Drawing.Point(359, 306);
-            this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(344, 27);
-            this.txtAmount.TabIndex = 40;
-            this.txtAmount.TextChanged += new System.EventHandler(this.txtAmount_TextChanged);
+            this.txtPosition.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPosition.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPosition.Location = new System.Drawing.Point(359, 306);
+            this.txtPosition.Name = "txtPosition";
+            this.txtPosition.Size = new System.Drawing.Size(344, 27);
+            this.txtPosition.TabIndex = 40;
+            this.txtPosition.TextChanged += new System.EventHandler(this.txtAmount_TextChanged);
             // 
-            // txtLoanType
+            // txtName
             // 
-            this.txtLoanType.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLoanType.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtLoanType.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLoanType.Location = new System.Drawing.Point(359, 241);
-            this.txtLoanType.Name = "txtLoanType";
-            this.txtLoanType.Size = new System.Drawing.Size(344, 27);
-            this.txtLoanType.TabIndex = 39;
+            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(359, 241);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(344, 27);
+            this.txtName.TabIndex = 39;
             // 
-            // txtLoanID
+            // txtEmpId
             // 
-            this.txtLoanID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLoanID.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtLoanID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLoanID.Location = new System.Drawing.Point(359, 178);
-            this.txtLoanID.Name = "txtLoanID";
-            this.txtLoanID.Size = new System.Drawing.Size(344, 27);
-            this.txtLoanID.TabIndex = 38;
+            this.txtEmpId.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEmpId.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtEmpId.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmpId.Location = new System.Drawing.Point(359, 178);
+            this.txtEmpId.Name = "txtEmpId";
+            this.txtEmpId.Size = new System.Drawing.Size(344, 27);
+            this.txtEmpId.TabIndex = 38;
             // 
             // Employee
             // 
@@ -245,9 +245,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtInterestRate);
-            this.Controls.Add(this.txtAmount);
-            this.Controls.Add(this.txtLoanType);
-            this.Controls.Add(this.txtLoanID);
+            this.Controls.Add(this.txtPosition);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.txtEmpId);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Employee";
             this.Text = "Employee";
@@ -269,8 +269,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtInterestRate;
-        private System.Windows.Forms.TextBox txtAmount;
-        private System.Windows.Forms.TextBox txtLoanType;
-        private System.Windows.Forms.TextBox txtLoanID;
+        private System.Windows.Forms.TextBox txtPosition;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtEmpId;
     }
 }
