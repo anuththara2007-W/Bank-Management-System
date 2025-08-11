@@ -89,7 +89,7 @@ namespace Bank__Management_System
                     SqlCommand cmd = new SqlCommand(
                         "UPDATE Loan SET name=@name, position=@posiion, salary=@salary WHERE eid=@eid", con);
 
-                    cmd.Parameters.AddWithValue("@LoanID", int.Parse(txtLoanID.Text));
+                    cmd.Parameters.AddWithValue("@EmpID", int.Parse(txtEmpId.Text));
                     cmd.Parameters.AddWithValue("@LoanType", txtLoanType.Text);
                     cmd.Parameters.AddWithValue("@Amount", decimal.Parse(txtAmount.Text));
                     cmd.Parameters.AddWithValue("@InterestRate", decimal.Parse(txtInterestRate.Text));
