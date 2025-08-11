@@ -48,7 +48,7 @@ namespace Bank__Management_System
 
                     cmd.Parameters.AddWithValue("@LoanID", int.Parse(txtEmpId.Text));
                     cmd.Parameters.AddWithValue("@LoanType", txtName.Text);
-                    cmd.Parameters.AddWithValue("@InterestRate", decimal.Parse(txtInterestRate.Text));
+                    cmd.Parameters.AddWithValue("@InterestRate", decimal.Parse(txtPosition.Text));
                     cmd.Parameters.AddWithValue("@LoanDate", dateTimePicker1.Value);
                     cmd.Parameters.AddWithValue("@CustomerName", txtCusName.Text);
 
