@@ -43,5 +43,12 @@ namespace Bank__Management_System
             acc.Show();
             this.Hide();
         }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            Transactions acc = new Transactions();
+            acc.Show();
+            this.Hide();
+        }
     }
 }
