@@ -214,7 +214,6 @@
             this.txtPosition.Name = "txtPosition";
             this.txtPosition.Size = new System.Drawing.Size(344, 27);
             this.txtPosition.TabIndex = 40;
-            this.txtPosition.TextChanged += new System.EventHandler(this.txtAmount_TextChanged);
             // 
             // txtName
             // 
