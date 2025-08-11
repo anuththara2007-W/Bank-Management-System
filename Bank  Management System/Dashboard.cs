@@ -24,7 +24,7 @@ namespace Bank__Management_System
             }
 
 
-        private  void display()
+        private void display()
         {
             using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
             {
@@ -38,6 +38,7 @@ namespace Bank__Management_System
 
                 }
             }
+        }
         private void btnGoBack_Click(object sender, EventArgs e)
         {
             Login gonow = new Login();
