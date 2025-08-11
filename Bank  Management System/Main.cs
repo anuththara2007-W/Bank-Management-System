@@ -62,6 +62,7 @@ namespace Bank__Management_System
         {
             Loan ln = new Loan();
             ln.Show();
+            this.Hide();
         }
     }
 }
