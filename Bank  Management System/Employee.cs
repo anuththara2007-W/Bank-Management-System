@@ -119,7 +119,7 @@ namespace Bank__Management_System
                 try
                 {
                     SqlCommand cmd = new SqlCommand("DELETE FROM Loan WHERE LoanID=@LoanID", con);
-                    cmd.Parameters.AddWithValue("@LoanID", int.Parse(txtLoanID.Text));
+                    cmd.Parameters.AddWithValue("@LoanID", int.Parse(txtEmpId.Text));
 
                     int rows = cmd.ExecuteNonQuery();
 
