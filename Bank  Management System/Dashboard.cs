@@ -42,7 +42,7 @@ namespace Bank__Management_System
             using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
             {
                 con.Open();
-                SqlCommand comm = new SqlCommand("SELECT COUNT(*) FROM loantab", con);
+                SqlCommand comm = new SqlCommand("SELECT COUNT(*) FROM Loan", con);
                 Int32 count = Convert.ToInt32(comm.ExecuteScalar());
                 if (count > 0)
                 {
