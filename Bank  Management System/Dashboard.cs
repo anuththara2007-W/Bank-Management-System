@@ -30,6 +30,7 @@ namespace Bank__Management_System
             {
                 con.Open();
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Employee", con);
+
             }
         }
         private void btnGoBack_Click(object sender, EventArgs e)
