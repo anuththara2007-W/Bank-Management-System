@@ -60,7 +60,8 @@ namespace Bank__Management_System
 
         private void btnLoan_Click(object sender, EventArgs e)
         {
-            Loan 
+            Loan ln = new Loan();
+            ln.Show();
         }
     }
 }
