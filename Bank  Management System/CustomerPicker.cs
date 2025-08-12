@@ -51,5 +51,12 @@ namespace BankApp
                 this.Close();
             }
         }
+
+        
+
+        private void btnSelect_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
