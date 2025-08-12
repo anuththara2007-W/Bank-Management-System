@@ -29,22 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
-            this.label1 = new System.Windows.Forms.Label();
             this.lblCount1 = new System.Windows.Forms.Label();
             this.btnGoBack = new System.Windows.Forms.Button();
             this.lblCount2 = new System.Windows.Forms.Label();
             this.lblCount3 = new System.Windows.Forms.Label();
             this.btnGo = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
             // 
             // lblCount1
             // 
@@ -127,7 +117,6 @@
             this.Controls.Add(this.lblCount2);
             this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.lblCount1);
-            this.Controls.Add(this.label1);
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
@@ -138,8 +127,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblCount1;
         private System.Windows.Forms.Button btnGoBack;
         private System.Windows.Forms.Label lblCount2;
