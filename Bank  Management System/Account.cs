@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BankApp;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -200,6 +201,17 @@ namespace Bank__Management_System
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 dataGridView1.DataSource = dt;
+            }
+        }
+
+        private void btnPickCustomer_Click(object sender, EventArgs e)
+        {
+            using (var picker = new CustomerPicker())
+            {
+                if (picker.ShowDialog() == DialogResult.OK)
+                {
+                    txtCustomerID.Text = picker.SelectedCustomerID.ToString();
+                }
             }
         }
     }
