@@ -10,8 +10,6 @@ namespace Bank__Management_System
         public Account()
         {
             InitializeComponent();
-
-     
         }
 
         private void Account_Load(object sender, EventArgs e)
@@ -33,16 +31,16 @@ namespace Bank__Management_System
             }
         }
 
-        // Clear all input fields
+        // Clear inputs
         private void btnAdd_Click(object sender, EventArgs e)
         {
             txtAccountID.Clear();
             txtAccountType.Clear();
             txtBalance.Clear();
             txtname.Clear();
+            txtCustomerID.Clear();
             dateTimePicker1.Value = DateTime.Today;
             dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-
             txtAccountID.Focus();
         }
 
@@ -54,22 +52,30 @@ namespace Bank__Management_System
                 {
                     con.Open();
 
-                    SqlCommand cmd = new SqlCommand("INSERT INTO accounts (Account_ID, Account_Type, Balance, Date_Opened, Customer_Name) VALUES (@account_id, @account_type, @balance, @date_opened, @customer_name)", con);
+                    // Check if Customer_ID exists
+                    SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM Customers WHERE Customer_ID = @cid", con);
+                    checkCmd.Parameters.AddWithValue("@cid", int.Parse(txtCustomerID.Text));
+                    int exists = (int)checkCmd.ExecuteScalar();
+                    if (exists == 0)
+                    {
+                        MessageBox.Show("Customer ID not found! Please create the customer first.");
+                        return;
+                    }
+
+                    SqlCommand cmd = new SqlCommand("INSERT INTO accounts (Account_ID, Account_Type, Balance, Date_Opened, Customer_Name, Customer_ID) VALUES (@account_id, @account_type, @balance, @date_opened, @customer_name, @customer_id)", con);
 
                     cmd.Parameters.AddWithValue("@account_id", int.Parse(txtAccountID.Text));
                     cmd.Parameters.AddWithValue("@account_type", txtAccountType.Text);
                     cmd.Parameters.AddWithValue("@balance", decimal.Parse(txtBalance.Text));
                     cmd.Parameters.AddWithValue("@date_opened", dateTimePicker1.Value);
                     cmd.Parameters.AddWithValue("@customer_name", txtname.Text);
+                    cmd.Parameters.AddWithValue("@customer_id", int.Parse(txtCustomerID.Text));
 
                     cmd.ExecuteNonQuery();
                     con.Close();
 
                     MessageBox.Show("Record saved successfully");
-
-                    // Clear inputs after saving
                     btnAdd_Click(null, null);
-
                     LoadAccounts();
                 }
             }
@@ -88,7 +94,7 @@ namespace Bank__Management_System
                     con.Open();
 
                     SqlCommand cmd = new SqlCommand(
-                        "UPDATE accounts SET account_type = @account_type, balance = @balance, date_opened = @date_opened, customer_name = @customer_name WHERE account_id = @account_id",
+                        "UPDATE accounts SET account_type = @account_type, balance = @balance, date_opened = @date_opened, customer_name = @customer_name, customer_id = @customer_id WHERE account_id = @account_id",
                         con);
 
                     cmd.Parameters.AddWithValue("@account_id", int.Parse(txtAccountID.Text));
@@ -96,6 +102,7 @@ namespace Bank__Management_System
                     cmd.Parameters.AddWithValue("@balance", decimal.Parse(txtBalance.Text));
                     cmd.Parameters.AddWithValue("@date_opened", dateTimePicker1.Value);
                     cmd.Parameters.AddWithValue("@customer_name", txtname.Text);
+                    cmd.Parameters.AddWithValue("@customer_id", int.Parse(txtCustomerID.Text));
 
                     int rows = cmd.ExecuteNonQuery();
                     con.Close();
@@ -185,9 +192,7 @@ namespace Bank__Management_System
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             string searchText = txtSearch.Text;
-
-            using (SqlConnection con = new SqlConnection(
-                @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
             {
                 SqlDataAdapter da = new SqlDataAdapter(
                     "SELECT * FROM accounts WHERE customer_name LIKE '%" + searchText + "%'", con);
@@ -197,6 +202,5 @@ namespace Bank__Management_System
                 dataGridView1.DataSource = dt;
             }
         }
-
     }
 }
