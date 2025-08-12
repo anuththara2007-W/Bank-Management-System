@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace Bank__Management_System
 {
@@ -40,6 +33,16 @@ namespace Bank__Management_System
                 {
                     con.Open();
 
+                    // Check if Account_ID exists
+                    SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM accounts WHERE Account_ID = @aid", con);
+                    checkCmd.Parameters.AddWithValue("@aid", int.Parse(txtAccountID.Text));
+                    int exists = (int)checkCmd.ExecuteScalar();
+                    if (exists == 0)
+                    {
+                        MessageBox.Show("Account ID not found! Please create the account first.");
+                        return;
+                    }
+
                     SqlCommand cmd = new SqlCommand(
                         "INSERT INTO Transactions (TID, Transaction_Type, Amount, Transaction_Date, Account_ID) " +
                         "VALUES (@TID, @Transaction_Type, @Amount, @Transaction_Date, @Account_ID)", con);
@@ -54,10 +57,7 @@ namespace Bank__Management_System
                     con.Close();
 
                     MessageBox.Show("Record saved successfully");
-
-                    // Clear inputs after saving
                     btnClear_Click(null, null);
-
                     LoadTransactions();
                 }
             }
