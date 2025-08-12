@@ -9,11 +9,12 @@ namespace BankApp
     {
         public int SelectedAccountID { get; private set; }
         public string ConnectionString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
-
         public AccountPicker()
         {
             InitializeComponent();
+            this.Load += AccountPicker_Load; // ensures LoadAccounts runs
         }
+
 
         private void AccountPicker_Load(object sender, EventArgs e)
         {
