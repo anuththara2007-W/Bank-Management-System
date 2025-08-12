@@ -76,7 +76,7 @@ namespace Bank__Management_System
                 con.Open();
 
                 SqlCommand cmd = new SqlCommand(
-                    "UPDATE Customer SET Customer_Name = @Customer_Name, Phone = @Phone, Email = @Email, Address = @Address, Username = @Username, Password = @Password " +
+                    "UPDATE Customers SET Customer_Name = @Customer_Name, Phone = @Phone, Email = @Email, Address = @Address, Username = @Username, Password = @Password " +
                     "WHERE Customer_ID = @Customer_ID", con);
 
                 cmd.Parameters.AddWithValue("@Customer_ID", int.Parse(txtCustomerID.Text));
