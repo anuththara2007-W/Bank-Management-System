@@ -8,6 +8,8 @@ namespace Bank__Management_System
 {
     public partial class Account : Form
     {
+        string connString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
+
         public Account()
         {
             InitializeComponent();
@@ -20,11 +22,10 @@ namespace Bank__Management_System
 
         private void LoadAccounts()
         {
-            string connString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
             using (SqlConnection con = new SqlConnection(connString))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM accounts", con);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Accounts", con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -32,7 +33,6 @@ namespace Bank__Management_System
             }
         }
 
-        // Clear inputs
         private void btnAdd_Click(object sender, EventArgs e)
         {
             txtAccountID.Clear();
@@ -49,21 +49,24 @@ namespace Bank__Management_System
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+                using (SqlConnection con = new SqlConnection(connString))
                 {
                     con.Open();
 
-                    // Check if Customer_ID exists
-                    SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM Customers WHERE Customer_ID = @cid", con);
+                    // ✅ Check if Customer exists in correct table
+                    SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM Customer WHERE Customer_ID = @cid", con);
                     checkCmd.Parameters.AddWithValue("@cid", int.Parse(txtCustomerID.Text));
                     int exists = (int)checkCmd.ExecuteScalar();
+
                     if (exists == 0)
                     {
                         MessageBox.Show("Customer ID not found! Please create the customer first.");
                         return;
                     }
 
-                    SqlCommand cmd = new SqlCommand("INSERT INTO accounts (Account_ID, Account_Type, Balance, Date_Opened, Customer_Name, Customer_ID) VALUES (@account_id, @account_type, @balance, @date_opened, @customer_name, @customer_id)", con);
+                    SqlCommand cmd = new SqlCommand(
+                        "INSERT INTO Accounts (Account_ID, Account_Type, Balance, Date_Opened, Customer_Name, Customer_ID) " +
+                        "VALUES (@account_id, @account_type, @balance, @date_opened, @customer_name, @customer_id)", con);
 
                     cmd.Parameters.AddWithValue("@account_id", int.Parse(txtAccountID.Text));
                     cmd.Parameters.AddWithValue("@account_type", txtAccountType.Text);
@@ -90,12 +93,12 @@ namespace Bank__Management_System
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+                using (SqlConnection con = new SqlConnection(connString))
                 {
                     con.Open();
 
                     SqlCommand cmd = new SqlCommand(
-                        "UPDATE accounts SET account_type = @account_type, balance = @balance, date_opened = @date_opened, customer_name = @customer_name, customer_id = @customer_id WHERE account_id = @account_id",
+                        "UPDATE Accounts SET Account_Type = @account_type, Balance = @balance, Date_Opened = @date_opened, Customer_Name = @customer_name, Customer_ID = @customer_id WHERE Account_ID = @account_id",
                         con);
 
                     cmd.Parameters.AddWithValue("@account_id", int.Parse(txtAccountID.Text));
@@ -129,10 +132,10 @@ namespace Bank__Management_System
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+                using (SqlConnection con = new SqlConnection(connString))
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("DELETE FROM accounts WHERE account_id = @account_id", con);
+                    SqlCommand cmd = new SqlCommand("DELETE FROM Accounts WHERE Account_ID = @account_id", con);
                     cmd.Parameters.AddWithValue("@account_id", int.Parse(txtAccountID.Text));
 
                     int rows = cmd.ExecuteNonQuery();
@@ -157,16 +160,51 @@ namespace Bank__Management_System
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+            using (SqlConnection con = new SqlConnection(connString))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM accounts WHERE customer_name = @customer_name", con);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Accounts WHERE Customer_Name = @customer_name", con);
                 cmd.Parameters.AddWithValue("@customer_name", txtname.Text);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable table = new DataTable();
                 da.Fill(table);
                 con.Close();
                 dataGridView1.DataSource = table;
+            }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = txtSearch.Text;
+            using (SqlConnection con = new SqlConnection(connString))
+            {
+                SqlDataAdapter da = new SqlDataAdapter(
+                    "SELECT * FROM Accounts WHERE Customer_Name LIKE @search", con);
+                da.SelectCommand.Parameters.AddWithValue("@search", "%" + searchText + "%");
+
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+            }
+        }
+
+        private void btnPickCustomer_Click(object sender, EventArgs e)
+        {
+            using (var picker = new CustomerPicker())
+            {
+                if (picker.ShowDialog() == DialogResult.OK)
+                {
+                    txtCustomerID.Text = picker.SelectedCustomerID.ToString();
+
+                    // ✅ Auto-load customer name
+                    using (SqlConnection con = new SqlConnection(connString))
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("SELECT Customer_Name FROM Customer WHERE Customer_ID = @cid", con);
+                        cmd.Parameters.AddWithValue("@cid", picker.SelectedCustomerID);
+                        txtname.Text = cmd.ExecuteScalar()?.ToString();
+                    }
+                }
             }
         }
 
@@ -188,31 +226,6 @@ namespace Bank__Management_System
             Main admins = new Main();
             admins.Show();
             this.Hide();
-        }
-
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-            string searchText = txtSearch.Text;
-            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
-            {
-                SqlDataAdapter da = new SqlDataAdapter(
-                    "SELECT * FROM accounts WHERE customer_name LIKE '%" + searchText + "%'", con);
-
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dataGridView1.DataSource = dt;
-            }
-        }
-
-        private void btnPickCustomer_Click(object sender, EventArgs e)
-        {
-            using (var picker = new CustomerPicker())
-            {
-                if (picker.ShowDialog() == DialogResult.OK)
-                {
-                    txtCustomerID.Text = picker.SelectedCustomerID.ToString();
-                }
-            }
         }
     }
 }
