@@ -49,6 +49,7 @@ cmd.ExecuteNonQuery();
 
     MessageBox.Show("Saved");
 LoadCustomerData();
+}
 // Load / Refresh
 private void LoadCustomerData()
         {
