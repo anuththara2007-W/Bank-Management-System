@@ -22,7 +22,7 @@ namespace Bank__Management_System
                 con.Open();
 
                 // Check if ID exists
-                SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM Customer WHERE Customer_ID = @cid", con);
+                SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM Customers WHERE Customer_ID = @cid", con);
                 checkCmd.Parameters.AddWithValue("@cid", txtCustomerID.Text);
                 int exists = (int)checkCmd.ExecuteScalar();
 
