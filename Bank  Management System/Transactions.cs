@@ -74,10 +74,12 @@ namespace Bank__Management_System
             using (SqlConnection con = new SqlConnection(connString))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Transactions", con);
+                SqlCommand cmd = new SqlCommand("SELECT TID, Transaction_Type, Amount, Transaction_Date, Account_ID FROM Transactions", con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
+
+                dataGridView1.AutoGenerateColumns = true; // force showing all columns
                 dataGridView1.DataSource = dt;
             }
         }
