@@ -24,19 +24,13 @@ namespace BankApp
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
-                string query = @"
-            SELECT 
-                a.Account_ID, 
-                a.Account_Type, 
-                a.Balance, 
-                c.Customer_Name
-            FROM Accounts a
-            INNER JOIN Customers c ON a.Customer_ID = c.Customer_ID";
-
+                con.Open();
+                string query = "SELECT Account_ID, Account_Type, Balance FROM Accounts";
                 SqlDataAdapter da = new SqlDataAdapter(query, con);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                dgvAccounts.AutoGenerateColumns = true; // ensures all columns show
+
+                dgvAccounts.DataSource = null; // clear old binding
                 dgvAccounts.DataSource = dt;
             }
         }
