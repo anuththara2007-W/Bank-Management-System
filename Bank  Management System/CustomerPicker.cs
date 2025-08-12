@@ -51,10 +51,5 @@ namespace BankApp
                 this.Close();
             }
         }
-
-        private void dgvCustomers_Click(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }
