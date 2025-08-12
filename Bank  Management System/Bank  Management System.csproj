@@ -63,6 +63,12 @@
     <Compile Include="Account1.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AccountPicker .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountPicker .Designer.cs">
+      <DependentUpon>AccountPicker .cs</DependentUpon>
+    </Compile>
     <Compile Include="BankDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -127,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Account.resx">
       <DependentUpon>Account.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountPicker .resx">
+      <DependentUpon>AccountPicker .cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer.resx">
       <DependentUpon>Customer.cs</DependentUpon>
