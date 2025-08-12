@@ -59,7 +59,7 @@ namespace Bank__Management_System
             {
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Customer", con);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Customers", con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable table = new DataTable();
                 da.Fill(table);
