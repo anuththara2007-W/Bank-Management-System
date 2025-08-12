@@ -1,4 +1,4 @@
-﻿namespace Bank__Management_System
+﻿namespace BankApp
 {
     partial class AccountPicker
     {
@@ -52,6 +52,7 @@
             this.dgvAccounts.RowTemplate.Height = 24;
             this.dgvAccounts.Size = new System.Drawing.Size(1233, 671);
             this.dgvAccounts.TabIndex = 3;
+            this.dgvAccounts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAccounts_Click);
             this.dgvAccounts.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAccounts_CellDoubleClick);
             // 
             // AccountPicker
