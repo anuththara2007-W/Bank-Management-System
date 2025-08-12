@@ -7,25 +7,25 @@ namespace Bank__Management_System
 {
     public partial class Customer : Form
     {
+        string connectionString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
+
         public Customer()
         {
             InitializeComponent();
-
-            // Hook the DataGridView CellClick event here
-            
         }
 
         // Save / Add
-        private void button1_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
-            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
 
                 // Check if ID exists
-                SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM Customers WHERE Customer_ID = @cid", con);
+                SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM Customer WHERE Customer_ID = @cid", con);
                 checkCmd.Parameters.AddWithValue("@cid", txtCustomerID.Text);
                 int exists = (int)checkCmd.ExecuteScalar();
+
                 if (exists > 0)
                 {
                     MessageBox.Show("Customer ID already exists!");
@@ -34,7 +34,7 @@ namespace Bank__Management_System
 
                 // Insert new customer
                 SqlCommand cmd = new SqlCommand(
-                    "INSERT INTO Customers (Customer_ID, Customer_Name, Phone, Email, Address, Username, Password) " +
+                    "INSERT INTO Customer (Customer_ID, Customer_Name, Phone, Email, Address, Username, Password) " +
                     "VALUES (@Customer_ID, @Customer_Name, @Phone, @Email, @Address, @Username, @Password)", con);
 
                 cmd.Parameters.AddWithValue("@Customer_ID", int.Parse(txtCustomerID.Text));
@@ -48,14 +48,14 @@ namespace Bank__Management_System
                 cmd.ExecuteNonQuery();
             }
 
-            MessageBox.Show("Saved");
+            MessageBox.Show("Customer Saved Successfully");
             LoadCustomerData();
         }
 
         // Load / Refresh
         private void LoadCustomerData()
         {
-            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
 
@@ -63,6 +63,7 @@ namespace Bank__Management_System
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable table = new DataTable();
                 da.Fill(table);
+
                 dataGridView1.DataSource = table;
             }
         }
@@ -70,12 +71,13 @@ namespace Bank__Management_System
         // Update
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
 
                 SqlCommand cmd = new SqlCommand(
-                    "UPDATE Customer SET Customer_Name = @Customer_Name, Phone = @Phone, Email = @Email, Address = @Address, Username = @Username, Password = @Password WHERE Customer_ID = @Customer_ID", con);
+                    "UPDATE Customer SET Customer_Name = @Customer_Name, Phone = @Phone, Email = @Email, Address = @Address, Username = @Username, Password = @Password " +
+                    "WHERE Customer_ID = @Customer_ID", con);
 
                 cmd.Parameters.AddWithValue("@Customer_ID", int.Parse(txtCustomerID.Text));
                 cmd.Parameters.AddWithValue("@Customer_Name", txtCustomerName.Text);
@@ -95,7 +97,7 @@ namespace Bank__Management_System
         // Delete
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
 
@@ -113,22 +115,34 @@ namespace Bank__Management_System
         private void Customer_Load(object sender, EventArgs e)
         {
             LoadCustomerData();
+
+            // Optional: populate fields when clicking on grid row
+            dataGridView1.CellClick += DataGridView1_CellClick;
         }
 
-        // Optional: You can link this to your "Load" or "Refresh" button
-        private void btnAdd_Click(object sender, EventArgs e)
+        // Load clicked row into textboxes
+        private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            LoadCustomerData();
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+
+                txtCustomerID.Text = row.Cells["Customer_ID"].Value.ToString();
+                txtCustomerName.Text = row.Cells["Customer_Name"].Value.ToString();
+                txtPhoneNo.Text = row.Cells["Phone"].Value.ToString();
+                txtEmail.Text = row.Cells["Email"].Value.ToString();
+                txtAddress.Text = row.Cells["Address"].Value.ToString();
+                txtUsername.Text = row.Cells["Username"].Value.ToString();
+                txtPassword.Text = row.Cells["Password"].Value.ToString();
+            }
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        // Back to main menu
+        private void btnBack_Click(object sender, EventArgs e)
         {
             Main admin = new Main();
             admin.Show();
             this.Hide();
         }
-
-        // New: DataGridView CellClick to load selected row data into form fields for update/delete
-      
     }
 }
