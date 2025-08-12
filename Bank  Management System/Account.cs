@@ -54,7 +54,7 @@ namespace Bank__Management_System
                     con.Open();
 
                     // ✅ Check if Customer exists in correct table
-                    SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM Customer WHERE Customer_ID = @cid", con);
+                    SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM Customers WHERE Customer_ID = @cid", con);
                     checkCmd.Parameters.AddWithValue("@cid", int.Parse(txtCustomerID.Text));
                     int exists = (int)checkCmd.ExecuteScalar();
 
