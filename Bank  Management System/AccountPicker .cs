@@ -24,10 +24,19 @@ namespace BankApp
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
-                string query = "SELECT Account_ID, Account_Type, Balance, Customer_Name FROM Accounts";
+                string query = @"
+            SELECT 
+                a.Account_ID, 
+                a.Account_Type, 
+                a.Balance, 
+                c.Customer_Name
+            FROM Accounts a
+            INNER JOIN Customers c ON a.Customer_ID = c.Customer_ID";
+
                 SqlDataAdapter da = new SqlDataAdapter(query, con);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
+                dgvAccounts.AutoGenerateColumns = true; // ensures all columns show
                 dgvAccounts.DataSource = dt;
             }
         }
@@ -50,6 +59,11 @@ namespace BankApp
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
+        }
+
+        private void dgvAccounts_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
