@@ -47,6 +47,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnGoBack = new System.Windows.Forms.Button();
+            this.btnPickCustomer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -286,11 +287,30 @@
             this.btnGoBack.UseVisualStyleBackColor = false;
             this.btnGoBack.Click += new System.EventHandler(this.btnGoBack_Click);
             // 
+            // btnPickCustomer
+            // 
+            this.btnPickCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(233)))), ((int)(((byte)(236)))));
+            this.btnPickCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPickCustomer.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(233)))), ((int)(((byte)(236)))));
+            this.btnPickCustomer.FlatAppearance.BorderSize = 0;
+            this.btnPickCustomer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(233)))), ((int)(((byte)(236)))));
+            this.btnPickCustomer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(233)))), ((int)(((byte)(236)))));
+            this.btnPickCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPickCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPickCustomer.Location = new System.Drawing.Point(735, 371);
+            this.btnPickCustomer.Name = "btnPickCustomer";
+            this.btnPickCustomer.Size = new System.Drawing.Size(269, 37);
+            this.btnPickCustomer.TabIndex = 28;
+            this.btnPickCustomer.Text = "Select Account ID";
+            this.btnPickCustomer.UseVisualStyleBackColor = false;
+            this.btnPickCustomer.Click += new System.EventHandler(this.btnPickCustomer_Click);
+            // 
             // Transactions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 785);
+            this.Controls.Add(this.btnPickCustomer);
             this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.dataGridView1);
@@ -339,5 +359,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnGoBack;
+        private System.Windows.Forms.Button btnPickCustomer;
     }
 }

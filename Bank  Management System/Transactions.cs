@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BankApp;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -166,6 +167,17 @@ namespace Bank__Management_System
             Main admins = new Main();
             admins.Show();
             this.Hide();
+        }
+
+        private void btnPickCustomer_Click(object sender, EventArgs e)
+        {
+            using (var picker = new CustomerPicker())
+            {
+                if (picker.ShowDialog() == DialogResult.OK)
+                {
+                    txtCustomerID.Text = picker.SelectedCustomerID.ToString();
+                }
+            }
         }
     }
 }
