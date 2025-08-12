@@ -21,6 +21,8 @@ namespace Bank__Management_System
             using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
             {
                 con.Open();
+
+                // Check if ID exists
                 SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM Customers WHERE Customer_ID = @cid", con);
                 checkCmd.Parameters.AddWithValue("@cid", txtCustomerID.Text);
                 int exists = (int)checkCmd.ExecuteScalar();
@@ -30,9 +32,9 @@ namespace Bank__Management_System
                     return;
                 }
 
-
+                // Insert new customer
                 SqlCommand cmd = new SqlCommand(
-                    "INSERT INTO Customer (Customer_ID, Customer_Name, Phone, Email, Address, Username, Password) " +
+                    "INSERT INTO Customers (Customer_ID, Customer_Name, Phone, Email, Address, Username, Password) " +
                     "VALUES (@Customer_ID, @Customer_Name, @Phone, @Email, @Address, @Username, @Password)", con);
 
                 cmd.Parameters.AddWithValue("@Customer_ID", int.Parse(txtCustomerID.Text));
