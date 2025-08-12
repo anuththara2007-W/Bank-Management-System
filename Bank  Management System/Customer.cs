@@ -34,7 +34,7 @@ namespace Bank__Management_System
 
                 // Insert new customer
                 SqlCommand cmd = new SqlCommand(
-                    "INSERT INTO Customer (Customer_ID, Customer_Name, Phone, Email, Address, Username, Password) " +
+                    "INSERT INTO Customers (Customer_ID, Customer_Name, Phone, Email, Address, Username, Password) " +
                     "VALUES (@Customer_ID, @Customer_Name, @Phone, @Email, @Address, @Username, @Password)", con);
 
                 cmd.Parameters.AddWithValue("@Customer_ID", int.Parse(txtCustomerID.Text));
