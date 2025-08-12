@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Bank__Management_System
@@ -16,33 +17,40 @@ namespace Bank__Management_System
         }
 
         // Save / Add
-        private void button1_Click(object sender, EventArgs e)
+       using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+    {
+        con.Open();
+
+        // Check if ID exists
+        SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM Customers WHERE Customer_ID = @cid", con);
+    checkCmd.Parameters.AddWithValue("@cid", txtCustomerID.Text);
+        int exists = (int)checkCmd.ExecuteScalar();
+        if (exists > 0)
         {
-            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
-            {
-                con.Open();
-
-                SqlCommand cmd = new SqlCommand(
-                    "INSERT INTO Customer (Customer_ID, Customer_Name, Phone, Email, Address, Username, Password) " +
-                    "VALUES (@Customer_ID, @Customer_Name, @Phone, @Email, @Address, @Username, @Password)", con);
-
-                cmd.Parameters.AddWithValue("@Customer_ID", int.Parse(txtCustomerID.Text));
-                cmd.Parameters.AddWithValue("@Customer_Name", txtCustomerName.Text);
-                cmd.Parameters.AddWithValue("@Phone", txtPhoneNo.Text);
-                cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
-                cmd.Parameters.AddWithValue("@Address", txtAddress.Text);
-                cmd.Parameters.AddWithValue("@Username", txtUsername.Text);
-                cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
-
-                cmd.ExecuteNonQuery();
-            }
-
-            MessageBox.Show("Saved");
-            LoadCustomerData();
+            MessageBox.Show("Customer ID already exists!");
+            return;
         }
 
-        // Load / Refresh
-        private void LoadCustomerData()
+// Insert new customer
+SqlCommand cmd = new SqlCommand(
+    "INSERT INTO Customers (Customer_ID, Customer_Name, Phone, Email, Address, Username, Password) " +
+    "VALUES (@Customer_ID, @Customer_Name, @Phone, @Email, @Address, @Username, @Password)", con);
+
+cmd.Parameters.AddWithValue("@Customer_ID", int.Parse(txtCustomerID.Text));
+cmd.Parameters.AddWithValue("@Customer_Name", txtCustomerName.Text);
+cmd.Parameters.AddWithValue("@Phone", txtPhoneNo.Text);
+cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
+cmd.Parameters.AddWithValue("@Address", txtAddress.Text);
+cmd.Parameters.AddWithValue("@Username", txtUsername.Text);
+cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
+
+cmd.ExecuteNonQuery();
+    }
+
+    MessageBox.Show("Saved");
+LoadCustomerData();
+// Load / Refresh
+private void LoadCustomerData()
         {
             using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
             {
