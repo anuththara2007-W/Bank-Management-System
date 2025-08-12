@@ -200,7 +200,7 @@ namespace Bank__Management_System
                     using (SqlConnection con = new SqlConnection(connString))
                     {
                         con.Open();
-                        SqlCommand cmd = new SqlCommand("SELECT Customer_Name FROM Customer WHERE Customer_ID = @cid", con);
+                        SqlCommand cmd = new SqlCommand("SELECT Customer_Name FROM Customers WHERE Customer_ID = @cid", con);
                         cmd.Parameters.AddWithValue("@cid", picker.SelectedCustomerID);
                         txtname.Text = cmd.ExecuteScalar()?.ToString();
                     }
