@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtAmount = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             this.lblAmount = new System.Windows.Forms.Label();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,12 +39,12 @@
             this.btnSubmitLoan = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // txtAmount
+            // txtAddress
             // 
-            this.txtAmount.Location = new System.Drawing.Point(377, 249);
-            this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(360, 22);
-            this.txtAmount.TabIndex = 11;
+            this.txtAddress.Location = new System.Drawing.Point(377, 249);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(360, 22);
+            this.txtAddress.TabIndex = 11;
             // 
             // lblAmount
             // 
@@ -125,7 +125,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtAmount);
+            this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.lblAmount);
             this.Name = "Profile";
             this.Text = "Profile";
@@ -137,7 +137,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtAmount;
+        private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label lblAmount;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label label1;
