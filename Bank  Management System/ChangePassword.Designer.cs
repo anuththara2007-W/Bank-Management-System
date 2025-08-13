@@ -33,7 +33,7 @@ namespace BankApp
             this.btnUpdateProfile = new System.Windows.Forms.Button();
             this.txtOld = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.txtNew = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.lblAmount = new System.Windows.Forms.Label();
@@ -64,12 +64,12 @@ namespace BankApp
             this.label2.TabIndex = 23;
             this.label2.Text = "Old Password";
             // 
-            // txtPhone
+            // txtNew
             // 
-            this.txtPhone.Location = new System.Drawing.Point(342, 215);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(360, 22);
-            this.txtPhone.TabIndex = 22;
+            this.txtNew.Location = new System.Drawing.Point(342, 215);
+            this.txtNew.Name = "txtNew";
+            this.txtNew.Size = new System.Drawing.Size(360, 22);
+            this.txtNew.TabIndex = 22;
             // 
             // label1
             // 
@@ -104,7 +104,7 @@ namespace BankApp
             this.Controls.Add(this.btnUpdateProfile);
             this.Controls.Add(this.txtOld);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtPhone);
+            this.Controls.Add(this.txtNew);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.lblAmount);
@@ -126,7 +126,7 @@ namespace BankApp
         private System.Windows.Forms.Button btnUpdateProfile;
         private System.Windows.Forms.TextBox txtOld;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.TextBox txtNew;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label lblAmount;
