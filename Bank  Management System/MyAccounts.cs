@@ -2,18 +2,17 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using static System.Collections.Specialized.BitVector32;
 
-namespace Bank__Management_System
+namespace BankApp
 {
     public partial class MyAccounts : Form
     {
-        int customerId;
         string connString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
 
-        public MyAccounts(int cid)
+        public MyAccounts()
         {
             InitializeComponent();
-            customerId = cid;
         }
 
         private void MyAccounts_Load(object sender, EventArgs e)
@@ -25,23 +24,13 @@ namespace Bank__Management_System
         {
             using (SqlConnection con = new SqlConnection(connString))
             {
-                string q = "SELECT Account_ID, Account_Type, Balance, Date_Opened FROM Accounts WHERE Customer_ID = @cid";
-                SqlDataAdapter da = new SqlDataAdapter(q, con);
-                da.SelectCommand.Parameters.AddWithValue("@cid", customerId);
+                string query = "SELECT Account_ID, Account_Type, Balance FROM Accounts WHERE Customer_ID=@cid";
+                SqlDataAdapter da = new SqlDataAdapter(query, con);
+                da.SelectCommand.Parameters.AddWithValue("@cid", Session.CustomerID);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                dataGridView1.AutoGenerateColumns = true;
-                dataGridView1.DataSource = dt;
+                dgvAccounts.DataSource = dt;
             }
-        }
-
-        // optionally double-click to show transaction for account
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0) return;
-            int accountId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Account_ID"].Value);
-            var tx = new MyTransactions(customerId, accountId);
-            tx.ShowDialog();
         }
     }
 }
