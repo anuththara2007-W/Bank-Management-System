@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(1280, 785);
             this.Name = "CustomerDashboard";
             this.Text = "CustomerDashboard";
+            this.Load += new System.EventHandler(this.CustomerDashboard_Load);
             this.ResumeLayout(false);
 
         }
