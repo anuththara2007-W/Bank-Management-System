@@ -48,7 +48,7 @@ namespace BankApp
                     "FROM Transactions WHERE Account_ID IN " +
                     "(SELECT Account_ID FROM Accounts WHERE Customer_ID = @cid) " +
                     "ORDER BY Transaction_Date DESC", con);
-                da.SelectCommand.Parameters.AddWithValue("@cid", CustomerSession.CustomerID);
+                da.SelectCommand.Parameters.AddWithValue("@cid", Session.CustomerID);
 
                 DataTable dt = new DataTable();
                 da.Fill(dt);
