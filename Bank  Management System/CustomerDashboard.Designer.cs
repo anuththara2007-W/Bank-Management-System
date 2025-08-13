@@ -38,6 +38,9 @@
             this.btnTransfer = new System.Windows.Forms.Button();
             this.dgvTransactions = new System.Windows.Forms.DataGridView();
             this.dgvLoans = new System.Windows.Forms.DataGridView();
+            this.btnProfile = new System.Windows.Forms.Button();
+            this.btnChangePassword = new System.Windows.Forms.Button();
+            this.btnSupport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoans)).BeginInit();
             this.SuspendLayout();
@@ -137,11 +140,41 @@
             this.dgvLoans.Size = new System.Drawing.Size(496, 202);
             this.dgvLoans.TabIndex = 9;
             // 
+            // btnProfile
+            // 
+            this.btnProfile.Location = new System.Drawing.Point(92, 278);
+            this.btnProfile.Name = "btnProfile";
+            this.btnProfile.Size = new System.Drawing.Size(141, 47);
+            this.btnProfile.TabIndex = 10;
+            this.btnProfile.Text = "Profile";
+            this.btnProfile.UseVisualStyleBackColor = true;
+            // 
+            // btnChangePassword
+            // 
+            this.btnChangePassword.Location = new System.Drawing.Point(348, 278);
+            this.btnChangePassword.Name = "btnChangePassword";
+            this.btnChangePassword.Size = new System.Drawing.Size(141, 47);
+            this.btnChangePassword.TabIndex = 11;
+            this.btnChangePassword.Text = "Change the Password";
+            this.btnChangePassword.UseVisualStyleBackColor = true;
+            // 
+            // btnSupport
+            // 
+            this.btnSupport.Location = new System.Drawing.Point(628, 267);
+            this.btnSupport.Name = "btnSupport";
+            this.btnSupport.Size = new System.Drawing.Size(141, 47);
+            this.btnSupport.TabIndex = 12;
+            this.btnSupport.Text = "Support";
+            this.btnSupport.UseVisualStyleBackColor = true;
+            // 
             // CustomerDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 785);
+            this.Controls.Add(this.btnSupport);
+            this.Controls.Add(this.btnChangePassword);
+            this.Controls.Add(this.btnProfile);
             this.Controls.Add(this.dgvLoans);
             this.Controls.Add(this.dgvTransactions);
             this.Controls.Add(this.btnTransfer);
@@ -174,5 +207,8 @@
         private System.Windows.Forms.Button btnTransfer;
         private System.Windows.Forms.DataGridView dgvTransactions;
         private System.Windows.Forms.DataGridView dgvLoans;
+        private System.Windows.Forms.Button btnProfile;
+        private System.Windows.Forms.Button btnChangePassword;
+        private System.Windows.Forms.Button btnSupport;
     }
 }
