@@ -1,43 +1,38 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
+using static System.Collections.Specialized.BitVector32;
 
-namespace Bank__Management_System
+namespace BankApp
 {
     public partial class Support : Form
     {
-        int customerId;
         string connString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
 
-        public Support(int cid)
+        public Support()
         {
             InitializeComponent();
-            customerId = cid;
         }
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtSubject.Text) || string.IsNullOrWhiteSpace(txtMessage.Text)) { MessageBox.Show("Enter subject and message."); return; }
+            if (string.IsNullOrWhiteSpace(txtMessage.Text))
+            {
+                MessageBox.Show("Enter a message");
+                return;
+            }
 
             using (SqlConnection con = new SqlConnection(connString))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO SupportRequests (Customer_ID, Subject, Message, RequestDate, Status) VALUES (@cid,@sub,@msg,@dt,@st)", con);
-                cmd.Parameters.AddWithValue("@cid", customerId);
-                cmd.Parameters.AddWithValue("@sub", txtSubject.Text.Trim());
-                cmd.Parameters.AddWithValue("@msg", txtMessage.Text.Trim());
-                cmd.Parameters.AddWithValue("@dt", DateTime.Now);
-                cmd.Parameters.AddWithValue("@st", "Open");
+                SqlCommand cmd = new SqlCommand(
+                    "INSERT INTO SupportTickets (Customer_ID, Message, DateCreated, Status) VALUES (@cid, @msg, GETDATE(), 'Open')", con);
+                cmd.Parameters.AddWithValue("@cid", Session.CustomerID);
+                cmd.Parameters.AddWithValue("@msg", txtMessage.Text);
                 cmd.ExecuteNonQuery();
+                MessageBox.Show("Message sent to support.");
+                txtMessage.Clear();
             }
-            MessageBox.Show("Support request sent.");
-            this.Close();
         }
     }
 }
