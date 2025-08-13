@@ -16,5 +16,12 @@ namespace Bank__Management_System
         {
             InitializeComponent();
         }
+
+        private void btnsignin_Click(object sender, EventArgs e)
+        {
+            Login gonow = new Login();
+            gonow.Show();
+            this.Hide();
+        }
     }
 }
