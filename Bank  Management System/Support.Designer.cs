@@ -31,7 +31,7 @@ namespace BankApp
         private void InitializeComponent()
         {
             this.btnUpdateProfile = new System.Windows.Forms.Button();
-            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtMessage = new System.Windows.Forms.TextBox();
             this.lblAmount = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -44,13 +44,12 @@ namespace BankApp
             this.btnUpdateProfile.Text = "Submit";
             this.btnUpdateProfile.UseVisualStyleBackColor = true;
             // 
-            // txtAddress
+            // txtMessage
             // 
-            this.txtAddress.Location = new System.Drawing.Point(303, 172);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(360, 22);
-            this.txtAddress.TabIndex = 27;
-            this.txtAddress.Text = "txtMessage ";
+            this.txtMessage.Location = new System.Drawing.Point(303, 172);
+            this.txtMessage.Name = "txtMessage";
+            this.txtMessage.Size = new System.Drawing.Size(360, 22);
+            this.txtMessage.TabIndex = 27;
             // 
             // lblAmount
             // 
@@ -67,7 +66,7 @@ namespace BankApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnUpdateProfile);
-            this.Controls.Add(this.txtAddress);
+            this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.lblAmount);
             this.Name = "Support";
             this.Text = "Support";
@@ -85,7 +84,7 @@ namespace BankApp
         #endregion
 
         private System.Windows.Forms.Button btnUpdateProfile;
-        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.TextBox txtMessage;
         private System.Windows.Forms.Label lblAmount;
     }
 }
