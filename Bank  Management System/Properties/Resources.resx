@@ -124,9 +124,7 @@
   <data name="Black and White Modern Login and Sign-up Website Page UI Desktop Prototype (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Black and White Modern Login and Sign-up Website Page UI Desktop Prototype (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="admin dash" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\admin dash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+ 
   <data name="Black and White Modern Login and Sign-up Website Page UI Desktop Prototype (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Black and White Modern Login and Sign-up Website Page UI Desktop Prototype (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
