@@ -36,6 +36,10 @@
             this.btnWithdraw = new System.Windows.Forms.Button();
             this.btnLoanRequest = new System.Windows.Forms.Button();
             this.btnTransfer = new System.Windows.Forms.Button();
+            this.dgvTransactions = new System.Windows.Forms.DataGridView();
+            this.dgvLoans = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLoans)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -114,11 +118,32 @@
             this.btnTransfer.Text = "Transfer";
             this.btnTransfer.UseVisualStyleBackColor = true;
             // 
+            // dgvTransactions
+            // 
+            this.dgvTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTransactions.Location = new System.Drawing.Point(44, 352);
+            this.dgvTransactions.Name = "dgvTransactions";
+            this.dgvTransactions.RowHeadersWidth = 51;
+            this.dgvTransactions.RowTemplate.Height = 24;
+            this.dgvTransactions.Size = new System.Drawing.Size(496, 202);
+            this.dgvTransactions.TabIndex = 8;
+            // 
+            // dgvLoans
+            // 
+            this.dgvLoans.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLoans.Location = new System.Drawing.Point(683, 352);
+            this.dgvLoans.Name = "dgvLoans";
+            this.dgvLoans.RowHeadersWidth = 51;
+            this.dgvLoans.Size = new System.Drawing.Size(496, 202);
+            this.dgvLoans.TabIndex = 9;
+            // 
             // CustomerDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 785);
+            this.Controls.Add(this.dgvLoans);
+            this.Controls.Add(this.dgvTransactions);
             this.Controls.Add(this.btnTransfer);
             this.Controls.Add(this.btnLoanRequest);
             this.Controls.Add(this.btnWithdraw);
@@ -130,6 +155,8 @@
             this.Name = "CustomerDashboard";
             this.Text = "CustomerDashboard";
             this.Load += new System.EventHandler(this.CustomerDashboard_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLoans)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,5 +172,7 @@
         private System.Windows.Forms.Button btnWithdraw;
         private System.Windows.Forms.Button btnLoanRequest;
         private System.Windows.Forms.Button btnTransfer;
+        private System.Windows.Forms.DataGridView dgvTransactions;
+        private System.Windows.Forms.DataGridView dgvLoans;
     }
 }

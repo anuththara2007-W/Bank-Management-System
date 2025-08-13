@@ -64,7 +64,7 @@ namespace BankApp
                 SqlDataAdapter da = new SqlDataAdapter(
                     "SELECT Loan_ID, Loan_Type, Amount, Status FROM Loans " +
                     "WHERE Customer_ID = @cid", con);
-                da.SelectCommand.Parameters.AddWithValue("@cid", CustomerSession.CustomerID);
+                da.SelectCommand.Parameters.AddWithValue("@cid", Session.CustomerID);
 
                 DataTable dt = new DataTable();
                 da.Fill(dt);
