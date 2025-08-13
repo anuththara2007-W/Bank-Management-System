@@ -2,61 +2,51 @@
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using static System.Collections.Specialized.BitVector32;
 
-namespace Bank__Management_System
+namespace BankApp
 {
     public partial class Profile : Form
     {
-        int customerId;
         string connString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
 
-        public Profile(int cid)
+        public Profile()
         {
             InitializeComponent();
-            customerId = cid;
         }
 
         private void Profile_Load(object sender, EventArgs e)
         {
-            LoadProfile();
-        }
-
-        private void LoadProfile()
-        {
             using (SqlConnection con = new SqlConnection(connString))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT Customer_Name, Phone, Email, Address, Username FROM Customer WHERE Customer_ID = @cid", con);
-                cmd.Parameters.AddWithValue("@cid", customerId);
-                using (var r = cmd.ExecuteReader())
+                SqlCommand cmd = new SqlCommand("SELECT Customer_Name, Email, Phone FROM Customer WHERE Customer_ID=@cid", con);
+                cmd.Parameters.AddWithValue("@cid", Session.CustomerID);
+                var reader = cmd.ExecuteReader();
+                if (reader.Read())
                 {
-                    if (r.Read())
-                    {
-                        txtName.Text = r["Customer_Name"]?.ToString();
-                        txtPhone.Text = r["Phone"]?.ToString();
-                        txtEmail.Text = r["Email"]?.ToString();
-                        txtAddress.Text = r["Address"]?.ToString();
-                        txtUsername.Text = r["Username"]?.ToString();
-                    }
+                    txtName.Text = reader["Customer_Name"].ToString();
+                    txtEmail.Text = reader["Email"].ToString();
+                    txtPhone.Text = reader["Phone"].ToString();
                 }
             }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
             using (SqlConnection con = new SqlConnection(connString))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE Customer SET Customer_Name=@nm, Phone=@ph, Email=@em, Address=@ad WHERE Customer_ID=@cid", con);
-                cmd.Parameters.AddWithValue("@nm", txtName.Text.Trim());
-                cmd.Parameters.AddWithValue("@ph", txtPhone.Text.Trim());
-                cmd.Parameters.AddWithValue("@em", txtEmail.Text.Trim());
-                cmd.Parameters.AddWithValue("@ad", txtAddress.Text.Trim());
-                cmd.Parameters.AddWithValue("@cid", customerId);
+                SqlCommand cmd = new SqlCommand(
+                    "UPDATE Customer SET Customer_Name=@name, Email=@mail, Phone=@phone WHERE Customer_ID=@cid", con);
+                cmd.Parameters.AddWithValue("@name", txtName.Text);
+                cmd.Parameters.AddWithValue("@mail", txtEmail.Text);
+                cmd.Parameters.AddWithValue("@phone", txtPhone.Text);
+                cmd.Parameters.AddWithValue("@cid", Session.CustomerID);
                 cmd.ExecuteNonQuery();
+                Session.CustomerName = txtName.Text;
+                MessageBox.Show("Profile updated.");
             }
-            MessageBox.Show("Profile updated.");
-            this.Close();
         }
     }
 }
