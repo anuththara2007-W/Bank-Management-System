@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bank__Management_System;
+using System;
 using System.Windows.Forms;
 
 namespace BankApp
@@ -12,7 +13,7 @@ namespace BankApp
 
         private void CustomerMain_Load(object sender, EventArgs e)
         {
-            lblCustomerName.Text = "Welcome, " + CustomerSession.CustomerName;
+            lblCustomerName.Text = "Welcome, " + Session.CustomerName;
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
