@@ -85,9 +85,9 @@ namespace BankApp
             this.lblLoanType.AutoSize = true;
             this.lblLoanType.Location = new System.Drawing.Point(216, 157);
             this.lblLoanType.Name = "lblLoanType";
-            this.lblLoanType.Size = new System.Drawing.Size(96, 16);
+            this.lblLoanType.Size = new System.Drawing.Size(72, 16);
             this.lblLoanType.TabIndex = 6;
-            this.lblLoanType.Text = "Select Account";
+            this.lblLoanType.Text = "Loan Type";
             // 
             // LoanRequest
             // 
