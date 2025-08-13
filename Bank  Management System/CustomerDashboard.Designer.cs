@@ -34,7 +34,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnDeposit = new System.Windows.Forms.Button();
             this.btnWithdraw = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLoanRequest = new System.Windows.Forms.Button();
             this.btnTransfer = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -97,14 +97,14 @@
             this.btnWithdraw.UseVisualStyleBackColor = true;
             this.btnWithdraw.Click += new System.EventHandler(this.btnWithdraw_Click);
             // 
-            // button1
+            // btnLoanRequest
             // 
-            this.button1.Location = new System.Drawing.Point(570, 369);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(141, 47);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Withdraw";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnLoanRequest.Location = new System.Drawing.Point(881, 199);
+            this.btnLoanRequest.Name = "btnLoanRequest";
+            this.btnLoanRequest.Size = new System.Drawing.Size(141, 47);
+            this.btnLoanRequest.TabIndex = 6;
+            this.btnLoanRequest.Text = "Withdraw";
+            this.btnLoanRequest.UseVisualStyleBackColor = true;
             // 
             // btnTransfer
             // 
@@ -121,7 +121,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 785);
             this.Controls.Add(this.btnTransfer);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnLoanRequest);
             this.Controls.Add(this.btnWithdraw);
             this.Controls.Add(this.btnDeposit);
             this.Controls.Add(this.lblBalance);
@@ -144,7 +144,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnDeposit;
         private System.Windows.Forms.Button btnWithdraw;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLoanRequest;
         private System.Windows.Forms.Button btnTransfer;
     }
 }
