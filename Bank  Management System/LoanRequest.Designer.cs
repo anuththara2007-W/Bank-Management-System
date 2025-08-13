@@ -33,7 +33,7 @@ namespace BankApp
             this.btnWithdraw = new System.Windows.Forms.Button();
             this.btnDeposit = new System.Windows.Forms.Button();
             this.txtAmount = new System.Windows.Forms.TextBox();
-            this.cmbAccount = new System.Windows.Forms.ComboBox();
+            this.cmbLoanType = new System.Windows.Forms.ComboBox();
             this.lblAmount = new System.Windows.Forms.Label();
             this.lblLoanType = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -63,13 +63,13 @@ namespace BankApp
             this.txtAmount.Size = new System.Drawing.Size(360, 22);
             this.txtAmount.TabIndex = 9;
             // 
-            // cmbAccount
+            // cmbLoanType
             // 
-            this.cmbAccount.FormattingEnabled = true;
-            this.cmbAccount.Location = new System.Drawing.Point(361, 157);
-            this.cmbAccount.Name = "cmbAccount";
-            this.cmbAccount.Size = new System.Drawing.Size(337, 24);
-            this.cmbAccount.TabIndex = 8;
+            this.cmbLoanType.FormattingEnabled = true;
+            this.cmbLoanType.Location = new System.Drawing.Point(361, 157);
+            this.cmbLoanType.Name = "cmbLoanType";
+            this.cmbLoanType.Size = new System.Drawing.Size(337, 24);
+            this.cmbLoanType.TabIndex = 8;
             // 
             // lblAmount
             // 
@@ -97,7 +97,7 @@ namespace BankApp
             this.Controls.Add(this.btnWithdraw);
             this.Controls.Add(this.btnDeposit);
             this.Controls.Add(this.txtAmount);
-            this.Controls.Add(this.cmbAccount);
+            this.Controls.Add(this.cmbLoanType);
             this.Controls.Add(this.lblAmount);
             this.Controls.Add(this.lblLoanType);
             this.Name = "LoanRequest";
@@ -118,7 +118,7 @@ namespace BankApp
         private System.Windows.Forms.Button btnWithdraw;
         private System.Windows.Forms.Button btnDeposit;
         private System.Windows.Forms.TextBox txtAmount;
-        private System.Windows.Forms.ComboBox cmbAccount;
+        private System.Windows.Forms.ComboBox cmbLoanType;
         private System.Windows.Forms.Label lblAmount;
         private System.Windows.Forms.Label lblLoanType;
     }
