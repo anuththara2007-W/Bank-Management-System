@@ -89,7 +89,7 @@
             // 
             // btnWithdraw
             // 
-            this.btnWithdraw.Location = new System.Drawing.Point(389, 199);
+            this.btnWithdraw.Location = new System.Drawing.Point(348, 199);
             this.btnWithdraw.Name = "btnWithdraw";
             this.btnWithdraw.Size = new System.Drawing.Size(141, 47);
             this.btnWithdraw.TabIndex = 5;
@@ -99,16 +99,16 @@
             // 
             // btnLoanRequest
             // 
-            this.btnLoanRequest.Location = new System.Drawing.Point(881, 199);
+            this.btnLoanRequest.Location = new System.Drawing.Point(897, 199);
             this.btnLoanRequest.Name = "btnLoanRequest";
             this.btnLoanRequest.Size = new System.Drawing.Size(141, 47);
             this.btnLoanRequest.TabIndex = 6;
-            this.btnLoanRequest.Text = "Withdraw";
+            this.btnLoanRequest.Text = "Loan Request";
             this.btnLoanRequest.UseVisualStyleBackColor = true;
             // 
             // btnTransfer
             // 
-            this.btnTransfer.Location = new System.Drawing.Point(644, 199);
+            this.btnTransfer.Location = new System.Drawing.Point(628, 199);
             this.btnTransfer.Name = "btnTransfer";
             this.btnTransfer.Size = new System.Drawing.Size(141, 47);
             this.btnTransfer.TabIndex = 7;
