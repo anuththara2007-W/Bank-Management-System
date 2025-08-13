@@ -76,9 +76,9 @@ namespace BankApp
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(219, 218);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 16);
+            this.label1.Size = new System.Drawing.Size(97, 16);
             this.label1.TabIndex = 21;
-            this.label1.Text = "Phone";
+            this.label1.Text = "New Password";
             // 
             // txtAddress
             // 
