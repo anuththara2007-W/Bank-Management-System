@@ -58,7 +58,7 @@ namespace BankApp
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(219, 172);
+            this.label2.Location = new System.Drawing.Point(176, 172);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 16);
             this.label2.TabIndex = 23;
@@ -74,7 +74,7 @@ namespace BankApp
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(219, 218);
+            this.label1.Location = new System.Drawing.Point(176, 218);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 16);
             this.label1.TabIndex = 21;
@@ -90,11 +90,11 @@ namespace BankApp
             // lblAmount
             // 
             this.lblAmount.AutoSize = true;
-            this.lblAmount.Location = new System.Drawing.Point(219, 258);
+            this.lblAmount.Location = new System.Drawing.Point(176, 258);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(58, 16);
+            this.lblAmount.Size = new System.Drawing.Size(145, 16);
             this.lblAmount.TabIndex = 19;
-            this.lblAmount.Text = "Address";
+            this.lblAmount.Text = "Confirm New Password";
             // 
             // ChangePassword
             // 
