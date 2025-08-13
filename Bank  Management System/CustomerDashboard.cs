@@ -2,14 +2,11 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using static System.Collections.Specialized.BitVector32;
 
 namespace BankApp
 {
     public partial class CustomerDashboard : Form
     {
-        string connString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
-
         public CustomerDashboard()
         {
             InitializeComponent();
@@ -17,49 +14,55 @@ namespace BankApp
 
         private void CustomerDashboard_Load(object sender, EventArgs e)
         {
-            lblCustomerName.Text = Session.CustomerName;
+            lblCustomerName.Text = CustomerSession.CustomerName;
             LoadBalance();
-            LoadTransactions();
-            LoadLoans();
+            LoadRecentTransactions();
+            LoadLoanSummary();
         }
 
         private void LoadBalance()
         {
-            using (SqlConnection con = new SqlConnection(connString))
+            using (SqlConnection con = DatabaseHelper.GetConnection())
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT SUM(Balance) FROM Accounts WHERE Customer_ID=@cid", con);
-                cmd.Parameters.AddWithValue("@cid", Session.CustomerID);
-                var result = cmd.ExecuteScalar();
-                lblBalance.Text = result != DBNull.Value ? $"${result}" : "$0";
+                SqlCommand cmd = new SqlCommand(
+                    "SELECT SUM(Balance) FROM Accounts WHERE Customer_ID = @cid", con);
+                cmd.Parameters.AddWithValue("@cid", CustomerSession.CustomerID);
+
+                object result = cmd.ExecuteScalar();
+                decimal balance = (result != DBNull.Value) ? Convert.ToDecimal(result) : 0;
+                lblBalance.Text = balance.ToString("C");
             }
         }
 
-        private void LoadTransactions()
+        private void LoadRecentTransactions()
         {
-            using (SqlConnection con = new SqlConnection(connString))
+            using (SqlConnection con = DatabaseHelper.GetConnection())
             {
-                string query = @"SELECT TOP 5 TID, Transaction_Type, Amount, Transaction_Date 
-                                 FROM Transactions 
-                                 WHERE Account_ID IN (SELECT Account_ID FROM Accounts WHERE Customer_ID=@cid)
-                                 ORDER BY Transaction_Date DESC";
-                SqlDataAdapter da = new SqlDataAdapter(query, con);
-                da.SelectCommand.Parameters.AddWithValue("@cid", Session.CustomerID);
+                con.Open();
+                SqlDataAdapter da = new SqlDataAdapter(
+                    "SELECT TOP 5 Transaction_Type, Amount, Transaction_Date " +
+                    "FROM Transactions WHERE Account_ID IN " +
+                    "(SELECT Account_ID FROM Accounts WHERE Customer_ID = @cid) " +
+                    "ORDER BY Transaction_Date DESC", con);
+                da.SelectCommand.Parameters.AddWithValue("@cid", CustomerSession.CustomerID);
+
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 dgvTransactions.DataSource = dt;
             }
         }
 
-        private void LoadLoans()
+        private void LoadLoanSummary()
         {
-            using (SqlConnection con = new SqlConnection(connString))
+            using (SqlConnection con = DatabaseHelper.GetConnection())
             {
-                string query = @"SELECT Loan_ID, Loan_Type, Amount, Status 
-                                 FROM Loans 
-                                 WHERE Customer_ID=@cid";
-                SqlDataAdapter da = new SqlDataAdapter(query, con);
-                da.SelectCommand.Parameters.AddWithValue("@cid", Session.CustomerID);
+                con.Open();
+                SqlDataAdapter da = new SqlDataAdapter(
+                    "SELECT Loan_ID, Loan_Type, Amount, Status FROM Loans " +
+                    "WHERE Customer_ID = @cid", con);
+                da.SelectCommand.Parameters.AddWithValue("@cid", CustomerSession.CustomerID);
+
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 dgvLoans.DataSource = dt;
