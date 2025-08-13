@@ -31,6 +31,8 @@ namespace BankApp
         private void InitializeComponent()
         {
             this.lblAccount = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbAccount = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblAccount
@@ -38,15 +40,34 @@ namespace BankApp
             this.lblAccount.AutoSize = true;
             this.lblAccount.Location = new System.Drawing.Point(42, 36);
             this.lblAccount.Name = "lblAccount";
-            this.lblAccount.Size = new System.Drawing.Size(44, 16);
+            this.lblAccount.Size = new System.Drawing.Size(96, 16);
             this.lblAccount.TabIndex = 0;
-            this.lblAccount.Text = "label1";
+            this.lblAccount.Text = "Select Account";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(918, 497);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "label1";
+            // 
+            // cmbAccount
+            // 
+            this.cmbAccount.FormattingEnabled = true;
+            this.cmbAccount.Location = new System.Drawing.Point(187, 36);
+            this.cmbAccount.Name = "cmbAccount";
+            this.cmbAccount.Size = new System.Drawing.Size(337, 24);
+            this.cmbAccount.TabIndex = 2;
             // 
             // DepositWithdraw
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 577);
+            this.Controls.Add(this.cmbAccount);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblAccount);
             this.Name = "DepositWithdraw";
             this.Text = "DepositWithdraw";
@@ -64,5 +85,7 @@ namespace BankApp
         #endregion
 
         private System.Windows.Forms.Label lblAccount;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbAccount;
     }
 }
