@@ -29,6 +29,7 @@ namespace BankApp
                     txtName.Text = reader["Customer_Name"].ToString();
                     txtEmail.Text = reader["Email"].ToString();
                     txtPhone.Text = reader["Phone"].ToString();
+
                 }
             }
         }
