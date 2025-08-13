@@ -30,7 +30,7 @@
         {
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.lblAmount = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,12 +56,12 @@
             this.lblAmount.Text = "Address";
             this.lblAmount.Click += new System.EventHandler(this.lblAmount_Click);
             // 
-            // textBox1
+            // txtPhone
             // 
-            this.textBox1.Location = new System.Drawing.Point(377, 209);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(360, 22);
-            this.textBox1.TabIndex = 13;
+            this.txtPhone.Location = new System.Drawing.Point(377, 209);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(360, 22);
+            this.txtPhone.TabIndex = 13;
             // 
             // label1
             // 
@@ -123,7 +123,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.lblAmount);
@@ -139,7 +139,7 @@
 
         private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.Label lblAmount;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label2;
