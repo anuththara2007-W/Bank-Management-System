@@ -25,7 +25,7 @@ namespace Bank__Management_System
 
         private void Customer_Click(object sender, EventArgs e)
         {
-            Customer cr = new Customer();
+            CustomerDashboard cr = new CustomerDashboard();
             cr.Show();
             this.Hide();
         }
