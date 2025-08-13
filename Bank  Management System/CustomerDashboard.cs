@@ -75,31 +75,35 @@ namespace BankApp
         private void btnLoanRequest_Click(object sender, EventArgs e)
         {
             LoanRequest frm = new LoanRequest();
-            frm.ShowDialog();
+            frm.Show();
+            this.Hide();
         }
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
             Profile frm = new Profile();
-            frm.ShowDialog();
+            frm.Show();
+            this.Hide();
         }
 
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
             ChangePassword frm = new ChangePassword();
-            frm.ShowDialog();
+            frm.Show();
+            this.Hide();
         }
 
         private void btnSupport_Click(object sender, EventArgs e)
         {
             Support frm = new Support();
-            frm.ShowDialog();
+            frm.Show();
+            this.Hide();
         }
         private void btnLogout_Click(object sender, EventArgs e)
         {
             Login frm = new Login();
             frm.Show();
-            this.Close();
+            this.Hide();
         }
     }
 }
