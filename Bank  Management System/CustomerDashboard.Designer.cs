@@ -33,6 +33,7 @@
             this.lblBalance = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnDeposit = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -84,11 +85,21 @@
             this.btnDeposit.Text = "Deposit";
             this.btnDeposit.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(389, 199);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(141, 47);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Withdraw";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // CustomerDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 785);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnDeposit);
             this.Controls.Add(this.lblBalance);
             this.Controls.Add(this.label4);
@@ -109,5 +120,6 @@
         private System.Windows.Forms.Label lblBalance;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnDeposit;
+        private System.Windows.Forms.Button button1;
     }
 }
