@@ -36,7 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnSubmitLoan = new System.Windows.Forms.Button();
+            this.btnUpdateProfile = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtAddress
@@ -104,21 +104,21 @@
             this.label3.TabIndex = 16;
             this.label3.Text = "Name";
             // 
-            // btnSubmitLoan
+            // btnUpdateProfile
             // 
-            this.btnSubmitLoan.Location = new System.Drawing.Point(387, 326);
-            this.btnSubmitLoan.Name = "btnSubmitLoan";
-            this.btnSubmitLoan.Size = new System.Drawing.Size(189, 30);
-            this.btnSubmitLoan.TabIndex = 18;
-            this.btnSubmitLoan.Text = "Submit";
-            this.btnSubmitLoan.UseVisualStyleBackColor = true;
+            this.btnUpdateProfile.Location = new System.Drawing.Point(387, 326);
+            this.btnUpdateProfile.Name = "btnUpdateProfile";
+            this.btnUpdateProfile.Size = new System.Drawing.Size(189, 30);
+            this.btnUpdateProfile.TabIndex = 18;
+            this.btnUpdateProfile.Text = "Submit";
+            this.btnUpdateProfile.UseVisualStyleBackColor = true;
             // 
             // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(991, 520);
-            this.Controls.Add(this.btnSubmitLoan);
+            this.Controls.Add(this.btnUpdateProfile);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtEmail);
@@ -145,6 +145,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnSubmitLoan;
+        private System.Windows.Forms.Button btnUpdateProfile;
     }
 }
