@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblCustomerName = new System.Windows.Forms.Label();
             this.lblBalance = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnDeposit = new System.Windows.Forms.Button();
@@ -48,15 +48,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Wellcome , ";
             // 
-            // label2
+            // lblCustomerName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(185, 38);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "customer ";
+            this.lblCustomerName.AutoSize = true;
+            this.lblCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomerName.Location = new System.Drawing.Point(185, 38);
+            this.lblCustomerName.Name = "lblCustomerName";
+            this.lblCustomerName.Size = new System.Drawing.Size(97, 25);
+            this.lblCustomerName.TabIndex = 1;
+            this.lblCustomerName.Text = "customer ";
             // 
             // lblBalance
             // 
@@ -125,7 +125,7 @@
             this.Controls.Add(this.btnDeposit);
             this.Controls.Add(this.lblBalance);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblCustomerName);
             this.Controls.Add(this.label1);
             this.Name = "CustomerDashboard";
             this.Text = "CustomerDashboard";
@@ -138,7 +138,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblCustomerName;
         private System.Windows.Forms.Label lblBalance;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnDeposit;

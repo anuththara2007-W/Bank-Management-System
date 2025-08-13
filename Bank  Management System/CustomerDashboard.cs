@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bank__Management_System;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -16,7 +17,7 @@ namespace BankApp
 
         private void CustomerDashboard_Load(object sender, EventArgs e)
         {
-            lblCustomerName.Text = CustomerSession.CustomerName;
+            lblCustomerName.Text = Session.CustomerName;
             LoadBalance();
             LoadRecentTransactions();
             LoadLoanSummary();
