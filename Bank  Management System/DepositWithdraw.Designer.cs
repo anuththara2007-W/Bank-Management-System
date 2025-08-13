@@ -35,7 +35,7 @@ namespace BankApp
             this.cmbAccount = new System.Windows.Forms.ComboBox();
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.btnDeposit = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnWithdraw = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblAccount
@@ -80,21 +80,21 @@ namespace BankApp
             this.btnDeposit.Text = "Deposit ";
             this.btnDeposit.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnWithdraw
             // 
-            this.button2.Location = new System.Drawing.Point(348, 214);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(189, 30);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Withdraw";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnWithdraw.Location = new System.Drawing.Point(348, 214);
+            this.btnWithdraw.Name = "btnWithdraw";
+            this.btnWithdraw.Size = new System.Drawing.Size(189, 30);
+            this.btnWithdraw.TabIndex = 5;
+            this.btnWithdraw.Text = "Withdraw";
+            this.btnWithdraw.UseVisualStyleBackColor = true;
             // 
             // DepositWithdraw
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 577);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnWithdraw);
             this.Controls.Add(this.btnDeposit);
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.cmbAccount);
@@ -120,6 +120,6 @@ namespace BankApp
         private System.Windows.Forms.ComboBox cmbAccount;
         private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.Button btnDeposit;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnWithdraw;
     }
 }
