@@ -22,7 +22,7 @@ namespace BankApp
 
         private void btnAccounts_Click(object sender, EventArgs e)
         {
-            new MyAccounts().Show();
+            new dgvAccounts().Show();
         }
 
         private void btnTransactions_Click(object sender, EventArgs e)
