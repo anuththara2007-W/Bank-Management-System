@@ -41,7 +41,7 @@ namespace BankApp
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(189, 30);
             this.btnSend.TabIndex = 28;
-            this.btnSend.Text = "Submit";
+            this.btnSend.Text = "Send";
             this.btnSend.UseVisualStyleBackColor = true;
             // 
             // txtMessage
