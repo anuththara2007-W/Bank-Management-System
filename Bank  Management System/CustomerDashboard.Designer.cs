@@ -160,6 +160,7 @@
             this.btnChangePassword.TabIndex = 11;
             this.btnChangePassword.Text = "Change the Password";
             this.btnChangePassword.UseVisualStyleBackColor = true;
+            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
             // btnSupport
             // 
