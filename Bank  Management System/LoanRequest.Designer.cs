@@ -53,7 +53,7 @@ namespace BankApp
             this.btnSubmitLoan.Name = "btnSubmitLoan";
             this.btnSubmitLoan.Size = new System.Drawing.Size(189, 30);
             this.btnSubmitLoan.TabIndex = 10;
-            this.btnSubmitLoan.Text = "Deposit ";
+            this.btnSubmitLoan.Text = "Submit";
             this.btnSubmitLoan.UseVisualStyleBackColor = true;
             // 
             // txtAmount
