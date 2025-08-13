@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Landing));
             this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnsignin = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -57,21 +57,21 @@
             this.button1.Text = "SIGN UP";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnsignin
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(379, 630);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(156, 32);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "SIGN IN";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnsignin.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnsignin.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnsignin.FlatAppearance.BorderSize = 0;
+            this.btnsignin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnsignin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnsignin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsignin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsignin.Location = new System.Drawing.Point(379, 630);
+            this.btnsignin.Name = "btnsignin";
+            this.btnsignin.Size = new System.Drawing.Size(156, 32);
+            this.btnsignin.TabIndex = 2;
+            this.btnsignin.Text = "SIGN IN";
+            this.btnsignin.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -190,12 +190,11 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnsignin);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Landing";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Landing";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -204,7 +203,7 @@
 
         #endregion
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnsignin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
