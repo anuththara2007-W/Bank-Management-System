@@ -11,6 +11,11 @@ namespace BankApp
             InitializeComponent();
         }
 
+        private void InitializeComponent()
+        {
+            throw new NotImplementedException();
+        }
+
         private void CustomerMain_Load(object sender, EventArgs e)
         {
             lblCustomerName.Text = "Welcome, " + Session.CustomerName;
