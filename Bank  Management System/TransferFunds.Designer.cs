@@ -31,7 +31,7 @@ namespace BankApp
         private void InitializeComponent()
         {
             this.btnWithdraw = new System.Windows.Forms.Button();
-            this.btnDeposit = new System.Windows.Forms.Button();
+            this.btnTransfer = new System.Windows.Forms.Button();
             this.txtToAccountID = new System.Windows.Forms.TextBox();
             this.cmbFromAccount = new System.Windows.Forms.ComboBox();
             this.lblToAccount = new System.Windows.Forms.Label();
@@ -49,14 +49,14 @@ namespace BankApp
             this.btnWithdraw.Text = "Withdraw";
             this.btnWithdraw.UseVisualStyleBackColor = true;
             // 
-            // btnDeposit
+            // btnTransfer
             // 
-            this.btnDeposit.Location = new System.Drawing.Point(152, 299);
-            this.btnDeposit.Name = "btnDeposit";
-            this.btnDeposit.Size = new System.Drawing.Size(189, 30);
-            this.btnDeposit.TabIndex = 10;
-            this.btnDeposit.Text = "Deposit ";
-            this.btnDeposit.UseVisualStyleBackColor = true;
+            this.btnTransfer.Location = new System.Drawing.Point(152, 299);
+            this.btnTransfer.Name = "btnTransfer";
+            this.btnTransfer.Size = new System.Drawing.Size(189, 30);
+            this.btnTransfer.TabIndex = 10;
+            this.btnTransfer.Text = "Deposit ";
+            this.btnTransfer.UseVisualStyleBackColor = true;
             // 
             // txtToAccountID
             // 
@@ -115,7 +115,7 @@ namespace BankApp
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.lblAmount);
             this.Controls.Add(this.btnWithdraw);
-            this.Controls.Add(this.btnDeposit);
+            this.Controls.Add(this.btnTransfer);
             this.Controls.Add(this.txtToAccountID);
             this.Controls.Add(this.cmbFromAccount);
             this.Controls.Add(this.lblToAccount);
@@ -136,7 +136,7 @@ namespace BankApp
         #endregion
 
         private System.Windows.Forms.Button btnWithdraw;
-        private System.Windows.Forms.Button btnDeposit;
+        private System.Windows.Forms.Button btnTransfer;
         private System.Windows.Forms.TextBox txtToAccountID;
         private System.Windows.Forms.ComboBox cmbFromAccount;
         private System.Windows.Forms.Label lblToAccount;
