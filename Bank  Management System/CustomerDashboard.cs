@@ -71,5 +71,30 @@ namespace BankApp
                 dgvLoans.DataSource = dt;
             }
         }
+
+        private void btnLoanRequest_Click(object sender, EventArgs e)
+        {
+            LoanRequest frm = new LoanRequest();
+            frm.ShowDialog();
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            Profile frm = new Profile();
+            frm.ShowDialog();
+        }
+
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            ChangePassword frm = new ChangePassword();
+            frm.ShowDialog();
+        }
+
+        private void btnSupport_Click(object sender, EventArgs e)
+        {
+            Support frm = new Support();
+            frm.ShowDialog();
+        }
+
     }
 }
