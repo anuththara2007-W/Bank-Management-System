@@ -112,6 +112,7 @@
             this.btnLoanRequest.TabIndex = 6;
             this.btnLoanRequest.Text = "Loan Request";
             this.btnLoanRequest.UseVisualStyleBackColor = true;
+            this.btnLoanRequest.Click += new System.EventHandler(this.btnLoanRequest_Click);
             // 
             // btnTransfer
             // 
