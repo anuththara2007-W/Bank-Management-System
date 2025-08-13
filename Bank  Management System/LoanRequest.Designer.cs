@@ -31,7 +31,7 @@ namespace BankApp
         private void InitializeComponent()
         {
             this.btnWithdraw = new System.Windows.Forms.Button();
-            this.btnDeposit = new System.Windows.Forms.Button();
+            this.btnSubmitLoan = new System.Windows.Forms.Button();
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.cmbLoanType = new System.Windows.Forms.ComboBox();
             this.lblAmount = new System.Windows.Forms.Label();
@@ -47,14 +47,14 @@ namespace BankApp
             this.btnWithdraw.Text = "Withdraw";
             this.btnWithdraw.UseVisualStyleBackColor = true;
             // 
-            // btnDeposit
+            // btnSubmitLoan
             // 
-            this.btnDeposit.Location = new System.Drawing.Point(214, 335);
-            this.btnDeposit.Name = "btnDeposit";
-            this.btnDeposit.Size = new System.Drawing.Size(189, 30);
-            this.btnDeposit.TabIndex = 10;
-            this.btnDeposit.Text = "Deposit ";
-            this.btnDeposit.UseVisualStyleBackColor = true;
+            this.btnSubmitLoan.Location = new System.Drawing.Point(214, 335);
+            this.btnSubmitLoan.Name = "btnSubmitLoan";
+            this.btnSubmitLoan.Size = new System.Drawing.Size(189, 30);
+            this.btnSubmitLoan.TabIndex = 10;
+            this.btnSubmitLoan.Text = "Deposit ";
+            this.btnSubmitLoan.UseVisualStyleBackColor = true;
             // 
             // txtAmount
             // 
@@ -95,7 +95,7 @@ namespace BankApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(924, 522);
             this.Controls.Add(this.btnWithdraw);
-            this.Controls.Add(this.btnDeposit);
+            this.Controls.Add(this.btnSubmitLoan);
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.cmbLoanType);
             this.Controls.Add(this.lblAmount);
@@ -116,7 +116,7 @@ namespace BankApp
         #endregion
 
         private System.Windows.Forms.Button btnWithdraw;
-        private System.Windows.Forms.Button btnDeposit;
+        private System.Windows.Forms.Button btnSubmitLoan;
         private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.ComboBox cmbLoanType;
         private System.Windows.Forms.Label lblAmount;
