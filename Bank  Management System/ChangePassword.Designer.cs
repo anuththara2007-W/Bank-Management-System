@@ -31,7 +31,7 @@ namespace BankApp
         private void InitializeComponent()
         {
             this.btnUpdateProfile = new System.Windows.Forms.Button();
-            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtOld = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,12 +48,12 @@ namespace BankApp
             this.btnUpdateProfile.Text = "Submit";
             this.btnUpdateProfile.UseVisualStyleBackColor = true;
             // 
-            // txtEmail
+            // txtOld
             // 
-            this.txtEmail.Location = new System.Drawing.Point(342, 169);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(360, 22);
-            this.txtEmail.TabIndex = 24;
+            this.txtOld.Location = new System.Drawing.Point(342, 169);
+            this.txtOld.Name = "txtOld";
+            this.txtOld.Size = new System.Drawing.Size(360, 22);
+            this.txtOld.TabIndex = 24;
             // 
             // label2
             // 
@@ -102,7 +102,7 @@ namespace BankApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(921, 530);
             this.Controls.Add(this.btnUpdateProfile);
-            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtOld);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.label1);
@@ -124,7 +124,7 @@ namespace BankApp
         #endregion
 
         private System.Windows.Forms.Button btnUpdateProfile;
-        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtOld;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label label1;
