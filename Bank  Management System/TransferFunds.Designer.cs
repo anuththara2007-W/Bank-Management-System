@@ -1,4 +1,6 @@
-﻿namespace Bank__Management_System
+﻿using System;
+
+namespace BankApp
 {
     partial class TransferFunds
     {
@@ -40,6 +42,11 @@
             this.Load += new System.EventHandler(this.TransferFunds_Load);
             this.ResumeLayout(false);
 
+        }
+
+        private void TransferFunds_Load(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
