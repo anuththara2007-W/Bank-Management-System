@@ -50,6 +50,7 @@ namespace BankApp
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(360, 22);
             this.txtAddress.TabIndex = 27;
+            this.txtAddress.Text = "txtMessage ";
             // 
             // lblAmount
             // 
