@@ -31,7 +31,7 @@ namespace BankApp
         private void InitializeComponent()
         {
             this.lblAccount = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblAmount = new System.Windows.Forms.Label();
             this.cmbAccount = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
@@ -44,14 +44,14 @@ namespace BankApp
             this.lblAccount.TabIndex = 0;
             this.lblAccount.Text = "Select Account";
             // 
-            // label1
+            // lblAmount
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(918, 497);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.lblAmount.AutoSize = true;
+            this.lblAmount.Location = new System.Drawing.Point(918, 497);
+            this.lblAmount.Name = "lblAmount";
+            this.lblAmount.Size = new System.Drawing.Size(44, 16);
+            this.lblAmount.TabIndex = 1;
+            this.lblAmount.Text = "label1";
             // 
             // cmbAccount
             // 
@@ -67,7 +67,7 @@ namespace BankApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 577);
             this.Controls.Add(this.cmbAccount);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblAmount);
             this.Controls.Add(this.lblAccount);
             this.Name = "DepositWithdraw";
             this.Text = "DepositWithdraw";
@@ -85,7 +85,7 @@ namespace BankApp
         #endregion
 
         private System.Windows.Forms.Label lblAccount;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblAmount;
         private System.Windows.Forms.ComboBox cmbAccount;
     }
 }
