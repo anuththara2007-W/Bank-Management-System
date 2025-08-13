@@ -10,7 +10,6 @@ namespace Bank__Management_System
     {
         public static int CustomerID { get; set; }
         public static string CustomerName { get; set; }
-        public static string Email { get; set; }
-        public static string Role { get; set; }
+     
     }
 }
