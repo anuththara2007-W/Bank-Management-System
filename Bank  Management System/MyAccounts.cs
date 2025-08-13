@@ -6,11 +6,11 @@ using static System.Collections.Specialized.BitVector32;
 
 namespace BankApp
 {
-    public partial class MyAccounts : Form
+    public partial class dgvAccounts : Form
     {
         string connString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
 
-        public MyAccounts()
+        public dgvAccounts()
         {
             InitializeComponent();
         }
