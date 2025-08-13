@@ -1,4 +1,6 @@
-﻿namespace Bank__Management_System
+﻿using System;
+
+namespace BankApp
 {
     partial class DepositWithdraw
     {
@@ -40,6 +42,11 @@
             this.Load += new System.EventHandler(this.DepositWithdraw_Load);
             this.ResumeLayout(false);
 
+        }
+
+        private void DepositWithdraw_Load(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
