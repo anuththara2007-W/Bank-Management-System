@@ -12,6 +12,8 @@ namespace BankApp
             InitializeComponent();
         }
 
+      
+
         private void CustomerDashboard_Load(object sender, EventArgs e)
         {
             lblCustomerName.Text = CustomerSession.CustomerName;
