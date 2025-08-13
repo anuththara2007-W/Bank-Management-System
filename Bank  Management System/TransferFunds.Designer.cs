@@ -30,7 +30,6 @@ namespace BankApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnWithdraw = new System.Windows.Forms.Button();
             this.btnTransfer = new System.Windows.Forms.Button();
             this.txtToAccountID = new System.Windows.Forms.TextBox();
             this.cmbFromAccount = new System.Windows.Forms.ComboBox();
@@ -40,18 +39,9 @@ namespace BankApp
             this.lblAmount = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btnWithdraw
-            // 
-            this.btnWithdraw.Location = new System.Drawing.Point(460, 299);
-            this.btnWithdraw.Name = "btnWithdraw";
-            this.btnWithdraw.Size = new System.Drawing.Size(189, 30);
-            this.btnWithdraw.TabIndex = 11;
-            this.btnWithdraw.Text = "Withdraw";
-            this.btnWithdraw.UseVisualStyleBackColor = true;
-            // 
             // btnTransfer
             // 
-            this.btnTransfer.Location = new System.Drawing.Point(152, 299);
+            this.btnTransfer.Location = new System.Drawing.Point(299, 296);
             this.btnTransfer.Name = "btnTransfer";
             this.btnTransfer.Size = new System.Drawing.Size(189, 30);
             this.btnTransfer.TabIndex = 10;
@@ -114,7 +104,6 @@ namespace BankApp
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.lblAmount);
-            this.Controls.Add(this.btnWithdraw);
             this.Controls.Add(this.btnTransfer);
             this.Controls.Add(this.txtToAccountID);
             this.Controls.Add(this.cmbFromAccount);
@@ -134,8 +123,6 @@ namespace BankApp
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnWithdraw;
         private System.Windows.Forms.Button btnTransfer;
         private System.Windows.Forms.TextBox txtToAccountID;
         private System.Windows.Forms.ComboBox cmbFromAccount;
