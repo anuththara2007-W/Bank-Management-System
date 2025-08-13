@@ -2,18 +2,17 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using static System.Collections.Specialized.BitVector32;
 
-namespace Bank__Management_System
+namespace BankApp
 {
     public partial class MyLoans : Form
     {
-        int customerId;
         string connString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
 
-        public MyLoans(int cid)
+        public MyLoans()
         {
             InitializeComponent();
-            customerId = cid;
         }
 
         private void MyLoans_Load(object sender, EventArgs e)
@@ -25,12 +24,11 @@ namespace Bank__Management_System
         {
             using (SqlConnection con = new SqlConnection(connString))
             {
-                string q = "SELECT LoanID, LoanType, Amount, InterestRate, LoanDate, Status FROM Loan WHERE Customer_ID = @cid";
-                SqlDataAdapter da = new SqlDataAdapter(q, con);
-                da.SelectCommand.Parameters.AddWithValue("@cid", customerId);
+                string query = "SELECT Loan_ID, Loan_Type, Amount, Status FROM Loans WHERE Customer_ID=@cid";
+                SqlDataAdapter da = new SqlDataAdapter(query, con);
+                da.SelectCommand.Parameters.AddWithValue("@cid", Session.CustomerID);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                dgvLoans.AutoGenerateColumns = true;
                 dgvLoans.DataSource = dt;
             }
         }
