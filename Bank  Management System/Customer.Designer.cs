@@ -1,6 +1,6 @@
 ﻿namespace Bank__Management_System
 {
-    partial class CustomerDashboard
+    partial class Customer
     {
         /// <summary>
         /// Required designer variable.
