@@ -30,7 +30,7 @@ namespace BankApp
                 con.Open();
                 SqlCommand cmd = new SqlCommand(
                     "SELECT SUM(Balance) FROM Accounts WHERE Customer_ID = @cid", con);
-                cmd.Parameters.AddWithValue("@cid", CustomerSession.CustomerID);
+                cmd.Parameters.AddWithValue("@cid", Session.CustomerID);
 
                 object result = cmd.ExecuteScalar();
                 decimal balance = (result != DBNull.Value) ? Convert.ToDecimal(result) : 0;
