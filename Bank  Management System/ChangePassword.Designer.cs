@@ -35,7 +35,7 @@ namespace BankApp
             this.label2 = new System.Windows.Forms.Label();
             this.txtNew = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtConfirm = new System.Windows.Forms.TextBox();
             this.lblAmount = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -80,12 +80,12 @@ namespace BankApp
             this.label1.TabIndex = 21;
             this.label1.Text = "New Password";
             // 
-            // txtAddress
+            // txtConfirm
             // 
-            this.txtAddress.Location = new System.Drawing.Point(342, 255);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(360, 22);
-            this.txtAddress.TabIndex = 20;
+            this.txtConfirm.Location = new System.Drawing.Point(342, 255);
+            this.txtConfirm.Name = "txtConfirm";
+            this.txtConfirm.Size = new System.Drawing.Size(360, 22);
+            this.txtConfirm.TabIndex = 20;
             // 
             // lblAmount
             // 
@@ -106,7 +106,7 @@ namespace BankApp
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNew);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtAddress);
+            this.Controls.Add(this.txtConfirm);
             this.Controls.Add(this.lblAmount);
             this.Name = "ChangePassword";
             this.Text = "ChangePassword";
@@ -128,7 +128,7 @@ namespace BankApp
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNew;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.TextBox txtConfirm;
         private System.Windows.Forms.Label lblAmount;
     }
 }
