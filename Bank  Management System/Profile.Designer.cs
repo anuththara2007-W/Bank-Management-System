@@ -34,7 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnSubmitLoan = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -88,12 +88,12 @@
             this.label2.TabIndex = 14;
             this.label2.Text = "Email";
             // 
-            // textBox3
+            // txtName
             // 
-            this.textBox3.Location = new System.Drawing.Point(377, 120);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(360, 22);
-            this.textBox3.TabIndex = 17;
+            this.txtName.Location = new System.Drawing.Point(377, 120);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(360, 22);
+            this.txtName.TabIndex = 17;
             // 
             // label3
             // 
@@ -119,7 +119,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(991, 520);
             this.Controls.Add(this.btnSubmitLoan);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
@@ -143,7 +143,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSubmitLoan;
     }
