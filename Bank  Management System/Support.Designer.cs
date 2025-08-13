@@ -30,19 +30,19 @@ namespace BankApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnUpdateProfile = new System.Windows.Forms.Button();
+            this.btnSend = new System.Windows.Forms.Button();
             this.txtMessage = new System.Windows.Forms.TextBox();
             this.lblAmount = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btnUpdateProfile
+            // btnSend
             // 
-            this.btnUpdateProfile.Location = new System.Drawing.Point(313, 249);
-            this.btnUpdateProfile.Name = "btnUpdateProfile";
-            this.btnUpdateProfile.Size = new System.Drawing.Size(189, 30);
-            this.btnUpdateProfile.TabIndex = 28;
-            this.btnUpdateProfile.Text = "Submit";
-            this.btnUpdateProfile.UseVisualStyleBackColor = true;
+            this.btnSend.Location = new System.Drawing.Point(313, 249);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(189, 30);
+            this.btnSend.TabIndex = 28;
+            this.btnSend.Text = "Submit";
+            this.btnSend.UseVisualStyleBackColor = true;
             // 
             // txtMessage
             // 
@@ -65,7 +65,7 @@ namespace BankApp
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnUpdateProfile);
+            this.Controls.Add(this.btnSend);
             this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.lblAmount);
             this.Name = "Support";
@@ -83,7 +83,7 @@ namespace BankApp
 
         #endregion
 
-        private System.Windows.Forms.Button btnUpdateProfile;
+        private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.TextBox txtMessage;
         private System.Windows.Forms.Label lblAmount;
     }
