@@ -41,6 +41,7 @@
             this.btnProfile = new System.Windows.Forms.Button();
             this.btnChangePassword = new System.Windows.Forms.Button();
             this.btnSupport = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoans)).BeginInit();
             this.SuspendLayout();
@@ -167,11 +168,21 @@
             this.btnSupport.Text = "Support";
             this.btnSupport.UseVisualStyleBackColor = true;
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Location = new System.Drawing.Point(553, 621);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(141, 47);
+            this.btnLogout.TabIndex = 13;
+            this.btnLogout.Text = "Log Out";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            // 
             // CustomerDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 785);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnSupport);
             this.Controls.Add(this.btnChangePassword);
             this.Controls.Add(this.btnProfile);
@@ -210,5 +221,6 @@
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Button btnChangePassword;
         private System.Windows.Forms.Button btnSupport;
+        private System.Windows.Forms.Button btnLogout;
     }
 }
