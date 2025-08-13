@@ -9,6 +9,7 @@ namespace Bank__Management_System
     {
         private int customerId;
         string connString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
+        private object dgvTransactions;
 
         public CustomerDashboard(int custId)
         {
@@ -100,5 +101,11 @@ namespace Bank__Management_System
         private void btnProfile_Click(object sender, EventArgs e) { new Profile(customerId).ShowDialog(); }
         private void btnChangePassword_Click(object sender, EventArgs e) { new ChangePassword(customerId).ShowDialog(); }
         private void btnSupport_Click(object sender, EventArgs e) { new Support(customerId).ShowDialog(); }
+
+        private class dgvLoans
+        {
+            public static bool AutoGenerateColumns { get; internal set; }
+            public static DataTable DataSource { get; internal set; }
+        }
     }
 }
