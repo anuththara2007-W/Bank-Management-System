@@ -112,7 +112,7 @@
             this.btnTransfer.Name = "btnTransfer";
             this.btnTransfer.Size = new System.Drawing.Size(141, 47);
             this.btnTransfer.TabIndex = 7;
-            this.btnTransfer.Text = "Withdraw";
+            this.btnTransfer.Text = "Transfer";
             this.btnTransfer.UseVisualStyleBackColor = true;
             // 
             // CustomerDashboard
