@@ -34,6 +34,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnDeposit = new System.Windows.Forms.Button();
             this.btnWithdraw = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnTransfer = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -93,12 +95,33 @@
             this.btnWithdraw.TabIndex = 5;
             this.btnWithdraw.Text = "Withdraw";
             this.btnWithdraw.UseVisualStyleBackColor = true;
+            this.btnWithdraw.Click += new System.EventHandler(this.btnWithdraw_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(570, 369);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(141, 47);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Withdraw";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btnTransfer
+            // 
+            this.btnTransfer.Location = new System.Drawing.Point(644, 199);
+            this.btnTransfer.Name = "btnTransfer";
+            this.btnTransfer.Size = new System.Drawing.Size(141, 47);
+            this.btnTransfer.TabIndex = 7;
+            this.btnTransfer.Text = "Withdraw";
+            this.btnTransfer.UseVisualStyleBackColor = true;
             // 
             // CustomerDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 785);
+            this.Controls.Add(this.btnTransfer);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnWithdraw);
             this.Controls.Add(this.btnDeposit);
             this.Controls.Add(this.lblBalance);
@@ -121,5 +144,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnDeposit;
         private System.Windows.Forms.Button btnWithdraw;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnTransfer;
     }
 }
