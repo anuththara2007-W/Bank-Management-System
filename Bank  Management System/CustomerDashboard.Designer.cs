@@ -81,7 +81,7 @@
             this.btnDeposit.Name = "btnDeposit";
             this.btnDeposit.Size = new System.Drawing.Size(141, 47);
             this.btnDeposit.TabIndex = 4;
-            this.btnDeposit.Text = "button1";
+            this.btnDeposit.Text = "Deposit";
             this.btnDeposit.UseVisualStyleBackColor = true;
             // 
             // CustomerDashboard
