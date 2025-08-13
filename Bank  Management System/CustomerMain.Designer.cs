@@ -10,6 +10,11 @@ namespace Bank__Management_System
             InitializeComponent();
         }
 
+        private void InitializeComponent()
+        {
+            throw new NotImplementedException();
+        }
+
         private void CustomerMain_Load(object sender, EventArgs e)
         {
             // Code to run when form loads
