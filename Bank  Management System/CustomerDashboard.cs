@@ -2,59 +2,51 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using static System.Collections.Specialized.BitVector32;
 
-namespace Bank__Management_System
+namespace BankApp
 {
     public partial class CustomerDashboard : Form
     {
-        private int customerId;
         string connString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
 
-        public CustomerDashboard(int custId)
+        public CustomerDashboard()
         {
             InitializeComponent();
-            customerId = custId;
         }
 
         private void CustomerDashboard_Load(object sender, EventArgs e)
         {
-            LoadCustomerInfo();
-            LoadRecentTransactions();
+            lblCustomerName.Text = Session.CustomerName;
+            LoadBalance();
+            LoadTransactions();
             LoadLoans();
         }
 
-        private void LoadCustomerInfo()
+        private void LoadBalance()
         {
             using (SqlConnection con = new SqlConnection(connString))
             {
                 con.Open();
-
-                SqlCommand cmdName = new SqlCommand("SELECT Customer_Name FROM Customer WHERE Customer_ID = @cid", con);
-                cmdName.Parameters.AddWithValue("@cid", customerId);
-                label2.Text = "Welcome, " + (cmdName.ExecuteScalar()?.ToString() ?? "Customer");
-
-                SqlCommand cmdBal = new SqlCommand("SELECT ISNULL(SUM(Balance),0) FROM Accounts WHERE Customer_ID = @cid", con);
-                cmdBal.Parameters.AddWithValue("@cid", customerId);
-                object bal = cmdBal.ExecuteScalar();
-                decimal balance = (bal == DBNull.Value) ? 0m : Convert.ToDecimal(bal);
-                lblBalance.Text = balance.ToString("C2");
+                SqlCommand cmd = new SqlCommand("SELECT SUM(Balance) FROM Accounts WHERE Customer_ID=@cid", con);
+                cmd.Parameters.AddWithValue("@cid", Session.CustomerID);
+                var result = cmd.ExecuteScalar();
+                lblBalance.Text = result != DBNull.Value ? $"${result}" : "$0";
             }
         }
 
-        private void LoadRecentTransactions()
+        private void LoadTransactions()
         {
             using (SqlConnection con = new SqlConnection(connString))
             {
-                string q = @"SELECT TOP 8 T.TID, T.Transaction_Type, T.Amount, T.Transaction_Date, T.Account_ID
-                             FROM Transactions T
-                             JOIN Accounts A ON T.Account_ID = A.Account_ID
-                             WHERE A.Customer_ID = @cid
-                             ORDER BY T.Transaction_Date DESC";
-                SqlDataAdapter da = new SqlDataAdapter(q, con);
-                da.SelectCommand.Parameters.AddWithValue("@cid", customerId);
+                string query = @"SELECT TOP 5 TID, Transaction_Type, Amount, Transaction_Date 
+                                 FROM Transactions 
+                                 WHERE Account_ID IN (SELECT Account_ID FROM Accounts WHERE Customer_ID=@cid)
+                                 ORDER BY Transaction_Date DESC";
+                SqlDataAdapter da = new SqlDataAdapter(query, con);
+                da.SelectCommand.Parameters.AddWithValue("@cid", Session.CustomerID);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                dgvTransactions.AutoGenerateColumns = true;
                 dgvTransactions.DataSource = dt;
             }
         }
@@ -63,43 +55,15 @@ namespace Bank__Management_System
         {
             using (SqlConnection con = new SqlConnection(connString))
             {
-                string q = "SELECT LoanID, LoanType, Amount, InterestRate, LoanDate, Status FROM Loan WHERE Customer_ID = @cid";
-                SqlDataAdapter da = new SqlDataAdapter(q, con);
-                da.SelectCommand.Parameters.AddWithValue("@cid", customerId);
+                string query = @"SELECT Loan_ID, Loan_Type, Amount, Status 
+                                 FROM Loans 
+                                 WHERE Customer_ID=@cid";
+                SqlDataAdapter da = new SqlDataAdapter(query, con);
+                da.SelectCommand.Parameters.AddWithValue("@cid", Session.CustomerID);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                dgvLoans.AutoGenerateColumns = true;
                 dgvLoans.DataSource = dt;
             }
         }
-
-        // button click handlers open respective forms (see CustomerMain for pattern)
-        private void btnDeposit_Click(object sender, EventArgs e)
-        {
-            new DepositWithdraw(customerId, "Deposit").ShowDialog();
-            LoadCustomerInfo(); LoadRecentTransactions();
-        }
-
-        private void btnWithdraw_Click(object sender, EventArgs e)
-        {
-            new DepositWithdraw(customerId, "Withdraw").ShowDialog();
-            LoadCustomerInfo(); LoadRecentTransactions();
-        }
-
-        private void btnTransfer_Click(object sender, EventArgs e)
-        {
-            new TransferFunds(customerId).ShowDialog();
-            LoadCustomerInfo(); LoadRecentTransactions();
-        }
-
-        private void btnLoanRequest_Click(object sender, EventArgs e)
-        {
-            new LoanRequest(customerId).ShowDialog();
-            LoadLoans();
-        }
-
-        private void btnProfile_Click(object sender, EventArgs e) { new Profile(customerId).ShowDialog(); }
-        private void btnChangePassword_Click(object sender, EventArgs e) { new ChangePassword(customerId).ShowDialog(); }
-        private void btnSupport_Click(object sender, EventArgs e) { new Support(customerId).ShowDialog(); }
     }
 }
