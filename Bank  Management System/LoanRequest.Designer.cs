@@ -30,7 +30,6 @@ namespace BankApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnWithdraw = new System.Windows.Forms.Button();
             this.btnSubmitLoan = new System.Windows.Forms.Button();
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.cmbLoanType = new System.Windows.Forms.ComboBox();
@@ -38,18 +37,9 @@ namespace BankApp
             this.lblLoanType = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btnWithdraw
-            // 
-            this.btnWithdraw.Location = new System.Drawing.Point(522, 335);
-            this.btnWithdraw.Name = "btnWithdraw";
-            this.btnWithdraw.Size = new System.Drawing.Size(189, 30);
-            this.btnWithdraw.TabIndex = 11;
-            this.btnWithdraw.Text = "Withdraw";
-            this.btnWithdraw.UseVisualStyleBackColor = true;
-            // 
             // btnSubmitLoan
             // 
-            this.btnSubmitLoan.Location = new System.Drawing.Point(214, 335);
+            this.btnSubmitLoan.Location = new System.Drawing.Point(397, 334);
             this.btnSubmitLoan.Name = "btnSubmitLoan";
             this.btnSubmitLoan.Size = new System.Drawing.Size(189, 30);
             this.btnSubmitLoan.TabIndex = 10;
@@ -94,7 +84,6 @@ namespace BankApp
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(924, 522);
-            this.Controls.Add(this.btnWithdraw);
             this.Controls.Add(this.btnSubmitLoan);
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.cmbLoanType);
@@ -114,8 +103,6 @@ namespace BankApp
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnWithdraw;
         private System.Windows.Forms.Button btnSubmitLoan;
         private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.ComboBox cmbLoanType;
