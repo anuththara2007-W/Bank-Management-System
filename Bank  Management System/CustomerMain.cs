@@ -1,7 +1,5 @@
-﻿using Bank__Management_System;
-using System;
+﻿using System;
 using System.Windows.Forms;
-using static System.Collections.Specialized.BitVector32;
 
 namespace BankApp
 {
@@ -14,7 +12,7 @@ namespace BankApp
 
         private void CustomerMain_Load(object sender, EventArgs e)
         {
-            lblCustomerName.Text = $"Welcome, {Session.CustomerName}";
+            lblCustomerName.Text = "Welcome, " + CustomerSession.CustomerName;
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
