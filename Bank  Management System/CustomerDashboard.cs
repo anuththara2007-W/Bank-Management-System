@@ -13,7 +13,7 @@ namespace BankApp
             InitializeComponent();
         }
 
-      
+
 
         private void CustomerDashboard_Load(object sender, EventArgs e)
         {
@@ -101,4 +101,5 @@ namespace BankApp
             frm.Show();
             this.Close();
         }
+    }
 }
