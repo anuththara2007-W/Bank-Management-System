@@ -32,9 +32,9 @@ namespace BankApp
         {
             this.btnWithdraw = new System.Windows.Forms.Button();
             this.btnDeposit = new System.Windows.Forms.Button();
-            this.txtAmount = new System.Windows.Forms.TextBox();
+            this.txtToAccountID = new System.Windows.Forms.TextBox();
             this.cmbFromAccount = new System.Windows.Forms.ComboBox();
-            this.lblAmount = new System.Windows.Forms.Label();
+            this.lblToAccount = new System.Windows.Forms.Label();
             this.lblFromAccount = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -56,12 +56,12 @@ namespace BankApp
             this.btnDeposit.Text = "Deposit ";
             this.btnDeposit.UseVisualStyleBackColor = true;
             // 
-            // txtAmount
+            // txtToAccountID
             // 
-            this.txtAmount.Location = new System.Drawing.Point(289, 195);
-            this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(360, 22);
-            this.txtAmount.TabIndex = 9;
+            this.txtToAccountID.Location = new System.Drawing.Point(289, 195);
+            this.txtToAccountID.Name = "txtToAccountID";
+            this.txtToAccountID.Size = new System.Drawing.Size(360, 22);
+            this.txtToAccountID.TabIndex = 9;
             // 
             // cmbFromAccount
             // 
@@ -71,14 +71,14 @@ namespace BankApp
             this.cmbFromAccount.Size = new System.Drawing.Size(337, 24);
             this.cmbFromAccount.TabIndex = 8;
             // 
-            // lblAmount
+            // lblToAccount
             // 
-            this.lblAmount.AutoSize = true;
-            this.lblAmount.Location = new System.Drawing.Point(166, 198);
-            this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(52, 16);
-            this.lblAmount.TabIndex = 7;
-            this.lblAmount.Text = "Amount";
+            this.lblToAccount.AutoSize = true;
+            this.lblToAccount.Location = new System.Drawing.Point(166, 198);
+            this.lblToAccount.Name = "lblToAccount";
+            this.lblToAccount.Size = new System.Drawing.Size(52, 16);
+            this.lblToAccount.TabIndex = 7;
+            this.lblToAccount.Text = "Amount";
             // 
             // lblFromAccount
             // 
@@ -96,9 +96,9 @@ namespace BankApp
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnWithdraw);
             this.Controls.Add(this.btnDeposit);
-            this.Controls.Add(this.txtAmount);
+            this.Controls.Add(this.txtToAccountID);
             this.Controls.Add(this.cmbFromAccount);
-            this.Controls.Add(this.lblAmount);
+            this.Controls.Add(this.lblToAccount);
             this.Controls.Add(this.lblFromAccount);
             this.Name = "TransferFunds";
             this.Text = "TransferFunds";
@@ -117,9 +117,9 @@ namespace BankApp
 
         private System.Windows.Forms.Button btnWithdraw;
         private System.Windows.Forms.Button btnDeposit;
-        private System.Windows.Forms.TextBox txtAmount;
+        private System.Windows.Forms.TextBox txtToAccountID;
         private System.Windows.Forms.ComboBox cmbFromAccount;
-        private System.Windows.Forms.Label lblAmount;
+        private System.Windows.Forms.Label lblToAccount;
         private System.Windows.Forms.Label lblFromAccount;
     }
 }

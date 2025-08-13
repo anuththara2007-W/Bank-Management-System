@@ -16,7 +16,7 @@ namespace BankApp
 
         private void btnTransfer_Click(object sender, EventArgs e)
         {
-            if (!decimal.TryParse(txtAmount.Text, out decimal amount) || amount <= 0)
+            if (!decimal.TryParse(txtToAccountID.Text, out decimal amount) || amount <= 0)
             {
                 MessageBox.Show("Enter valid amount");
                 return;
