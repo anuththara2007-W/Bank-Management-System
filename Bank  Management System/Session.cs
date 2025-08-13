@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Bank__Management_System
 {
-    internal class Session
+    public static class Session
     {
+        public static int CustomerID { get; set; }
+        public static string CustomerName { get; set; }
     }
 }
