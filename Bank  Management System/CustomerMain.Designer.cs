@@ -3,17 +3,18 @@
     partial class CustomerMain
     {
         private System.ComponentModel.IContainer components = null;
-        private Label lblCustomerName;
-        private Button btnDashboard;
-        private Button btnAccounts;
-        private Button btnTransactions;
-        private Button btnDepositWithdraw;
-        private Button btnTransfer;
-        private Button btnLoans;
-        private Button btnLoanRequest;
-        private Button btnProfile;
-        private Button btnChangePassword;
-        private Button btnSupport;
+        private System.Windows.Forms.Label lblCustomerName;
+        private System.Windows.Forms.Button btnDashboard;
+        private System.Windows.Forms.Button btnAccounts;
+        private System.Windows.Forms.Button btnTransactions;
+        private System.Windows.Forms.Button btnDepositWithdraw;
+        private System.Windows.Forms.Button btnTransfer;
+        private System.Windows.Forms.Button btnLoans;
+        private System.Windows.Forms.Button btnLoanRequest;
+        private System.Windows.Forms.Button btnProfile;
+        private System.Windows.Forms.Button btnChangePassword;
+        private System.Windows.Forms.Button btnSupport;
+
 
         protected override void Dispose(bool disposing)
         {
