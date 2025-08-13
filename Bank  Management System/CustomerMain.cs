@@ -1,19 +1,14 @@
-﻿using Bank__Management_System;
+﻿using BankApp;
 using System;
 using System.Windows.Forms;
 
-namespace BankApp
+namespace Bank__Management_System
 {
     public partial class CustomerMain : Form
     {
         public CustomerMain()
         {
-            InitializeComponent();
-        }
-
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
+            InitializeComponent(); // DO NOT REMOVE
         }
 
         private void CustomerMain_Load(object sender, EventArgs e)
@@ -28,7 +23,7 @@ namespace BankApp
 
         private void btnAccounts_Click(object sender, EventArgs e)
         {
-            new dgvAccounts().Show();
+            new MyAccounts().Show(); // ✅ correct form
         }
 
         private void btnTransactions_Click(object sender, EventArgs e)

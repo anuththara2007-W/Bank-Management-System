@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Bank__Management_System
+namespace BankApp
 {
     public partial class CustomerMain : Form
     {
