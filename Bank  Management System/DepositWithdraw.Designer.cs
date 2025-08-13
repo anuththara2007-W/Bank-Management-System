@@ -33,6 +33,7 @@ namespace BankApp
             this.lblAccount = new System.Windows.Forms.Label();
             this.lblAmount = new System.Windows.Forms.Label();
             this.cmbAccount = new System.Windows.Forms.ComboBox();
+            this.txtAmount = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblAccount
@@ -47,11 +48,11 @@ namespace BankApp
             // lblAmount
             // 
             this.lblAmount.AutoSize = true;
-            this.lblAmount.Location = new System.Drawing.Point(918, 497);
+            this.lblAmount.Location = new System.Drawing.Point(54, 113);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(44, 16);
+            this.lblAmount.Size = new System.Drawing.Size(52, 16);
             this.lblAmount.TabIndex = 1;
-            this.lblAmount.Text = "label1";
+            this.lblAmount.Text = "Amount";
             // 
             // cmbAccount
             // 
@@ -61,11 +62,19 @@ namespace BankApp
             this.cmbAccount.Size = new System.Drawing.Size(337, 24);
             this.cmbAccount.TabIndex = 2;
             // 
+            // txtAmount
+            // 
+            this.txtAmount.Location = new System.Drawing.Point(177, 110);
+            this.txtAmount.Name = "txtAmount";
+            this.txtAmount.Size = new System.Drawing.Size(360, 22);
+            this.txtAmount.TabIndex = 3;
+            // 
             // DepositWithdraw
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 577);
+            this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.cmbAccount);
             this.Controls.Add(this.lblAmount);
             this.Controls.Add(this.lblAccount);
@@ -87,5 +96,6 @@ namespace BankApp
         private System.Windows.Forms.Label lblAccount;
         private System.Windows.Forms.Label lblAmount;
         private System.Windows.Forms.ComboBox cmbAccount;
+        private System.Windows.Forms.TextBox txtAmount;
     }
 }
