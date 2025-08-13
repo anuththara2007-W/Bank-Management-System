@@ -86,7 +86,7 @@ namespace BankApp
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(189, 30);
             this.button2.TabIndex = 5;
-            this.button2.Text = "button2";
+            this.button2.Text = "Withdraw";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // DepositWithdraw
