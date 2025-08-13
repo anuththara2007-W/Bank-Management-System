@@ -36,6 +36,8 @@ namespace BankApp
             this.cmbFromAccount = new System.Windows.Forms.ComboBox();
             this.lblToAccount = new System.Windows.Forms.Label();
             this.lblFromAccount = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblAmount = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnWithdraw
@@ -89,11 +91,29 @@ namespace BankApp
             this.lblFromAccount.TabIndex = 6;
             this.lblFromAccount.Text = "Select Account";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(289, 223);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(360, 22);
+            this.textBox1.TabIndex = 13;
+            // 
+            // lblAmount
+            // 
+            this.lblAmount.AutoSize = true;
+            this.lblAmount.Location = new System.Drawing.Point(166, 226);
+            this.lblAmount.Name = "lblAmount";
+            this.lblAmount.Size = new System.Drawing.Size(52, 16);
+            this.lblAmount.TabIndex = 12;
+            this.lblAmount.Text = "Amount";
+            // 
             // TransferFunds
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lblAmount);
             this.Controls.Add(this.btnWithdraw);
             this.Controls.Add(this.btnDeposit);
             this.Controls.Add(this.txtToAccountID);
@@ -121,5 +141,7 @@ namespace BankApp
         private System.Windows.Forms.ComboBox cmbFromAccount;
         private System.Windows.Forms.Label lblToAccount;
         private System.Windows.Forms.Label lblFromAccount;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblAmount;
     }
 }
