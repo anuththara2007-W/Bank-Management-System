@@ -1,4 +1,6 @@
-﻿namespace Bank__Management_System
+﻿using System;
+
+namespace BankApp
 {
     partial class Support
     {
@@ -40,6 +42,11 @@
             this.Load += new System.EventHandler(this.Support_Load);
             this.ResumeLayout(false);
 
+        }
+
+        private void Support_Load(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
