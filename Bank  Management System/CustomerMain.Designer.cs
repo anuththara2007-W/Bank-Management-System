@@ -1,47 +1,18 @@
-﻿namespace Bank__Management_System
+﻿using System;
+using System.Windows.Forms;
+
+namespace Bank__Management_System
 {
-    partial class CustomerMain
+    public partial class CustomerMain : Form
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
-
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
+        public CustomerMain()
         {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
+            InitializeComponent();
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
+        private void CustomerMain_Load(object sender, EventArgs e)
         {
-            this.SuspendLayout();
-            // 
-            // CustomerMain
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "CustomerMain";
-            this.Text = "CustomerMain";
-            this.Load += new System.EventHandler(this.CustomerMain_Load);
-            this.ResumeLayout(false);
-
+            // Code to run when form loads
         }
-
-        #endregion
     }
 }
