@@ -5,11 +5,11 @@ using System.Windows.Forms;
 
 namespace Bank__Management_System
 {
-    public partial class Customer : Form
+    public partial class CustomerDashboard : Form
     {
         string connectionString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
 
-        public Customer()
+        public CustomerDashboard()
         {
             InitializeComponent();
         }
