@@ -95,6 +95,11 @@ namespace BankApp
             Support frm = new Support();
             frm.ShowDialog();
         }
-
-    }
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Login frm = new Login();
+            frm.Show();
+            this.Close();
+        }
 }
