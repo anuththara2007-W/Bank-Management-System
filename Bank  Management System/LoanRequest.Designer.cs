@@ -108,7 +108,6 @@ namespace BankApp
 
         private void LoanRequest_Load(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
         }
 
         #endregion
