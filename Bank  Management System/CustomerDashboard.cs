@@ -31,7 +31,7 @@ namespace Bank__Management_System
 
                 SqlCommand cmdName = new SqlCommand("SELECT Customer_Name FROM Customer WHERE Customer_ID = @cid", con);
                 cmdName.Parameters.AddWithValue("@cid", customerId);
-                lblCustomerName.Text = "Welcome, " + (cmdName.ExecuteScalar()?.ToString() ?? "Customer");
+                label2.Text = "Welcome, " + (cmdName.ExecuteScalar()?.ToString() ?? "Customer");
 
                 SqlCommand cmdBal = new SqlCommand("SELECT ISNULL(SUM(Balance),0) FROM Accounts WHERE Customer_ID = @cid", con);
                 cmdBal.Parameters.AddWithValue("@cid", customerId);
