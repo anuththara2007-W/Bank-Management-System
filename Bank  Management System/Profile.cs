@@ -48,5 +48,10 @@ namespace BankApp
                 MessageBox.Show("Profile updated.");
             }
         }
+
+        private void lblAmount_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

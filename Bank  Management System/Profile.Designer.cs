@@ -51,9 +51,10 @@
             this.lblAmount.AutoSize = true;
             this.lblAmount.Location = new System.Drawing.Point(254, 252);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(52, 16);
+            this.lblAmount.Size = new System.Drawing.Size(58, 16);
             this.lblAmount.TabIndex = 10;
-            this.lblAmount.Text = "Amount";
+            this.lblAmount.Text = "Address";
+            this.lblAmount.Click += new System.EventHandler(this.lblAmount_Click);
             // 
             // textBox1
             // 
