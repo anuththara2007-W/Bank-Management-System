@@ -55,7 +55,7 @@ namespace BankApp
             this.btnTransfer.Name = "btnTransfer";
             this.btnTransfer.Size = new System.Drawing.Size(189, 30);
             this.btnTransfer.TabIndex = 10;
-            this.btnTransfer.Text = "Deposit ";
+            this.btnTransfer.Text = "Transfer";
             this.btnTransfer.UseVisualStyleBackColor = true;
             // 
             // txtToAccountID
