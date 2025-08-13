@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvTransactions = new System.Windows.Forms.DataGridView();
+            this.dgvLoans = new System.Windows.Forms.DataGridView();
             this.lblTitle = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLoans)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvTransactions
+            // dgvLoans
             // 
-            this.dgvTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTransactions.Location = new System.Drawing.Point(59, 193);
-            this.dgvTransactions.Name = "dgvTransactions";
-            this.dgvTransactions.RowHeadersWidth = 51;
-            this.dgvTransactions.RowTemplate.Height = 24;
-            this.dgvTransactions.Size = new System.Drawing.Size(884, 127);
-            this.dgvTransactions.TabIndex = 11;
+            this.dgvLoans.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLoans.Location = new System.Drawing.Point(59, 193);
+            this.dgvLoans.Name = "dgvLoans";
+            this.dgvLoans.RowHeadersWidth = 51;
+            this.dgvLoans.RowTemplate.Height = 24;
+            this.dgvLoans.Size = new System.Drawing.Size(884, 127);
+            this.dgvLoans.TabIndex = 11;
             // 
             // lblTitle
             // 
@@ -58,12 +58,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1031, 573);
-            this.Controls.Add(this.dgvTransactions);
+            this.Controls.Add(this.dgvLoans);
             this.Controls.Add(this.lblTitle);
             this.Name = "MyLoans";
             this.Text = "MyLoans";
             this.Load += new System.EventHandler(this.MyLoans_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLoans)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -71,7 +71,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvTransactions;
+        private System.Windows.Forms.DataGridView dgvLoans;
         private System.Windows.Forms.Label lblTitle;
     }
 }
