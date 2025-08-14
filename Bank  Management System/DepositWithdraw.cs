@@ -88,5 +88,13 @@ namespace BankApp
                 }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Main admins = new Main();
+            admins.Show();
+            this.Hide();
+
+        }
     }
 }
