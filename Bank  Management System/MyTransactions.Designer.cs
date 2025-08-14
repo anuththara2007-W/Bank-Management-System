@@ -30,6 +30,7 @@
         {
             this.dgvTransactions = new System.Windows.Forms.DataGridView();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.btnGoBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,11 +54,22 @@
             this.lblTitle.TabIndex = 10;
             this.lblTitle.Text = "My Tranasctions";
             // 
+            // btnGoBack
+            // 
+            this.btnGoBack.Location = new System.Drawing.Point(429, 440);
+            this.btnGoBack.Name = "btnGoBack";
+            this.btnGoBack.Size = new System.Drawing.Size(141, 47);
+            this.btnGoBack.TabIndex = 15;
+            this.btnGoBack.Text = "Go Back";
+            this.btnGoBack.UseVisualStyleBackColor = true;
+            this.btnGoBack.Click += new System.EventHandler(this.btnGoBack_Click);
+            // 
             // MyTransactions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1056, 533);
+            this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.dgvTransactions);
             this.Controls.Add(this.lblTitle);
             this.Name = "MyTransactions";
@@ -73,5 +85,6 @@
 
         private System.Windows.Forms.DataGridView dgvTransactions;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Button btnGoBack;
     }
 }
