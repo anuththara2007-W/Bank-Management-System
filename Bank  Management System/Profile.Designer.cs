@@ -37,6 +37,7 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnUpdateProfile = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtAddress
@@ -113,11 +114,22 @@
             this.btnUpdateProfile.Text = "Submit";
             this.btnUpdateProfile.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(410, 434);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(141, 47);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "Go Back";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(991, 520);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnUpdateProfile);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label3);
@@ -146,5 +158,6 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnUpdateProfile;
+        private System.Windows.Forms.Button button1;
     }
 }
