@@ -101,8 +101,8 @@ namespace BankApp
         }
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            Login frm = new Login();
-            frm.Show();
+            Login gonow = new Login();
+            gonow.Show();
             this.Hide();
         }
     }
