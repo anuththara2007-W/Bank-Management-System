@@ -101,8 +101,8 @@ namespace BankApp
         }
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            CustomerDashboard customerdash = new CustomerDashboard();
-            customerdash.Show();
+            Login frm = new Login();
+            frm.Show();
             this.Hide();
         }
     }
