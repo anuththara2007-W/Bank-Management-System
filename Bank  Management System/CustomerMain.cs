@@ -68,8 +68,8 @@ namespace Bank__Management_System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Login gonow = new Login();
-            gonow.Show();
+            CustomerDashboard customerdash = new CustomerDashboard();
+            customerdash.Show();
             this.Hide();
         }
     }
