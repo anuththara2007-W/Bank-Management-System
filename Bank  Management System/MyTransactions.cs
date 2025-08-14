@@ -38,10 +38,9 @@ namespace BankApp
 
         private void btnGoBack_Click(object sender, EventArgs e)
         {
-            Main admins = new Main();
-            admins.Show();
+            Login gonow = new Login();
+            gonow.Show();
             this.Hide();
-        
-    }
+        }
     }
 }
