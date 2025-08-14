@@ -30,6 +30,7 @@
         {
             this.lblTitle = new System.Windows.Forms.Label();
             this.dgvTransactions = new System.Windows.Forms.DataGridView();
+            this.btnGoBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,11 +54,21 @@
             this.dgvTransactions.Size = new System.Drawing.Size(884, 127);
             this.dgvTransactions.TabIndex = 9;
             // 
+            // btnGoBack
+            // 
+            this.btnGoBack.Location = new System.Drawing.Point(410, 417);
+            this.btnGoBack.Name = "btnGoBack";
+            this.btnGoBack.Size = new System.Drawing.Size(141, 47);
+            this.btnGoBack.TabIndex = 14;
+            this.btnGoBack.Text = "Go Back";
+            this.btnGoBack.UseVisualStyleBackColor = true;
+            // 
             // dgvAccounts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(951, 540);
+            this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.dgvTransactions);
             this.Controls.Add(this.lblTitle);
             this.Name = "dgvAccounts";
@@ -73,5 +84,6 @@
 
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.DataGridView dgvTransactions;
+        private System.Windows.Forms.Button btnGoBack;
     }
 }
