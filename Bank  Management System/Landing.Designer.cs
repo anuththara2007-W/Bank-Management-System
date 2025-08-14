@@ -192,7 +192,7 @@
             this.label8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label8.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label8.Location = new System.Drawing.Point(1119, 53);
+            this.label8.Location = new System.Drawing.Point(1109, 55);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(102, 19);
             this.label8.TabIndex = 10;
