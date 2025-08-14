@@ -36,7 +36,6 @@ namespace BankApp
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.btnDeposit = new System.Windows.Forms.Button();
             this.btnWithdraw = new System.Windows.Forms.Button();
-            this.btnGoBack = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -91,15 +90,6 @@ namespace BankApp
             this.btnWithdraw.Text = "Withdraw";
             this.btnWithdraw.UseVisualStyleBackColor = true;
             // 
-            // btnGoBack
-            // 
-            this.btnGoBack.Location = new System.Drawing.Point(422, 265);
-            this.btnGoBack.Name = "btnGoBack";
-            this.btnGoBack.Size = new System.Drawing.Size(141, 47);
-            this.btnGoBack.TabIndex = 16;
-            this.btnGoBack.Text = "Go Back";
-            this.btnGoBack.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(453, 446);
@@ -116,7 +106,6 @@ namespace BankApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 577);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.btnWithdraw);
             this.Controls.Add(this.btnDeposit);
             this.Controls.Add(this.txtAmount);
@@ -144,7 +133,6 @@ namespace BankApp
         private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.Button btnDeposit;
         private System.Windows.Forms.Button btnWithdraw;
-        private System.Windows.Forms.Button btnGoBack;
         private System.Windows.Forms.Button button1;
     }
 }
