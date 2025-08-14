@@ -36,6 +36,7 @@
             this.btnProfile = new System.Windows.Forms.Button();
             this.btnChangePassword = new System.Windows.Forms.Button();
             this.btnSupport = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblCustomerName
@@ -121,9 +122,20 @@
             this.btnSupport.Size = new System.Drawing.Size(75, 23);
             this.btnSupport.TabIndex = 10;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(260, 407);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(141, 47);
+            this.button1.TabIndex = 30;
+            this.button1.Text = "Go Back";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // CustomerMain
             // 
             this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblCustomerName);
             this.Controls.Add(this.btnDashboard);
             this.Controls.Add(this.btnAccounts);
@@ -142,5 +154,7 @@
             this.PerformLayout();
 
         }
+
+        private System.Windows.Forms.Button button1;
     }
 }
