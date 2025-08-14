@@ -30,6 +30,7 @@
         {
             this.dgvLoans = new System.Windows.Forms.DataGridView();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoans)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,11 +54,22 @@
             this.lblTitle.TabIndex = 10;
             this.lblTitle.Text = "My Loans";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(463, 486);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(141, 47);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "Go Back";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MyLoans
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1031, 573);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvLoans);
             this.Controls.Add(this.lblTitle);
             this.Name = "MyLoans";
@@ -73,5 +85,6 @@
 
         private System.Windows.Forms.DataGridView dgvLoans;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Button button1;
     }
 }
