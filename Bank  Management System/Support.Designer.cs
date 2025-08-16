@@ -90,7 +90,6 @@ namespace BankApp
 
         private void Support_Load(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
         }
 
         #endregion
