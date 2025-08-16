@@ -12,12 +12,11 @@ namespace BankApp
         public LoanRequest()
         {
             InitializeComponent();
-            LoadLoanTypes(); // Load loan types into combo box
+            LoadLoanTypes();
         }
 
         private void LoadLoanTypes()
         {
-            // Predefined loan types - you can also load from DB if needed
             cmbLoanType.Items.Clear();
             cmbLoanType.Items.Add("Personal Loan");
             cmbLoanType.Items.Add("Home Loan");
@@ -25,7 +24,7 @@ namespace BankApp
             cmbLoanType.Items.Add("Education Loan");
             cmbLoanType.Items.Add("Business Loan");
 
-            cmbLoanType.SelectedIndex = 0; // Default selection
+            cmbLoanType.SelectedIndex = 0;
         }
 
         private void btnSubmitLoan_Click(object sender, EventArgs e)
@@ -47,15 +46,16 @@ namespace BankApp
                 try
                 {
                     con.Open();
+
+                    // ✅ Make sure correct Customer_ID is passed
                     SqlCommand cmd = new SqlCommand(
-     "INSERT INTO Loan (Customer_ID, CustomerName, LoanType, Amount, InterestRate, LoanDate) " +
-     "VALUES (@cid, @cname, @type, @amt, @rate, GETDATE())", con);
+                        "INSERT INTO Loan (Customer_ID, LoanType, Amount, InterestRate, LoanDate) " +
+                        "VALUES (@cid, @type, @amt, @rate, GETDATE())", con);
 
                     cmd.Parameters.AddWithValue("@cid", Session.CustomerID);
-                    cmd.Parameters.AddWithValue("@cname", Session.CustomerName ?? "Unknown");
                     cmd.Parameters.AddWithValue("@type", cmbLoanType.SelectedItem.ToString());
                     cmd.Parameters.AddWithValue("@amt", amount);
-                    cmd.Parameters.AddWithValue("@rate", 5.5m); // Example fixed rate
+                    cmd.Parameters.AddWithValue("@rate", 5.5m);
 
                     cmd.ExecuteNonQuery();
 
@@ -76,6 +76,5 @@ namespace BankApp
             customerdash.Show();
             this.Hide();
         }
-
     }
 }
