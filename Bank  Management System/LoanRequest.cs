@@ -49,7 +49,7 @@ namespace BankApp
                     con.Open();
                     SqlCommand cmd = new SqlCommand(
      "INSERT INTO Loan (Customer_ID, CustomerName, LoanType, Amount, InterestRate, LoanDate) " +
-     "VALUES (@cid, @cname, @type, @amt, @rate, GETDATE())", con);
+     "VALUES (Customer_ID, CustomerName, LoanType, Amount, InterestRate, GETDATE())", con);
 
                     cmd.Parameters.AddWithValue("@cid", Session.CustomerID);
                     cmd.Parameters.AddWithValue("@cname", Session.CustomerName);
