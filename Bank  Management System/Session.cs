@@ -10,6 +10,6 @@ namespace Bank__Management_System
     {
         public static int CustomerID { get; set; }
         public static string CustomerName { get; set; }
-     
+        public static string Username { get; internal set; }
     }
 }
