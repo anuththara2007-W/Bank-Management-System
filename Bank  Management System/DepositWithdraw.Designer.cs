@@ -129,9 +129,7 @@ namespace BankApp
 
         }
 
-        private void DepositWithdraw_Load(object sender, EventArgs e)
-        {
-        }
+        
 
         #endregion
 
