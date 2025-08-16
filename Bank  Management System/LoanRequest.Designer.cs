@@ -46,6 +46,7 @@ namespace BankApp
             this.btnSubmitLoan.TabIndex = 10;
             this.btnSubmitLoan.Text = "Submit";
             this.btnSubmitLoan.UseVisualStyleBackColor = true;
+            this.btnSubmitLoan.Click += new System.EventHandler(this.btnSubmitLoan_Click);
             // 
             // txtAmount
             // 
