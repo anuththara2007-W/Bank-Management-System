@@ -104,7 +104,7 @@ namespace BankApp
             this.Hide();
         }
 
-        private void cmbAccount_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbAccounts_Click(object sender, EventArgs e)
         {
 
         }
