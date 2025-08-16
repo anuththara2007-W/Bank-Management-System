@@ -105,5 +105,11 @@ namespace BankApp
             frm.Show();
             this.Hide();
         }
+
+        private void btnTransfer_Click(object sender, EventArgs e)
+        {
+            TransferFunds trs = new TransferFunds();
+            trs.Show();
+        }
     }
 }

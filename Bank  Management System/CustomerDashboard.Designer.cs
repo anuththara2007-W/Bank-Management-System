@@ -122,6 +122,7 @@
             this.btnTransfer.TabIndex = 7;
             this.btnTransfer.Text = "Transfer";
             this.btnTransfer.UseVisualStyleBackColor = true;
+            this.btnTransfer.Click += new System.EventHandler(this.btnTransfer_Click);
             // 
             // dgvTransactions
             // 
