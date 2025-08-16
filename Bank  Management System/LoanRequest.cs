@@ -1,58 +1,67 @@
-﻿using System;
-using System.Data;
+﻿using Bank__Management_System;
+using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using BankApp;
 
-namespace Bank__Management_System
+namespace BankApp
 {
     public partial class LoanRequest : Form
     {
+        string connString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
+
         public LoanRequest()
         {
             InitializeComponent();
+            LoadLoanTypes(); // Load loan types into combo box
+        }
+
+        private void LoadLoanTypes()
+        {
+            // Predefined loan types - you can also load from DB if needed
+            cmbLoanType.Items.Clear();
+            cmbLoanType.Items.Add("Personal Loan");
+            cmbLoanType.Items.Add("Home Loan");
+            cmbLoanType.Items.Add("Car Loan");
+            cmbLoanType.Items.Add("Education Loan");
+            cmbLoanType.Items.Add("Business Loan");
+
+            cmbLoanType.SelectedIndex = 0; // Default selection
         }
 
         private void btnSubmitLoan_Click(object sender, EventArgs e)
         {
-            // ✅ Validate
-            if (string.IsNullOrWhiteSpace(cmbLoanType.Text) ||
-                string.IsNullOrWhiteSpace(txtAmount.Text) ||
-                string.IsNullOrWhiteSpace(txtInterestRate.Text))
+            if (cmbLoanType.SelectedItem == null)
             {
-                MessageBox.Show("Please fill in all fields before submitting.");
+                MessageBox.Show("Please select a loan type.");
                 return;
             }
 
-            using (SqlConnection con = new SqlConnection(
-                @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
+            if (!decimal.TryParse(txtAmount.Text, out decimal amount) || amount <= 0)
+            {
+                MessageBox.Show("Enter a valid loan amount.");
+                return;
+            }
+
+            using (SqlConnection con = new SqlConnection(connString))
             {
                 try
                 {
                     con.Open();
+                    SqlCommand cmd = new SqlCommand(
+     "INSERT INTO Loan (Customer_ID, CustomerName, LoanType, Amount, InterestRate, LoanDate) " +
+     "VALUES (@cid, @cname, @type, @amt, @rate, GETDATE())", con);
 
-                    string query = @"INSERT INTO Loan 
-                                    (LoanType, Amount, InterestRate, LoanDate, CustomerName, Customer_ID) 
-                                     VALUES (@type, @amt, @rate, @date, @cname, @cid)";
-
-                    SqlCommand cmd = new SqlCommand(query, con);
-
-                    // ✅ Parameters
-                    cmd.Parameters.AddWithValue("@type", cmbLoanType.Text);
-                    cmd.Parameters.AddWithValue("@amt", Convert.ToDecimal(txtAmount.Text));
-                    cmd.Parameters.AddWithValue("@rate", Convert.ToDecimal(txtInterestRate.Text));
-                    cmd.Parameters.AddWithValue("@date", dtpLoanDate.Value);
-
-                    // ✅ Session Data from Login
                     cmd.Parameters.AddWithValue("@cid", Session.CustomerID);
-                    cmd.Parameters.AddWithValue("@cname", Session.CustomerName);
+                    cmd.Parameters.AddWithValue("@cname", Session.CustomerName ?? "Unknown");
+                    cmd.Parameters.AddWithValue("@type", cmbLoanType.SelectedItem.ToString());
+                    cmd.Parameters.AddWithValue("@amt", amount);
+                    cmd.Parameters.AddWithValue("@rate", 5.5m); // Example fixed rate
 
-                    int rows = cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();
 
-                    if (rows > 0)
-                        MessageBox.Show("✅ Loan request submitted successfully!");
-                    else
-                        MessageBox.Show("⚠ Loan request failed.");
+                    MessageBox.Show("✅ Loan request submitted successfully!");
+                    txtAmount.Clear();
+                    cmbLoanType.SelectedIndex = 0;
                 }
                 catch (Exception ex)
                 {
@@ -60,5 +69,13 @@ namespace Bank__Management_System
                 }
             }
         }
+
+        private void btnGoBack_Click(object sender, EventArgs e)
+        {
+            CustomerDashboard customerdash = new CustomerDashboard();
+            customerdash.Show();
+            this.Hide();
+        }
+
     }
 }
