@@ -34,7 +34,7 @@ namespace BankApp
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.lblAmount = new System.Windows.Forms.Label();
             this.lblLoanType = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnGoBack = new System.Windows.Forms.Button();
             this.cmbLoanType = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
@@ -73,15 +73,15 @@ namespace BankApp
             this.lblLoanType.TabIndex = 6;
             this.lblLoanType.Text = "Loan Type";
             // 
-            // button1
+            // btnGoBack
             // 
-            this.button1.Location = new System.Drawing.Point(387, 410);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(141, 47);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Go Back";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnGoBack.Location = new System.Drawing.Point(387, 410);
+            this.btnGoBack.Name = "btnGoBack";
+            this.btnGoBack.Size = new System.Drawing.Size(141, 47);
+            this.btnGoBack.TabIndex = 20;
+            this.btnGoBack.Text = "Go Back";
+            this.btnGoBack.UseVisualStyleBackColor = true;
+            this.btnGoBack.Click += new System.EventHandler(this.btnGoBack_Click);
             // 
             // cmbLoanType
             // 
@@ -96,7 +96,7 @@ namespace BankApp
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(924, 522);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.btnSubmitLoan);
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.cmbLoanType);
@@ -119,7 +119,7 @@ namespace BankApp
         private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.Label lblAmount;
         private System.Windows.Forms.Label lblLoanType;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnGoBack;
         private System.Windows.Forms.ComboBox cmbLoanType;
     }
 }

@@ -52,5 +52,10 @@ namespace BankApp
         {
 
         }
+
+        private void btnGoBack_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
