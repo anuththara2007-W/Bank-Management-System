@@ -1,5 +1,4 @@
-﻿using Bank__Management_System;
-using System;
+﻿using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -46,20 +45,17 @@ namespace BankApp
                 try
                 {
                     con.Open();
-
-                    // ✅ Make sure correct Customer_ID is passed
                     SqlCommand cmd = new SqlCommand(
-                        "INSERT INTO Loan (Customer_ID, LoanType, Amount, InterestRate, LoanDate) " +
-                        "VALUES (@cid, @type, @amt, @rate, GETDATE())", con);
+                        "INSERT INTO LoanRequests (Customer_ID, LoanType, Amount, Status) " +
+                        "VALUES (@cid, @type, @amt, 'Pending')", con);
 
                     cmd.Parameters.AddWithValue("@cid", Session.CustomerID);
                     cmd.Parameters.AddWithValue("@type", cmbLoanType.SelectedItem.ToString());
                     cmd.Parameters.AddWithValue("@amt", amount);
-                    cmd.Parameters.AddWithValue("@rate", 5.5m);
 
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("✅ Loan request submitted successfully!");
+                    MessageBox.Show("✅ Loan request submitted! Waiting for admin approval.");
                     txtAmount.Clear();
                     cmbLoanType.SelectedIndex = 0;
                 }
