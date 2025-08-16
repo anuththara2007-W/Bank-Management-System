@@ -115,7 +115,8 @@ namespace BankApp
 
         private void btnDeposit_Click(object sender, EventArgs e)
         {
-            DepositWithdraw deposit
+            DepositWithdraw deposit = new DepositWithdraw();
+            deposit.Show();
         }
     }
 }
