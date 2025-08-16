@@ -28,7 +28,7 @@ namespace BankApp
             cmbLoanType.SelectedIndex = 0; // Default selection
         }
 
-        private void btnSubmit_Click(object sender, EventArgs e)
+        private void btnSubmitLoan_Click(object sender, EventArgs e)
         {
             if (cmbLoanType.SelectedItem == null)
             {
