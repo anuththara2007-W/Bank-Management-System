@@ -64,7 +64,6 @@ namespace BankApp
             this.cmbAccounts.Name = "cmbAccounts";
             this.cmbAccounts.Size = new System.Drawing.Size(337, 24);
             this.cmbAccounts.TabIndex = 2;
-            this.cmbAccounts.SelectedIndexChanged += new System.EventHandler(this.cmbAccounts_Click);
             // 
             // txtAmount
             // 
