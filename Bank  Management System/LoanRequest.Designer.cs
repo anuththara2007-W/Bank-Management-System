@@ -32,11 +32,10 @@ namespace BankApp
         {
             this.btnSubmitLoan = new System.Windows.Forms.Button();
             this.txtAmount = new System.Windows.Forms.TextBox();
-            this.cmbLoanType = new System.Windows.Forms.ComboBox();
             this.lblAmount = new System.Windows.Forms.Label();
             this.lblLoanType = new System.Windows.Forms.Label();
-            this.txtLoanType = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.cmbLoanType = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnSubmitLoan
@@ -47,6 +46,7 @@ namespace BankApp
             this.btnSubmitLoan.TabIndex = 10;
             this.btnSubmitLoan.Text = "Submit";
             this.btnSubmitLoan.UseVisualStyleBackColor = true;
+            this.btnSubmitLoan.Click += new System.EventHandler(this.btnSubmitLoan_Click);
             // 
             // txtAmount
             // 
@@ -54,14 +54,6 @@ namespace BankApp
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(360, 22);
             this.txtAmount.TabIndex = 9;
-            // 
-            // cmbLoanType
-            // 
-            this.cmbLoanType.FormattingEnabled = true;
-            this.cmbLoanType.Location = new System.Drawing.Point(361, 157);
-            this.cmbLoanType.Name = "cmbLoanType";
-            this.cmbLoanType.Size = new System.Drawing.Size(337, 24);
-            this.cmbLoanType.TabIndex = 8;
             // 
             // lblAmount
             // 
@@ -81,13 +73,6 @@ namespace BankApp
             this.lblLoanType.TabIndex = 6;
             this.lblLoanType.Text = "Loan Type";
             // 
-            // txtLoanType
-            // 
-            this.txtLoanType.Location = new System.Drawing.Point(361, 129);
-            this.txtLoanType.Name = "txtLoanType";
-            this.txtLoanType.Size = new System.Drawing.Size(360, 22);
-            this.txtLoanType.TabIndex = 11;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(387, 410);
@@ -98,13 +83,20 @@ namespace BankApp
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // cmbLoanType
+            // 
+            this.cmbLoanType.FormattingEnabled = true;
+            this.cmbLoanType.Location = new System.Drawing.Point(361, 157);
+            this.cmbLoanType.Name = "cmbLoanType";
+            this.cmbLoanType.Size = new System.Drawing.Size(337, 24);
+            this.cmbLoanType.TabIndex = 8;
+            // 
             // LoanRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(924, 522);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.txtLoanType);
             this.Controls.Add(this.btnSubmitLoan);
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.cmbLoanType);
@@ -125,10 +117,9 @@ namespace BankApp
         #endregion
         private System.Windows.Forms.Button btnSubmitLoan;
         private System.Windows.Forms.TextBox txtAmount;
-        private System.Windows.Forms.ComboBox cmbLoanType;
         private System.Windows.Forms.Label lblAmount;
         private System.Windows.Forms.Label lblLoanType;
-        private System.Windows.Forms.TextBox txtLoanType;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cmbLoanType;
     }
 }

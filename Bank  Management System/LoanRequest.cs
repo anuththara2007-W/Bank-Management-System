@@ -42,5 +42,15 @@ namespace BankApp
             customerdash.Show();
             this.Hide();
         }
+
+        private void txtLoanType_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSubmitLoan_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
