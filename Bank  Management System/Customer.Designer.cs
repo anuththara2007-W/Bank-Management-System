@@ -356,6 +356,5 @@
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private object resources;
     }
 }
