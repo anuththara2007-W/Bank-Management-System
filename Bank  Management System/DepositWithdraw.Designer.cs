@@ -122,7 +122,6 @@ namespace BankApp
 
         private void DepositWithdraw_Load(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
         }
 
         #endregion
