@@ -21,7 +21,7 @@ namespace BankApp
             LoadBalance();
             LoadRecentTransactions();
             LoadLoanSummary();
-
+            this.Load += CustomerDashboard_Load;
         }
 
         private void LoadBalance()
