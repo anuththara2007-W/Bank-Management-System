@@ -74,9 +74,5 @@ namespace BankApp
             this.Hide();
         }
 
-        private void btnSubmitLoan_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
