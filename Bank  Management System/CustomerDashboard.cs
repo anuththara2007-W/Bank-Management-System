@@ -11,9 +11,8 @@ namespace BankApp
         public CustomerDashboard()
         {
             InitializeComponent();
+            this.Load += CustomerDashboard_Load; // only once here
         }
-
-
 
         private void CustomerDashboard_Load(object sender, EventArgs e)
         {
@@ -21,27 +20,6 @@ namespace BankApp
             LoadBalance();
             LoadRecentTransactions();
             LoadLoanSummary();
-        }
-
-        private void CustomerDashboard_Load(object sender, EventArgs e)
-        {
-            // Update welcome label
-            lblWelcome.Text = "Welcome, " + Session.CustomerName;
-
-            // Fill accounts in combo box
-            using (SqlConnection con = new SqlConnection("YOUR_CONNECTION_STRING"))
-            {
-                con.Open();
-                SqlCommand cmd = new SqlCommand(
-                    "SELECT Account_ID, Account_Type FROM Accounts WHERE Customer_ID=@cid", con);
-                cmd.Parameters.AddWithValue("@cid", Session.CustomerID);
-
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    comboAccounts.Items.Add(reader["Account_ID"] + " - " + reader["Account_Type"]);
-                }
-            }
         }
 
         private void LoadBalance()
@@ -83,7 +61,7 @@ namespace BankApp
             {
                 con.Open();
                 SqlDataAdapter da = new SqlDataAdapter(
-                    "SELECT LoanID, LoanType, Amount, InterestRate, LoanDate, CustomerName " +
+                    "SELECT LoanID, LoanType, Amount, InterestRate, LoanDate " +
                     "FROM Loan WHERE Customer_ID = @cid", con);
                 da.SelectCommand.Parameters.AddWithValue("@cid", Session.CustomerID);
 
@@ -93,6 +71,7 @@ namespace BankApp
             }
         }
 
+        // Navigation buttons
         private void btnLoanRequest_Click(object sender, EventArgs e)
         {
             LoanRequest frm = new LoanRequest();
@@ -120,6 +99,7 @@ namespace BankApp
             frm.Show();
             this.Hide();
         }
+
         private void btnLogout_Click(object sender, EventArgs e)
         {
             Login frm = new Login();
@@ -136,15 +116,15 @@ namespace BankApp
 
         private void btnDeposit_Click(object sender, EventArgs e)
         {
-            DepositWithdraw deposit = new DepositWithdraw();
+            DepositWithdraw deposit = new DepositWithdraw(Session.CustomerID, "deposit");
             deposit.Show();
             this.Hide();
         }
 
         private void btnWithdraw_Click(object sender, EventArgs e)
         {
-            DepositWithdraw deposit = new DepositWithdraw();
-            deposit.Show();
+            DepositWithdraw withdraw = new DepositWithdraw(Session.CustomerID, "withdraw");
+            withdraw.Show();
             this.Hide();
         }
     }
