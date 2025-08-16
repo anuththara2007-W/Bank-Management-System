@@ -2,99 +2,106 @@
 using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using static System.Collections.Specialized.BitVector32;
 
 namespace BankApp
 {
     public partial class DepositWithdraw : Form
     {
-        string connString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
+        private int customerId;
+        private string mode; // "deposit" or "withdraw"
 
-        public DepositWithdraw()
+        public DepositWithdraw(int cid, string operation)
         {
             InitializeComponent();
+            customerId = cid;
+            mode = operation;
         }
 
-        private void btnDeposit_Click(object sender, EventArgs e)
+        private void DepositWithdraw_Load(object sender, EventArgs e)
         {
-            if (!decimal.TryParse(txtAmount.Text, out decimal amount) || amount <= 0)
-            {
-                MessageBox.Show("Enter a valid amount");
-                return;
-            }
-            ProcessTransaction("Deposit", amount);
+            lblMode.Text = (mode == "deposit") ? "Deposit Money" : "Withdraw Money";
+            LoadAccounts();
         }
 
-        private void btnWithdraw_Click(object sender, EventArgs e)
+        private void LoadAccounts()
         {
-            if (!decimal.TryParse(txtAmount.Text, out decimal amount) || amount <= 0)
-            {
-                MessageBox.Show("Enter a valid amount");
-                return;
-            }
-            ProcessTransaction("Withdraw", -amount);
-        }
-
-        private void ProcessTransaction(string type, decimal amount)
-        {
-            using (SqlConnection con = new SqlConnection(connString))
+            using (SqlConnection con = DatabaseHelper.GetConnection())
             {
                 con.Open();
-                SqlTransaction tran = con.BeginTransaction();
+                SqlCommand cmd = new SqlCommand(
+                    "SELECT Account_ID FROM Accounts WHERE Customer_ID = @cid", con);
+                cmd.Parameters.AddWithValue("@cid", customerId);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    cmbAccounts.Items.Add(dr["Account_ID"].ToString());
+                }
+            }
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            if (cmbAccounts.SelectedItem == null || string.IsNullOrWhiteSpace(txtAmount.Text))
+            {
+                MessageBox.Show("Please select an account and enter an amount.");
+                return;
+            }
+
+            int accountId = Convert.ToInt32(cmbAccounts.SelectedItem);
+            decimal amount = Convert.ToDecimal(txtAmount.Text);
+
+            using (SqlConnection con = DatabaseHelper.GetConnection())
+            {
+                con.Open();
+                SqlTransaction trans = con.BeginTransaction();
 
                 try
                 {
-                    SqlCommand getAccount = new SqlCommand("SELECT TOP 1 Account_ID, Balance FROM Accounts WHERE Customer_ID=@cid", con, tran);
-                    getAccount.Parameters.AddWithValue("@cid", Session.CustomerID);
-                    var reader = getAccount.ExecuteReader();
-                    if (!reader.Read())
-                    {
-                        MessageBox.Show("No account found.");
-                        reader.Close();
-                        tran.Rollback();
-                        return;
-                    }
-                    int accountId = (int)reader["Account_ID"];
-                    decimal balance = (decimal)reader["Balance"];
-                    reader.Close();
+                    // 1. Update balance
+                    string sql = (mode == "deposit")
+                        ? "UPDATE Accounts SET Balance = Balance + @amt WHERE Account_ID = @aid"
+                        : "UPDATE Accounts SET Balance = Balance - @amt WHERE Account_ID = @aid AND Balance >= @amt";
 
-                    if (amount < 0 && balance + amount < 0)
+                    SqlCommand cmd = new SqlCommand(sql, con, trans);
+                    cmd.Parameters.AddWithValue("@amt", amount);
+                    cmd.Parameters.AddWithValue("@aid", accountId);
+
+                    int rows = cmd.ExecuteNonQuery();
+
+                    if (rows == 0)
                     {
-                        MessageBox.Show("Insufficient funds.");
-                        tran.Rollback();
-                        return;
+                        throw new Exception("Insufficient balance or account not found.");
                     }
 
-                    SqlCommand updateBalance = new SqlCommand(
-                        "UPDATE Accounts SET Balance = Balance + @amt WHERE Account_ID=@aid", con, tran);
-                    updateBalance.Parameters.AddWithValue("@amt", amount);
-                    updateBalance.Parameters.AddWithValue("@aid", accountId);
-                    updateBalance.ExecuteNonQuery();
+                    // 2. Insert transaction record
+                    SqlCommand cmd2 = new SqlCommand(
+                        "INSERT INTO Transactions (Account_ID, Transaction_Type, Amount, Transaction_Date) " +
+                        "VALUES (@aid, @type, @amt, @date)", con, trans);
 
-                    SqlCommand insertTran = new SqlCommand(
-                        "INSERT INTO Transactions (Transaction_Type, Amount, Transaction_Date, Account_ID) VALUES (@type, @amt, GETDATE(), @aid)", con, tran);
-                    insertTran.Parameters.AddWithValue("@type", type);
-                    insertTran.Parameters.AddWithValue("@amt", Math.Abs(amount));
-                    insertTran.Parameters.AddWithValue("@aid", accountId);
-                    insertTran.ExecuteNonQuery();
+                    cmd2.Parameters.AddWithValue("@aid", accountId);
+                    cmd2.Parameters.AddWithValue("@type", mode);
+                    cmd2.Parameters.AddWithValue("@amt", amount);
+                    cmd2.Parameters.AddWithValue("@date", DateTime.Now);
 
-                    tran.Commit();
-                    MessageBox.Show($"{type} successful.");
+                    cmd2.ExecuteNonQuery();
+
+                    trans.Commit();
+                    MessageBox.Show($"{mode} successful!");
                 }
                 catch (Exception ex)
                 {
-                    tran.Rollback();
+                    trans.Rollback();
                     MessageBox.Show("Error: " + ex.Message);
                 }
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
-            CustomerDashboard customerdash = new CustomerDashboard();
-            customerdash.Show();
+            CustomerDashboard dash = new CustomerDashboard();
+            dash.Show();
             this.Hide();
-
         }
     }
 }
