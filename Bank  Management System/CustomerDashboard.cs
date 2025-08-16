@@ -21,6 +21,19 @@ namespace BankApp
             LoadBalance();
             LoadRecentTransactions();
             LoadLoanSummary();
+            using (SqlConnection con = new SqlConnection(connString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand(
+                    "SELECT Account_ID, Account_Type FROM Accounts WHERE Customer_ID=@cid", con);
+                cmd.Parameters.AddWithValue("@cid", Session.CustomerID);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    comboAccounts.Items.Add(reader["Account_ID"] + " - " + reader["Account_Type"]);
+                }
+            }
         }
 
         private void LoadBalance()
