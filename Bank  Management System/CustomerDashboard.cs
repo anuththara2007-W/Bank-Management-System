@@ -24,6 +24,27 @@ namespace BankApp
             this.Load += CustomerDashboard_Load;
         }
 
+        private void CustomerDashboard_Load(object sender, EventArgs e)
+        {
+            // Update welcome label
+            lblWelcome.Text = "Welcome, " + Session.CustomerName;
+
+            // Fill accounts in combo box
+            using (SqlConnection con = new SqlConnection("YOUR_CONNECTION_STRING"))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand(
+                    "SELECT Account_ID, Account_Type FROM Accounts WHERE Customer_ID=@cid", con);
+                cmd.Parameters.AddWithValue("@cid", Session.CustomerID);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    comboAccounts.Items.Add(reader["Account_ID"] + " - " + reader["Account_Type"]);
+                }
+            }
+        }
+
         private void LoadBalance()
         {
             using (SqlConnection con = DatabaseHelper.GetConnection())
