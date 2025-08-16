@@ -32,7 +32,7 @@ namespace BankApp
         {
             this.lblAccount = new System.Windows.Forms.Label();
             this.lblAmount = new System.Windows.Forms.Label();
-            this.cmbAccount = new System.Windows.Forms.ComboBox();
+            this.cmbAccounts = new System.Windows.Forms.ComboBox();
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.btnDeposit = new System.Windows.Forms.Button();
             this.btnWithdraw = new System.Windows.Forms.Button();
@@ -57,13 +57,14 @@ namespace BankApp
             this.lblAmount.TabIndex = 1;
             this.lblAmount.Text = "Amount";
             // 
-            // cmbAccount
+            // cmbAccounts
             // 
-            this.cmbAccount.FormattingEnabled = true;
-            this.cmbAccount.Location = new System.Drawing.Point(187, 36);
-            this.cmbAccount.Name = "cmbAccount";
-            this.cmbAccount.Size = new System.Drawing.Size(337, 24);
-            this.cmbAccount.TabIndex = 2;
+            this.cmbAccounts.FormattingEnabled = true;
+            this.cmbAccounts.Location = new System.Drawing.Point(187, 36);
+            this.cmbAccounts.Name = "cmbAccounts";
+            this.cmbAccounts.Size = new System.Drawing.Size(337, 24);
+            this.cmbAccounts.TabIndex = 2;
+            this.cmbAccounts.SelectedIndexChanged += new System.EventHandler(this.cmbAccount_SelectedIndexChanged);
             // 
             // txtAmount
             // 
@@ -98,7 +99,6 @@ namespace BankApp
             this.button1.TabIndex = 16;
             this.button1.Text = "Go Back";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // DepositWithdraw
             // 
@@ -109,12 +109,11 @@ namespace BankApp
             this.Controls.Add(this.btnWithdraw);
             this.Controls.Add(this.btnDeposit);
             this.Controls.Add(this.txtAmount);
-            this.Controls.Add(this.cmbAccount);
+            this.Controls.Add(this.cmbAccounts);
             this.Controls.Add(this.lblAmount);
             this.Controls.Add(this.lblAccount);
             this.Name = "DepositWithdraw";
             this.Text = "DepositWithdraw";
-            this.Load += new System.EventHandler(this.DepositWithdraw_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,7 +127,7 @@ namespace BankApp
 
         private System.Windows.Forms.Label lblAccount;
         private System.Windows.Forms.Label lblAmount;
-        private System.Windows.Forms.ComboBox cmbAccount;
+        private System.Windows.Forms.ComboBox cmbAccounts;
         private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.Button btnDeposit;
         private System.Windows.Forms.Button btnWithdraw;

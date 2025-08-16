@@ -103,5 +103,10 @@ namespace BankApp
             dash.Show();
             this.Hide();
         }
+
+        private void cmbAccount_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
