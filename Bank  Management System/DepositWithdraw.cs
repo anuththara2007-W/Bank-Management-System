@@ -104,9 +104,6 @@ namespace BankApp
             this.Hide();
         }
 
-        private void cmbAccounts_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
