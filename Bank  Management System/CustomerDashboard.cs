@@ -17,7 +17,7 @@ namespace BankApp
 
         private void CustomerDashboard_Load(object sender, EventArgs e)
         {
-            lblCustomerName.Text = Session.CustomerName;
+            lblCustomerName.Text = "Welcome, " + Session.CustomerName;
             LoadBalance();
             LoadRecentTransactions();
             LoadLoanSummary();
