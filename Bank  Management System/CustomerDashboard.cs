@@ -110,6 +110,7 @@ namespace BankApp
         {
             TransferFunds trs = new TransferFunds();
             trs.Show();
+            this.Hide();
         }
     }
 }
