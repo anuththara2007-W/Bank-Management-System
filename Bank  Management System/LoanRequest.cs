@@ -2,7 +2,6 @@
 using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using static System.Collections.Specialized.BitVector32;
 
 namespace BankApp
 {
@@ -13,49 +12,66 @@ namespace BankApp
         public LoanRequest()
         {
             InitializeComponent();
+            LoadLoanTypes(); // Load loan types into combo box
+        }
+
+        private void LoadLoanTypes()
+        {
+            // Predefined loan types - you can also load from DB if needed
+            cmbLoanType.Items.Clear();
+            cmbLoanType.Items.Add("Personal Loan");
+            cmbLoanType.Items.Add("Home Loan");
+            cmbLoanType.Items.Add("Car Loan");
+            cmbLoanType.Items.Add("Education Loan");
+            cmbLoanType.Items.Add("Business Loan");
+
+            cmbLoanType.SelectedIndex = 0; // Default selection
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            if (cmbLoanType.SelectedItem == null)
+            {
+                MessageBox.Show("Please select a loan type.");
+                return;
+            }
+
             if (!decimal.TryParse(txtAmount.Text, out decimal amount) || amount <= 0)
             {
-                MessageBox.Show("Enter valid amount");
+                MessageBox.Show("Enter a valid loan amount.");
                 return;
             }
 
             using (SqlConnection con = new SqlConnection(connString))
             {
-                con.Open();
-                SqlCommand cmd = new SqlCommand(
-                    "INSERT INTO Loans (Customer_ID, Loan_Type, Amount, Status) VALUES (@cid, @type, @amt, 'Pending')", con);
-                cmd.Parameters.AddWithValue("@cid", Session.CustomerID);
-                cmd.Parameters.AddWithValue("@type", txtLoanType.Text);
-                cmd.Parameters.AddWithValue("@amt", amount);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Loan request submitted.");
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand(
+                        "INSERT INTO Loans (Customer_ID, Loan_Type, Amount, Status) VALUES (@cid, @type, @amt, 'Pending')", con);
+
+                    cmd.Parameters.AddWithValue("@cid", Session.CustomerID);
+                    cmd.Parameters.AddWithValue("@type", cmbLoanType.SelectedItem.ToString());
+                    cmd.Parameters.AddWithValue("@amt", amount);
+
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("✅ Loan request submitted successfully!");
+                    txtAmount.Clear();
+                    cmbLoanType.SelectedIndex = 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error while submitting loan request: " + ex.Message);
+                }
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            CustomerDashboard customerdash = new CustomerDashboard();
-            customerdash.Show();
-            this.Hide();
-        }
-
-        private void txtLoanType_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSubmitLoan_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnGoBack_Click(object sender, EventArgs e)
         {
-
+            CustomerDashboard customerdash = new CustomerDashboard();
+            customerdash.Show();
+            this.Hide();
         }
     }
 }
