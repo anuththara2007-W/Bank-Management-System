@@ -40,6 +40,6 @@ namespace BankApp
         {
             CustomerDashboard customerdash = new CustomerDashboard();
             customerdash.Show();
-            this.Hide();
+            this.Hide()
         }
 }
