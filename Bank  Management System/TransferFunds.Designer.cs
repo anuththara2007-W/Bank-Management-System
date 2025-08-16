@@ -131,7 +131,6 @@ namespace BankApp
 
         private void TransferFunds_Load(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
         }
 
         #endregion
