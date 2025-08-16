@@ -117,6 +117,7 @@ namespace BankApp
         {
             DepositWithdraw deposit = new DepositWithdraw();
             deposit.Show();
+            this.Hide();
         }
     }
 }
