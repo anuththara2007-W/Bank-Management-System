@@ -48,12 +48,14 @@ namespace BankApp
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand(
-                        "INSERT INTO Loans (Customer_ID, Loan_Type, Amount, Status) VALUES (@cid, @type, @amt, 'Pending')", con);
+     "INSERT INTO Loan (Customer_ID, CustomerName, LoanType, Amount, InterestRate, LoanDate) " +
+     "VALUES (@cid, @cname, @type, @amt, @rate, GETDATE())", con);
 
                     cmd.Parameters.AddWithValue("@cid", Session.CustomerID);
+                    cmd.Parameters.AddWithValue("@cname", Session.CustomerName);
                     cmd.Parameters.AddWithValue("@type", cmbLoanType.SelectedItem.ToString());
                     cmd.Parameters.AddWithValue("@amt", amount);
-
+                    cmd.Parameters.AddWithValue("@rate", 5.5m);
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("✅ Loan request submitted successfully!");
