@@ -104,6 +104,7 @@
             this.btnWithdraw.TabIndex = 5;
             this.btnWithdraw.Text = "Withdraw";
             this.btnWithdraw.UseVisualStyleBackColor = true;
+            this.btnWithdraw.Click += new System.EventHandler(this.btnWithdraw_Click);
             // 
             // btnLoanRequest
             // 

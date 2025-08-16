@@ -119,5 +119,12 @@ namespace BankApp
             deposit.Show();
             this.Hide();
         }
+
+        private void btnWithdraw_Click(object sender, EventArgs e)
+        {
+            DepositWithdraw deposit = new DepositWithdraw();
+            deposit.Show();
+            this.Hide();
+        }
     }
 }
