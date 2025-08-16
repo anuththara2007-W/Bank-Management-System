@@ -49,13 +49,14 @@ namespace BankApp
                     con.Open();
                     SqlCommand cmd = new SqlCommand(
      "INSERT INTO Loan (Customer_ID, CustomerName, LoanType, Amount, InterestRate, LoanDate) " +
-     "VALUES (Customer_ID, CustomerName, LoanType, Amount, InterestRate, GETDATE())", con);
+     "VALUES (@cid, @cname, @type, @amt, @rate, GETDATE())", con);
 
                     cmd.Parameters.AddWithValue("@cid", Session.CustomerID);
-                    cmd.Parameters.AddWithValue("@cname", Session.CustomerName);
+                    cmd.Parameters.AddWithValue("@cname", Session.CustomerName ?? "Unknown");
                     cmd.Parameters.AddWithValue("@type", cmbLoanType.SelectedItem.ToString());
                     cmd.Parameters.AddWithValue("@amt", amount);
-                    cmd.Parameters.AddWithValue("@rate", 5.5m);
+                    cmd.Parameters.AddWithValue("@rate", 5.5m); // Example fixed rate
+
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("✅ Loan request submitted successfully!");
