@@ -58,7 +58,7 @@ namespace BankApp
             // 
             // btnReject
             // 
-            this.btnReject.Location = new System.Drawing.Point(730, 107);
+            this.btnReject.Location = new System.Drawing.Point(629, 89);
             this.btnReject.Name = "btnReject";
             this.btnReject.Size = new System.Drawing.Size(232, 58);
             this.btnReject.TabIndex = 2;
