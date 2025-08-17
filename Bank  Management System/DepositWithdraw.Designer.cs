@@ -37,7 +37,7 @@ namespace BankApp
             this.btnWithdraw = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dgvAccounts = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblBalance = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,21 +106,21 @@ namespace BankApp
             this.dgvAccounts.Size = new System.Drawing.Size(868, 167);
             this.dgvAccounts.TabIndex = 18;
             // 
-            // label1
+            // lblBalance
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(174, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(14, 16);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "0";
+            this.lblBalance.AutoSize = true;
+            this.lblBalance.Location = new System.Drawing.Point(174, 34);
+            this.lblBalance.Name = "lblBalance";
+            this.lblBalance.Size = new System.Drawing.Size(14, 16);
+            this.lblBalance.TabIndex = 19;
+            this.lblBalance.Text = "0";
             // 
             // DepositWithdraw
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 577);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblBalance);
             this.Controls.Add(this.dgvAccounts);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnWithdraw);
@@ -147,6 +147,6 @@ namespace BankApp
         private System.Windows.Forms.Button btnWithdraw;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dgvAccounts;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblBalance;
     }
 }
