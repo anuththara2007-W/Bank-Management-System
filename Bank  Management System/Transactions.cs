@@ -137,7 +137,6 @@ namespace Bank__Management_System
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("DELETE FROM Transactions WHERE Customer_ID = @Customer_ID", con);
-                    cmd.Parameters.AddWithValue("@Customer_ID", int.Parse(txtTransactionID.Text));
 
                     int rows = cmd.ExecuteNonQuery();
                     con.Close();
