@@ -304,7 +304,7 @@
             this.txtCustomerID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCustomerID.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCustomerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerID.Location = new System.Drawing.Point(764, 518);
+            this.txtCustomerID.Location = new System.Drawing.Point(808, 485);
             this.txtCustomerID.Name = "txtCustomerID";
             this.txtCustomerID.Size = new System.Drawing.Size(319, 27);
             this.txtCustomerID.TabIndex = 22;
@@ -331,7 +331,7 @@
             this.btnPickCustomer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(233)))), ((int)(((byte)(236)))));
             this.btnPickCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPickCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPickCustomer.Location = new System.Drawing.Point(792, 551);
+            this.btnPickCustomer.Location = new System.Drawing.Point(533, 475);
             this.btnPickCustomer.Name = "btnPickCustomer";
             this.btnPickCustomer.Size = new System.Drawing.Size(269, 37);
             this.btnPickCustomer.TabIndex = 29;
