@@ -11,14 +11,10 @@ namespace BankApp
         private int customerId;
         private int selectedAccountId = -1;
 
-        public DepositWithdraw(int cid, string v)
+        public DepositWithdraw(int cid)
         {
             InitializeComponent();
             customerId = cid;
-        }
-
-        public DepositWithdraw()
-        {
         }
 
         private void DepositWithdraw_Load(object sender, EventArgs e)
@@ -101,8 +97,8 @@ namespace BankApp
                 try
                 {
                     string sql = (mode == "deposit")
-                        ? "UPDATE accounts SET Balance = Balance + @amt WHERE Account_ID = @aid"
-                        : "UPDATE accounts SET Balance = Balance - @amt WHERE Account_ID = @aid AND Balance >= @amt";
+                        ? "UPDATE Accounts SET Balance = Balance + @amt WHERE Account_ID = @aid"
+                        : "UPDATE Accounts SET Balance = Balance - @amt WHERE Account_ID = @aid AND Balance >= @amt";
 
                     SqlCommand cmd = new SqlCommand(sql, con, trans);
                     cmd.Parameters.AddWithValue("@amt", amount);
@@ -113,8 +109,8 @@ namespace BankApp
 
                     // Insert transaction record
                     SqlCommand cmd2 = new SqlCommand(
-                        "INSERT INTO transactions (Account_ID, Customer_ID, Transaction_Type, Amount, Transaction_Date) " +
-                        "VALUES (Account_ID, Customer_ID, Transaction_Type, Amount, Transaction_Date)", con, trans);
+                        "INSERT INTO Transactions (Account_ID, Customer_ID, Transaction_Type, Amount, Transaction_Date) " +
+                        "VALUES (@aid, @cid, @type, @amt, @date)", con, trans);
 
                     cmd2.Parameters.AddWithValue("@aid", selectedAccountId);
                     cmd2.Parameters.AddWithValue("@cid", customerId);
