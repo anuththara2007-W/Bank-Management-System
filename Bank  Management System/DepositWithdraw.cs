@@ -21,6 +21,7 @@ namespace BankApp
 
         public DepositWithdraw()
         {
+            InitializeComponent();
         }
 
         private void DepositWithdraw_Load(object sender, EventArgs e)
@@ -41,7 +42,7 @@ namespace BankApp
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
-                dgvAccounts.DataSource = dt; // ✅ just use dgvAccounts
+                dgvAccounts.DataSource = dt; // ✅ Correct usage
             }
 
             dgvAccounts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -54,8 +55,15 @@ namespace BankApp
                     selectedAccountId = Convert.ToInt32(dgvAccounts.Rows[e.RowIndex].Cells["Account_ID"].Value);
                 }
             };
+
+            // ✅ Auto-select first account if only one exists
+            if (dgvAccounts.Rows.Count == 1)
+            {
+                dgvAccounts.Rows[0].Selected = true;
+                selectedAccountId = Convert.ToInt32(dgvAccounts.Rows[0].Cells["Account_ID"].Value);
+            }
         }
-        
+
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             if (selectedAccountId == -1)
