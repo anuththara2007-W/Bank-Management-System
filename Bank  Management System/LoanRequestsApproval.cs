@@ -100,6 +100,12 @@ namespace BankApp
                     MessageBox.Show("Error rejecting loan: " + ex.Message);
                 }
             }
+            private void btnBack_Click(object sender, EventArgs e)
+        {
+            CustomerDashboard dash = new CustomerDashboard();
+            dash.Show();
+            this.Hide();
         }
+    }
     }
 }
