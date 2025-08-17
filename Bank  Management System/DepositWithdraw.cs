@@ -55,33 +55,7 @@ namespace BankApp
                 }
             };
         }
-        private void LoadAccounts()
-        {
-            using (SqlConnection con = DatabaseHelper.GetConnection())
-            {
-                con.Open();
-                SqlDataAdapter da = new SqlDataAdapter(
-                    "SELECT Account_ID, Account_Type, Balance FROM Accounts WHERE Customer_ID = @cid", con);
-                da.SelectCommand.Parameters.AddWithValue("@cid", customerId);
-
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-
-                dgvAccounts.DataSource = dt; // ✅ just use dgvAccounts
-            }
-
-            dgvAccounts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvAccounts.MultiSelect = false;
-
-            dgvAccounts.CellClick += (s, e) =>
-            {
-                if (e.RowIndex >= 0)
-                {
-                    selectedAccountId = Convert.ToInt32(dgvAccounts.Rows[e.RowIndex].Cells["Account_ID"].Value);
-                }
-            };
-        }
-
+        
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             if (selectedAccountId == -1)
