@@ -30,26 +30,26 @@ namespace BankApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgvAllRequests = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAllRequests)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvAllRequests
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 267);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1109, 183);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvAllRequests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAllRequests.Location = new System.Drawing.Point(23, 267);
+            this.dgvAllRequests.Name = "dgvAllRequests";
+            this.dgvAllRequests.RowHeadersWidth = 51;
+            this.dgvAllRequests.RowTemplate.Height = 24;
+            this.dgvAllRequests.Size = new System.Drawing.Size(1109, 183);
+            this.dgvAllRequests.TabIndex = 0;
             // 
             // AdminLoanRequests
             // 
             this.ClientSize = new System.Drawing.Size(1170, 570);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvAllRequests);
             this.Name = "AdminLoanRequests";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAllRequests)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -61,6 +61,6 @@ namespace BankApp
         #endregion
 
         private System.Windows.Forms.DataGridView dgvRequests;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvAllRequests;
     }
 }
