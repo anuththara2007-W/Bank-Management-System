@@ -19,6 +19,10 @@ namespace BankApp
             mode = operation;
         }
 
+        public DepositWithdraw()
+        {
+        }
+
         private void DepositWithdraw_Load(object sender, EventArgs e)
         {
             lblMode.Text = (mode == "deposit") ? "Deposit Money" : "Withdraw Money";
