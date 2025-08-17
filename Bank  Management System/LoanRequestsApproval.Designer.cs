@@ -31,7 +31,7 @@ namespace BankApp
         private void InitializeComponent()
         {
             this.dgvAllRequests = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnApprove = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllRequests)).BeginInit();
             this.SuspendLayout();
@@ -46,14 +46,14 @@ namespace BankApp
             this.dgvAllRequests.Size = new System.Drawing.Size(1109, 183);
             this.dgvAllRequests.TabIndex = 0;
             // 
-            // button1
+            // btnApprove
             // 
-            this.button1.Location = new System.Drawing.Point(188, 96);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(180, 44);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnApprove.Location = new System.Drawing.Point(188, 96);
+            this.btnApprove.Name = "btnApprove";
+            this.btnApprove.Size = new System.Drawing.Size(180, 44);
+            this.btnApprove.TabIndex = 1;
+            this.btnApprove.Text = "button1";
+            this.btnApprove.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -68,7 +68,7 @@ namespace BankApp
             // 
             this.ClientSize = new System.Drawing.Size(1170, 570);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnApprove);
             this.Controls.Add(this.dgvAllRequests);
             this.Name = "AdminLoanRequests";
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllRequests)).EndInit();
@@ -84,7 +84,7 @@ namespace BankApp
 
         private System.Windows.Forms.DataGridView dgvRequests;
         private System.Windows.Forms.DataGridView dgvAllRequests;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnApprove;
         private System.Windows.Forms.Button button2;
     }
 }
