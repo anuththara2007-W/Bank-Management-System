@@ -37,17 +37,18 @@ namespace BankApp
             this.btnWithdraw = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dgvAccounts = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMode
             // 
             this.lblMode.AutoSize = true;
-            this.lblMode.Location = new System.Drawing.Point(66, 36);
+            this.lblMode.Location = new System.Drawing.Point(88, 34);
             this.lblMode.Name = "lblMode";
-            this.lblMode.Size = new System.Drawing.Size(56, 16);
+            this.lblMode.Size = new System.Drawing.Size(57, 16);
             this.lblMode.TabIndex = 0;
-            this.lblMode.Text = "lblMode";
+            this.lblMode.Text = "Balance";
             // 
             // lblAmount
             // 
@@ -105,11 +106,21 @@ namespace BankApp
             this.dgvAccounts.Size = new System.Drawing.Size(868, 167);
             this.dgvAccounts.TabIndex = 18;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(174, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "label1";
+            // 
             // DepositWithdraw
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 577);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvAccounts);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnWithdraw);
@@ -136,5 +147,6 @@ namespace BankApp
         private System.Windows.Forms.Button btnWithdraw;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dgvAccounts;
+        private System.Windows.Forms.Label label1;
     }
 }
