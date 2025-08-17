@@ -1,4 +1,6 @@
-﻿namespace Bank__Management_System
+﻿using System;
+
+namespace Bank__Management_System
 {
     public partial class Account
     {
@@ -246,7 +248,6 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(312, 22);
             this.dateTimePicker1.TabIndex = 19;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            this.dateTimePicker1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dateTimePicker1_KeyDown);
             // 
             // btnSearch
             // 
@@ -349,6 +350,11 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
