@@ -160,7 +160,7 @@
             this.btnLoanRq.Name = "btnLoanRq";
             this.btnLoanRq.Size = new System.Drawing.Size(148, 36);
             this.btnLoanRq.TabIndex = 7;
-            this.btnLoanRq.Text = "Loan ";
+            this.btnLoanRq.Text = "Loan Requests ";
             this.btnLoanRq.UseVisualStyleBackColor = false;
             this.btnLoanRq.Click += new System.EventHandler(this.btnLoanRq_Click);
             // 
