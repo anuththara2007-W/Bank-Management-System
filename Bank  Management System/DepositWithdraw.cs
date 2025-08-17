@@ -11,20 +11,14 @@ namespace BankApp
         private int customerId;
         private int selectedAccountId = -1;
 
-        public DepositWithdraw(int cid, string v)
+        public DepositWithdraw(int cid)
         {
             InitializeComponent();
             customerId = cid;
         }
 
-        public DepositWithdraw()
-        {
-            InitializeComponent();
-        }
-
         private void DepositWithdraw_Load(object sender, EventArgs e)
         {
-            lblMode.Text = "Deposit / Withdraw";
             LoadAccounts();
         }
 
@@ -46,6 +40,7 @@ namespace BankApp
             dgvAccounts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvAccounts.MultiSelect = false;
 
+            // Handle cell click
             dgvAccounts.CellClick += (s, e) =>
             {
                 if (e.RowIndex >= 0)
@@ -56,26 +51,13 @@ namespace BankApp
                 }
             };
 
-            // Auto select first row if nothing selected
-            if (dgvAccounts.Rows.Count > 0 && selectedAccountId == -1)
+            // Auto-select first row
+            if (dgvAccounts.Rows.Count > 0)
             {
                 dgvAccounts.Rows[0].Selected = true;
                 selectedAccountId = Convert.ToInt32(dgvAccounts.Rows[0].Cells["Account_ID"].Value);
                 decimal balance = Convert.ToDecimal(dgvAccounts.Rows[0].Cells["Balance"].Value);
                 lblBalance.Text = $"Balance: {balance:C}";
-            }
-            else if (selectedAccountId != -1)
-            {
-                // Reselect previously selected account
-                foreach (DataGridViewRow row in dgvAccounts.Rows)
-                {
-                    if (Convert.ToInt32(row.Cells["Account_ID"].Value) == selectedAccountId)
-                    {
-                        row.Selected = true;
-                        lblBalance.Text = $"Balance: {Convert.ToDecimal(row.Cells["Balance"].Value):C}";
-                        break;
-                    }
-                }
             }
         }
 
@@ -92,10 +74,9 @@ namespace BankApp
                 return;
             }
 
-            decimal amount;
-            if (!decimal.TryParse(txtAmount.Text, out amount) || amount <= 0)
+            if (!decimal.TryParse(txtAmount.Text, out decimal amount) || amount <= 0)
             {
-                MessageBox.Show("Please enter a valid amount.");
+                MessageBox.Show("Invalid amount.");
                 return;
             }
 
@@ -106,7 +87,6 @@ namespace BankApp
 
                 try
                 {
-                    // Update balance
                     string sql = (mode == "deposit")
                         ? "UPDATE Accounts SET Balance = Balance + @amt WHERE Account_ID = @aid"
                         : "UPDATE Accounts SET Balance = Balance - @amt WHERE Account_ID = @aid AND Balance >= @amt";
@@ -119,7 +99,7 @@ namespace BankApp
                     if (rows == 0)
                         throw new Exception("Insufficient balance or account not found.");
 
-                    // Insert into Transactions
+                    // Log transaction
                     SqlCommand cmd2 = new SqlCommand(
                         "INSERT INTO Transactions (Account_ID, Customer_ID, Transaction_Type, Amount, Transaction_Date) " +
                         "VALUES (@aid, @cid, @type, @amt, @date)", con, trans);
@@ -133,10 +113,12 @@ namespace BankApp
                     cmd2.ExecuteNonQuery();
 
                     trans.Commit();
+
                     MessageBox.Show($"{mode} successful!");
 
-                    LoadAccounts();   // refresh grid
-                    UpdateBalanceLabel(); // refresh label
+                    // ✅ reload everything
+                    LoadAccounts();
+                    UpdateBalanceLabel();
                 }
                 catch (Exception ex)
                 {
