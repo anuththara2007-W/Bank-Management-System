@@ -17,7 +17,7 @@ namespace BankApp
         }
 
         
-        private void LoadRequests()
+        private void LoanRequestsApproval()
         {
             using (SqlConnection con = new SqlConnection(connString))
             using (SqlDataAdapter da = new SqlDataAdapter(
