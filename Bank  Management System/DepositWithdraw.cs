@@ -11,7 +11,7 @@ namespace BankApp
         private int customerId;
         private int selectedAccountId = -1;
 
-        public DepositWithdraw(int cid, string v)
+        public DepositWithdraw(int cid)
         {
             InitializeComponent();
             customerId = cid;
@@ -51,6 +51,8 @@ namespace BankApp
                 if (e.RowIndex >= 0)
                 {
                     selectedAccountId = Convert.ToInt32(dgvAccounts.Rows[e.RowIndex].Cells["Account_ID"].Value);
+                    decimal balance = Convert.ToDecimal(dgvAccounts.Rows[e.RowIndex].Cells["Balance"].Value);
+                    lblBalance.Text = $"Balance: {balance:C}";
                 }
             };
 
@@ -59,6 +61,8 @@ namespace BankApp
             {
                 dgvAccounts.Rows[0].Selected = true;
                 selectedAccountId = Convert.ToInt32(dgvAccounts.Rows[0].Cells["Account_ID"].Value);
+                decimal balance = Convert.ToDecimal(dgvAccounts.Rows[0].Cells["Balance"].Value);
+                lblBalance.Text = $"Balance: {balance:C}";
             }
         }
 
@@ -112,12 +116,33 @@ namespace BankApp
 
                     trans.Commit();
                     MessageBox.Show($"{mode} successful!");
-                    LoadAccounts(); // refresh balance in grid
+
+                    LoadAccounts(); // refresh grid
+                    UpdateBalanceLabel(); // refresh balance label
                 }
                 catch (Exception ex)
                 {
                     trans.Rollback();
                     MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
+
+        private void UpdateBalanceLabel()
+        {
+            if (selectedAccountId == -1) return;
+
+            using (SqlConnection con = DatabaseHelper.GetConnection())
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT Balance FROM Accounts WHERE Account_ID = @aid", con);
+                cmd.Parameters.AddWithValue("@aid", selectedAccountId);
+
+                object result = cmd.ExecuteScalar();
+                if (result != null)
+                {
+                    decimal balance = Convert.ToDecimal(result);
+                    lblBalance.Text = $"Balance: {balance:C}";
                 }
             }
         }
