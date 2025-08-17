@@ -65,6 +65,13 @@ namespace Bank__Management_System
             ln.Show();
             this.Hide();
         }
+
+        private void btnLoan_Click(object sender, EventArgs e)
+        {
+            Loan ln = new Loan();
+            ln.Show();
+            this.Hide();
+        }
     }
 }
 LoanRequestsApproval
