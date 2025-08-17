@@ -18,7 +18,6 @@ namespace BankApp
 
         private void InitializeComponent()
         {
-            throw new NotImplementedException();
         }
 
         private void LoadRequests()

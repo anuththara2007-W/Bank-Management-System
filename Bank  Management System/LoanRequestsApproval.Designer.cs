@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Bank__Management_System
+namespace BankApp
 {
-    partial class LoanRequestsApproval
+    partial class AdminLoanRequests
     {
         /// <summary>
         /// Required designer variable.
