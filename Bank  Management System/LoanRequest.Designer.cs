@@ -117,7 +117,6 @@ namespace BankApp
             this.Controls.Add(this.lblLoanType);
             this.Name = "LoanRequest";
             this.Text = "LoanRequest";
-            this.Load += new System.EventHandler(this.LoanRequest_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoans)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
