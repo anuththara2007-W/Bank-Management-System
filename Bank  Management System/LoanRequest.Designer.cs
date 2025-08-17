@@ -36,8 +36,8 @@ namespace BankApp
             this.lblLoanType = new System.Windows.Forms.Label();
             this.btnGoBack = new System.Windows.Forms.Button();
             this.cmbLoanType = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgvLoans = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLoans)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSubmitLoan
@@ -93,22 +93,22 @@ namespace BankApp
             this.cmbLoanType.Size = new System.Drawing.Size(337, 24);
             this.cmbLoanType.TabIndex = 8;
             // 
-            // dataGridView1
+            // dgvLoans
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 362);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(908, 127);
-            this.dataGridView1.TabIndex = 21;
+            this.dgvLoans.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLoans.Location = new System.Drawing.Point(3, 362);
+            this.dgvLoans.Name = "dgvLoans";
+            this.dgvLoans.RowHeadersWidth = 51;
+            this.dgvLoans.RowTemplate.Height = 24;
+            this.dgvLoans.Size = new System.Drawing.Size(908, 127);
+            this.dgvLoans.TabIndex = 21;
             // 
             // LoanRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(924, 522);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvLoans);
             this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.btnSubmitLoan);
             this.Controls.Add(this.txtAmount);
@@ -118,7 +118,7 @@ namespace BankApp
             this.Name = "LoanRequest";
             this.Text = "LoanRequest";
             this.Load += new System.EventHandler(this.LoanRequest_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLoans)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,6 +135,6 @@ namespace BankApp
         private System.Windows.Forms.Label lblLoanType;
         private System.Windows.Forms.Button btnGoBack;
         private System.Windows.Forms.ComboBox cmbLoanType;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvLoans;
     }
 }
