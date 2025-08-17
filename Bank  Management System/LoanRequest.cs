@@ -87,13 +87,7 @@ namespace BankApp
             }
         }
 
-        private void btnGoBack_Click(object sender, EventArgs e)
-        {
-            CustomerDashboard dash = new CustomerDashboard();
-            dash.Show();
-            this.Hide();
-        }
-    }
+        
         private void btnGoBack_Click(object sender, EventArgs e)
         {
             CustomerDashboard customerdash = new CustomerDashboard();
