@@ -92,8 +92,8 @@ namespace Bank__Management_System
                 try
                 {
                     string sql = (mode == "deposit")
-                        ? "UPDATE Accounts SET Balance = Balance + @amt WHERE Account_ID = @aid"
-                        : "UPDATE Accounts SET Balance = Balance - @amt WHERE Account_ID = @aid AND Balance >= @amt";
+                        ? "UPDATE accounts SET Balance = Balance + @amt WHERE Account_ID = @aid"
+                        : "UPDATE accounts SET Balance = Balance - @amt WHERE Account_ID = @aid AND Balance >= @amt";
 
                     SqlCommand cmd = new SqlCommand(sql, con, trans);
                     cmd.Parameters.AddWithValue("@amt", amount);
