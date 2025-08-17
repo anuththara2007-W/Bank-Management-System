@@ -1,5 +1,6 @@
 ﻿using Bank__Management_System;
 using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -13,6 +14,9 @@ namespace BankApp
         {
             InitializeComponent();
             LoadLoanTypes();
+
+            // Load existing loans when form opens
+            LoadMyLoans();
         }
 
         private void LoadLoanTypes()
@@ -29,7 +33,6 @@ namespace BankApp
 
         private void btnSubmitLoan_Click(object sender, EventArgs e)
         {
-
             if (cmbLoanType.SelectedItem == null)
             {
                 MessageBox.Show("Please select a loan type.");
@@ -61,7 +64,7 @@ namespace BankApp
                     txtAmount.Clear();
                     cmbLoanType.SelectedIndex = 0;
 
-                    // ⬇️ Refresh grid after submitting
+                    // Refresh grid after submitting
                     LoadMyLoans();
                 }
                 catch (Exception ex)
@@ -73,7 +76,34 @@ namespace BankApp
 
         private void LoadMyLoans()
         {
-            throw new NotImplementedException();
+            using (SqlConnection con = new SqlConnection(connString))
+            {
+                try
+                {
+                    con.Open();
+
+                    // Fetch both approved and pending requests for the customer
+                    SqlDataAdapter da = new SqlDataAdapter(
+                        @"SELECT LoanID, LoanType, Amount, Status, LoanDate, InterestRate 
+                          FROM Loans 
+                          WHERE Customer_ID = @cid
+                          UNION
+                          SELECT RequestID AS LoanID, LoanType, Amount, Status, RequestDate AS LoanDate, NULL AS InterestRate 
+                          FROM LoanRequests 
+                          WHERE Customer_ID = @cid", con);
+
+                    da.SelectCommand.Parameters.AddWithValue("@cid", Session.CustomerID);
+
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    dgvLoans.DataSource = dt; // Make sure dgvLoans exists on your form
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading loans: " + ex.Message);
+                }
+            }
         }
 
         private void btnGoBack_Click(object sender, EventArgs e)
