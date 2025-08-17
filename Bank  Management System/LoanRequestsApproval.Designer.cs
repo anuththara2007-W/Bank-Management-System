@@ -37,7 +37,7 @@ namespace Bank__Management_System
             // dgvRequests
             // 
             this.dgvRequests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRequests.Location = new System.Drawing.Point(4, 278);
+            this.dgvRequests.Location = new System.Drawing.Point(12, 233);
             this.dgvRequests.Name = "dgvRequests";
             this.dgvRequests.RowHeadersWidth = 51;
             this.dgvRequests.RowTemplate.Height = 24;
