@@ -11,7 +11,7 @@ namespace BankApp
         private int customerId;
         private int selectedAccountId = -1;
 
-        public DepositWithdraw(int cid)
+        public DepositWithdraw(int cid, string v)
         {
             InitializeComponent();
             customerId = cid;
