@@ -64,6 +64,7 @@ namespace BankApp
             this.btnReject.TabIndex = 2;
             this.btnReject.Text = "button2";
             this.btnReject.UseVisualStyleBackColor = true;
+            this.btnReject.Click += new System.EventHandler(this.btnReject_Click);
             // 
             // AdminLoanRequests
             // 
