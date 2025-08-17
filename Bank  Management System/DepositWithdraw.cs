@@ -10,7 +10,7 @@ namespace Bank__Management_System
     {
         private int selectedAccountId = -1;
 
-        public DepositWithdraw()
+        public DepositWithdraw(int customerID, string v)
         {
             InitializeComponent();
         }
