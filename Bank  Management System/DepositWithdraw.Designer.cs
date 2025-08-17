@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BankApp
+namespace Bank__Management_System
 {
     partial class DepositWithdraw
     {
@@ -136,7 +136,7 @@ namespace BankApp
 
         }
 
-        
+
 
         #endregion
 
