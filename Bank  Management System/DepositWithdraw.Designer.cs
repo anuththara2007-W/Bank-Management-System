@@ -73,6 +73,7 @@ namespace BankApp
             this.btnDeposit.TabIndex = 4;
             this.btnDeposit.Text = "Deposit ";
             this.btnDeposit.UseVisualStyleBackColor = true;
+            this.btnDeposit.Click += new System.EventHandler(this.btnDeposit_Click);
             // 
             // btnWithdraw
             // 
