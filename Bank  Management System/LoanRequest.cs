@@ -8,35 +8,33 @@ namespace BankApp
 {
     public partial class LoanRequest : Form
     {
-        // Use your existing connection string or DatabaseHelper if you prefer
         private readonly string connString =
             @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
 
         public LoanRequest()
         {
             InitializeComponent();
-            // hook once
+            this.Load += LoanRequest_Load; // Load form event
         }
 
         private void LoanRequest_Load(object sender, EventArgs e)
         {
             LoadLoanTypes();
-            LoadMyRequests(); // <-- bind the customer's requests to the grid
+            LoadMyRequests(); // show my requests in grid
         }
 
         private void LoadLoanTypes()
         {
             cmbLoanType.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbLoanType.Items.Clear();
-            cmbLoanType.Items.AddRange(new object[]
-            {
-                "Personal Loan",
-                "Home Loan",
-                "Car Loan",
-                "Education Loan",
-                "Business Loan"
-            });
-            if (cmbLoanType.Items.Count > 0) cmbLoanType.SelectedIndex = 0;
+            cmbLoanType.Items.Add("Personal Loan");
+            cmbLoanType.Items.Add("Home Loan");
+            cmbLoanType.Items.Add("Car Loan");
+            cmbLoanType.Items.Add("Education Loan");
+            cmbLoanType.Items.Add("Business Loan");
+
+            if (cmbLoanType.Items.Count > 0)
+                cmbLoanType.SelectedIndex = 0;
         }
 
         private void btnSubmitLoan_Click(object sender, EventArgs e)
@@ -55,14 +53,14 @@ namespace BankApp
 
             if (Session.CustomerID <= 0)
             {
-                MessageBox.Show("Your session has expired. Please log in again.");
+                MessageBox.Show("Session expired. Please log in again.");
                 return;
             }
 
             using (SqlConnection con = new SqlConnection(connString))
             using (SqlCommand cmd = new SqlCommand(
-                       @"INSERT INTO LoanRequests (Customer_ID, LoanType, Amount, Status, RequestDate)
-                         VALUES (@cid, @type, @amt, 'Pending', GETDATE())", con))
+                @"INSERT INTO LoanRequests (Customer_ID, LoanType, Amount, Status, RequestDate)
+                  VALUES (@cid, @type, @amt, 'Pending', GETDATE())", con))
             {
                 cmd.Parameters.AddWithValue("@cid", Session.CustomerID);
                 cmd.Parameters.AddWithValue("@type", cmbLoanType.SelectedItem.ToString());
@@ -72,12 +70,13 @@ namespace BankApp
                 {
                     con.Open();
                     cmd.ExecuteNonQuery();
+
                     MessageBox.Show("✅ Loan request submitted! Waiting for admin approval.");
 
-                    // Clear UI and refresh list
                     txtAmount.Clear();
                     if (cmbLoanType.Items.Count > 0) cmbLoanType.SelectedIndex = 0;
-                    LoadMyRequests();
+
+                    LoadMyRequests(); // Refresh grid
                 }
                 catch (Exception ex)
                 {
@@ -87,8 +86,7 @@ namespace BankApp
         }
 
         /// <summary>
-        /// Loads only the current customer's rows from LoanRequests
-        /// and binds them to dgvLoanRequests.
+        /// Shows only this customer's requests from LoanRequests.
         /// </summary>
         private void LoadMyRequests()
         {
@@ -100,15 +98,15 @@ namespace BankApp
 
             using (SqlConnection con = new SqlConnection(connString))
             using (SqlDataAdapter da = new SqlDataAdapter(
-                       @"SELECT 
-                             RequestID,
-                             LoanType,
-                             Amount,
-                             Status,
-                             RequestDate
-                         FROM LoanRequests
-                         WHERE Customer_ID = @cid
-                         ORDER BY RequestDate DESC", con))
+                @"SELECT 
+                     RequestID,
+                     LoanType,
+                     Amount,
+                     Status,
+                     RequestDate
+                  FROM LoanRequests
+                  WHERE Customer_ID = @cid
+                  ORDER BY RequestDate DESC", con))
             {
                 da.SelectCommand.Parameters.AddWithValue("@cid", Session.CustomerID);
 
@@ -124,7 +122,6 @@ namespace BankApp
                     dgvLoanRequests.AllowUserToDeleteRows = false;
                     dgvLoanRequests.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-                    // optional formatting
                     if (dgvLoanRequests.Columns["Amount"] != null)
                         dgvLoanRequests.Columns["Amount"].DefaultCellStyle.Format = "N2";
                     if (dgvLoanRequests.Columns["RequestDate"] != null)
@@ -132,7 +129,7 @@ namespace BankApp
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error loading your loan requests: " + ex.Message);
+                    MessageBox.Show("Error loading loan requests: " + ex.Message);
                 }
             }
         }
