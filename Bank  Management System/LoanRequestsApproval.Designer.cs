@@ -1,4 +1,6 @@
-﻿namespace Bank__Management_System
+﻿using System;
+
+namespace Bank__Management_System
 {
     partial class LoanRequestsApproval
     {
@@ -40,6 +42,10 @@
             this.Load += new System.EventHandler(this.LoanRequestsApproval_Load);
             this.ResumeLayout(false);
 
+        }
+
+        private void LoanRequestsApproval_Load(object sender, EventArgs e)
+        {
         }
 
         #endregion
