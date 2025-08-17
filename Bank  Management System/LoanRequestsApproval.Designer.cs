@@ -33,6 +33,7 @@ namespace BankApp
             this.dgvAllRequests = new System.Windows.Forms.DataGridView();
             this.btnApprove = new System.Windows.Forms.Button();
             this.btnReject = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllRequests)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,13 +67,24 @@ namespace BankApp
             this.btnReject.UseVisualStyleBackColor = true;
             this.btnReject.Click += new System.EventHandler(this.btnReject_Click);
             // 
-            // AdminLoanRequests
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(460, 497);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(205, 49);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // LoanRequestsApproval
             // 
             this.ClientSize = new System.Drawing.Size(1170, 570);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnReject);
             this.Controls.Add(this.btnApprove);
             this.Controls.Add(this.dgvAllRequests);
-            this.Name = "AdminLoanRequests";
+            this.Name = "LoanRequestsApproval";
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllRequests)).EndInit();
             this.ResumeLayout(false);
 
@@ -87,5 +99,6 @@ namespace BankApp
         private System.Windows.Forms.DataGridView dgvAllRequests;
         private System.Windows.Forms.Button btnApprove;
         private System.Windows.Forms.Button btnReject;
+        private System.Windows.Forms.Button button1;
     }
 }
