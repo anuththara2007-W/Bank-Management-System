@@ -9,14 +9,12 @@ namespace BankApp
     public partial class DepositWithdraw : Form
     {
         private int customerId;
-        private string mode; // "deposit" or "withdraw"
         private int selectedAccountId = -1;
 
-        public DepositWithdraw(int cid, string operation)
+        public DepositWithdraw(int cid)
         {
             InitializeComponent();
             customerId = cid;
-            mode = operation;
         }
 
         public DepositWithdraw()
@@ -26,7 +24,7 @@ namespace BankApp
 
         private void DepositWithdraw_Load(object sender, EventArgs e)
         {
-            lblMode.Text = (mode == "deposit") ? "Deposit Money" : "Withdraw Money";
+            lblMode.Text = "Deposit / Withdraw";
             LoadAccounts();
         }
 
@@ -42,7 +40,7 @@ namespace BankApp
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
-                dgvAccounts.DataSource = dt; // ✅ Correct usage
+                dgvAccounts.DataSource = dt;
             }
 
             dgvAccounts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -56,7 +54,7 @@ namespace BankApp
                 }
             };
 
-            // ✅ Auto-select first account if only one exists
+            // Auto-select first account if only one
             if (dgvAccounts.Rows.Count == 1)
             {
                 dgvAccounts.Rows[0].Selected = true;
@@ -64,7 +62,7 @@ namespace BankApp
             }
         }
 
-        private void btnSubmit_Click(object sender, EventArgs e)
+        private void PerformTransaction(string mode)
         {
             if (selectedAccountId == -1)
             {
@@ -124,21 +122,21 @@ namespace BankApp
             }
         }
 
+        private void btnDeposit_Click(object sender, EventArgs e)
+        {
+            PerformTransaction("deposit");
+        }
+
+        private void btnWithdraw_Click(object sender, EventArgs e)
+        {
+            PerformTransaction("withdraw");
+        }
+
         private void btnBack_Click(object sender, EventArgs e)
         {
             CustomerDashboard dash = new CustomerDashboard();
             dash.Show();
             this.Hide();
-        }
-
-        private void btnDeposit_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnWithdraw_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
