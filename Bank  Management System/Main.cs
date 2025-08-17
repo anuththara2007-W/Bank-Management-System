@@ -68,7 +68,7 @@ namespace Bank__Management_System
 
         private void btnLoanRq_Click(object sender, EventArgs e)
         {
-            Loan ln = new Loan();
+            LoanRequestsApproval ln = new LoanRequestsApproval();
             ln.Show();
             this.Hide();
         }
