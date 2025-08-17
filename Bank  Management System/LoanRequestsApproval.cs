@@ -16,7 +16,11 @@ namespace BankApp
             LoadRequests();
         }
 
-        
+        private void InitializeComponent()
+        {
+            throw new NotImplementedException();
+        }
+
         private void LoadRequests()
         {
             using (SqlConnection con = new SqlConnection(connString))
