@@ -312,7 +312,6 @@ namespace Bank__Management_System
             this.btnPickCustomer.TabIndex = 29;
             this.btnPickCustomer.Text = "Select Customer ID";
             this.btnPickCustomer.UseVisualStyleBackColor = false;
-            this.btnPickCustomer.Click += new System.EventHandler(this.btnPickCustomer_Click);
             // 
             // Account
             // 
