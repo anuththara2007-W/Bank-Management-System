@@ -114,7 +114,7 @@ namespace BankApp
                     // Insert transaction record
                     SqlCommand cmd2 = new SqlCommand(
                         "INSERT INTO Transactions (Account_ID, Customer_ID, Transaction_Type, Amount, Transaction_Date) " +
-                        "VALUES (@aid, @cid, @type, @amt, @date)", con, trans);
+                        "VALUES (Account_ID, Customer_ID, Transaction_Type, Amount, Transaction_Date)", con, trans);
 
                     cmd2.Parameters.AddWithValue("@aid", selectedAccountId);
                     cmd2.Parameters.AddWithValue("@cid", customerId);
