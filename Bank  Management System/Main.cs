@@ -74,4 +74,3 @@ namespace Bank__Management_System
         }
     }
 }
-LoanRequestsApproval
