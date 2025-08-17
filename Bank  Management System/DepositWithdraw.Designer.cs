@@ -45,9 +45,9 @@ namespace BankApp
             this.lblMode.AutoSize = true;
             this.lblMode.Location = new System.Drawing.Point(66, 36);
             this.lblMode.Name = "lblMode";
-            this.lblMode.Size = new System.Drawing.Size(96, 16);
+            this.lblMode.Size = new System.Drawing.Size(56, 16);
             this.lblMode.TabIndex = 0;
-            this.lblMode.Text = "Select Account";
+            this.lblMode.Text = "lblMode";
             // 
             // lblAmount
             // 
