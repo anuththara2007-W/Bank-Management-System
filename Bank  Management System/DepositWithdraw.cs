@@ -11,7 +11,7 @@ namespace BankApp
         private int customerId;
         private int selectedAccountId = -1;
 
-        public DepositWithdraw(int cid, string v)
+        public DepositWithdraw(int cid)
         {
             InitializeComponent();
             customerId = cid;
@@ -56,13 +56,26 @@ namespace BankApp
                 }
             };
 
-            // Auto-select first account if only one
-            if (dgvAccounts.Rows.Count == 1)
+            // Auto select first row if nothing selected
+            if (dgvAccounts.Rows.Count > 0 && selectedAccountId == -1)
             {
                 dgvAccounts.Rows[0].Selected = true;
                 selectedAccountId = Convert.ToInt32(dgvAccounts.Rows[0].Cells["Account_ID"].Value);
                 decimal balance = Convert.ToDecimal(dgvAccounts.Rows[0].Cells["Balance"].Value);
                 lblBalance.Text = $"Balance: {balance:C}";
+            }
+            else if (selectedAccountId != -1)
+            {
+                // Reselect previously selected account
+                foreach (DataGridViewRow row in dgvAccounts.Rows)
+                {
+                    if (Convert.ToInt32(row.Cells["Account_ID"].Value) == selectedAccountId)
+                    {
+                        row.Selected = true;
+                        lblBalance.Text = $"Balance: {Convert.ToDecimal(row.Cells["Balance"].Value):C}";
+                        break;
+                    }
+                }
             }
         }
 
@@ -79,7 +92,12 @@ namespace BankApp
                 return;
             }
 
-            decimal amount = Convert.ToDecimal(txtAmount.Text);
+            decimal amount;
+            if (!decimal.TryParse(txtAmount.Text, out amount) || amount <= 0)
+            {
+                MessageBox.Show("Please enter a valid amount.");
+                return;
+            }
 
             using (SqlConnection con = DatabaseHelper.GetConnection())
             {
@@ -117,8 +135,8 @@ namespace BankApp
                     trans.Commit();
                     MessageBox.Show($"{mode} successful!");
 
-                    LoadAccounts(); // refresh grid
-                    UpdateBalanceLabel(); // refresh balance label
+                    LoadAccounts();   // refresh grid
+                    UpdateBalanceLabel(); // refresh label
                 }
                 catch (Exception ex)
                 {
