@@ -103,8 +103,8 @@ namespace BankApp
         }
             private void btnBack_Click(object sender, EventArgs e)
         {
-            CustomerDashboard dash = new CustomerDashboard();
-            dash.Show();
+            Main main = new Main();
+            main.Show();
             this.Hide();
         }
     }
