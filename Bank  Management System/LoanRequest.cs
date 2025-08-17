@@ -29,6 +29,7 @@ namespace BankApp
 
         private void btnSubmitLoan_Click(object sender, EventArgs e)
         {
+
             if (cmbLoanType.SelectedItem == null)
             {
                 MessageBox.Show("Please select a loan type.");
@@ -59,6 +60,9 @@ namespace BankApp
                     MessageBox.Show("✅ Loan request submitted! Waiting for admin approval.");
                     txtAmount.Clear();
                     cmbLoanType.SelectedIndex = 0;
+
+                    // ⬇️ Refresh grid after submitting
+                    LoadMyLoans();
                 }
                 catch (Exception ex)
                 {
