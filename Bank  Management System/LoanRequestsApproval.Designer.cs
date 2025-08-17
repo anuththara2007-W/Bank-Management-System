@@ -32,7 +32,7 @@ namespace BankApp
         {
             this.dgvAllRequests = new System.Windows.Forms.DataGridView();
             this.btnApprove = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnReject = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllRequests)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,19 +56,19 @@ namespace BankApp
             this.btnApprove.UseVisualStyleBackColor = true;
             this.btnApprove.Click += new System.EventHandler(this.btnApprove_Click);
             // 
-            // button2
+            // btnReject
             // 
-            this.button2.Location = new System.Drawing.Point(730, 107);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(232, 58);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnReject.Location = new System.Drawing.Point(730, 107);
+            this.btnReject.Name = "btnReject";
+            this.btnReject.Size = new System.Drawing.Size(232, 58);
+            this.btnReject.TabIndex = 2;
+            this.btnReject.Text = "button2";
+            this.btnReject.UseVisualStyleBackColor = true;
             // 
             // AdminLoanRequests
             // 
             this.ClientSize = new System.Drawing.Size(1170, 570);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnReject);
             this.Controls.Add(this.btnApprove);
             this.Controls.Add(this.dgvAllRequests);
             this.Name = "AdminLoanRequests";
@@ -86,6 +86,6 @@ namespace BankApp
         private System.Windows.Forms.DataGridView dgvRequests;
         private System.Windows.Forms.DataGridView dgvAllRequests;
         private System.Windows.Forms.Button btnApprove;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnReject;
     }
 }
