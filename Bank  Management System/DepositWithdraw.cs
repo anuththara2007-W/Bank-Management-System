@@ -41,17 +41,17 @@ namespace BankApp
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
-                dgvAccounts.DataSource = dt; // show in grid
+                BankApp.dgvAccounts.DataSource = dt; // show in grid
             }
 
-            dgvAccounts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvAccounts.MultiSelect = false;
+            BankApp.dgvAccounts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            BankApp.dgvAccounts.MultiSelect = false;
 
-            dgvAccounts.CellClick += (s, e) =>
+            global::BankApp.dgvAccounts.CellClick += (object s, object e) =>
             {
                 if (e.RowIndex >= 0)
                 {
-                    selectedAccountId = Convert.ToInt32(dgvAccounts.Rows[e.RowIndex].Cells["Account_ID"].Value);
+                    selectedAccountId = global::System.Convert.ToInt32(global::BankApp.dgvAccounts.Rows[e.RowIndex].Cells["Account_ID"].Value);
                 }
             };
         }
