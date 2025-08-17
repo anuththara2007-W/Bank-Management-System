@@ -54,6 +54,7 @@ namespace BankApp
             this.btnApprove.TabIndex = 1;
             this.btnApprove.Text = "button1";
             this.btnApprove.UseVisualStyleBackColor = true;
+            this.btnApprove.Click += new System.EventHandler(this.btnApprove_Click);
             // 
             // button2
             // 
