@@ -158,7 +158,7 @@
             this.btnLoanRq.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoanRq.Location = new System.Drawing.Point(566, 374);
             this.btnLoanRq.Name = "btnLoanRq";
-            this.btnLoanRq.Size = new System.Drawing.Size(148, 36);
+            this.btnLoanRq.Size = new System.Drawing.Size(232, 36);
             this.btnLoanRq.TabIndex = 7;
             this.btnLoanRq.Text = "Loan Requests ";
             this.btnLoanRq.UseVisualStyleBackColor = false;
