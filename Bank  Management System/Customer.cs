@@ -44,7 +44,6 @@ namespace Bank__Management_System
 
         private void ClearFields()
         {
-            throw new NotImplementedException();
         }
 
         // =========================
