@@ -201,9 +201,7 @@
     <Compile Include="Support.Designer.cs">
       <DependentUpon>Support.cs</DependentUpon>
     </Compile>
-    <Compile Include="Transactions.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Transactions.cs" />
     <Compile Include="Transactions.Designer.cs">
       <DependentUpon>Transactions.cs</DependentUpon>
     </Compile>
