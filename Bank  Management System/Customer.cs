@@ -42,6 +42,11 @@ namespace Bank__Management_System
             ClearFields();
         }
 
+        private void ClearFields()
+        {
+            throw new NotImplementedException();
+        }
+
         // =========================
         // Load Customers to Grid
         // =========================
@@ -59,6 +64,7 @@ namespace Bank__Management_System
                 dataGridView1.DataSource = table;
             }
         }
+    }
 
         // =========================
         // Update Customer
