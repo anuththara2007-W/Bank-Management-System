@@ -48,7 +48,6 @@ namespace Bank__Management_System
                         "INSERT INTO Transactions (TID, Transaction_Type, Amount, Transaction_Date, Account_ID) " +
                         "VALUES (@TID, @Transaction_Type, @Amount, @Transaction_Date, @Account_ID)", con);
 
-                    cmd.Parameters.AddWithValue("@TID", int.Parse(txtTransactionID.Text));
                     cmd.Parameters.AddWithValue("@Transaction_Type", txtTransactionType.Text);
                     cmd.Parameters.AddWithValue("@Amount", decimal.Parse(txtAmount.Text));
                     cmd.Parameters.AddWithValue("@Transaction_Date", dateTimePicker1.Value);
@@ -86,13 +85,11 @@ namespace Bank__Management_System
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtTransactionID.Clear();
             txtTransactionType.Clear();
             txtAmount.Clear();
             txtAccountID.Clear();
             dateTimePicker1.Value = DateTime.Today;
             dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            txtTransactionID.Focus();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -107,7 +104,6 @@ namespace Bank__Management_System
                         "UPDATE Transactions SET Transaction_Type = @Transaction_Type, Amount = @Amount, Transaction_Date = @Transaction_Date, Account_ID = @Account_ID WHERE TID = @TID",
                         con);
 
-                    cmd.Parameters.AddWithValue("@TID", int.Parse(txtTransactionID.Text));
                     cmd.Parameters.AddWithValue("@Transaction_Type", txtTransactionType.Text);
                     cmd.Parameters.AddWithValue("@Amount", decimal.Parse(txtAmount.Text));
                     cmd.Parameters.AddWithValue("@Transaction_Date", dateTimePicker1.Value);
@@ -140,8 +136,8 @@ namespace Bank__Management_System
                 using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("DELETE FROM Transactions WHERE TID = @TID", con);
-                    cmd.Parameters.AddWithValue("@TID", int.Parse(txtTransactionID.Text));
+                    SqlCommand cmd = new SqlCommand("DELETE FROM Transactions WHERE Customer_ID = @Customer_ID", con);
+                    cmd.Parameters.AddWithValue("@Customer_ID", int.Parse(txtTransactionID.Text));
 
                     int rows = cmd.ExecuteNonQuery();
                     con.Close();
