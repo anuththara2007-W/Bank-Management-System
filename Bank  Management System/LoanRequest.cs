@@ -1,6 +1,5 @@
 ﻿using Bank__Management_System;
 using System;
-using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -68,26 +67,7 @@ namespace BankApp
             }
         }
 
-        private void LoadMyLoans()
-        {
-            using (SqlConnection con = new SqlConnection(connString))
-            {
-                con.Open();
 
-                // Fetch all loans of the logged-in customer
-                SqlDataAdapter da = new SqlDataAdapter(
-                    "SELECT LoanID, LoanType, Amount, InterestRate, LoanDate, Status " +
-                    "FROM Loans WHERE Customer_ID=@cid", con);
-
-                da.SelectCommand.Parameters.AddWithValue("@cid", Session.CustomerID);
-
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dgvLoans.DataSource = dt;
-            }
-        }
-
-        
         private void btnGoBack_Click(object sender, EventArgs e)
         {
             CustomerDashboard customerdash = new CustomerDashboard();
