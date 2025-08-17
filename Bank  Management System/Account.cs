@@ -1,5 +1,4 @@
-﻿using BankApp;
-using System;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -95,9 +94,10 @@ namespace Bank__Management_System
                 {
                     con.Open();
 
+                    // ✅ Update by Customer_ID (not Account_ID)
                     SqlCommand cmd = new SqlCommand(
-                        "UPDATE Accounts SET Account_Type=@account_type, Balance=@balance, Date_Opened=@date_opened, Customer_Name=@customer_name, Customer_ID=@customer_id " +
-                        "WHERE Account_ID=@account_id", con);
+                        "UPDATE Accounts SET Account_Type=@account_type, Balance=@balance, Date_Opened=@date_opened, Customer_Name=@customer_name " +
+                        "WHERE Customer_ID=@customer_id", con);
 
                     cmd.Parameters.AddWithValue("@account_type", txtAccountType.Text);
                     cmd.Parameters.AddWithValue("@balance", decimal.Parse(txtBalance.Text));
@@ -114,7 +114,7 @@ namespace Bank__Management_System
                     }
                     else
                     {
-                        MessageBox.Show("No record found with that Account ID.");
+                        MessageBox.Show("No record found for that Customer ID.");
                     }
                 }
             }
@@ -131,8 +131,10 @@ namespace Bank__Management_System
                 using (SqlConnection con = new SqlConnection(connString))
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("DELETE FROM Accounts WHERE Account_ID=@account_id", con);
-                    cmd.Parameters.AddWithValue("@account_id", int.Parse(txtAccountID.Text));
+
+                    // ✅ Delete by Customer_ID (no Account_ID)
+                    SqlCommand cmd = new SqlCommand("DELETE FROM Accounts WHERE Customer_ID=@customer_id", con);
+                    cmd.Parameters.AddWithValue("@customer_id", int.Parse(txtCustomerID.Text));
 
                     int rows = cmd.ExecuteNonQuery();
 
@@ -143,7 +145,7 @@ namespace Bank__Management_System
                     }
                     else
                     {
-                        MessageBox.Show("No record found with that Account ID.");
+                        MessageBox.Show("No record found for that Customer ID.");
                     }
                 }
             }
@@ -166,3 +168,5 @@ namespace Bank__Management_System
                 dataGridView1.DataSource = dt;
             }
         }
+    }
+}
