@@ -2,7 +2,7 @@
 
 namespace BankApp
 {
-    partial class AdminLoanRequests
+    partial class LoanRequestsApproval
     {
         /// <summary>
         /// Required designer variable.
