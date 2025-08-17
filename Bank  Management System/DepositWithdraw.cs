@@ -105,7 +105,7 @@ namespace Bank__Management_System
 
                     // Insert into Transactions
                     SqlCommand cmd2 = new SqlCommand(
-                        "INSERT INTO Transactions (Transaction_Type, Amount, Transaction_Date, Account_ID, Customer_ID) " +
+                        "INSERT INTO transactions (Transaction_Type, Amount, Transaction_Date, Account_ID, Customer_ID) " +
                         "VALUES (@type, @amt, @date, @aid, @cid)", con, trans);
 
                     cmd2.Parameters.AddWithValue("@type", mode);
