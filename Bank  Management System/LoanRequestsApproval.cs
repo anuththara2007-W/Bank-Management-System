@@ -10,13 +10,6 @@ using System.Windows.Forms;
 
 namespace Bank__Management_System
 {
-    using System;
-    using System.Data;
-    using System.Data.SqlClient;
-    using System.Windows.Forms;
-
-    namespace BankApp
-    {
         public partial class LoanRequestsApproval : Form
         {
             string connString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
