@@ -30,7 +30,7 @@ namespace BankApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblAccount = new System.Windows.Forms.Label();
+            this.lblMode = new System.Windows.Forms.Label();
             this.lblAmount = new System.Windows.Forms.Label();
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.btnDeposit = new System.Windows.Forms.Button();
@@ -40,14 +40,14 @@ namespace BankApp
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblAccount
+            // lblMode
             // 
-            this.lblAccount.AutoSize = true;
-            this.lblAccount.Location = new System.Drawing.Point(42, 36);
-            this.lblAccount.Name = "lblAccount";
-            this.lblAccount.Size = new System.Drawing.Size(96, 16);
-            this.lblAccount.TabIndex = 0;
-            this.lblAccount.Text = "Select Account";
+            this.lblMode.AutoSize = true;
+            this.lblMode.Location = new System.Drawing.Point(66, 36);
+            this.lblMode.Name = "lblMode";
+            this.lblMode.Size = new System.Drawing.Size(96, 16);
+            this.lblMode.TabIndex = 0;
+            this.lblMode.Text = "Select Account";
             // 
             // lblAmount
             // 
@@ -114,7 +114,7 @@ namespace BankApp
             this.Controls.Add(this.btnDeposit);
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.lblAmount);
-            this.Controls.Add(this.lblAccount);
+            this.Controls.Add(this.lblMode);
             this.Name = "DepositWithdraw";
             this.Text = "DepositWithdraw";
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).EndInit();
@@ -127,7 +127,7 @@ namespace BankApp
 
         #endregion
 
-        private System.Windows.Forms.Label lblAccount;
+        private System.Windows.Forms.Label lblMode;
         private System.Windows.Forms.Label lblAmount;
         private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.Button btnDeposit;
