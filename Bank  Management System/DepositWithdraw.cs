@@ -17,10 +17,6 @@ namespace BankApp
             mode = operation;
         }
 
-        public DepositWithdraw()
-        {
-        }
-
         private void DepositWithdraw_Load(object sender, EventArgs e)
         {
             lblMode.Text = (mode == "deposit") ? "Deposit Money" : "Withdraw Money";
@@ -72,24 +68,23 @@ namespace BankApp
                     cmd.Parameters.AddWithValue("@aid", accountId);
 
                     int rows = cmd.ExecuteNonQuery();
-
                     if (rows == 0)
-                    {
                         throw new Exception("Insufficient balance or account not found.");
-                    }
 
-                    // 2. Insert transaction record
+                    // 2. Insert into Transactions (include Customer_ID!)
                     SqlCommand cmd2 = new SqlCommand(
-                        "INSERT INTO Transactions (Account_ID, Transaction_Type, Amount, Transaction_Date) " +
-                        "VALUES (@aid, @type, @amt, @date)", con, trans);
+                        "INSERT INTO Transactions (Account_ID, Customer_ID, Transaction_Type, Amount, Transaction_Date) " +
+                        "VALUES (@aid, @cid, @type, @amt, @date)", con, trans);
 
                     cmd2.Parameters.AddWithValue("@aid", accountId);
+                    cmd2.Parameters.AddWithValue("@cid", customerId);
                     cmd2.Parameters.AddWithValue("@type", mode);
                     cmd2.Parameters.AddWithValue("@amt", amount);
                     cmd2.Parameters.AddWithValue("@date", DateTime.Now);
 
                     cmd2.ExecuteNonQuery();
 
+                    // Commit transaction
                     trans.Commit();
                     MessageBox.Show($"{mode} successful!");
                 }
@@ -107,7 +102,5 @@ namespace BankApp
             dash.Show();
             this.Hide();
         }
-
-        
     }
 }
