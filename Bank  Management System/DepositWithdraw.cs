@@ -138,7 +138,7 @@ namespace Bank__Management_System
             using (SqlConnection con = DatabaseHelper.GetConnection())
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT Balance FROM Accounts WHERE Account_ID = @aid", con);
+                SqlCommand cmd = new SqlCommand("SELECT Balance FROM accounts WHERE Account_ID = @aid", con);
                 cmd.Parameters.AddWithValue("@aid", selectedAccountId);
                 object result = cmd.ExecuteScalar();
 
