@@ -52,7 +52,7 @@ namespace BankApp
             this.btnApprove.Name = "btnApprove";
             this.btnApprove.Size = new System.Drawing.Size(180, 44);
             this.btnApprove.TabIndex = 1;
-            this.btnApprove.Text = "button1";
+            this.btnApprove.Text = "Approve";
             this.btnApprove.UseVisualStyleBackColor = true;
             this.btnApprove.Click += new System.EventHandler(this.btnApprove_Click);
             // 
