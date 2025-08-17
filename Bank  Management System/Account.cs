@@ -34,7 +34,6 @@ namespace Bank__Management_System
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            txtAccountID.Clear(); // Auto-generated, will remain blank
             txtAccountType.Clear();
             txtBalance.Clear();
             txtname.Clear();
