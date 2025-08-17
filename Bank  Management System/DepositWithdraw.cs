@@ -135,5 +135,10 @@ namespace BankApp
         {
 
         }
+
+        private void btnWithdraw_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
