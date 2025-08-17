@@ -41,17 +41,43 @@ namespace BankApp
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
-                BankApp.dgvAccounts.DataSource = dt; // show in grid
+                dgvAccounts.DataSource = dt; // ✅ just use dgvAccounts
             }
 
-            BankApp.dgvAccounts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            BankApp.dgvAccounts.MultiSelect = false;
+            dgvAccounts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvAccounts.MultiSelect = false;
 
-            global::BankApp.dgvAccounts.CellClick += (object s, object e) =>
+            dgvAccounts.CellClick += (s, e) =>
             {
                 if (e.RowIndex >= 0)
                 {
-                    selectedAccountId = global::System.Convert.ToInt32(global::BankApp.dgvAccounts.Rows[e.RowIndex].Cells["Account_ID"].Value);
+                    selectedAccountId = Convert.ToInt32(dgvAccounts.Rows[e.RowIndex].Cells["Account_ID"].Value);
+                }
+            };
+        }
+        private void LoadAccounts()
+        {
+            using (SqlConnection con = DatabaseHelper.GetConnection())
+            {
+                con.Open();
+                SqlDataAdapter da = new SqlDataAdapter(
+                    "SELECT Account_ID, Account_Type, Balance FROM Accounts WHERE Customer_ID = @cid", con);
+                da.SelectCommand.Parameters.AddWithValue("@cid", customerId);
+
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgvAccounts.DataSource = dt; // ✅ just use dgvAccounts
+            }
+
+            dgvAccounts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvAccounts.MultiSelect = false;
+
+            dgvAccounts.CellClick += (s, e) =>
+            {
+                if (e.RowIndex >= 0)
+                {
+                    selectedAccountId = Convert.ToInt32(dgvAccounts.Rows[e.RowIndex].Cells["Account_ID"].Value);
                 }
             };
         }
