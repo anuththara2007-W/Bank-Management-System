@@ -62,7 +62,7 @@ namespace BankApp
             this.btnReject.Name = "btnReject";
             this.btnReject.Size = new System.Drawing.Size(232, 58);
             this.btnReject.TabIndex = 2;
-            this.btnReject.Text = "button2";
+            this.btnReject.Text = "Reject";
             this.btnReject.UseVisualStyleBackColor = true;
             this.btnReject.Click += new System.EventHandler(this.btnReject_Click);
             // 
