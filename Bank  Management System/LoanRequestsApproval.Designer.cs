@@ -84,7 +84,6 @@ namespace BankApp
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvRequests;
         private System.Windows.Forms.DataGridView dgvAllRequests;
         private System.Windows.Forms.Button btnApprove;
         private System.Windows.Forms.Button btnReject;
