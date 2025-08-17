@@ -1,92 +1,104 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Bank__Management_System
+namespace BankApp
 {
-        public partial class LoanRequestsApproval : Form
+    public partial class AdminLoanRequests : Form
+    {
+        private readonly string connString =
+            @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
+
+        public AdminLoanRequests()
         {
-            string connString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
+            InitializeComponent();
+            LoadRequests();
+        }
 
-            public LoanRequestsApproval()
+        private void LoadRequests()
+        {
+            using (SqlConnection con = new SqlConnection(connString))
+            using (SqlDataAdapter da = new SqlDataAdapter(
+                @"SELECT 
+                     RequestID,
+                     Customer_ID,
+                     LoanType,
+                     Amount,
+                     Status,
+                     RequestDate
+                  FROM LoanRequests
+                  ORDER BY RequestDate DESC", con))
             {
-                InitializeComponent();
-                LoadRequests();
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgvAllRequests.DataSource = dt;
+                dgvAllRequests.ReadOnly = true;
+                dgvAllRequests.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            }
+        }
+
+        private void btnApprove_Click(object sender, EventArgs e)
+        {
+            if (dgvAllRequests.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a request to approve.");
+                return;
             }
 
-            private void LoadRequests()
+            int requestId = Convert.ToInt32(dgvAllRequests.SelectedRows[0].Cells["RequestID"].Value);
+
+            using (SqlConnection con = new SqlConnection(connString))
+            using (SqlCommand cmd = new SqlCommand(
+                "UPDATE LoanRequests SET Status = 'Approved' WHERE RequestID = @id", con))
             {
-                using (SqlConnection con = new SqlConnection(connString))
+                cmd.Parameters.AddWithValue("@id", requestId);
+
+                try
                 {
-                    SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM LoanRequests WHERE Status='Pending'", con);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-                    dgvRequests.DataSource = dt; // Show in DataGridView
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("✅ Loan request approved.");
+                    LoadRequests();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error approving loan: " + ex.Message);
                 }
             }
+        }
 
-            private void btnApprove_Click(object sender, EventArgs e)
+        private void btnReject_Click(object sender, EventArgs e)
+        {
+            if (dgvAllRequests.SelectedRows.Count == 0)
             {
-                if (dgvRequests.SelectedRows.Count > 0)
-                {
-                    int requestId = Convert.ToInt32(dgvRequests.SelectedRows[0].Cells["RequestID"].Value);
-                    int customerId = Convert.ToInt32(dgvRequests.SelectedRows[0].Cells["Customer_ID"].Value);
-                    string loanType = dgvRequests.SelectedRows[0].Cells["LoanType"].Value.ToString();
-                    decimal amount = Convert.ToDecimal(dgvRequests.SelectedRows[0].Cells["Amount"].Value);
-
-                    using (SqlConnection con = new SqlConnection(connString))
-                    {
-                        con.Open();
-
-                        // Insert into Loans table
-                        SqlCommand insertLoan = new SqlCommand(
-                            "INSERT INTO Loans (Customer_ID, LoanType, Amount, InterestRate, LoanDate) " +
-                            "VALUES (@cid, @type, @amt, @rate, GETDATE())", con);
-
-                        insertLoan.Parameters.AddWithValue("@cid", customerId);
-                        insertLoan.Parameters.AddWithValue("@type", loanType);
-                        insertLoan.Parameters.AddWithValue("@amt", amount);
-                        insertLoan.Parameters.AddWithValue("@rate", 5.5m);
-
-                        insertLoan.ExecuteNonQuery();
-
-                        // Update request status
-                        SqlCommand updateRequest = new SqlCommand(
-                            "UPDATE LoanRequests SET Status='Approved' WHERE RequestID=@rid", con);
-                        updateRequest.Parameters.AddWithValue("@rid", requestId);
-                        updateRequest.ExecuteNonQuery();
-
-                        MessageBox.Show("✅ Loan approved and added to Loans table!");
-                        LoadRequests();
-                    }
-                }
+                MessageBox.Show("Please select a request to reject.");
+                return;
             }
 
-            private void btnReject_Click(object sender, EventArgs e)
+            int requestId = Convert.ToInt32(dgvAllRequests.SelectedRows[0].Cells["RequestID"].Value);
+
+            using (SqlConnection con = new SqlConnection(connString))
+            using (SqlCommand cmd = new SqlCommand(
+                "UPDATE LoanRequests SET Status = 'Rejected' WHERE RequestID = @id", con))
             {
-                if (dgvRequests.SelectedRows.Count > 0)
+                cmd.Parameters.AddWithValue("@id", requestId);
+
+                try
                 {
-                    int requestId = Convert.ToInt32(dgvRequests.SelectedRows[0].Cells["RequestID"].Value);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
 
-                    using (SqlConnection con = new SqlConnection(connString))
-                    {
-                        con.Open();
-                        SqlCommand cmd = new SqlCommand(
-                            "UPDATE LoanRequests SET Status='Rejected' WHERE RequestID=@rid", con);
-                        cmd.Parameters.AddWithValue("@rid", requestId);
-                        cmd.ExecuteNonQuery();
-
-                        MessageBox.Show("❌ Loan request rejected.");
-                        LoadRequests();
-                    }
+                    MessageBox.Show("❌ Loan request rejected.");
+                    LoadRequests();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error rejecting loan: " + ex.Message);
                 }
             }
         }
     }
+}
