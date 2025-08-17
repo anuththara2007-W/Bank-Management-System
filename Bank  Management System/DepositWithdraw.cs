@@ -1,5 +1,4 @@
-﻿using Bank__Management_System;
-using System;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -8,22 +7,22 @@ namespace BankApp
 {
     public partial class DepositWithdraw : Form
     {
-        private int customerId;
         private int selectedAccountId = -1;
 
-        public DepositWithdraw(int cid)
+        public DepositWithdraw()
         {
             InitializeComponent();
-            customerId = cid;
         }
 
         private void DepositWithdraw_Load(object sender, EventArgs e)
         {
             SetupGrid();
             LoadAccounts();
+
+            // ✅ show customer info in form title
+            this.Text = $"Deposit / Withdraw - {SessionManager.CustomerName}";
         }
 
-        // ✅ Setup grid only once
         private void SetupGrid()
         {
             dgvAccounts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -48,17 +47,24 @@ namespace BankApp
             {
                 con.Open();
                 SqlDataAdapter da = new SqlDataAdapter(
-                    "SELECT Account_ID, Account_Type, Balance FROM Accounts WHERE Customer_ID = @cid", con);
-                da.SelectCommand.Parameters.AddWithValue("@cid", customerId);
+                    "SELECT Account_ID, Account_Type, Balance, Date_Opened FROM accounts WHERE Customer_ID = @cid",
+                    con);
+                da.SelectCommand.Parameters.AddWithValue("@cid", SessionManager.CustomerId);
 
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 dgvAccounts.DataSource = dt;
             }
 
-            // ✅ Reselect account if already selected
-            if (selectedAccountId != -1)
+            // ✅ auto-select first account
+            if (dgvAccounts.Rows.Count > 0)
             {
+                if (selectedAccountId == -1)
+                {
+                    dgvAccounts.Rows[0].Selected = true;
+                    selectedAccountId = Convert.ToInt32(dgvAccounts.Rows[0].Cells["Account_ID"].Value);
+                }
+
                 foreach (DataGridViewRow row in dgvAccounts.Rows)
                 {
                     if (Convert.ToInt32(row.Cells["Account_ID"].Value) == selectedAccountId)
@@ -69,19 +75,13 @@ namespace BankApp
                     }
                 }
             }
-            else if (dgvAccounts.Rows.Count > 0)
-            {
-                dgvAccounts.Rows[0].Selected = true;
-                selectedAccountId = Convert.ToInt32(dgvAccounts.Rows[0].Cells["Account_ID"].Value);
-                lblBalance.Text = $"Balance: {dgvAccounts.Rows[0].Cells["Balance"].Value:C}";
-            }
         }
 
         private void PerformTransaction(string mode)
         {
             if (selectedAccountId == -1)
             {
-                MessageBox.Show("Please select an account from the list.");
+                MessageBox.Show("Please select an account.");
                 return;
             }
             if (!decimal.TryParse(txtAmount.Text, out decimal amount) || amount <= 0)
@@ -97,8 +97,8 @@ namespace BankApp
                 try
                 {
                     string sql = (mode == "deposit")
-                        ? "UPDATE Accounts SET Balance = Balance + @amt WHERE Account_ID = @aid"
-                        : "UPDATE Accounts SET Balance = Balance - @amt WHERE Account_ID = @aid AND Balance >= @amt";
+                        ? "UPDATE accounts SET Balance = Balance + @amt WHERE Account_ID = @aid"
+                        : "UPDATE accounts SET Balance = Balance - @amt WHERE Account_ID = @aid AND Balance >= @amt";
 
                     SqlCommand cmd = new SqlCommand(sql, con, trans);
                     cmd.Parameters.AddWithValue("@amt", amount);
@@ -107,23 +107,22 @@ namespace BankApp
                     int rows = cmd.ExecuteNonQuery();
                     if (rows == 0) throw new Exception("Insufficient balance or account not found.");
 
-                    // Insert transaction record
+                    // ✅ Insert into transactions table
                     SqlCommand cmd2 = new SqlCommand(
-                        "INSERT INTO transactions (Account_ID, Customer_ID, Transaction_Type, Amount, Transaction_Date) " +
-                        "VALUES (@aid, @cid, @type, @amt, @date)", con, trans);
+                        "INSERT INTO transactions (Transaction_Type, Amount, Transaction_Date, Account_ID, Customer_ID) " +
+                        "VALUES (@type, @amt, @date, @aid, @cid)", con, trans);
 
-                    cmd2.Parameters.AddWithValue("@aid", selectedAccountId);
-                    cmd2.Parameters.AddWithValue("@cid", customerId);
                     cmd2.Parameters.AddWithValue("@type", mode);
                     cmd2.Parameters.AddWithValue("@amt", amount);
                     cmd2.Parameters.AddWithValue("@date", DateTime.Now);
+                    cmd2.Parameters.AddWithValue("@aid", selectedAccountId);
+                    cmd2.Parameters.AddWithValue("@cid", SessionManager.CustomerId);
                     cmd2.ExecuteNonQuery();
 
                     trans.Commit();
                     MessageBox.Show($"{mode} successful!");
 
-                    // ✅ Refresh accounts & balance
-                    LoadAccounts();
+                    LoadAccounts(); // ✅ refresh grid + balance
                 }
                 catch (Exception ex)
                 {
@@ -133,15 +132,9 @@ namespace BankApp
             }
         }
 
-        private void btnDeposit_Click(object sender, EventArgs e)
-        {
-            PerformTransaction("deposit");
-        }
+        private void btnDeposit_Click(object sender, EventArgs e) => PerformTransaction("deposit");
 
-        private void btnWithdraw_Click(object sender, EventArgs e)
-        {
-            PerformTransaction("withdraw");
-        }
+        private void btnWithdraw_Click(object sender, EventArgs e) => PerformTransaction("withdraw");
 
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -149,5 +142,12 @@ namespace BankApp
             dash.Show();
             this.Hide();
         }
+    }
+
+    // ✅ session manager
+    public static class SessionManager
+    {
+        public static int CustomerId { get; set; }
+        public static string CustomerName { get; set; }
     }
 }
