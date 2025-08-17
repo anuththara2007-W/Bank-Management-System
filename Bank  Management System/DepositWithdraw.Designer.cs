@@ -99,7 +99,7 @@ namespace BankApp
             // dgvAccounts
             // 
             this.dgvAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAccounts.Location = new System.Drawing.Point(57, 361);
+            this.dgvAccounts.Location = new System.Drawing.Point(57, 364);
             this.dgvAccounts.Name = "dgvAccounts";
             this.dgvAccounts.RowHeadersWidth = 51;
             this.dgvAccounts.RowTemplate.Height = 24;
