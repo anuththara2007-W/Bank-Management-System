@@ -30,16 +30,30 @@ namespace Bank__Management_System
         /// </summary>
         private void InitializeComponent()
         {
+            this.dgvRequests = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRequests)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dgvRequests
+            // 
+            this.dgvRequests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRequests.Location = new System.Drawing.Point(4, 278);
+            this.dgvRequests.Name = "dgvRequests";
+            this.dgvRequests.RowHeadersWidth = 51;
+            this.dgvRequests.RowTemplate.Height = 24;
+            this.dgvRequests.Size = new System.Drawing.Size(778, 154);
+            this.dgvRequests.TabIndex = 0;
             // 
             // LoanRequestsApproval
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dgvRequests);
             this.Name = "LoanRequestsApproval";
             this.Text = "LoanRequestsApproval";
             this.Load += new System.EventHandler(this.LoanRequestsApproval_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRequests)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -49,5 +63,7 @@ namespace Bank__Management_System
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dgvRequests;
     }
 }
