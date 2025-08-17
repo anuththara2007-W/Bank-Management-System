@@ -1,5 +1,6 @@
 ﻿using Bank__Management_System;
 using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -9,6 +10,7 @@ namespace BankApp
     {
         private int customerId;
         private string mode; // "deposit" or "withdraw"
+        private int selectedAccountId = -1;
 
         public DepositWithdraw(int cid, string operation)
         {
@@ -28,27 +30,41 @@ namespace BankApp
             using (SqlConnection con = DatabaseHelper.GetConnection())
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand(
-                    "SELECT Account_ID FROM Accounts WHERE Customer_ID = @cid", con);
-                cmd.Parameters.AddWithValue("@cid", customerId);
+                SqlDataAdapter da = new SqlDataAdapter(
+                    "SELECT Account_ID, Account_Type, Balance FROM Accounts WHERE Customer_ID = @cid", con);
+                da.SelectCommand.Parameters.AddWithValue("@cid", customerId);
 
-                SqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
-                    cmbAccounts.Items.Add(dr["Account_ID"].ToString());
-                }
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgvAccounts.DataSource = dt; // show in grid
             }
+
+            dgvAccounts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvAccounts.MultiSelect = false;
+
+            dgvAccounts.CellClick += (s, e) =>
+            {
+                if (e.RowIndex >= 0)
+                {
+                    selectedAccountId = Convert.ToInt32(dgvAccounts.Rows[e.RowIndex].Cells["Account_ID"].Value);
+                }
+            };
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (cmbAccounts.SelectedItem == null || string.IsNullOrWhiteSpace(txtAmount.Text))
+            if (selectedAccountId == -1)
             {
-                MessageBox.Show("Please select an account and enter an amount.");
+                MessageBox.Show("Please select an account from the list.");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(txtAmount.Text))
+            {
+                MessageBox.Show("Please enter an amount.");
                 return;
             }
 
-            int accountId = Convert.ToInt32(cmbAccounts.SelectedItem);
             decimal amount = Convert.ToDecimal(txtAmount.Text);
 
             using (SqlConnection con = DatabaseHelper.GetConnection())
@@ -58,25 +74,25 @@ namespace BankApp
 
                 try
                 {
-                    // 1. Update balance
+                    // Update balance
                     string sql = (mode == "deposit")
                         ? "UPDATE Accounts SET Balance = Balance + @amt WHERE Account_ID = @aid"
                         : "UPDATE Accounts SET Balance = Balance - @amt WHERE Account_ID = @aid AND Balance >= @amt";
 
                     SqlCommand cmd = new SqlCommand(sql, con, trans);
                     cmd.Parameters.AddWithValue("@amt", amount);
-                    cmd.Parameters.AddWithValue("@aid", accountId);
+                    cmd.Parameters.AddWithValue("@aid", selectedAccountId);
 
                     int rows = cmd.ExecuteNonQuery();
                     if (rows == 0)
                         throw new Exception("Insufficient balance or account not found.");
 
-                    // 2. Insert into Transactions (include Customer_ID!)
+                    // Insert into Transactions
                     SqlCommand cmd2 = new SqlCommand(
                         "INSERT INTO Transactions (Account_ID, Customer_ID, Transaction_Type, Amount, Transaction_Date) " +
                         "VALUES (@aid, @cid, @type, @amt, @date)", con, trans);
 
-                    cmd2.Parameters.AddWithValue("@aid", accountId);
+                    cmd2.Parameters.AddWithValue("@aid", selectedAccountId);
                     cmd2.Parameters.AddWithValue("@cid", customerId);
                     cmd2.Parameters.AddWithValue("@type", mode);
                     cmd2.Parameters.AddWithValue("@amt", amount);
@@ -84,9 +100,9 @@ namespace BankApp
 
                     cmd2.ExecuteNonQuery();
 
-                    // Commit transaction
                     trans.Commit();
                     MessageBox.Show($"{mode} successful!");
+                    LoadAccounts(); // refresh balance in grid
                 }
                 catch (Exception ex)
                 {
