@@ -130,6 +130,6 @@ namespace BankApp
             dash.Show();
             this.Hide();
         }
-]
+
     }
 }
