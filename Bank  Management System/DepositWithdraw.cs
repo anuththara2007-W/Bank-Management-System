@@ -17,6 +17,10 @@ namespace BankApp
             customerId = cid;
         }
 
+        public DepositWithdraw()
+        {
+        }
+
         private void DepositWithdraw_Load(object sender, EventArgs e)
         {
             SetupGrid();
