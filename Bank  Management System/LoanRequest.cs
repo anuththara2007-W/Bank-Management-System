@@ -71,6 +71,10 @@ namespace BankApp
             }
         }
 
+        private void LoadMyLoans()
+        {
+            throw new NotImplementedException();
+        }
 
         private void btnGoBack_Click(object sender, EventArgs e)
         {
