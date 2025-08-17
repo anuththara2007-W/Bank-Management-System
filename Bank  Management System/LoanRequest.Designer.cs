@@ -36,11 +36,13 @@ namespace BankApp
             this.lblLoanType = new System.Windows.Forms.Label();
             this.btnGoBack = new System.Windows.Forms.Button();
             this.cmbLoanType = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSubmitLoan
             // 
-            this.btnSubmitLoan.Location = new System.Drawing.Point(397, 334);
+            this.btnSubmitLoan.Location = new System.Drawing.Point(386, 213);
             this.btnSubmitLoan.Name = "btnSubmitLoan";
             this.btnSubmitLoan.Size = new System.Drawing.Size(189, 30);
             this.btnSubmitLoan.TabIndex = 10;
@@ -50,7 +52,7 @@ namespace BankApp
             // 
             // txtAmount
             // 
-            this.txtAmount.Location = new System.Drawing.Point(351, 231);
+            this.txtAmount.Location = new System.Drawing.Point(340, 110);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(360, 22);
             this.txtAmount.TabIndex = 9;
@@ -58,7 +60,7 @@ namespace BankApp
             // lblAmount
             // 
             this.lblAmount.AutoSize = true;
-            this.lblAmount.Location = new System.Drawing.Point(228, 234);
+            this.lblAmount.Location = new System.Drawing.Point(217, 113);
             this.lblAmount.Name = "lblAmount";
             this.lblAmount.Size = new System.Drawing.Size(52, 16);
             this.lblAmount.TabIndex = 7;
@@ -67,7 +69,7 @@ namespace BankApp
             // lblLoanType
             // 
             this.lblLoanType.AutoSize = true;
-            this.lblLoanType.Location = new System.Drawing.Point(216, 157);
+            this.lblLoanType.Location = new System.Drawing.Point(205, 36);
             this.lblLoanType.Name = "lblLoanType";
             this.lblLoanType.Size = new System.Drawing.Size(72, 16);
             this.lblLoanType.TabIndex = 6;
@@ -75,7 +77,7 @@ namespace BankApp
             // 
             // btnGoBack
             // 
-            this.btnGoBack.Location = new System.Drawing.Point(387, 410);
+            this.btnGoBack.Location = new System.Drawing.Point(376, 289);
             this.btnGoBack.Name = "btnGoBack";
             this.btnGoBack.Size = new System.Drawing.Size(141, 47);
             this.btnGoBack.TabIndex = 20;
@@ -86,16 +88,27 @@ namespace BankApp
             // cmbLoanType
             // 
             this.cmbLoanType.FormattingEnabled = true;
-            this.cmbLoanType.Location = new System.Drawing.Point(361, 157);
+            this.cmbLoanType.Location = new System.Drawing.Point(350, 36);
             this.cmbLoanType.Name = "cmbLoanType";
             this.cmbLoanType.Size = new System.Drawing.Size(337, 24);
             this.cmbLoanType.TabIndex = 8;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 362);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(908, 127);
+            this.dataGridView1.TabIndex = 21;
             // 
             // LoanRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(924, 522);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.btnSubmitLoan);
             this.Controls.Add(this.txtAmount);
@@ -105,6 +118,7 @@ namespace BankApp
             this.Name = "LoanRequest";
             this.Text = "LoanRequest";
             this.Load += new System.EventHandler(this.LoanRequest_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,5 +135,6 @@ namespace BankApp
         private System.Windows.Forms.Label lblLoanType;
         private System.Windows.Forms.Button btnGoBack;
         private System.Windows.Forms.ComboBox cmbLoanType;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
