@@ -73,7 +73,7 @@ namespace BankApp
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(205, 49);
             this.btnBack.TabIndex = 3;
-            this.btnBack.Text = "button1";
+            this.btnBack.Text = "Go Back";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
