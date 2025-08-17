@@ -19,7 +19,27 @@ namespace BankApp
 
         private void DepositWithdraw_Load(object sender, EventArgs e)
         {
+            SetupGrid();
             LoadAccounts();
+        }
+
+        // ✅ Setup grid only once
+        private void SetupGrid()
+        {
+            dgvAccounts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvAccounts.MultiSelect = false;
+            dgvAccounts.ReadOnly = true;
+            dgvAccounts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            dgvAccounts.CellClick += (s, e) =>
+            {
+                if (e.RowIndex >= 0)
+                {
+                    selectedAccountId = Convert.ToInt32(dgvAccounts.Rows[e.RowIndex].Cells["Account_ID"].Value);
+                    decimal balance = Convert.ToDecimal(dgvAccounts.Rows[e.RowIndex].Cells["Balance"].Value);
+                    lblBalance.Text = $"Balance: {balance:C}";
+                }
+            };
         }
 
         private void LoadAccounts()
@@ -33,31 +53,27 @@ namespace BankApp
 
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-
                 dgvAccounts.DataSource = dt;
             }
 
-            dgvAccounts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvAccounts.MultiSelect = false;
-
-            // Handle cell click
-            dgvAccounts.CellClick += (s, e) =>
+            // ✅ Reselect account if already selected
+            if (selectedAccountId != -1)
             {
-                if (e.RowIndex >= 0)
+                foreach (DataGridViewRow row in dgvAccounts.Rows)
                 {
-                    selectedAccountId = Convert.ToInt32(dgvAccounts.Rows[e.RowIndex].Cells["Account_ID"].Value);
-                    decimal balance = Convert.ToDecimal(dgvAccounts.Rows[e.RowIndex].Cells["Balance"].Value);
-                    lblBalance.Text = $"Balance: {balance:C}";
+                    if (Convert.ToInt32(row.Cells["Account_ID"].Value) == selectedAccountId)
+                    {
+                        row.Selected = true;
+                        lblBalance.Text = $"Balance: {row.Cells["Balance"].Value:C}";
+                        break;
+                    }
                 }
-            };
-
-            // Auto-select first row
-            if (dgvAccounts.Rows.Count > 0)
+            }
+            else if (dgvAccounts.Rows.Count > 0)
             {
                 dgvAccounts.Rows[0].Selected = true;
                 selectedAccountId = Convert.ToInt32(dgvAccounts.Rows[0].Cells["Account_ID"].Value);
-                decimal balance = Convert.ToDecimal(dgvAccounts.Rows[0].Cells["Balance"].Value);
-                lblBalance.Text = $"Balance: {balance:C}";
+                lblBalance.Text = $"Balance: {dgvAccounts.Rows[0].Cells["Balance"].Value:C}";
             }
         }
 
@@ -68,12 +84,6 @@ namespace BankApp
                 MessageBox.Show("Please select an account from the list.");
                 return;
             }
-            if (string.IsNullOrWhiteSpace(txtAmount.Text))
-            {
-                MessageBox.Show("Please enter an amount.");
-                return;
-            }
-
             if (!decimal.TryParse(txtAmount.Text, out decimal amount) || amount <= 0)
             {
                 MessageBox.Show("Invalid amount.");
@@ -84,7 +94,6 @@ namespace BankApp
             {
                 con.Open();
                 SqlTransaction trans = con.BeginTransaction();
-
                 try
                 {
                     string sql = (mode == "deposit")
@@ -96,10 +105,9 @@ namespace BankApp
                     cmd.Parameters.AddWithValue("@aid", selectedAccountId);
 
                     int rows = cmd.ExecuteNonQuery();
-                    if (rows == 0)
-                        throw new Exception("Insufficient balance or account not found.");
+                    if (rows == 0) throw new Exception("Insufficient balance or account not found.");
 
-                    // Log transaction
+                    // Insert transaction record
                     SqlCommand cmd2 = new SqlCommand(
                         "INSERT INTO Transactions (Account_ID, Customer_ID, Transaction_Type, Amount, Transaction_Date) " +
                         "VALUES (@aid, @cid, @type, @amt, @date)", con, trans);
@@ -109,40 +117,18 @@ namespace BankApp
                     cmd2.Parameters.AddWithValue("@type", mode);
                     cmd2.Parameters.AddWithValue("@amt", amount);
                     cmd2.Parameters.AddWithValue("@date", DateTime.Now);
-
                     cmd2.ExecuteNonQuery();
 
                     trans.Commit();
-
                     MessageBox.Show($"{mode} successful!");
 
-                    // ✅ reload everything
+                    // ✅ Refresh accounts & balance
                     LoadAccounts();
-                    UpdateBalanceLabel();
                 }
                 catch (Exception ex)
                 {
                     trans.Rollback();
                     MessageBox.Show("Error: " + ex.Message);
-                }
-            }
-        }
-
-        private void UpdateBalanceLabel()
-        {
-            if (selectedAccountId == -1) return;
-
-            using (SqlConnection con = DatabaseHelper.GetConnection())
-            {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT Balance FROM Accounts WHERE Account_ID = @aid", con);
-                cmd.Parameters.AddWithValue("@aid", selectedAccountId);
-
-                object result = cmd.ExecuteScalar();
-                if (result != null)
-                {
-                    decimal balance = Convert.ToDecimal(result);
-                    lblBalance.Text = $"Balance: {balance:C}";
                 }
             }
         }
