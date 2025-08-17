@@ -12,6 +12,7 @@ namespace BankApp
         string connString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
 
         public static DataTable DataSource { get; private set; }
+        public static Action<object, object> CellClick { get; internal set; }
 
         public dgvAccounts()
         {
