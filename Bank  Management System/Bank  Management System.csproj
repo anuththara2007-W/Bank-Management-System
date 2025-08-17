@@ -147,6 +147,12 @@
     <Compile Include="LoanRequest.Designer.cs">
       <DependentUpon>LoanRequest.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoanRequestsApproval.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoanRequestsApproval.Designer.cs">
+      <DependentUpon>LoanRequestsApproval.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoanRequest.resx">
       <DependentUpon>LoanRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoanRequestsApproval.resx">
+      <DependentUpon>LoanRequestsApproval.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
