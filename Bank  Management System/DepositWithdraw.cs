@@ -26,7 +26,7 @@ namespace Bank__Management_System
             {
                 con.Open();
                 SqlDataAdapter da = new SqlDataAdapter(
-                    "SELECT Account_ID, Account_Type, Balance FROM Accounts WHERE Customer_ID = @cid",
+                    "SELECT Account_ID, Account_Type, Balance FROM accounts WHERE Customer_ID = @cid",
                     con);
                 da.SelectCommand.Parameters.AddWithValue("@cid", Session.CustomerID);
 
