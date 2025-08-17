@@ -5,12 +5,12 @@ using System.Windows.Forms;
 
 namespace BankApp
 {
-    public partial class AdminLoanRequests : Form
+    public partial class LoanRequestsApproval : Form
     {
         private readonly string connString =
             @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
 
-        public AdminLoanRequests()
+        public LoanRequestsApproval()
         {
             InitializeComponent();
             LoadRequests();
