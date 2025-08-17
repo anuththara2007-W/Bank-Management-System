@@ -15,6 +15,10 @@ namespace Bank__Management_System
             InitializeComponent();
         }
 
+        public DepositWithdraw()
+        {
+        }
+
         private void DepositWithdraw_Load(object sender, EventArgs e)
         {
             LoadAccounts();
