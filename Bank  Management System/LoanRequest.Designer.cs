@@ -123,9 +123,7 @@ namespace BankApp
 
         }
 
-        private void LoanRequest_Load(object sender, EventArgs e)
-        {
-        }
+       
 
         #endregion
         private System.Windows.Forms.Button btnSubmitLoan;
