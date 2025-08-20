@@ -10,10 +10,18 @@ namespace Bank__Management_System
     {
         private int selectedAccountId = -1;
         private decimal currentBalance = 0;
+        private int customerID;
+        private string v;
 
         public DepositWithdraw()
         {
             InitializeComponent();
+        }
+
+        public DepositWithdraw(int customerID, string v)
+        {
+            this.customerID = customerID;
+            this.v = v;
         }
 
         private void DepositWithdraw_Load(object sender, EventArgs e)
