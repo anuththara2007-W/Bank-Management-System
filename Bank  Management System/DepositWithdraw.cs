@@ -1,4 +1,4 @@
-﻿using BankApp;                 // keep this if DatabaseHelper lives in BankApp
+﻿using BankApp;
 using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -7,99 +7,95 @@ namespace Bank__Management_System
 {
     public partial class DepositWithdraw : Form
     {
+        // 👇 these two variables MUST exist here
         private int selectedAccountId = -1;
         private decimal currentBalance = 0m;
 
         public DepositWithdraw()
         {
             InitializeComponent();
-            this.Load += DepositWithdraw_Load;          // ensure Load is wired
-            btnDeposit.Click += btnDeposit_Click;       // ensure buttons are wired
-            btnWithdraw.Click += btnWithdraw_Click;
         }
 
         private void DepositWithdraw_Load(object sender, EventArgs e)
         {
-            LoadAccount();
-        }
-
-        private void LoadAccount()
-        {
+            // load first account for logged in customer
             using (SqlConnection con = DatabaseHelper.GetConnection())
             {
                 con.Open();
-                using (var cmd = new SqlCommand(
-                    "SELECT TOP 1 Account_ID, Balance FROM accounts WHERE Customer_ID = @cid", con))
+                SqlCommand cmd = new SqlCommand(
+                    "SELECT TOP 1 Account_ID, Balance FROM accounts WHERE Customer_ID = @cid", con);
+                cmd.Parameters.AddWithValue("@cid", Session.CustomerID);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
                 {
-                    cmd.Parameters.AddWithValue("@cid", Session.CustomerID);
-                    using (var rdr = cmd.ExecuteReader())
-                    {
-                        if (rdr.Read())
-                        {
-                            selectedAccountId = Convert.ToInt32(rdr["Account_ID"]);
-                            currentBalance = Convert.ToDecimal(rdr["Balance"]);
-                            lblBalance.Text = $"Balance: {currentBalance}";
-                        }
-                        else
-                        {
-                            MessageBox.Show("No account found for this customer.");
-                        }
-                    }
+                    selectedAccountId = Convert.ToInt32(reader["Account_ID"]);
+                    currentBalance = Convert.ToDecimal(reader["Balance"]);
+                    lblBalance.Text = $"Balance: {currentBalance}";
+                }
+                else
+                {
+                    MessageBox.Show("No account found.");
                 }
             }
-        }
-
-        private void UpdateBalance(decimal newBalance)
-        {
-            using (SqlConnection con = DatabaseHelper.GetConnection())
-            {
-                con.Open();
-                using (var cmd = new SqlCommand(
-                    "UPDATE accounts SET Balance = @bal WHERE Account_ID = @aid", con))
-                {
-                    cmd.Parameters.AddWithValue("@bal", newBalance);
-                    cmd.Parameters.AddWithValue("@aid", selectedAccountId);
-                    cmd.ExecuteNonQuery();
-                }
-            }
-
-            currentBalance = newBalance;
-            lblBalance.Text = $"Balance: {currentBalance}";
-        }
-
-        private bool TryGetAmount(out decimal amount)
-        {
-            if (!decimal.TryParse(txtAmount.Text, out amount) || amount <= 0)
-            {
-                MessageBox.Show("Enter a valid positive amount.");
-                return false;
-            }
-            return true;
         }
 
         private void btnDeposit_Click(object sender, EventArgs e)
         {
-            if (!TryGetAmount(out var amount)) return;
-            UpdateBalance(currentBalance + amount);
-            MessageBox.Show("Deposit successful!");
+            if (!decimal.TryParse(txtAmount.Text, out decimal amount) || amount <= 0)
+            {
+                MessageBox.Show("Enter valid amount.");
+                return;
+            }
+
+            decimal newBalance = currentBalance + amount;
+
+            using (SqlConnection con = DatabaseHelper.GetConnection())
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand(
+                    "UPDATE accounts SET Balance=@bal WHERE Account_ID=@aid", con);
+                cmd.Parameters.AddWithValue("@bal", newBalance);
+                cmd.Parameters.AddWithValue("@aid", selectedAccountId);
+                cmd.ExecuteNonQuery();
+            }
+
+            currentBalance = newBalance;
+            lblBalance.Text = $"Balance: {currentBalance}";
             txtAmount.Clear();
+            MessageBox.Show("Deposit successful!");
         }
 
         private void btnWithdraw_Click(object sender, EventArgs e)
         {
-            if (!TryGetAmount(out var amount)) return;
+            if (!decimal.TryParse(txtAmount.Text, out decimal amount) || amount <= 0)
+            {
+                MessageBox.Show("Enter valid amount.");
+                return;
+            }
+
             if (amount > currentBalance)
             {
                 MessageBox.Show("Not enough balance.");
                 return;
             }
 
-            // 👇 THIS is the line that was corrupted before
             decimal newBalance = currentBalance - amount;
 
-            UpdateBalance(newBalance);
-            MessageBox.Show("Withdraw successful!");
+            using (SqlConnection con = DatabaseHelper.GetConnection())
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand(
+                    "UPDATE accounts SET Balance=@bal WHERE Account_ID=@aid", con);
+                cmd.Parameters.AddWithValue("@bal", newBalance);
+                cmd.Parameters.AddWithValue("@aid", selectedAccountId);
+                cmd.ExecuteNonQuery();
+            }
+
+            currentBalance = newBalance;
+            lblBalance.Text = $"Balance: {currentBalance}";
             txtAmount.Clear();
+            MessageBox.Show("Withdraw successful!");
         }
     }
 }
