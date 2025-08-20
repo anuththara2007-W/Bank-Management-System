@@ -9,7 +9,7 @@ namespace Bank__Management_System
     {
         // Required variables
         private int selectedAccountId = -1;
-        private decimal currentBalance = 0m;
+        private decimal accountBalance = 0m;
         private int customerID;
         private string customerName;
 
@@ -44,8 +44,8 @@ namespace Bank__Management_System
                     if (reader.Read())
                     {
                         selectedAccountId = Convert.ToInt32(reader["Account_ID"]);
-                        currentBalance = Convert.ToDecimal(reader["Balance"]);
-                        lblBalance.Text = $"Balance: ${currentBalance:F2}";
+                        accountBalance = Convert.ToDecimal(reader["Balance"]);
+                        lblBalance.Text = $"Balance: ${accountBalance:F2}";
                     }
                     else
                     {
@@ -80,7 +80,7 @@ namespace Bank__Management_System
                     return;
                 }
 
-                decimal newBalance = currentBalance + amount;
+                decimal newBalance = accountBalance + amount;
 
                 using (SqlConnection con = DatabaseHelper.GetConnection())
                 {
@@ -94,10 +94,10 @@ namespace Bank__Management_System
 
                     if (rowsAffected > 0)
                     {
-                        currentBalance = newBalance;
-                        lblBalance.Text = $"Balance: ${currentBalance:F2}";
+                        accountBalance = newBalance;
+                        lblBalance.Text = $"Balance: ${accountBalance:F2}";
                         txtAmount.Clear();
-                        MessageBox.Show($"Deposit successful! New balance: ${currentBalance:F2}");
+                        MessageBox.Show($"Deposit successful! New balance: ${accountBalance:F2}");
                     }
                     else
                     {
@@ -130,13 +130,13 @@ namespace Bank__Management_System
                 }
 
                 // Check sufficient balance
-                if (amount > currentBalance)
+                if (amount > accountBalance)
                 {
-                    MessageBox.Show($"Insufficient balance. Available balance: ${currentBalance:F2}");
+                    MessageBox.Show($"Insufficient balance. Available balance: ${accountBalance:F2}");
                     return;
                 }
 
-                decimal newBalance = currentBalance - amount;
+                decimal newBalance = accountBalance - amount;
 
                 using (SqlConnection con = DatabaseHelper.GetConnection())
                 {
@@ -150,10 +150,10 @@ namespace Bank__Management_System
 
                     if (rowsAffected > 0)
                     {
-                        currentBalance = newBalance;
-                        lblBalance.Text = $"Balance: ${currentBalance:F2}";
+                        accountBalance = newBalance;
+                        lblBalance.Text = $"Balance: ${accountBalance:F2}";
                         txtAmount.Clear();
-                        MessageBox.Show($"Withdrawal successful! New balance: ${currentBalance:F2}");
+                        MessageBox.Show($"Withdrawal successful! New balance: ${accountBalance:F2}");
                     }
                     else
                     {
@@ -182,8 +182,8 @@ namespace Bank__Management_System
                     object result = cmd.ExecuteScalar();
                     if (result != null)
                     {
-                        currentBalance = Convert.ToDecimal(result);
-                        lblBalance.Text = $"Balance: ${currentBalance:F2}";
+                        accountBalance = Convert.ToDecimal(result);
+                        lblBalance.Text = $"Balance: ${accountBalance:F2}";
                     }
                 }
             }
