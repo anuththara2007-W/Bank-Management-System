@@ -88,11 +88,22 @@ namespace Bank__Management_System
                                  Type.GetType("BankApp.Session");
                 if (sessionType != null)
                 {
-                    var customerIdProperty = sessionType.GetProperty("CustomerID") ??
-                                           sessionType.GetField("CustomerID");
+                    // Try to get as property first
+                    var customerIdProperty = sessionType.GetProperty("CustomerID");
                     if (customerIdProperty != null)
                     {
                         object value = customerIdProperty.GetValue(null);
+                        if (value != null && int.TryParse(value.ToString(), out int sessionCustomerId))
+                        {
+                            return sessionCustomerId;
+                        }
+                    }
+
+                    // If not found as property, try as field
+                    var customerIdField = sessionType.GetField("CustomerID");
+                    if (customerIdField != null)
+                    {
+                        object value = customerIdField.GetValue(null);
                         if (value != null && int.TryParse(value.ToString(), out int sessionCustomerId))
                         {
                             return sessionCustomerId;
@@ -233,7 +244,14 @@ namespace Bank__Management_System
 
                     if (loadMethod != null)
                     {
-                        loadMethod.Invoke(this.Owner, null);
+                        if (this.Owner.InvokeRequired)
+                        {
+                            this.Owner.Invoke(new Action(() => loadMethod.Invoke(this.Owner, null)));
+                        }
+                        else
+                        {
+                            loadMethod.Invoke(this.Owner, null);
+                        }
                     }
                 }
 
