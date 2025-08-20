@@ -74,7 +74,6 @@ namespace Bank__Management_System
             this.btnDeposit.TabIndex = 4;
             this.btnDeposit.Text = "Deposit ";
             this.btnDeposit.UseVisualStyleBackColor = true;
-            this.btnDeposit.Click += new System.EventHandler(this.btnDeposit_Click);
             // 
             // btnWithdraw
             // 
@@ -84,7 +83,6 @@ namespace Bank__Management_System
             this.btnWithdraw.TabIndex = 5;
             this.btnWithdraw.Text = "Withdraw";
             this.btnWithdraw.UseVisualStyleBackColor = true;
-            this.btnWithdraw.Click += new System.EventHandler(this.btnWithdraw_Click);
             // 
             // button1
             // 
@@ -94,7 +92,6 @@ namespace Bank__Management_System
             this.button1.TabIndex = 16;
             this.button1.Text = "Go Back";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // dgvAccounts
             // 
