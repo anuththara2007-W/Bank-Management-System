@@ -1,6 +1,5 @@
 ﻿using BankApp;
 using System;
-using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -10,176 +9,92 @@ namespace Bank__Management_System
     {
         private int selectedAccountId = -1;
         private decimal currentBalance = 0;
-        private int customerID;
-        private string v;
 
         public DepositWithdraw()
         {
             InitializeComponent();
         }
 
-        public DepositWithdraw(int customerID, string v)
-        {
-            this.customerID = customerID;
-            this.v = v;
-        }
-
         private void DepositWithdraw_Load(object sender, EventArgs e)
         {
-            LoadAccounts();
+            LoadAccount();
         }
 
-        private void LoadAccounts()
+        private void LoadAccount()
         {
             using (SqlConnection con = DatabaseHelper.GetConnection())
             {
                 con.Open();
-                SqlDataAdapter da = new SqlDataAdapter(
-                    "SELECT Account_ID, Account_Type, Balance FROM accounts WHERE Customer_ID = @cid",
-                    con);
-                da.SelectCommand.Parameters.AddWithValue("@cid", Session.CustomerID);
+                SqlCommand cmd = new SqlCommand(
+                    "SELECT TOP 1 Account_ID, Balance FROM accounts WHERE Customer_ID = @cid", con);
+                cmd.Parameters.AddWithValue("@cid", Session.CustomerID);
 
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-
-                dgvAccounts.DataSource = dt;
-            }
-
-            dgvAccounts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvAccounts.MultiSelect = false;
-
-            dgvAccounts.CellClick += (s, e) =>
-            {
-                if (e.RowIndex >= 0)
+                using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    selectedAccountId = Convert.ToInt32(dgvAccounts.Rows[e.RowIndex].Cells["Account_ID"].Value);
-                    currentBalance = Convert.ToDecimal(dgvAccounts.Rows[e.RowIndex].Cells["Balance"].Value);
-                    lblBalance.Text = $"Balance: {currentBalance:C}";
-                }
-            };
-
-            // Auto-select first account
-            if (dgvAccounts.Rows.Count > 0)
-            {
-                dgvAccounts.Rows[0].Selected = true;
-                selectedAccountId = Convert.ToInt32(dgvAccounts.Rows[0].Cells["Account_ID"].Value);
-                currentBalance = Convert.ToDecimal(dgvAccounts.Rows[0].Cells["Balance"].Value);
-                lblBalance.Text = $"Balance: {currentBalance:C}";
-            }
-            else
-            {
-                lblBalance.Text = "Balance: 0";
-            }
-        }
-
-        private void PerformTransaction(string mode)
-        {
-            if (selectedAccountId == -1)
-            {
-                MessageBox.Show("⚠ Please select an account first.");
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(txtAmount.Text))
-            {
-                MessageBox.Show("⚠ Enter an amount.");
-                return;
-            }
-
-            if (!decimal.TryParse(txtAmount.Text, out decimal amount) || amount <= 0)
-            {
-                MessageBox.Show("⚠ Invalid amount. Please enter a positive number.");
-                return;
-            }
-
-            if (mode == "withdraw" && amount > currentBalance)
-            {
-                MessageBox.Show("⚠ Insufficient balance.");
-                return;
-            }
-
-            using (SqlConnection con = DatabaseHelper.GetConnection())
-            {
-                con.Open();
-                SqlTransaction trans = con.BeginTransaction();
-
-                try
-                {
-                    string sql = (mode == "deposit")
-                        ? "UPDATE accounts SET Balance = Balance + @amt WHERE Account_ID = @aid"
-                        : "UPDATE accounts SET Balance = Balance - @amt WHERE Account_ID = @aid";
-
-                    SqlCommand cmd = new SqlCommand(sql, con, trans);
-                    cmd.Parameters.AddWithValue("@amt", amount);
-                    cmd.Parameters.AddWithValue("@aid", selectedAccountId);
-
-                    int rows = cmd.ExecuteNonQuery();
-                    if (rows == 0)
-                        throw new Exception("Transaction failed. Account not found.");
-
-                    // Insert transaction log
-                    SqlCommand cmd2 = new SqlCommand(
-                        "INSERT INTO transactions (Transaction_Type, Amount, Transaction_Date, Account_ID, Customer_ID) " +
-                        "VALUES (@type, @amt, @date, @aid, @cid)", con, trans);
-
-                    cmd2.Parameters.AddWithValue("@type", mode);
-                    cmd2.Parameters.AddWithValue("@amt", amount);
-                    cmd2.Parameters.AddWithValue("@date", DateTime.Now);
-                    cmd2.Parameters.AddWithValue("@aid", selectedAccountId);
-                    cmd2.Parameters.AddWithValue("@cid", Session.CustomerID);
-                    cmd2.ExecuteNonQuery();
-
-                    trans.Commit();
-
-                    MessageBox.Show($"✅ {mode} successful!");
-
-                    // Refresh grid + balance
-                    LoadAccounts();
-                    UpdateBalanceLabel();
-                    txtAmount.Clear();
-                }
-                catch (Exception ex)
-                {
-                    trans.Rollback();
-                    MessageBox.Show("❌ Error: " + ex.Message);
+                    if (reader.Read())
+                    {
+                        selectedAccountId = Convert.ToInt32(reader["Account_ID"]);
+                        currentBalance = Convert.ToDecimal(reader["Balance"]);
+                        lblBalance.Text = $"Balance: {currentBalance}";
+                    }
+                    else
+                    {
+                        MessageBox.Show("No account found for this customer.");
+                    }
                 }
             }
         }
 
-        private void UpdateBalanceLabel()
+        private void UpdateBalance(decimal newBalance)
         {
-            if (selectedAccountId == -1) return;
-
             using (SqlConnection con = DatabaseHelper.GetConnection())
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT Balance FROM accounts WHERE Account_ID = @aid", con);
+                SqlCommand cmd = new SqlCommand(
+                    "UPDATE accounts SET Balance = @bal WHERE Account_ID = @aid", con);
+                cmd.Parameters.AddWithValue("@bal", newBalance);
                 cmd.Parameters.AddWithValue("@aid", selectedAccountId);
-                object result = cmd.ExecuteScalar();
-
-                if (result != null)
-                {
-                    currentBalance = Convert.ToDecimal(result);
-                    lblBalance.Text = $"Balance: {currentBalance:C}";
-                }
+                cmd.ExecuteNonQuery();
             }
+
+            currentBalance = newBalance;
+            lblBalance.Text = $"Balance: {currentBalance}";
         }
 
         private void btnDeposit_Click(object sender, EventArgs e)
         {
-            PerformTransaction("deposit");
+            if (!decimal.TryParse(txtAmount.Text, out decimal amount) || amount <= 0)
+            {
+                MessageBox.Show("Enter a valid positive amount.");
+                return;
+            }
+
+            decimal newBalance = currentBalance + amount;
+            UpdateBalance(newBalance);
+
+            MessageBox.Show("✅ Deposit successful!");
+            txtAmount.Clear();
         }
 
         private void btnWithdraw_Click(object sender, EventArgs e)
         {
-            PerformTransaction("withdraw");
-        }
+            if (!decimal.TryParse(txtAmount.Text, out decimal amount) || amount <= 0)
+            {
+                MessageBox.Show("Enter a valid positive amount.");
+                return;
+            }
 
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            CustomerDashboard dash = new CustomerDashboard();
-            dash.Show();
-            this.Hide();
+            if (amount > currentBalance)
+            {
+                MessageBox.Show("⚠ Not enough balance.");
+                return;
+            }
+
+            decimal newBalance = currentBalance - amount;
+            UpdateBalance(newBalance);
+
+            MessageBox.Show("✅ Withdraw successful!");
+            txtAmount.Clear();
         }
     }
 }
