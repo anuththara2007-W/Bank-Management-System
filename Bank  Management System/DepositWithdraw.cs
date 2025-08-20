@@ -9,14 +9,11 @@ namespace Bank__Management_System
     public partial class DepositWithdraw : Form
     {
         private int selectedAccountId = -1;
-
-        public DepositWithdraw(int customerID, string v)
-        {
-            InitializeComponent();
-        }
+        private decimal currentBalance = 0;
 
         public DepositWithdraw()
         {
+            InitializeComponent();
         }
 
         private void DepositWithdraw_Load(object sender, EventArgs e)
@@ -43,14 +40,13 @@ namespace Bank__Management_System
             dgvAccounts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvAccounts.MultiSelect = false;
 
-            // Handle selection
             dgvAccounts.CellClick += (s, e) =>
             {
                 if (e.RowIndex >= 0)
                 {
                     selectedAccountId = Convert.ToInt32(dgvAccounts.Rows[e.RowIndex].Cells["Account_ID"].Value);
-                    decimal balance = Convert.ToDecimal(dgvAccounts.Rows[e.RowIndex].Cells["Balance"].Value);
-                    lblBalance.Text = $"Balance: {balance:C}";
+                    currentBalance = Convert.ToDecimal(dgvAccounts.Rows[e.RowIndex].Cells["Balance"].Value);
+                    lblBalance.Text = $"Balance: {currentBalance:C}";
                 }
             };
 
@@ -59,8 +55,8 @@ namespace Bank__Management_System
             {
                 dgvAccounts.Rows[0].Selected = true;
                 selectedAccountId = Convert.ToInt32(dgvAccounts.Rows[0].Cells["Account_ID"].Value);
-                decimal balance = Convert.ToDecimal(dgvAccounts.Rows[0].Cells["Balance"].Value);
-                lblBalance.Text = $"Balance: {balance:C}";
+                currentBalance = Convert.ToDecimal(dgvAccounts.Rows[0].Cells["Balance"].Value);
+                lblBalance.Text = $"Balance: {currentBalance:C}";
             }
             else
             {
@@ -72,19 +68,25 @@ namespace Bank__Management_System
         {
             if (selectedAccountId == -1)
             {
-                MessageBox.Show("Please select an account from the list.");
+                MessageBox.Show("⚠ Please select an account first.");
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(txtAmount.Text))
             {
-                MessageBox.Show("Please enter an amount.");
+                MessageBox.Show("⚠ Enter an amount.");
                 return;
             }
 
             if (!decimal.TryParse(txtAmount.Text, out decimal amount) || amount <= 0)
             {
-                MessageBox.Show("Invalid amount.");
+                MessageBox.Show("⚠ Invalid amount. Please enter a positive number.");
+                return;
+            }
+
+            if (mode == "withdraw" && amount > currentBalance)
+            {
+                MessageBox.Show("⚠ Insufficient balance.");
                 return;
             }
 
@@ -97,7 +99,7 @@ namespace Bank__Management_System
                 {
                     string sql = (mode == "deposit")
                         ? "UPDATE accounts SET Balance = Balance + @amt WHERE Account_ID = @aid"
-                        : "UPDATE accounts SET Balance = Balance - @amt WHERE Account_ID = @aid AND Balance >= @amt";
+                        : "UPDATE accounts SET Balance = Balance - @amt WHERE Account_ID = @aid";
 
                     SqlCommand cmd = new SqlCommand(sql, con, trans);
                     cmd.Parameters.AddWithValue("@amt", amount);
@@ -105,9 +107,9 @@ namespace Bank__Management_System
 
                     int rows = cmd.ExecuteNonQuery();
                     if (rows == 0)
-                        throw new Exception("Insufficient balance or account not found.");
+                        throw new Exception("Transaction failed. Account not found.");
 
-                    // Insert into Transactions
+                    // Insert transaction log
                     SqlCommand cmd2 = new SqlCommand(
                         "INSERT INTO transactions (Transaction_Type, Amount, Transaction_Date, Account_ID, Customer_ID) " +
                         "VALUES (@type, @amt, @date, @aid, @cid)", con, trans);
@@ -121,16 +123,17 @@ namespace Bank__Management_System
 
                     trans.Commit();
 
-                    MessageBox.Show($"{mode} successful!");
+                    MessageBox.Show($"✅ {mode} successful!");
 
                     // Refresh grid + balance
                     LoadAccounts();
                     UpdateBalanceLabel();
+                    txtAmount.Clear();
                 }
                 catch (Exception ex)
                 {
                     trans.Rollback();
-                    MessageBox.Show("Error: " + ex.Message);
+                    MessageBox.Show("❌ Error: " + ex.Message);
                 }
             }
         }
@@ -148,8 +151,8 @@ namespace Bank__Management_System
 
                 if (result != null)
                 {
-                    decimal balance = Convert.ToDecimal(result);
-                    lblBalance.Text = $"Balance: {balance:C}";
+                    currentBalance = Convert.ToDecimal(result);
+                    lblBalance.Text = $"Balance: {currentBalance:C}";
                 }
             }
         }
