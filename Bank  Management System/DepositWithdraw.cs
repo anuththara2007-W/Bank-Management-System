@@ -7,20 +7,17 @@ namespace Bank__Management_System
 {
     public partial class DepositWithdraw : Form
     {
-        // Required variables
         private int selectedAccountId = -1;
-        private decimal accountBalance = 0m;
+        private decimal currentBalance = 0m;
         private int customerID;
         private string customerName;
 
-        // Default constructor
         public DepositWithdraw()
         {
             InitializeComponent();
         }
 
-        // Parameterized constructor - FIXED
-        public DepositWithdraw(int customerID, string customerName) : this()
+        public DepositWithdraw(int customerID, string customerName) : this() // Call default constructor
         {
             this.customerID = customerID;
             this.customerName = customerName;
@@ -28,169 +25,146 @@ namespace Bank__Management_System
 
         private void DepositWithdraw_Load(object sender, EventArgs e)
         {
+            LoadAccountData();
+        }
+
+        private void LoadAccountData()
+        {
             try
             {
-                // Load first account for logged in customer
                 using (SqlConnection con = DatabaseHelper.GetConnection())
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand(
                         "SELECT TOP 1 Account_ID, Balance FROM accounts WHERE Customer_ID = @cid", con);
-
-                    // FIXED: Use the instance variable instead of Session.CustomerID
-                    cmd.Parameters.AddWithValue("@cid", this.customerID);
-
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    if (reader.Read())
+                    cmd.Parameters.AddWithValue("@cid", customerID); // Use the instance variable
+                    
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        selectedAccountId = Convert.ToInt32(reader["Account_ID"]);
-                        accountBalance = Convert.ToDecimal(reader["Balance"]);
-                        lblBalance.Text = $"Balance: ${accountBalance:F2}";
+                        if (reader.Read())
+                        {
+                            selectedAccountId = Convert.ToInt32(reader["Account_ID"]);
+                            currentBalance = Convert.ToDecimal(reader["Balance"]);
+                            
+                            if (lblBalance != null)
+                                lblBalance.Text = $"Balance: {currentBalance:C}";
+                            
+                            // Update form title with customer info
+                            this.Text = $"Deposit/Withdraw - {customerName}";
+                        }
+                        else
+                        {
+                            MessageBox.Show("No account found for this customer.");
+                            this.Close(); // Close form if no account
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show("No account found for this customer.");
-                        this.Close(); // Close form if no account found
-                    }
-                    reader.Close();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error loading account: {ex.Message}");
-                this.Close();
             }
         }
 
         private void btnDeposit_Click(object sender, EventArgs e)
         {
-            try
-            {
-                // Validate input
-                if (!decimal.TryParse(txtAmount.Text, out decimal amount) || amount <= 0)
-                {
-                    MessageBox.Show("Please enter a valid amount greater than 0.");
-                    return;
-                }
-
-                // Check for valid account
-                if (selectedAccountId == -1)
-                {
-                    MessageBox.Show("No account selected.");
-                    return;
-                }
-
-                decimal newBalance = accountBalance + amount;
-
-                using (SqlConnection con = DatabaseHelper.GetConnection())
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand(
-                        "UPDATE accounts SET Balance = @bal WHERE Account_ID = @aid", con);
-                    cmd.Parameters.AddWithValue("@bal", newBalance);
-                    cmd.Parameters.AddWithValue("@aid", selectedAccountId);
-
-                    int rowsAffected = cmd.ExecuteNonQuery();
-
-                    if (rowsAffected > 0)
-                    {
-                        accountBalance = newBalance;
-                        lblBalance.Text = $"Balance: ${accountBalance:F2}";
-                        txtAmount.Clear();
-                        MessageBox.Show($"Deposit successful! New balance: ${accountBalance:F2}");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Deposit failed. Account not found.");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error during deposit: {ex.Message}");
-            }
+            ProcessTransaction(isDeposit: true);
         }
 
         private void btnWithdraw_Click(object sender, EventArgs e)
         {
+            ProcessTransaction(isDeposit: false);
+        }
+
+        private void ProcessTransaction(bool isDeposit)
+        {
+            if (selectedAccountId == -1)
+            {
+                MessageBox.Show("No account selected.");
+                return;
+            }
+
+            if (!decimal.TryParse(txtAmount.Text, out decimal amount) || amount <= 0)
+            {
+                MessageBox.Show("Please enter a valid positive amount.");
+                return;
+            }
+
             try
             {
-                // Validate input
-                if (!decimal.TryParse(txtAmount.Text, out decimal amount) || amount <= 0)
-                {
-                    MessageBox.Show("Please enter a valid amount greater than 0.");
-                    return;
-                }
+                decimal newBalance;
+                string transactionType;
 
-                // Check for valid account
-                if (selectedAccountId == -1)
+                if (isDeposit)
                 {
-                    MessageBox.Show("No account selected.");
-                    return;
+                    newBalance = currentBalance + amount;
+                    transactionType = "Deposit";
                 }
-
-                // Check sufficient balance
-                if (amount > accountBalance)
+                else
                 {
-                    MessageBox.Show($"Insufficient balance. Available balance: ${accountBalance:F2}");
-                    return;
+                    if (amount > currentBalance)
+                    {
+                        MessageBox.Show("Insufficient funds for withdrawal.");
+                        return;
+                    }
+                    newBalance = currentBalance - amount;
+                    transactionType = "Withdrawal";
                 }
-
-                decimal newBalance = accountBalance - amount;
 
                 using (SqlConnection con = DatabaseHelper.GetConnection())
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand(
-                        "UPDATE accounts SET Balance = @bal WHERE Account_ID = @aid", con);
-                    cmd.Parameters.AddWithValue("@bal", newBalance);
-                    cmd.Parameters.AddWithValue("@aid", selectedAccountId);
-
-                    int rowsAffected = cmd.ExecuteNonQuery();
-
-                    if (rowsAffected > 0)
+                    
+                    // Start transaction for data consistency
+                    using (SqlTransaction transaction = con.BeginTransaction())
                     {
-                        accountBalance = newBalance;
-                        lblBalance.Text = $"Balance: ${accountBalance:F2}";
-                        txtAmount.Clear();
-                        MessageBox.Show($"Withdrawal successful! New balance: ${accountBalance:F2}");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Withdrawal failed. Account not found.");
+                        try
+                        {
+                            // Update account balance
+                            SqlCommand updateCmd = new SqlCommand(
+                                "UPDATE accounts SET Balance = @bal WHERE Account_ID = @aid", 
+                                con, transaction);
+                            updateCmd.Parameters.AddWithValue("@bal", newBalance);
+                            updateCmd.Parameters.AddWithValue("@aid", selectedAccountId);
+                            updateCmd.ExecuteNonQuery();
+
+                            // Record transaction history
+                            SqlCommand historyCmd = new SqlCommand(
+                                "INSERT INTO transactions (Account_ID, TransactionType, Amount, BalanceAfter, TransactionDate) " +
+                                "VALUES (@aid, @type, @amount, @balanceAfter, GETDATE())", 
+                                con, transaction);
+                            historyCmd.Parameters.AddWithValue("@aid", selectedAccountId);
+                            historyCmd.Parameters.AddWithValue("@type", transactionType);
+                            historyCmd.Parameters.AddWithValue("@amount", amount);
+                            historyCmd.Parameters.AddWithValue("@balanceAfter", newBalance);
+                            historyCmd.ExecuteNonQuery();
+
+                            transaction.Commit();
+
+                            currentBalance = newBalance;
+                            lblBalance.Text = $"Balance: {currentBalance:C}";
+                            txtAmount.Clear();
+                            
+                            MessageBox.Show($"{transactionType} successful!");
+                        }
+                        catch
+                        {
+                            transaction.Rollback();
+                            throw;
+                        }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error during withdrawal: {ex.Message}");
+                MessageBox.Show($"Error processing transaction: {ex.Message}");
             }
         }
 
-        // Optional: Add a method to refresh balance from database
-        private void RefreshBalance()
+        // Add this method to handle form closing or additional events
+        private void btnClose_Click(object sender, EventArgs e)
         {
-            try
-            {
-                using (SqlConnection con = DatabaseHelper.GetConnection())
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand(
-                        "SELECT Balance FROM accounts WHERE Account_ID = @aid", con);
-                    cmd.Parameters.AddWithValue("@aid", selectedAccountId);
-
-                    object result = cmd.ExecuteScalar();
-                    if (result != null)
-                    {
-                        accountBalance = Convert.ToDecimal(result);
-                        lblBalance.Text = $"Balance: ${accountBalance:F2}";
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error refreshing balance: {ex.Message}");
-            }
+            this.Close();
         }
     }
 }
