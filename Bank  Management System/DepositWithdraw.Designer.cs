@@ -129,6 +129,7 @@ namespace Bank__Management_System
             this.Controls.Add(this.lblMode);
             this.Name = "DepositWithdraw";
             this.Text = "DepositWithdraw";
+            this.Load += new System.EventHandler(this.DepositWithdraw_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

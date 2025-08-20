@@ -12,6 +12,10 @@ namespace Bank__Management_System
         private int custId;
         private string custName;
 
+        // Add event for balance updates
+        public delegate void BalanceUpdatedEventHandler(int accountId, decimal newBalance);
+        public event BalanceUpdatedEventHandler BalanceUpdated;
+
         public DepositWithdraw()
         {
             InitializeComponent();
@@ -32,12 +36,21 @@ namespace Bank__Management_System
         {
             try
             {
+                int customerIdToUse = GetCustomerID();
+
+                if (customerIdToUse == 0)
+                {
+                    MessageBox.Show("Customer ID not found. Please login again.");
+                    this.Close();
+                    return;
+                }
+
                 using (SqlConnection con = DatabaseHelper.GetConnection())
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand(
                         "SELECT TOP 1 Account_ID, Balance FROM accounts WHERE Customer_ID = @cid", con);
-                    cmd.Parameters.AddWithValue("@cid", custId);
+                    cmd.Parameters.AddWithValue("@cid", customerIdToUse);
 
                     SqlDataReader reader = cmd.ExecuteReader();
                     if (reader.Read())
@@ -45,10 +58,11 @@ namespace Bank__Management_System
                         selectedAccId = Convert.ToInt32(reader["Account_ID"]);
                         currentBal = Convert.ToDecimal(reader["Balance"]);
                         lblBalance.Text = $"Balance: ${currentBal:F2}";
+                        custId = customerIdToUse;
                     }
                     else
                     {
-                        MessageBox.Show("No account found.");
+                        MessageBox.Show($"No account found for Customer ID: {customerIdToUse}");
                         this.Close();
                     }
                     reader.Close();
@@ -56,9 +70,42 @@ namespace Bank__Management_System
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: {ex.Message}");
+                MessageBox.Show($"Error loading account: {ex.Message}");
                 this.Close();
             }
+        }
+
+        private int GetCustomerID()
+        {
+            if (custId > 0)
+            {
+                return custId;
+            }
+
+            try
+            {
+                var sessionType = Type.GetType("Bank__Management_System.Session") ??
+                                 Type.GetType("BankApp.Session");
+                if (sessionType != null)
+                {
+                    var customerIdProperty = sessionType.GetProperty("CustomerID") ??
+                                           sessionType.GetField("CustomerID");
+                    if (customerIdProperty != null)
+                    {
+                        object value = customerIdProperty.GetValue(null);
+                        if (value != null && int.TryParse(value.ToString(), out int sessionCustomerId))
+                        {
+                            return sessionCustomerId;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Session access error: {ex.Message}");
+            }
+
+            return 0;
         }
 
         private void btnDeposit_Click(object sender, EventArgs e)
@@ -92,7 +139,13 @@ namespace Bank__Management_System
                         currentBal = newBal;
                         lblBalance.Text = $"Balance: ${currentBal:F2}";
                         txtAmount.Clear();
-                        RefreshAccountsDataGridView();
+
+                        // Raise the event
+                        BalanceUpdated?.Invoke(selectedAccId, newBal);
+
+                        // Also try to refresh any open forms
+                        RefreshAllAccountGrids();
+
                         MessageBox.Show("Deposit successful!");
                     }
                     else
@@ -144,7 +197,13 @@ namespace Bank__Management_System
                         currentBal = newBal;
                         lblBalance.Text = $"Balance: ${currentBal:F2}";
                         txtAmount.Clear();
-                        RefreshAccountsDataGridView();
+
+                        // Raise the event
+                        BalanceUpdated?.Invoke(selectedAccId, newBal);
+
+                        // Also try to refresh any open forms
+                        RefreshAllAccountGrids();
+
                         MessageBox.Show("Withdraw successful!");
                     }
                     else
@@ -159,65 +218,92 @@ namespace Bank__Management_System
             }
         }
 
-        private void RefreshAccountsDataGridView()
+        private void RefreshAllAccountGrids()
         {
             try
             {
-                // Find the dgvAccounts DataGridView in parent form or current form
-                DataGridView dgvAccounts = FindDataGridView();
-
-                if (dgvAccounts != null)
+                // Method 1: Refresh Owner form if it has a LoadAccounts method
+                if (this.Owner != null)
                 {
-                    // Refresh the DataGridView with updated account data
-                    LoadAccountsData(dgvAccounts);
+                    // Try to call LoadAccounts or similar method via reflection
+                    var loadMethod = this.Owner.GetType().GetMethod("LoadAccounts") ??
+                                    this.Owner.GetType().GetMethod("LoadAccountsData") ??
+                                    this.Owner.GetType().GetMethod("RefreshAccounts") ??
+                                    this.Owner.GetType().GetMethod("RefreshData");
+
+                    if (loadMethod != null)
+                    {
+                        loadMethod.Invoke(this.Owner, null);
+                    }
+                }
+
+                // Method 2: Find and refresh all DataGridViews in all open forms
+                foreach (Form form in Application.OpenForms)
+                {
+                    RefreshFormDataGridViews(form);
                 }
             }
             catch (Exception ex)
             {
-                // Silent error handling - don't show message to user for refresh errors
-                System.Diagnostics.Debug.WriteLine($"Error refreshing DataGridView: {ex.Message}");
+                System.Diagnostics.Debug.WriteLine($"Error refreshing grids: {ex.Message}");
             }
         }
 
-        private DataGridView FindDataGridView()
+        private void RefreshFormDataGridViews(Form form)
         {
-            // Method 1: Try to find dgvAccounts in current form
-            foreach (Control control in this.Controls)
+            try
             {
-                if (control is DataGridView dgv && dgv.Name == "dgvAccounts")
-                {
-                    return dgv;
-                }
-            }
+                // Find all DataGridViews in the form
+                var dataGridViews = FindAllControls<DataGridView>(form);
 
-            // Method 2: Try to find dgvAccounts in parent/owner form
-            if (this.Owner != null)
-            {
-                foreach (Control control in this.Owner.Controls)
+                foreach (var dgv in dataGridViews)
                 {
-                    if (control is DataGridView dgv && dgv.Name == "dgvAccounts")
+                    // Check if this DataGridView likely contains account data
+                    if (dgv.Name.ToLower().Contains("account") ||
+                        dgv.Name.ToLower().Contains("dgv") ||
+                        (dgv.DataSource is System.Data.DataTable dt &&
+                         dt.Columns.Contains("Account_ID")))
                     {
-                        return dgv;
+                        // Refresh this DataGridView
+                        if (form.InvokeRequired)
+                        {
+                            form.Invoke(new Action(() => LoadAccountsIntoGrid(dgv)));
+                        }
+                        else
+                        {
+                            LoadAccountsIntoGrid(dgv);
+                        }
                     }
                 }
             }
-
-            // Method 3: Try to find in any open form with dgvAccounts
-            foreach (Form openForm in Application.OpenForms)
+            catch (Exception ex)
             {
-                foreach (Control control in openForm.Controls)
-                {
-                    if (control is DataGridView dgv && dgv.Name == "dgvAccounts")
-                    {
-                        return dgv;
-                    }
-                }
+                System.Diagnostics.Debug.WriteLine($"Error refreshing form grids: {ex.Message}");
             }
-
-            return null;
         }
 
-        private void LoadAccountsData(DataGridView dgvAccounts)
+        private System.Collections.Generic.List<T> FindAllControls<T>(Control container) where T : Control
+        {
+            var controls = new System.Collections.Generic.List<T>();
+
+            foreach (Control control in container.Controls)
+            {
+                if (control is T typedControl)
+                {
+                    controls.Add(typedControl);
+                }
+
+                // Recursively search in child containers
+                if (control.HasChildren)
+                {
+                    controls.AddRange(FindAllControls<T>(control));
+                }
+            }
+
+            return controls;
+        }
+
+        private void LoadAccountsIntoGrid(DataGridView dgv)
         {
             try
             {
@@ -225,7 +311,6 @@ namespace Bank__Management_System
                 {
                     con.Open();
 
-                    // Load accounts for the current customer
                     string query = @"SELECT 
                                     Account_ID as 'Account ID',
                                     Account_Type as 'Account Type', 
@@ -244,52 +329,30 @@ namespace Bank__Management_System
                             System.Data.DataTable dt = new System.Data.DataTable();
                             adapter.Fill(dt);
 
-                            // Update DataGridView on UI thread
-                            if (dgvAccounts.InvokeRequired)
+                            dgv.DataSource = null;
+                            dgv.DataSource = dt;
+
+                            // Format the grid
+                            if (dgv.Columns["Balance"] != null)
                             {
-                                dgvAccounts.Invoke(new Action(() => {
-                                    dgvAccounts.DataSource = dt;
-                                    FormatDataGridView(dgvAccounts);
-                                }));
+                                dgv.Columns["Balance"].DefaultCellStyle.Format = "C2";
+                                dgv.Columns["Balance"].DefaultCellStyle.Alignment =
+                                    DataGridViewContentAlignment.MiddleRight;
                             }
-                            else
+
+                            if (dgv.Columns["Created Date"] != null)
                             {
-                                dgvAccounts.DataSource = dt;
-                                FormatDataGridView(dgvAccounts);
+                                dgv.Columns["Created Date"].DefaultCellStyle.Format = "MM/dd/yyyy";
                             }
+
+                            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine($"Error loading accounts data: {ex.Message}");
-            }
-        }
-
-        private void FormatDataGridView(DataGridView dgv)
-        {
-            try
-            {
-                // Format the Balance column as currency
-                if (dgv.Columns["Balance"] != null)
-                {
-                    dgv.Columns["Balance"].DefaultCellStyle.Format = "C2";
-                    dgv.Columns["Balance"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                }
-
-                // Format the Created Date column
-                if (dgv.Columns["Created Date"] != null)
-                {
-                    dgv.Columns["Created Date"].DefaultCellStyle.Format = "MM/dd/yyyy";
-                }
-
-                // Auto-resize columns
-                dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            }
-            catch (Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine($"Error formatting DataGridView: {ex.Message}");
+                System.Diagnostics.Debug.WriteLine($"Error loading grid data: {ex.Message}");
             }
         }
     }
