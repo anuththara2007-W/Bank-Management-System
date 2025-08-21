@@ -8,7 +8,7 @@ namespace Bank__Management_System
     public partial class Customer : Form
     {
         string connectionString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
-        int selectedCustomerId = -1; // Track selected customer
+        int selectedCustomerId = -1;
 
         public Customer()
         {
@@ -17,32 +17,26 @@ namespace Bank__Management_System
 
         private void Customer_Load(object sender, EventArgs e)
         {
-            LoadCustomerData(); // Load grid on form load
+            LoadCustomerData(); // Load grid when form opens
         }
 
         // =========================
-        // Load / Refresh Customers
+        // Load Customers into Grid
         // =========================
         private void LoadCustomerData()
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
-
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Customer", con);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable table = new DataTable();
-                da.Fill(table);
-
-                dataGridView1.DataSource = table;
-
-                // Optional: hide Customer_ID if you want
-                // dataGridView1.Columns["Customer_ID"].Visible = false;
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Customer", con);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
             }
         }
 
         // =========================
-        // Save / Add New Customer
+        // Add New Customer
         // =========================
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -58,7 +52,6 @@ namespace Bank__Management_System
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
-
                 SqlCommand cmd = new SqlCommand(
                     "INSERT INTO Customer (Customer_Name, Phone, Email, Address, Username, Password) " +
                     "VALUES (@Customer_Name, @Phone, @Email, @Address, @Username, @Password)", con);
@@ -79,20 +72,19 @@ namespace Bank__Management_System
         }
 
         // =========================
-        // Update Customer
+        // Update Selected Customer
         // =========================
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (selectedCustomerId == -1)
             {
-                MessageBox.Show("⚠ Please select a customer from the grid to update!");
+                MessageBox.Show("⚠ Select a customer from the grid first!");
                 return;
             }
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
-
                 SqlCommand cmd = new SqlCommand(
                     "UPDATE Customer SET Customer_Name=@Customer_Name, Phone=@Phone, Email=@Email, " +
                     "Address=@Address, Username=@Username, Password=@Password WHERE Customer_ID=@Customer_ID", con);
@@ -114,21 +106,21 @@ namespace Bank__Management_System
         }
 
         // =========================
-        // Delete Customer
+        // Delete Selected Customer
         // =========================
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (selectedCustomerId == -1)
             {
-                MessageBox.Show("⚠ Please select a customer from the grid to delete!");
+                MessageBox.Show("⚠ Select a customer from the grid first!");
                 return;
             }
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
-
-                SqlCommand cmd = new SqlCommand("DELETE FROM Customer WHERE Customer_ID=@Customer_ID", con);
+                SqlCommand cmd = new SqlCommand(
+                    "DELETE FROM Customer WHERE Customer_ID=@Customer_ID", con);
                 cmd.Parameters.AddWithValue("@Customer_ID", selectedCustomerId);
                 cmd.ExecuteNonQuery();
             }
@@ -149,16 +141,15 @@ namespace Bank__Management_System
             txtAddress.Clear();
             txtUsername.Clear();
             txtPassword.Clear();
-            selectedCustomerId = -1; // Reset selection
+            selectedCustomerId = -1;
         }
 
         // =========================
-        // DataGridView Row Click
-        // Load selected customer into input fields
+        // Load Selected Customer from Grid
         // =========================
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) // ignore header
+            if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 selectedCustomerId = Convert.ToInt32(row.Cells["Customer_ID"].Value);
