@@ -10,6 +10,7 @@ namespace Bank__Management_System
     {
         string connectionString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
         int selectedCustomerId = -1; // Track selected customer
+        private SqlConnection con;
 
         public Customer()
         {
