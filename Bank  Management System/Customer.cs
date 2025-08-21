@@ -17,6 +17,8 @@ namespace Bank__Management_System
 
         private void Customer_Load(object sender, EventArgs e)
         {
+            // Add debug message to confirm form load event fires
+            MessageBox.Show("Form is loading...");
             LoadCustomerData(); // Load grid on form load
         }
 
@@ -31,10 +33,17 @@ namespace Bank__Management_System
                 {
                     con.Open();
                     // Fixed table name from 'Customer' to 'Customers'
-                    SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Customers", con);
+                    SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Customers ORDER BY Customer_ID DESC", con);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
+
+                    // Clear existing data source and refresh
+                    GridCustomer.DataSource = null;
                     GridCustomer.DataSource = dt;
+                    GridCustomer.Refresh();
+
+                    // Debug info
+                    MessageBox.Show($"Loaded {dt.Rows.Count} customers from database.");
                 }
             }
             catch (Exception ex)
