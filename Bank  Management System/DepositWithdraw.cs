@@ -248,7 +248,6 @@ namespace Bank__Management_System
             if (selectedAccId == -1)
             {
                 MessageBox.Show("No account selected. Please ensure an account exists for this customer.");
-                // Try to reload the account
                 LoadCustomerAccount();
                 return;
             }
@@ -266,7 +265,6 @@ namespace Bank__Management_System
                 {
                     con.Open();
 
-                    // Use a transaction for safety
                     SqlTransaction transaction = con.BeginTransaction();
                     try
                     {
@@ -279,4 +277,64 @@ namespace Bank__Management_System
                         if (rows > 0)
                         {
                             // Log the transaction
-                            
+                            SqlCommand logCmd = new SqlCommand(
+                                "INSERT INTO transactions (Account_ID, Transaction_Type, Amount, Transaction_Date) VALUES (@aid, 'Withdraw', @amount, GETDATE())",
+                                con, transaction);
+                            logCmd.Parameters.AddWithValue("@aid", selectedAccId);
+                            logCmd.Parameters.AddWithValue("@amount", amount);
+
+                            try { logCmd.ExecuteNonQuery(); } catch { }
+
+                            transaction.Commit();
+
+                            currentBal = newBal;
+                            lblBalance.Text = $"Account: {selectedAccId}\nBalance: ${currentBal:F2}";
+                            txtAmount.Clear();
+
+                            // Raise event
+                            BalanceUpdated?.Invoke(selectedAccId, newBal);
+
+                            // Refresh other forms if needed
+                            RefreshAllAccountGrids();
+
+                            MessageBox.Show($"Withdrawal successful!\nNew Balance: ${newBal:F2}");
+                        }
+                        else
+                        {
+                            transaction.Rollback();
+                            MessageBox.Show("Withdrawal failed. Account not found.");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        throw ex;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error during withdrawal: {ex.Message}");
+                System.Diagnostics.Debug.WriteLine($"Withdraw Error: {ex}");
+            }
+        }
+
+        // Small helper – refresh account grids across app
+        private void RefreshAllAccountGrids()
+        {
+            try
+            {
+                foreach (Form form in Application.OpenForms)
+                {
+                    var method = form.GetType().GetMethod("ReloadAccounts");
+                    if (method != null)
+                    {
+                        method.Invoke(form, null);
+                    }
+                }
+            }
+            catch
+            {
+                // ignore if no such forms
+            }
+        }
