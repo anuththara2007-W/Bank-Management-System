@@ -158,6 +158,7 @@ namespace Bank__Management_System
             this.txtname.Name = "txtname";
             this.txtname.Size = new System.Drawing.Size(319, 27);
             this.txtname.TabIndex = 11;
+            this.txtname.TextChanged += new System.EventHandler(this.txtname_TextChanged);
             // 
             // txtCustomerName
             // 
