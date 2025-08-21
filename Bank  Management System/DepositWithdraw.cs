@@ -233,11 +233,6 @@ namespace Bank__Management_System
             }
         }
 
-        private void RefreshAllAccountGrids()
-        {
-            throw new NotImplementedException();
-        }
-
         private void btnWithdraw_Click(object sender, EventArgs e)
         {
             // Debug logging
@@ -283,8 +278,5 @@ namespace Bank__Management_System
                         int rows = cmd.ExecuteNonQuery();
                         if (rows > 0)
                         {
-                        }
-                    }}
-            }
                             // Log the transaction
                             
