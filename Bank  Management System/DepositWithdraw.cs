@@ -341,7 +341,7 @@ namespace Bank__Management_System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Main admins = new Main();
+            CustomerDashboard admins = new CustomerDashboard();
             admins.Show();
             this.Hide();
         }
