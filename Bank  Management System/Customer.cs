@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Bank__Management_System
@@ -13,7 +14,7 @@ namespace Bank__Management_System
         public Customer()
         {
             LoadCustomerData(); // also safe here
-
+    
             InitializeComponent();
         }
 
@@ -120,24 +121,26 @@ namespace Bank__Management_System
         // Update Button (Load selected row into fields)
         // =========================
         private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count > 0)
-            {
-                DataGridViewRow row = dataGridView1.SelectedRows[0];
-                selectedCustomerId = Convert.ToInt32(row.Cells["Customer_ID"].Value);
+        {// =========================
+         // Update existing Customer using Customer_Name
+         // =========================
+            SqlCommand cmd = new SqlCommand(
+                "UPDATE Customers SET Phone=@Phone, Email=@Email, Address=@Address, Username=@Username, Password=@Password " +
+                "WHERE Customer_Name=@Customer_Name", con);
 
-                txtCustomerName.Text = row.Cells["Customer_Name"].Value.ToString();
-                txtPhoneNo.Text = row.Cells["Phone"].Value.ToString();
-                txtEmail.Text = row.Cells["Email"].Value.ToString();
-                txtAddress.Text = row.Cells["Address"].Value.ToString();
-                txtUsername.Text = row.Cells["Username"].Value.ToString();
-                txtPassword.Text = row.Cells["Password"].Value.ToString();
-            }
+            cmd.Parameters.AddWithValue("@Customer_Name", txtCustomerName.Text);
+            cmd.Parameters.AddWithValue("@Phone", txtPhoneNo.Text);
+            cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
+            cmd.Parameters.AddWithValue("@Address", txtAddress.Text);
+            cmd.Parameters.AddWithValue("@Username", txtUsername.Text);
+            cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
+
+            int rows = cmd.ExecuteNonQuery();
+            if (rows > 0)
+                MessageBox.Show("✅ Customer Updated Successfully");
             else
-            {
-                MessageBox.Show("⚠ Please select a customer to update.");
-            }
-        }
+                MessageBox.Show("⚠ No customer found with that name!");
+
 
         // =========================
         // Delete Customer
