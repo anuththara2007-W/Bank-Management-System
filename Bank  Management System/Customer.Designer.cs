@@ -212,6 +212,7 @@
             this.GridCustomer.RowTemplate.Height = 24;
             this.GridCustomer.Size = new System.Drawing.Size(1128, 237);
             this.GridCustomer.TabIndex = 15;
+            this.GridCustomer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridCustomer_CellClick);
             // 
             // btnGoBack
             // 
