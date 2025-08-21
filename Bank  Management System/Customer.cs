@@ -178,9 +178,6 @@ namespace Bank__Management_System
         // =========================
         // Load on Form Start
         // =========================
-        private void Customer_Load(object sender, EventArgs e)
-        {
-            LoadCustomerData();
-        }
+        
     }
 }
