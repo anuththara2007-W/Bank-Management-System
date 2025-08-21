@@ -128,6 +128,7 @@ namespace Bank__Management_System
             this.btnGoBack.TabIndex = 6;
             this.btnGoBack.Text = "Go Back";
             this.btnGoBack.UseVisualStyleBackColor = false;
+            this.btnGoBack.Click += new System.EventHandler(this.btnGoBack_Click);
             // 
             // txtAccountType
             // 
