@@ -87,7 +87,7 @@ namespace Bank__Management_System
             {
                 con.Open();
                 SqlCommand cmd = new SqlCommand("DELETE FROM Customers WHERE Username = @Username", con);
-                cmd.Parameters.AddWithValue("@Username", username);
+                cmd.Parameters.AddWithValue("@Username", txtCustomerName.Text);
                 cmd.ExecuteNonQuery();
                 cmd.ExecuteNonQuery();
             }
