@@ -2,7 +2,6 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Bank__Management_System
 {
@@ -86,10 +85,11 @@ namespace Bank__Management_System
             using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("DELETE FROM Customers WHERE Username = @Username", con);
-                cmd.Parameters.AddWithValue("@Username", username);
+
+                SqlCommand cmd = new SqlCommand("DELETE FROM Customer WHERE Customer_ID = @Customer_ID", con);
+                cmd.Parameters.AddWithValue("@Customer_ID", int.Parse(txtCustomerID.Text));
+
                 cmd.ExecuteNonQuery();
-             
             }
 
             MessageBox.Show("Record Deleted Successfully");
