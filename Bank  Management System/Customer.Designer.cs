@@ -41,13 +41,13 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.GridCustomer = new System.Windows.Forms.DataGridView();
             this.btnGoBack = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridCustomer)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -198,20 +198,20 @@
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // dataGridView1
+            // GridCustomer
             // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.WindowText;
-            this.dataGridView1.Location = new System.Drawing.Point(77, 504);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1128, 237);
-            this.dataGridView1.TabIndex = 15;
+            this.GridCustomer.AllowUserToOrderColumns = true;
+            this.GridCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.GridCustomer.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.GridCustomer.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.GridCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridCustomer.GridColor = System.Drawing.SystemColors.WindowText;
+            this.GridCustomer.Location = new System.Drawing.Point(77, 504);
+            this.GridCustomer.Name = "GridCustomer";
+            this.GridCustomer.RowHeadersWidth = 51;
+            this.GridCustomer.RowTemplate.Height = 24;
+            this.GridCustomer.Size = new System.Drawing.Size(1128, 237);
+            this.GridCustomer.TabIndex = 15;
             // 
             // btnGoBack
             // 
@@ -285,7 +285,7 @@
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.btnGoBack);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.GridCustomer);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnSave);
@@ -300,7 +300,7 @@
             this.Name = "Customer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridCustomer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,7 +319,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView GridCustomer;
         private System.Windows.Forms.Button btnGoBack;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtUsername;

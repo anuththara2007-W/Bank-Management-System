@@ -31,7 +31,7 @@ namespace Bank__Management_System
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Customer", con);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                dataGridView1.DataSource = dt;
+                GridCustomer.DataSource = dt;
             }
         }
 
@@ -151,7 +151,7 @@ namespace Bank__Management_System
         {
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                DataGridViewRow row = GridCustomer.Rows[e.RowIndex];
                 selectedCustomerId = Convert.ToInt32(row.Cells["Customer_ID"].Value);
                 txtCustomerName.Text = row.Cells["Customer_Name"].Value.ToString();
                 txtPhoneNo.Text = row.Cells["Phone"].Value.ToString();
