@@ -12,6 +12,8 @@ namespace Bank__Management_System
 
         public Customer()
         {
+            LoadCustomerData(); // also safe here
+
             InitializeComponent();
         }
 
