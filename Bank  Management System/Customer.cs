@@ -64,10 +64,7 @@ namespace Bank__Management_System
             }
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
 
