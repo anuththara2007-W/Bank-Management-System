@@ -168,5 +168,10 @@ namespace Bank__Management_System
                 dataGridView1.DataSource = dt;
             }
         }
+
+        private void btnPickCustomer_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
