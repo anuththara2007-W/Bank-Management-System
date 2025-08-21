@@ -50,7 +50,6 @@ namespace Bank__Management_System
                 {
                     con.Open();
 
-                    // ✅ Ensure customer exists
                     SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM Customers WHERE Customer_ID = @cid", con);
                     checkCmd.Parameters.AddWithValue("@cid", int.Parse(txtCustomerID.Text));
                     int exists = (int)checkCmd.ExecuteScalar();
@@ -61,7 +60,6 @@ namespace Bank__Management_System
                         return;
                     }
 
-                    // ✅ Insert without Account_ID (auto identity)
                     SqlCommand cmd = new SqlCommand(
                         "INSERT INTO Accounts (Account_Type, Balance, Date_Opened, Customer_Name, Customer_ID) " +
                         "VALUES (@account_type, @balance, @date_opened, @customer_name, @customer_id)", con);
@@ -94,7 +92,6 @@ namespace Bank__Management_System
                 {
                     con.Open();
 
-                    // ✅ Update by Customer_ID (not Account_ID)
                     SqlCommand cmd = new SqlCommand(
                         "UPDATE Accounts SET Account_Type=@account_type, Balance=@balance, Date_Opened=@date_opened, Customer_Name=@customer_name " +
                         "WHERE Customer_ID=@customer_id", con);
@@ -132,7 +129,6 @@ namespace Bank__Management_System
                 {
                     con.Open();
 
-                    // ✅ Delete by Customer_ID (no Account_ID)
                     SqlCommand cmd = new SqlCommand("DELETE FROM Accounts WHERE Customer_ID=@customer_id", con);
                     cmd.Parameters.AddWithValue("@customer_id", int.Parse(txtCustomerID.Text));
 
@@ -169,11 +165,57 @@ namespace Bank__Management_System
             }
         }
 
+        // Customer Picker Button - Shows popup with customers
         private void btnPickCustomer_Click(object sender, EventArgs e)
         {
-            
+            ShowCustomerPicker();
         }
 
-   
+        private void ShowCustomerPicker()
+        {
+            // Create popup form
+            Form popup = new Form();
+            popup.Text = "Select Customer";
+            popup.Size = new System.Drawing.Size(600, 400);
+            popup.StartPosition = FormStartPosition.CenterParent;
+
+            // Create DataGridView for customers
+            DataGridView customerGrid = new DataGridView();
+            customerGrid.Dock = DockStyle.Fill;
+            customerGrid.ReadOnly = true;
+            customerGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            // Load customers into popup grid
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connString))
+                {
+                    con.Open();
+                    string query = "SELECT Customer_ID, Customer_Name, phone, Email FROM Customers ORDER BY Customer_Name";
+                    SqlDataAdapter da = new SqlDataAdapter(query, con);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    customerGrid.DataSource = dt;
+                }
+
+                // Handle customer selection
+                customerGrid.CellDoubleClick += (s, args) => {
+                    if (args.RowIndex >= 0)
+                    {
+                        DataGridViewRow row = customerGrid.Rows[args.RowIndex];
+                        txtCustomerID.Text = row.Cells["Customer_ID"].Value.ToString();
+                        txtname.Text = row.Cells["Customer_Name"].Value.ToString();
+                        popup.Close();
+                    }
+                };
+
+                popup.Controls.Add(customerGrid);
+                popup.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading customers: " + ex.Message);
+            }
+        }
     }
 }
