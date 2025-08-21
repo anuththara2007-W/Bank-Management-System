@@ -140,6 +140,7 @@ namespace Bank__Management_System
                 MessageBox.Show("✅ Customer Updated Successfully");
             else
                 MessageBox.Show("⚠ No customer found with that name!");
+        }
 
 
         // =========================
