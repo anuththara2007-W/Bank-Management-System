@@ -17,7 +17,7 @@ namespace Bank__Management_System
         }
 
         // Save / Add
-        private void button1_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False"))
             {
@@ -115,10 +115,6 @@ namespace Bank__Management_System
             this.Hide();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-
-        }
 
         // New: DataGridView CellClick to load selected row data into form fields for update/delete
 
