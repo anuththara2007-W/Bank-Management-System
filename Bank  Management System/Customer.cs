@@ -100,10 +100,7 @@ namespace Bank__Management_System
         }
 
         // Form Load
-        private void Customer_Load(object sender, EventArgs e)
-        {
-            LoadCustomerData();
-        }
+     
 
         // Optional: You can link this to your "Load" or "Refresh" button
         private void btnAdd_Click(object sender, EventArgs e)
