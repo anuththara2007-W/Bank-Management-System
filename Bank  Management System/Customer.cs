@@ -14,10 +14,14 @@ namespace Bank__Management_System
 
         public Customer()
         {
-            LoadCustomerData(); // also safe here
-    
             InitializeComponent();
         }
+
+        private void Customer_Load(object sender, EventArgs e)
+        {
+            LoadCustomerData(); // safe, runs after form + controls created
+        }
+
 
         // =========================
         // Save / Add or Update Customer
