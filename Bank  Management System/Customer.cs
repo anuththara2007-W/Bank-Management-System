@@ -17,9 +17,52 @@ namespace Bank__Management_System
 
         private void Customer_Load(object sender, EventArgs e)
         {
-            // Add debug message to confirm form load event fires
-            MessageBox.Show("Form is loading...");
+            SetupGrid(); // Setup grid structure first
             LoadCustomerData(); // Load grid on form load
+        }
+
+        // =========================
+        // Setup Grid Structure
+        // =========================
+        private void SetupGrid()
+        {
+            try
+            {
+                // Clear existing columns
+                GridCustomer.Columns.Clear();
+
+                // Add columns manually to ensure grid shows even when empty
+                GridCustomer.Columns.Add("Customer_ID", "ID");
+                GridCustomer.Columns.Add("Customer_Name", "Name");
+                GridCustomer.Columns.Add("phone", "Phone");
+                GridCustomer.Columns.Add("Email", "Email");
+                GridCustomer.Columns.Add("Address", "Address");
+                GridCustomer.Columns.Add("Username", "Username");
+                GridCustomer.Columns.Add("Password", "Password");
+
+                // Set column widths
+                GridCustomer.Columns["Customer_ID"].Width = 60;
+                GridCustomer.Columns["Customer_Name"].Width = 150;
+                GridCustomer.Columns["phone"].Width = 120;
+                GridCustomer.Columns["Email"].Width = 180;
+                GridCustomer.Columns["Address"].Width = 200;
+                GridCustomer.Columns["Username"].Width = 100;
+                GridCustomer.Columns["Password"].Width = 100;
+
+                // Make ID column read-only
+                GridCustomer.Columns["Customer_ID"].ReadOnly = true;
+
+                // Set grid properties
+                GridCustomer.AllowUserToAddRows = false;
+                GridCustomer.AllowUserToDeleteRows = false;
+                GridCustomer.ReadOnly = true;
+                GridCustomer.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                GridCustomer.MultiSelect = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error setting up grid: {ex.Message}");
+            }
         }
 
         // =========================
@@ -32,23 +75,41 @@ namespace Bank__Management_System
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
-                    // Fixed table name from 'Customer' to 'Customers'
-                    SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Customers ORDER BY Customer_ID DESC", con);
+                    SqlDataAdapter da = new SqlDataAdapter("SELECT Customer_ID, Customer_Name, phone, Email, Address, Username, Password FROM Customers ORDER BY Customer_ID DESC", con);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
 
-                    // Clear existing data source and refresh
-                    GridCustomer.DataSource = null;
-                    GridCustomer.DataSource = dt;
-                    GridCustomer.Refresh();
+                    // Clear existing rows
+                    GridCustomer.Rows.Clear();
 
-                    // Debug info
-                    MessageBox.Show($"Loaded {dt.Rows.Count} customers from database.");
+                    // Add data to grid manually
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        GridCustomer.Rows.Add(
+                            row["Customer_ID"],
+                            row["Customer_Name"],
+                            row["phone"],
+                            row["Email"],
+                            row["Address"],
+                            row["Username"],
+                            row["Password"]
+                        );
+                    }
+
+                    // Update status
+                    if (dt.Rows.Count > 0)
+                    {
+                        MessageBox.Show($"✅ Loaded {dt.Rows.Count} customers");
+                    }
+                    else
+                    {
+                        MessageBox.Show("📋 No customers found. Grid is ready for new entries.");
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error loading customer data: {ex.Message}");
+                MessageBox.Show($"❌ Error loading customer data: {ex.Message}");
             }
         }
 
@@ -195,12 +256,12 @@ namespace Bank__Management_System
         {
             try
             {
-                if (e.RowIndex >= 0)
+                if (e.RowIndex >= 0 && GridCustomer.Rows[e.RowIndex].Cells["Customer_ID"].Value != null)
                 {
                     DataGridViewRow row = GridCustomer.Rows[e.RowIndex];
                     selectedCustomerId = Convert.ToInt32(row.Cells["Customer_ID"].Value);
                     txtCustomerName.Text = row.Cells["Customer_Name"].Value?.ToString() ?? "";
-                    txtPhoneNo.Text = row.Cells["phone"].Value?.ToString() ?? "";  // Fixed column name
+                    txtPhoneNo.Text = row.Cells["phone"].Value?.ToString() ?? "";
                     txtEmail.Text = row.Cells["Email"].Value?.ToString() ?? "";
                     txtAddress.Text = row.Cells["Address"].Value?.ToString() ?? "";
                     txtUsername.Text = row.Cells["Username"].Value?.ToString() ?? "";
@@ -211,6 +272,14 @@ namespace Bank__Management_System
             {
                 MessageBox.Show($"Error loading customer data: {ex.Message}");
             }
+        }
+
+        // =========================
+        // Add Refresh Button Method (Optional)
+        // =========================
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadCustomerData();
         }
     }
 }
