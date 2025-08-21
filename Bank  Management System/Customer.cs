@@ -63,6 +63,11 @@ namespace Bank__Management_System
                 dataGridView1.DataSource = table;
             }
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
