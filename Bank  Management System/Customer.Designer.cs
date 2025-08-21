@@ -230,6 +230,7 @@
             this.btnGoBack.TabIndex = 16;
             this.btnGoBack.Text = "Go Back";
             this.btnGoBack.UseVisualStyleBackColor = false;
+            this.btnGoBack.Click += new System.EventHandler(this.btnGoBack_Click);
             // 
             // txtPassword
             // 

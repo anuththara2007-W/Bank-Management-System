@@ -275,5 +275,10 @@ namespace Bank__Management_System
                 MessageBox.Show($"❌ Connection failed: {ex.Message}");
             }
         }
+
+        private void btnGoBack_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
