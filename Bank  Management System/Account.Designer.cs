@@ -353,7 +353,6 @@ namespace Bank__Management_System
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
         }
 
         #endregion
