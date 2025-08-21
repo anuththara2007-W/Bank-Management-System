@@ -17,7 +17,7 @@ namespace Bank__Management_System
 
         private void Customer_Load(object sender, EventArgs e)
         {
-            LoadCustomerData(); // Load grid when form opens
+            LoadCustomerData(); // Load grid on form load
         }
 
         // =========================
@@ -31,7 +31,7 @@ namespace Bank__Management_System
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Customer", con);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                GridCustomer.DataSource = dt;
+                GridCustomer.DataSource = dt; // Updated grid name
             }
         }
 
@@ -52,6 +52,7 @@ namespace Bank__Management_System
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
+
                 SqlCommand cmd = new SqlCommand(
                     "INSERT INTO Customer (Customer_Name, Phone, Email, Address, Username, Password) " +
                     "VALUES (@Customer_Name, @Phone, @Email, @Address, @Username, @Password)", con);
@@ -85,6 +86,7 @@ namespace Bank__Management_System
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
+
                 SqlCommand cmd = new SqlCommand(
                     "UPDATE Customer SET Customer_Name=@Customer_Name, Phone=@Phone, Email=@Email, " +
                     "Address=@Address, Username=@Username, Password=@Password WHERE Customer_ID=@Customer_ID", con);
@@ -119,6 +121,7 @@ namespace Bank__Management_System
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
+
                 SqlCommand cmd = new SqlCommand(
                     "DELETE FROM Customer WHERE Customer_ID=@Customer_ID", con);
                 cmd.Parameters.AddWithValue("@Customer_ID", selectedCustomerId);
@@ -147,7 +150,7 @@ namespace Bank__Management_System
         // =========================
         // Load Selected Customer from Grid
         // =========================
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void GridCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
