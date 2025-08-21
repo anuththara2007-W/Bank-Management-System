@@ -11,10 +11,13 @@ namespace Bank__Management_System
         public Customer()
         {
             InitializeComponent();
-
-            // Hook the DataGridView CellClick event here
-
         }
+
+        private void Customer_Load(object sender, EventArgs e)
+        {
+            LoadCustomerData(); // safe, runs after form + controls created
+        }
+
 
         // Save / Add
         private void btnSave_Click(object sender, EventArgs e)
