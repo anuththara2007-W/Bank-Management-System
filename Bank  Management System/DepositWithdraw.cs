@@ -26,6 +26,10 @@ namespace Bank__Management_System
             this.v = v;
         }
 
+        public DepositWithdraw()
+        {
+        }
+
         // Load accounts when form opens
         private void DepositWithdraw_Load(object sender, EventArgs e)
         {
