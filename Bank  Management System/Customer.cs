@@ -172,7 +172,7 @@ namespace Bank__Management_System
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (selectedCustomerId == -1)
-            {
+            { jjjjjjjjjjjj
                 MessageBox.Show("⚠ Select a customer first!");
                 return;
             }
