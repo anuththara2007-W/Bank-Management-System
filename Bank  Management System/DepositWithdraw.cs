@@ -191,5 +191,10 @@ namespace Bank__Management_System
                 MessageBox.Show("Withdraw error: " + ex.Message);
             }
         }
+
+        private void btnGoBack_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
