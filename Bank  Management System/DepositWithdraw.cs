@@ -11,19 +11,8 @@ namespace Bank__Management_System
 
         public DepositWithdraw()
         {
-        }
-
-        public DepositWithdraw(int customerID)
-        {
             InitializeComponent();
         }
-
-        public DepositWithdraw(int customerID, string v) : this(customerID)
-        {
-            V = v;
-        }
-
-        public string V { get; }
 
         // 🔹 Load event of the form
         private void DepositWithdraw_Load(object sender, EventArgs e)
