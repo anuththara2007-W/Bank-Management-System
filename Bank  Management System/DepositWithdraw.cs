@@ -1,202 +1,45 @@
-﻿using BankApp;
-using System;
-using System.Data;
-using System.Data.SqlClient;
-using System.Windows.Forms;
-
-namespace Bank__Management_System
+﻿private void LoadAccountsToGrid()
 {
-    public partial class DepositWithdraw : Form
+    if (GetCustomerID() == 0) return;
+
+    try
     {
-        private int selectedAccId = -1;
-        private decimal currentBal = 0m;
-        private int custId;
-        private string custName;
-        private string connString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
-
-        public DepositWithdraw()
+        using (SqlConnection con = new SqlConnection(connString))
         {
-            InitializeComponent();
-            this.Load += DepositWithdraw_Load; // ensure load event is attached
-        }
+            con.Open();
+            SqlCommand cmd = new SqlCommand(
+                "SELECT Account_ID, Account_Type, Balance FROM Accounts WHERE Customer_ID=@cid",
+                con);
+            cmd.Parameters.AddWithValue("@cid", GetCustomerID());
 
-        public DepositWithdraw(int customerID, string customerName) : this()
-        {
-            custId = customerID;
-            custName = customerName;
-        }
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
 
-        private void DepositWithdraw_Load(object sender, EventArgs e)
-        {
-            LoadCustomerAccount();
-            LoadAccountsToGrid(); // ✅ populate grid automatically
-        }
+            gridAccounts.DataSource = dt;
+            gridAccounts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-        // Load all accounts into DataGridView
-        private void LoadAccountsToGrid()
-        {
-            if (GetCustomerID() == 0) return;
-
-            try
+            // 🔹 Auto-select the first row
+            if (gridAccounts.Rows.Count > 0)
             {
-                using (SqlConnection con = new SqlConnection(connString))
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand(
-                        "SELECT Account_ID, Account_Type, Balance FROM Accounts WHERE Customer_ID=@cid",
-                        con);
-                    cmd.Parameters.AddWithValue("@cid", GetCustomerID());
-
-                    DataTable dt = new DataTable();
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    da.Fill(dt);
-
-                    gridAccounts.DataSource = dt; // 🔹 make sure your DataGridView is named gridAccounts
-                    gridAccounts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                }
+                gridAccounts.Rows[0].Selected = true;
+                selectedAccId = Convert.ToInt32(gridAccounts.Rows[0].Cells["Account_ID"].Value);
+                currentBal = Convert.ToDecimal(gridAccounts.Rows[0].Cells["Balance"].Value);
+                lblBalance.Text = $"Account: {selectedAccId} ({gridAccounts.Rows[0].Cells["Account_Type"].Value})\nBalance: ${currentBal:F2}";
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error loading accounts: " + ex.Message);
-            }
-        }
 
-        private void LoadCustomerAccount()
-        {
-            try
-            {
-                int customerIdToUse = GetCustomerID();
-                if (customerIdToUse == 0)
-                {
-                    MessageBox.Show("Customer ID not found. Please login again.");
-                    this.Close();
-                    return;
-                }
-
-                using (SqlConnection con = new SqlConnection(connString))
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand(
-                        "SELECT TOP 1 Account_ID, Balance, Account_Type FROM Accounts WHERE Customer_ID=@cid ORDER BY Account_ID", con);
-                    cmd.Parameters.AddWithValue("@cid", customerIdToUse);
-
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    if (reader.Read())
-                    {
-                        selectedAccId = Convert.ToInt32(reader["Account_ID"]);
-                        currentBal = Convert.ToDecimal(reader["Balance"]);
-                        string accountType = reader["Account_Type"].ToString();
-
-                        lblBalance.Text = $"Account: {selectedAccId} ({accountType})\nBalance: ${currentBal:F2}";
-                        custId = customerIdToUse;
-                    }
-                    reader.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error loading account: " + ex.Message);
-                this.Close();
-            }
-        }
-
-        private int GetCustomerID()
-        {
-            if (custId > 0) return custId;
-            try { return Session.CustomerID; }
-            catch { return 0; }
-        }
-
-        // Call this after deposit/withdraw to refresh the grid
-        private void RefreshGrid() => LoadAccountsToGrid();
-
-        private void btnDeposit_Click(object sender, EventArgs e)
-        {
-            if (!decimal.TryParse(txtAmount.Text, out decimal amount) || amount <= 0) return;
-            if (selectedAccId == -1) return;
-
-            try
-            {
-                decimal newBal = currentBal + amount;
-                using (SqlConnection con = new SqlConnection(connString))
-                {
-                    con.Open();
-                    SqlTransaction tran = con.BeginTransaction();
-                    SqlCommand cmd = new SqlCommand(
-                        "UPDATE Accounts SET Balance=@bal WHERE Account_ID=@aid", con, tran);
-                    cmd.Parameters.AddWithValue("@bal", newBal);
-                    cmd.Parameters.AddWithValue("@aid", selectedAccId);
-                    cmd.ExecuteNonQuery();
-
-                    SqlCommand logCmd = new SqlCommand(
-                        "INSERT INTO Transactions (Account_ID, Transaction_Type, Amount, Transaction_Date) VALUES (@aid,'Deposit',@amt,GETDATE())",
-                        con, tran);
-                    logCmd.Parameters.AddWithValue("@aid", selectedAccId);
-                    logCmd.Parameters.AddWithValue("@amt", amount);
-                    logCmd.ExecuteNonQuery();
-
-                    tran.Commit();
-
-                    currentBal = newBal;
-                    lblBalance.Text = $"Account: {selectedAccId}\nBalance: ${currentBal:F2}";
-                    txtAmount.Clear();
-
-                    RefreshGrid();
-                    MessageBox.Show("Deposit successful!");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Deposit error: " + ex.Message);
-            }
-        }
-
-        private void btnWithdraw_Click(object sender, EventArgs e)
-        {
-            if (!decimal.TryParse(txtAmount.Text, out decimal amount) || amount <= 0) return;
-            if (selectedAccId == -1 || amount > currentBal) return;
-
-            try
-            {
-                decimal newBal = currentBal - amount;
-                using (SqlConnection con = new SqlConnection(connString))
-                {
-                    con.Open();
-                    SqlTransaction tran = con.BeginTransaction();
-                    SqlCommand cmd = new SqlCommand(
-                        "UPDATE Accounts SET Balance=@bal WHERE Account_ID=@aid", con, tran);
-                    cmd.Parameters.AddWithValue("@bal", newBal);
-                    cmd.Parameters.AddWithValue("@aid", selectedAccId);
-                    cmd.ExecuteNonQuery();
-
-                    SqlCommand logCmd = new SqlCommand(
-                        "INSERT INTO Transactions (Account_ID, Transaction_Type, Amount, Transaction_Date) VALUES (@aid,'Withdraw',@amt,GETDATE())",
-                        con, tran);
-                    logCmd.Parameters.AddWithValue("@aid", selectedAccId);
-                    logCmd.Parameters.AddWithValue("@amt", amount);
-                    logCmd.ExecuteNonQuery();
-
-                    tran.Commit();
-
-                    currentBal = newBal;
-                    lblBalance.Text = $"Account: {selectedAccId}\nBalance: ${currentBal:F2}";
-                    txtAmount.Clear();
-
-                    RefreshGrid();
-                    MessageBox.Show("Withdrawal successful!");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Withdraw error: " + ex.Message);
-            }
-        }
-
-        private void btnGoBack_Click(object sender, EventArgs e)
-        {
-            CustomerDashboard customerdash = new CustomerDashboard();
-            customerdash.Show();
-            this.Hide();
+            gridAccounts.Refresh(); // Force UI to redraw
         }
     }
+    catch (Exception ex)
+    {
+        MessageBox.Show("Error loading accounts: " + ex.Message);
+    }
+}
+
+// ✅ After deposit or withdraw, call this to refresh immediately
+private void RefreshGrid()
+{
+    LoadAccountsToGrid(); // reload from DB
+    gridAccounts.Refresh(); // redraw UI
 }
