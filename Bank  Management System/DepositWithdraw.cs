@@ -204,3 +204,85 @@ namespace Bank__Management_System
         // ✅ Withdraw (same pattern)
         private void btnWithdraw_Click(object sender, EventArgs e)
         {
+            if (!decimal.TryParse(txtAmount.Text, out decimal amount) || amount <= 0)
+            {
+                MessageBox.Show("Please enter a valid amount greater than 0.");
+                return;
+            }
+
+            if (selectedAccId == -1)
+            {
+                MessageBox.Show("Please select an account first.");
+                return;
+            }
+
+            if (amount > currentBal)
+            {
+                MessageBox.Show($"Insufficient balance.\nCurrent Balance: ${currentBal:F2}");
+                return;
+            }
+
+            decimal newBal = currentBal - amount;
+
+            try
+            {
+                using (SqlConnection con = DatabaseHelper.GetConnection())
+                {
+                    con.Open();
+                    SqlTransaction transaction = con.BeginTransaction();
+
+                    try
+                    {
+                        SqlCommand cmd = new SqlCommand(
+                            "UPDATE accounts SET Balance=@bal WHERE Account_ID=@aid", con, transaction);
+                        cmd.Parameters.AddWithValue("@bal", newBal);
+                        cmd.Parameters.AddWithValue("@aid", selectedAccId);
+
+                        int rows = cmd.ExecuteNonQuery();
+                        if (rows > 0)
+                        {
+                            SqlCommand logCmd = new SqlCommand(
+                                "INSERT INTO transactions (Account_ID, Transaction_Type, Amount, Transaction_Date) " +
+                                "VALUES (@aid, 'Withdraw', @amount, GETDATE())", con, transaction);
+                            logCmd.Parameters.AddWithValue("@aid", selectedAccId);
+                            logCmd.Parameters.AddWithValue("@amount", amount);
+                            try { logCmd.ExecuteNonQuery(); } catch { }
+
+                            transaction.Commit();
+
+                            currentBal = newBal;
+                            lblBalance.Text = $"Account: {selectedAccId}\nBalance: ${currentBal:F2}";
+                            txtAmount.Clear();
+
+                            BalanceUpdated?.Invoke(selectedAccId, newBal);
+                            LoadCustomerAccountsIntoGrid(); // refresh grid
+
+                            MessageBox.Show($"Withdrawal successful!\nNew Balance: ${newBal:F2}");
+                        }
+                        else
+                        {
+                            transaction.Rollback();
+                            MessageBox.Show("Withdrawal failed. Account not found.");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        MessageBox.Show($"Error: {ex.Message}");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error during withdrawal: {ex.Message}");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CustomerDashboard admins = new CustomerDashboard();
+            admins.Show();
+            this.Hide();
+        }
+    }
+}
