@@ -51,7 +51,6 @@ namespace BankApp
             this.btnTransfer.TabIndex = 10;
             this.btnTransfer.Text = "Transfer";
             this.btnTransfer.UseVisualStyleBackColor = true;
-            this.btnTransfer.Click += new System.EventHandler(this.btnTransfer_Click_1);
             // 
             // txtToAccount
             // 
@@ -93,7 +92,6 @@ namespace BankApp
             this.btnGoBack.TabIndex = 22;
             this.btnGoBack.Text = "Go Back";
             this.btnGoBack.UseVisualStyleBackColor = true;
-            this.btnGoBack.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtPurpose
             // 
@@ -147,16 +145,13 @@ namespace BankApp
             this.Controls.Add(this.lblToAccount);
             this.Name = "TransferFunds";
             this.Text = "TransferFunds";
-            this.Load += new System.EventHandler(this.TransferFunds_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TransactionsGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
-        private void TransferFunds_Load(object sender, EventArgs e)
-        {
-        }
+       
 
         #endregion
         private System.Windows.Forms.Button btnTransfer;
