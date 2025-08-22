@@ -36,8 +36,8 @@ namespace Bank__Management_System
             this.btnDeposit = new System.Windows.Forms.Button();
             this.btnWithdraw = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.lblBalance = new System.Windows.Forms.Label();
             this.gridAccounts = new System.Windows.Forms.DataGridView();
+            this.lblBalance = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridAccounts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,6 +95,16 @@ namespace Bank__Management_System
             this.button1.Text = "Go Back";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // gridAccounts
+            // 
+            this.gridAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridAccounts.Location = new System.Drawing.Point(57, 364);
+            this.gridAccounts.Name = "gridAccounts";
+            this.gridAccounts.RowHeadersWidth = 51;
+            this.gridAccounts.RowTemplate.Height = 24;
+            this.gridAccounts.Size = new System.Drawing.Size(868, 167);
+            this.gridAccounts.TabIndex = 18;
+            // 
             // lblBalance
             // 
             this.lblBalance.AutoSize = true;
@@ -104,23 +114,13 @@ namespace Bank__Management_System
             this.lblBalance.TabIndex = 19;
             this.lblBalance.Text = "0";
             // 
-            // gridAccounts
-            // 
-            this.gridAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridAccounts.Location = new System.Drawing.Point(15, 288);
-            this.gridAccounts.Name = "gridAccounts";
-            this.gridAccounts.RowHeadersWidth = 51;
-            this.gridAccounts.RowTemplate.Height = 24;
-            this.gridAccounts.Size = new System.Drawing.Size(923, 200);
-            this.gridAccounts.TabIndex = 20;
-            // 
             // DepositWithdraw
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 577);
-            this.Controls.Add(this.gridAccounts);
             this.Controls.Add(this.lblBalance);
+            this.Controls.Add(this.gridAccounts);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnWithdraw);
             this.Controls.Add(this.btnDeposit);
@@ -145,7 +145,7 @@ namespace Bank__Management_System
         private System.Windows.Forms.Button btnDeposit;
         private System.Windows.Forms.Button btnWithdraw;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label lblBalance;
         private System.Windows.Forms.DataGridView gridAccounts;
+        private System.Windows.Forms.Label lblBalance;
     }
 }

@@ -1,6 +1,5 @@
 ﻿using BankApp;
 using System;
-using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -8,208 +7,342 @@ namespace Bank__Management_System
 {
     public partial class DepositWithdraw : Form
     {
-        // Database connection string
-        string connString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
+        private int selectedAccId = -1;
+        private decimal currentBal = 0m;
+        private int custId;
+        private string custName;
 
-        // To track selected account
-        int selectedAccountId = -1;
-        decimal currentBalance = 0;
-        private string v;
+        // Add event for balance updates
+        public delegate void BalanceUpdatedEventHandler(int accountId, decimal newBalance);
+        public event BalanceUpdatedEventHandler BalanceUpdated;
 
-        public DepositWithdraw(int customerID)
+        public DepositWithdraw()
         {
             InitializeComponent();
         }
 
-        public DepositWithdraw(int customerID, string v) : this(customerID)
+        public DepositWithdraw(int customerID, string customerName) : this()
         {
-            this.v = v;
+            custId = customerID;
+            custName = customerName;
         }
 
-        public DepositWithdraw()
-        {
-        }
-
-        // Load accounts when form opens
         private void DepositWithdraw_Load(object sender, EventArgs e)
         {
+            LoadCustomerAccount();
+        }
+
+        private void LoadCustomerAccount()
+        {
             try
             {
-                using (SqlConnection con = new SqlConnection(connString))
+                int customerIdToUse = GetCustomerID();
+
+                // Debug logging
+                System.Diagnostics.Debug.WriteLine($"Customer ID to use: {customerIdToUse}");
+
+                if (customerIdToUse == 0)
+                {
+                    MessageBox.Show("Customer ID not found. Please login again.");
+                    this.Close();
+                    return;
+                }
+
+                using (SqlConnection con = DatabaseHelper.GetConnection())
                 {
                     con.Open();
 
-                    // Get all accounts of this customer
-                    SqlDataAdapter da = new SqlDataAdapter(
-                        "SELECT Account_ID, Account_Type, Balance FROM Accounts WHERE Customer_ID=@cid", con);
-                    da.SelectCommand.Parameters.AddWithValue("@cid", Session.CustomerID);
+                    // First, let's see all accounts for this customer
+                    string debugQuery = "SELECT Account_ID, Balance, Account_Type FROM accounts WHERE Customer_ID = @cid";
+                    SqlCommand debugCmd = new SqlCommand(debugQuery, con);
+                    debugCmd.Parameters.AddWithValue("@cid", customerIdToUse);
 
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
+                    SqlDataReader debugReader = debugCmd.ExecuteReader();
+                    System.Diagnostics.Debug.WriteLine($"Accounts for Customer {customerIdToUse}:");
+                    while (debugReader.Read())
+                    {
+                        System.Diagnostics.Debug.WriteLine($"Account ID: {debugReader["Account_ID"]}, Balance: {debugReader["Balance"]}, Type: {debugReader["Account_Type"]}");
+                    }
+                    debugReader.Close();
 
-                    // Show accounts in grid
-                    gridAccounts.DataSource = dt;
+                    // Now get the first account (or you can let user select)
+                    SqlCommand cmd = new SqlCommand(
+                        "SELECT TOP 1 Account_ID, Balance, Account_Type FROM accounts WHERE Customer_ID = @cid ORDER BY Account_ID", con);
+                    cmd.Parameters.AddWithValue("@cid", customerIdToUse);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        selectedAccId = Convert.ToInt32(reader["Account_ID"]);
+                        currentBal = Convert.ToDecimal(reader["Balance"]);
+                        string accountType = reader["Account_Type"].ToString();
+
+                        // Update the label with more information
+                        lblBalance.Text = $"Account: {selectedAccId} ({accountType})\nBalance: ${currentBal:F2}";
+                        custId = customerIdToUse;
+
+                        // Debug logging
+                        System.Diagnostics.Debug.WriteLine($"Selected Account ID: {selectedAccId}, Balance: {currentBal}");
+                    }
+                    else
+                    {
+                        MessageBox.Show($"No account found for Customer ID: {customerIdToUse}\n\nPlease create an account first.");
+                        this.Close();
+                    }
+                    reader.Close();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error loading accounts: " + ex.Message);
+                MessageBox.Show($"Error loading account: {ex.Message}\n\nDetails: {ex.StackTrace}");
+                System.Diagnostics.Debug.WriteLine($"LoadCustomerAccount Error: {ex}");
+                this.Close();
             }
         }
 
-        // When user clicks on a row in grid
-        private void gridAccounts_CellClick(object sender, DataGridViewCellEventArgs e)
+        private int GetCustomerID()
         {
-            if (e.RowIndex >= 0)
+            // Method 1: Use constructor parameter if available
+            if (custId > 0)
             {
-                DataGridViewRow row = gridAccounts.Rows[e.RowIndex];
-                selectedAccountId = Convert.ToInt32(row.Cells["Account_ID"].Value);
-                currentBalance = Convert.ToDecimal(row.Cells["Balance"].Value);
-                lblBalance.Text = "Balance: " + currentBalance.ToString("C");
+                System.Diagnostics.Debug.WriteLine($"Using constructor custId: {custId}");
+                return custId;
             }
+
+            // Method 2: Try to get from Session class if it exists
+            try
+            {
+                var sessionType = Type.GetType("Bank__Management_System.Session") ??
+                                 Type.GetType("BankApp.Session");
+                if (sessionType != null)
+                {
+                    // Try to get as property first
+                    var customerIdProperty = sessionType.GetProperty("CustomerID");
+                    if (customerIdProperty != null)
+                    {
+                        object value = customerIdProperty.GetValue(null);
+                        if (value != null && int.TryParse(value.ToString(), out int sessionCustomerId))
+                        {
+                            System.Diagnostics.Debug.WriteLine($"Using Session property CustomerID: {sessionCustomerId}");
+                            return sessionCustomerId;
+                        }
+                    }
+
+                    // If not found as property, try as field
+                    var customerIdField = sessionType.GetField("CustomerID");
+                    if (customerIdField != null)
+                    {
+                        object value = customerIdField.GetValue(null);
+                        if (value != null && int.TryParse(value.ToString(), out int sessionCustomerId))
+                        {
+                            System.Diagnostics.Debug.WriteLine($"Using Session field CustomerID: {sessionCustomerId}");
+                            return sessionCustomerId;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Session access error: {ex.Message}");
+            }
+
+            System.Diagnostics.Debug.WriteLine("No Customer ID found!");
+            return 0;
         }
 
-        // Deposit button
         private void btnDeposit_Click(object sender, EventArgs e)
         {
-            if (selectedAccountId == -1)
-            {
-                MessageBox.Show("Please select an account first.");
-                return;
-            }
+            // Debug logging
+            System.Diagnostics.Debug.WriteLine($"Deposit clicked. selectedAccId: {selectedAccId}, currentBal: {currentBal}");
 
             if (!decimal.TryParse(txtAmount.Text, out decimal amount) || amount <= 0)
             {
-                MessageBox.Show("Enter valid amount.");
+                MessageBox.Show("Please enter a valid amount greater than 0.");
+                txtAmount.Focus();
+                return;
+            }
+
+            if (selectedAccId == -1)
+            {
+                MessageBox.Show("No account selected. Please ensure an account exists for this customer.");
+                // Try to reload the account
+                LoadCustomerAccount();
                 return;
             }
 
             try
             {
-                using (SqlConnection con = new SqlConnection(connString))
+                decimal newBal = currentBal + amount;
+                using (SqlConnection con = DatabaseHelper.GetConnection())
                 {
                     con.Open();
 
-                    SqlTransaction tran = con.BeginTransaction();
-
+                    // Use a transaction for safety
+                    SqlTransaction transaction = con.BeginTransaction();
                     try
                     {
-                        // Update balance
                         SqlCommand cmd = new SqlCommand(
-                            "UPDATE Accounts SET Balance = Balance + @amt WHERE Account_ID=@aid", con, tran);
-                        cmd.Parameters.AddWithValue("@amt", amount);
-                        cmd.Parameters.AddWithValue("@aid", selectedAccountId);
-                        cmd.ExecuteNonQuery();
+                            "UPDATE accounts SET Balance=@bal WHERE Account_ID=@aid", con, transaction);
+                        cmd.Parameters.AddWithValue("@bal", newBal);
+                        cmd.Parameters.AddWithValue("@aid", selectedAccId);
 
-                        // Insert into Transactions
-                        SqlCommand cmd2 = new SqlCommand(
-                            "INSERT INTO Transactions (Transaction_Type, Amount, Account_ID, Customer_ID) VALUES ('Deposit', @amt, @aid, @cid)", con, tran);
-                        cmd2.Parameters.AddWithValue("@amt", amount);
-                        cmd2.Parameters.AddWithValue("@aid", selectedAccountId);
-                        cmd2.Parameters.AddWithValue("@cid", Session.CustomerID);
-                        cmd2.ExecuteNonQuery();
+                        int rows = cmd.ExecuteNonQuery();
+                        if (rows > 0)
+                        {
+                            // Log the transaction
+                            SqlCommand logCmd = new SqlCommand(
+                                "INSERT INTO transactions (Account_ID, Transaction_Type, Amount, Transaction_Date) VALUES (@aid, 'Deposit', @amount, GETDATE())",
+                                con, transaction);
+                            logCmd.Parameters.AddWithValue("@aid", selectedAccId);
+                            logCmd.Parameters.AddWithValue("@amount", amount);
 
-                        tran.Commit();
-                        MessageBox.Show("Deposit successful!");
+                            // Try to log but don't fail if transactions table doesn't exist
+                            try { logCmd.ExecuteNonQuery(); } catch { }
 
-                        // Reload accounts
-                        SqlDataAdapter da = new SqlDataAdapter(
-                            "SELECT Account_ID, Account_Type, Balance FROM Accounts WHERE Customer_ID=@cid", con);
-                        da.SelectCommand.Parameters.AddWithValue("@cid", Session.CustomerID);
+                            transaction.Commit();
 
-                        DataTable dt = new DataTable();
-                        da.Fill(dt);
-                        gridAccounts.DataSource = dt;
+                            currentBal = newBal;
+                            lblBalance.Text = $"Account: {selectedAccId}\nBalance: ${currentBal:F2}";
+                            txtAmount.Clear();
+
+                            // Raise the event
+                            BalanceUpdated?.Invoke(selectedAccId, newBal);
+
+                            // Also try to refresh any open forms
+                            RefreshAllAccountGrids();
+
+                            MessageBox.Show($"Deposit successful!\nNew Balance: ${newBal:F2}");
+                        }
+                        else
+                        {
+                            transaction.Rollback();
+                            MessageBox.Show("Deposit failed. Account not found.");
+                        }
                     }
-                    catch (Exception ex2)
+                    catch (Exception ex)
                     {
-                        tran.Rollback();
-                        MessageBox.Show("Error: " + ex2.Message);
+                        transaction.Rollback();
+                        throw ex;
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show($"Error during deposit: {ex.Message}");
+                System.Diagnostics.Debug.WriteLine($"Deposit Error: {ex}");
             }
         }
 
-        // Withdraw button
         private void btnWithdraw_Click(object sender, EventArgs e)
         {
-            if (selectedAccountId == -1)
-            {
-                MessageBox.Show("Please select an account first.");
-                return;
-            }
+            // Debug logging
+            System.Diagnostics.Debug.WriteLine($"Withdraw clicked. selectedAccId: {selectedAccId}, currentBal: {currentBal}");
 
             if (!decimal.TryParse(txtAmount.Text, out decimal amount) || amount <= 0)
             {
-                MessageBox.Show("Enter valid amount.");
+                MessageBox.Show("Please enter a valid amount greater than 0.");
+                txtAmount.Focus();
                 return;
             }
 
-            if (amount > currentBalance)
+            if (selectedAccId == -1)
             {
-                MessageBox.Show("Not enough balance.");
+                MessageBox.Show("No account selected. Please ensure an account exists for this customer.");
+                LoadCustomerAccount();
+                return;
+            }
+
+            if (amount > currentBal)
+            {
+                MessageBox.Show($"Insufficient balance.\nCurrent Balance: ${currentBal:F2}\nRequested Amount: ${amount:F2}");
                 return;
             }
 
             try
             {
-                using (SqlConnection con = new SqlConnection(connString))
+                decimal newBal = currentBal - amount;
+                using (SqlConnection con = DatabaseHelper.GetConnection())
                 {
                     con.Open();
 
-                    SqlTransaction tran = con.BeginTransaction();
-
+                    SqlTransaction transaction = con.BeginTransaction();
                     try
                     {
-                        // Update balance
                         SqlCommand cmd = new SqlCommand(
-                            "UPDATE Accounts SET Balance = Balance - @amt WHERE Account_ID=@aid", con, tran);
-                        cmd.Parameters.AddWithValue("@amt", amount);
-                        cmd.Parameters.AddWithValue("@aid", selectedAccountId);
-                        cmd.ExecuteNonQuery();
+                            "UPDATE accounts SET Balance=@bal WHERE Account_ID=@aid", con, transaction);
+                        cmd.Parameters.AddWithValue("@bal", newBal);
+                        cmd.Parameters.AddWithValue("@aid", selectedAccId);
 
-                        // Insert into Transactions
-                        SqlCommand cmd2 = new SqlCommand(
-                            "INSERT INTO Transactions (Transaction_Type, Amount, Account_ID, Customer_ID) VALUES ('Withdraw', @amt, @aid, @cid)", con, tran);
-                        cmd2.Parameters.AddWithValue("@amt", amount);
-                        cmd2.Parameters.AddWithValue("@aid", selectedAccountId);
-                        cmd2.Parameters.AddWithValue("@cid", Session.CustomerID);
-                        cmd2.ExecuteNonQuery();
+                        int rows = cmd.ExecuteNonQuery();
+                        if (rows > 0)
+                        {
+                            // Log the transaction
+                            SqlCommand logCmd = new SqlCommand(
+                                "INSERT INTO transactions (Account_ID, Transaction_Type, Amount, Transaction_Date) VALUES (@aid, 'Withdraw', @amount, GETDATE())",
+                                con, transaction);
+                            logCmd.Parameters.AddWithValue("@aid", selectedAccId);
+                            logCmd.Parameters.AddWithValue("@amount", amount);
 
-                        tran.Commit();
-                        MessageBox.Show("Withdraw successful!");
+                            try { logCmd.ExecuteNonQuery(); } catch { }
 
-                        // Reload accounts
-                        SqlDataAdapter da = new SqlDataAdapter(
-                            "SELECT Account_ID, Account_Type, Balance FROM Accounts WHERE Customer_ID=@cid", con);
-                        da.SelectCommand.Parameters.AddWithValue("@cid", Session.CustomerID);
+                            transaction.Commit();
 
-                        DataTable dt = new DataTable();
-                        da.Fill(dt);
-                        gridAccounts.DataSource = dt;
+                            currentBal = newBal;
+                            lblBalance.Text = $"Account: {selectedAccId}\nBalance: ${currentBal:F2}";
+                            txtAmount.Clear();
+
+                            // Raise event
+                            BalanceUpdated?.Invoke(selectedAccId, newBal);
+
+                            // Refresh other forms if needed
+                            RefreshAllAccountGrids();
+
+                            MessageBox.Show($"Withdrawal successful!\nNew Balance: ${newBal:F2}");
+                        }
+                        else
+                        {
+                            transaction.Rollback();
+                            MessageBox.Show("Withdrawal failed. Account not found.");
+                        }
                     }
-                    catch (Exception ex2)
+                    catch (Exception ex)
                     {
-                        tran.Rollback();
-                        MessageBox.Show("Error: " + ex2.Message);
+                        transaction.Rollback();
+                        throw ex;
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show($"Error during withdrawal: {ex.Message}");
+                System.Diagnostics.Debug.WriteLine($"Withdraw Error: {ex}");
             }
         }
 
-        // Go back button
-        private void btnGoBack_Click(object sender, EventArgs e)
+        // Small helper – refresh account grids across app
+        private void RefreshAllAccountGrids()
         {
-            CustomerDashboard dash = new CustomerDashboard();
-            dash.Show();
+            try
+            {
+                foreach (Form form in Application.OpenForms)
+                {
+                    var method = form.GetType().GetMethod("ReloadAccounts");
+                    if (method != null)
+                    {
+                        method.Invoke(form, null);
+                    }
+                }
+            }
+            catch
+            {
+                // ignore if no such forms
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CustomerDashboard admins = new CustomerDashboard();
+            admins.Show();
             this.Hide();
         }
     }
