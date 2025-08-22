@@ -17,7 +17,7 @@ namespace Bank__Management_System
         public DepositWithdraw()
         {
             InitializeComponent();
-            this.Load += DepositWithdraw_Load; // ensure load event is attached
+            this.Load += DepositWithdraw_Load;
         }
 
         public DepositWithdraw(int customerID, string customerName) : this()
@@ -29,7 +29,7 @@ namespace Bank__Management_System
         private void DepositWithdraw_Load(object sender, EventArgs e)
         {
             LoadCustomerAccount();
-            LoadAccountsToGrid(); // ✅ populate grid automatically
+            LoadAccountsToGrid();
         }
 
         // Load all accounts into DataGridView
@@ -51,8 +51,18 @@ namespace Bank__Management_System
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     da.Fill(dt);
 
-                    gridAccounts.DataSource = dt; // 🔹 make sure your DataGridView is named gridAccounts
+                    gridAccounts.DataSource = dt;
                     gridAccounts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                    // Highlight the selected account
+                    foreach (DataGridViewRow row in gridAccounts.Rows)
+                    {
+                        if (Convert.ToInt32(row.Cells["Account_ID"].Value) == selectedAccId)
+                        {
+                            row.Selected = true;
+                            gridAccounts.FirstDisplayedScrollingRowIndex = row.Index;
+                        }
+                    }
                 }
             }
             catch (Exception ex)
@@ -107,7 +117,7 @@ namespace Bank__Management_System
             catch { return 0; }
         }
 
-        // Call this after deposit/withdraw to refresh the grid
+        // Refresh grid after deposit/withdraw and highlight updated account
         private void RefreshGrid() => LoadAccountsToGrid();
 
         private void btnDeposit_Click(object sender, EventArgs e)
