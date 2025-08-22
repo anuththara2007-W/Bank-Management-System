@@ -43,7 +43,7 @@ namespace BankApp
             // 
             // btnTransfer
             // 
-            this.btnTransfer.Location = new System.Drawing.Point(299, 296);
+            this.btnTransfer.Location = new System.Drawing.Point(304, 151);
             this.btnTransfer.Name = "btnTransfer";
             this.btnTransfer.Size = new System.Drawing.Size(189, 30);
             this.btnTransfer.TabIndex = 10;
@@ -52,7 +52,7 @@ namespace BankApp
             // 
             // txtToAccount
             // 
-            this.txtToAccount.Location = new System.Drawing.Point(289, 177);
+            this.txtToAccount.Location = new System.Drawing.Point(272, 60);
             this.txtToAccount.Name = "txtToAccount";
             this.txtToAccount.Size = new System.Drawing.Size(360, 22);
             this.txtToAccount.TabIndex = 9;
@@ -60,7 +60,7 @@ namespace BankApp
             // lblToAccount
             // 
             this.lblToAccount.AutoSize = true;
-            this.lblToAccount.Location = new System.Drawing.Point(166, 180);
+            this.lblToAccount.Location = new System.Drawing.Point(149, 63);
             this.lblToAccount.Name = "lblToAccount";
             this.lblToAccount.Size = new System.Drawing.Size(114, 16);
             this.lblToAccount.TabIndex = 7;
@@ -68,7 +68,7 @@ namespace BankApp
             // 
             // txtAmount
             // 
-            this.txtAmount.Location = new System.Drawing.Point(289, 223);
+            this.txtAmount.Location = new System.Drawing.Point(272, 106);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(360, 22);
             this.txtAmount.TabIndex = 13;
@@ -76,7 +76,7 @@ namespace BankApp
             // lblAmount
             // 
             this.lblAmount.AutoSize = true;
-            this.lblAmount.Location = new System.Drawing.Point(166, 226);
+            this.lblAmount.Location = new System.Drawing.Point(149, 109);
             this.lblAmount.Name = "lblAmount";
             this.lblAmount.Size = new System.Drawing.Size(52, 16);
             this.lblAmount.TabIndex = 12;
@@ -84,7 +84,7 @@ namespace BankApp
             // 
             // btnGoBack
             // 
-            this.btnGoBack.Location = new System.Drawing.Point(327, 369);
+            this.btnGoBack.Location = new System.Drawing.Point(647, 19);
             this.btnGoBack.Name = "btnGoBack";
             this.btnGoBack.Size = new System.Drawing.Size(141, 47);
             this.btnGoBack.TabIndex = 22;
@@ -94,7 +94,7 @@ namespace BankApp
             // 
             // txtPurpose
             // 
-            this.txtPurpose.Location = new System.Drawing.Point(289, 133);
+            this.txtPurpose.Location = new System.Drawing.Point(272, 16);
             this.txtPurpose.Name = "txtPurpose";
             this.txtPurpose.Size = new System.Drawing.Size(360, 22);
             this.txtPurpose.TabIndex = 24;
@@ -102,7 +102,7 @@ namespace BankApp
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(166, 136);
+            this.label1.Location = new System.Drawing.Point(149, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 16);
             this.label1.TabIndex = 23;
@@ -111,7 +111,7 @@ namespace BankApp
             // lblBalance
             // 
             this.lblBalance.AutoSize = true;
-            this.lblBalance.Location = new System.Drawing.Point(108, 31);
+            this.lblBalance.Location = new System.Drawing.Point(12, 9);
             this.lblBalance.Name = "lblBalance";
             this.lblBalance.Size = new System.Drawing.Size(57, 16);
             this.lblBalance.TabIndex = 25;
