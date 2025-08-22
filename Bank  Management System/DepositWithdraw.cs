@@ -9,12 +9,21 @@ namespace Bank__Management_System
     {
         private string connString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
 
+        public int CustomerID { get; }
+        public string V { get; }
+
         public DepositWithdraw()
         {
             InitializeComponent();
 
             // 🔹 Ensure form load event is attached
             this.Load += DepositWithdraw_Load;
+        }
+
+        public DepositWithdraw(int customerID, string v)
+        {
+            CustomerID = customerID;
+            V = v;
         }
 
         // 🔹 Form Load: will auto-load grid
