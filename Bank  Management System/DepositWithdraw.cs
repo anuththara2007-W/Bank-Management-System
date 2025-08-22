@@ -14,10 +14,16 @@ namespace Bank__Management_System
         // To track selected account
         int selectedAccountId = -1;
         decimal currentBalance = 0;
+        private string v;
 
-        public DepositWithdraw()
+        public DepositWithdraw(int customerID)
         {
             InitializeComponent();
+        }
+
+        public DepositWithdraw(int customerID, string v) : this(customerID)
+        {
+            this.v = v;
         }
 
         // Load accounts when form opens
