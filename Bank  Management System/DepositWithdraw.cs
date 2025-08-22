@@ -14,6 +14,10 @@ namespace Bank__Management_System
             InitializeComponent();
         }
 
+        public DepositWithdraw(int customerID, string v)
+        {
+        }
+
         // 🔹 Load event of the form
         private void DepositWithdraw_Load(object sender, EventArgs e)
         {
