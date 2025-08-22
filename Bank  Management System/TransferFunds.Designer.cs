@@ -61,9 +61,9 @@ namespace BankApp
             this.lblToAccount.AutoSize = true;
             this.lblToAccount.Location = new System.Drawing.Point(166, 180);
             this.lblToAccount.Name = "lblToAccount";
-            this.lblToAccount.Size = new System.Drawing.Size(52, 16);
+            this.lblToAccount.Size = new System.Drawing.Size(114, 16);
             this.lblToAccount.TabIndex = 7;
-            this.lblToAccount.Text = "Amount";
+            this.lblToAccount.Text = "payee account no";
             // 
             // txtAmount
             // 
