@@ -39,8 +39,8 @@ namespace BankApp
             this.txtPurpose = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblBalance = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.TransactionsGrid = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.TransactionsGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // btnTransfer
@@ -119,22 +119,22 @@ namespace BankApp
             this.lblBalance.TabIndex = 25;
             this.lblBalance.Text = "purpose";
             // 
-            // dataGridView1
+            // TransactionsGrid
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 213);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(779, 150);
-            this.dataGridView1.TabIndex = 26;
+            this.TransactionsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TransactionsGrid.Location = new System.Drawing.Point(12, 213);
+            this.TransactionsGrid.Name = "TransactionsGrid";
+            this.TransactionsGrid.RowHeadersWidth = 51;
+            this.TransactionsGrid.RowTemplate.Height = 24;
+            this.TransactionsGrid.Size = new System.Drawing.Size(779, 150);
+            this.TransactionsGrid.TabIndex = 26;
             // 
             // TransferFunds
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.TransactionsGrid);
             this.Controls.Add(this.lblBalance);
             this.Controls.Add(this.txtPurpose);
             this.Controls.Add(this.label1);
@@ -147,7 +147,7 @@ namespace BankApp
             this.Name = "TransferFunds";
             this.Text = "TransferFunds";
             this.Load += new System.EventHandler(this.TransferFunds_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TransactionsGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,6 +167,6 @@ namespace BankApp
         private System.Windows.Forms.TextBox txtPurpose;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblBalance;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView TransactionsGrid;
     }
 }
