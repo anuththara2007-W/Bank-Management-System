@@ -1,5 +1,4 @@
-﻿using BankApp;
-using System;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -17,30 +16,26 @@ namespace Bank__Management_System
             InitializeComponent();
         }
 
-        // 🔹 On form load
         private void DepositWithdraw_Load(object sender, EventArgs e)
         {
-            LoadAccountsToGrid();
-            LoadCustomerAccount();
+            LoadAccounts();
         }
 
-        // 🔹 Load accounts into DataGridView
-        private void LoadAccountsToGrid()
+        private void LoadAccounts()
         {
             try
             {
                 using (SqlConnection con = new SqlConnection(connString))
                 {
                     con.Open();
-                    string query = "SELECT Account_ID, Account_Type, Balance FROM Accounts WHERE Customer_ID = @cid";
-                    SqlCommand cmd = new SqlCommand(query, con);
-                    cmd.Parameters.AddWithValue("@cid", Session.CustomerID);
+                    SqlDataAdapter da = new SqlDataAdapter(
+                        "SELECT Account_ID, Account_Type, Balance FROM Accounts WHERE Customer_ID=@cid", con);
+                    da.SelectCommand.Parameters.AddWithValue("@cid", Session.CustomerID);
 
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
 
-                    gridAccounts.DataSource = dt; // ✅ gridAccounts is your DataGridView
+                    gridAccounts.DataSource = dt; // ✅ use gridAccounts
                 }
             }
             catch (Exception ex)
@@ -49,126 +44,6 @@ namespace Bank__Management_System
             }
         }
 
-        // 🔹 Load first account balance into label
-        private void LoadCustomerAccount()
-        {
-            try
-            {
-                using (SqlConnection con = new SqlConnection(connString))
-                {
-                    con.Open();
-                    string query = "SELECT TOP 1 Account_ID, Balance FROM Accounts WHERE Customer_ID = @cid";
-                    SqlCommand cmd = new SqlCommand(query, con);
-                    cmd.Parameters.AddWithValue("@cid", Session.CustomerID);
-
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    if (reader.Read())
-                    {
-                        selectedAccountId = (int)reader["Account_ID"];
-                        currentBalance = (decimal)reader["Balance"];
-                        lblBalance.Text = "Balance: " + currentBalance.ToString("C");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error loading balance: " + ex.Message);
-            }
-        }
-
-        // 🔹 Deposit money
-        private void btnDeposit_Click(object sender, EventArgs e)
-        {
-            if (!decimal.TryParse(txtAmount.Text, out decimal amount) || amount <= 0)
-            {
-                MessageBox.Show("Enter a valid amount.");
-                return;
-            }
-
-            using (SqlConnection con = new SqlConnection(connString))
-            {
-                con.Open();
-                SqlTransaction tran = con.BeginTransaction();
-
-                try
-                {
-                    SqlCommand cmd = new SqlCommand("UPDATE Accounts SET Balance = Balance + @amt WHERE Account_ID=@aid", con, tran);
-                    cmd.Parameters.AddWithValue("@amt", amount);
-                    cmd.Parameters.AddWithValue("@aid", selectedAccountId);
-                    cmd.ExecuteNonQuery();
-
-                    SqlCommand insertTran = new SqlCommand(
-                        "INSERT INTO Transactions (Transaction_Type, Amount, Account_ID, Customer_ID) " +
-                        "VALUES ('Deposit', @amt, @aid, @cid)", con, tran);
-                    insertTran.Parameters.AddWithValue("@amt", amount);
-                    insertTran.Parameters.AddWithValue("@aid", selectedAccountId);
-                    insertTran.Parameters.AddWithValue("@cid", Session.CustomerID);
-                    insertTran.ExecuteNonQuery();
-
-                    tran.Commit();
-
-                    MessageBox.Show("Deposit successful.");
-                    LoadAccountsToGrid();
-                    LoadCustomerAccount();
-                }
-                catch (Exception ex)
-                {
-                    tran.Rollback();
-                    MessageBox.Show("Error: " + ex.Message);
-                }
-            }
-        }
-
-        // 🔹 Withdraw money
-        private void btnWithdraw_Click(object sender, EventArgs e)
-        {
-            if (!decimal.TryParse(txtAmount.Text, out decimal amount) || amount <= 0)
-            {
-                MessageBox.Show("Enter a valid amount.");
-                return;
-            }
-
-            if (amount > currentBalance)
-            {
-                MessageBox.Show("Insufficient funds.");
-                return;
-            }
-
-            using (SqlConnection con = new SqlConnection(connString))
-            {
-                con.Open();
-                SqlTransaction tran = con.BeginTransaction();
-
-                try
-                {
-                    SqlCommand cmd = new SqlCommand("UPDATE Accounts SET Balance = Balance - @amt WHERE Account_ID=@aid", con, tran);
-                    cmd.Parameters.AddWithValue("@amt", amount);
-                    cmd.Parameters.AddWithValue("@aid", selectedAccountId);
-                    cmd.ExecuteNonQuery();
-
-                    SqlCommand insertTran = new SqlCommand(
-                        "INSERT INTO Transactions (Transaction_Type, Amount, Account_ID, Customer_ID) " +
-                        "VALUES ('Withdraw', @amt, @aid, @cid)", con, tran);
-                    insertTran.Parameters.AddWithValue("@amt", amount);
-                    insertTran.Parameters.AddWithValue("@aid", selectedAccountId);
-                    insertTran.Parameters.AddWithValue("@cid", Session.CustomerID);
-                    insertTran.ExecuteNonQuery();
-
-                    tran.Commit();
-
-                    MessageBox.Show("Withdraw successful.");
-                    LoadAccountsToGrid();
-                    LoadCustomerAccount();
-                }
-                catch (Exception ex)
-                {
-                    tran.Rollback();
-                    MessageBox.Show("Error: " + ex.Message);
-                }
-            }
-        }
-
-        // 🔹 Handle DataGridView row selection
         private void gridAccounts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -180,7 +55,80 @@ namespace Bank__Management_System
             }
         }
 
-        // 🔹 Back button
+        private void btnDeposit_Click(object sender, EventArgs e)
+        {
+            if (!decimal.TryParse(txtAmount.Text, out decimal amount) || amount <= 0)
+            {
+                MessageBox.Show("Enter valid amount");
+                return;
+            }
+
+            ExecuteTransaction("Deposit", amount);
+        }
+
+        private void btnWithdraw_Click(object sender, EventArgs e)
+        {
+            if (!decimal.TryParse(txtAmount.Text, out decimal amount) || amount <= 0)
+            {
+                MessageBox.Show("Enter valid amount");
+                return;
+            }
+
+            if (amount > currentBalance)
+            {
+                MessageBox.Show("Insufficient funds");
+                return;
+            }
+
+            ExecuteTransaction("Withdraw", amount);
+        }
+
+        private void ExecuteTransaction(string type, decimal amount)
+        {
+            if (selectedAccountId == -1)
+            {
+                MessageBox.Show("Select an account first.");
+                return;
+            }
+
+            using (SqlConnection con = new SqlConnection(connString))
+            {
+                con.Open();
+                SqlTransaction tran = con.BeginTransaction();
+
+                try
+                {
+                    string updateQuery = type == "Deposit"
+                        ? "UPDATE Accounts SET Balance = Balance + @amt WHERE Account_ID=@aid"
+                        : "UPDATE Accounts SET Balance = Balance - @amt WHERE Account_ID=@aid";
+
+                    SqlCommand updateCmd = new SqlCommand(updateQuery, con, tran);
+                    updateCmd.Parameters.AddWithValue("@amt", amount);
+                    updateCmd.Parameters.AddWithValue("@aid", selectedAccountId);
+                    updateCmd.ExecuteNonQuery();
+
+                    SqlCommand insertTran = new SqlCommand(
+                        "INSERT INTO Transactions (Transaction_Type, Amount, Account_ID, Customer_ID) " +
+                        "VALUES (@type, @amt, @aid, @cid)", con, tran);
+                    insertTran.Parameters.AddWithValue("@type", type);
+                    insertTran.Parameters.AddWithValue("@amt", amount);
+                    insertTran.Parameters.AddWithValue("@aid", selectedAccountId);
+                    insertTran.Parameters.AddWithValue("@cid", Session.CustomerID);
+                    insertTran.ExecuteNonQuery();
+
+                    tran.Commit();
+
+                    MessageBox.Show(type + " successful.");
+                    LoadAccounts(); // ✅ refresh grid
+                }
+                catch (Exception ex)
+                {
+                    tran.Rollback();
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
+
         private void btnGoBack_Click(object sender, EventArgs e)
         {
             CustomerDashboard dash = new CustomerDashboard();
