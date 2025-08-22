@@ -127,5 +127,10 @@ namespace BankApp
             withdraw.Show();
             this.Hide();
         }
+
+        private void dgvTransactions_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

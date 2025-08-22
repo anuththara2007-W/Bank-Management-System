@@ -135,6 +135,7 @@
             this.dgvTransactions.RowTemplate.Height = 24;
             this.dgvTransactions.Size = new System.Drawing.Size(496, 202);
             this.dgvTransactions.TabIndex = 8;
+            this.dgvTransactions.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTransactions_CellContentClick);
             // 
             // dgvLoans
             // 
