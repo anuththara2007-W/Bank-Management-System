@@ -88,7 +88,7 @@ namespace BankApp
             }
         }
 
-        private void b_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             CustomerDashboard customerdash = new CustomerDashboard();
             customerdash.Show();
