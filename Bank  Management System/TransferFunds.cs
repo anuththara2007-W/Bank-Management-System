@@ -1,8 +1,8 @@
 ﻿using Bank__Management_System;
 using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using static System.Collections.Specialized.BitVector32;
 
 namespace BankApp
 {
@@ -15,14 +15,66 @@ namespace BankApp
             InitializeComponent();
         }
 
+        // ✅ Form Load: show balance + load transactions
+        private void TransferFunds_Load(object sender, EventArgs e)
+        {
+            LoadBalance();
+            LoadTransactions();
+        }
+
+        // ✅ Load customer balance
+        private void LoadBalance()
+        {
+            using (SqlConnection con = new SqlConnection(connString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT TOP 1 Balance FROM Accounts WHERE Customer_ID=@cid", con);
+                cmd.Parameters.AddWithValue("@cid", Session.CustomerID);
+
+                object result = cmd.ExecuteScalar();
+                if (result != null)
+                {
+                    decimal balance = (decimal)result;
+                    lblBalance.Text = "Balance: " + balance.ToString("C");
+                }
+                else
+                {
+                    lblBalance.Text = "Balance: N/A";
+                }
+            }
+        }
+
+        // ✅ Load transactions into grid
+        private void LoadTransactions()
+        {
+            using (SqlConnection con = new SqlConnection(connString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand(
+                    "SELECT TID, Transaction_Type, Amount, Transaction_Date, Purpose, ToAccountNo " +
+                    "FROM Transactions WHERE Customer_ID=@cid ORDER BY Transaction_Date DESC", con);
+                cmd.Parameters.AddWithValue("@cid", Session.CustomerID);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                TransactionsGrid.DataSource = dt;
+            }
+        }
+
+        // ✅ Transfer / Payment button
         private void btnTransfer_Click(object sender, EventArgs e)
         {
-            // ✅ Validate amount
+            // Validate amount
             if (!decimal.TryParse(txtAmount.Text, out decimal amount) || amount <= 0)
             {
                 MessageBox.Show("Enter a valid amount");
                 return;
             }
+
+            string purpose = txtPurpose.Text.Trim();
+            string toAccountNo = txtToAccount.Text.Trim();
 
             using (SqlConnection con = new SqlConnection(connString))
             {
@@ -31,7 +83,7 @@ namespace BankApp
 
                 try
                 {
-                    // ✅ Get the customer’s account
+                    // Get customer account
                     SqlCommand getAcc = new SqlCommand(
                         "SELECT TOP 1 Account_ID, Balance FROM Accounts WHERE Customer_ID=@cid", con, tran);
                     getAcc.Parameters.AddWithValue("@cid", Session.CustomerID);
@@ -49,7 +101,7 @@ namespace BankApp
                     decimal balance = (decimal)reader["Balance"];
                     reader.Close();
 
-                    // ✅ Check balance
+                    // Check balance
                     if (balance < amount)
                     {
                         MessageBox.Show("Insufficient funds.");
@@ -57,26 +109,31 @@ namespace BankApp
                         return;
                     }
 
-                    // ✅ Deduct balance
+                    // Deduct balance
                     SqlCommand updateBal = new SqlCommand(
                         "UPDATE Accounts SET Balance = Balance - @amt WHERE Account_ID=@aid", con, tran);
                     updateBal.Parameters.AddWithValue("@amt", amount);
                     updateBal.Parameters.AddWithValue("@aid", accountId);
                     updateBal.ExecuteNonQuery();
 
-                    // ✅ Insert into Transactions (only Transfer Out / Payment)
+                    // Insert into Transactions with Purpose + ToAccountNo
                     SqlCommand insertTran = new SqlCommand(
-                        "INSERT INTO Transactions (Transaction_Type, Amount, Account_ID, Customer_ID) " +
-                        "VALUES ('Payment/Transfer', @amt, @aid, @cid)", con, tran);
+                        "INSERT INTO Transactions (Transaction_Type, Amount, Account_ID, Customer_ID, Purpose, ToAccountNo) " +
+                        "VALUES ('Payment/Transfer', @amt, @aid, @cid, @purpose, @toAcc)", con, tran);
+
                     insertTran.Parameters.AddWithValue("@amt", amount);
                     insertTran.Parameters.AddWithValue("@aid", accountId);
                     insertTran.Parameters.AddWithValue("@cid", Session.CustomerID);
+                    insertTran.Parameters.AddWithValue("@purpose", string.IsNullOrEmpty(purpose) ? (object)DBNull.Value : purpose);
+                    insertTran.Parameters.AddWithValue("@toAcc", string.IsNullOrEmpty(toAccountNo) ? (object)DBNull.Value : toAccountNo);
+
                     insertTran.ExecuteNonQuery();
 
                     tran.Commit();
 
-                    // ✅ Update balance label on form
+                    // Update balance + grid
                     lblBalance.Text = "Balance: " + (balance - amount).ToString("C");
+                    LoadTransactions();
 
                     MessageBox.Show("Payment successful.");
                 }
@@ -88,16 +145,12 @@ namespace BankApp
             }
         }
 
+        // ✅ Go back button
         private void btnGoBack_Click(object sender, EventArgs e)
         {
             CustomerDashboard customerdash = new CustomerDashboard();
             customerdash.Show();
             this.Hide();
-        }
-
-        private void btnTransfer_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }
