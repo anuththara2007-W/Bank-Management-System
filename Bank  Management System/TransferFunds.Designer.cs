@@ -93,6 +93,7 @@ namespace BankApp
             this.btnGoBack.TabIndex = 22;
             this.btnGoBack.Text = "Go Back";
             this.btnGoBack.UseVisualStyleBackColor = true;
+            this.btnGoBack.Click += new System.EventHandler(this.btnGoBack_Click);
             // 
             // txtPurpose
             // 
