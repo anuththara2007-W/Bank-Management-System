@@ -29,12 +29,14 @@ namespace Bank__Management_System
                 using (SqlConnection con = new SqlConnection(connString))
                 {
                     con.Open();
-                    SqlDataAdapter da = new SqlDataAdapter("SELECT Account_ID, Account_Type, Balance FROM Accounts WHERE Customer_ID=@cid", con);
+                    SqlDataAdapter da = new SqlDataAdapter(
+                        "SELECT Account_ID, Account_Type, Balance FROM Accounts WHERE Customer_ID=@cid", con);
                     da.SelectCommand.Parameters.AddWithValue("@cid", Session.CustomerID);
+
                     DataTable dt = new DataTable();
                     da.Fill(dt);
 
-                    GridCustomer.DataSource = dt;
+                    gridAccounts.DataSource = dt; // ✅ use gridAccounts
                 }
             }
             catch (Exception ex)
@@ -43,11 +45,11 @@ namespace Bank__Management_System
             }
         }
 
-        private void GridCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void gridAccounts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = GridCustomer.Rows[e.RowIndex];
+                DataGridViewRow row = gridAccounts.Rows[e.RowIndex];
                 selectedAccountId = Convert.ToInt32(row.Cells["Account_ID"].Value);
                 currentBalance = Convert.ToDecimal(row.Cells["Balance"].Value);
                 lblBalance.Text = "Balance: " + currentBalance.ToString("C");
@@ -94,6 +96,7 @@ namespace Bank__Management_System
             {
                 con.Open();
                 SqlTransaction tran = con.BeginTransaction();
+
                 try
                 {
                     string updateQuery = type == "Deposit"
@@ -106,7 +109,8 @@ namespace Bank__Management_System
                     updateCmd.ExecuteNonQuery();
 
                     SqlCommand insertTran = new SqlCommand(
-                        "INSERT INTO Transactions (Transaction_Type, Amount, Account_ID, Customer_ID) VALUES (@type, @amt, @aid, @cid)", con, tran);
+                        "INSERT INTO Transactions (Transaction_Type, Amount, Account_ID, Customer_ID) " +
+                        "VALUES (@type, @amt, @aid, @cid)", con, tran);
                     insertTran.Parameters.AddWithValue("@type", type);
                     insertTran.Parameters.AddWithValue("@amt", amount);
                     insertTran.Parameters.AddWithValue("@aid", selectedAccountId);
@@ -116,7 +120,7 @@ namespace Bank__Management_System
                     tran.Commit();
 
                     MessageBox.Show(type + " successful.");
-                    LoadAccounts();
+                    LoadAccounts(); // ✅ refresh grid
                 }
                 catch (Exception ex)
                 {
