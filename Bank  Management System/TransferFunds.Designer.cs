@@ -31,7 +31,7 @@ namespace BankApp
         private void InitializeComponent()
         {
             this.btnTransfer = new System.Windows.Forms.Button();
-            this.txtToAccountID = new System.Windows.Forms.TextBox();
+            this.txtToAccount = new System.Windows.Forms.TextBox();
             this.lblToAccount = new System.Windows.Forms.Label();
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.lblAmount = new System.Windows.Forms.Label();
@@ -49,12 +49,12 @@ namespace BankApp
             this.btnTransfer.Text = "Transfer";
             this.btnTransfer.UseVisualStyleBackColor = true;
             // 
-            // txtToAccountID
+            // txtToAccount
             // 
-            this.txtToAccountID.Location = new System.Drawing.Point(289, 177);
-            this.txtToAccountID.Name = "txtToAccountID";
-            this.txtToAccountID.Size = new System.Drawing.Size(360, 22);
-            this.txtToAccountID.TabIndex = 9;
+            this.txtToAccount.Location = new System.Drawing.Point(289, 177);
+            this.txtToAccount.Name = "txtToAccount";
+            this.txtToAccount.Size = new System.Drawing.Size(360, 22);
+            this.txtToAccount.TabIndex = 9;
             // 
             // lblToAccount
             // 
@@ -118,7 +118,7 @@ namespace BankApp
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.lblAmount);
             this.Controls.Add(this.btnTransfer);
-            this.Controls.Add(this.txtToAccountID);
+            this.Controls.Add(this.txtToAccount);
             this.Controls.Add(this.lblToAccount);
             this.Name = "TransferFunds";
             this.Text = "TransferFunds";
@@ -134,7 +134,7 @@ namespace BankApp
 
         #endregion
         private System.Windows.Forms.Button btnTransfer;
-        private System.Windows.Forms.TextBox txtToAccountID;
+        private System.Windows.Forms.TextBox txtToAccount;
         private System.Windows.Forms.Label lblToAccount;
         private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.Label lblAmount;
