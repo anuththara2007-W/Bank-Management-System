@@ -36,9 +36,9 @@ namespace Bank__Management_System
             this.btnDeposit = new System.Windows.Forms.Button();
             this.btnWithdraw = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.gridAccounts = new System.Windows.Forms.DataGridView();
+            this.GridCustomer = new System.Windows.Forms.DataGridView();
             this.lblBalance = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.gridAccounts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridCustomer)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMode
@@ -95,15 +95,15 @@ namespace Bank__Management_System
             this.button1.Text = "Go Back";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // gridAccounts
+            // GridCustomer
             // 
-            this.gridAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridAccounts.Location = new System.Drawing.Point(57, 364);
-            this.gridAccounts.Name = "gridAccounts";
-            this.gridAccounts.RowHeadersWidth = 51;
-            this.gridAccounts.RowTemplate.Height = 24;
-            this.gridAccounts.Size = new System.Drawing.Size(868, 167);
-            this.gridAccounts.TabIndex = 18;
+            this.GridCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridCustomer.Location = new System.Drawing.Point(57, 364);
+            this.GridCustomer.Name = "GridCustomer";
+            this.GridCustomer.RowHeadersWidth = 51;
+            this.GridCustomer.RowTemplate.Height = 24;
+            this.GridCustomer.Size = new System.Drawing.Size(868, 167);
+            this.GridCustomer.TabIndex = 18;
             // 
             // lblBalance
             // 
@@ -120,7 +120,7 @@ namespace Bank__Management_System
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 577);
             this.Controls.Add(this.lblBalance);
-            this.Controls.Add(this.gridAccounts);
+            this.Controls.Add(this.GridCustomer);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnWithdraw);
             this.Controls.Add(this.btnDeposit);
@@ -129,7 +129,7 @@ namespace Bank__Management_System
             this.Controls.Add(this.lblMode);
             this.Name = "DepositWithdraw";
             this.Text = "DepositWithdraw";
-            ((System.ComponentModel.ISupportInitialize)(this.gridAccounts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridCustomer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,7 +145,7 @@ namespace Bank__Management_System
         private System.Windows.Forms.Button btnDeposit;
         private System.Windows.Forms.Button btnWithdraw;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView gridAccounts;
+        private System.Windows.Forms.DataGridView GridCustomer;
         private System.Windows.Forms.Label lblBalance;
     }
 }
