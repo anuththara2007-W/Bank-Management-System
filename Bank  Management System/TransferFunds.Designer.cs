@@ -51,7 +51,6 @@ namespace BankApp
             this.btnTransfer.TabIndex = 10;
             this.btnTransfer.Text = "Transfer";
             this.btnTransfer.UseVisualStyleBackColor = true;
-            this.btnTransfer.Click += new System.EventHandler(this.T);
             // 
             // txtToAccount
             // 

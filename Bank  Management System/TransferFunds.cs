@@ -152,10 +152,5 @@ namespace BankApp
             customerdash.Show();
             this.Hide();
         }
-
-        private void T(object sender, EventArgs e)
-        {
-
-        }
     }
 }
