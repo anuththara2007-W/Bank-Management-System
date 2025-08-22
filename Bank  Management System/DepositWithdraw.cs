@@ -9,6 +9,10 @@ namespace Bank__Management_System
     {
         private string connString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
 
+        public DepositWithdraw()
+        {
+        }
+
         public DepositWithdraw(int customerID)
         {
             InitializeComponent();
