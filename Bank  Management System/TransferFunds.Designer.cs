@@ -35,7 +35,7 @@ namespace BankApp
             this.lblToAccount = new System.Windows.Forms.Label();
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.lblAmount = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnGoBack = new System.Windows.Forms.Button();
             this.txtPurpose = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -81,15 +81,15 @@ namespace BankApp
             this.lblAmount.TabIndex = 12;
             this.lblAmount.Text = "Amount";
             // 
-            // button1
+            // btnGoBack
             // 
-            this.button1.Location = new System.Drawing.Point(327, 369);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(141, 47);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "Go Back";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnGoBack.Location = new System.Drawing.Point(327, 369);
+            this.btnGoBack.Name = "btnGoBack";
+            this.btnGoBack.Size = new System.Drawing.Size(141, 47);
+            this.btnGoBack.TabIndex = 22;
+            this.btnGoBack.Text = "Go Back";
+            this.btnGoBack.UseVisualStyleBackColor = true;
+            this.btnGoBack.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtPurpose
             // 
@@ -114,7 +114,7 @@ namespace BankApp
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.txtPurpose);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.lblAmount);
             this.Controls.Add(this.btnTransfer);
@@ -138,7 +138,7 @@ namespace BankApp
         private System.Windows.Forms.Label lblToAccount;
         private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.Label lblAmount;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnGoBack;
         private System.Windows.Forms.TextBox txtPurpose;
         private System.Windows.Forms.Label label1;
     }
