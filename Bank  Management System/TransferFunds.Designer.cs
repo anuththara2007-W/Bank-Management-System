@@ -36,7 +36,7 @@ namespace BankApp
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.lblAmount = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.txtAmounts = new System.Windows.Forms.TextBox();
+            this.txtPurpose = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -91,12 +91,12 @@ namespace BankApp
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // txtAmounts
+            // txtPurpose
             // 
-            this.txtAmounts.Location = new System.Drawing.Point(289, 133);
-            this.txtAmounts.Name = "txtAmounts";
-            this.txtAmounts.Size = new System.Drawing.Size(360, 22);
-            this.txtAmounts.TabIndex = 24;
+            this.txtPurpose.Location = new System.Drawing.Point(289, 133);
+            this.txtPurpose.Name = "txtPurpose";
+            this.txtPurpose.Size = new System.Drawing.Size(360, 22);
+            this.txtPurpose.TabIndex = 24;
             // 
             // label1
             // 
@@ -112,7 +112,7 @@ namespace BankApp
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.txtAmounts);
+            this.Controls.Add(this.txtPurpose);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtAmount);
@@ -139,7 +139,7 @@ namespace BankApp
         private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.Label lblAmount;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txtAmounts;
+        private System.Windows.Forms.TextBox txtPurpose;
         private System.Windows.Forms.Label label1;
     }
 }
