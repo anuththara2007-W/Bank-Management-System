@@ -12,37 +12,46 @@ namespace Bank__Management_System
         public DepositWithdraw()
         {
             InitializeComponent();
+
+            // 🔹 Ensure form load event is attached
+            this.Load += DepositWithdraw_Load;
         }
 
-        public DepositWithdraw(int customerID, string v)
-        {
-        }
-
-        // 🔹 Load event of the form
+        // 🔹 Form Load: will auto-load grid
         private void DepositWithdraw_Load(object sender, EventArgs e)
         {
             LoadAccountsToGrid();
         }
 
-        // 🔹 Method to load accounts into grid
+        // 🔹 Load all accounts of logged-in customer into grid
         private void LoadAccountsToGrid()
         {
+            if (Session.CustomerID == 0)
+            {
+                MessageBox.Show("Customer not logged in.");
+                return;
+            }
+
             try
             {
                 using (SqlConnection con = new SqlConnection(connString))
                 {
                     con.Open();
 
-                    // load all accounts of logged in customer
-                    string query = "SELECT Account_ID, Account_Type, Balance FROM Accounts WHERE Customer_ID = @cid";
-                    SqlCommand cmd = new SqlCommand(query, con);
+                    SqlCommand cmd = new SqlCommand(
+                        "SELECT Account_ID, Account_Type, Balance FROM Accounts WHERE Customer_ID=@cid",
+                        con);
                     cmd.Parameters.AddWithValue("@cid", Session.CustomerID);
 
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
                     da.Fill(dt);
 
-                    gridAccounts.DataSource = dt; // 🔹 bind to grid
+                    // 🔹 Make sure your DataGridView is named gridAccounts
+                    gridAccounts.DataSource = dt;
+
+                    // Optional: Auto-size columns
+                    gridAccounts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 }
             }
             catch (Exception ex)
@@ -51,8 +60,8 @@ namespace Bank__Management_System
             }
         }
 
-        // 🔹 Call this method whenever deposit/withdraw is done
-        private void RefreshGrid_Click(object sender, EventArgs e)
+        // 🔹 Optional refresh button
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
             LoadAccountsToGrid();
         }
