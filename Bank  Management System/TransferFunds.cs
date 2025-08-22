@@ -13,6 +13,7 @@ namespace BankApp
         public TransferFunds()
         {
             InitializeComponent();
+            this.Load += TransferFunds_Load;  // ✅ ensure form load is called
         }
 
         // ✅ Form Load: show balance + load transactions
@@ -28,7 +29,8 @@ namespace BankApp
             using (SqlConnection con = new SqlConnection(connString))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT TOP 1 Balance FROM Accounts WHERE Customer_ID=@cid", con);
+                SqlCommand cmd = new SqlCommand(
+                    "SELECT TOP 1 Balance FROM Accounts WHERE Customer_ID=@cid", con);
                 cmd.Parameters.AddWithValue("@cid", Session.CustomerID);
 
                 object result = cmd.ExecuteScalar();
