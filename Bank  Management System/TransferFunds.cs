@@ -17,14 +17,10 @@ namespace BankApp
 
         private void btnTransfer_Click(object sender, EventArgs e)
         {
-            if (!decimal.TryParse(txtToAccountID.Text, out decimal amount) || amount <= 0)
+            // ✅ Validate amount
+            if (!decimal.TryParse(txtAmount.Text, out decimal amount) || amount <= 0)
             {
-                MessageBox.Show("Enter valid amount");
-                return;
-            }
-            if (!int.TryParse(txtToAccountID.Text, out int toAccount))
-            {
-                MessageBox.Show("Enter valid destination account");
+                MessageBox.Show("Enter a valid amount");
                 return;
             }
 
@@ -35,10 +31,12 @@ namespace BankApp
 
                 try
                 {
-                    SqlCommand getFrom = new SqlCommand(
+                    // ✅ Get the customer’s account
+                    SqlCommand getAcc = new SqlCommand(
                         "SELECT TOP 1 Account_ID, Balance FROM Accounts WHERE Customer_ID=@cid", con, tran);
-                    getFrom.Parameters.AddWithValue("@cid", Session.CustomerID);
-                    var reader = getFrom.ExecuteReader();
+                    getAcc.Parameters.AddWithValue("@cid", Session.CustomerID);
+
+                    SqlDataReader reader = getAcc.ExecuteReader();
                     if (!reader.Read())
                     {
                         MessageBox.Show("No account found.");
@@ -46,10 +44,12 @@ namespace BankApp
                         tran.Rollback();
                         return;
                     }
-                    int fromAccount = (int)reader["Account_ID"];
+
+                    int accountId = (int)reader["Account_ID"];
                     decimal balance = (decimal)reader["Balance"];
                     reader.Close();
 
+                    // ✅ Check balance
                     if (balance < amount)
                     {
                         MessageBox.Show("Insufficient funds.");
@@ -57,37 +57,28 @@ namespace BankApp
                         return;
                     }
 
-                    SqlCommand debit = new SqlCommand(
+                    // ✅ Deduct balance
+                    SqlCommand updateBal = new SqlCommand(
                         "UPDATE Accounts SET Balance = Balance - @amt WHERE Account_ID=@aid", con, tran);
-                    debit.Parameters.AddWithValue("@amt", amount);
-                    debit.Parameters.AddWithValue("@aid", fromAccount);
-                    debit.ExecuteNonQuery();
+                    updateBal.Parameters.AddWithValue("@amt", amount);
+                    updateBal.Parameters.AddWithValue("@aid", accountId);
+                    updateBal.ExecuteNonQuery();
 
-                    SqlCommand credit = new SqlCommand(
-                        "UPDATE Accounts SET Balance = Balance + @amt WHERE Account_ID=@aid", con, tran);
-                    credit.Parameters.AddWithValue("@amt", amount);
-                    credit.Parameters.AddWithValue("@aid", toAccount);
-                    if (credit.ExecuteNonQuery() == 0)
-                    {
-                        MessageBox.Show("Destination account not found.");
-                        tran.Rollback();
-                        return;
-                    }
-
-                    SqlCommand insertFrom = new SqlCommand(
-                        "INSERT INTO Transactions (Transaction_Type, Amount, Transaction_Date, Account_ID) VALUES ('Transfer Out', @amt, GETDATE(), @aid)", con, tran);
-                    insertFrom.Parameters.AddWithValue("@amt", amount);
-                    insertFrom.Parameters.AddWithValue("@aid", fromAccount);
-                    insertFrom.ExecuteNonQuery();
-
-                    SqlCommand insertTo = new SqlCommand(
-                        "INSERT INTO Transactions (Transaction_Type, Amount, Transaction_Date, Account_ID) VALUES ('Transfer In', @amt, GETDATE(), @aid)", con, tran);
-                    insertTo.Parameters.AddWithValue("@amt", amount);
-                    insertTo.Parameters.AddWithValue("@aid", toAccount);
-                    insertTo.ExecuteNonQuery();
+                    // ✅ Insert into Transactions (only Transfer Out / Payment)
+                    SqlCommand insertTran = new SqlCommand(
+                        "INSERT INTO Transactions (Transaction_Type, Amount, Account_ID, Customer_ID) " +
+                        "VALUES ('Payment/Transfer', @amt, @aid, @cid)", con, tran);
+                    insertTran.Parameters.AddWithValue("@amt", amount);
+                    insertTran.Parameters.AddWithValue("@aid", accountId);
+                    insertTran.Parameters.AddWithValue("@cid", Session.CustomerID);
+                    insertTran.ExecuteNonQuery();
 
                     tran.Commit();
-                    MessageBox.Show("Transfer successful.");
+
+                    // ✅ Update balance label on form
+                    lblBalance.Text = "Balance: " + (balance - amount).ToString("C");
+
+                    MessageBox.Show("Payment successful.");
                 }
                 catch (Exception ex)
                 {
