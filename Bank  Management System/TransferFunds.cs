@@ -94,5 +94,10 @@ namespace BankApp
             customerdash.Show();
             this.Hide();
         }
+
+        private void btnTransfer_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
