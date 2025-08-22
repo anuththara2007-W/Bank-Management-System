@@ -38,6 +38,7 @@ namespace BankApp
             this.btnGoBack = new System.Windows.Forms.Button();
             this.txtPurpose = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblBalance = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnTransfer
@@ -107,11 +108,21 @@ namespace BankApp
             this.label1.TabIndex = 23;
             this.label1.Text = "purpose";
             // 
+            // lblBalance
+            // 
+            this.lblBalance.AutoSize = true;
+            this.lblBalance.Location = new System.Drawing.Point(108, 31);
+            this.lblBalance.Name = "lblBalance";
+            this.lblBalance.Size = new System.Drawing.Size(57, 16);
+            this.lblBalance.TabIndex = 25;
+            this.lblBalance.Text = "purpose";
+            // 
             // TransferFunds
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblBalance);
             this.Controls.Add(this.txtPurpose);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnGoBack);
@@ -141,5 +152,6 @@ namespace BankApp
         private System.Windows.Forms.Button btnGoBack;
         private System.Windows.Forms.TextBox txtPurpose;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblBalance;
     }
 }
