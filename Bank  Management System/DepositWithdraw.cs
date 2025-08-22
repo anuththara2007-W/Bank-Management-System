@@ -9,10 +9,17 @@ namespace Bank__Management_System
     {
         private string connString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
 
-        public DepositWithdraw()
+        public DepositWithdraw(int customerID)
         {
             InitializeComponent();
         }
+
+        public DepositWithdraw(int customerID, string v) : this(customerID)
+        {
+            V = v;
+        }
+
+        public string V { get; }
 
         // 🔹 Load event of the form
         private void DepositWithdraw_Load(object sender, EventArgs e)
