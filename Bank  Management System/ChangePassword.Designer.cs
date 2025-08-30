@@ -30,7 +30,7 @@ namespace BankApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnUpdateProfile = new System.Windows.Forms.Button();
+            this.btnChange = new System.Windows.Forms.Button();
             this.txtOld = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNew = new System.Windows.Forms.TextBox();
@@ -40,14 +40,16 @@ namespace BankApp
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnUpdateProfile
+            // btnChange
             // 
-            this.btnUpdateProfile.Location = new System.Drawing.Point(352, 332);
-            this.btnUpdateProfile.Name = "btnUpdateProfile";
-            this.btnUpdateProfile.Size = new System.Drawing.Size(189, 30);
-            this.btnUpdateProfile.TabIndex = 25;
-            this.btnUpdateProfile.Text = "Submit";
-            this.btnUpdateProfile.UseVisualStyleBackColor = true;
+            this.btnChange.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnChange.Location = new System.Drawing.Point(352, 332);
+            this.btnChange.Name = "btnChange";
+            this.btnChange.Size = new System.Drawing.Size(189, 30);
+            this.btnChange.TabIndex = 25;
+            this.btnChange.Text = "Submit";
+            this.btnChange.UseVisualStyleBackColor = true;
+            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
             // 
             // txtOld
             // 
@@ -113,7 +115,7 @@ namespace BankApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(921, 530);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnUpdateProfile);
+            this.Controls.Add(this.btnChange);
             this.Controls.Add(this.txtOld);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNew);
@@ -134,7 +136,7 @@ namespace BankApp
 
         #endregion
 
-        private System.Windows.Forms.Button btnUpdateProfile;
+        private System.Windows.Forms.Button btnChange;
         private System.Windows.Forms.TextBox txtOld;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNew;
