@@ -36,7 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnUpdateProfile = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
@@ -108,14 +108,15 @@
             this.label3.TabIndex = 16;
             this.label3.Text = "Name";
             // 
-            // btnUpdateProfile
+            // btnUpdate
             // 
-            this.btnUpdateProfile.Location = new System.Drawing.Point(542, 292);
-            this.btnUpdateProfile.Name = "btnUpdateProfile";
-            this.btnUpdateProfile.Size = new System.Drawing.Size(189, 30);
-            this.btnUpdateProfile.TabIndex = 18;
-            this.btnUpdateProfile.Text = "Submit";
-            this.btnUpdateProfile.UseVisualStyleBackColor = true;
+            this.btnUpdate.Location = new System.Drawing.Point(542, 292);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(189, 30);
+            this.btnUpdate.TabIndex = 18;
+            this.btnUpdate.Text = "Submit";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // button1
             // 
@@ -173,7 +174,7 @@
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblPhone);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnUpdateProfile);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtEmail);
@@ -200,7 +201,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnUpdateProfile;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Label lblEmail;
