@@ -58,7 +58,6 @@
             this.lblAmount.Size = new System.Drawing.Size(58, 16);
             this.lblAmount.TabIndex = 10;
             this.lblAmount.Text = "Address";
-            this.lblAmount.Click += new System.EventHandler(this.lblAmount_Click);
             // 
             // txtPhone
             // 
