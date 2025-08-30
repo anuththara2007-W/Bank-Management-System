@@ -41,6 +41,7 @@
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtAddress
@@ -153,11 +154,21 @@
             this.lblName.TabIndex = 22;
             this.lblName.Text = "Name";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(121, 135);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(44, 16);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "Name";
+            // 
             // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(991, 520);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblPhone);
@@ -194,5 +205,6 @@
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label label4;
     }
 }
