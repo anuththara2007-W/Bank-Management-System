@@ -38,7 +38,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnUpdateProfile = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblPhone = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -127,14 +127,14 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label4
+            // lblPhone
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(121, 111);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 16);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "Name";
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.Location = new System.Drawing.Point(121, 111);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(44, 16);
+            this.lblPhone.TabIndex = 20;
+            this.lblPhone.Text = "Name";
             // 
             // lblEmail
             // 
@@ -161,7 +161,7 @@
             this.ClientSize = new System.Drawing.Size(991, 520);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblPhone);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnUpdateProfile);
             this.Controls.Add(this.txtName);
@@ -192,7 +192,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnUpdateProfile;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblName;
     }
