@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.dgvSupport = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnGoBack = new System.Windows.Forms.Button();
             this.btnReply = new System.Windows.Forms.Button();
             this.txtReply = new System.Windows.Forms.TextBox();
             this.lblAmount = new System.Windows.Forms.Label();
@@ -46,14 +46,14 @@
             this.dgvSupport.Size = new System.Drawing.Size(690, 150);
             this.dgvSupport.TabIndex = 35;
             // 
-            // button1
+            // btnGoBack
             // 
-            this.button1.Location = new System.Drawing.Point(472, 397);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(141, 47);
-            this.button1.TabIndex = 34;
-            this.button1.Text = "Go Back";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnGoBack.Location = new System.Drawing.Point(472, 397);
+            this.btnGoBack.Name = "btnGoBack";
+            this.btnGoBack.Size = new System.Drawing.Size(141, 47);
+            this.btnGoBack.TabIndex = 34;
+            this.btnGoBack.Text = "Go Back";
+            this.btnGoBack.UseVisualStyleBackColor = true;
             // 
             // btnReply
             // 
@@ -86,7 +86,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1052, 525);
             this.Controls.Add(this.dgvSupport);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.btnReply);
             this.Controls.Add(this.txtReply);
             this.Controls.Add(this.lblAmount);
@@ -101,7 +101,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvSupport;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnGoBack;
         private System.Windows.Forms.Button btnReply;
         private System.Windows.Forms.TextBox txtReply;
         private System.Windows.Forms.Label lblAmount;
