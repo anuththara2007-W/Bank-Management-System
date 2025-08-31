@@ -33,7 +33,7 @@ namespace BankApp
             this.btnSend = new System.Windows.Forms.Button();
             this.txtMessage = new System.Windows.Forms.TextBox();
             this.lblAmount = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnGoBack = new System.Windows.Forms.Button();
             this.dgvMyTickets = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMyTickets)).BeginInit();
             this.SuspendLayout();
@@ -64,14 +64,14 @@ namespace BankApp
             this.lblAmount.TabIndex = 26;
             this.lblAmount.Text = "Message";
             // 
-            // button1
+            // btnGoBack
             // 
-            this.button1.Location = new System.Drawing.Point(342, 343);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(141, 47);
-            this.button1.TabIndex = 29;
-            this.button1.Text = "Go Back";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnGoBack.Location = new System.Drawing.Point(342, 343);
+            this.btnGoBack.Name = "btnGoBack";
+            this.btnGoBack.Size = new System.Drawing.Size(141, 47);
+            this.btnGoBack.TabIndex = 29;
+            this.btnGoBack.Text = "Go Back";
+            this.btnGoBack.UseVisualStyleBackColor = true;
             // 
             // dgvMyTickets
             // 
@@ -89,7 +89,7 @@ namespace BankApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dgvMyTickets);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.lblAmount);
@@ -107,7 +107,7 @@ namespace BankApp
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.TextBox txtMessage;
         private System.Windows.Forms.Label lblAmount;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnGoBack;
         private System.Windows.Forms.DataGridView dgvMyTickets;
     }
 }
