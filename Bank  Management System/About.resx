@@ -117,4 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label1.Text" xml:space="preserve">
+    <value> BankApp makes managing your money effortless. Check balances, transfer funds, pay bills, and track transactions anytime, anywhere. With secure login, instant notifications, and intuitive design, banking has never been easier.</value>
+  </data>
 </root>
