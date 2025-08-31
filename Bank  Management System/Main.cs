@@ -76,7 +76,7 @@ namespace Bank__Management_System
 
         private void btnSupport(object sender, EventArgs e)
         {
-
+            AdminSupport support = new AdminSupport();
         }
     }
 }
