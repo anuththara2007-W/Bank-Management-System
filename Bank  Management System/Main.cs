@@ -77,6 +77,7 @@ namespace Bank__Management_System
         private void btnSupport_Click(object sender, EventArgs e)
         {
             AdminSupport support = new AdminSupport();
+            support.Show();
         }
     }
 }
