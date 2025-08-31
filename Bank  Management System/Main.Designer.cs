@@ -34,7 +34,6 @@
             this.btnTransaction = new System.Windows.Forms.Button();
             this.btnLoan = new System.Windows.Forms.Button();
             this.btnEmployee = new System.Windows.Forms.Button();
-            this.btnDashboard = new System.Windows.Forms.Button();
             this.btnLoanRq = new System.Windows.Forms.Button();
             this.btnSupport = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
@@ -57,7 +56,7 @@
             this.btnCustomer.Name = "btnCustomer";
             this.btnCustomer.Size = new System.Drawing.Size(226, 38);
             this.btnCustomer.TabIndex = 1;
-            this.btnCustomer.Text = "Customer";
+            this.btnCustomer.Text = "Customers";
             this.btnCustomer.UseVisualStyleBackColor = false;
             this.btnCustomer.Click += new System.EventHandler(this.Customer_Click);
             // 
@@ -75,7 +74,7 @@
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.Size = new System.Drawing.Size(226, 37);
             this.btnAccount.TabIndex = 2;
-            this.btnAccount.Text = "Account";
+            this.btnAccount.Text = "Accounts";
             this.btnAccount.UseVisualStyleBackColor = false;
             this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
@@ -93,7 +92,7 @@
             this.btnTransaction.Name = "btnTransaction";
             this.btnTransaction.Size = new System.Drawing.Size(226, 37);
             this.btnTransaction.TabIndex = 3;
-            this.btnTransaction.Text = "Transaction";
+            this.btnTransaction.Text = "Transactions";
             this.btnTransaction.UseVisualStyleBackColor = false;
             this.btnTransaction.Click += new System.EventHandler(this.btnTransaction_Click);
             // 
@@ -111,7 +110,7 @@
             this.btnLoan.Name = "btnLoan";
             this.btnLoan.Size = new System.Drawing.Size(226, 36);
             this.btnLoan.TabIndex = 4;
-            this.btnLoan.Text = "Loan";
+            this.btnLoan.Text = "Loans";
             this.btnLoan.UseVisualStyleBackColor = false;
             this.btnLoan.Click += new System.EventHandler(this.btnLoan_Click);
             // 
@@ -129,27 +128,9 @@
             this.btnEmployee.Name = "btnEmployee";
             this.btnEmployee.Size = new System.Drawing.Size(226, 36);
             this.btnEmployee.TabIndex = 5;
-            this.btnEmployee.Text = "Employee";
+            this.btnEmployee.Text = "Employees";
             this.btnEmployee.UseVisualStyleBackColor = false;
             this.btnEmployee.Click += new System.EventHandler(this.btnEmployee_Click);
-            // 
-            // btnDashboard
-            // 
-            this.btnDashboard.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDashboard.FlatAppearance.BorderSize = 0;
-            this.btnDashboard.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.btnDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDashboard.Location = new System.Drawing.Point(63, 552);
-            this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(226, 36);
-            this.btnDashboard.TabIndex = 6;
-            this.btnDashboard.Text = "Dashboard";
-            this.btnDashboard.UseVisualStyleBackColor = false;
-            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
             // btnLoanRq
             // 
@@ -161,9 +142,9 @@
             this.btnLoanRq.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnLoanRq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoanRq.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoanRq.Location = new System.Drawing.Point(63, 690);
+            this.btnLoanRq.Location = new System.Drawing.Point(63, 621);
             this.btnLoanRq.Name = "btnLoanRq";
-            this.btnLoanRq.Size = new System.Drawing.Size(232, 36);
+            this.btnLoanRq.Size = new System.Drawing.Size(226, 36);
             this.btnLoanRq.TabIndex = 7;
             this.btnLoanRq.Text = "Loan Requests ";
             this.btnLoanRq.UseVisualStyleBackColor = false;
@@ -179,7 +160,7 @@
             this.btnSupport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnSupport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSupport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSupport.Location = new System.Drawing.Point(57, 621);
+            this.btnSupport.Location = new System.Drawing.Point(57, 552);
             this.btnSupport.Name = "btnSupport";
             this.btnSupport.Size = new System.Drawing.Size(232, 36);
             this.btnSupport.TabIndex = 8;
@@ -207,7 +188,7 @@
             // lblCount3
             // 
             this.lblCount3.AutoSize = true;
-            this.lblCount3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.lblCount3.BackColor = System.Drawing.Color.White;
             this.lblCount3.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCount3.Location = new System.Drawing.Point(1040, 215);
             this.lblCount3.Name = "lblCount3";
@@ -218,7 +199,7 @@
             // lblCount2
             // 
             this.lblCount2.AutoSize = true;
-            this.lblCount2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            this.lblCount2.BackColor = System.Drawing.Color.White;
             this.lblCount2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCount2.Location = new System.Drawing.Point(760, 215);
             this.lblCount2.Name = "lblCount2";
@@ -229,9 +210,9 @@
             // lblCount1
             // 
             this.lblCount1.AutoSize = true;
-            this.lblCount1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(255)))), ((int)(((byte)(237)))));
+            this.lblCount1.BackColor = System.Drawing.Color.White;
             this.lblCount1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCount1.Location = new System.Drawing.Point(483, 215);
+            this.lblCount1.Location = new System.Drawing.Point(475, 215);
             this.lblCount1.Name = "lblCount1";
             this.lblCount1.Size = new System.Drawing.Size(64, 69);
             this.lblCount1.TabIndex = 58;
@@ -251,7 +232,6 @@
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.btnSupport);
             this.Controls.Add(this.btnLoanRq);
-            this.Controls.Add(this.btnDashboard);
             this.Controls.Add(this.btnEmployee);
             this.Controls.Add(this.btnLoan);
             this.Controls.Add(this.btnTransaction);
@@ -274,7 +254,6 @@
         private System.Windows.Forms.Button btnTransaction;
         private System.Windows.Forms.Button btnLoan;
         private System.Windows.Forms.Button btnEmployee;
-        private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Button btnLoanRq;
         private System.Windows.Forms.Button btnSupport;
         private System.Windows.Forms.Button btnLogOut;
