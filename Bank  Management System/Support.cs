@@ -70,5 +70,10 @@ namespace BankApp
             dgvMyTickets.Columns["Status"].HeaderText = "Status";
             dgvMyTickets.Columns["Reply"].HeaderText = "Reply";
         }
+
+        private void btnGoBack_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
