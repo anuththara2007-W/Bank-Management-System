@@ -73,5 +73,10 @@ namespace Bank__Management_System
             ln.Show();
             this.Hide();
         }
+
+        private void btnSupport(object sender, EventArgs e)
+        {
+
+        }
     }
 }
