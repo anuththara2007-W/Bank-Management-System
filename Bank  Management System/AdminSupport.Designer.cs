@@ -1,4 +1,4 @@
-﻿namespace Bank__Management_System
+﻿namespace BankApp
 {
     partial class AdminSupport
     {
