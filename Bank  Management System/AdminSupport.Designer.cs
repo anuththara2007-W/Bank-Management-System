@@ -31,7 +31,7 @@
             this.dgvSupport = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.btnSend = new System.Windows.Forms.Button();
-            this.txtMessage = new System.Windows.Forms.TextBox();
+            this.txtReply = new System.Windows.Forms.TextBox();
             this.lblAmount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSupport)).BeginInit();
             this.SuspendLayout();
@@ -64,12 +64,12 @@
             this.btnSend.Text = "Send";
             this.btnSend.UseVisualStyleBackColor = true;
             // 
-            // txtMessage
+            // txtReply
             // 
-            this.txtMessage.Location = new System.Drawing.Point(435, 81);
-            this.txtMessage.Name = "txtMessage";
-            this.txtMessage.Size = new System.Drawing.Size(360, 22);
-            this.txtMessage.TabIndex = 32;
+            this.txtReply.Location = new System.Drawing.Point(435, 81);
+            this.txtReply.Name = "txtReply";
+            this.txtReply.Size = new System.Drawing.Size(360, 22);
+            this.txtReply.TabIndex = 32;
             // 
             // lblAmount
             // 
@@ -88,7 +88,7 @@
             this.Controls.Add(this.dgvSupport);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSend);
-            this.Controls.Add(this.txtMessage);
+            this.Controls.Add(this.txtReply);
             this.Controls.Add(this.lblAmount);
             this.Name = "AdminSupport";
             this.Text = "AdminSupport";
@@ -103,7 +103,7 @@
         private System.Windows.Forms.DataGridView dgvSupport;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnSend;
-        private System.Windows.Forms.TextBox txtMessage;
+        private System.Windows.Forms.TextBox txtReply;
         private System.Windows.Forms.Label lblAmount;
     }
 }
