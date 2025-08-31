@@ -175,13 +175,12 @@
             this.btnSupport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnSupport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSupport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSupport.Location = new System.Drawing.Point(524, 268);
+            this.btnSupport.Location = new System.Drawing.Point(465, 242);
             this.btnSupport.Name = "btnSupport";
             this.btnSupport.Size = new System.Drawing.Size(232, 36);
             this.btnSupport.TabIndex = 8;
             this.btnSupport.Text = "Customer Support";
             this.btnSupport.UseVisualStyleBackColor = false;
-            this.btnSupport.Click += new System.EventHandler(this.btnSupport);
             // 
             // Main
             // 
