@@ -82,15 +82,11 @@ namespace BankApp
             this.Controls.Add(this.lblAmount);
             this.Name = "Support";
             this.Text = "Support";
-            this.Load += new System.EventHandler(this.Support_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
-        private void Support_Load(object sender, EventArgs e)
-        {
-        }
 
         #endregion
 
