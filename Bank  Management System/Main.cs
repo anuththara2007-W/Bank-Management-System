@@ -23,10 +23,6 @@ namespace Bank__Management_System
 
         private void Main_Load(object sender, EventArgs e)
         {
-
-        }
-        private void Dashboard_Load(object sender, EventArgs e)
-        {
             display1();
             display2();
             display3();
