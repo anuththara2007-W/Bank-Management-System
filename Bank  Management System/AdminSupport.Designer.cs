@@ -63,6 +63,7 @@
             this.btnReply.TabIndex = 33;
             this.btnReply.Text = "Send";
             this.btnReply.UseVisualStyleBackColor = true;
+            this.btnReply.Click += new System.EventHandler(this.btnReply_Click);
             // 
             // txtReply
             // 
