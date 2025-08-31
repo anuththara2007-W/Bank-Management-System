@@ -38,7 +38,7 @@ namespace BankApp
             // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(313, 249);
+            this.btnSend.Location = new System.Drawing.Point(315, 104);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(189, 30);
             this.btnSend.TabIndex = 28;
@@ -47,7 +47,7 @@ namespace BankApp
             // 
             // txtMessage
             // 
-            this.txtMessage.Location = new System.Drawing.Point(303, 172);
+            this.txtMessage.Location = new System.Drawing.Point(305, 27);
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.Size = new System.Drawing.Size(360, 22);
             this.txtMessage.TabIndex = 27;
@@ -55,7 +55,7 @@ namespace BankApp
             // lblAmount
             // 
             this.lblAmount.AutoSize = true;
-            this.lblAmount.Location = new System.Drawing.Point(137, 175);
+            this.lblAmount.Location = new System.Drawing.Point(139, 30);
             this.lblAmount.Name = "lblAmount";
             this.lblAmount.Size = new System.Drawing.Size(64, 16);
             this.lblAmount.TabIndex = 26;
