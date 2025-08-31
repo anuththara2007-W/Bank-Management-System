@@ -78,6 +78,7 @@ namespace Bank__Management_System
         {
             AdminSupport support = new AdminSupport();
             support.Show();
+            this.Hide();    
         }
     }
 }
