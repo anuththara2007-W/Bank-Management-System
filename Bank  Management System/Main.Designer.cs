@@ -38,6 +38,9 @@
             this.btnLoanRq = new System.Windows.Forms.Button();
             this.btnSupport = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
+            this.lblCount3 = new System.Windows.Forms.Label();
+            this.lblCount2 = new System.Windows.Forms.Label();
+            this.lblCount1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnCustomer
@@ -201,6 +204,39 @@
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = false;
             // 
+            // lblCount3
+            // 
+            this.lblCount3.AutoSize = true;
+            this.lblCount3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.lblCount3.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCount3.Location = new System.Drawing.Point(1040, 215);
+            this.lblCount3.Name = "lblCount3";
+            this.lblCount3.Size = new System.Drawing.Size(64, 69);
+            this.lblCount3.TabIndex = 60;
+            this.lblCount3.Text = "0";
+            // 
+            // lblCount2
+            // 
+            this.lblCount2.AutoSize = true;
+            this.lblCount2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            this.lblCount2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCount2.Location = new System.Drawing.Point(760, 215);
+            this.lblCount2.Name = "lblCount2";
+            this.lblCount2.Size = new System.Drawing.Size(64, 69);
+            this.lblCount2.TabIndex = 59;
+            this.lblCount2.Text = "0";
+            // 
+            // lblCount1
+            // 
+            this.lblCount1.AutoSize = true;
+            this.lblCount1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(255)))), ((int)(((byte)(237)))));
+            this.lblCount1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCount1.Location = new System.Drawing.Point(483, 215);
+            this.lblCount1.Name = "lblCount1";
+            this.lblCount1.Size = new System.Drawing.Size(64, 69);
+            this.lblCount1.TabIndex = 58;
+            this.lblCount1.Text = "0";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -209,6 +245,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1280, 785);
+            this.Controls.Add(this.lblCount3);
+            this.Controls.Add(this.lblCount2);
+            this.Controls.Add(this.lblCount1);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.btnSupport);
             this.Controls.Add(this.btnLoanRq);
@@ -225,6 +264,7 @@
             this.Text = "Main";
             this.Load += new System.EventHandler(this.Main_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -238,5 +278,8 @@
         private System.Windows.Forms.Button btnLoanRq;
         private System.Windows.Forms.Button btnSupport;
         private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.Label lblCount3;
+        private System.Windows.Forms.Label lblCount2;
+        private System.Windows.Forms.Label lblCount1;
     }
 }
