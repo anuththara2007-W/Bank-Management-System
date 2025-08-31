@@ -37,6 +37,7 @@
             this.btnDashboard = new System.Windows.Forms.Button();
             this.btnLoanRq = new System.Windows.Forms.Button();
             this.btnSupport = new System.Windows.Forms.Button();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCustomer
@@ -49,9 +50,9 @@
             this.btnCustomer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustomer.Location = new System.Drawing.Point(106, 221);
+            this.btnCustomer.Location = new System.Drawing.Point(63, 147);
             this.btnCustomer.Name = "btnCustomer";
-            this.btnCustomer.Size = new System.Drawing.Size(158, 38);
+            this.btnCustomer.Size = new System.Drawing.Size(226, 38);
             this.btnCustomer.TabIndex = 1;
             this.btnCustomer.Text = "Customer";
             this.btnCustomer.UseVisualStyleBackColor = false;
@@ -67,9 +68,9 @@
             this.btnAccount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAccount.Location = new System.Drawing.Point(106, 302);
+            this.btnAccount.Location = new System.Drawing.Point(63, 228);
             this.btnAccount.Name = "btnAccount";
-            this.btnAccount.Size = new System.Drawing.Size(147, 37);
+            this.btnAccount.Size = new System.Drawing.Size(226, 37);
             this.btnAccount.TabIndex = 2;
             this.btnAccount.Text = "Account";
             this.btnAccount.UseVisualStyleBackColor = false;
@@ -85,9 +86,9 @@
             this.btnTransaction.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnTransaction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTransaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTransaction.Location = new System.Drawing.Point(106, 388);
+            this.btnTransaction.Location = new System.Drawing.Point(63, 303);
             this.btnTransaction.Name = "btnTransaction";
-            this.btnTransaction.Size = new System.Drawing.Size(166, 37);
+            this.btnTransaction.Size = new System.Drawing.Size(226, 37);
             this.btnTransaction.TabIndex = 3;
             this.btnTransaction.Text = "Transaction";
             this.btnTransaction.UseVisualStyleBackColor = false;
@@ -103,9 +104,9 @@
             this.btnLoan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnLoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoan.Location = new System.Drawing.Point(121, 472);
+            this.btnLoan.Location = new System.Drawing.Point(63, 383);
             this.btnLoan.Name = "btnLoan";
-            this.btnLoan.Size = new System.Drawing.Size(76, 36);
+            this.btnLoan.Size = new System.Drawing.Size(226, 36);
             this.btnLoan.TabIndex = 4;
             this.btnLoan.Text = "Loan";
             this.btnLoan.UseVisualStyleBackColor = false;
@@ -121,9 +122,9 @@
             this.btnEmployee.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmployee.Location = new System.Drawing.Point(102, 554);
+            this.btnEmployee.Location = new System.Drawing.Point(63, 468);
             this.btnEmployee.Name = "btnEmployee";
-            this.btnEmployee.Size = new System.Drawing.Size(167, 36);
+            this.btnEmployee.Size = new System.Drawing.Size(226, 36);
             this.btnEmployee.TabIndex = 5;
             this.btnEmployee.Text = "Employee";
             this.btnEmployee.UseVisualStyleBackColor = false;
@@ -139,9 +140,9 @@
             this.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDashboard.Location = new System.Drawing.Point(112, 628);
+            this.btnDashboard.Location = new System.Drawing.Point(63, 552);
             this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(148, 36);
+            this.btnDashboard.Size = new System.Drawing.Size(226, 36);
             this.btnDashboard.TabIndex = 6;
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.UseVisualStyleBackColor = false;
@@ -157,7 +158,7 @@
             this.btnLoanRq.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnLoanRq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoanRq.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoanRq.Location = new System.Drawing.Point(566, 374);
+            this.btnLoanRq.Location = new System.Drawing.Point(63, 690);
             this.btnLoanRq.Name = "btnLoanRq";
             this.btnLoanRq.Size = new System.Drawing.Size(232, 36);
             this.btnLoanRq.TabIndex = 7;
@@ -175,13 +176,30 @@
             this.btnSupport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnSupport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSupport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSupport.Location = new System.Drawing.Point(465, 242);
+            this.btnSupport.Location = new System.Drawing.Point(57, 621);
             this.btnSupport.Name = "btnSupport";
             this.btnSupport.Size = new System.Drawing.Size(232, 36);
             this.btnSupport.TabIndex = 8;
             this.btnSupport.Text = "Customer Support";
             this.btnSupport.UseVisualStyleBackColor = false;
             this.btnSupport.Click += new System.EventHandler(this.btnSupport_Click);
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogOut.FlatAppearance.BorderSize = 0;
+            this.btnLogOut.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btnLogOut.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnLogOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Location = new System.Drawing.Point(686, 734);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(232, 36);
+            this.btnLogOut.TabIndex = 9;
+            this.btnLogOut.Text = "Loan Requests ";
+            this.btnLogOut.UseVisualStyleBackColor = false;
             // 
             // Main
             // 
@@ -191,6 +209,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1280, 785);
+            this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.btnSupport);
             this.Controls.Add(this.btnLoanRq);
             this.Controls.Add(this.btnDashboard);
@@ -217,5 +236,6 @@
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Button btnLoanRq;
         private System.Windows.Forms.Button btnSupport;
+        private System.Windows.Forms.Button btnLogOut;
     }
 }
