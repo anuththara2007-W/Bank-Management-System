@@ -219,6 +219,7 @@
             this.Controls.Add(this.btnAccount);
             this.Controls.Add(this.btnCustomer);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
