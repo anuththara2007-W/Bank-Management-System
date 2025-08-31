@@ -30,7 +30,7 @@
         {
             this.dgvSupport = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnSend = new System.Windows.Forms.Button();
+            this.btnReply = new System.Windows.Forms.Button();
             this.txtReply = new System.Windows.Forms.TextBox();
             this.lblAmount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSupport)).BeginInit();
@@ -55,14 +55,14 @@
             this.button1.Text = "Go Back";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // btnSend
+            // btnReply
             // 
-            this.btnSend.Location = new System.Drawing.Point(445, 158);
-            this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(189, 30);
-            this.btnSend.TabIndex = 33;
-            this.btnSend.Text = "Send";
-            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnReply.Location = new System.Drawing.Point(445, 158);
+            this.btnReply.Name = "btnReply";
+            this.btnReply.Size = new System.Drawing.Size(189, 30);
+            this.btnReply.TabIndex = 33;
+            this.btnReply.Text = "Send";
+            this.btnReply.UseVisualStyleBackColor = true;
             // 
             // txtReply
             // 
@@ -87,7 +87,7 @@
             this.ClientSize = new System.Drawing.Size(1052, 525);
             this.Controls.Add(this.dgvSupport);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnSend);
+            this.Controls.Add(this.btnReply);
             this.Controls.Add(this.txtReply);
             this.Controls.Add(this.lblAmount);
             this.Name = "AdminSupport";
@@ -102,7 +102,7 @@
 
         private System.Windows.Forms.DataGridView dgvSupport;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnSend;
+        private System.Windows.Forms.Button btnReply;
         private System.Windows.Forms.TextBox txtReply;
         private System.Windows.Forms.Label lblAmount;
     }
