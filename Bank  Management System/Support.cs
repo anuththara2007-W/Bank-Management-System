@@ -3,7 +3,6 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using static System.Collections.Specialized.BitVector32;
 
 namespace BankApp
 {
@@ -11,9 +10,40 @@ namespace BankApp
     {
         string connString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
 
+        public Support()
+        {
+            InitializeComponent();
+        }
+
         private void Support_Load(object sender, EventArgs e)
         {
-            LoadMyTickets();
+            LoadMyTickets(); // load history when form opens
+        }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtMessage.Text))
+            {
+                MessageBox.Show("Enter a message");
+                return;
+            }
+
+            using (SqlConnection con = new SqlConnection(connString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand(
+                    "INSERT INTO SupportTickets (Customer_ID, Message, DateCreated, Status, Reply) " +
+                    "VALUES (@cid, @msg, GETDATE(), 'Open', 'We have received your message. Our team will contact you.')", con);
+
+                cmd.Parameters.AddWithValue("@cid", Session.CustomerID); // logged in customer
+                cmd.Parameters.AddWithValue("@msg", txtMessage.Text);
+
+                cmd.ExecuteNonQuery();
+            }
+
+            MessageBox.Show("Message sent to support.");
+            txtMessage.Clear();
+            LoadMyTickets(); // refresh grid
         }
 
         private void LoadMyTickets()
@@ -33,20 +63,12 @@ namespace BankApp
                 dgvMyTickets.DataSource = dt;
             }
 
-            // optional: nice headers
+            // Optional: nicer headers
             dgvMyTickets.Columns["TicketID"].HeaderText = "Ticket #";
             dgvMyTickets.Columns["Message"].HeaderText = "Message";
             dgvMyTickets.Columns["DateCreated"].HeaderText = "Created On";
             dgvMyTickets.Columns["Status"].HeaderText = "Status";
             dgvMyTickets.Columns["Reply"].HeaderText = "Reply";
-        }
-
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            CustomerDashboard customerdash = new CustomerDashboard();
-            customerdash.Show();
-            this.Hide();
         }
     }
 }
