@@ -181,6 +181,7 @@
             this.btnSupport.TabIndex = 8;
             this.btnSupport.Text = "Customer Support";
             this.btnSupport.UseVisualStyleBackColor = false;
+            this.btnSupport.Click += new System.EventHandler(this.btnSupport_Click);
             // 
             // Main
             // 
