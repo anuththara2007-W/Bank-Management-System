@@ -34,7 +34,7 @@ namespace Bank__Management_System
             {
                 con.Open();
                 SqlCommand comm = new SqlCommand("SELECT COUNT(*) FROM Customer", con);
-                var count = Convert.ToInt32(comm.ExecuteScalar());
+                Int32 count = Convert.ToInt32(comm.ExecuteScalar());
                 if (count > 0)
                 {
                     lblCount1.Text = count.ToString();
