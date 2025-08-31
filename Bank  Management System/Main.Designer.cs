@@ -198,7 +198,7 @@
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(232, 36);
             this.btnLogOut.TabIndex = 9;
-            this.btnLogOut.Text = "Loan Requests ";
+            this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = false;
             // 
             // Main
