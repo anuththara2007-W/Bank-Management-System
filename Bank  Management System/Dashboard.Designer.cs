@@ -46,6 +46,7 @@
             this.lblCount1.Size = new System.Drawing.Size(64, 69);
             this.lblCount1.TabIndex = 1;
             this.lblCount1.Text = "0";
+            this.lblCount1.Click += new System.EventHandler(this.lblCount1_Click);
             // 
             // btnGoBack
             // 
@@ -75,6 +76,7 @@
             this.lblCount2.Size = new System.Drawing.Size(64, 69);
             this.lblCount2.TabIndex = 56;
             this.lblCount2.Text = "0";
+            this.lblCount2.Click += new System.EventHandler(this.lblCount2_Click);
             // 
             // lblCount3
             // 
@@ -86,6 +88,7 @@
             this.lblCount3.Size = new System.Drawing.Size(64, 69);
             this.lblCount3.TabIndex = 57;
             this.lblCount3.Text = "0";
+            this.lblCount3.Click += new System.EventHandler(this.lblCount3_Click);
             // 
             // btnGo
             // 

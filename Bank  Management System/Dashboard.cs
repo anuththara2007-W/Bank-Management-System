@@ -88,5 +88,20 @@ namespace Bank__Management_System
             admins.Show();
             this.Hide();
         }
+
+        private void lblCount1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCount2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCount3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
