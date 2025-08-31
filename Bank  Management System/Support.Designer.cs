@@ -34,6 +34,8 @@ namespace BankApp
             this.txtMessage = new System.Windows.Forms.TextBox();
             this.lblAmount = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.dgvMyTickets = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMyTickets)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSend
@@ -71,17 +73,29 @@ namespace BankApp
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // dgvMyTickets
+            // 
+            this.dgvMyTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMyTickets.Location = new System.Drawing.Point(51, 164);
+            this.dgvMyTickets.Name = "dgvMyTickets";
+            this.dgvMyTickets.RowHeadersWidth = 51;
+            this.dgvMyTickets.RowTemplate.Height = 24;
+            this.dgvMyTickets.Size = new System.Drawing.Size(690, 150);
+            this.dgvMyTickets.TabIndex = 30;
+            // 
             // Support
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dgvMyTickets);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.lblAmount);
             this.Name = "Support";
             this.Text = "Support";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMyTickets)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -94,5 +108,6 @@ namespace BankApp
         private System.Windows.Forms.TextBox txtMessage;
         private System.Windows.Forms.Label lblAmount;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dgvMyTickets;
     }
 }
