@@ -178,9 +178,9 @@
             this.btnLogOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.Location = new System.Drawing.Point(686, 734);
+            this.btnLogOut.Location = new System.Drawing.Point(63, 690);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(232, 36);
+            this.btnLogOut.Size = new System.Drawing.Size(226, 36);
             this.btnLogOut.TabIndex = 9;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = false;
@@ -190,7 +190,7 @@
             this.lblCount3.AutoSize = true;
             this.lblCount3.BackColor = System.Drawing.Color.White;
             this.lblCount3.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCount3.Location = new System.Drawing.Point(1040, 215);
+            this.lblCount3.Location = new System.Drawing.Point(1040, 218);
             this.lblCount3.Name = "lblCount3";
             this.lblCount3.Size = new System.Drawing.Size(64, 69);
             this.lblCount3.TabIndex = 60;
@@ -201,7 +201,7 @@
             this.lblCount2.AutoSize = true;
             this.lblCount2.BackColor = System.Drawing.Color.White;
             this.lblCount2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCount2.Location = new System.Drawing.Point(760, 215);
+            this.lblCount2.Location = new System.Drawing.Point(760, 218);
             this.lblCount2.Name = "lblCount2";
             this.lblCount2.Size = new System.Drawing.Size(64, 69);
             this.lblCount2.TabIndex = 59;
@@ -212,7 +212,7 @@
             this.lblCount1.AutoSize = true;
             this.lblCount1.BackColor = System.Drawing.Color.White;
             this.lblCount1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCount1.Location = new System.Drawing.Point(475, 215);
+            this.lblCount1.Location = new System.Drawing.Point(475, 218);
             this.lblCount1.Name = "lblCount1";
             this.lblCount1.Size = new System.Drawing.Size(64, 69);
             this.lblCount1.TabIndex = 58;
