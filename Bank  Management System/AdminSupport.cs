@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bank__Management_System;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -72,6 +73,13 @@ namespace BankApp
             {
                 MessageBox.Show("Select a ticket first.");
             }
+        }
+
+        private void btnGoBack_Click(object sender, EventArgs e)
+        {
+            Main admins = new Main();
+            admins.Show();
+            this.Hide();
         }
     }
 }
