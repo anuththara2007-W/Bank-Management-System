@@ -35,10 +35,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(546, 155);
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(341, 380);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(453, 16);
-            this.label1.TabIndex = 0;
+            this.label1.Size = new System.Drawing.Size(654, 25);
+            this.label1.TabIndex = 1;
             this.label1.Text = "BankApp makes managing your money effortless. Check balances, transfer";
             // 
             // About
