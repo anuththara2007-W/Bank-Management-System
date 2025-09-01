@@ -55,9 +55,9 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label2.Location = new System.Drawing.Point(353, 381);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(575, 22);
+            this.label2.Size = new System.Drawing.Size(563, 22);
             this.label2.TabIndex = 2;
-            this.label2.Text = "BankApp makes managing your money effortless. Check balances, transfer";
+            this.label2.Text = "instant notifications, and intuitive design, banking has never been easier.";
             // 
             // label3
             // 
