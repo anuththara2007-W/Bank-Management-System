@@ -26,8 +26,9 @@ namespace Bank__Management_System
 
         private void lblcontact1_Click(object sender, EventArgs e)
         {
-            string url = "https://wa.me/94707266991"; 
-            System.Diagnostics.Process.Start(url);
+            Contact contact = new Contact();
+            contact.Show();
+            this.Hide();
         }
 
         private void About_Load(object sender, EventArgs e)
