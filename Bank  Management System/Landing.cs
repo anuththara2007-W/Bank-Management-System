@@ -23,5 +23,10 @@ namespace Bank__Management_System
             gonow.Show();
             this.Hide();
         }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            About 
+        }
     }
 }

@@ -184,6 +184,7 @@
             this.label7.TabIndex = 9;
             this.label7.Text = "ABOUT  US ";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
