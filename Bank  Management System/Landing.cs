@@ -33,7 +33,7 @@ namespace Bank__Management_System
 
         private void label6_Click(object sender, EventArgs e)
         {
-            Contact
+            Contact contact =  new Contact
         }
     }
 }
