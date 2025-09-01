@@ -82,9 +82,9 @@
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label4.Location = new System.Drawing.Point(626, 195);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(593, 22);
+            this.label4.Size = new System.Drawing.Size(589, 22);
             this.label4.TabIndex = 3;
-            this.label4.Text = "funds, pay bills, and track transactions anytime, anywhere. With secure login,";
+            this.label4.Text = "funds, pay bills, and track transactions anytime, anywhere. With secure login";
             // 
             // label5
             // 
