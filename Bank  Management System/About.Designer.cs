@@ -106,9 +106,9 @@
             this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label6.Location = new System.Drawing.Point(406, 391);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(485, 19);
+            this.label6.Size = new System.Drawing.Size(346, 19);
             this.label6.TabIndex = 5;
-            this.label6.Text = "instant notifications, and intuitive design, banking has never been easier.";
+            this.label6.Text = " Secure login ensures only you access your account.\n";
             // 
             // label7
             // 
@@ -116,7 +116,7 @@
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.label7.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label7.Location = new System.Drawing.Point(414, 399);
+            this.label7.Location = new System.Drawing.Point(686, 442);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(333, 19);
             this.label7.TabIndex = 6;
