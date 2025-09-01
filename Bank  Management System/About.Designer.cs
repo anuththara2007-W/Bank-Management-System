@@ -140,6 +140,7 @@
             this.lblcontact1.TabIndex = 11;
             this.lblcontact1.Text = "CONTACT";
             this.lblcontact1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblcontact1.Click += new System.EventHandler(this.lblcontact1_Click);
             // 
             // lblHome
             // 
