@@ -19,7 +19,7 @@ namespace Bank__Management_System
 
         private void lblHome_Click(object sender, EventArgs e)
         {
-            Landing landing
+            Landing landing = new Landing();
         }
     }
 }
