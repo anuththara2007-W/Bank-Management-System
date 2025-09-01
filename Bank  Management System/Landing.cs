@@ -27,6 +27,8 @@ namespace Bank__Management_System
         private void label7_Click(object sender, EventArgs e)
         {
             About About = new About();
+            About.Show();
+
         }
     }
 }
