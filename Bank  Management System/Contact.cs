@@ -28,5 +28,11 @@ namespace Bank__Management_System
             string url = "www.facebook.com";
             System.Diagnostics.Process.Start(url);
         }
+
+        private void tiktok_Click(object sender, EventArgs e)
+        {
+            string url = "www.tiktok.com";
+            System.Diagnostics.Process.Start(url);
+        }
     }
 }

@@ -148,6 +148,7 @@
             this.tiktok.Size = new System.Drawing.Size(44, 42);
             this.tiktok.TabIndex = 20;
             this.tiktok.TabStop = false;
+            this.tiktok.Click += new System.EventHandler(this.tiktok_Click);
             // 
             // Contact
             // 
