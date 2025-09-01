@@ -22,5 +22,11 @@ namespace Bank__Management_System
             string url = "https://wa.me/94707266991";
             System.Diagnostics.Process.Start(url);
         }
+
+        private void fb_Click(object sender, EventArgs e)
+        {
+            string url = "www.";
+            System.Diagnostics.Process.Start(url);
+        }
     }
 }

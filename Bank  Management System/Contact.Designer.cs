@@ -122,6 +122,7 @@
             this.fb.Size = new System.Drawing.Size(44, 42);
             this.fb.TabIndex = 18;
             this.fb.TabStop = false;
+            this.fb.Click += new System.EventHandler(this.fb_Click);
             // 
             // call
             // 
