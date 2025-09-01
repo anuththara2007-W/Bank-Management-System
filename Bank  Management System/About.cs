@@ -26,6 +26,9 @@ namespace Bank__Management_System
 
         private void lblcontact1_Click(object sender, EventArgs e)
         {
+            string url = "https://wa.me/94707266991"; // your WhatsApp number
+            System.Diagnostics.Process.Start(url);
         }
+
     }
 }
