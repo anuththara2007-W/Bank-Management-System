@@ -28,7 +28,7 @@ namespace Bank__Management_System
         {
             contact Contact = new contact();
             Contact.Show();
-            this.Hide()
+            this.Hide();
         }
     }
 }
