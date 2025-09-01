@@ -105,9 +105,9 @@
             this.instagram.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("instagram.BackgroundImage")));
             this.instagram.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.instagram.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.instagram.Location = new System.Drawing.Point(482, 492);
+            this.instagram.Location = new System.Drawing.Point(485, 495);
             this.instagram.Name = "instagram";
-            this.instagram.Size = new System.Drawing.Size(49, 47);
+            this.instagram.Size = new System.Drawing.Size(44, 42);
             this.instagram.TabIndex = 17;
             this.instagram.TabStop = false;
             // 
@@ -117,9 +117,9 @@
             this.fb.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("fb.BackgroundImage")));
             this.fb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.fb.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.fb.Location = new System.Drawing.Point(634, 492);
+            this.fb.Location = new System.Drawing.Point(637, 495);
             this.fb.Name = "fb";
-            this.fb.Size = new System.Drawing.Size(49, 47);
+            this.fb.Size = new System.Drawing.Size(44, 42);
             this.fb.TabIndex = 18;
             this.fb.TabStop = false;
             // 
@@ -129,9 +129,9 @@
             this.call.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("call.BackgroundImage")));
             this.call.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.call.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.call.Location = new System.Drawing.Point(711, 492);
+            this.call.Location = new System.Drawing.Point(714, 495);
             this.call.Name = "call";
-            this.call.Size = new System.Drawing.Size(49, 47);
+            this.call.Size = new System.Drawing.Size(44, 42);
             this.call.TabIndex = 19;
             this.call.TabStop = false;
             // 
@@ -141,9 +141,9 @@
             this.tiktok.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tiktok.BackgroundImage")));
             this.tiktok.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tiktok.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tiktok.Location = new System.Drawing.Point(558, 492);
+            this.tiktok.Location = new System.Drawing.Point(561, 495);
             this.tiktok.Name = "tiktok";
-            this.tiktok.Size = new System.Drawing.Size(49, 47);
+            this.tiktok.Size = new System.Drawing.Size(44, 42);
             this.tiktok.TabIndex = 20;
             this.tiktok.TabStop = false;
             // 
