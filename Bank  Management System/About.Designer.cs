@@ -94,9 +94,9 @@
             this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label5.Location = new System.Drawing.Point(398, 383);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(485, 19);
+            this.label5.Size = new System.Drawing.Size(357, 19);
             this.label5.TabIndex = 4;
-            this.label5.Text = "instant notifications, and intuitive design, banking has never been easier.";
+            this.label5.Text = " All transactions are safe and monitored in real-time.";
             // 
             // label6
             // 
