@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Bank__Management_System
 {
-    public partial class Contact: Form
+    public partial class Contact : Form
     {
         public Contact()
         {
