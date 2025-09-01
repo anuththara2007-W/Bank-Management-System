@@ -118,11 +118,11 @@
             this.lblAbout.AutoSize = true;
             this.lblAbout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.lblAbout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblAbout.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAbout.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAbout.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblAbout.Location = new System.Drawing.Point(354, 56);
             this.lblAbout.Name = "lblAbout";
-            this.lblAbout.Size = new System.Drawing.Size(87, 19);
+            this.lblAbout.Size = new System.Drawing.Size(105, 22);
             this.lblAbout.TabIndex = 12;
             this.lblAbout.Text = "ABOUT  US ";
             this.lblAbout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
