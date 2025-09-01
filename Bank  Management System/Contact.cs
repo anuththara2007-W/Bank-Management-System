@@ -47,5 +47,11 @@ namespace Bank__Management_System
             landing.Show();
             this.Hide();
         }
+
+        private void lblAbout_Click(object sender, EventArgs e)
+        {
+            About about = new About();
+
+        }
     }
 }

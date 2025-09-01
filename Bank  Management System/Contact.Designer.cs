@@ -56,6 +56,7 @@
             this.lblAbout.TabIndex = 15;
             this.lblAbout.Text = "ABOUT  US ";
             this.lblAbout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblAbout.Click += new System.EventHandler(this.lblAbout_Click);
             // 
             // lblcontact1
             // 
