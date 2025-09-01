@@ -164,7 +164,7 @@
             this.lblcontact2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblcontact2.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblcontact2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblcontact2.Location = new System.Drawing.Point(1103, 51);
+            this.lblcontact2.Location = new System.Drawing.Point(1103, 55);
             this.lblcontact2.Name = "lblcontact2";
             this.lblcontact2.Size = new System.Drawing.Size(85, 16);
             this.lblcontact2.TabIndex = 13;
