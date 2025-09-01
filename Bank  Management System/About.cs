@@ -26,9 +26,6 @@ namespace Bank__Management_System
 
         private void lblcontact1_Click(object sender, EventArgs e)
         {
-            contact Contact = new contact();
-            Contact.Show();
-            this.Hide();
         }
     }
 }
