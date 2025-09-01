@@ -28,7 +28,7 @@ namespace Bank__Management_System
         {
             About About = new About();
             About.Show();
-
+            this.
         }
     }
 }
