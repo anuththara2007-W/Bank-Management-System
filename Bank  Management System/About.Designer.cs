@@ -37,7 +37,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblcontact1 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblHome = new System.Windows.Forms.Label();
             this.lblcontact2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -141,19 +141,19 @@
             this.lblcontact1.Text = "CONTACT";
             this.lblcontact1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label9
+            // lblHome
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.label9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label9.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label9.Location = new System.Drawing.Point(228, 57);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(60, 19);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "HOME  ";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblHome.AutoSize = true;
+            this.lblHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.lblHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblHome.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHome.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblHome.Location = new System.Drawing.Point(228, 57);
+            this.lblHome.Name = "lblHome";
+            this.lblHome.Size = new System.Drawing.Size(60, 19);
+            this.lblHome.TabIndex = 10;
+            this.lblHome.Text = "HOME  ";
+            this.lblHome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblcontact2
             // 
@@ -179,7 +179,7 @@
             this.Controls.Add(this.lblcontact2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblcontact1);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.lblHome);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -205,7 +205,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblcontact1;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblHome;
         private System.Windows.Forms.Label lblcontact2;
     }
 }
