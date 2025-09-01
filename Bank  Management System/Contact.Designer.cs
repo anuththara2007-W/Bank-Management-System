@@ -103,7 +103,7 @@
             // 
             this.instagram.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("instagram.BackgroundImage")));
             this.instagram.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.instagram.Location = new System.Drawing.Point(424, 491);
+            this.instagram.Location = new System.Drawing.Point(489, 491);
             this.instagram.Name = "instagram";
             this.instagram.Size = new System.Drawing.Size(49, 47);
             this.instagram.TabIndex = 17;
@@ -113,7 +113,7 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(616, 369);
+            this.pictureBox1.Location = new System.Drawing.Point(641, 491);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(49, 47);
             this.pictureBox1.TabIndex = 18;
@@ -123,7 +123,7 @@
             // 
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(624, 377);
+            this.pictureBox2.Location = new System.Drawing.Point(718, 491);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(49, 47);
             this.pictureBox2.TabIndex = 19;
@@ -133,7 +133,7 @@
             // 
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(632, 385);
+            this.pictureBox3.Location = new System.Drawing.Point(565, 491);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(49, 47);
             this.pictureBox3.TabIndex = 20;
