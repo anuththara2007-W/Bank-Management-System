@@ -30,5 +30,15 @@ namespace Bank__Management_System
             System.Diagnostics.Process.Start(url);
         }
 
+        private void About_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblcontact2_Click(object sender, EventArgs e)
+        {
+            string url = "https://wa.me/94707266991";
+            System.Diagnostics.Process.Start(url);
+        }
     }
 }

@@ -170,6 +170,7 @@
             this.lblcontact2.TabIndex = 13;
             this.lblcontact2.Text = "CONTACT US";
             this.lblcontact2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblcontact2.Click += new System.EventHandler(this.lblcontact2_Click);
             // 
             // About
             // 
@@ -192,6 +193,7 @@
             this.Name = "About";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "About";
+            this.Load += new System.EventHandler(this.About_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
