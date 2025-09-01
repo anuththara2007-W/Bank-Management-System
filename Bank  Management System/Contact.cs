@@ -40,5 +40,10 @@ namespace Bank__Management_System
             string url = "www.instagram.com";
             System.Diagnostics.Process.Start(url);
         }
+
+        private void lblHome_Click(object sender, EventArgs e)
+        {
+            Landing 
+        }
     }
 }

@@ -84,6 +84,7 @@
             this.lblHome.TabIndex = 13;
             this.lblHome.Text = "HOME  ";
             this.lblHome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblHome.Click += new System.EventHandler(this.lblHome_Click);
             // 
             // label1
             // 
