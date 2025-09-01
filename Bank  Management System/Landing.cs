@@ -30,5 +30,10 @@ namespace Bank__Management_System
             About.Show();
             this.Hide();
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            Contact
+        }
     }
 }
