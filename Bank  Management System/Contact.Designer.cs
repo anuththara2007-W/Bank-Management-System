@@ -97,9 +97,9 @@
             // 
             this.instagram.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("instagram.BackgroundImage")));
             this.instagram.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.instagram.Location = new System.Drawing.Point(415, 486);
+            this.instagram.Location = new System.Drawing.Point(424, 491);
             this.instagram.Name = "instagram";
-            this.instagram.Size = new System.Drawing.Size(57, 56);
+            this.instagram.Size = new System.Drawing.Size(49, 47);
             this.instagram.TabIndex = 17;
             this.instagram.TabStop = false;
             // 
