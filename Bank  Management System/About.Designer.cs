@@ -29,7 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(546, 155);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(453, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "BankApp makes managing your money effortless. Check balances, transfer";
             // 
             // About
             // 
@@ -38,12 +48,16 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1280, 785);
+            this.Controls.Add(this.label1);
             this.Name = "About";
             this.Text = "About";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
     }
 }
