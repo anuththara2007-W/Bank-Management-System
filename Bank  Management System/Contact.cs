@@ -51,6 +51,7 @@ namespace Bank__Management_System
         private void lblAbout_Click(object sender, EventArgs e)
         {
             About about = new About();
+
             about.Show();
         }
     }
