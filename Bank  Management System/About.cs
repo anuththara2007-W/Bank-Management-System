@@ -21,7 +21,7 @@ namespace Bank__Management_System
         {
             Landing landing = new Landing();
             this.Show();
-
+            this.Hide();
         }
     }
 }
