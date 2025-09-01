@@ -43,7 +43,7 @@ namespace Bank__Management_System
 
         private void lblHome_Click(object sender, EventArgs e)
         {
-            Landing 
+            Landing Landing 
         }
     }
 }
