@@ -34,11 +34,11 @@
             this.lblHome = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.instagram = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.fb = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tiktok = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.instagram)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fb)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiktok)).BeginInit();
             this.SuspendLayout();
@@ -111,17 +111,17 @@
             this.instagram.TabIndex = 17;
             this.instagram.TabStop = false;
             // 
-            // pictureBox1
+            // fb
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Location = new System.Drawing.Point(634, 492);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(49, 47);
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
+            this.fb.BackColor = System.Drawing.Color.White;
+            this.fb.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("fb.BackgroundImage")));
+            this.fb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.fb.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.fb.Location = new System.Drawing.Point(634, 492);
+            this.fb.Name = "fb";
+            this.fb.Size = new System.Drawing.Size(49, 47);
+            this.fb.TabIndex = 18;
+            this.fb.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -156,7 +156,7 @@
             this.ClientSize = new System.Drawing.Size(1280, 785);
             this.Controls.Add(this.tiktok);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.fb);
             this.Controls.Add(this.instagram);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblAbout);
@@ -168,7 +168,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contact";
             ((System.ComponentModel.ISupportInitialize)(this.instagram)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fb)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiktok)).EndInit();
             this.ResumeLayout(false);
@@ -183,7 +183,7 @@
         private System.Windows.Forms.Label lblHome;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox instagram;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox fb;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox tiktok;
     }
