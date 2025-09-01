@@ -110,6 +110,7 @@
             this.instagram.Size = new System.Drawing.Size(44, 42);
             this.instagram.TabIndex = 17;
             this.instagram.TabStop = false;
+            this.instagram.Click += new System.EventHandler(this.instagram_Click);
             // 
             // fb
             // 
