@@ -160,11 +160,11 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.label10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label10.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label10.Location = new System.Drawing.Point(1107, 54);
+            this.label10.Location = new System.Drawing.Point(1112, 56);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(97, 19);
+            this.label10.Size = new System.Drawing.Size(85, 16);
             this.label10.TabIndex = 13;
             this.label10.Text = "CONTACT US";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
