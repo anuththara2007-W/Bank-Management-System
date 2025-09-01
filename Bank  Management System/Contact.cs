@@ -37,7 +37,7 @@ namespace Bank__Management_System
 
         private void instagram_Click(object sender, EventArgs e)
         {
-            string url = "www.";
+            string url = "www.instagram.com";
             System.Diagnostics.Process.Start(url);
         }
     }
