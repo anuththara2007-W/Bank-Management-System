@@ -35,7 +35,7 @@ namespace Bank__Management_System
         {
             Contact contact =  new Contact();
             contact.Show();
-            this.
+            this.Hide();
         }
     }
 }
