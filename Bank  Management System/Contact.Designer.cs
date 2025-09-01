@@ -134,6 +134,7 @@
             this.call.Size = new System.Drawing.Size(44, 42);
             this.call.TabIndex = 19;
             this.call.TabStop = false;
+            this.call.Click += new System.EventHandler(this.call_Click);
             // 
             // tiktok
             // 
