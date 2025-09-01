@@ -104,7 +104,7 @@
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.label6.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label6.Location = new System.Drawing.Point(406, 391);
+            this.label6.Location = new System.Drawing.Point(681, 463);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(346, 19);
             this.label6.TabIndex = 5;
