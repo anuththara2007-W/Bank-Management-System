@@ -33,8 +33,8 @@
             this.lblcontact1 = new System.Windows.Forms.Label();
             this.lblHome = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.instagram = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.instagram)).BeginInit();
             this.SuspendLayout();
             // 
             // lblAbout
@@ -93,13 +93,13 @@
             this.label1.Text = "CONTACT";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox1
+            // instagram
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(415, 486);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(57, 56);
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
+            this.instagram.Location = new System.Drawing.Point(415, 486);
+            this.instagram.Name = "instagram";
+            this.instagram.Size = new System.Drawing.Size(57, 56);
+            this.instagram.TabIndex = 17;
+            this.instagram.TabStop = false;
             // 
             // Contact
             // 
@@ -108,7 +108,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1280, 785);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.instagram);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblAbout);
             this.Controls.Add(this.lblcontact1);
@@ -118,7 +118,7 @@
             this.Name = "Contact";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contact";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.instagram)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,6 +130,6 @@
         private System.Windows.Forms.Label lblcontact1;
         private System.Windows.Forms.Label lblHome;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox instagram;
     }
 }
