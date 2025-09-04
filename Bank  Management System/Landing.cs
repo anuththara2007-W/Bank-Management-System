@@ -40,7 +40,9 @@ namespace Bank__Management_System
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Please Contact the bank ! ");
+            string url = "https://wa.me/94707266991";
+            System.Diagnostics.Process.Start(url);
         }
     }
 }
