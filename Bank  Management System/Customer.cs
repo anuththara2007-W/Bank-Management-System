@@ -150,7 +150,7 @@ namespace Bank__Management_System
                     cmd.Parameters.AddWithValue("@Email", txtEmail.Text ?? "");
                     cmd.Parameters.AddWithValue("@Address", txtAddress.Text ?? "");
                     cmd.Parameters.AddWithValue("@Username", txtUsername.Text);
-                    cmd.Parameters.AddWithValue"@Password", txtPassword.Text);
+                    cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
                     cmd.Parameters.AddWithValue("@Customer_ID", selectedCustomerId);
 
                     cmd.ExecuteNonQuery();
