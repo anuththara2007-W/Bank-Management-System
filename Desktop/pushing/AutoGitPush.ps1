@@ -1,20 +1,27 @@
-# Set repo path (change this to your actual repo folder)
-$RepoPath = "C:\Users\User\Desktop\Bank-Management-System"
+# Set repo path (change if needed)
+$RepoPath = "C:\Users\User\source\repos\Bank Management System\Bank Management System\"
 Set-Location $RepoPath
 
 while ($true) {
-    git add .
-    git commit -m "Project Updated" --allow-empty
+    # Check for changes
+    $changes = git status --porcelain
+    if ($changes) {
+        git add .
+        git commit -m "Project Updated"
 
-    try {
-        git pull origin master --rebase
-        git push origin master
-        Write-Host "✅ Project Updated"
+        try {
+            git pull origin main --rebase   # use 'master' if that's your branch
+            git push origin main
+            Write-Host "✅ Changes pushed"
+        }
+        catch {
+            Write-Host "❌ Push failed: $($_.Exception.Message)"
+        }
     }
-    catch {
-        Write-Host "❌ Push failed: $($_.Exception.Message)"
+    else {
+        Write-Host "⏳ No changes detected at $(Get-Date)"
     }
 
-    # Wait 2 seconds before running again
+    # Wait 2 seconds before checking again
     Start-Sleep -Seconds 2
 }
