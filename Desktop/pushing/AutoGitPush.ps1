@@ -1,35 +1,20 @@
-# === CONFIG ===
-$RepoPath = "C:\Users\User\source\repos\Bank Management System\Bank Management System"
-$Branch   = "master"   # change if your repo uses "main"
-
-# Go to repo path
+# Set repo path (change this to your actual repo folder)
+$RepoPath = "C:\Users\User\Desktop\Bank-Management-System"
 Set-Location $RepoPath
-Write-Host "🚀 Watching for changes in $RepoPath..."
 
-# Infinite loop
 while ($true) {
+    git add .
+    git commit -m "Project Updated" --allow-empty
+
     try {
-        # Check if there are any changes
-        if (git status --porcelain) {
-            # Stage changes
-            git add .
-
-            # Commit with timestamp
-            git commit -m "Project Updated"
-
-            # Push to GitHub
-            git push origin $Branch
-
-            Write-Host "✅ Project pushed "
-        }
-        else {
-            Write-Host "⏸ No changes at $(Get-Date -Format 'HH:mm:ss')"
-        }
+        git pull origin master --rebase
+        git push origin master
+        Write-Host "✅ Project Updated"
     }
     catch {
-        Write-Host "⚠️ Error during update: $_"
+        Write-Host "❌ Push failed: $($_.Exception.Message)"
     }
 
-    # Wait before checking again
-    Start-Sleep -Seconds 
+    # Wait 2 seconds before running again
+    Start-Sleep -Seconds 2
 }

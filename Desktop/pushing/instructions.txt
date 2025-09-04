@@ -1,6 +1,5 @@
 cd $HOME\Desktop\pushing
 
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-
-
 .\AutoGitPush.ps1
+
