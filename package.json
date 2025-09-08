@@ -1,0 +1,26 @@
+{
+  "name": "bank-management-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anuththara2007-W/Bank-Management-System.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anuththara2007-W/Bank-Management-System/issues"
+  },
+  "homepage": "https://github.com/anuththara2007-W/Bank-Management-System#readme",
+  "dependencies": {
+    "jsonfile": "^6.1.0",
+    "moment": "^2.30.1",
+    "simple-git": "^3.28.0"
+  }
+}
