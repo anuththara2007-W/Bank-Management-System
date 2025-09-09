@@ -3,3 +3,8 @@ cd $HOME\Desktop\pushing
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 .\AutoGitPush.ps1
 
+
+
+ cd "C:\Users\User\Bank  Management System"
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+C:\Users\User\Desktop\pushing\AutoGitPush.ps1
