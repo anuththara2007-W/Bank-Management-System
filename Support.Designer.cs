@@ -40,7 +40,7 @@ namespace BankApp
             // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(315, 104);
+            this.btnSend.Location = new System.Drawing.Point(305, 92);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(189, 30);
             this.btnSend.TabIndex = 28;
