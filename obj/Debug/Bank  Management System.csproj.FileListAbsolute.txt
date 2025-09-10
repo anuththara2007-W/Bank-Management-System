@@ -1,0 +1,36 @@
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\bin\Debug\Bank  Management System.exe.config
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\bin\Debug\Bank  Management System.exe
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\bin\Debug\Bank  Management System.pdb
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\obj\Debug\Bank  Management System.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\obj\Debug\Bank__Management_System.Login.resources
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\obj\Debug\Bank__Management_System.Account.resources
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\obj\Debug\BankApp.AccountPicker.resources
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\obj\Debug\BankApp.AdminSupport.resources
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\obj\Debug\BankApp.ChangePassword.resources
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\obj\Debug\Bank__Management_System.Customer.resources
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\obj\Debug\BankApp.CustomerDashboard.resources
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\obj\Debug\Bank__Management_System.CustomerMain.resources
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\obj\Debug\BankApp.CustomerPicker.resources
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\obj\Debug\Bank__Management_System.Dashboard.resources
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\obj\Debug\Bank__Management_System.DepositWithdraw.resources
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\obj\Debug\Bank__Management_System.Employee.resources
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\obj\Debug\Bank__Management_System.Landing.resources
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\obj\Debug\Bank__Management_System.Loan.resources
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\obj\Debug\BankApp.LoanRequest.resources
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\obj\Debug\BankApp.LoanRequestsApproval.resources
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\obj\Debug\Bank__Management_System.Main.resources
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\obj\Debug\BankApp.dgvAccounts.resources
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\obj\Debug\BankApp.MyLoans.resources
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\obj\Debug\BankApp.MyTransactions.resources
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\obj\Debug\BankApp.Profile.resources
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\obj\Debug\Bank__Management_System.Properties.Resources.resources
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\obj\Debug\BankApp.Support.resources
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\obj\Debug\Bank__Management_System.Transactions.resources
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\obj\Debug\BankApp.TransferFunds.resources
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\obj\Debug\Bank  Management System.csproj.GenerateResource.cache
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\obj\Debug\Bank  Management System.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\obj\Debug\Bank  Management System.exe
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\obj\Debug\Bank  Management System.pdb
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\obj\Debug\Bank  Management System.exe.config
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\obj\Debug\Bank__Management_System.About.resources
+C:\Users\User\source\repos\Bank  Management System\Bank  Management System\obj\Debug\Bank__Management_System.Contact.resources
