@@ -15,13 +15,10 @@ namespace Bank__Management_System
         public ChatBot()
         {
             InitializeComponent();
-            webBrowser1.Navigate("https://your-website-url.com");
+            webBrowser1.Navigate("https://app.fastbots.ai/embed/cmfgy9k0900w5qp1krjn4p7ex");
 
         }
 
-        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
-        {
-
-        }
+       
     }
 }
