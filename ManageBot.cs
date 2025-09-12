@@ -14,7 +14,8 @@ namespace Bank__Management_System
     {
         public ManageBot()
         {
-            InitializeComponent();
+            await webView21.EnsureCoreWebView2Async(null);
+            webView21.CoreWebView2.Navigate("https://app.fastbots.ai/embed/cmfgy9k0900w5qp1krjn4p7ex");
         }
     }
 }
