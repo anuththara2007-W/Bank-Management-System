@@ -6,15 +6,23 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace Bank__Management_System
 {
-    public partial class ManageBot : Form
+    public partial class ChatBot : Form
     {
-        public ManageBot()
+        public ChatBot()
         {
             InitializeComponent();
+            InitializeAsync();
+        }
+
+        private async void InitializeAsync()
+        {
+            // Make sure webView21 exists (added via Designer)
+            await webView21.EnsureCoreWebView2Async(null);
+            webView21.CoreWebView2.Navigate("https://app.fastbots.ai/embed/cmfgy9k0900w5qp1krjn4p7ex");
         }
     }
 }
