@@ -197,6 +197,12 @@
     <Compile Include="..\..\..\..\Documents\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
+    <Compile Include="ManageBot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageBot.Designer.cs">
+      <DependentUpon>ManageBot.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyAccounts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -308,6 +314,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageBot.resx">
+      <DependentUpon>ManageBot.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyAccounts.resx">
       <DependentUpon>MyAccounts.cs</DependentUpon>
