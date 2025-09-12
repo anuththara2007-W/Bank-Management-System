@@ -15,6 +15,13 @@ namespace Bank__Management_System
         public ChatBot()
         {
             InitializeComponent();
+            webBrowser1.Navigate("https://your-website-url.com");
+
+        }
+
+        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+
         }
     }
 }
