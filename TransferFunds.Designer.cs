@@ -147,6 +147,7 @@ namespace BankApp
             this.Controls.Add(this.lblToAccount);
             this.Name = "TransferFunds";
             this.Text = "TransferFunds";
+            this.Load += new System.EventHandler(this.TransferFunds_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.TransactionsGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
