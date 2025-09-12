@@ -50,7 +50,7 @@
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(67, 68);
             this.btnRefresh.TabIndex = 2;
-            this.btnRefresh.Text = "button1";
+            this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
             // 
             // ChatBot
