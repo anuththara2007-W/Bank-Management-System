@@ -15,6 +15,7 @@ namespace Bank__Management_System
         public ManageBot()
         {
             InitializeComponent();
+            InitializeAsync();
         }
         private async void InitializeAsync()
         {
