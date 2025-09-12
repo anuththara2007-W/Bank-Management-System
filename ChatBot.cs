@@ -11,14 +11,18 @@ using System.Windows.Forms;
 namespace Bank__Management_System
 {
     public partial class ChatBot : Form
+  
     {
-        public ChatBot()
+        public ChatForm()
         {
             InitializeComponent();
-            webBrowser1.Navigate("https://app.fastbots.ai/embed/cmfgy9k0900w5qp1krjn4p7ex");
-
+            InitializeAsync();
         }
 
-       
+        private async void InitializeAsync()
+        {
+            await webView21.EnsureCoreWebView2Async(null);
+            webView21.CoreWebView2.Navigate("https://your-chatbot-website.com");
+        }
     }
 }
