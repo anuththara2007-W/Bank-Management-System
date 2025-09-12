@@ -26,7 +26,7 @@ namespace Bank__Management_System
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            webView21.Reload();
+            ChatBot chatbot = new ChatBot(); chatbot.Show(); this.Hide();
         }
     }
 }
