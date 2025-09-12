@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,21 +44,21 @@
             this.webView21.TabIndex = 1;
             this.webView21.ZoomFactor = 1D;
             // 
-            // button1
+            // btnRefresh
             // 
-            this.button1.Location = new System.Drawing.Point(1187, 703);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(67, 68);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnRefresh.Location = new System.Drawing.Point(1187, 703);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(67, 68);
+            this.btnRefresh.TabIndex = 2;
+            this.btnRefresh.Text = "button1";
+            this.btnRefresh.UseVisualStyleBackColor = true;
             // 
             // ChatBot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 785);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.webView21);
             this.Name = "ChatBot";
             this.Text = "ChatBot";
@@ -70,6 +70,6 @@
         #endregion
 
         private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
