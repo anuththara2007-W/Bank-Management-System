@@ -62,6 +62,7 @@
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.webView21);
             this.Name = "ManageBot";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageBot";
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
             this.ResumeLayout(false);
