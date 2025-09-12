@@ -42,7 +42,6 @@
             this.webView21.Size = new System.Drawing.Size(1059, 605);
             this.webView21.TabIndex = 0;
             this.webView21.ZoomFactor = 1D;
-            this.webView21.Click += new System.EventHandler(this.webView21_Click);
             // 
             // ManageBot
             // 
