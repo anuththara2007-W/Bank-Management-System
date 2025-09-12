@@ -13,7 +13,7 @@ namespace Bank__Management_System
     public partial class ChatBot : Form
   
     {
-        public ChatForm()
+        public ChatBot()
         {
             InitializeComponent();
             InitializeAsync();
