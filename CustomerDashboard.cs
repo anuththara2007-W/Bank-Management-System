@@ -67,22 +67,51 @@ namespace BankApp
         }
 
         private void LoadLoanSummary()
-        {  // Load data into the grid
-            DataTable dt = new DataTable();
-            
+        {
+            if (Session.CustomerID <= 0)
+            {
+                dgvLoanRequests.DataSource = null;
+                return;
+            }
 
-            // Show data in the grid
-            dgvLoans.DataSource = dt;
-            dgvLoans.ReadOnly = true;
-            dgvLoans.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            using (SqlConnection con = new SqlConnection(connString))
+            using (SqlDataAdapter da = new SqlDataAdapter(
+                @"SELECT 
+                     RequestID,
+                     LoanType,
+                     Amount,
+                     Status,
+                     RequestDate
+                  FROM LoanRequests
+                  WHERE Customer_ID = @cid
+                  ORDER BY RequestDate DESC", con))
+            {
+                da.SelectCommand.Parameters.AddWithValue("@cid", Session.CustomerID);
 
-            // Format Amount and RequestDate columns if they exist
-            if (dgvLoans.Columns["Amount"] != null)
-                dgvLoans.Columns["Amount"].DefaultCellStyle.Format = "N2";
+                try
+                {
+                    // Load data into the grid
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
 
-            if (dgvLoans.Columns["RequestDate"] != null)
-                dgvLoans.Columns["RequestDate"].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm";
+                    // Show data in the grid
+                    dgvLoanRequests.DataSource = dt;
+                    dgvLoanRequests.ReadOnly = true;
+                    dgvLoanRequests.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
+                    // Format Amount and RequestDate columns if they exist
+                    if (dgvLoanRequests.Columns["Amount"] != null)
+                        dgvLoanRequests.Columns["Amount"].DefaultCellStyle.Format = "N2";
+
+                    if (dgvLoanRequests.Columns["RequestDate"] != null)
+                        dgvLoanRequests.Columns["RequestDate"].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm";
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading loan requests: " + ex.Message);
+                }
+            }
         }
 
 
