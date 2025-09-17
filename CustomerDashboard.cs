@@ -20,6 +20,7 @@ namespace BankApp
 
         private void CustomerDashboard_Load(object sender, EventArgs e)
         {
+            // Show session values for debugging
             MessageBox.Show("Name: " + Session.CustomerName);
             MessageBox.Show("ID: " + Session.CustomerID);
 
@@ -33,25 +34,21 @@ namespace BankApp
                 lblCustomerName.Text = "Welcome, " + Session.CustomerName;
             }
 
-            // Load data
+            // Load data (only once)
             LoadBalance();
             LoadRecentTransactions();
             LoadLoanSummary();
-            lblCustomerName.Text =
-     string.IsNullOrEmpty(Session.CustomerName)
-     ? "Guest"
-     : "" + Session.CustomerName;
 
-
+            // Grid settings
             dgvLoans.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridStyle.ModernizeGrid(dgvLoans);
+
             dgvTransactions.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridStyle.ModernizeGrid(dgvTransactions);
 
-
+            // Label styles
             lblBalance.BackColor = Color.Transparent;
             lblCustomerName.BackColor = Color.Transparent;
-
         }
 
         private void LoadBalance()
