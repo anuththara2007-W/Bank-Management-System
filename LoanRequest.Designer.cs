@@ -43,7 +43,7 @@ namespace BankApp
             // 
             // btnSubmitLoan
             // 
-            this.btnSubmitLoan.Location = new System.Drawing.Point(738, 277);
+            this.btnSubmitLoan.Location = new System.Drawing.Point(687, 386);
             this.btnSubmitLoan.Name = "btnSubmitLoan";
             this.btnSubmitLoan.Size = new System.Drawing.Size(189, 30);
             this.btnSubmitLoan.TabIndex = 10;
