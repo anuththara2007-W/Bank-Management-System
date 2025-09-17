@@ -38,6 +38,8 @@ namespace BankApp
             dgvTransactions.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridStyle.ModernizeGrid(dgvTransactions);
 
+            dgvLoans.ScrollBars = ScrollBars.Both;
+
             // Label styles
             lblBalance.BackColor = Color.Transparent;
             lblCustomerName.BackColor = Color.Transparent;
