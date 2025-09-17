@@ -141,8 +141,7 @@ namespace BankApp
             this.Hide();
         }
 
-        private void LoanRequest_Load_1(object sender, EventArgs e)
-        {
+        
             public class TransparentLabel : Label
         {
             public TransparentLabel()
@@ -157,5 +156,4 @@ namespace BankApp
         }
 
     }
-}
 }
