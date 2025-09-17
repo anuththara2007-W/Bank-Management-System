@@ -20,21 +20,16 @@ namespace BankApp
 
         private void CustomerDashboard_Load(object sender, EventArgs e)
         {
-            // Show session values for debugging
-            MessageBox.Show("Name: " + Session.CustomerName);
+            // Debug session values
+            MessageBox.Show("Name: " + (Session.CustomerName ?? "NULL"));
             MessageBox.Show("ID: " + Session.CustomerID);
 
-            // Set label text (if name is empty, show Guest)
-            if (string.IsNullOrEmpty(Session.CustomerName))
-            {
-                lblCustomerName.Text = "Welcome, Guest";
-            }
-            else
-            {
-                lblCustomerName.Text = "Welcome, " + Session.CustomerName;
-            }
+            // Set label text
+            lblCustomerName.Text = string.IsNullOrEmpty(Session.CustomerName)
+                ? "Welcome, Guest"
+                : "Welcome, " + Session.CustomerName;
 
-            // Load data (only once)
+            // Load data
             LoadBalance();
             LoadRecentTransactions();
             LoadLoanSummary();
@@ -50,6 +45,7 @@ namespace BankApp
             lblBalance.BackColor = Color.Transparent;
             lblCustomerName.BackColor = Color.Transparent;
         }
+
 
         private void LoadBalance()
         {
