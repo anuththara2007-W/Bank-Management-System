@@ -16,13 +16,13 @@ namespace BankApp
         public LoanRequest()
         {
             InitializeComponent();
-            
+            this.Load += LoanRequest_Load; 
         }
 
         private void LoanRequest_Load(object sender, EventArgs e)
         {
             LoadLoanTypes();
-            LoadMyRequests();
+            LoadMyRequests(); // show my requests in grid
         }
 
         private void LoadLoanTypes()
