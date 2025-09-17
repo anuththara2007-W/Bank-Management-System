@@ -2,6 +2,7 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace BankApp
@@ -24,6 +25,12 @@ namespace BankApp
             GridStyle.ModernizeGrid(dgvLoans);
             dgvTransactions.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridStyle.ModernizeGrid(dgvTransactions);
+
+
+            lblAmount.BackColor = Color.Transparent;
+            lblAmount.BorderStyle = BorderStyle.None;
+            lblLoanType.BorderStyle = BorderStyle.None;
+            lblLoanType.BackColor = Color.Transparent;
         }
 
         private void LoadBalance()
