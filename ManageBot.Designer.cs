@@ -59,6 +59,7 @@
             // 
             // btnRefreshs
             // 
+            this.btnRefreshs.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRefreshs.Image = ((System.Drawing.Image)(resources.GetObject("btnRefreshs.Image")));
             this.btnRefreshs.Location = new System.Drawing.Point(473, 26);
             this.btnRefreshs.Name = "btnRefreshs";
