@@ -27,7 +27,6 @@ namespace BankApp
             lblAmount.BorderStyle = BorderStyle.None;
             lblLoanType.BorderStyle = BorderStyle.None;
             lblLoanType.BackColor = Color.Transparent;
-            ModernizeGrid(dgvLoanRequests);
         }
 
         private void LoadLoanTypes()
@@ -160,7 +159,7 @@ namespace BankApp
         private void LoanRequest_Load_1(object sender, EventArgs e)
         {
             dgvLoanRequests.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            GridHelper.ModernizeGrid(dgvLoanRequests);
+            object value = GridHelper.ModernizeGrid(dgvLoanRequests);
 
         }
     }
