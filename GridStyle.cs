@@ -8,5 +8,9 @@ namespace Bank__Management_System
 {
     internal class GridStyle
     {
+        public static void ModernizeGrid(DataGridView grid)
+        {
+            // your styling code here
+        }
     }
 }
