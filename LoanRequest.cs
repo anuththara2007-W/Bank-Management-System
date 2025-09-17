@@ -191,10 +191,7 @@ namespace BankApp
             grid.RowTemplate.Height = 35;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            ModernizeGrid(dgvLoanRequests);
-        }
+      
 
     }
 }
