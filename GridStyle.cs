@@ -38,10 +38,9 @@ namespace Bank__Management_System
             // No row header
             grid.RowHeadersVisible = false;
             grid.RowTemplate.Height = 35;
-            foreach (DataGridViewRow row in dgvLoanRequests.Rows)
-            {
 
-            }
+            // Make columns stretch to fill grid
+            grid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
     }
 }
