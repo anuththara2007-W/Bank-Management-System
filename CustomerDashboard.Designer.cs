@@ -99,7 +99,7 @@
             this.btnDeposit.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeposit.Location = new System.Drawing.Point(92, 207);
             this.btnDeposit.Name = "btnDeposit";
-            this.btnDeposit.Size = new System.Drawing.Size(223, 39);
+            this.btnDeposit.Size = new System.Drawing.Size(223, 44);
             this.btnDeposit.TabIndex = 4;
             this.btnDeposit.Text = "Deposit";
             this.btnDeposit.UseVisualStyleBackColor = false;
@@ -117,7 +117,7 @@
             this.btnWithdraw.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWithdraw.Location = new System.Drawing.Point(348, 207);
             this.btnWithdraw.Name = "btnWithdraw";
-            this.btnWithdraw.Size = new System.Drawing.Size(223, 39);
+            this.btnWithdraw.Size = new System.Drawing.Size(223, 44);
             this.btnWithdraw.TabIndex = 5;
             this.btnWithdraw.Text = "Withdraw";
             this.btnWithdraw.UseVisualStyleBackColor = false;
@@ -135,7 +135,7 @@
             this.btnLoanRequest.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoanRequest.Location = new System.Drawing.Point(897, 207);
             this.btnLoanRequest.Name = "btnLoanRequest";
-            this.btnLoanRequest.Size = new System.Drawing.Size(223, 39);
+            this.btnLoanRequest.Size = new System.Drawing.Size(223, 44);
             this.btnLoanRequest.TabIndex = 6;
             this.btnLoanRequest.Text = "Loan Request";
             this.btnLoanRequest.UseVisualStyleBackColor = false;
@@ -153,7 +153,7 @@
             this.btnTransfer.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTransfer.Location = new System.Drawing.Point(628, 207);
             this.btnTransfer.Name = "btnTransfer";
-            this.btnTransfer.Size = new System.Drawing.Size(223, 39);
+            this.btnTransfer.Size = new System.Drawing.Size(223, 44);
             this.btnTransfer.TabIndex = 7;
             this.btnTransfer.Text = "Transfer";
             this.btnTransfer.UseVisualStyleBackColor = false;
@@ -196,7 +196,7 @@
             this.btnProfile.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProfile.Location = new System.Drawing.Point(92, 286);
             this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(223, 39);
+            this.btnProfile.Size = new System.Drawing.Size(223, 44);
             this.btnProfile.TabIndex = 10;
             this.btnProfile.Text = "Profile";
             this.btnProfile.UseVisualStyleBackColor = false;
@@ -212,11 +212,11 @@
             this.btnChangePassword.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangePassword.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangePassword.Location = new System.Drawing.Point(348, 286);
+            this.btnChangePassword.Location = new System.Drawing.Point(531, 340);
             this.btnChangePassword.Name = "btnChangePassword";
-            this.btnChangePassword.Size = new System.Drawing.Size(223, 39);
+            this.btnChangePassword.Size = new System.Drawing.Size(223, 44);
             this.btnChangePassword.TabIndex = 11;
-            this.btnChangePassword.Text = "Change the Password";
+            this.btnChangePassword.Text = "Change Password";
             this.btnChangePassword.UseVisualStyleBackColor = false;
             this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
@@ -230,9 +230,9 @@
             this.btnSupport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnSupport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSupport.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSupport.Location = new System.Drawing.Point(628, 275);
+            this.btnSupport.Location = new System.Drawing.Point(816, 340);
             this.btnSupport.Name = "btnSupport";
-            this.btnSupport.Size = new System.Drawing.Size(223, 39);
+            this.btnSupport.Size = new System.Drawing.Size(223, 44);
             this.btnSupport.TabIndex = 12;
             this.btnSupport.Text = "Support";
             this.btnSupport.UseVisualStyleBackColor = false;
