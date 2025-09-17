@@ -43,9 +43,6 @@ namespace BankApp
      : "" + Session.CustomerName;
 
 
-            LoadBalance();
-            LoadRecentTransactions();
-            LoadLoanSummary();
             dgvLoans.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridStyle.ModernizeGrid(dgvLoans);
             dgvTransactions.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
