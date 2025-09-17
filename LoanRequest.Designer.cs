@@ -66,7 +66,6 @@ namespace BankApp
             this.lblAmount.Size = new System.Drawing.Size(52, 16);
             this.lblAmount.TabIndex = 7;
             this.lblAmount.Text = "Amount";
-            this.lblAmount.Click += new System.EventHandler(this.lblAmount_Click);
             // 
             // lblLoanType
             // 
