@@ -159,7 +159,7 @@ namespace BankApp
         private void LoanRequest_Load_1(object sender, EventArgs e)
         {
             dgvLoanRequests.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            object value = GridHelper.ModernizeGrid(dgvLoanRequests);
+            object value = GridStyle.ModernizeGrid(dgvLoanRequests);
 
         }
     }
