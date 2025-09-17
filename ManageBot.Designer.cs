@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageBot));
             this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnRefreshs = new System.Windows.Forms.PictureBox();
@@ -58,6 +59,7 @@
             // 
             // btnRefreshs
             // 
+            this.btnRefreshs.Image = ((System.Drawing.Image)(resources.GetObject("btnRefreshs.Image")));
             this.btnRefreshs.Location = new System.Drawing.Point(473, 26);
             this.btnRefreshs.Name = "btnRefreshs";
             this.btnRefreshs.Size = new System.Drawing.Size(41, 34);
