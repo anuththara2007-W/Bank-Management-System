@@ -143,12 +143,16 @@
             // 
             // dgvLoans
             // 
+            this.dgvLoans.AllowUserToAddRows = false;
+            this.dgvLoans.AllowUserToResizeColumns = false;
+            this.dgvLoans.AllowUserToResizeRows = false;
             this.dgvLoans.BackgroundColor = System.Drawing.Color.White;
             this.dgvLoans.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvLoans.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLoans.GridColor = System.Drawing.Color.White;
             this.dgvLoans.Location = new System.Drawing.Point(671, 428);
             this.dgvLoans.Name = "dgvLoans";
+            this.dgvLoans.ReadOnly = true;
             this.dgvLoans.RowHeadersWidth = 51;
             this.dgvLoans.Size = new System.Drawing.Size(572, 253);
             this.dgvLoans.TabIndex = 9;
