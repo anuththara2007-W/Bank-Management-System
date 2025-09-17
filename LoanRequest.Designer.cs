@@ -89,9 +89,9 @@ namespace BankApp
             this.btnGoBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGoBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGoBack.Location = new System.Drawing.Point(402, 386);
+            this.btnGoBack.Location = new System.Drawing.Point(351, 386);
             this.btnGoBack.Name = "btnGoBack";
-            this.btnGoBack.Size = new System.Drawing.Size(141, 47);
+            this.btnGoBack.Size = new System.Drawing.Size(238, 47);
             this.btnGoBack.TabIndex = 20;
             this.btnGoBack.Text = "Go Back";
             this.btnGoBack.UseVisualStyleBackColor = false;
