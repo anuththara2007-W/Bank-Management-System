@@ -130,6 +130,7 @@ namespace BankApp
             this.Controls.Add(this.lblLoanType);
             this.DoubleBuffered = true;
             this.Name = "LoanRequest";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoanRequest";
             this.Load += new System.EventHandler(this.LoanRequest_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoanRequests)).EndInit();
