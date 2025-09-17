@@ -168,7 +168,6 @@ namespace BankApp
             cmbLoanType.FlatStyle = FlatStyle.Flat;
             cmbLoanType.BackColor = this.BackColor;
             txtAmount.BorderStyle = BorderStyle.None;
-            txtAmount.BackColor = Color.Transparent;
 
         }
 
