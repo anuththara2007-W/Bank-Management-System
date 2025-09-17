@@ -82,9 +82,7 @@ namespace BankApp
 
             if (dgvLoans.Columns["RequestDate"] != null)
                 dgvLoans.Columns["RequestDate"].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm";
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            dgvLoans.DataSource = dt;
+
         }
 
 
