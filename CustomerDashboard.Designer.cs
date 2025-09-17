@@ -60,10 +60,10 @@
             // lblCustomerName
             // 
             this.lblCustomerName.AutoSize = true;
-            this.lblCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomerName.Location = new System.Drawing.Point(224, 144);
+            this.lblCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomerName.Location = new System.Drawing.Point(213, 142);
             this.lblCustomerName.Name = "lblCustomerName";
-            this.lblCustomerName.Size = new System.Drawing.Size(118, 29);
+            this.lblCustomerName.Size = new System.Drawing.Size(137, 32);
             this.lblCustomerName.TabIndex = 1;
             this.lblCustomerName.Text = "customer ";
             // 
@@ -89,42 +89,50 @@
             // 
             // btnDeposit
             // 
+            this.btnDeposit.BackColor = System.Drawing.Color.White;
+            this.btnDeposit.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeposit.Location = new System.Drawing.Point(92, 199);
             this.btnDeposit.Name = "btnDeposit";
-            this.btnDeposit.Size = new System.Drawing.Size(141, 47);
+            this.btnDeposit.Size = new System.Drawing.Size(223, 47);
             this.btnDeposit.TabIndex = 4;
             this.btnDeposit.Text = "Deposit";
-            this.btnDeposit.UseVisualStyleBackColor = true;
+            this.btnDeposit.UseVisualStyleBackColor = false;
             this.btnDeposit.Click += new System.EventHandler(this.btnDeposit_Click);
             // 
             // btnWithdraw
             // 
+            this.btnWithdraw.BackColor = System.Drawing.Color.White;
+            this.btnWithdraw.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWithdraw.Location = new System.Drawing.Point(348, 199);
             this.btnWithdraw.Name = "btnWithdraw";
-            this.btnWithdraw.Size = new System.Drawing.Size(141, 47);
+            this.btnWithdraw.Size = new System.Drawing.Size(223, 47);
             this.btnWithdraw.TabIndex = 5;
             this.btnWithdraw.Text = "Withdraw";
-            this.btnWithdraw.UseVisualStyleBackColor = true;
+            this.btnWithdraw.UseVisualStyleBackColor = false;
             this.btnWithdraw.Click += new System.EventHandler(this.btnWithdraw_Click);
             // 
             // btnLoanRequest
             // 
+            this.btnLoanRequest.BackColor = System.Drawing.Color.White;
+            this.btnLoanRequest.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoanRequest.Location = new System.Drawing.Point(897, 199);
             this.btnLoanRequest.Name = "btnLoanRequest";
-            this.btnLoanRequest.Size = new System.Drawing.Size(141, 47);
+            this.btnLoanRequest.Size = new System.Drawing.Size(223, 47);
             this.btnLoanRequest.TabIndex = 6;
             this.btnLoanRequest.Text = "Loan Request";
-            this.btnLoanRequest.UseVisualStyleBackColor = true;
+            this.btnLoanRequest.UseVisualStyleBackColor = false;
             this.btnLoanRequest.Click += new System.EventHandler(this.btnLoanRequest_Click);
             // 
             // btnTransfer
             // 
+            this.btnTransfer.BackColor = System.Drawing.Color.White;
+            this.btnTransfer.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTransfer.Location = new System.Drawing.Point(628, 199);
             this.btnTransfer.Name = "btnTransfer";
-            this.btnTransfer.Size = new System.Drawing.Size(141, 47);
+            this.btnTransfer.Size = new System.Drawing.Size(223, 47);
             this.btnTransfer.TabIndex = 7;
             this.btnTransfer.Text = "Transfer";
-            this.btnTransfer.UseVisualStyleBackColor = true;
+            this.btnTransfer.UseVisualStyleBackColor = false;
             this.btnTransfer.Click += new System.EventHandler(this.btnTransfer_Click);
             // 
             // dgvTransactions
@@ -140,7 +148,7 @@
             // dgvLoans
             // 
             this.dgvLoans.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLoans.Location = new System.Drawing.Point(683, 352);
+            this.dgvLoans.Location = new System.Drawing.Point(654, 413);
             this.dgvLoans.Name = "dgvLoans";
             this.dgvLoans.RowHeadersWidth = 51;
             this.dgvLoans.Size = new System.Drawing.Size(496, 202);
@@ -148,42 +156,50 @@
             // 
             // btnProfile
             // 
+            this.btnProfile.BackColor = System.Drawing.Color.White;
+            this.btnProfile.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProfile.Location = new System.Drawing.Point(92, 278);
             this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(141, 47);
+            this.btnProfile.Size = new System.Drawing.Size(223, 47);
             this.btnProfile.TabIndex = 10;
             this.btnProfile.Text = "Profile";
-            this.btnProfile.UseVisualStyleBackColor = true;
+            this.btnProfile.UseVisualStyleBackColor = false;
             this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // btnChangePassword
             // 
+            this.btnChangePassword.BackColor = System.Drawing.Color.White;
+            this.btnChangePassword.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChangePassword.Location = new System.Drawing.Point(348, 278);
             this.btnChangePassword.Name = "btnChangePassword";
-            this.btnChangePassword.Size = new System.Drawing.Size(141, 47);
+            this.btnChangePassword.Size = new System.Drawing.Size(223, 47);
             this.btnChangePassword.TabIndex = 11;
             this.btnChangePassword.Text = "Change the Password";
-            this.btnChangePassword.UseVisualStyleBackColor = true;
+            this.btnChangePassword.UseVisualStyleBackColor = false;
             this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
             // btnSupport
             // 
+            this.btnSupport.BackColor = System.Drawing.Color.White;
+            this.btnSupport.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSupport.Location = new System.Drawing.Point(628, 267);
             this.btnSupport.Name = "btnSupport";
-            this.btnSupport.Size = new System.Drawing.Size(141, 47);
+            this.btnSupport.Size = new System.Drawing.Size(223, 47);
             this.btnSupport.TabIndex = 12;
             this.btnSupport.Text = "Support";
-            this.btnSupport.UseVisualStyleBackColor = true;
+            this.btnSupport.UseVisualStyleBackColor = false;
             this.btnSupport.Click += new System.EventHandler(this.btnSupport_Click);
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(553, 621);
+            this.btnLogout.BackColor = System.Drawing.Color.White;
+            this.btnLogout.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.Location = new System.Drawing.Point(595, 320);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(141, 47);
+            this.btnLogout.Size = new System.Drawing.Size(223, 47);
             this.btnLogout.TabIndex = 13;
             this.btnLogout.Text = "Log Out";
-            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // CustomerDashboard
