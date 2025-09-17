@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bank__Management_System
 {
-    internal class Class1
+    internal class GridStyle
     {
     }
 }
