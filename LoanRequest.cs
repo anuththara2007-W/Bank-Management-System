@@ -160,7 +160,7 @@ namespace BankApp
         private void LoanRequest_Load_1(object sender, EventArgs e)
         {
             lblAmount.BackColor = Color.Transparent;
-            txt.BorderStyle = BorderStyle.None;
+            lblAmount.BorderStyle = BorderStyle.None;
         }
     }
 }
