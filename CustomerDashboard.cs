@@ -15,7 +15,7 @@ namespace BankApp
         public CustomerDashboard()
         {
             InitializeComponent();
-            this.Load += CustomerDashboard_Load; // only once here
+           
         }
 
         private void CustomerDashboard_Load(object sender, EventArgs e)
