@@ -36,6 +36,8 @@ namespace Bank__Management_System
         private void label1_Click(object sender, EventArgs e)
         {
             admin Main = new admin();
+            Main.Show();
+            this.Hide();
         }
     }
 }
