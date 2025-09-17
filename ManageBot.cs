@@ -30,5 +30,12 @@ namespace Bank__Management_System
             chatbot.Show(); 
             this.Hide();
         }
+
+        private void btnRefreshs_Click(object sender, EventArgs e)
+        {
+            ManageBot chatbot = new ManageBot();
+            chatbot.Show();
+            this.Hide();
+        }
     }
 }

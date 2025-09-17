@@ -62,12 +62,12 @@
             this.btnRefreshs.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefreshs.BackgroundImage")));
             this.btnRefreshs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRefreshs.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRefreshs.Image = ((System.Drawing.Image)(resources.GetObject("btnRefreshs.Image")));
-            this.btnRefreshs.Location = new System.Drawing.Point(473, 26);
+            this.btnRefreshs.Location = new System.Drawing.Point(442, 25);
             this.btnRefreshs.Name = "btnRefreshs";
-            this.btnRefreshs.Size = new System.Drawing.Size(41, 34);
+            this.btnRefreshs.Size = new System.Drawing.Size(37, 36);
             this.btnRefreshs.TabIndex = 4;
             this.btnRefreshs.TabStop = false;
+            this.btnRefreshs.Click += new System.EventHandler(this.btnRefreshs_Click);
             // 
             // ManageBot
             // 
