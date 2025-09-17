@@ -23,7 +23,7 @@ namespace BankApp
             lblCustomerName.Text =
      string.IsNullOrEmpty(Session.CustomerName)
      ? "Guest"
-     : "Welcome, " + Session.CustomerName;
+     : "" + Session.CustomerName;
 
 
             LoadBalance();
