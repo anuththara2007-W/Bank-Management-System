@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageBot));
             this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.btnRefreshs = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRefreshs)).BeginInit();
@@ -47,21 +46,12 @@
             this.webView21.TabIndex = 0;
             this.webView21.ZoomFactor = 1D;
             // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Location = new System.Drawing.Point(339, 25);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(97, 36);
-            this.btnRefresh.TabIndex = 3;
-            this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            // 
             // btnRefreshs
             // 
             this.btnRefreshs.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefreshs.BackgroundImage")));
             this.btnRefreshs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRefreshs.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRefreshs.Location = new System.Drawing.Point(442, 25);
+            this.btnRefreshs.Location = new System.Drawing.Point(339, 25);
             this.btnRefreshs.Name = "btnRefreshs";
             this.btnRefreshs.Size = new System.Drawing.Size(37, 36);
             this.btnRefreshs.TabIndex = 4;
@@ -74,7 +64,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 785);
             this.Controls.Add(this.btnRefreshs);
-            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.webView21);
             this.Name = "ManageBot";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -88,7 +77,6 @@
         #endregion
 
         private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
-        private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.PictureBox btnRefreshs;
     }
 }
