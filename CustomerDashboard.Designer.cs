@@ -90,6 +90,7 @@
             // btnDeposit
             // 
             this.btnDeposit.BackColor = System.Drawing.Color.White;
+            this.btnDeposit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeposit.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeposit.Location = new System.Drawing.Point(92, 199);
             this.btnDeposit.Name = "btnDeposit";
@@ -102,6 +103,7 @@
             // btnWithdraw
             // 
             this.btnWithdraw.BackColor = System.Drawing.Color.White;
+            this.btnWithdraw.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWithdraw.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWithdraw.Location = new System.Drawing.Point(348, 199);
             this.btnWithdraw.Name = "btnWithdraw";
@@ -114,6 +116,7 @@
             // btnLoanRequest
             // 
             this.btnLoanRequest.BackColor = System.Drawing.Color.White;
+            this.btnLoanRequest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoanRequest.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoanRequest.Location = new System.Drawing.Point(897, 199);
             this.btnLoanRequest.Name = "btnLoanRequest";
@@ -126,6 +129,7 @@
             // btnTransfer
             // 
             this.btnTransfer.BackColor = System.Drawing.Color.White;
+            this.btnTransfer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTransfer.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTransfer.Location = new System.Drawing.Point(628, 199);
             this.btnTransfer.Name = "btnTransfer";
@@ -157,6 +161,7 @@
             // btnProfile
             // 
             this.btnProfile.BackColor = System.Drawing.Color.White;
+            this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProfile.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProfile.Location = new System.Drawing.Point(92, 278);
             this.btnProfile.Name = "btnProfile";
@@ -169,6 +174,7 @@
             // btnChangePassword
             // 
             this.btnChangePassword.BackColor = System.Drawing.Color.White;
+            this.btnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangePassword.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChangePassword.Location = new System.Drawing.Point(348, 278);
             this.btnChangePassword.Name = "btnChangePassword";
@@ -181,6 +187,7 @@
             // btnSupport
             // 
             this.btnSupport.BackColor = System.Drawing.Color.White;
+            this.btnSupport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSupport.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSupport.Location = new System.Drawing.Point(628, 267);
             this.btnSupport.Name = "btnSupport";
@@ -193,6 +200,7 @@
             // btnLogout
             // 
             this.btnLogout.BackColor = System.Drawing.Color.White;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.Location = new System.Drawing.Point(595, 320);
             this.btnLogout.Name = "btnLogout";
