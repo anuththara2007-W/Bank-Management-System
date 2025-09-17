@@ -165,9 +165,5 @@ namespace BankApp
             lblAmount.BackColor = Color.Transparent;
         }
 
-        private void lblAmount_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
