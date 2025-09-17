@@ -115,6 +115,8 @@ namespace BankApp
             // 
             // dgvLoanRequests
             // 
+            this.dgvLoanRequests.AllowUserToResizeColumns = false;
+            this.dgvLoanRequests.AllowUserToResizeRows = false;
             this.dgvLoanRequests.BackgroundColor = System.Drawing.Color.White;
             this.dgvLoanRequests.ColumnHeadersHeight = 29;
             this.dgvLoanRequests.Cursor = System.Windows.Forms.Cursors.Hand;
