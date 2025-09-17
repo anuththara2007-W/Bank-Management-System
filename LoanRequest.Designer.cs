@@ -123,7 +123,6 @@ namespace BankApp
             this.DoubleBuffered = true;
             this.Name = "LoanRequest";
             this.Text = "LoanRequest";
-            this.Load += new System.EventHandler(this.LoanRequest_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoanRequests)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
