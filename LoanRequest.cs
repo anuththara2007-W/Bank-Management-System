@@ -198,10 +198,7 @@ namespace BankApp
             grid.RowTemplate.Height = 35;
             foreach (DataGridViewRow row in dgvLoanRequests.Rows)
             {
-                string status = row.Cells["Status"].Value?.ToString();
-                if (status == "Approved") row.DefaultCellStyle.BackColor = Color.LightGreen;
-                else if (status == "Rejected") row.DefaultCellStyle.BackColor = Color.IndianRed;
-                else row.DefaultCellStyle.BackColor = Color.White; // Pending
+              
             }
         }
 
