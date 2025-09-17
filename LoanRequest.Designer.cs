@@ -69,20 +69,20 @@ namespace BankApp
             // lblAmount
             // 
             this.lblAmount.AutoSize = true;
-            this.lblAmount.Font = new System.Drawing.Font("Microsoft Yi Baiti", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmount.Location = new System.Drawing.Point(365, 224);
+            this.lblAmount.Font = new System.Drawing.Font("Microsoft Yi Baiti", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmount.Location = new System.Drawing.Point(387, 227);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(91, 28);
+            this.lblAmount.Size = new System.Drawing.Size(76, 23);
             this.lblAmount.TabIndex = 7;
             this.lblAmount.Text = "Amount";
             // 
             // lblLoanType
             // 
             this.lblLoanType.AutoSize = true;
-            this.lblLoanType.Font = new System.Drawing.Font("Microsoft Yi Baiti", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoanType.Location = new System.Drawing.Point(365, 160);
+            this.lblLoanType.Font = new System.Drawing.Font("Microsoft Yi Baiti", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoanType.Location = new System.Drawing.Point(387, 165);
             this.lblLoanType.Name = "lblLoanType";
-            this.lblLoanType.Size = new System.Drawing.Size(128, 28);
+            this.lblLoanType.Size = new System.Drawing.Size(109, 23);
             this.lblLoanType.TabIndex = 6;
             this.lblLoanType.Text = "Loan Type";
             // 
@@ -95,7 +95,7 @@ namespace BankApp
             this.btnGoBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGoBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGoBack.Location = new System.Drawing.Point(351, 386);
+            this.btnGoBack.Location = new System.Drawing.Point(353, 385);
             this.btnGoBack.Name = "btnGoBack";
             this.btnGoBack.Size = new System.Drawing.Size(238, 47);
             this.btnGoBack.TabIndex = 20;
@@ -105,10 +105,11 @@ namespace BankApp
             // 
             // cmbLoanType
             // 
+            this.cmbLoanType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbLoanType.FormattingEnabled = true;
             this.cmbLoanType.Location = new System.Drawing.Point(523, 164);
             this.cmbLoanType.Name = "cmbLoanType";
-            this.cmbLoanType.Size = new System.Drawing.Size(313, 24);
+            this.cmbLoanType.Size = new System.Drawing.Size(313, 30);
             this.cmbLoanType.TabIndex = 8;
             // 
             // dgvLoanRequests

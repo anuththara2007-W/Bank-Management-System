@@ -168,6 +168,33 @@ namespace BankApp
            
 
         }
+        private void ModernizeGrid(DataGridView grid)
+        {
+            grid.BorderStyle = BorderStyle.None;
+            grid.BackgroundColor = Color.White;
+            grid.EnableHeadersVisualStyles = false;
+            grid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+
+            // Header
+            grid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            grid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 144, 255); // DodgerBlue
+            grid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            grid.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+
+            // Rows
+            grid.DefaultCellStyle.BackColor = Color.White;
+            grid.DefaultCellStyle.ForeColor = Color.Black;
+            grid.DefaultCellStyle.SelectionBackColor = Color.FromArgb(30, 144, 255);
+            grid.DefaultCellStyle.SelectionForeColor = Color.White;
+            grid.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(245, 245, 245);
+            grid.RowHeadersVisible = false;
+            grid.RowTemplate.Height = 35;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            ModernizeGrid(dgvLoanRequests);
+        }
 
     }
 }
