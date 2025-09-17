@@ -80,12 +80,17 @@ namespace BankApp
             // 
             // btnGoBack
             // 
-            this.btnGoBack.Location = new System.Drawing.Point(376, 289);
+            this.btnGoBack.BackColor = System.Drawing.Color.White;
+            this.btnGoBack.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnGoBack.FlatAppearance.BorderSize = 0;
+            this.btnGoBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnGoBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGoBack.Location = new System.Drawing.Point(402, 386);
             this.btnGoBack.Name = "btnGoBack";
             this.btnGoBack.Size = new System.Drawing.Size(141, 47);
             this.btnGoBack.TabIndex = 20;
             this.btnGoBack.Text = "Go Back";
-            this.btnGoBack.UseVisualStyleBackColor = true;
+            this.btnGoBack.UseVisualStyleBackColor = false;
             this.btnGoBack.Click += new System.EventHandler(this.btnGoBack_Click);
             // 
             // cmbLoanType
