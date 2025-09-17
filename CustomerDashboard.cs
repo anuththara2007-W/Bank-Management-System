@@ -9,6 +9,9 @@ namespace BankApp
 {
     public partial class CustomerDashboard : Form
     {
+        private readonly string connString =
+            @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
+
         public CustomerDashboard()
         {
             InitializeComponent();
@@ -74,6 +77,7 @@ namespace BankApp
                 return;
             }
 
+            string connString = null;
             using (SqlConnection con = new SqlConnection(connString))
             using (SqlDataAdapter da = new SqlDataAdapter(
                 @"SELECT 
