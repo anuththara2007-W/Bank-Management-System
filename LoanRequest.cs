@@ -177,21 +177,28 @@ namespace BankApp
 
             // Header
             grid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            grid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 144, 255); // DodgerBlue
-            grid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            grid.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
+            grid.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
             grid.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            grid.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             // Rows
             grid.DefaultCellStyle.BackColor = Color.White;
             grid.DefaultCellStyle.ForeColor = Color.Black;
-            grid.DefaultCellStyle.SelectionBackColor = Color.FromArgb(30, 144, 255);
-            grid.DefaultCellStyle.SelectionForeColor = Color.White;
-            grid.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(245, 245, 245);
+            grid.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+            grid.DefaultCellStyle.SelectionBackColor = Color.FromArgb(240, 248, 255);
+            grid.DefaultCellStyle.SelectionForeColor = Color.Black;
+
+            // Alternate row shading
+            grid.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(250, 250, 250);
+
+            // No row header
             grid.RowHeadersVisible = false;
             grid.RowTemplate.Height = 35;
         }
 
-      
+
+
 
     }
 }
