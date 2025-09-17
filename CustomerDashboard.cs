@@ -20,7 +20,11 @@ namespace BankApp
 
         private void CustomerDashboard_Load(object sender, EventArgs e)
         {
-            lblCustomerName.Text = "Welcome, " + Session.CustomerName;
+            lblCustomerName.Text =
+     string.IsNullOrEmpty(Session.CustomerName)
+     ? "Welcome, Guest"
+     : "Welcome, " + Session.CustomerName;
+
 
             LoadBalance();
             LoadRecentTransactions();
