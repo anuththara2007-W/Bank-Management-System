@@ -32,5 +32,10 @@ namespace Bank__Management_System
             chatbot.Show();
             this.Hide();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            admin Main = new admin();
+        }
     }
 }
