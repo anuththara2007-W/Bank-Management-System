@@ -2,16 +2,12 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace BankApp
 {
     public partial class CustomerDashboard : Form
     {
-        private readonly string connString =
-            @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
-
         public CustomerDashboard()
         {
             InitializeComponent();
@@ -24,18 +20,6 @@ namespace BankApp
             LoadBalance();
             LoadRecentTransactions();
             LoadLoanSummary();
-            dgvLoans.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            GridStyle.ModernizeGrid(dgvLoans);
-            dgvTransactions.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            GridStyle.ModernizeGrid(dgvTransactions);
-
-
-            lblBalance.BackColor = Color.Transparent;
-            lblBalance.BorderStyle = BorderStyle.None;
-            lblCustomerName.BorderStyle = BorderStyle.None;
-            lblCustomerName.BackColor = Color.Transparent;
-
-            this.Load += CustomerDashboard_Load;
         }
 
         private void LoadBalance()
@@ -72,55 +56,20 @@ namespace BankApp
         }
 
         private void LoadLoanSummary()
-        {  
-            if (Session.CustomerID <= 0)
+        {
+            using (SqlConnection con = DatabaseHelper.GetConnection())
             {
-                dgvLoans.DataSource = null;
-                return;
-            }
-
-            string connString = null;
-            using (SqlConnection con = new SqlConnection(connString))
-            using (SqlDataAdapter da = new SqlDataAdapter(
-                @"SELECT 
-                     RequestID,
-                     LoanType,
-                     Amount,
-                     Status,
-                     RequestDate
-                  FROM LoanRequests
-                  WHERE Customer_ID = @cid
-                  ORDER BY RequestDate DESC", con))
-            {
+                con.Open();
+                SqlDataAdapter da = new SqlDataAdapter(
+                    "SELECT LoanID, LoanType, Amount, InterestRate, LoanDate " +
+                    "FROM Loan WHERE Customer_ID = @cid", con);
                 da.SelectCommand.Parameters.AddWithValue("@cid", Session.CustomerID);
 
-                try
-                {
-                    // Load data into the grid
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-
-                    // Show data in the grid
-                    dgvLoans.DataSource = dt;
-                    dgvLoans.ReadOnly = true;
-                    dgvLoans.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
-                    // Format Amount and RequestDate columns if they exist
-                    if (dgvLoans.Columns["Amount"] != null)
-                        dgvLoans.Columns["Amount"].DefaultCellStyle.Format = "N2";
-
-                    if (dgvLoans.Columns["RequestDate"] != null)
-                        dgvLoans.Columns["RequestDate"].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm";
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error loading loan requests: " + ex.Message);
-                }
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgvLoans.DataSource = dt;
             }
         }
-
-
 
         // Navigation buttons
         private void btnLoanRequest_Click(object sender, EventArgs e)

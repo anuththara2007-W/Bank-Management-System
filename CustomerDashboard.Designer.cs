@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerDashboard));
+            this.label1 = new System.Windows.Forms.Label();
             this.lblCustomerName = new System.Windows.Forms.Label();
             this.lblBalance = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnDeposit = new System.Windows.Forms.Button();
             this.btnWithdraw = new System.Windows.Forms.Button();
             this.btnLoanRequest = new System.Windows.Forms.Button();
@@ -46,6 +48,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoans)).BeginInit();
             this.SuspendLayout();
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(76, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(114, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Wellcome , ";
+            // 
             // lblCustomerName
             // 
             this.lblCustomerName.AutoSize = true;
@@ -60,11 +72,21 @@
             // 
             this.lblBalance.AutoSize = true;
             this.lblBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBalance.Location = new System.Drawing.Point(946, 145);
+            this.lblBalance.Location = new System.Drawing.Point(946, 146);
             this.lblBalance.Name = "lblBalance";
             this.lblBalance.Size = new System.Drawing.Size(32, 29);
             this.lblBalance.TabIndex = 3;
             this.lblBalance.Text = "0 ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(783, 47);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(81, 25);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "balance";
             // 
             // btnDeposit
             // 
@@ -272,7 +294,9 @@
             this.Controls.Add(this.btnWithdraw);
             this.Controls.Add(this.btnDeposit);
             this.Controls.Add(this.lblBalance);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.lblCustomerName);
+            this.Controls.Add(this.label1);
             this.Name = "CustomerDashboard";
             this.Text = "CustomerDashboard";
             this.Load += new System.EventHandler(this.CustomerDashboard_Load);
@@ -284,8 +308,11 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblCustomerName;
         private System.Windows.Forms.Label lblBalance;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnDeposit;
         private System.Windows.Forms.Button btnWithdraw;
         private System.Windows.Forms.Button btnLoanRequest;
