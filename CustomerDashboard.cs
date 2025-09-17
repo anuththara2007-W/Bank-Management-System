@@ -20,6 +20,23 @@ namespace BankApp
 
         private void CustomerDashboard_Load(object sender, EventArgs e)
         {
+            MessageBox.Show("Name: " + Session.CustomerName);
+            MessageBox.Show("ID: " + Session.CustomerID);
+
+            // Set label text (if name is empty, show Guest)
+            if (string.IsNullOrEmpty(Session.CustomerName))
+            {
+                lblCustomerName.Text = "Welcome, Guest";
+            }
+            else
+            {
+                lblCustomerName.Text = "Welcome, " + Session.CustomerName;
+            }
+
+            // Load data
+            LoadBalance();
+            LoadRecentTransactions();
+            LoadLoanSummary();
             lblCustomerName.Text =
      string.IsNullOrEmpty(Session.CustomerName)
      ? "Guest"
