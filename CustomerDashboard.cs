@@ -67,19 +67,21 @@ namespace BankApp
         }
 
         private void LoadLoanSummary()
-        {
-            using (SqlConnection con = DatabaseHelper.GetConnection())
-            {
-                con.Open();
-                SqlDataAdapter da = new SqlDataAdapter(
-                    "SELECT LoanID, LoanType, Amount, InterestRate, LoanDate " +
-                    "FROM Loan WHERE Customer_ID = @cid", con);
-                da.SelectCommand.Parameters.AddWithValue("@cid", Session.CustomerID);
+        {  // Load data into the grid
+            DataTable dt = new DataTable();
+            da.Fill(dt);
 
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dgvLoans.DataSource = dt;
-            }
+            // Show data in the grid
+            dgvLoanRequests.DataSource = dt;
+            dgvLoanRequests.ReadOnly = true;
+            dgvLoanRequests.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            // Format Amount and RequestDate columns if they exist
+            if (dgvLoanRequests.Columns["Amount"] != null)
+                dgvLoanRequests.Columns["Amount"].DefaultCellStyle.Format = "N2";
+
+            if (dgvLoanRequests.Columns["RequestDate"] != null)
+                dgvLoanRequests.Columns["RequestDate"].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm";
         }
 
 
