@@ -2,6 +2,7 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace BankApp
@@ -20,6 +21,16 @@ namespace BankApp
             LoadBalance();
             LoadRecentTransactions();
             LoadLoanSummary();
+            dgvLoans.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            GridStyle.ModernizeGrid(dgvLoans);
+            dgvTransactions.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            GridStyle.ModernizeGrid(dgvTransactions);
+
+
+            lblBalance.BackColor = Color.Transparent;
+            lblBalance.BorderStyle = BorderStyle.None;
+            lblCustomerName.BorderStyle = BorderStyle.None;
+            lblCustomerName.BackColor = Color.Transparent;
         }
 
         private void LoadBalance()
@@ -70,6 +81,8 @@ namespace BankApp
                 dgvLoans.DataSource = dt;
             }
         }
+
+
 
         // Navigation buttons
         private void btnLoanRequest_Click(object sender, EventArgs e)
