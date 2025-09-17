@@ -152,9 +152,9 @@
             this.btnTransfer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnTransfer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTransfer.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTransfer.Location = new System.Drawing.Point(628, 207);
+            this.btnTransfer.Location = new System.Drawing.Point(653, 259);
             this.btnTransfer.Name = "btnTransfer";
-            this.btnTransfer.Size = new System.Drawing.Size(223, 44);
+            this.btnTransfer.Size = new System.Drawing.Size(248, 44);
             this.btnTransfer.TabIndex = 7;
             this.btnTransfer.Text = "Transfer";
             this.btnTransfer.UseVisualStyleBackColor = false;
