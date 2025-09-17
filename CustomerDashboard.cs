@@ -25,9 +25,8 @@ namespace BankApp
             MessageBox.Show("ID: " + Session.CustomerID);
 
             // Set label text
-            lblCustomerName.Text = string.IsNullOrEmpty(Session.CustomerName)
-                ? "Welcome, Guest"
-                : "Welcome, " + Session.CustomerName;
+            lblCustomerName.Text = Session.CustomerName;
+                
 
             // Load data
             LoadBalance();
