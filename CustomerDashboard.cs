@@ -72,16 +72,16 @@ namespace BankApp
             da.Fill(dt);
 
             // Show data in the grid
-            dgvLoanRequests.DataSource = dt;
-            dgvLoanRequests.ReadOnly = true;
-            dgvLoanRequests.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvLoans.DataSource = dt;
+            dgvLoans.ReadOnly = true;
+            dgvLoans.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             // Format Amount and RequestDate columns if they exist
-            if (dgvLoanRequests.Columns["Amount"] != null)
-                dgvLoanRequests.Columns["Amount"].DefaultCellStyle.Format = "N2";
+            if (dgvLoans.Columns["Amount"] != null)
+                dgvLoans.Columns["Amount"].DefaultCellStyle.Format = "N2";
 
-            if (dgvLoanRequests.Columns["RequestDate"] != null)
-                dgvLoanRequests.Columns["RequestDate"].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm";
+            if (dgvLoans.Columns["RequestDate"] != null)
+                dgvLoans.Columns["RequestDate"].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm";
         }
 
 
