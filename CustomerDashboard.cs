@@ -20,8 +20,8 @@ namespace BankApp
             LoadBalance();
             LoadRecentTransactions();
             LoadLoanSummary();
-            dgvLoanRequests.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            GridStyle.ModernizeGrid(dgvLoanRequests);
+            dgvLoans.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            GridStyle.ModernizeGrid(dgvLoans);
         }
 
         private void LoadBalance()
