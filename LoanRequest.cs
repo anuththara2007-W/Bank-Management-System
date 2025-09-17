@@ -76,7 +76,7 @@ namespace BankApp
                     con.Open();
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("✅ Loan request submitted! Waiting for admin approval.");
+                    MessageBox.Show("Loan request submitted! Waiting for admin approval.");
 
                     txtAmount.Clear();
                     if (cmbLoanType.Items.Count > 0) cmbLoanType.SelectedIndex = 0;
@@ -90,9 +90,7 @@ namespace BankApp
             }
         }
 
-        /// <summary>
-        /// Shows only this customer's requests from LoanRequests.
-        /// </summary>
+       
         private void LoadMyRequests()
         {
 
