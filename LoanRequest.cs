@@ -16,7 +16,7 @@ namespace BankApp
         public LoanRequest()
         {
             InitializeComponent();
-            this.Load += LoanRequest_Load; // Load form event
+            
         }
 
         private void LoanRequest_Load(object sender, EventArgs e)
