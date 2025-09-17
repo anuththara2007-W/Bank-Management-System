@@ -160,5 +160,10 @@ namespace BankApp
         {
             lblAmount.BackColor = Color.Transparent;
         }
+
+        private void LoanRequest_Load_1(object sender, EventArgs e)
+        {
+            lblAmount.BackColor = Color.Transparent;
+        }
     }
 }
