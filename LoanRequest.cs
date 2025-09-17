@@ -161,6 +161,13 @@ namespace BankApp
         {
             lblAmount.BackColor = Color.Transparent;
             lblAmount.BorderStyle = BorderStyle.None;
+            lblAmount.BorderStyle = BorderStyle.None;
+            lblAmount.BackColor = Color.Transparent;
+        }
+
+        private void lblAmount_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

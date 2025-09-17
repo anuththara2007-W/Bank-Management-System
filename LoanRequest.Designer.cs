@@ -75,6 +75,7 @@ namespace BankApp
             this.lblLoanType.Size = new System.Drawing.Size(72, 16);
             this.lblLoanType.TabIndex = 6;
             this.lblLoanType.Text = "Loan Type";
+            this.lblLoanType.Click += new System.EventHandler(this.lblLoanType_Click);
             // 
             // btnGoBack
             // 
