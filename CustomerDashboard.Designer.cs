@@ -279,6 +279,7 @@
             this.Controls.Add(this.lblBalance);
             this.DoubleBuffered = true;
             this.Name = "CustomerDashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CustomerDashboard";
             this.Load += new System.EventHandler(this.CustomerDashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).EndInit();
