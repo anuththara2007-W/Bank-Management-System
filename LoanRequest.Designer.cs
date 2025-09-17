@@ -53,7 +53,7 @@ namespace BankApp
             // 
             // txtAmount
             // 
-            this.txtAmount.Location = new System.Drawing.Point(340, 110);
+            this.txtAmount.Location = new System.Drawing.Point(551, 249);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(360, 22);
             this.txtAmount.TabIndex = 9;
@@ -89,7 +89,7 @@ namespace BankApp
             // cmbLoanType
             // 
             this.cmbLoanType.FormattingEnabled = true;
-            this.cmbLoanType.Location = new System.Drawing.Point(350, 36);
+            this.cmbLoanType.Location = new System.Drawing.Point(623, 170);
             this.cmbLoanType.Name = "cmbLoanType";
             this.cmbLoanType.Size = new System.Drawing.Size(337, 24);
             this.cmbLoanType.TabIndex = 8;
@@ -120,8 +120,10 @@ namespace BankApp
             this.Controls.Add(this.cmbLoanType);
             this.Controls.Add(this.lblAmount);
             this.Controls.Add(this.lblLoanType);
+            this.DoubleBuffered = true;
             this.Name = "LoanRequest";
             this.Text = "LoanRequest";
+            this.Load += new System.EventHandler(this.LoanRequest_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoanRequests)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

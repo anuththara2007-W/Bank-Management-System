@@ -140,5 +140,22 @@ namespace BankApp
             customerdash.Show();
             this.Hide();
         }
+
+        private void LoanRequest_Load_1(object sender, EventArgs e)
+        {
+            public class TransparentLabel : Label
+        {
+            public TransparentLabel()
+            {
+                SetStyle(ControlStyles.Opaque, true);
+            }
+
+            protected override void OnPaintBackground(PaintEventArgs e)
+            {
+                // Do nothing -> don't paint background
+            }
+        }
+
     }
+}
 }
