@@ -53,16 +53,17 @@ namespace BankApp
             // 
             // txtAmount
             // 
-            this.txtAmount.Location = new System.Drawing.Point(551, 249);
+            this.txtAmount.Location = new System.Drawing.Point(523, 219);
+            this.txtAmount.Multiline = true;
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(360, 22);
+            this.txtAmount.Size = new System.Drawing.Size(313, 36);
             this.txtAmount.TabIndex = 9;
             // 
             // lblAmount
             // 
             this.lblAmount.AutoSize = true;
             this.lblAmount.Font = new System.Drawing.Font("Microsoft Yi Baiti", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmount.Location = new System.Drawing.Point(343, 227);
+            this.lblAmount.Location = new System.Drawing.Point(365, 224);
             this.lblAmount.Name = "lblAmount";
             this.lblAmount.Size = new System.Drawing.Size(91, 28);
             this.lblAmount.TabIndex = 7;
@@ -72,7 +73,7 @@ namespace BankApp
             // 
             this.lblLoanType.AutoSize = true;
             this.lblLoanType.Font = new System.Drawing.Font("Microsoft Yi Baiti", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoanType.Location = new System.Drawing.Point(343, 160);
+            this.lblLoanType.Location = new System.Drawing.Point(365, 160);
             this.lblLoanType.Name = "lblLoanType";
             this.lblLoanType.Size = new System.Drawing.Size(128, 28);
             this.lblLoanType.TabIndex = 6;
