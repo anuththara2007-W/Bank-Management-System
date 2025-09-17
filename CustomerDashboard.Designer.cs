@@ -161,7 +161,9 @@
             // 
             // dgvTransactions
             // 
+            this.dgvTransactions.BackgroundColor = System.Drawing.Color.White;
             this.dgvTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTransactions.GridColor = System.Drawing.Color.White;
             this.dgvTransactions.Location = new System.Drawing.Point(50, 428);
             this.dgvTransactions.Name = "dgvTransactions";
             this.dgvTransactions.RowHeadersWidth = 51;
@@ -171,11 +173,13 @@
             // 
             // dgvLoans
             // 
+            this.dgvLoans.BackgroundColor = System.Drawing.Color.White;
             this.dgvLoans.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLoans.Location = new System.Drawing.Point(694, 428);
+            this.dgvLoans.GridColor = System.Drawing.Color.White;
+            this.dgvLoans.Location = new System.Drawing.Point(671, 428);
             this.dgvLoans.Name = "dgvLoans";
             this.dgvLoans.RowHeadersWidth = 51;
-            this.dgvLoans.Size = new System.Drawing.Size(549, 253);
+            this.dgvLoans.Size = new System.Drawing.Size(572, 253);
             this.dgvLoans.TabIndex = 9;
             // 
             // btnProfile
