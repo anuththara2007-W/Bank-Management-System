@@ -21,9 +21,7 @@ namespace BankApp
         private void CustomerDashboard_Load(object sender, EventArgs e)
         {
             // Debug session values
-            MessageBox.Show("Name: " + (Session.CustomerName ?? "NULL"));
-            MessageBox.Show("ID: " + Session.CustomerID);
-
+          
             // Set label text
             lblCustomerName.Text = Session.CustomerName;
                 
