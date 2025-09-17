@@ -43,7 +43,7 @@ namespace BankApp
             // 
             // btnSubmitLoan
             // 
-            this.btnSubmitLoan.Location = new System.Drawing.Point(386, 213);
+            this.btnSubmitLoan.Location = new System.Drawing.Point(738, 277);
             this.btnSubmitLoan.Name = "btnSubmitLoan";
             this.btnSubmitLoan.Size = new System.Drawing.Size(189, 30);
             this.btnSubmitLoan.TabIndex = 10;
@@ -61,18 +61,20 @@ namespace BankApp
             // lblAmount
             // 
             this.lblAmount.AutoSize = true;
-            this.lblAmount.Location = new System.Drawing.Point(237, 161);
+            this.lblAmount.Font = new System.Drawing.Font("Microsoft Yi Baiti", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmount.Location = new System.Drawing.Point(343, 227);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(52, 16);
+            this.lblAmount.Size = new System.Drawing.Size(91, 28);
             this.lblAmount.TabIndex = 7;
             this.lblAmount.Text = "Amount";
             // 
             // lblLoanType
             // 
             this.lblLoanType.AutoSize = true;
-            this.lblLoanType.Location = new System.Drawing.Point(205, 36);
+            this.lblLoanType.Font = new System.Drawing.Font("Microsoft Yi Baiti", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoanType.Location = new System.Drawing.Point(343, 160);
             this.lblLoanType.Name = "lblLoanType";
-            this.lblLoanType.Size = new System.Drawing.Size(72, 16);
+            this.lblLoanType.Size = new System.Drawing.Size(128, 28);
             this.lblLoanType.TabIndex = 6;
             this.lblLoanType.Text = "Loan Type";
             // 
@@ -99,11 +101,11 @@ namespace BankApp
             this.dgvLoanRequests.BackgroundColor = System.Drawing.Color.White;
             this.dgvLoanRequests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLoanRequests.GridColor = System.Drawing.Color.White;
-            this.dgvLoanRequests.Location = new System.Drawing.Point(3, 362);
+            this.dgvLoanRequests.Location = new System.Drawing.Point(35, 477);
             this.dgvLoanRequests.Name = "dgvLoanRequests";
             this.dgvLoanRequests.RowHeadersWidth = 51;
             this.dgvLoanRequests.RowTemplate.Height = 24;
-            this.dgvLoanRequests.Size = new System.Drawing.Size(908, 127);
+            this.dgvLoanRequests.Size = new System.Drawing.Size(1189, 266);
             this.dgvLoanRequests.TabIndex = 21;
             // 
             // LoanRequest
