@@ -98,9 +98,9 @@
             this.btnDeposit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnDeposit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeposit.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeposit.Location = new System.Drawing.Point(62, 259);
+            this.btnDeposit.Location = new System.Drawing.Point(50, 259);
             this.btnDeposit.Name = "btnDeposit";
-            this.btnDeposit.Size = new System.Drawing.Size(223, 44);
+            this.btnDeposit.Size = new System.Drawing.Size(248, 44);
             this.btnDeposit.TabIndex = 4;
             this.btnDeposit.Text = "Deposit";
             this.btnDeposit.UseVisualStyleBackColor = false;
@@ -116,9 +116,9 @@
             this.btnWithdraw.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnWithdraw.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWithdraw.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnWithdraw.Location = new System.Drawing.Point(348, 207);
+            this.btnWithdraw.Location = new System.Drawing.Point(345, 257);
             this.btnWithdraw.Name = "btnWithdraw";
-            this.btnWithdraw.Size = new System.Drawing.Size(223, 44);
+            this.btnWithdraw.Size = new System.Drawing.Size(256, 44);
             this.btnWithdraw.TabIndex = 5;
             this.btnWithdraw.Text = "Withdraw";
             this.btnWithdraw.UseVisualStyleBackColor = false;
