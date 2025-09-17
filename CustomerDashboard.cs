@@ -69,7 +69,7 @@ namespace BankApp
         private void LoadLoanSummary()
         {  // Load data into the grid
             DataTable dt = new DataTable();
-            da.Fill(dt);
+            
 
             // Show data in the grid
             dgvLoans.DataSource = dt;
@@ -82,6 +82,8 @@ namespace BankApp
 
             if (dgvLoans.Columns["RequestDate"] != null)
                 dgvLoans.Columns["RequestDate"].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm";
+            DataTable dt = new DataTable();
+            da.Fill(dt);
         }
 
 
