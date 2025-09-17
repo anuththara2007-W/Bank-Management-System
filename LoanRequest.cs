@@ -12,6 +12,7 @@ namespace BankApp
     {
         private readonly string connString =
             @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
+        private object da;
 
         public LoanRequest()
         {
@@ -93,7 +94,7 @@ namespace BankApp
         private void LoadMyRequests()
         {
             DataTable dt = new DataTable();
-            da.Fill(dt);
+            object value = da.Fill(dt);
             dgvLoanRequests.DataSource = dt;
 
             // Now color the rows based on Status
