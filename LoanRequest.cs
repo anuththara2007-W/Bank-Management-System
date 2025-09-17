@@ -22,7 +22,7 @@ namespace BankApp
         private void LoanRequest_Load(object sender, EventArgs e)
         {
             LoadLoanTypes();
-            LoadMyRequests(); // show my requests in grid
+            LoadMyRequests(); 
         }
 
         private void LoadLoanTypes()
