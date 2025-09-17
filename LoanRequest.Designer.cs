@@ -97,9 +97,9 @@ namespace BankApp
             // cmbLoanType
             // 
             this.cmbLoanType.FormattingEnabled = true;
-            this.cmbLoanType.Location = new System.Drawing.Point(623, 170);
+            this.cmbLoanType.Location = new System.Drawing.Point(523, 164);
             this.cmbLoanType.Name = "cmbLoanType";
-            this.cmbLoanType.Size = new System.Drawing.Size(337, 24);
+            this.cmbLoanType.Size = new System.Drawing.Size(313, 24);
             this.cmbLoanType.TabIndex = 8;
             // 
             // dgvLoanRequests
