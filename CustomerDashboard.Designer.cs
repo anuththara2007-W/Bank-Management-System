@@ -91,7 +91,10 @@
             // 
             this.btnDeposit.BackColor = System.Drawing.Color.White;
             this.btnDeposit.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnDeposit.FlatAppearance.BorderSize = 0;
             this.btnDeposit.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btnDeposit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnDeposit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnDeposit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeposit.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeposit.Location = new System.Drawing.Point(92, 199);
@@ -106,7 +109,10 @@
             // 
             this.btnWithdraw.BackColor = System.Drawing.Color.White;
             this.btnWithdraw.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnWithdraw.FlatAppearance.BorderSize = 0;
             this.btnWithdraw.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btnWithdraw.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnWithdraw.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnWithdraw.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWithdraw.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWithdraw.Location = new System.Drawing.Point(348, 199);
@@ -121,7 +127,10 @@
             // 
             this.btnLoanRequest.BackColor = System.Drawing.Color.White;
             this.btnLoanRequest.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnLoanRequest.FlatAppearance.BorderSize = 0;
             this.btnLoanRequest.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btnLoanRequest.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnLoanRequest.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnLoanRequest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoanRequest.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoanRequest.Location = new System.Drawing.Point(897, 199);
@@ -136,7 +145,10 @@
             // 
             this.btnTransfer.BackColor = System.Drawing.Color.White;
             this.btnTransfer.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnTransfer.FlatAppearance.BorderSize = 0;
             this.btnTransfer.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btnTransfer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnTransfer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnTransfer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTransfer.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTransfer.Location = new System.Drawing.Point(628, 199);
@@ -170,7 +182,10 @@
             // 
             this.btnProfile.BackColor = System.Drawing.Color.White;
             this.btnProfile.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnProfile.FlatAppearance.BorderSize = 0;
             this.btnProfile.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btnProfile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProfile.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProfile.Location = new System.Drawing.Point(92, 278);
@@ -185,7 +200,10 @@
             // 
             this.btnChangePassword.BackColor = System.Drawing.Color.White;
             this.btnChangePassword.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnChangePassword.FlatAppearance.BorderSize = 0;
             this.btnChangePassword.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btnChangePassword.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnChangePassword.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangePassword.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChangePassword.Location = new System.Drawing.Point(348, 278);
@@ -200,7 +218,10 @@
             // 
             this.btnSupport.BackColor = System.Drawing.Color.White;
             this.btnSupport.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSupport.FlatAppearance.BorderSize = 0;
             this.btnSupport.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btnSupport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnSupport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnSupport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSupport.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSupport.Location = new System.Drawing.Point(628, 267);
@@ -215,7 +236,10 @@
             // 
             this.btnLogout.BackColor = System.Drawing.Color.White;
             this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.Location = new System.Drawing.Point(595, 320);
