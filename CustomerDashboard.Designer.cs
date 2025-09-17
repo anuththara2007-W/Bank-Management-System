@@ -98,7 +98,7 @@
             this.btnDeposit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnDeposit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeposit.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeposit.Location = new System.Drawing.Point(92, 207);
+            this.btnDeposit.Location = new System.Drawing.Point(62, 259);
             this.btnDeposit.Name = "btnDeposit";
             this.btnDeposit.Size = new System.Drawing.Size(223, 44);
             this.btnDeposit.TabIndex = 4;
