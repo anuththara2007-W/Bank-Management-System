@@ -34,6 +34,8 @@ namespace BankApp
             lblBalance.BorderStyle = BorderStyle.None;
             lblCustomerName.BorderStyle = BorderStyle.None;
             lblCustomerName.BackColor = Color.Transparent;
+
+            this.Load += CustomerDashboard_Load;
         }
 
         private void LoadBalance()
