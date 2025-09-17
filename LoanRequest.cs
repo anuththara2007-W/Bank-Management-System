@@ -27,7 +27,7 @@ namespace BankApp
 
         private void LoadLoanTypes()
         {
-            cmbLoanType.DropDownStyle = ComboBoxStyle.DropDownList;
+          
             cmbLoanType.Items.Clear();
             cmbLoanType.Items.Add("Personal Loan");
             cmbLoanType.Items.Add("Home Loan");
