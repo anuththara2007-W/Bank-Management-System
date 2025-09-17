@@ -70,7 +70,7 @@ namespace BankApp
         {  
             if (Session.CustomerID <= 0)
             {
-                dgvLoanRequests.DataSource = null;
+                dgvLoans.DataSource = null;
                 return;
             }
 
