@@ -164,8 +164,8 @@ namespace BankApp
             lblAmount.BorderStyle = BorderStyle.None;
             lblLoanType.BorderStyle = BorderStyle.None;
             lblLoanType.BackColor = Color.Transparent;
+            ModernizeGrid(dgvLoanRequests);
 
-           
 
         }
         private void ModernizeGrid(DataGridView grid)
