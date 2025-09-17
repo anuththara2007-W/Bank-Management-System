@@ -68,20 +68,47 @@ namespace BankApp
 
         private void LoadLoanSummary()
         {
-            using (SqlConnection con = DatabaseHelper.GetConnection())
+            if (Session.CustomerID <= 0)
             {
-                con.Open();
-                SqlDataAdapter da = new SqlDataAdapter(
-                    "SELECT LoanID, LoanType, Amount, InterestRate, LoanDate " +
-                    "FROM Loan WHERE Customer_ID = @cid", con);
+                dgvLoans.DataSource = null;
+                return;
+            }
+
+            using (SqlConnection con = new SqlConnection(connString)) // use the real string
+            using (SqlDataAdapter da = new SqlDataAdapter(
+                @"SELECT 
+             RequestID,
+             LoanType,
+             Amount,
+             Status,
+             RequestDate
+          FROM LoanRequests
+          WHERE Customer_ID = @cid
+          ORDER BY RequestDate DESC", con))
+            {
                 da.SelectCommand.Parameters.AddWithValue("@cid", Session.CustomerID);
 
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dgvLoans.DataSource = dt;
+                try
+                {
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    dgvLoans.DataSource = dt;
+                    dgvLoans.ReadOnly = true;
+                    dgvLoans.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+                    if (dgvLoans.Columns["Amount"] != null)
+                        dgvLoans.Columns["Amount"].DefaultCellStyle.Format = "N2";
+
+                    if (dgvLoans.Columns["RequestDate"] != null)
+                        dgvLoans.Columns["RequestDate"].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading loan requests: " + ex.Message);
+                }
             }
         }
-
 
 
         // Navigation buttons
