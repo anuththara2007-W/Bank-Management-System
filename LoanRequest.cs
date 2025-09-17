@@ -161,8 +161,8 @@ namespace BankApp
         {
             lblAmount.BackColor = Color.Transparent;
             lblAmount.BorderStyle = BorderStyle.None;
-            lblAmount.BorderStyle = BorderStyle.None;
-            lblAmount.BackColor = Color.Transparent;
+            lblLoanType.BorderStyle = BorderStyle.None;
+            lblLoanType.BackColor = Color.Transparent;
         }
 
     }
