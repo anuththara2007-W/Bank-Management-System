@@ -44,6 +44,7 @@ namespace BankApp
             // btnSubmitLoan
             // 
             this.btnSubmitLoan.BackColor = System.Drawing.Color.White;
+            this.btnSubmitLoan.FlatAppearance.BorderSize = 0;
             this.btnSubmitLoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmitLoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmitLoan.Location = new System.Drawing.Point(666, 386);
