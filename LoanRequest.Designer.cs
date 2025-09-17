@@ -61,7 +61,7 @@ namespace BankApp
             // lblAmount
             // 
             this.lblAmount.AutoSize = true;
-            this.lblAmount.Location = new System.Drawing.Point(217, 113);
+            this.lblAmount.Location = new System.Drawing.Point(237, 161);
             this.lblAmount.Name = "lblAmount";
             this.lblAmount.Size = new System.Drawing.Size(52, 16);
             this.lblAmount.TabIndex = 7;
