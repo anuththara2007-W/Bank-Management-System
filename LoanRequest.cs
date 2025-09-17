@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BankApp
 {
@@ -164,6 +165,8 @@ namespace BankApp
             lblLoanType.BorderStyle = BorderStyle.None;
             lblLoanType.BackColor = Color.Transparent;
 
+            cmbLoanType.FlatStyle = FlatStyle.Flat;
+            cmbLoanType.BackColor = Color.Transparent;
             cmbLoanType.BackColor = Color.Transparent;
             txtAmount.BorderStyle = BorderStyle.None;
             txtAmount.BackColor = Color.Transparent;
