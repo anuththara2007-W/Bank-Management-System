@@ -166,7 +166,7 @@
             this.dgvTransactions.Name = "dgvTransactions";
             this.dgvTransactions.RowHeadersWidth = 51;
             this.dgvTransactions.RowTemplate.Height = 24;
-            this.dgvTransactions.Size = new System.Drawing.Size(574, 206);
+            this.dgvTransactions.Size = new System.Drawing.Size(574, 253);
             this.dgvTransactions.TabIndex = 8;
             // 
             // dgvLoans
