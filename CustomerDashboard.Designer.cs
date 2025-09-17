@@ -175,7 +175,7 @@
             this.dgvLoans.Location = new System.Drawing.Point(694, 428);
             this.dgvLoans.Name = "dgvLoans";
             this.dgvLoans.RowHeadersWidth = 51;
-            this.dgvLoans.Size = new System.Drawing.Size(549, 202);
+            this.dgvLoans.Size = new System.Drawing.Size(549, 253);
             this.dgvLoans.TabIndex = 9;
             // 
             // btnProfile
