@@ -130,6 +130,8 @@
             // 
             // dgvTransactions
             // 
+            this.dgvTransactions.AllowUserToResizeColumns = false;
+            this.dgvTransactions.AllowUserToResizeRows = false;
             this.dgvTransactions.BackgroundColor = System.Drawing.Color.White;
             this.dgvTransactions.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
