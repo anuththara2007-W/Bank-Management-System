@@ -44,7 +44,7 @@ namespace BankApp
 
                 object result = cmd.ExecuteScalar();
                 decimal balance = (result != DBNull.Value) ? Convert.ToDecimal(result) : 0;
-                lblBalance.Text = balance.ToString("C");
+                lblBalance.Text = balance.ToString("RS.");
             }
         }
 
