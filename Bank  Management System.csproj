@@ -115,6 +115,7 @@
     <Compile Include="ChatBot.Designer.cs">
       <DependentUpon>ChatBot.cs</DependentUpon>
     </Compile>
+    <Compile Include="GridStyle.cs" />
     <Compile Include="Contact.cs">
       <SubType>Form</SubType>
     </Compile>
