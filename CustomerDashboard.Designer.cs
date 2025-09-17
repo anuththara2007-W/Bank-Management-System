@@ -134,9 +134,9 @@
             this.btnLoanRequest.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnLoanRequest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoanRequest.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoanRequest.Location = new System.Drawing.Point(897, 207);
+            this.btnLoanRequest.Location = new System.Drawing.Point(951, 259);
             this.btnLoanRequest.Name = "btnLoanRequest";
-            this.btnLoanRequest.Size = new System.Drawing.Size(223, 44);
+            this.btnLoanRequest.Size = new System.Drawing.Size(249, 44);
             this.btnLoanRequest.TabIndex = 6;
             this.btnLoanRequest.Text = "Loan Request";
             this.btnLoanRequest.UseVisualStyleBackColor = false;
