@@ -30,9 +30,9 @@
         {
             this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.refresh = new System.Windows.Forms.PictureBox();
+            this.btnRefreshs = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.refresh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRefreshs)).BeginInit();
             this.SuspendLayout();
             // 
             // webView21
@@ -56,27 +56,27 @@
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // refresh
+            // btnRefreshs
             // 
-            this.refresh.Location = new System.Drawing.Point(473, 26);
-            this.refresh.Name = "refresh";
-            this.refresh.Size = new System.Drawing.Size(41, 34);
-            this.refresh.TabIndex = 4;
-            this.refresh.TabStop = false;
+            this.btnRefreshs.Location = new System.Drawing.Point(473, 26);
+            this.btnRefreshs.Name = "btnRefreshs";
+            this.btnRefreshs.Size = new System.Drawing.Size(41, 34);
+            this.btnRefreshs.TabIndex = 4;
+            this.btnRefreshs.TabStop = false;
             // 
             // ManageBot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 785);
-            this.Controls.Add(this.refresh);
+            this.Controls.Add(this.btnRefreshs);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.webView21);
             this.Name = "ManageBot";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageBot";
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.refresh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRefreshs)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -85,6 +85,6 @@
 
         private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
         private System.Windows.Forms.Button btnRefresh;
-        private System.Windows.Forms.PictureBox refresh;
+        private System.Windows.Forms.PictureBox btnRefreshs;
     }
 }
