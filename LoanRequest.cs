@@ -92,6 +92,10 @@ namespace BankApp
         /// </summary>
         private void LoadMyRequests()
         {
+            string status = reader["Status"].ToString();
+            if (status == "Approved") dgvLoanRequests.Rows[i].DefaultCellStyle.BackColor = Color.LightGreen;
+            else if (status == "Rejected") dgvLoanRequests.Rows[i].DefaultCellStyle.BackColor = Color.IndianRed;
+            else dgvLoanRequests.Rows[i].DefaultCellStyle.BackColor = Color.White;
 
             if (Session.CustomerID <= 0)
             {
