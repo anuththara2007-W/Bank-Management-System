@@ -12,7 +12,6 @@ namespace BankApp
     {
         private readonly string connString =
             @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
-        private object da;
 
         public LoanRequest()
         {
@@ -93,23 +92,6 @@ namespace BankApp
         /// </summary>
         private void LoadMyRequests()
         {
-            DataTable dt = new DataTable();
-            object value = da.Fill(dt);
-            dgvLoanRequests.DataSource = dt;
-
-            // Now color the rows based on Status
-            foreach (DataGridViewRow row in dgvLoanRequests.Rows)
-            {
-                string status = row.Cells["Status"].Value?.ToString(); // get Status
-                if (status == "Approved")
-                    row.DefaultCellStyle.BackColor = Color.LightGreen;
-                else if (status == "Rejected")
-                    row.DefaultCellStyle.BackColor = Color.IndianRed;
-                else // Pending or anything else
-                    row.DefaultCellStyle.BackColor = Color.White;
-            }
-
-
 
             if (Session.CustomerID <= 0)
             {
