@@ -45,15 +45,23 @@ namespace BankApp
             using (SqlConnection con = DatabaseHelper.GetConnection())
             {
                 con.Open();
+
                 SqlCommand cmd = new SqlCommand(
                     "SELECT SUM(Balance) FROM Accounts WHERE Customer_ID = @cid", con);
                 cmd.Parameters.AddWithValue("@cid", Session.CustomerID);
 
                 object result = cmd.ExecuteScalar();
-                decimal balance = (result != DBNull.Value) ? Convert.ToDecimal(result) : 0;
-                lblBalance.Text = balance.ToString("Rs");
+
+                decimal balance = 0;   // start with 0
+                if (result != DBNull.Value)   // check if result is not empty
+                {
+                    balance = Convert.ToDecimal(result);
+                }
+
+                lblBalance.Text = "Rs " + balance.ToString("N2");
             }
         }
+
 
         private void LoadRecentTransactions()
         {
