@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bank__Management_System
 {
-    class Class1
+    internal class Class1
     {
     }
 }
