@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerDashboard));
-            this.lblCustomerName = new System.Windows.Forms.Label();
             this.lblBalance = new System.Windows.Forms.Label();
             this.btnDeposit = new System.Windows.Forms.Button();
             this.btnWithdraw = new System.Windows.Forms.Button();
@@ -42,19 +41,10 @@
             this.btnSupport = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.lblCustomerName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoans)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblCustomerName
-            // 
-            this.lblCustomerName.AutoSize = true;
-            this.lblCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomerName.Location = new System.Drawing.Point(213, 142);
-            this.lblCustomerName.Name = "lblCustomerName";
-            this.lblCustomerName.Size = new System.Drawing.Size(137, 32);
-            this.lblCustomerName.TabIndex = 1;
-            this.lblCustomerName.Text = "customer ";
             // 
             // lblBalance
             // 
@@ -253,6 +243,16 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.btnProfile_Click);
             // 
+            // lblCustomerName
+            // 
+            this.lblCustomerName.AutoSize = true;
+            this.lblCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomerName.Location = new System.Drawing.Point(215, 145);
+            this.lblCustomerName.Name = "lblCustomerName";
+            this.lblCustomerName.Size = new System.Drawing.Size(32, 29);
+            this.lblCustomerName.TabIndex = 14;
+            this.lblCustomerName.Text = "0 ";
+            // 
             // CustomerDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -260,6 +260,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1280, 785);
+            this.Controls.Add(this.lblCustomerName);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnSupport);
             this.Controls.Add(this.btnChangePassword);
@@ -272,7 +273,7 @@
             this.Controls.Add(this.btnWithdraw);
             this.Controls.Add(this.btnDeposit);
             this.Controls.Add(this.lblBalance);
-            this.Controls.Add(this.lblCustomerName);
+            this.DoubleBuffered = true;
             this.Name = "CustomerDashboard";
             this.Text = "CustomerDashboard";
             this.Load += new System.EventHandler(this.CustomerDashboard_Load);
@@ -284,7 +285,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label lblCustomerName;
         private System.Windows.Forms.Label lblBalance;
         private System.Windows.Forms.Button btnDeposit;
         private System.Windows.Forms.Button btnWithdraw;
@@ -297,5 +297,6 @@
         private System.Windows.Forms.Button btnSupport;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblCustomerName;
     }
 }
