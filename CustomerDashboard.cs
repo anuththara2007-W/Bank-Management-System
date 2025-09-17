@@ -9,6 +9,9 @@ namespace BankApp
 {
     public partial class CustomerDashboard : Form
     {
+        private readonly string connString =
+    @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
+
         public CustomerDashboard()
         {
             InitializeComponent();
