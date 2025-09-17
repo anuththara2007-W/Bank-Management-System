@@ -27,8 +27,8 @@ namespace BankApp
             GridStyle.ModernizeGrid(dgvTransactions);
 
 
-            lblAmount.BackColor = Color.Transparent;
-            lblAmount.BorderStyle = BorderStyle.None;
+            lblBalance.BackColor = Color.Transparent;
+            lblBalance.BorderStyle = BorderStyle.None;
             lblLoanType.BorderStyle = BorderStyle.None;
             lblLoanType.BackColor = Color.Transparent;
         }
