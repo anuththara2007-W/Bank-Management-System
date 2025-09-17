@@ -71,6 +71,8 @@ namespace BankApp
             }
         }
 
+
+
         // Navigation buttons
         private void btnLoanRequest_Click(object sender, EventArgs e)
         {
