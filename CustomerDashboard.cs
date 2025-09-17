@@ -21,7 +21,7 @@ namespace BankApp
         private void CustomerDashboard_Load(object sender, EventArgs e)
         {
             // Debug session values
-          
+
             // Set label text
             lblCustomerName.Text = Session.CustomerName;
                 
