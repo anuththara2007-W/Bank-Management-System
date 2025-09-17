@@ -51,7 +51,7 @@
             this.btnRefreshs.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefreshs.BackgroundImage")));
             this.btnRefreshs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRefreshs.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRefreshs.Location = new System.Drawing.Point(1047, 25);
+            this.btnRefreshs.Location = new System.Drawing.Point(1091, 28);
             this.btnRefreshs.Name = "btnRefreshs";
             this.btnRefreshs.Size = new System.Drawing.Size(28, 28);
             this.btnRefreshs.TabIndex = 4;
