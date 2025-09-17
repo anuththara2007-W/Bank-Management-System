@@ -95,7 +95,9 @@ namespace BankApp
             // 
             // dgvLoanRequests
             // 
+            this.dgvLoanRequests.BackgroundColor = System.Drawing.Color.White;
             this.dgvLoanRequests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLoanRequests.GridColor = System.Drawing.Color.White;
             this.dgvLoanRequests.Location = new System.Drawing.Point(3, 362);
             this.dgvLoanRequests.Name = "dgvLoanRequests";
             this.dgvLoanRequests.RowHeadersWidth = 51;
