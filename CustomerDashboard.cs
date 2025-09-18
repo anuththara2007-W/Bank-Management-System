@@ -187,5 +187,12 @@ namespace BankApp
             withdraw.Show();
             this.Hide();
         }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            ReportsForm reports = new ReportsForm();
+            reports.Show();
+
+        }
     }
 }

@@ -276,6 +276,7 @@
             this.btnReport.TabIndex = 15;
             this.btnReport.Text = "Reports";
             this.btnReport.UseVisualStyleBackColor = false;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // CustomerDashboard
             // 
