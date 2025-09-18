@@ -62,7 +62,7 @@
             this.btnPreview.Name = "btnPreview";
             this.btnPreview.Size = new System.Drawing.Size(151, 52);
             this.btnPreview.TabIndex = 2;
-            this.btnPreview.Text = "button1";
+            this.btnPreview.Text = "Preview Report";
             this.btnPreview.UseVisualStyleBackColor = true;
             // 
             // ReportsForm
