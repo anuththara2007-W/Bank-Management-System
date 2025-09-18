@@ -33,9 +33,9 @@
             this.btnPreview = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
             this.dgvReport = new System.Windows.Forms.DataGridView();
-            this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
+            this.pdfViewer = new Microsoft.Web.WebView2.WinForms.WebView2();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pdfViewer)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -85,23 +85,23 @@
             this.dgvReport.Size = new System.Drawing.Size(1023, 154);
             this.dgvReport.TabIndex = 4;
             // 
-            // webView21
+            // pdfViewer
             // 
-            this.webView21.AllowExternalDrop = true;
-            this.webView21.CreationProperties = null;
-            this.webView21.DefaultBackgroundColor = System.Drawing.Color.White;
-            this.webView21.Location = new System.Drawing.Point(19, 397);
-            this.webView21.Name = "webView21";
-            this.webView21.Size = new System.Drawing.Size(1050, 206);
-            this.webView21.TabIndex = 5;
-            this.webView21.ZoomFactor = 1D;
+            this.pdfViewer.AllowExternalDrop = true;
+            this.pdfViewer.CreationProperties = null;
+            this.pdfViewer.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.pdfViewer.Location = new System.Drawing.Point(19, 397);
+            this.pdfViewer.Name = "pdfViewer";
+            this.pdfViewer.Size = new System.Drawing.Size(1050, 206);
+            this.pdfViewer.TabIndex = 5;
+            this.pdfViewer.ZoomFactor = 1D;
             // 
             // ReportsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1093, 618);
-            this.Controls.Add(this.webView21);
+            this.Controls.Add(this.pdfViewer);
             this.Controls.Add(this.dgvReport);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnPreview);
@@ -110,7 +110,7 @@
             this.Name = "ReportsForm";
             this.Text = "ReportsForm";
             ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pdfViewer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,6 +123,6 @@
         private System.Windows.Forms.Button btnPreview;
         private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.DataGridView dgvReport;
-        private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
+        private Microsoft.Web.WebView2.WinForms.WebView2 pdfViewer;
     }
 }
