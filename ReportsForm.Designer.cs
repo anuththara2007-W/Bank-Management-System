@@ -33,7 +33,9 @@
             this.btnPreview = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
             this.dgvReport = new System.Windows.Forms.DataGridView();
+            this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -49,11 +51,6 @@
             // cmbReportType
             // 
             this.cmbReportType.FormattingEnabled = true;
-            this.cmbReportType.Items.AddRange(new object[] {
-            "Transactions",
-            "Loan Requests",
-            "Deposits",
-            "Withdrawals"});
             this.cmbReportType.Location = new System.Drawing.Point(70, 71);
             this.cmbReportType.Name = "cmbReportType";
             this.cmbReportType.Size = new System.Drawing.Size(235, 24);
@@ -81,18 +78,30 @@
             // dgvReport
             // 
             this.dgvReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReport.Location = new System.Drawing.Point(20, 284);
+            this.dgvReport.Location = new System.Drawing.Point(21, 203);
             this.dgvReport.Name = "dgvReport";
             this.dgvReport.RowHeadersWidth = 51;
             this.dgvReport.RowTemplate.Height = 24;
-            this.dgvReport.Size = new System.Drawing.Size(1022, 307);
+            this.dgvReport.Size = new System.Drawing.Size(1023, 154);
             this.dgvReport.TabIndex = 4;
+            // 
+            // webView21
+            // 
+            this.webView21.AllowExternalDrop = true;
+            this.webView21.CreationProperties = null;
+            this.webView21.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.webView21.Location = new System.Drawing.Point(19, 397);
+            this.webView21.Name = "webView21";
+            this.webView21.Size = new System.Drawing.Size(1050, 206);
+            this.webView21.TabIndex = 5;
+            this.webView21.ZoomFactor = 1D;
             // 
             // ReportsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1093, 618);
+            this.Controls.Add(this.webView21);
             this.Controls.Add(this.dgvReport);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnPreview);
@@ -101,6 +110,7 @@
             this.Name = "ReportsForm";
             this.Text = "ReportsForm";
             ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,5 +123,6 @@
         private System.Windows.Forms.Button btnPreview;
         private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.DataGridView dgvReport;
+        private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
     }
 }
