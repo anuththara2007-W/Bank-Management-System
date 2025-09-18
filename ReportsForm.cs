@@ -150,10 +150,6 @@ namespace BankApp
                                     table.Cell().Element(CellStyle)
                                         .Text(cell?.ToString() ?? "");
                             }
-
-                            static IContainer CellStyle(IContainer container) =>
-                                container.BorderBottom(1).BorderColor("#DDD")
-                                         .PaddingVertical(5).PaddingHorizontal(2);
                         });
                     });
 
@@ -162,6 +158,12 @@ namespace BankApp
                         .Text($"Generated on {DateTime.Now:yyyy-MM-dd HH:mm}");
                 });
             }).GeneratePdf(filePath);
+        }
+
+        private static IContainer CellStyle(IContainer container)
+        {
+            return container.BorderBottom(1).BorderColor("#DDD")
+                     .PaddingVertical(5).PaddingHorizontal(2);
         }
     }
 }
