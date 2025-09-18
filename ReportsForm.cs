@@ -50,7 +50,7 @@ namespace BankApp
         // ✅ Export PDF + Show inside WebView2
         private void btnExportPdf_Click(object sender, EventArgs e)
         {
-            if (dgvPreview.DataSource == null)
+            if (dgvPreview.DataSource == null || ((DataTable)dgvPreview.DataSource).Rows.Count == 0)
             {
                 MessageBox.Show("No data to export!");
                 return;
@@ -68,13 +68,20 @@ namespace BankApp
 
                 GeneratePdf(filePath);
 
-                // ✅ Show PDF inside form
-                pdfViewer.Source = new Uri(filePath);
+                if (!File.Exists(filePath))
+                {
+                    MessageBox.Show("PDF generation failed!");
+                    return;
+                }
 
-                // ✅ Optional: open explorer
+                // Show PDF in WebView2
+                pdfViewer.Source = new Uri("file:///" + filePath.Replace("\\", "/"));
+
+                // Optional: open explorer
                 System.Diagnostics.Process.Start("explorer.exe", $"/select,\"{filePath}\"");
             }
         }
+
 
         // ✅ Fetch DB data
         private DataTable GetReportData(string type)
