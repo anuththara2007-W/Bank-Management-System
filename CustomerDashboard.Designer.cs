@@ -274,7 +274,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(248, 44);
             this.button2.TabIndex = 15;
-            this.button2.Text = "Deposit";
+            this.button2.Text = "Reports";
             this.button2.UseVisualStyleBackColor = false;
             // 
             // CustomerDashboard
