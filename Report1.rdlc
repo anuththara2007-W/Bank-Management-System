@@ -4,7 +4,7 @@
     <Height>4.24167in</Height>
     <Style />
   </Body>
-  <Width>7.5in</Width>
+  <Width>6.45in</Width>
   <Page>
     <PageHeader>
       <Height>2.21667in</Height>
@@ -16,7 +16,7 @@
           <Value>icon</Value>
           <Sizing>FitProportional</Sizing>
           <Top>0.28in</Top>
-          <Left>2.48833in</Left>
+          <Left>1.81333in</Left>
           <Height>0.38333in</Height>
           <Width>0.45833in</Width>
           <Style>
@@ -37,6 +37,7 @@
                     <FontFamily>times New Roman</FontFamily>
                     <FontSize>18pt</FontSize>
                     <FontWeight>Bold</FontWeight>
+                    <Color>LightSteelBlue</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -45,7 +46,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>0.28in</Top>
-          <Left>3.11333in</Left>
+          <Left>2.43in</Left>
           <Height>0.38333in</Height>
           <Width>2.23333in</Width>
           <ZIndex>1</ZIndex>
