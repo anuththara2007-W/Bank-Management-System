@@ -42,7 +42,7 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.lblCustomerName = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnReport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoans)).BeginInit();
             this.SuspendLayout();
@@ -260,22 +260,22 @@
             this.lblCustomerName.TabIndex = 14;
             this.lblCustomerName.Text = "0 ";
             // 
-            // button2
+            // btnReport
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(495, 145);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(248, 44);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Reports";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnReport.BackColor = System.Drawing.Color.White;
+            this.btnReport.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnReport.FlatAppearance.BorderSize = 0;
+            this.btnReport.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btnReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReport.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReport.Location = new System.Drawing.Point(495, 145);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(248, 44);
+            this.btnReport.TabIndex = 15;
+            this.btnReport.Text = "Reports";
+            this.btnReport.UseVisualStyleBackColor = false;
             // 
             // CustomerDashboard
             // 
@@ -284,7 +284,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1280, 785);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnReport);
             this.Controls.Add(this.lblCustomerName);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnSupport);
@@ -324,6 +324,6 @@
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblCustomerName;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnReport;
     }
 }
