@@ -42,8 +42,8 @@
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>0.28833in</Top>
           <Left>0.73833in</Left>
-          <Height>0.25in</Height>
-          <Width>1in</Width>
+          <Height>0.38333in</Height>
+          <Width>1.125in</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
