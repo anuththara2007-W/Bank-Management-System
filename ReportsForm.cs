@@ -173,5 +173,11 @@ namespace BankApp
             return container.BorderBottom(1).BorderColor("#DDD")
                      .PaddingVertical(5).PaddingHorizontal(2);
         }
+
+        private void pdfViewer_Click(object sender, EventArgs e)
+        {
+            pdfViewer.Source = new Uri("file:///" + filePath.Replace("\\", "/"));
+
+        }
     }
 }

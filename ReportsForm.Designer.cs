@@ -95,6 +95,7 @@
             this.pdfViewer.Size = new System.Drawing.Size(1050, 206);
             this.pdfViewer.TabIndex = 5;
             this.pdfViewer.ZoomFactor = 1D;
+            this.pdfViewer.Click += new System.EventHandler(this.pdfViewer_Click);
             // 
             // ReportsForm
             // 
