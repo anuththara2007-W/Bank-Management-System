@@ -72,7 +72,7 @@
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(151, 52);
             this.btnExport.TabIndex = 3;
-            this.btnExport.Text = "Preview Report";
+            this.btnExport.Text = "Export to PDF";
             this.btnExport.UseVisualStyleBackColor = true;
             // 
             // ReportsForm
