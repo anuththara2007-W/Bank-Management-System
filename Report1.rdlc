@@ -15,10 +15,10 @@
           <Source>Embedded</Source>
           <Value>icon</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0.16333in</Top>
-          <Left>0.34667in</Left>
-          <Height>0.39167in</Height>
-          <Width>0.375in</Width>
+          <Top>0.28in</Top>
+          <Left>2.48833in</Left>
+          <Height>0.38333in</Height>
+          <Width>0.45833in</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -33,20 +33,25 @@
               <TextRuns>
                 <TextRun>
                   <Value>Bank Of Code</Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>times New Roman</FontFamily>
+                    <FontSize>18pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.28833in</Top>
-          <Left>0.73833in</Left>
+          <Top>0.28in</Top>
+          <Left>3.11333in</Left>
           <Height>0.38333in</Height>
-          <Width>1.125in</Width>
+          <Width>2.23333in</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
+              <Color>White</Color>
               <Style>None</Style>
             </Border>
             <PaddingLeft>2pt</PaddingLeft>
