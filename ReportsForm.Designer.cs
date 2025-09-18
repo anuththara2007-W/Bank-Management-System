@@ -1,4 +1,4 @@
-﻿namespace BankApp
+﻿namespace Bank__Management_System
 {
     partial class ReportsForm
     {
@@ -67,7 +67,6 @@
             this.btnPreview.TabIndex = 2;
             this.btnPreview.Text = "Preview Report";
             this.btnPreview.UseVisualStyleBackColor = true;
-            this.btnPreview.Click += new System.EventHandler(this.btnPreview_Click);
             // 
             // btnExport
             // 
