@@ -16,5 +16,10 @@ namespace Bank__Management_System
         {
             InitializeComponent();
         }
+
+        private void btnPreview_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
