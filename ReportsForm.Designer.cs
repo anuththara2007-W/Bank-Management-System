@@ -32,10 +32,8 @@
             this.cmbReportType = new System.Windows.Forms.ComboBox();
             this.btnPreview = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
-            this.dgvPreview = new System.Windows.Forms.DataGridView();
-            this.pdfViewer = new Microsoft.Web.WebView2.WinForms.WebView2();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPreview)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pdfViewer)).BeginInit();
+            this.dgvReport = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -51,6 +49,11 @@
             // cmbReportType
             // 
             this.cmbReportType.FormattingEnabled = true;
+            this.cmbReportType.Items.AddRange(new object[] {
+            "Transactions",
+            "Loan Requests",
+            "Deposits",
+            "Withdrawals"});
             this.cmbReportType.Location = new System.Drawing.Point(70, 71);
             this.cmbReportType.Name = "cmbReportType";
             this.cmbReportType.Size = new System.Drawing.Size(235, 24);
@@ -75,43 +78,29 @@
             this.btnExport.Text = "Export to PDF";
             this.btnExport.UseVisualStyleBackColor = true;
             // 
-            // dgvPreview
+            // dgvReport
             // 
-            this.dgvPreview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPreview.Location = new System.Drawing.Point(21, 203);
-            this.dgvPreview.Name = "dgvPreview";
-            this.dgvPreview.RowHeadersWidth = 51;
-            this.dgvPreview.RowTemplate.Height = 24;
-            this.dgvPreview.Size = new System.Drawing.Size(1023, 154);
-            this.dgvPreview.TabIndex = 4;
-            // 
-            // pdfViewer
-            // 
-            this.pdfViewer.AllowExternalDrop = true;
-            this.pdfViewer.CreationProperties = null;
-            this.pdfViewer.DefaultBackgroundColor = System.Drawing.Color.White;
-            this.pdfViewer.Location = new System.Drawing.Point(19, 397);
-            this.pdfViewer.Name = "pdfViewer";
-            this.pdfViewer.Size = new System.Drawing.Size(1050, 206);
-            this.pdfViewer.TabIndex = 5;
-            this.pdfViewer.ZoomFactor = 1D;
-            this.pdfViewer.Click += new System.EventHandler(this.pdfViewer_Click);
+            this.dgvReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvReport.Location = new System.Drawing.Point(20, 284);
+            this.dgvReport.Name = "dgvReport";
+            this.dgvReport.RowHeadersWidth = 51;
+            this.dgvReport.RowTemplate.Height = 24;
+            this.dgvReport.Size = new System.Drawing.Size(1022, 307);
+            this.dgvReport.TabIndex = 4;
             // 
             // ReportsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1093, 618);
-            this.Controls.Add(this.pdfViewer);
-            this.Controls.Add(this.dgvPreview);
+            this.Controls.Add(this.dgvReport);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnPreview);
             this.Controls.Add(this.cmbReportType);
             this.Controls.Add(this.label1);
             this.Name = "ReportsForm";
             this.Text = "ReportsForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPreview)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pdfViewer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,7 +112,6 @@
         private System.Windows.Forms.ComboBox cmbReportType;
         private System.Windows.Forms.Button btnPreview;
         private System.Windows.Forms.Button btnExport;
-        private System.Windows.Forms.DataGridView dgvPreview;
-        private Microsoft.Web.WebView2.WinForms.WebView2 pdfViewer;
+        private System.Windows.Forms.DataGridView dgvReport;
     }
 }
