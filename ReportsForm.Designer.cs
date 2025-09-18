@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cmbReportType = new System.Windows.Forms.ComboBox();
             this.btnPreview = new System.Windows.Forms.Button();
+            this.btnExport = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -58,18 +59,28 @@
             // 
             // btnPreview
             // 
-            this.btnPreview.Location = new System.Drawing.Point(232, 236);
+            this.btnPreview.Location = new System.Drawing.Point(143, 127);
             this.btnPreview.Name = "btnPreview";
             this.btnPreview.Size = new System.Drawing.Size(151, 52);
             this.btnPreview.TabIndex = 2;
             this.btnPreview.Text = "Preview Report";
             this.btnPreview.UseVisualStyleBackColor = true;
             // 
+            // btnExport
+            // 
+            this.btnExport.Location = new System.Drawing.Point(405, 127);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(151, 52);
+            this.btnExport.TabIndex = 3;
+            this.btnExport.Text = "Preview Report";
+            this.btnExport.UseVisualStyleBackColor = true;
+            // 
             // ReportsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1093, 618);
+            this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnPreview);
             this.Controls.Add(this.cmbReportType);
             this.Controls.Add(this.label1);
@@ -85,5 +96,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbReportType;
         private System.Windows.Forms.Button btnPreview;
+        private System.Windows.Forms.Button btnExport;
     }
 }
