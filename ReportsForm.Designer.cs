@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbReportType = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -42,25 +42,25 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Generate Reports";
             // 
-            // comboBox1
+            // cmbReportType
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbReportType.FormattingEnabled = true;
+            this.cmbReportType.Items.AddRange(new object[] {
             "Transactions",
             "Loan Requests",
             "Deposits",
             "Withdrawals"});
-            this.comboBox1.Location = new System.Drawing.Point(70, 71);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(235, 24);
-            this.comboBox1.TabIndex = 1;
+            this.cmbReportType.Location = new System.Drawing.Point(70, 71);
+            this.cmbReportType.Name = "cmbReportType";
+            this.cmbReportType.Size = new System.Drawing.Size(235, 24);
+            this.cmbReportType.TabIndex = 1;
             // 
             // ReportsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1093, 618);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbReportType);
             this.Controls.Add(this.label1);
             this.Name = "ReportsForm";
             this.Text = "ReportsForm";
@@ -72,6 +72,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbReportType;
     }
 }
