@@ -201,5 +201,20 @@ namespace BankApp
             landing.Show();
             this.Hide();
         }
+
+        private void lblabout_Click(object sender, EventArgs e)
+        {
+            About about = new About();
+            about.Show();
+            this.Hide();
+
+        }
+
+        private void lblContact_Click(object sender, EventArgs e)
+        {
+            Contact contact = new Contact();
+            contact.Show();
+            this.Hide();
+        }
     }
 }
