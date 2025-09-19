@@ -199,6 +199,7 @@ namespace BankApp
         {
             Landing landing = new Landing();
             landing.Show();
+            this.Hide();
         }
     }
 }
