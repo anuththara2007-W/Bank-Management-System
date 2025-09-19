@@ -150,6 +150,7 @@ namespace BankApp
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ChangePassword";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChangePassword";
             this.Load += new System.EventHandler(this.ChangePassword_Load);
             this.ResumeLayout(false);
