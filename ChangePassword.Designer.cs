@@ -43,13 +43,15 @@ namespace BankApp
             // 
             // btnChange
             // 
+            this.btnChange.BackColor = System.Drawing.Color.White;
+            this.btnChange.FlatAppearance.BorderSize = 0;
             this.btnChange.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnChange.Location = new System.Drawing.Point(359, 659);
             this.btnChange.Name = "btnChange";
             this.btnChange.Size = new System.Drawing.Size(205, 53);
             this.btnChange.TabIndex = 25;
             this.btnChange.Text = "Submit";
-            this.btnChange.UseVisualStyleBackColor = true;
+            this.btnChange.UseVisualStyleBackColor = false;
             this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
             // 
             // txtOld
@@ -102,12 +104,14 @@ namespace BankApp
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.BorderSize = 0;
             this.button1.Location = new System.Drawing.Point(667, 661);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(224, 47);
             this.button1.TabIndex = 26;
             this.button1.Text = "Go Back";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ChangePassword
