@@ -92,7 +92,7 @@ namespace BankApp
 
         private void label5_Click(object sender, EventArgs e)
         {
-            landing Land = new landing();
+            Landing Land = new Landing();
         }
     }
 }
