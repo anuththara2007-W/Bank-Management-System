@@ -44,9 +44,9 @@ namespace BankApp
             // btnChange
             // 
             this.btnChange.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnChange.Location = new System.Drawing.Point(375, 673);
+            this.btnChange.Location = new System.Drawing.Point(375, 659);
             this.btnChange.Name = "btnChange";
-            this.btnChange.Size = new System.Drawing.Size(189, 30);
+            this.btnChange.Size = new System.Drawing.Size(189, 53);
             this.btnChange.TabIndex = 25;
             this.btnChange.Text = "Submit";
             this.btnChange.UseVisualStyleBackColor = true;
