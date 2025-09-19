@@ -44,7 +44,10 @@ namespace BankApp
             // btnChange
             // 
             this.btnChange.BackColor = System.Drawing.Color.White;
+            this.btnChange.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnChange.FlatAppearance.BorderSize = 0;
+            this.btnChange.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btnChange.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnChange.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnChange.Location = new System.Drawing.Point(359, 659);
             this.btnChange.Name = "btnChange";
@@ -105,7 +108,10 @@ namespace BankApp
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(667, 661);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(224, 47);
