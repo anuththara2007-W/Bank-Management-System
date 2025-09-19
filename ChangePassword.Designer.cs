@@ -37,7 +37,7 @@ namespace BankApp
             this.txtNew = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtConfirm = new System.Windows.Forms.TextBox();
-            this.lblAmount = new System.Windows.Forms.Label();
+            this.lblnew = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -106,13 +106,13 @@ namespace BankApp
             // 
             // lblAmount
             // 
-            this.lblAmount.AutoSize = true;
-            this.lblAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmount.Location = new System.Drawing.Point(249, 407);
-            this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(215, 25);
-            this.lblAmount.TabIndex = 19;
-            this.lblAmount.Text = "Confirm New Password";
+            this.lblnew.AutoSize = true;
+            this.lblnew.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblnew.Location = new System.Drawing.Point(249, 407);
+            this.lblnew.Name = "lblAmount";
+            this.lblnew.Size = new System.Drawing.Size(215, 25);
+            this.lblnew.TabIndex = 19;
+            this.lblnew.Text = "Confirm New Password";
             // 
             // button1
             // 
@@ -146,7 +146,7 @@ namespace BankApp
             this.Controls.Add(this.txtNew);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtConfirm);
-            this.Controls.Add(this.lblAmount);
+            this.Controls.Add(this.lblnew);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ChangePassword";
@@ -167,7 +167,7 @@ namespace BankApp
         private System.Windows.Forms.TextBox txtNew;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtConfirm;
-        private System.Windows.Forms.Label lblAmount;
+        private System.Windows.Forms.Label lblnew;
         private System.Windows.Forms.Button button1;
     }
 }
