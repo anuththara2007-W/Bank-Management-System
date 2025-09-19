@@ -44,6 +44,7 @@ namespace BankApp
             // btnChange
             // 
             this.btnChange.BackColor = System.Drawing.Color.White;
+            this.btnChange.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChange.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnChange.FlatAppearance.BorderSize = 0;
             this.btnChange.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
@@ -108,6 +109,7 @@ namespace BankApp
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
