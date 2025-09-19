@@ -41,7 +41,7 @@ namespace BankApp
             this.button1 = new System.Windows.Forms.Button();
             this.lblabout = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblHome = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnChange
@@ -163,20 +163,20 @@ namespace BankApp
             this.label6.Text = "CONTACT";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // lblHome
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.label5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label5.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(395, 52);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 22);
-            this.label5.TabIndex = 27;
-            this.label5.Text = "HOME  ";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.lblHome.AutoSize = true;
+            this.lblHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.lblHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblHome.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHome.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblHome.Location = new System.Drawing.Point(395, 52);
+            this.lblHome.Name = "lblHome";
+            this.lblHome.Size = new System.Drawing.Size(69, 22);
+            this.lblHome.TabIndex = 27;
+            this.lblHome.Text = "HOME  ";
+            this.lblHome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblHome.Click += new System.EventHandler(this.label5_Click);
             // 
             // ChangePassword
             // 
@@ -187,7 +187,7 @@ namespace BankApp
             this.ClientSize = new System.Drawing.Size(1280, 785);
             this.Controls.Add(this.lblabout);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblHome);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnChange);
             this.Controls.Add(this.txtOld);
@@ -221,6 +221,6 @@ namespace BankApp
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblabout;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblHome;
     }
 }
