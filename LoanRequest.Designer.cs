@@ -152,6 +152,7 @@ namespace BankApp
             this.lblabout.TabIndex = 32;
             this.lblabout.Text = "ABOUT  US ";
             this.lblabout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblabout.Click += new System.EventHandler(this.lblabout_Click);
             // 
             // lblContact
             // 
