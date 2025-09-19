@@ -103,5 +103,10 @@ namespace BankApp
             contact.Show(); 
             this.Hide();
         }
+
+        private void lblabout_Click(object sender, EventArgs e)
+        {
+            About about = new About();
+        }
     }
 }
