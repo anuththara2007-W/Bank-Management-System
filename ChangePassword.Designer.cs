@@ -55,7 +55,7 @@ namespace BankApp
             this.btnChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChange.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnChange.Location = new System.Drawing.Point(359, 659);
+            this.btnChange.Location = new System.Drawing.Point(673, 660);
             this.btnChange.Name = "btnChange";
             this.btnChange.Size = new System.Drawing.Size(205, 53);
             this.btnChange.TabIndex = 25;
@@ -127,7 +127,7 @@ namespace BankApp
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(667, 661);
+            this.button1.Location = new System.Drawing.Point(352, 663);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(224, 47);
             this.button1.TabIndex = 26;
