@@ -154,9 +154,7 @@ namespace BankApp
 
         }
 
-        private void ChangePassword_Load(object sender, EventArgs e)
-        {
-        }
+       
 
         #endregion
 
