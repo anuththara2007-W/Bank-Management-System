@@ -84,10 +84,10 @@ namespace BankApp
         {
             lblOld.BackColor = Color.Transparent;
             lblOld.BorderStyle = BorderStyle.None;
-            lblnew.BackColor = Color.Transparent;
-            lblnew.BorderStyle = BorderStyle.None;
-            lblnew.BackColor = Color.Transparent;
-            lblnew.BorderStyle = BorderStyle.None;
+            lblconfirm.BackColor = Color.Transparent;
+            lblconfirm.BorderStyle = BorderStyle.None;
+            lblconfirm.BackColor = Color.Transparent;
+            lblconfirm.BorderStyle = BorderStyle.None;
         }
     }
 }

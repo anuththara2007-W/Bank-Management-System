@@ -37,7 +37,7 @@ namespace BankApp
             this.txtNew = new System.Windows.Forms.TextBox();
             this.lblneww = new System.Windows.Forms.Label();
             this.txtConfirm = new System.Windows.Forms.TextBox();
-            this.lblnew = new System.Windows.Forms.Label();
+            this.lblconfirm = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -104,15 +104,15 @@ namespace BankApp
             this.txtConfirm.Size = new System.Drawing.Size(411, 34);
             this.txtConfirm.TabIndex = 20;
             // 
-            // lblnew
+            // lblconfirm
             // 
-            this.lblnew.AutoSize = true;
-            this.lblnew.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblnew.Location = new System.Drawing.Point(249, 407);
-            this.lblnew.Name = "lblnew";
-            this.lblnew.Size = new System.Drawing.Size(215, 25);
-            this.lblnew.TabIndex = 19;
-            this.lblnew.Text = "Confirm New Password";
+            this.lblconfirm.AutoSize = true;
+            this.lblconfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblconfirm.Location = new System.Drawing.Point(249, 407);
+            this.lblconfirm.Name = "lblconfirm";
+            this.lblconfirm.Size = new System.Drawing.Size(215, 25);
+            this.lblconfirm.TabIndex = 19;
+            this.lblconfirm.Text = "Confirm New Password";
             // 
             // button1
             // 
@@ -146,7 +146,7 @@ namespace BankApp
             this.Controls.Add(this.txtNew);
             this.Controls.Add(this.lblneww);
             this.Controls.Add(this.txtConfirm);
-            this.Controls.Add(this.lblnew);
+            this.Controls.Add(this.lblconfirm);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ChangePassword";
@@ -167,7 +167,7 @@ namespace BankApp
         private System.Windows.Forms.TextBox txtNew;
         private System.Windows.Forms.Label lblneww;
         private System.Windows.Forms.TextBox txtConfirm;
-        private System.Windows.Forms.Label lblnew;
+        private System.Windows.Forms.Label lblconfirm;
         private System.Windows.Forms.Button button1;
     }
 }
