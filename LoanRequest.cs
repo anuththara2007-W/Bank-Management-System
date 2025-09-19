@@ -167,6 +167,8 @@ namespace BankApp
         private void lblHome_Click(object sender, EventArgs e)
         {
             Landing landing = new Landing();
+            landing.Show();
+            this.Hide();
         }
     }
 }
