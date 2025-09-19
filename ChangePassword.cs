@@ -93,6 +93,8 @@ namespace BankApp
         private void label5_Click(object sender, EventArgs e)
         {
             Landing Land = new Landing();
+            Land.Show();
+            this.Hide();
         }
     }
 }
