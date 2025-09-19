@@ -62,10 +62,10 @@ namespace BankApp
             // 
             // txtOld
             // 
-            this.txtOld.Location = new System.Drawing.Point(342, 169);
+            this.txtOld.Location = new System.Drawing.Point(493, 282);
             this.txtOld.Multiline = true;
             this.txtOld.Name = "txtOld";
-            this.txtOld.Size = new System.Drawing.Size(414, 47);
+            this.txtOld.Size = new System.Drawing.Size(411, 34);
             this.txtOld.TabIndex = 24;
             // 
             // label2
@@ -79,10 +79,10 @@ namespace BankApp
             // 
             // txtNew
             // 
-            this.txtNew.Location = new System.Drawing.Point(342, 215);
+            this.txtNew.Location = new System.Drawing.Point(502, 338);
             this.txtNew.Multiline = true;
             this.txtNew.Name = "txtNew";
-            this.txtNew.Size = new System.Drawing.Size(414, 47);
+            this.txtNew.Size = new System.Drawing.Size(411, 34);
             this.txtNew.TabIndex = 22;
             // 
             // label1
@@ -96,10 +96,10 @@ namespace BankApp
             // 
             // txtConfirm
             // 
-            this.txtConfirm.Location = new System.Drawing.Point(342, 255);
+            this.txtConfirm.Location = new System.Drawing.Point(493, 407);
             this.txtConfirm.Multiline = true;
             this.txtConfirm.Name = "txtConfirm";
-            this.txtConfirm.Size = new System.Drawing.Size(414, 47);
+            this.txtConfirm.Size = new System.Drawing.Size(411, 34);
             this.txtConfirm.TabIndex = 20;
             // 
             // lblAmount
