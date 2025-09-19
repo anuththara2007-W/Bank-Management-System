@@ -183,6 +183,7 @@ namespace BankApp
         {
             Contact contact = new Contact();
             contact.Show();
+            this.Hide();
         }
     }
 }
