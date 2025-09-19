@@ -39,7 +39,7 @@ namespace BankApp
             this.txtConfirm = new System.Windows.Forms.TextBox();
             this.lblconfirm = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblabout = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -135,19 +135,19 @@ namespace BankApp
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label7
+            // lblabout
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label7.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(548, 52);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(101, 22);
-            this.label7.TabIndex = 29;
-            this.label7.Text = "ABOUT  US ";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblabout.AutoSize = true;
+            this.lblabout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.lblabout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblabout.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblabout.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblabout.Location = new System.Drawing.Point(548, 52);
+            this.lblabout.Name = "lblabout";
+            this.lblabout.Size = new System.Drawing.Size(101, 22);
+            this.lblabout.TabIndex = 29;
+            this.lblabout.Text = "ABOUT  US ";
+            this.lblabout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
             // 
@@ -185,7 +185,7 @@ namespace BankApp
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1280, 785);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblabout);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button1);
@@ -219,7 +219,7 @@ namespace BankApp
         private System.Windows.Forms.TextBox txtConfirm;
         private System.Windows.Forms.Label lblconfirm;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblabout;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
     }
