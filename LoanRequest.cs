@@ -178,5 +178,10 @@ namespace BankApp
             this.Hide();
 
         }
+
+        private void lblContact_Click(object sender, EventArgs e)
+        {
+            Contact contact = new Contact();
+        }
     }
 }
