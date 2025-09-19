@@ -33,7 +33,7 @@ namespace BankApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangePassword));
             this.btnChange = new System.Windows.Forms.Button();
             this.txtOld = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblOld = new System.Windows.Forms.Label();
             this.txtNew = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtConfirm = new System.Windows.Forms.TextBox();
@@ -68,15 +68,15 @@ namespace BankApp
             this.txtOld.Size = new System.Drawing.Size(411, 34);
             this.txtOld.TabIndex = 24;
             // 
-            // label2
+            // lblOld
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(249, 285);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(134, 25);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "Old Password";
+            this.lblOld.AutoSize = true;
+            this.lblOld.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOld.Location = new System.Drawing.Point(249, 285);
+            this.lblOld.Name = "lblOld";
+            this.lblOld.Size = new System.Drawing.Size(134, 25);
+            this.lblOld.TabIndex = 23;
+            this.lblOld.Text = "Old Password";
             // 
             // txtNew
             // 
@@ -142,7 +142,7 @@ namespace BankApp
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnChange);
             this.Controls.Add(this.txtOld);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblOld);
             this.Controls.Add(this.txtNew);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtConfirm);
@@ -163,7 +163,7 @@ namespace BankApp
 
         private System.Windows.Forms.Button btnChange;
         private System.Windows.Forms.TextBox txtOld;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblOld;
         private System.Windows.Forms.TextBox txtNew;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtConfirm;
