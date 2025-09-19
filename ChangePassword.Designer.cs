@@ -79,7 +79,7 @@ namespace BankApp
             // 
             // txtNew
             // 
-            this.txtNew.Location = new System.Drawing.Point(502, 338);
+            this.txtNew.Location = new System.Drawing.Point(493, 344);
             this.txtNew.Multiline = true;
             this.txtNew.Name = "txtNew";
             this.txtNew.Size = new System.Drawing.Size(411, 34);
