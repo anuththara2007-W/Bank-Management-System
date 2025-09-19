@@ -30,6 +30,7 @@ namespace BankApp
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangePassword));
             this.btnChange = new System.Windows.Forms.Button();
             this.txtOld = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -122,6 +123,7 @@ namespace BankApp
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtConfirm);
             this.Controls.Add(this.lblAmount);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ChangePassword";
             this.Text = "ChangePassword";
             this.Load += new System.EventHandler(this.ChangePassword_Load);
