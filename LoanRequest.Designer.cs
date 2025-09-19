@@ -180,6 +180,7 @@ namespace BankApp
             this.lblHome.TabIndex = 30;
             this.lblHome.Text = "HOME  ";
             this.lblHome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblHome.Click += new System.EventHandler(this.lblHome_Click);
             // 
             // LoanRequest
             // 
