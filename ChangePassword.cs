@@ -81,7 +81,7 @@ namespace BankApp
 
         private void ChangePassword_Load(object sender, EventArgs e)
         {
-            GridStyle.ModernizeGrid(dgvLoanRequests);
+
         }
     }
 }
