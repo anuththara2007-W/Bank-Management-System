@@ -50,6 +50,7 @@ namespace BankApp
             this.btnChange.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.btnChange.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChange.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnChange.Location = new System.Drawing.Point(359, 659);
             this.btnChange.Name = "btnChange";
@@ -62,8 +63,9 @@ namespace BankApp
             // txtOld
             // 
             this.txtOld.Location = new System.Drawing.Point(342, 169);
+            this.txtOld.Multiline = true;
             this.txtOld.Name = "txtOld";
-            this.txtOld.Size = new System.Drawing.Size(360, 22);
+            this.txtOld.Size = new System.Drawing.Size(414, 47);
             this.txtOld.TabIndex = 24;
             // 
             // label2
@@ -78,8 +80,9 @@ namespace BankApp
             // txtNew
             // 
             this.txtNew.Location = new System.Drawing.Point(342, 215);
+            this.txtNew.Multiline = true;
             this.txtNew.Name = "txtNew";
-            this.txtNew.Size = new System.Drawing.Size(360, 22);
+            this.txtNew.Size = new System.Drawing.Size(414, 47);
             this.txtNew.TabIndex = 22;
             // 
             // label1
@@ -94,8 +97,9 @@ namespace BankApp
             // txtConfirm
             // 
             this.txtConfirm.Location = new System.Drawing.Point(342, 255);
+            this.txtConfirm.Multiline = true;
             this.txtConfirm.Name = "txtConfirm";
-            this.txtConfirm.Size = new System.Drawing.Size(360, 22);
+            this.txtConfirm.Size = new System.Drawing.Size(414, 47);
             this.txtConfirm.TabIndex = 20;
             // 
             // lblAmount
@@ -116,6 +120,7 @@ namespace BankApp
             this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(667, 661);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(224, 47);
