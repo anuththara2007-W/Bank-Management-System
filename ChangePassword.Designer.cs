@@ -35,7 +35,7 @@ namespace BankApp
             this.txtOld = new System.Windows.Forms.TextBox();
             this.lblOld = new System.Windows.Forms.Label();
             this.txtNew = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblneww = new System.Windows.Forms.Label();
             this.txtConfirm = new System.Windows.Forms.TextBox();
             this.lblnew = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -86,15 +86,15 @@ namespace BankApp
             this.txtNew.Size = new System.Drawing.Size(411, 34);
             this.txtNew.TabIndex = 22;
             // 
-            // label1
+            // lblneww
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(249, 344);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 25);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "New Password";
+            this.lblneww.AutoSize = true;
+            this.lblneww.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblneww.Location = new System.Drawing.Point(249, 344);
+            this.lblneww.Name = "lblneww";
+            this.lblneww.Size = new System.Drawing.Size(142, 25);
+            this.lblneww.TabIndex = 21;
+            this.lblneww.Text = "New Password";
             // 
             // txtConfirm
             // 
@@ -104,12 +104,12 @@ namespace BankApp
             this.txtConfirm.Size = new System.Drawing.Size(411, 34);
             this.txtConfirm.TabIndex = 20;
             // 
-            // lblAmount
+            // lblnew
             // 
             this.lblnew.AutoSize = true;
             this.lblnew.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblnew.Location = new System.Drawing.Point(249, 407);
-            this.lblnew.Name = "lblAmount";
+            this.lblnew.Name = "lblnew";
             this.lblnew.Size = new System.Drawing.Size(215, 25);
             this.lblnew.TabIndex = 19;
             this.lblnew.Text = "Confirm New Password";
@@ -144,7 +144,7 @@ namespace BankApp
             this.Controls.Add(this.txtOld);
             this.Controls.Add(this.lblOld);
             this.Controls.Add(this.txtNew);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblneww);
             this.Controls.Add(this.txtConfirm);
             this.Controls.Add(this.lblnew);
             this.DoubleBuffered = true;
@@ -165,7 +165,7 @@ namespace BankApp
         private System.Windows.Forms.TextBox txtOld;
         private System.Windows.Forms.Label lblOld;
         private System.Windows.Forms.TextBox txtNew;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblneww;
         private System.Windows.Forms.TextBox txtConfirm;
         private System.Windows.Forms.Label lblnew;
         private System.Windows.Forms.Button button1;
