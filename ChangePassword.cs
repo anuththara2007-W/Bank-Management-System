@@ -82,8 +82,8 @@ namespace BankApp
 
         private void ChangePassword_Load(object sender, EventArgs e)
         {
-            lblAmount.BackColor = Color.Transparent;
-            lblAmount.BorderStyle = BorderStyle.None;
+            lblOld.BackColor = Color.Transparent;
+            lblOld.BorderStyle = BorderStyle.None;
             lblAmount.BackColor = Color.Transparent;
             lblAmount.BorderStyle = BorderStyle.None;
             lblAmount.BackColor = Color.Transparent;
