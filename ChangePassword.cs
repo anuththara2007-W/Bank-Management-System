@@ -89,5 +89,10 @@ namespace BankApp
             lblconfirm.BackColor = Color.Transparent;
             lblconfirm.BorderStyle = BorderStyle.None;
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            landing Land = new landing();
+        }
     }
 }
