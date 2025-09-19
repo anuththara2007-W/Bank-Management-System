@@ -102,7 +102,7 @@ namespace BankApp
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(390, 427);
+            this.button1.Location = new System.Drawing.Point(707, 665);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(141, 47);
             this.button1.TabIndex = 26;
