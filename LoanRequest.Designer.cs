@@ -39,6 +39,9 @@ namespace BankApp
             this.btnGoBack = new System.Windows.Forms.Button();
             this.cmbLoanType = new System.Windows.Forms.ComboBox();
             this.dgvLoanRequests = new System.Windows.Forms.DataGridView();
+            this.lblabout = new System.Windows.Forms.Label();
+            this.lblContact = new System.Windows.Forms.Label();
+            this.lblHome = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoanRequests)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,6 +139,48 @@ namespace BankApp
             this.dgvLoanRequests.Size = new System.Drawing.Size(1189, 266);
             this.dgvLoanRequests.TabIndex = 21;
             // 
+            // lblabout
+            // 
+            this.lblabout.AutoSize = true;
+            this.lblabout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.lblabout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblabout.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblabout.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblabout.Location = new System.Drawing.Point(566, 56);
+            this.lblabout.Name = "lblabout";
+            this.lblabout.Size = new System.Drawing.Size(101, 22);
+            this.lblabout.TabIndex = 32;
+            this.lblabout.Text = "ABOUT  US ";
+            this.lblabout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblContact
+            // 
+            this.lblContact.AutoSize = true;
+            this.lblContact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.lblContact.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblContact.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContact.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblContact.Location = new System.Drawing.Point(748, 56);
+            this.lblContact.Name = "lblContact";
+            this.lblContact.Size = new System.Drawing.Size(87, 22);
+            this.lblContact.TabIndex = 31;
+            this.lblContact.Text = "CONTACT";
+            this.lblContact.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblHome
+            // 
+            this.lblHome.AutoSize = true;
+            this.lblHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.lblHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblHome.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHome.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblHome.Location = new System.Drawing.Point(413, 56);
+            this.lblHome.Name = "lblHome";
+            this.lblHome.Size = new System.Drawing.Size(69, 22);
+            this.lblHome.TabIndex = 30;
+            this.lblHome.Text = "HOME  ";
+            this.lblHome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // LoanRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -143,6 +188,9 @@ namespace BankApp
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1280, 785);
+            this.Controls.Add(this.lblabout);
+            this.Controls.Add(this.lblContact);
+            this.Controls.Add(this.lblHome);
             this.Controls.Add(this.dgvLoanRequests);
             this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.btnSubmitLoan);
@@ -171,5 +219,8 @@ namespace BankApp
         private System.Windows.Forms.Button btnGoBack;
         private System.Windows.Forms.ComboBox cmbLoanType;
         private System.Windows.Forms.DataGridView dgvLoanRequests;
+        private System.Windows.Forms.Label lblabout;
+        private System.Windows.Forms.Label lblContact;
+        private System.Windows.Forms.Label lblHome;
     }
 }
