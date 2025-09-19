@@ -175,6 +175,8 @@ namespace BankApp
         {
             About about = new About();
             about.Show();
+            this.Hide();
+
         }
     }
 }
