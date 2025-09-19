@@ -40,7 +40,7 @@ namespace BankApp
             this.lblconfirm = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.lblabout = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblContact = new System.Windows.Forms.Label();
             this.lblHome = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -149,19 +149,20 @@ namespace BankApp
             this.lblabout.Text = "ABOUT  US ";
             this.lblabout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label6
+            // lblContact
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label6.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(730, 52);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 22);
-            this.label6.TabIndex = 28;
-            this.label6.Text = "CONTACT";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblContact.AutoSize = true;
+            this.lblContact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.lblContact.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblContact.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContact.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblContact.Location = new System.Drawing.Point(730, 52);
+            this.lblContact.Name = "lblContact";
+            this.lblContact.Size = new System.Drawing.Size(87, 22);
+            this.lblContact.TabIndex = 28;
+            this.lblContact.Text = "CONTACT";
+            this.lblContact.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblContact.Click += new System.EventHandler(this.lblContact_Click);
             // 
             // lblHome
             // 
@@ -186,7 +187,7 @@ namespace BankApp
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1280, 785);
             this.Controls.Add(this.lblabout);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblContact);
             this.Controls.Add(this.lblHome);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnChange);
@@ -220,7 +221,7 @@ namespace BankApp
         private System.Windows.Forms.Label lblconfirm;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblabout;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblContact;
         private System.Windows.Forms.Label lblHome;
     }
 }
