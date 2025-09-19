@@ -194,5 +194,10 @@ namespace BankApp
             reports.Show();
 
         }
+
+        private void lblHome_Click(object sender, EventArgs e)
+        {
+            Landing
+        }
     }
 }

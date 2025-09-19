@@ -43,6 +43,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.lblCustomerName = new System.Windows.Forms.Label();
             this.btnReport = new System.Windows.Forms.Button();
+            this.lblabout = new System.Windows.Forms.Label();
+            this.lblContact = new System.Windows.Forms.Label();
+            this.lblHome = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoans)).BeginInit();
             this.SuspendLayout();
@@ -278,6 +281,49 @@
             this.btnReport.UseVisualStyleBackColor = false;
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
+            // lblabout
+            // 
+            this.lblabout.AutoSize = true;
+            this.lblabout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.lblabout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblabout.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblabout.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblabout.Location = new System.Drawing.Point(581, 53);
+            this.lblabout.Name = "lblabout";
+            this.lblabout.Size = new System.Drawing.Size(101, 22);
+            this.lblabout.TabIndex = 32;
+            this.lblabout.Text = "ABOUT  US ";
+            this.lblabout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblContact
+            // 
+            this.lblContact.AutoSize = true;
+            this.lblContact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.lblContact.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblContact.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContact.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblContact.Location = new System.Drawing.Point(763, 53);
+            this.lblContact.Name = "lblContact";
+            this.lblContact.Size = new System.Drawing.Size(87, 22);
+            this.lblContact.TabIndex = 31;
+            this.lblContact.Text = "CONTACT";
+            this.lblContact.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblHome
+            // 
+            this.lblHome.AutoSize = true;
+            this.lblHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.lblHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblHome.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHome.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblHome.Location = new System.Drawing.Point(428, 53);
+            this.lblHome.Name = "lblHome";
+            this.lblHome.Size = new System.Drawing.Size(69, 22);
+            this.lblHome.TabIndex = 30;
+            this.lblHome.Text = "HOME  ";
+            this.lblHome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblHome.Click += new System.EventHandler(this.lblHome_Click);
+            // 
             // CustomerDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -285,6 +331,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1280, 785);
+            this.Controls.Add(this.lblabout);
+            this.Controls.Add(this.lblContact);
+            this.Controls.Add(this.lblHome);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.lblCustomerName);
             this.Controls.Add(this.btnLogout);
@@ -326,5 +375,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblCustomerName;
         private System.Windows.Forms.Button btnReport;
+        private System.Windows.Forms.Label lblabout;
+        private System.Windows.Forms.Label lblContact;
+        private System.Windows.Forms.Label lblHome;
     }
 }
