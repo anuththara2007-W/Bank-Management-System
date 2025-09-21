@@ -63,6 +63,7 @@
             // btnDeposit
             // 
             this.btnDeposit.BackColor = System.Drawing.Color.White;
+            this.btnDeposit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeposit.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnDeposit.FlatAppearance.BorderSize = 0;
             this.btnDeposit.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
@@ -81,6 +82,7 @@
             // btnWithdraw
             // 
             this.btnWithdraw.BackColor = System.Drawing.Color.White;
+            this.btnWithdraw.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnWithdraw.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnWithdraw.FlatAppearance.BorderSize = 0;
             this.btnWithdraw.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
@@ -99,6 +101,7 @@
             // btnLoanRequest
             // 
             this.btnLoanRequest.BackColor = System.Drawing.Color.White;
+            this.btnLoanRequest.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLoanRequest.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnLoanRequest.FlatAppearance.BorderSize = 0;
             this.btnLoanRequest.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
@@ -117,6 +120,7 @@
             // btnTransfer
             // 
             this.btnTransfer.BackColor = System.Drawing.Color.White;
+            this.btnTransfer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTransfer.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnTransfer.FlatAppearance.BorderSize = 0;
             this.btnTransfer.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
@@ -166,6 +170,7 @@
             // btnProfile
             // 
             this.btnProfile.BackColor = System.Drawing.Color.White;
+            this.btnProfile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProfile.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnProfile.FlatAppearance.BorderSize = 0;
             this.btnProfile.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
@@ -184,6 +189,7 @@
             // btnChangePassword
             // 
             this.btnChangePassword.BackColor = System.Drawing.Color.White;
+            this.btnChangePassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChangePassword.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnChangePassword.FlatAppearance.BorderSize = 0;
             this.btnChangePassword.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
@@ -202,6 +208,7 @@
             // btnSupport
             // 
             this.btnSupport.BackColor = System.Drawing.Color.White;
+            this.btnSupport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSupport.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnSupport.FlatAppearance.BorderSize = 0;
             this.btnSupport.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
@@ -238,6 +245,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
