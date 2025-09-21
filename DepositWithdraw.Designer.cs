@@ -76,9 +76,10 @@ namespace Bank__Management_System
             this.btnDeposit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnDeposit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnDeposit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeposit.Location = new System.Drawing.Point(222, 378);
+            this.btnDeposit.Font = new System.Drawing.Font("Microsoft Tai Le", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeposit.Location = new System.Drawing.Point(177, 369);
             this.btnDeposit.Name = "btnDeposit";
-            this.btnDeposit.Size = new System.Drawing.Size(189, 30);
+            this.btnDeposit.Size = new System.Drawing.Size(189, 48);
             this.btnDeposit.TabIndex = 4;
             this.btnDeposit.Text = "Deposit ";
             this.btnDeposit.UseVisualStyleBackColor = false;
@@ -93,6 +94,7 @@ namespace Bank__Management_System
             this.btnWithdraw.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnWithdraw.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnWithdraw.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWithdraw.Font = new System.Drawing.Font("Microsoft Tai Le", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWithdraw.Location = new System.Drawing.Point(530, 378);
             this.btnWithdraw.Name = "btnWithdraw";
             this.btnWithdraw.Size = new System.Drawing.Size(189, 30);
@@ -110,6 +112,7 @@ namespace Bank__Management_System
             this.btnGoBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnGoBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGoBack.Font = new System.Drawing.Font("Microsoft Tai Le", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGoBack.Location = new System.Drawing.Point(808, 361);
             this.btnGoBack.Name = "btnGoBack";
             this.btnGoBack.Size = new System.Drawing.Size(141, 47);
