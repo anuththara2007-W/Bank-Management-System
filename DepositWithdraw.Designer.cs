@@ -70,7 +70,7 @@ namespace Bank__Management_System
             this.btnDeposit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnDeposit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeposit.Font = new System.Drawing.Font("Microsoft Tai Le", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeposit.Location = new System.Drawing.Point(147, 369);
+            this.btnDeposit.Location = new System.Drawing.Point(138, 429);
             this.btnDeposit.Name = "btnDeposit";
             this.btnDeposit.Size = new System.Drawing.Size(243, 48);
             this.btnDeposit.TabIndex = 4;
@@ -89,7 +89,7 @@ namespace Bank__Management_System
             this.btnWithdraw.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnWithdraw.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWithdraw.Font = new System.Drawing.Font("Microsoft Tai Le", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnWithdraw.Location = new System.Drawing.Point(492, 369);
+            this.btnWithdraw.Location = new System.Drawing.Point(483, 429);
             this.btnWithdraw.Name = "btnWithdraw";
             this.btnWithdraw.Size = new System.Drawing.Size(252, 48);
             this.btnWithdraw.TabIndex = 5;
@@ -108,7 +108,7 @@ namespace Bank__Management_System
             this.btnGoBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGoBack.Font = new System.Drawing.Font("Microsoft Tai Le", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGoBack.Location = new System.Drawing.Point(844, 370);
+            this.btnGoBack.Location = new System.Drawing.Point(835, 430);
             this.btnGoBack.Name = "btnGoBack";
             this.btnGoBack.Size = new System.Drawing.Size(248, 47);
             this.btnGoBack.TabIndex = 16;
