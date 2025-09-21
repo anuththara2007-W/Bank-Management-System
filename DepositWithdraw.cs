@@ -211,7 +211,8 @@ namespace Bank__Management_System
 
         private void DepositWithdraw_Load_1(object sender, EventArgs e)
         {
-
+            dgvLoanRequests.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            GridStyle.ModernizeGrid(dgvLoanRequests);
             this.reportViewer1.RefreshReport();
         }
     }
