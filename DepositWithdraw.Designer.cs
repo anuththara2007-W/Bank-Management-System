@@ -138,7 +138,7 @@ namespace Bank__Management_System
             // 
             this.lblBalance.AutoSize = true;
             this.lblBalance.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBalance.Location = new System.Drawing.Point(412, 122);
+            this.lblBalance.Location = new System.Drawing.Point(460, 124);
             this.lblBalance.Name = "lblBalance";
             this.lblBalance.Size = new System.Drawing.Size(31, 36);
             this.lblBalance.TabIndex = 19;
