@@ -39,7 +39,6 @@ namespace Bank__Management_System
             this.btnGoBack = new System.Windows.Forms.Button();
             this.gridAccounts = new System.Windows.Forms.DataGridView();
             this.lblBalance = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridAccounts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,7 +113,7 @@ namespace Bank__Management_System
             this.btnGoBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGoBack.Font = new System.Drawing.Font("Microsoft Tai Le", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGoBack.Location = new System.Drawing.Point(841, 351);
+            this.btnGoBack.Location = new System.Drawing.Point(895, 370);
             this.btnGoBack.Name = "btnGoBack";
             this.btnGoBack.Size = new System.Drawing.Size(141, 47);
             this.btnGoBack.TabIndex = 16;
@@ -148,24 +147,6 @@ namespace Bank__Management_System
             this.lblBalance.TabIndex = 19;
             this.lblBalance.Text = "0";
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Tai Le", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(905, 370);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(141, 47);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Go Back";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.btnGoBack_Click);
-            // 
             // DepositWithdraw
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -175,7 +156,6 @@ namespace Bank__Management_System
             this.ClientSize = new System.Drawing.Size(1280, 785);
             this.Controls.Add(this.lblBalance);
             this.Controls.Add(this.gridAccounts);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.btnWithdraw);
             this.Controls.Add(this.btnDeposit);
@@ -205,6 +185,5 @@ namespace Bank__Management_System
         private System.Windows.Forms.Button btnGoBack;
         private System.Windows.Forms.DataGridView gridAccounts;
         private System.Windows.Forms.Label lblBalance;
-        private System.Windows.Forms.Button button1;
     }
 }
