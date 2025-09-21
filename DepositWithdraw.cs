@@ -216,8 +216,8 @@ namespace Bank__Management_System
             GridStyle.ModernizeGrid(gridAccounts);
             lblBalance.BackColor = Color.Transparent;
             lblBalance.BorderStyle = BorderStyle.None;
-            lblLoanType.BorderStyle = BorderStyle.None;
-            lblLoanType.BackColor = Color.Transparent;
+            lblAmount.BorderStyle = BorderStyle.None;
+            lblAmount.BackColor = Color.Transparent;
         }
     }
 }
