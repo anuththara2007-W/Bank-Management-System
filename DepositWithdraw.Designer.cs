@@ -63,7 +63,7 @@ namespace Bank__Management_System
             // 
             // txtAmount
             // 
-            this.txtAmount.Location = new System.Drawing.Point(452, 259);
+            this.txtAmount.Location = new System.Drawing.Point(534, 262);
             this.txtAmount.Multiline = true;
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(393, 35);
