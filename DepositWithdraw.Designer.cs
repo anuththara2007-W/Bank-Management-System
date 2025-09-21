@@ -122,7 +122,7 @@ namespace Bank__Management_System
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(985, 577);
+            this.ClientSize = new System.Drawing.Size(1280, 785);
             this.Controls.Add(this.lblBalance);
             this.Controls.Add(this.gridAccounts);
             this.Controls.Add(this.btnGoBack);
