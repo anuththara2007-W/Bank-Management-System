@@ -69,22 +69,24 @@ namespace Bank__Management_System
             // 
             // btnDeposit
             // 
-            this.btnDeposit.Location = new System.Drawing.Point(40, 214);
+            this.btnDeposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnDeposit.Location = new System.Drawing.Point(222, 378);
             this.btnDeposit.Name = "btnDeposit";
             this.btnDeposit.Size = new System.Drawing.Size(189, 30);
             this.btnDeposit.TabIndex = 4;
             this.btnDeposit.Text = "Deposit ";
-            this.btnDeposit.UseVisualStyleBackColor = true;
+            this.btnDeposit.UseVisualStyleBackColor = false;
             this.btnDeposit.Click += new System.EventHandler(this.btnDeposit_Click);
             // 
             // btnWithdraw
             // 
-            this.btnWithdraw.Location = new System.Drawing.Point(348, 214);
+            this.btnWithdraw.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnWithdraw.Location = new System.Drawing.Point(530, 378);
             this.btnWithdraw.Name = "btnWithdraw";
             this.btnWithdraw.Size = new System.Drawing.Size(189, 30);
             this.btnWithdraw.TabIndex = 5;
             this.btnWithdraw.Text = "Withdraw";
-            this.btnWithdraw.UseVisualStyleBackColor = true;
+            this.btnWithdraw.UseVisualStyleBackColor = false;
             this.btnWithdraw.Click += new System.EventHandler(this.btnWithdraw_Click);
             // 
             // btnGoBack
