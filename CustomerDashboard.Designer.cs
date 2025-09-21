@@ -138,6 +138,8 @@
             // 
             // dgvTransactions
             // 
+            this.dgvTransactions.AllowUserToAddRows = false;
+            this.dgvTransactions.AllowUserToDeleteRows = false;
             this.dgvTransactions.AllowUserToResizeColumns = false;
             this.dgvTransactions.AllowUserToResizeRows = false;
             this.dgvTransactions.BackgroundColor = System.Drawing.Color.White;
