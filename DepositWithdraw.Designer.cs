@@ -104,7 +104,7 @@ namespace Bank__Management_System
             this.gridAccounts.Name = "gridAccounts";
             this.gridAccounts.RowHeadersWidth = 51;
             this.gridAccounts.RowTemplate.Height = 24;
-            this.gridAccounts.Size = new System.Drawing.Size(1181, 178);
+            this.gridAccounts.Size = new System.Drawing.Size(1181, 281);
             this.gridAccounts.TabIndex = 18;
             // 
             // lblBalance
