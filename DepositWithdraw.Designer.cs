@@ -70,6 +70,7 @@ namespace Bank__Management_System
             // btnDeposit
             // 
             this.btnDeposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnDeposit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeposit.Location = new System.Drawing.Point(222, 378);
             this.btnDeposit.Name = "btnDeposit";
             this.btnDeposit.Size = new System.Drawing.Size(189, 30);
@@ -81,6 +82,7 @@ namespace Bank__Management_System
             // btnWithdraw
             // 
             this.btnWithdraw.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnWithdraw.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWithdraw.Location = new System.Drawing.Point(530, 378);
             this.btnWithdraw.Name = "btnWithdraw";
             this.btnWithdraw.Size = new System.Drawing.Size(189, 30);
@@ -91,6 +93,7 @@ namespace Bank__Management_System
             // 
             // btnGoBack
             // 
+            this.btnGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGoBack.Location = new System.Drawing.Point(808, 361);
             this.btnGoBack.Name = "btnGoBack";
             this.btnGoBack.Size = new System.Drawing.Size(141, 47);
