@@ -54,15 +54,16 @@ namespace Bank__Management_System
             // lblAmount
             // 
             this.lblAmount.AutoSize = true;
-            this.lblAmount.Location = new System.Drawing.Point(54, 113);
+            this.lblAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmount.Location = new System.Drawing.Point(299, 262);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(52, 16);
+            this.lblAmount.Size = new System.Drawing.Size(112, 32);
             this.lblAmount.TabIndex = 1;
             this.lblAmount.Text = "Amount";
             // 
             // txtAmount
             // 
-            this.txtAmount.Location = new System.Drawing.Point(580, 259);
+            this.txtAmount.Location = new System.Drawing.Point(590, 262);
             this.txtAmount.Multiline = true;
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(393, 35);
