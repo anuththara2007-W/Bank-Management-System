@@ -30,6 +30,7 @@ namespace Bank__Management_System
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DepositWithdraw));
             this.lblMode = new System.Windows.Forms.Label();
             this.lblAmount = new System.Windows.Forms.Label();
             this.txtAmount = new System.Windows.Forms.TextBox();
@@ -119,6 +120,8 @@ namespace Bank__Management_System
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(985, 577);
             this.Controls.Add(this.lblBalance);
             this.Controls.Add(this.gridAccounts);
@@ -128,6 +131,7 @@ namespace Bank__Management_System
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.lblAmount);
             this.Controls.Add(this.lblMode);
+            this.DoubleBuffered = true;
             this.Name = "DepositWithdraw";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DepositWithdraw";
