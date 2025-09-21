@@ -129,6 +129,7 @@ namespace Bank__Management_System
             this.Controls.Add(this.lblAmount);
             this.Controls.Add(this.lblMode);
             this.Name = "DepositWithdraw";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DepositWithdraw";
             ((System.ComponentModel.ISupportInitialize)(this.gridAccounts)).EndInit();
             this.ResumeLayout(false);
