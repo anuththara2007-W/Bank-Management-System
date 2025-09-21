@@ -21,7 +21,6 @@ namespace Bank__Management_System
         {
 
             this.reportViewer1.RefreshReport();
-            this.reportViewer2.RefreshReport();
         }
     }
 }
