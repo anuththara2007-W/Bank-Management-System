@@ -56,10 +56,10 @@ namespace Bank__Management_System
             this.txtAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.txtAmount.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAmount.Location = new System.Drawing.Point(534, 318);
+            this.txtAmount.Location = new System.Drawing.Point(535, 327);
             this.txtAmount.Multiline = true;
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(442, 45);
+            this.txtAmount.Size = new System.Drawing.Size(442, 36);
             this.txtAmount.TabIndex = 3;
             // 
             // btnDeposit
