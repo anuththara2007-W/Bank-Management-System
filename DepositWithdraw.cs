@@ -213,7 +213,7 @@ namespace Bank__Management_System
         {
             gridAccounts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridStyle.ModernizeGrid(gridAccounts);
-            this.reportViewer1.RefreshReport();
+            this.gridAccounts.RefreshReport();
         }
     }
 }
