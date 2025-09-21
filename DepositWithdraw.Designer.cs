@@ -45,7 +45,7 @@ namespace Bank__Management_System
             // 
             this.lblAmount.AutoSize = true;
             this.lblAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmount.Location = new System.Drawing.Point(364, 265);
+            this.lblAmount.Location = new System.Drawing.Point(311, 325);
             this.lblAmount.Name = "lblAmount";
             this.lblAmount.Size = new System.Drawing.Size(112, 32);
             this.lblAmount.TabIndex = 1;
@@ -53,10 +53,11 @@ namespace Bank__Management_System
             // 
             // txtAmount
             // 
-            this.txtAmount.Location = new System.Drawing.Point(514, 262);
+            this.txtAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAmount.Location = new System.Drawing.Point(534, 325);
             this.txtAmount.Multiline = true;
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(393, 35);
+            this.txtAmount.Size = new System.Drawing.Size(442, 35);
             this.txtAmount.TabIndex = 3;
             // 
             // btnDeposit
