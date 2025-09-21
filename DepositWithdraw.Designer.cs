@@ -31,7 +31,6 @@ namespace Bank__Management_System
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DepositWithdraw));
-            this.lblMode = new System.Windows.Forms.Label();
             this.lblAmount = new System.Windows.Forms.Label();
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.btnDeposit = new System.Windows.Forms.Button();
@@ -41,15 +40,6 @@ namespace Bank__Management_System
             this.lblBalance = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridAccounts)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblMode
-            // 
-            this.lblMode.AutoSize = true;
-            this.lblMode.Location = new System.Drawing.Point(88, 34);
-            this.lblMode.Name = "lblMode";
-            this.lblMode.Size = new System.Drawing.Size(57, 16);
-            this.lblMode.TabIndex = 0;
-            this.lblMode.Text = "Balance";
             // 
             // lblAmount
             // 
@@ -167,7 +157,6 @@ namespace Bank__Management_System
             this.Controls.Add(this.btnDeposit);
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.lblAmount);
-            this.Controls.Add(this.lblMode);
             this.DoubleBuffered = true;
             this.Name = "DepositWithdraw";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -182,8 +171,6 @@ namespace Bank__Management_System
 
 
         #endregion
-
-        private System.Windows.Forms.Label lblMode;
         private System.Windows.Forms.Label lblAmount;
         private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.Button btnDeposit;
