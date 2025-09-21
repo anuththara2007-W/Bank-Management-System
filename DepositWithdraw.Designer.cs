@@ -91,7 +91,7 @@ namespace Bank__Management_System
             // 
             // btnGoBack
             // 
-            this.btnGoBack.Location = new System.Drawing.Point(668, 70);
+            this.btnGoBack.Location = new System.Drawing.Point(808, 361);
             this.btnGoBack.Name = "btnGoBack";
             this.btnGoBack.Size = new System.Drawing.Size(141, 47);
             this.btnGoBack.TabIndex = 16;
