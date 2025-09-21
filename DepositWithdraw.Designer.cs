@@ -126,11 +126,11 @@ namespace Bank__Management_System
             this.gridAccounts.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridAccounts.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.gridAccounts.Location = new System.Drawing.Point(78, 512);
+            this.gridAccounts.Location = new System.Drawing.Point(69, 512);
             this.gridAccounts.Name = "gridAccounts";
             this.gridAccounts.RowHeadersWidth = 51;
             this.gridAccounts.RowTemplate.Height = 24;
-            this.gridAccounts.Size = new System.Drawing.Size(1134, 281);
+            this.gridAccounts.Size = new System.Drawing.Size(1143, 251);
             this.gridAccounts.TabIndex = 18;
             // 
             // lblBalance
