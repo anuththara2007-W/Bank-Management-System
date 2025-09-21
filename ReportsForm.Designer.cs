@@ -35,7 +35,7 @@
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Margin = new System.Windows.Forms.Padding(31, 3, 3, 3);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(31, 3, 23, 3);
             this.reportViewer1.Name = "ReportViewer";
             this.reportViewer1.Size = new System.Drawing.Size(396, 246);
             this.reportViewer1.TabIndex = 0;
