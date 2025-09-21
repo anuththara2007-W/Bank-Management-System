@@ -30,10 +30,7 @@ namespace Bank__Management_System
         {
             LoadCustomerAccount();
             LoadAccountsToGrid();
-            lblAmount.BackColor = Color.Transparent;
-            lblAmount.BorderStyle = BorderStyle.None;
-            lblLoanType.BorderStyle = BorderStyle.None;
-            lblLoanType.BackColor = Color.Transparent;
+
         }
 
         // Load all accounts into DataGridView
@@ -217,7 +214,10 @@ namespace Bank__Management_System
         {
             gridAccounts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridStyle.ModernizeGrid(gridAccounts);
-
+            lblAmount.BackColor = Color.Transparent;
+            lblAmount.BorderStyle = BorderStyle.None;
+            lblLoanType.BorderStyle = BorderStyle.None;
+            lblLoanType.BackColor = Color.Transparent;
         }
     }
 }
