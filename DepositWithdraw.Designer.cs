@@ -65,7 +65,7 @@ namespace Bank__Management_System
             this.txtAmount.Location = new System.Drawing.Point(580, 259);
             this.txtAmount.Multiline = true;
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(360, 22);
+            this.txtAmount.Size = new System.Drawing.Size(393, 35);
             this.txtAmount.TabIndex = 3;
             // 
             // btnDeposit
