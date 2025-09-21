@@ -214,8 +214,8 @@ namespace Bank__Management_System
         {
             gridAccounts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridStyle.ModernizeGrid(gridAccounts);
-            lblAmount.BackColor = Color.Transparent;
-            lblAmount.BorderStyle = BorderStyle.None;
+            lblBalance.BackColor = Color.Transparent;
+            lblBalance.BorderStyle = BorderStyle.None;
             lblLoanType.BorderStyle = BorderStyle.None;
             lblLoanType.BackColor = Color.Transparent;
         }
