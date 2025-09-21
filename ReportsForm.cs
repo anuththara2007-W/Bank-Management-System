@@ -20,6 +20,8 @@ namespace Bank__Management_System
         private void ReportsForm_Load(object sender, EventArgs e)
         {
 
+            this.reportViewer1.RefreshReport();
+            this.reportViewer2.RefreshReport();
         }
     }
 }

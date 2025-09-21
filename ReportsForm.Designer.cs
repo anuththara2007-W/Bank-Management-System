@@ -33,12 +33,9 @@
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Margin = new System.Windows.Forms.Padding(31, 3, 23, 3);
-            this.reportViewer1.Name = "ReportViewer";
+            this.reportViewer1.Location = new System.Drawing.Point(51, 65);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(396, 246);
             this.reportViewer1.TabIndex = 0;
             // 
@@ -47,6 +44,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1093, 618);
+            this.Controls.Add(this.reportViewer1);
             this.Name = "ReportsForm";
             this.Text = "ReportsForm";
             this.Load += new System.EventHandler(this.ReportsForm_Load);
