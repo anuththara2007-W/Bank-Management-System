@@ -99,6 +99,7 @@ namespace Bank__Management_System
             // 
             // gridAccounts
             // 
+            this.gridAccounts.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.gridAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridAccounts.Location = new System.Drawing.Point(55, 455);
             this.gridAccounts.Name = "gridAccounts";
