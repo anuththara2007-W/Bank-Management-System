@@ -100,11 +100,11 @@ namespace Bank__Management_System
             // gridAccounts
             // 
             this.gridAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridAccounts.Location = new System.Drawing.Point(57, 364);
+            this.gridAccounts.Location = new System.Drawing.Point(57, 466);
             this.gridAccounts.Name = "gridAccounts";
             this.gridAccounts.RowHeadersWidth = 51;
             this.gridAccounts.RowTemplate.Height = 24;
-            this.gridAccounts.Size = new System.Drawing.Size(868, 167);
+            this.gridAccounts.Size = new System.Drawing.Size(1172, 167);
             this.gridAccounts.TabIndex = 18;
             // 
             // lblBalance
