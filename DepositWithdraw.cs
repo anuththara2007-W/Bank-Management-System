@@ -208,5 +208,11 @@ namespace Bank__Management_System
             customerdash.Show();
             this.Hide();
         }
+
+        private void DepositWithdraw_Load_1(object sender, EventArgs e)
+        {
+
+            this.reportViewer1.RefreshReport();
+        }
     }
 }

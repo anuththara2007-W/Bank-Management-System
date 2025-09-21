@@ -135,6 +135,7 @@ namespace Bank__Management_System
             this.Name = "DepositWithdraw";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DepositWithdraw";
+            this.Load += new System.EventHandler(this.DepositWithdraw_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.gridAccounts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
