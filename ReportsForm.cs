@@ -16,5 +16,10 @@ namespace Bank__Management_System
         {
             InitializeComponent();
         }
+
+        private void ReportsForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

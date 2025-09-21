@@ -49,6 +49,7 @@
             this.ClientSize = new System.Drawing.Size(1093, 618);
             this.Name = "ReportsForm";
             this.Text = "ReportsForm";
+            this.Load += new System.EventHandler(this.ReportsForm_Load);
             this.ResumeLayout(false);
 
         }
