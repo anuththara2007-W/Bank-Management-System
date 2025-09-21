@@ -77,9 +77,9 @@ namespace Bank__Management_System
             this.btnDeposit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnDeposit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeposit.Font = new System.Drawing.Font("Microsoft Tai Le", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeposit.Location = new System.Drawing.Point(177, 369);
+            this.btnDeposit.Location = new System.Drawing.Point(147, 369);
             this.btnDeposit.Name = "btnDeposit";
-            this.btnDeposit.Size = new System.Drawing.Size(213, 48);
+            this.btnDeposit.Size = new System.Drawing.Size(243, 48);
             this.btnDeposit.TabIndex = 4;
             this.btnDeposit.Text = "Deposit ";
             this.btnDeposit.UseVisualStyleBackColor = false;
