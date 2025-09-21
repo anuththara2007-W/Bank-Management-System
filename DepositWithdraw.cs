@@ -30,6 +30,10 @@ namespace Bank__Management_System
         {
             LoadCustomerAccount();
             LoadAccountsToGrid();
+            lblAmount.BackColor = Color.Transparent;
+            lblAmount.BorderStyle = BorderStyle.None;
+            lblLoanType.BorderStyle = BorderStyle.None;
+            lblLoanType.BackColor = Color.Transparent;
         }
 
         // Load all accounts into DataGridView
