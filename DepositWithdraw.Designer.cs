@@ -102,6 +102,7 @@ namespace Bank__Management_System
             this.gridAccounts.AllowUserToAddRows = false;
             this.gridAccounts.AllowUserToDeleteRows = false;
             this.gridAccounts.AllowUserToResizeColumns = false;
+            this.gridAccounts.AllowUserToResizeRows = false;
             this.gridAccounts.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.gridAccounts.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
