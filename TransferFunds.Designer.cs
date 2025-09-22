@@ -124,7 +124,7 @@ namespace BankApp
             // TransactionsGrid
             // 
             this.TransactionsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TransactionsGrid.Location = new System.Drawing.Point(37, 472);
+            this.TransactionsGrid.Location = new System.Drawing.Point(48, 496);
             this.TransactionsGrid.Name = "TransactionsGrid";
             this.TransactionsGrid.RowHeadersWidth = 51;
             this.TransactionsGrid.RowTemplate.Height = 24;
