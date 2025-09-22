@@ -66,7 +66,7 @@ namespace Bank__Management_System
                         }
                     }
                 }
-            }gridAccounts
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Error loading accounts: " + ex.Message);
