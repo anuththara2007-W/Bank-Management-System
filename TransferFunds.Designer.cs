@@ -124,6 +124,7 @@ namespace BankApp
             // TransactionsGrid
             // 
             this.TransactionsGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.TransactionsGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TransactionsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TransactionsGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.TransactionsGrid.Location = new System.Drawing.Point(48, 496);
