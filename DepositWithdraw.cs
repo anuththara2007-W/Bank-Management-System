@@ -45,7 +45,7 @@ namespace Bank__Management_System
                 {
                     con.Open();
                     SqlDataAdapter da = new SqlDataAdapter(
-                        "SELECT TOP 5 Transaction_Type, Amount, Transaction_Date " +
+                        "SELECT TOP 10 Transaction_Type, Amount, Transaction_Date " +
                         "FROM Transactions WHERE Account_ID IN " +
                         "(SELECT Account_ID FROM Accounts WHERE Customer_ID = @cid) " +
                         "ORDER BY Transaction_Date DESC", con);
