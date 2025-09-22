@@ -46,12 +46,13 @@ namespace BankApp
             // 
             // btnTransfer
             // 
+            this.btnTransfer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnTransfer.Location = new System.Drawing.Point(304, 151);
             this.btnTransfer.Name = "btnTransfer";
             this.btnTransfer.Size = new System.Drawing.Size(189, 30);
             this.btnTransfer.TabIndex = 10;
             this.btnTransfer.Text = "Transfer";
-            this.btnTransfer.UseVisualStyleBackColor = true;
+            this.btnTransfer.UseVisualStyleBackColor = false;
             this.btnTransfer.Click += new System.EventHandler(this.btnTransfer_Click);
             // 
             // txtToAccount
@@ -88,12 +89,13 @@ namespace BankApp
             // 
             // btnGoBack
             // 
+            this.btnGoBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnGoBack.Location = new System.Drawing.Point(647, 19);
             this.btnGoBack.Name = "btnGoBack";
             this.btnGoBack.Size = new System.Drawing.Size(141, 47);
             this.btnGoBack.TabIndex = 22;
             this.btnGoBack.Text = "Go Back";
-            this.btnGoBack.UseVisualStyleBackColor = true;
+            this.btnGoBack.UseVisualStyleBackColor = false;
             this.btnGoBack.Click += new System.EventHandler(this.btnGoBack_Click);
             // 
             // txtPurpose
