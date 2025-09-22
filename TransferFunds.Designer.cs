@@ -48,6 +48,7 @@ namespace BankApp
             // 
             this.btnTransfer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnTransfer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTransfer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTransfer.Location = new System.Drawing.Point(304, 151);
             this.btnTransfer.Name = "btnTransfer";
             this.btnTransfer.Size = new System.Drawing.Size(189, 30);
@@ -92,6 +93,7 @@ namespace BankApp
             // 
             this.btnGoBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnGoBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGoBack.Location = new System.Drawing.Point(647, 19);
             this.btnGoBack.Name = "btnGoBack";
             this.btnGoBack.Size = new System.Drawing.Size(141, 47);
