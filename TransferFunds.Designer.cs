@@ -128,7 +128,7 @@ namespace BankApp
             this.TransactionsGrid.Name = "TransactionsGrid";
             this.TransactionsGrid.RowHeadersWidth = 51;
             this.TransactionsGrid.RowTemplate.Height = 24;
-            this.TransactionsGrid.Size = new System.Drawing.Size(1189, 261);
+            this.TransactionsGrid.Size = new System.Drawing.Size(1188, 256);
             this.TransactionsGrid.TabIndex = 26;
             // 
             // TransferFunds
