@@ -53,18 +53,9 @@ namespace Bank__Management_System
 
                     DataTable dt = new DataTable();
                     gridAccounts.DataSource = dt;
-                    gridAccounts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     da.Fill(dt);
 
-                    // Highlight the selected account
-                    foreach (DataGridViewRow row in gridAccounts.Rows)
-                    {
-                        if (Convert.ToInt32(row.Cells["Account_ID"].Value) == selectedAccId)
-                        {
-                            row.Selected = true;
-                            gridAccounts.FirstDisplayedScrollingRowIndex = row.Index;
-                        }
-                    }
+             
                 }
             }
             catch (Exception ex)
