@@ -54,6 +54,7 @@ namespace Bank__Management_System
                     DataTable dt = new DataTable();
                     gridAccounts.DataSource = dt;
                     gridAccounts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    da.Fill(dt);
 
                     // Highlight the selected account
                     foreach (DataGridViewRow row in gridAccounts.Rows)
