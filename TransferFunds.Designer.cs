@@ -66,7 +66,7 @@ namespace BankApp
             // 
             this.txtToAccount.Location = new System.Drawing.Point(272, 60);
             this.txtToAccount.Name = "txtToAccount";
-            this.txtToAccount.Size = new System.Drawing.Size(360, 22);
+            this.txtToAccount.Size = new System.Drawing.Size(458, 22);
             this.txtToAccount.TabIndex = 9;
             // 
             // lblToAccount
@@ -81,8 +81,9 @@ namespace BankApp
             // txtAmount
             // 
             this.txtAmount.Location = new System.Drawing.Point(272, 106);
+            this.txtAmount.Multiline = true;
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(360, 22);
+            this.txtAmount.Size = new System.Drawing.Size(458, 109);
             this.txtAmount.TabIndex = 13;
             // 
             // lblAmount
@@ -115,8 +116,9 @@ namespace BankApp
             // txtPurpose
             // 
             this.txtPurpose.Location = new System.Drawing.Point(272, 16);
+            this.txtPurpose.Multiline = true;
             this.txtPurpose.Name = "txtPurpose";
-            this.txtPurpose.Size = new System.Drawing.Size(360, 22);
+            this.txtPurpose.Size = new System.Drawing.Size(458, 109);
             this.txtPurpose.TabIndex = 24;
             // 
             // label1
