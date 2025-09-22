@@ -123,6 +123,10 @@ namespace BankApp
             // 
             // TransactionsGrid
             // 
+            this.TransactionsGrid.AllowUserToAddRows = false;
+            this.TransactionsGrid.AllowUserToDeleteRows = false;
+            this.TransactionsGrid.AllowUserToResizeColumns = false;
+            this.TransactionsGrid.AllowUserToResizeRows = false;
             this.TransactionsGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.TransactionsGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TransactionsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
