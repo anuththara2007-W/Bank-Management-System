@@ -54,9 +54,9 @@ namespace BankApp
             this.btnTransfer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnTransfer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTransfer.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTransfer.Location = new System.Drawing.Point(304, 151);
+            this.btnTransfer.Location = new System.Drawing.Point(364, 407);
             this.btnTransfer.Name = "btnTransfer";
-            this.btnTransfer.Size = new System.Drawing.Size(189, 30);
+            this.btnTransfer.Size = new System.Drawing.Size(228, 50);
             this.btnTransfer.TabIndex = 10;
             this.btnTransfer.Text = "Transfer";
             this.btnTransfer.UseVisualStyleBackColor = false;
