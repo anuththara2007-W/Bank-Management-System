@@ -52,7 +52,6 @@ namespace Bank__Management_System
                     da.SelectCommand.Parameters.AddWithValue("@cid", Session.CustomerID);
 
                     DataTable dt = new DataTable();
-                    da.Fill(dt);
                     gridAccounts.DataSource = dt;
                     gridAccounts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
