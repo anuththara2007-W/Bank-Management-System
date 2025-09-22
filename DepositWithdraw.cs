@@ -41,31 +41,21 @@ namespace Bank__Management_System
 
             try
             {
-                using (SqlConnection con = new SqlConnection(connString))
+                 using (SqlConnection con = DatabaseHelper.GetConnection())
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand(
-                        "SELECT Account_ID, Account_Type, Balance FROM Accounts WHERE Customer_ID=@cid",
-                        con);
-                    cmd.Parameters.AddWithValue("@cid", GetCustomerID());
+                    SqlDataAdapter da = new SqlDataAdapter(
+                        "SELECT TOP 5 Transaction_Type, Amount, Transaction_Date " +
+                        "FROM Transactions WHERE Account_ID IN " +
+                        "(SELECT Account_ID FROM Accounts WHERE Customer_ID = @cid) " +
+                        "ORDER BY Transaction_Date DESC", con);
+                    da.SelectCommand.Parameters.AddWithValue("@cid", Session.CustomerID);
 
                     DataTable dt = new DataTable();
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
                     da.Fill(dt);
-
-                    gridAccounts.DataSource = dt;
-                    gridAccounts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-                    // Highlight the selected account
-                    foreach (DataGridViewRow row in gridAccounts.Rows)
-                    {
-                        if (Convert.ToInt32(row.Cells["Account_ID"].Value) == selectedAccId)
-                        {
-                            row.Selected = true;
-                            gridAccounts.FirstDisplayedScrollingRowIndex = row.Index;
-                        }
-                    }
+                    dgvTransactions.DataSource = dt;
                 }
+            }
             }gridAccounts
             catch (Exception ex)
             {
