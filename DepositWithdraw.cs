@@ -53,10 +53,10 @@ namespace Bank__Management_System
 
                     DataTable dt = new DataTable();
                     da.Fill(dt);
-                    dgvTransactions.DataSource = dt;
+                    gridAccounts.DataSource = dt;
                 }
             }
-            }gridAccounts
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Error loading accounts: " + ex.Message);
