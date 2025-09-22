@@ -30,6 +30,7 @@ namespace BankApp
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TransferFunds));
             this.btnTransfer = new System.Windows.Forms.Button();
             this.txtToAccount = new System.Windows.Forms.TextBox();
             this.lblToAccount = new System.Windows.Forms.Label();
@@ -134,6 +135,7 @@ namespace BankApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1280, 785);
             this.Controls.Add(this.TransactionsGrid);
             this.Controls.Add(this.lblBalance);
