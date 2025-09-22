@@ -41,7 +41,7 @@ namespace Bank__Management_System
 
             try
             {
-                 using (SqlConnection con = DatabaseHelper.GetConnection())
+                using (SqlConnection con = new SqlConnection(connString))
                 {
                     con.Open();
                     SqlDataAdapter da = new SqlDataAdapter(
@@ -54,9 +54,19 @@ namespace Bank__Management_System
                     DataTable dt = new DataTable();
                     da.Fill(dt);
                     gridAccounts.DataSource = dt;
+                    gridAccounts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                    // Highlight the selected account
+                    foreach (DataGridViewRow row in gridAccounts.Rows)
+                    {
+                        if (Convert.ToInt32(row.Cells["Account_ID"].Value) == selectedAccId)
+                        {
+                            row.Selected = true;
+                            gridAccounts.FirstDisplayedScrollingRowIndex = row.Index;
+                        }
+                    }
                 }
-            }
-            }
+            }gridAccounts
             catch (Exception ex)
             {
                 MessageBox.Show("Error loading accounts: " + ex.Message);
