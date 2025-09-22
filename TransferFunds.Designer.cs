@@ -136,6 +136,7 @@ namespace BankApp
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1280, 785);
             this.Controls.Add(this.TransactionsGrid);
             this.Controls.Add(this.lblBalance);
@@ -147,6 +148,7 @@ namespace BankApp
             this.Controls.Add(this.btnTransfer);
             this.Controls.Add(this.txtToAccount);
             this.Controls.Add(this.lblToAccount);
+            this.DoubleBuffered = true;
             this.Name = "TransferFunds";
             this.Text = "TransferFunds";
             ((System.ComponentModel.ISupportInitialize)(this.TransactionsGrid)).EndInit();
