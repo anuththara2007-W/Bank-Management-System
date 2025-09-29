@@ -72,13 +72,17 @@ namespace BankApp
             // Validate amount
             decimal amount;
 
-            if (!decimal.TryParse(txtAmount.Text, out amount))
+            try
             {
-                MessageBox.Show("Enter a valid amount");
-                return;
-            }
+                amount = Convert.ToDecimal(txtAmount.Text);
 
-            if (amount <= 0)
+                if (amount <= 0)
+                {
+                    MessageBox.Show("Enter a valid amount");
+                    return;
+                }
+            }
+            catch
             {
                 MessageBox.Show("Enter a valid amount");
                 return;
