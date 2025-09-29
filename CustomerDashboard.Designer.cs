@@ -70,7 +70,7 @@
             this.btnDeposit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnDeposit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnDeposit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeposit.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeposit.Font = new System.Drawing.Font("Yu Gothic", 12F);
             this.btnDeposit.Location = new System.Drawing.Point(50, 259);
             this.btnDeposit.Name = "btnDeposit";
             this.btnDeposit.Size = new System.Drawing.Size(248, 44);
@@ -89,7 +89,7 @@
             this.btnWithdraw.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnWithdraw.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnWithdraw.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWithdraw.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWithdraw.Font = new System.Drawing.Font("Yu Gothic", 12F);
             this.btnWithdraw.Location = new System.Drawing.Point(345, 257);
             this.btnWithdraw.Name = "btnWithdraw";
             this.btnWithdraw.Size = new System.Drawing.Size(256, 44);
@@ -108,7 +108,7 @@
             this.btnLoanRequest.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnLoanRequest.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnLoanRequest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoanRequest.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoanRequest.Font = new System.Drawing.Font("Yu Gothic", 12F);
             this.btnLoanRequest.Location = new System.Drawing.Point(951, 259);
             this.btnLoanRequest.Name = "btnLoanRequest";
             this.btnLoanRequest.Size = new System.Drawing.Size(249, 44);
@@ -127,7 +127,7 @@
             this.btnTransfer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnTransfer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnTransfer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTransfer.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTransfer.Font = new System.Drawing.Font("Yu Gothic", 12F);
             this.btnTransfer.Location = new System.Drawing.Point(653, 259);
             this.btnTransfer.Name = "btnTransfer";
             this.btnTransfer.Size = new System.Drawing.Size(248, 44);
@@ -179,7 +179,7 @@
             this.btnProfile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProfile.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfile.Font = new System.Drawing.Font("Yu Gothic", 12F);
             this.btnProfile.Location = new System.Drawing.Point(220, 340);
             this.btnProfile.Name = "btnProfile";
             this.btnProfile.Size = new System.Drawing.Size(241, 44);
@@ -198,7 +198,7 @@
             this.btnChangePassword.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnChangePassword.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangePassword.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangePassword.Font = new System.Drawing.Font("Yu Gothic", 12F);
             this.btnChangePassword.Location = new System.Drawing.Point(520, 340);
             this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.Size = new System.Drawing.Size(241, 44);
@@ -217,7 +217,7 @@
             this.btnSupport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnSupport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnSupport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSupport.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSupport.Font = new System.Drawing.Font("Yu Gothic", 12F);
             this.btnSupport.Location = new System.Drawing.Point(805, 340);
             this.btnSupport.Name = "btnSupport";
             this.btnSupport.Size = new System.Drawing.Size(241, 44);
@@ -254,7 +254,7 @@
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Yu Gothic", 12F);
             this.button1.Location = new System.Drawing.Point(208, 340);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(241, 44);
@@ -282,8 +282,8 @@
             this.btnReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReport.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReport.Location = new System.Drawing.Point(495, 145);
+            this.btnReport.Font = new System.Drawing.Font("Yu Gothic", 12F);
+            this.btnReport.Location = new System.Drawing.Point(973, 340);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(248, 44);
             this.btnReport.TabIndex = 15;
