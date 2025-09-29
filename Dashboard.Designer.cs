@@ -99,7 +99,7 @@
             this.btnGo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnGo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnGo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGo.Font = new System.Drawing.Font("Yu Gothic", 12F);
             this.btnGo.Location = new System.Drawing.Point(48, 605);
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(171, 31);
