@@ -86,7 +86,7 @@ namespace BankApp
                     txtAmount.Clear();
                     if (cmbLoanType.Items.Count > 0) cmbLoanType.SelectedIndex = 0;
 
-                    LoadMyRequests(); // Refresh grid
+                    LoadMyRequests();
                 }
                 catch (Exception ex)
                 {
