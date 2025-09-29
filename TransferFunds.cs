@@ -42,7 +42,7 @@ namespace BankApp
                 }
                 else
                 {
-                    lblBalance.Text = "Balance: N/A";
+                    lblBalance.Text = "Balance: Rs.";
                 }
             }
         }
