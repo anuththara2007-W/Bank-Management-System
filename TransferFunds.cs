@@ -161,7 +161,8 @@ namespace BankApp
             TransactionsGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridStyle.ModernizeGrid(TransactionsGrid);
 
-
+            lblBalance.BorderStyle = BorderStyle.None;
+            lblBalance.BackColor = Color.Transparent;
             lblPurpose.BorderStyle = BorderStyle.None;
             lblPurpose.BackColor = Color.Transparent;
             lblToAccount.BorderStyle = BorderStyle.None;

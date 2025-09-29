@@ -149,9 +149,9 @@ namespace BankApp
             this.lblBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBalance.Location = new System.Drawing.Point(435, 143);
             this.lblBalance.Name = "lblBalance";
-            this.lblBalance.Size = new System.Drawing.Size(83, 25);
+            this.lblBalance.Size = new System.Drawing.Size(88, 25);
             this.lblBalance.TabIndex = 25;
-            this.lblBalance.Text = "purpose";
+            this.lblBalance.Text = "Balance ";
             // 
             // TransactionsGrid
             // 
