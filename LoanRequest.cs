@@ -123,7 +123,7 @@ namespace BankApp
                     dgvLoanRequests.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
                     // Format Amount and RequestDate columns if they exist
-                    if (dgvLoanRequests.Columns["Amount"] != null)
+                    if (dgvLoanRequests.Columns["Amount"] != null) //check if the amount column exsts
                         dgvLoanRequests.Columns["Amount"].DefaultCellStyle.Format = "N2";
 
                     if (dgvLoanRequests.Columns["RequestDate"] != null)
