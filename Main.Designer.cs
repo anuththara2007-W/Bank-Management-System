@@ -51,7 +51,7 @@
             this.btnCustomer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnCustomer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomer.Font = new System.Drawing.Font("Yu Gothic", 12F);
             this.btnCustomer.Location = new System.Drawing.Point(63, 147);
             this.btnCustomer.Name = "btnCustomer";
             this.btnCustomer.Size = new System.Drawing.Size(226, 38);
@@ -69,7 +69,7 @@
             this.btnAccount.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnAccount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAccount.Font = new System.Drawing.Font("Yu Gothic", 12F);
             this.btnAccount.Location = new System.Drawing.Point(63, 228);
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.Size = new System.Drawing.Size(226, 37);
@@ -87,7 +87,7 @@
             this.btnTransaction.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnTransaction.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnTransaction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTransaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTransaction.Font = new System.Drawing.Font("Yu Gothic", 12F);
             this.btnTransaction.Location = new System.Drawing.Point(63, 303);
             this.btnTransaction.Name = "btnTransaction";
             this.btnTransaction.Size = new System.Drawing.Size(226, 37);
@@ -105,7 +105,7 @@
             this.btnLoan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnLoan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnLoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoan.Font = new System.Drawing.Font("Yu Gothic", 12F);
             this.btnLoan.Location = new System.Drawing.Point(63, 383);
             this.btnLoan.Name = "btnLoan";
             this.btnLoan.Size = new System.Drawing.Size(226, 36);
@@ -123,7 +123,7 @@
             this.btnEmployee.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnEmployee.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmployee.Font = new System.Drawing.Font("Yu Gothic", 12F);
             this.btnEmployee.Location = new System.Drawing.Point(63, 468);
             this.btnEmployee.Name = "btnEmployee";
             this.btnEmployee.Size = new System.Drawing.Size(226, 36);
@@ -141,7 +141,7 @@
             this.btnLoanRq.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnLoanRq.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnLoanRq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoanRq.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoanRq.Font = new System.Drawing.Font("Yu Gothic", 12F);
             this.btnLoanRq.Location = new System.Drawing.Point(63, 621);
             this.btnLoanRq.Name = "btnLoanRq";
             this.btnLoanRq.Size = new System.Drawing.Size(226, 36);
@@ -159,7 +159,7 @@
             this.btnSupport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnSupport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnSupport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSupport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSupport.Font = new System.Drawing.Font("Yu Gothic", 12F);
             this.btnSupport.Location = new System.Drawing.Point(57, 552);
             this.btnSupport.Name = "btnSupport";
             this.btnSupport.Size = new System.Drawing.Size(232, 36);
@@ -177,7 +177,7 @@
             this.btnLogOut.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnLogOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Font = new System.Drawing.Font("Yu Gothic", 12F);
             this.btnLogOut.Location = new System.Drawing.Point(63, 690);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(226, 36);
