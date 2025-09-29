@@ -54,7 +54,7 @@ namespace BankApp
             this.btnTransfer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnTransfer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTransfer.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTransfer.Location = new System.Drawing.Point(364, 407);
+            this.btnTransfer.Location = new System.Drawing.Point(356, 432);
             this.btnTransfer.Name = "btnTransfer";
             this.btnTransfer.Size = new System.Drawing.Size(228, 50);
             this.btnTransfer.TabIndex = 10;
@@ -67,7 +67,7 @@ namespace BankApp
             this.txtToAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.txtToAccount.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtToAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtToAccount.Location = new System.Drawing.Point(489, 227);
+            this.txtToAccount.Location = new System.Drawing.Point(500, 308);
             this.txtToAccount.Multiline = true;
             this.txtToAccount.Name = "txtToAccount";
             this.txtToAccount.Size = new System.Drawing.Size(530, 26);
@@ -77,7 +77,7 @@ namespace BankApp
             // 
             this.lblToAccount.AutoSize = true;
             this.lblToAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblToAccount.Location = new System.Drawing.Point(251, 221);
+            this.lblToAccount.Location = new System.Drawing.Point(253, 302);
             this.lblToAccount.Name = "lblToAccount";
             this.lblToAccount.Size = new System.Drawing.Size(201, 29);
             this.lblToAccount.TabIndex = 7;
@@ -88,7 +88,7 @@ namespace BankApp
             this.txtAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.txtAmount.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAmount.Location = new System.Drawing.Point(489, 304);
+            this.txtAmount.Location = new System.Drawing.Point(500, 369);
             this.txtAmount.Multiline = true;
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(530, 25);
@@ -98,7 +98,7 @@ namespace BankApp
             // 
             this.lblAmount.AutoSize = true;
             this.lblAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmount.Location = new System.Drawing.Point(251, 299);
+            this.lblAmount.Location = new System.Drawing.Point(253, 363);
             this.lblAmount.Name = "lblAmount";
             this.lblAmount.Size = new System.Drawing.Size(94, 29);
             this.lblAmount.TabIndex = 12;
@@ -114,7 +114,7 @@ namespace BankApp
             this.btnGoBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGoBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGoBack.Location = new System.Drawing.Point(667, 410);
+            this.btnGoBack.Location = new System.Drawing.Point(667, 435);
             this.btnGoBack.Name = "btnGoBack";
             this.btnGoBack.Size = new System.Drawing.Size(231, 47);
             this.btnGoBack.TabIndex = 22;
@@ -127,7 +127,7 @@ namespace BankApp
             this.txtPurpose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.txtPurpose.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPurpose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPurpose.Location = new System.Drawing.Point(489, 153);
+            this.txtPurpose.Location = new System.Drawing.Point(500, 245);
             this.txtPurpose.Multiline = true;
             this.txtPurpose.Name = "txtPurpose";
             this.txtPurpose.Size = new System.Drawing.Size(530, 27);
@@ -137,7 +137,7 @@ namespace BankApp
             // 
             this.lblPurpose.AutoSize = true;
             this.lblPurpose.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPurpose.Location = new System.Drawing.Point(251, 144);
+            this.lblPurpose.Location = new System.Drawing.Point(253, 242);
             this.lblPurpose.Name = "lblPurpose";
             this.lblPurpose.Size = new System.Drawing.Size(102, 29);
             this.lblPurpose.TabIndex = 23;
@@ -146,9 +146,10 @@ namespace BankApp
             // lblBalance
             // 
             this.lblBalance.AutoSize = true;
-            this.lblBalance.Location = new System.Drawing.Point(12, 9);
+            this.lblBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBalance.Location = new System.Drawing.Point(435, 143);
             this.lblBalance.Name = "lblBalance";
-            this.lblBalance.Size = new System.Drawing.Size(57, 16);
+            this.lblBalance.Size = new System.Drawing.Size(83, 25);
             this.lblBalance.TabIndex = 25;
             this.lblBalance.Text = "purpose";
             // 
