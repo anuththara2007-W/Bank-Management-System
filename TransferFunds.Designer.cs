@@ -67,10 +67,10 @@ namespace BankApp
             this.txtToAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.txtToAccount.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtToAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtToAccount.Location = new System.Drawing.Point(487, 218);
+            this.txtToAccount.Location = new System.Drawing.Point(489, 227);
             this.txtToAccount.Multiline = true;
             this.txtToAccount.Name = "txtToAccount";
-            this.txtToAccount.Size = new System.Drawing.Size(530, 38);
+            this.txtToAccount.Size = new System.Drawing.Size(530, 26);
             this.txtToAccount.TabIndex = 9;
             // 
             // lblToAccount
@@ -88,10 +88,10 @@ namespace BankApp
             this.txtAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.txtAmount.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAmount.Location = new System.Drawing.Point(487, 295);
+            this.txtAmount.Location = new System.Drawing.Point(489, 304);
             this.txtAmount.Multiline = true;
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(530, 37);
+            this.txtAmount.Size = new System.Drawing.Size(530, 25);
             this.txtAmount.TabIndex = 13;
             // 
             // lblAmount
@@ -127,10 +127,10 @@ namespace BankApp
             this.txtPurpose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.txtPurpose.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPurpose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPurpose.Location = new System.Drawing.Point(487, 144);
+            this.txtPurpose.Location = new System.Drawing.Point(489, 153);
             this.txtPurpose.Multiline = true;
             this.txtPurpose.Name = "txtPurpose";
-            this.txtPurpose.Size = new System.Drawing.Size(530, 39);
+            this.txtPurpose.Size = new System.Drawing.Size(530, 27);
             this.txtPurpose.TabIndex = 24;
             // 
             // lblPurpose
