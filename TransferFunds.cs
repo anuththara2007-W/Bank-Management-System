@@ -123,7 +123,7 @@ namespace BankApp
                     if (balance < amount)
                     {
                         MessageBox.Show("Insufficient funds.");
-                        tran.Rollback();
+                        tran.Rollback();   //auto clear stuff and do again like undo
                         return;
                     }
 
@@ -149,7 +149,7 @@ namespace BankApp
 
                     tran.Commit();
 
-                    // Update balance + grid
+                    // Update balance and grid
                     lblBalance.Text = "Balance: RS " + (balance - amount).ToString("C");
                     LoadTransactions();
 
@@ -157,7 +157,7 @@ namespace BankApp
                 }
                 catch (Exception ex)
                 {
-                    tran.Rollback();
+                    tran.Rollback(); //auto clear stuff and do again like undo
                     MessageBox.Show("Error: " + ex.Message);
                 }
             }
