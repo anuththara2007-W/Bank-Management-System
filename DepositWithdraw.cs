@@ -118,7 +118,7 @@ namespace Bank__Management_System
             catch { return 0; }
         }
 
-        // Refresh grid after deposit/withdraw and highlight updated account
+        // Refresh grid after deposit/withdraw
         private void RefreshGrid() => LoadAccountsToGrid();
 
         private void btnDeposit_Click(object sender, EventArgs e)
