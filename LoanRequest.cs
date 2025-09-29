@@ -55,7 +55,7 @@ namespace BankApp
             decimal amount = 0;
             bool isValid = decimal.TryParse(txtAmount.Text, out amount);
 
-            if (!isValid || amount <= 0)
+            if (isValid == false || amount <= 0)
             {
                 MessageBox.Show("Enter a valid loan amount.");
                 return;
