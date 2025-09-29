@@ -2,6 +2,7 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace BankApp
@@ -159,6 +160,14 @@ namespace BankApp
         {
             TransactionsGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridStyle.ModernizeGrid(TransactionsGrid);
+
+
+            lblPurpose.BorderStyle = BorderStyle.None;
+            lblPurpose.BackColor = Color.Transparent;
+            lblToAccount.BorderStyle = BorderStyle.None;
+            lblToAccount.BackColor = Color.Transparent;
+            lblAmount.BorderStyle = BorderStyle.None;
+            lblAmount.BackColor = Color.Transparent;
         }
     }
 }

@@ -38,7 +38,7 @@ namespace BankApp
             this.lblAmount = new System.Windows.Forms.Label();
             this.btnGoBack = new System.Windows.Forms.Button();
             this.txtPurpose = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblPurpose = new System.Windows.Forms.Label();
             this.lblBalance = new System.Windows.Forms.Label();
             this.TransactionsGrid = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.TransactionsGrid)).BeginInit();
@@ -64,10 +64,13 @@ namespace BankApp
             // 
             // txtToAccount
             // 
-            this.txtToAccount.Location = new System.Drawing.Point(494, 214);
+            this.txtToAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.txtToAccount.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtToAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtToAccount.Location = new System.Drawing.Point(487, 218);
             this.txtToAccount.Multiline = true;
             this.txtToAccount.Name = "txtToAccount";
-            this.txtToAccount.Size = new System.Drawing.Size(530, 42);
+            this.txtToAccount.Size = new System.Drawing.Size(530, 38);
             this.txtToAccount.TabIndex = 9;
             // 
             // lblToAccount
@@ -82,10 +85,13 @@ namespace BankApp
             // 
             // txtAmount
             // 
-            this.txtAmount.Location = new System.Drawing.Point(494, 291);
+            this.txtAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.txtAmount.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAmount.Location = new System.Drawing.Point(487, 295);
             this.txtAmount.Multiline = true;
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(530, 41);
+            this.txtAmount.Size = new System.Drawing.Size(530, 37);
             this.txtAmount.TabIndex = 13;
             // 
             // lblAmount
@@ -118,21 +124,24 @@ namespace BankApp
             // 
             // txtPurpose
             // 
-            this.txtPurpose.Location = new System.Drawing.Point(494, 140);
+            this.txtPurpose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.txtPurpose.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPurpose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPurpose.Location = new System.Drawing.Point(487, 144);
             this.txtPurpose.Multiline = true;
             this.txtPurpose.Name = "txtPurpose";
-            this.txtPurpose.Size = new System.Drawing.Size(530, 43);
+            this.txtPurpose.Size = new System.Drawing.Size(530, 39);
             this.txtPurpose.TabIndex = 24;
             // 
-            // label1
+            // lblPurpose
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(251, 144);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 29);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "purpose";
+            this.lblPurpose.AutoSize = true;
+            this.lblPurpose.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPurpose.Location = new System.Drawing.Point(251, 144);
+            this.lblPurpose.Name = "lblPurpose";
+            this.lblPurpose.Size = new System.Drawing.Size(102, 29);
+            this.lblPurpose.TabIndex = 23;
+            this.lblPurpose.Text = "purpose";
             // 
             // lblBalance
             // 
@@ -170,7 +179,7 @@ namespace BankApp
             this.Controls.Add(this.TransactionsGrid);
             this.Controls.Add(this.lblBalance);
             this.Controls.Add(this.txtPurpose);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblPurpose);
             this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.lblAmount);
@@ -197,7 +206,7 @@ namespace BankApp
         private System.Windows.Forms.Label lblAmount;
         private System.Windows.Forms.Button btnGoBack;
         private System.Windows.Forms.TextBox txtPurpose;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblPurpose;
         private System.Windows.Forms.Label lblBalance;
         private System.Windows.Forms.DataGridView TransactionsGrid;
     }
