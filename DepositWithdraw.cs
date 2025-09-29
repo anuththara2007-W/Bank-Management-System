@@ -34,7 +34,7 @@ namespace Bank__Management_System
 
         }
 
-        // Load all accounts into DataGridView
+        // Load all accounts into grid
         private void LoadAccountsToGrid()
         {
             if (GetCustomerID() == 0) return;
@@ -45,10 +45,8 @@ namespace Bank__Management_System
                 {
                     con.Open();
                     SqlDataAdapter da = new SqlDataAdapter(
-                        "SELECT TOP 10 Transaction_Type, Amount, Transaction_Date " +
-                        "FROM Transactions WHERE Account_ID IN " +
-                        "(SELECT Account_ID FROM Accounts WHERE Customer_ID = @cid) " +
-                        "ORDER BY Transaction_Date DESC", con);
+                        "SELECT TOP 10 Transaction_Type, Amount, Transaction_Date FROM Transactions WHERE Account_ID IN (SELECT Account_ID FROM Accounts WHERE Customer_ID = @cid) ORDER BY Transaction_Date DESC", con);
+
                     da.SelectCommand.Parameters.AddWithValue("@cid", Session.CustomerID);
 
                     DataTable dt = new DataTable();
