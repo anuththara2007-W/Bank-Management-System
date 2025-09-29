@@ -40,7 +40,6 @@
             this.btnChangePassword = new System.Windows.Forms.Button();
             this.btnSupport = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.lblCustomerName = new System.Windows.Forms.Label();
             this.btnReport = new System.Windows.Forms.Button();
             this.lblabout = new System.Windows.Forms.Label();
@@ -180,7 +179,7 @@
             this.btnProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProfile.Font = new System.Drawing.Font("Yu Gothic", 12F);
-            this.btnProfile.Location = new System.Drawing.Point(220, 340);
+            this.btnProfile.Location = new System.Drawing.Point(212, 343);
             this.btnProfile.Name = "btnProfile";
             this.btnProfile.Size = new System.Drawing.Size(241, 44);
             this.btnProfile.TabIndex = 10;
@@ -244,25 +243,6 @@
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Yu Gothic", 12F);
-            this.button1.Location = new System.Drawing.Point(208, 340);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(241, 44);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Profile";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.btnProfile_Click);
-            // 
             // lblCustomerName
             // 
             this.lblCustomerName.AutoSize = true;
@@ -283,7 +263,7 @@
             this.btnReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReport.Font = new System.Drawing.Font("Yu Gothic", 12F);
-            this.btnReport.Location = new System.Drawing.Point(973, 340);
+            this.btnReport.Location = new System.Drawing.Point(501, 207);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(248, 44);
             this.btnReport.TabIndex = 15;
@@ -350,7 +330,6 @@
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnSupport);
             this.Controls.Add(this.btnChangePassword);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnProfile);
             this.Controls.Add(this.dgvLoans);
             this.Controls.Add(this.dgvTransactions);
@@ -383,7 +362,6 @@
         private System.Windows.Forms.Button btnChangePassword;
         private System.Windows.Forms.Button btnSupport;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblCustomerName;
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.Label lblabout;
