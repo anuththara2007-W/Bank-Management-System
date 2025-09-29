@@ -56,6 +56,7 @@
             // 
             // btnGoBack
             // 
+            this.btnGoBack.Font = new System.Drawing.Font("Yu Gothic", 12F);
             this.btnGoBack.Location = new System.Drawing.Point(410, 417);
             this.btnGoBack.Name = "btnGoBack";
             this.btnGoBack.Size = new System.Drawing.Size(141, 47);
