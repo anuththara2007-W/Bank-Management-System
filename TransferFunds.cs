@@ -155,6 +155,10 @@ namespace BankApp
             this.Hide();
         }
 
-  
+        private void TransferFunds_Load_1(object sender, EventArgs e)
+        {
+            TransactionsGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            GridStyle.ModernizeGrid(TransactionsGrid);
+        }
     }
 }

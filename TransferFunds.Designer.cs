@@ -64,34 +64,37 @@ namespace BankApp
             // 
             // txtToAccount
             // 
-            this.txtToAccount.Location = new System.Drawing.Point(272, 60);
+            this.txtToAccount.Location = new System.Drawing.Point(494, 214);
+            this.txtToAccount.Multiline = true;
             this.txtToAccount.Name = "txtToAccount";
-            this.txtToAccount.Size = new System.Drawing.Size(458, 22);
+            this.txtToAccount.Size = new System.Drawing.Size(530, 42);
             this.txtToAccount.TabIndex = 9;
             // 
             // lblToAccount
             // 
             this.lblToAccount.AutoSize = true;
-            this.lblToAccount.Location = new System.Drawing.Point(149, 63);
+            this.lblToAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblToAccount.Location = new System.Drawing.Point(251, 221);
             this.lblToAccount.Name = "lblToAccount";
-            this.lblToAccount.Size = new System.Drawing.Size(114, 16);
+            this.lblToAccount.Size = new System.Drawing.Size(201, 29);
             this.lblToAccount.TabIndex = 7;
             this.lblToAccount.Text = "payee account no";
             // 
             // txtAmount
             // 
-            this.txtAmount.Location = new System.Drawing.Point(272, 106);
+            this.txtAmount.Location = new System.Drawing.Point(494, 291);
             this.txtAmount.Multiline = true;
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(458, 109);
+            this.txtAmount.Size = new System.Drawing.Size(530, 41);
             this.txtAmount.TabIndex = 13;
             // 
             // lblAmount
             // 
             this.lblAmount.AutoSize = true;
-            this.lblAmount.Location = new System.Drawing.Point(149, 109);
+            this.lblAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmount.Location = new System.Drawing.Point(251, 299);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(52, 16);
+            this.lblAmount.Size = new System.Drawing.Size(94, 29);
             this.lblAmount.TabIndex = 12;
             this.lblAmount.Text = "Amount";
             // 
@@ -115,18 +118,19 @@ namespace BankApp
             // 
             // txtPurpose
             // 
-            this.txtPurpose.Location = new System.Drawing.Point(272, 16);
+            this.txtPurpose.Location = new System.Drawing.Point(494, 140);
             this.txtPurpose.Multiline = true;
             this.txtPurpose.Name = "txtPurpose";
-            this.txtPurpose.Size = new System.Drawing.Size(458, 109);
+            this.txtPurpose.Size = new System.Drawing.Size(530, 43);
             this.txtPurpose.TabIndex = 24;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(149, 19);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(251, 144);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 16);
+            this.label1.Size = new System.Drawing.Size(102, 29);
             this.label1.TabIndex = 23;
             this.label1.Text = "purpose";
             // 
@@ -176,6 +180,7 @@ namespace BankApp
             this.DoubleBuffered = true;
             this.Name = "TransferFunds";
             this.Text = "TransferFunds";
+            this.Load += new System.EventHandler(this.TransferFunds_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.TransactionsGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
