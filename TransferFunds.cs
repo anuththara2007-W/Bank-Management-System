@@ -89,7 +89,7 @@ namespace BankApp
             }
 
 
-            string purpose = txtPurpose.Text.Trim();
+            string purpose = txtPurpose.Text.Trim();  // trim =  remove all spaces before and after the text
             string toAccountNo = txtToAccount.Text.Trim();
 
             using (SqlConnection con = new SqlConnection(connString))
@@ -99,22 +99,24 @@ namespace BankApp
 
                 try
                 {
-                    // Get customer account
+                    // Get the customer account
                     SqlCommand getAcc = new SqlCommand(
                         "SELECT TOP 1 Account_ID, Balance FROM Accounts WHERE Customer_ID=@cid", con, tran);
                     getAcc.Parameters.AddWithValue("@cid", Session.CustomerID);
 
                     SqlDataReader reader = getAcc.ExecuteReader();
-                    if (!reader.Read())
+
+                    if (reader.Read() == false)
                     {
                         MessageBox.Show("No account found.");
                         reader.Close();
-                        tran.Rollback();
                         return;
                     }
 
-                    int accountId = (int)reader["Account_ID"];
-                    decimal balance = (decimal)reader["Balance"];
+                    // use column index instead of reader["ColumnName"]
+                    int accountId = reader.GetInt32(0);     // first column
+                    decimal balance = reader.GetDecimal(1); // second column
+
                     reader.Close();
 
                     // Check balance
