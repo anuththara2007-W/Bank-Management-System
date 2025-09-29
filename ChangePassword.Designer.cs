@@ -74,10 +74,10 @@ namespace BankApp
             // lblOld
             // 
             this.lblOld.AutoSize = true;
-            this.lblOld.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOld.Font = new System.Drawing.Font("Yu Gothic", 12F);
             this.lblOld.Location = new System.Drawing.Point(249, 285);
             this.lblOld.Name = "lblOld";
-            this.lblOld.Size = new System.Drawing.Size(134, 25);
+            this.lblOld.Size = new System.Drawing.Size(140, 26);
             this.lblOld.TabIndex = 23;
             this.lblOld.Text = "Old Password";
             // 
@@ -92,10 +92,10 @@ namespace BankApp
             // lblneww
             // 
             this.lblneww.AutoSize = true;
-            this.lblneww.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblneww.Font = new System.Drawing.Font("Yu Gothic", 12F);
             this.lblneww.Location = new System.Drawing.Point(249, 344);
             this.lblneww.Name = "lblneww";
-            this.lblneww.Size = new System.Drawing.Size(142, 25);
+            this.lblneww.Size = new System.Drawing.Size(150, 26);
             this.lblneww.TabIndex = 21;
             this.lblneww.Text = "New Password";
             // 
@@ -110,10 +110,10 @@ namespace BankApp
             // lblconfirm
             // 
             this.lblconfirm.AutoSize = true;
-            this.lblconfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblconfirm.Font = new System.Drawing.Font("Yu Gothic", 12F);
             this.lblconfirm.Location = new System.Drawing.Point(249, 407);
             this.lblconfirm.Name = "lblconfirm";
-            this.lblconfirm.Size = new System.Drawing.Size(215, 25);
+            this.lblconfirm.Size = new System.Drawing.Size(229, 26);
             this.lblconfirm.TabIndex = 19;
             this.lblconfirm.Text = "Confirm New Password";
             // 
