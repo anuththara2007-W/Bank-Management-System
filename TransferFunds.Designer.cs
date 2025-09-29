@@ -163,11 +163,11 @@ namespace BankApp
             this.TransactionsGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TransactionsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TransactionsGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.TransactionsGrid.Location = new System.Drawing.Point(48, 496);
+            this.TransactionsGrid.Location = new System.Drawing.Point(50, 518);
             this.TransactionsGrid.Name = "TransactionsGrid";
             this.TransactionsGrid.RowHeadersWidth = 51;
             this.TransactionsGrid.RowTemplate.Height = 24;
-            this.TransactionsGrid.Size = new System.Drawing.Size(1188, 256);
+            this.TransactionsGrid.Size = new System.Drawing.Size(1188, 234);
             this.TransactionsGrid.TabIndex = 26;
             // 
             // TransferFunds
