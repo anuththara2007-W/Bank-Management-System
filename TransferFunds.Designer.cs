@@ -189,6 +189,7 @@ namespace BankApp
             this.Controls.Add(this.lblToAccount);
             this.DoubleBuffered = true;
             this.Name = "TransferFunds";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TransferFunds";
             this.Load += new System.EventHandler(this.TransferFunds_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.TransactionsGrid)).EndInit();
