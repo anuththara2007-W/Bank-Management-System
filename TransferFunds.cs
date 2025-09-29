@@ -38,7 +38,7 @@ namespace BankApp
                 if (result != null)
                 {
                     decimal balance = (decimal)result;
-                    lblBalance.Text = "Balance: Rs. " + balance.ToString("C");
+                    lblBalance.Text = "Balance: Rs. " + balance.ToString();
                 }
                 else
                 {
