@@ -54,7 +54,7 @@ namespace BankApp
             this.btnSubmitLoan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnSubmitLoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmitLoan.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmitLoan.Location = new System.Drawing.Point(666, 386);
+            this.btnSubmitLoan.Location = new System.Drawing.Point(689, 370);
             this.btnSubmitLoan.Name = "btnSubmitLoan";
             this.btnSubmitLoan.Size = new System.Drawing.Size(228, 47);
             this.btnSubmitLoan.TabIndex = 10;
@@ -100,7 +100,7 @@ namespace BankApp
             this.btnGoBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGoBack.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGoBack.Location = new System.Drawing.Point(353, 385);
+            this.btnGoBack.Location = new System.Drawing.Point(362, 370);
             this.btnGoBack.Name = "btnGoBack";
             this.btnGoBack.Size = new System.Drawing.Size(238, 47);
             this.btnGoBack.TabIndex = 20;
@@ -134,12 +134,12 @@ namespace BankApp
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvLoanRequests.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvLoanRequests.GridColor = System.Drawing.Color.White;
-            this.dgvLoanRequests.Location = new System.Drawing.Point(35, 477);
+            this.dgvLoanRequests.Location = new System.Drawing.Point(45, 461);
             this.dgvLoanRequests.Name = "dgvLoanRequests";
             this.dgvLoanRequests.ReadOnly = true;
             this.dgvLoanRequests.RowHeadersWidth = 51;
             this.dgvLoanRequests.RowTemplate.Height = 24;
-            this.dgvLoanRequests.Size = new System.Drawing.Size(1189, 266);
+            this.dgvLoanRequests.Size = new System.Drawing.Size(1189, 274);
             this.dgvLoanRequests.TabIndex = 21;
             // 
             // lblabout

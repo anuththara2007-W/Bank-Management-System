@@ -39,6 +39,7 @@ namespace BankApp
             cmbLoanType.Items.Add("Education Loan");
             cmbLoanType.Items.Add("Business Loan");
 
+            //Select the first item only if the combo box is not empty
             if (cmbLoanType.Items.Count > 0)
                 cmbLoanType.SelectedIndex = 0;
         }
