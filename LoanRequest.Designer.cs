@@ -47,13 +47,13 @@ namespace BankApp
             // 
             // btnSubmitLoan
             // 
-            this.btnSubmitLoan.BackColor = System.Drawing.Color.White;
+            this.btnSubmitLoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnSubmitLoan.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnSubmitLoan.FlatAppearance.BorderSize = 0;
             this.btnSubmitLoan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnSubmitLoan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnSubmitLoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubmitLoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmitLoan.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmitLoan.Location = new System.Drawing.Point(666, 386);
             this.btnSubmitLoan.Name = "btnSubmitLoan";
             this.btnSubmitLoan.Size = new System.Drawing.Size(228, 47);
@@ -92,13 +92,13 @@ namespace BankApp
             // 
             // btnGoBack
             // 
-            this.btnGoBack.BackColor = System.Drawing.Color.White;
+            this.btnGoBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnGoBack.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnGoBack.FlatAppearance.BorderSize = 0;
             this.btnGoBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnGoBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGoBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGoBack.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGoBack.Location = new System.Drawing.Point(353, 385);
             this.btnGoBack.Name = "btnGoBack";
             this.btnGoBack.Size = new System.Drawing.Size(238, 47);
