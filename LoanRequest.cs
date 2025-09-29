@@ -106,16 +106,8 @@ namespace BankApp
             }
 
             using (SqlConnection con = new SqlConnection(connString))
-            using (SqlDataAdapter da = new SqlDataAdapter(
-                @"SELECT 
-                     RequestID,
-                     LoanType,
-                     Amount,
-                     Status,
-                     RequestDate
-                  FROM LoanRequests
-                  WHERE Customer_ID = @cid
-                  ORDER BY RequestDate DESC", con))
+            using (SqlDataAdapter da = new SqlDataAdapter("SELECT RequestID, LoanType, Amount, Status, RequestDate FROM LoanRequests WHERE Customer_ID = @cid ORDER BY RequestDate DESC", con))
+
             {
                 da.SelectCommand.Parameters.AddWithValue("@cid", Session.CustomerID);
 
