@@ -104,7 +104,7 @@ namespace BankApp
                         "SELECT TOP 1 Account_ID, Balance FROM Accounts WHERE Customer_ID=@cid", con, tran);
                     getAcc.Parameters.AddWithValue("@cid", Session.CustomerID);
 
-                    SqlDataReader reader = getAcc.ExecuteReader();
+                    SqlDataReader reader = getAcc.ExecuteReader(); //tuns te sql and allows to read the data
 
                     if (reader.Read() == false)
                     {
