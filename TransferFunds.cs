@@ -14,17 +14,17 @@ namespace BankApp
         public TransferFunds()
         {
             InitializeComponent();
-            this.Load += TransferFunds_Load;  // ✅ ensure form load is called
+            this.Load += TransferFunds_Load;  //ensures that tha form load is called
         }
 
-        // ✅ Form Load: show balance + load transactions
+       
         private void TransferFunds_Load(object sender, EventArgs e)
         {
             LoadBalance();
             LoadTransactions();
         }
 
-        // ✅ Load customer balance
+        // load the customer balance through label
         private void LoadBalance()
         {
             using (SqlConnection con = new SqlConnection(connString))
@@ -47,7 +47,7 @@ namespace BankApp
             }
         }
 
-        // ✅ Load transactions into grid
+        //Load transactions into grid
         private void LoadTransactions()
         {
             using (SqlConnection con = new SqlConnection(connString))
@@ -66,15 +66,24 @@ namespace BankApp
             }
         }
 
-        // ✅ Transfer / Payment button
+        
         private void btnTransfer_Click(object sender, EventArgs e)
         {
             // Validate amount
-            if (!decimal.TryParse(txtAmount.Text, out decimal amount) || amount <= 0)
+            decimal amount;
+
+            if (!decimal.TryParse(txtAmount.Text, out amount))
             {
                 MessageBox.Show("Enter a valid amount");
                 return;
             }
+
+            if (amount <= 0)
+            {
+                MessageBox.Show("Enter a valid amount");
+                return;
+            }
+
 
             string purpose = txtPurpose.Text.Trim();
             string toAccountNo = txtToAccount.Text.Trim();
@@ -148,7 +157,6 @@ namespace BankApp
             }
         }
 
-        // ✅ Go back button
         private void btnGoBack_Click(object sender, EventArgs e)
         {
             CustomerDashboard customerdash = new CustomerDashboard();
