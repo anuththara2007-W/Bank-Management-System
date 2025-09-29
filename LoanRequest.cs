@@ -124,7 +124,9 @@ namespace BankApp
 
                     // Format Amount and RequestDate columns if they exist
                     if (dgvLoanRequests.Columns["Amount"] != null) //check if the amount column exsts
-                        dgvLoanRequests.Columns["Amount"].DefaultCellStyle.Format = "N2";
+
+                        //  N2 = (N = Number) & (2 = 2 decimal places)
+                        dgvLoanRequests.Columns["Amount"].DefaultCellStyle.Format = "N2"; //format as number with 2 decimals
 
                     if (dgvLoanRequests.Columns["RequestDate"] != null)
                         dgvLoanRequests.Columns["RequestDate"].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm";
