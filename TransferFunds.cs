@@ -135,7 +135,7 @@ namespace BankApp
                     tran.Commit();
 
                     // Update balance + grid
-                    lblBalance.Text = "Balance: RS. " + (balance - amount).ToString("C");
+                    lblBalance.Text = "Balance: RS " + (balance - amount).ToString("C");
                     LoadTransactions();
 
                     MessageBox.Show("Payment successful.");
