@@ -53,7 +53,7 @@ namespace BankApp
             }
 
             decimal amount = 0;
-            bool isValid = decimal.TryParse(txtAmount.Text, out amount);
+            bool isValid = decimal.TryParse(txtAmount.Text, out amount); //out = allows a method to assign a variable.
 
             if (isValid == false || amount <= 0)
             {
