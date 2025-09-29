@@ -83,13 +83,13 @@ namespace Bank__Management_System
                     SqlDataReader reader = cmd.ExecuteReader();
                     if (reader.Read())
                     {
-                        selectedAccId = Convert.ToInt32(reader["Account_ID"]);
-                        currentBal = Convert.ToDecimal(reader["Balance"]);
-                        string accountType = reader["Account_Type"].ToString();
+                            selectedAccId = Convert.ToInt32(reader["Account_ID"]);
+                            currentBal = Convert.ToDecimal(reader["Balance"]);
+                            string accountType = reader["Account_Type"].ToString();
 
-                        lblBalance.Text = $"Account: {selectedAccId} ({accountType})\nBalance: ${currentBal:F2}";
-                        custId = customerIdToUse;
-                    }
+                            lblBalance.Text = $"Account: {selectedAccId} ({accountType})\nBalance: ${currentBal:F2}";
+                            custId = customerIdToUse;
+                        }
                     reader.Close();
                 }
             }
