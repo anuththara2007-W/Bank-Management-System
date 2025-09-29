@@ -141,7 +141,7 @@ namespace BankApp
 
         private void btnGoBack_Click(object sender, EventArgs e)
         {
-            var customerdash = new CustomerDashboard();
+            CustomerDashboard customerdash = new CustomerDashboard();
             customerdash.Show();
             this.Hide();
         }
