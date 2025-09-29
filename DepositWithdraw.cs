@@ -95,7 +95,7 @@ namespace Bank__Management_System
 
                         // Show account info on label
                         // Show account number and balance
-                        lblBalance.Text = "Account: " + selectedAccId + " (" + accountType + ")" + "\nBalance: RS" + currentBal;
+                        lblBalance.Text = "Account: " + selectedAccId + " (" + accountType + ")" + "\nBalance: RS." + currentBal;
 
                         // Save customer ID for later
                         custId = customerIdToUse;
