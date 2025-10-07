@@ -147,7 +147,7 @@ namespace BankApp
             // 
             this.lblBalance.AutoSize = true;
             this.lblBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBalance.Location = new System.Drawing.Point(462, 143);
+            this.lblBalance.Location = new System.Drawing.Point(503, 143);
             this.lblBalance.Name = "lblBalance";
             this.lblBalance.Size = new System.Drawing.Size(88, 25);
             this.lblBalance.TabIndex = 25;
