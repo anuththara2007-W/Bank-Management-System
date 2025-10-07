@@ -256,6 +256,7 @@
             // btnReport
             // 
             this.btnReport.BackColor = System.Drawing.Color.White;
+            this.btnReport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReport.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnReport.FlatAppearance.BorderSize = 0;
             this.btnReport.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
