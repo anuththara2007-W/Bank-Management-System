@@ -67,9 +67,10 @@ namespace BankApp
             // lblAmount
             // 
             this.lblAmount.AutoSize = true;
+            this.lblAmount.Font = new System.Drawing.Font("Yu Gothic", 12F);
             this.lblAmount.Location = new System.Drawing.Point(308, 217);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(64, 16);
+            this.lblAmount.Size = new System.Drawing.Size(94, 26);
             this.lblAmount.TabIndex = 26;
             this.lblAmount.Text = "Message";
             // 
