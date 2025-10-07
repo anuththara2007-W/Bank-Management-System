@@ -30,6 +30,7 @@ namespace BankApp
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Support));
             this.btnSend = new System.Windows.Forms.Button();
             this.txtMessage = new System.Windows.Forms.TextBox();
             this.lblAmount = new System.Windows.Forms.Label();
@@ -40,12 +41,13 @@ namespace BankApp
             // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(305, 92);
+            this.btnSend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnSend.Location = new System.Drawing.Point(368, 369);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(189, 30);
+            this.btnSend.Size = new System.Drawing.Size(228, 47);
             this.btnSend.TabIndex = 28;
             this.btnSend.Text = "Send";
-            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.UseVisualStyleBackColor = false;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // txtMessage
@@ -66,34 +68,38 @@ namespace BankApp
             // 
             // btnGoBack
             // 
-            this.btnGoBack.Location = new System.Drawing.Point(342, 343);
+            this.btnGoBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnGoBack.Location = new System.Drawing.Point(707, 369);
             this.btnGoBack.Name = "btnGoBack";
-            this.btnGoBack.Size = new System.Drawing.Size(141, 47);
+            this.btnGoBack.Size = new System.Drawing.Size(207, 47);
             this.btnGoBack.TabIndex = 29;
             this.btnGoBack.Text = "Go Back";
-            this.btnGoBack.UseVisualStyleBackColor = true;
+            this.btnGoBack.UseVisualStyleBackColor = false;
             this.btnGoBack.Click += new System.EventHandler(this.btnGoBack_Click);
             // 
             // dgvMyTickets
             // 
             this.dgvMyTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMyTickets.Location = new System.Drawing.Point(51, 164);
+            this.dgvMyTickets.Location = new System.Drawing.Point(52, 454);
             this.dgvMyTickets.Name = "dgvMyTickets";
             this.dgvMyTickets.RowHeadersWidth = 51;
             this.dgvMyTickets.RowTemplate.Height = 24;
-            this.dgvMyTickets.Size = new System.Drawing.Size(690, 150);
+            this.dgvMyTickets.Size = new System.Drawing.Size(1179, 278);
             this.dgvMyTickets.TabIndex = 30;
             // 
             // Support
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1280, 785);
             this.Controls.Add(this.dgvMyTickets);
             this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.lblAmount);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Support";
             this.Text = "Support";
             this.Load += new System.EventHandler(this.Support_Load_1);
