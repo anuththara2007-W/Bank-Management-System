@@ -61,9 +61,10 @@
             this.lblAmount.AutoSize = true;
             this.lblAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
             this.lblAmount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblAmount.Font = new System.Drawing.Font("Yu Gothic", 12F);
             this.lblAmount.Location = new System.Drawing.Point(409, 218);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(58, 16);
+            this.lblAmount.Size = new System.Drawing.Size(87, 26);
             this.lblAmount.TabIndex = 10;
             this.lblAmount.Text = "Address";
             // 
@@ -83,9 +84,10 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Yu Gothic", 12F);
             this.label1.Location = new System.Drawing.Point(409, 178);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 16);
+            this.label1.Size = new System.Drawing.Size(71, 26);
             this.label1.TabIndex = 12;
             this.label1.Text = "Phone";
             // 
@@ -105,9 +107,10 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Font = new System.Drawing.Font("Yu Gothic", 12F);
             this.label2.Location = new System.Drawing.Point(409, 132);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 16);
+            this.label2.Size = new System.Drawing.Size(62, 26);
             this.label2.TabIndex = 14;
             this.label2.Text = "Email";
             // 
@@ -127,20 +130,22 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label3.Font = new System.Drawing.Font("Yu Gothic", 12F);
             this.label3.Location = new System.Drawing.Point(409, 89);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 16);
+            this.label3.Size = new System.Drawing.Size(66, 26);
             this.label3.TabIndex = 16;
             this.label3.Text = "Name";
             // 
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Yu Gothic", 12F);
-            this.btnUpdate.Location = new System.Drawing.Point(542, 292);
+            this.btnUpdate.Location = new System.Drawing.Point(964, 660);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(189, 30);
+            this.btnUpdate.Size = new System.Drawing.Size(217, 49);
             this.btnUpdate.TabIndex = 18;
             this.btnUpdate.Text = "Submit";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -149,11 +154,12 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Yu Gothic", 12F);
-            this.button1.Location = new System.Drawing.Point(410, 434);
+            this.button1.Location = new System.Drawing.Point(675, 660);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(141, 47);
+            this.button1.Size = new System.Drawing.Size(226, 47);
             this.button1.TabIndex = 19;
             this.button1.Text = "Go Back";
             this.button1.UseVisualStyleBackColor = false;
@@ -164,9 +170,10 @@
             this.lblPhone.AutoSize = true;
             this.lblPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
             this.lblPhone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblPhone.Font = new System.Drawing.Font("Yu Gothic", 12F);
             this.lblPhone.Location = new System.Drawing.Point(121, 111);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(44, 16);
+            this.lblPhone.Size = new System.Drawing.Size(66, 26);
             this.lblPhone.TabIndex = 20;
             this.lblPhone.Text = "Name";
             // 
@@ -175,9 +182,10 @@
             this.lblEmail.AutoSize = true;
             this.lblEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
             this.lblEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblEmail.Font = new System.Drawing.Font("Yu Gothic", 12F);
             this.lblEmail.Location = new System.Drawing.Point(121, 72);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(44, 16);
+            this.lblEmail.Size = new System.Drawing.Size(66, 26);
             this.lblEmail.TabIndex = 21;
             this.lblEmail.Text = "Name";
             // 
@@ -186,9 +194,10 @@
             this.lblName.AutoSize = true;
             this.lblName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
             this.lblName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblName.Font = new System.Drawing.Font("Yu Gothic", 12F);
             this.lblName.Location = new System.Drawing.Point(121, 33);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(44, 16);
+            this.lblName.Size = new System.Drawing.Size(66, 26);
             this.lblName.TabIndex = 22;
             this.lblName.Text = "Name";
             // 
@@ -197,9 +206,10 @@
             this.lblAddress.AutoSize = true;
             this.lblAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
             this.lblAddress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblAddress.Font = new System.Drawing.Font("Yu Gothic", 12F);
             this.lblAddress.Location = new System.Drawing.Point(121, 135);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(44, 16);
+            this.lblAddress.Size = new System.Drawing.Size(66, 26);
             this.lblAddress.TabIndex = 23;
             this.lblAddress.Text = "Name";
             // 
