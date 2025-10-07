@@ -59,6 +59,7 @@ namespace BankApp
             // 
             // txtMessage
             // 
+            this.txtMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.txtMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMessage.Location = new System.Drawing.Point(458, 218);
             this.txtMessage.Multiline = true;
