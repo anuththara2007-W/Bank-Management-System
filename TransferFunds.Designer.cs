@@ -188,6 +188,7 @@ namespace BankApp
             this.Controls.Add(this.txtToAccount);
             this.Controls.Add(this.lblToAccount);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TransferFunds";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TransferFunds";
