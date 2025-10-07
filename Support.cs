@@ -65,12 +65,6 @@ namespace BankApp
                 dgvMyTickets.DataSource = dt;
             }
 
-            // Optional: nicer headers
-            dgvMyTickets.Columns["TicketID"].HeaderText = "Ticket #";
-            dgvMyTickets.Columns["Message"].HeaderText = "Message";
-            dgvMyTickets.Columns["DateCreated"].HeaderText = "Created On";
-            dgvMyTickets.Columns["Status"].HeaderText = "Status";
-            dgvMyTickets.Columns["Reply"].HeaderText = "Reply";
         }
 
         private void btnGoBack_Click(object sender, EventArgs e)
