@@ -13,7 +13,6 @@ namespace BankApp
         {
             InitializeComponent();
 
-            // Hook up live update events
             txtName.TextChanged += TxtName_TextChanged;
             txtEmail.TextChanged += TxtEmail_TextChanged;
             txtPhone.TextChanged += TxtPhone_TextChanged;
