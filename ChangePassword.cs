@@ -57,7 +57,7 @@ namespace BankApp
                     return;
                 }
 
-                // 5. Update password
+                //Update password
                 SqlCommand update = new SqlCommand(
                     "UPDATE Customers SET Password=@new WHERE Customer_ID=@cid", con);
                 update.Parameters.AddWithValue("@new", txtNew.Text);
