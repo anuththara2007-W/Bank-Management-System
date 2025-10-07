@@ -179,9 +179,9 @@
             this.btnProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProfile.Font = new System.Drawing.Font("Yu Gothic", 12F);
-            this.btnProfile.Location = new System.Drawing.Point(212, 343);
+            this.btnProfile.Location = new System.Drawing.Point(45, 341);
             this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(241, 44);
+            this.btnProfile.Size = new System.Drawing.Size(246, 44);
             this.btnProfile.TabIndex = 10;
             this.btnProfile.Text = "Profile";
             this.btnProfile.UseVisualStyleBackColor = false;
@@ -198,9 +198,9 @@
             this.btnChangePassword.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangePassword.Font = new System.Drawing.Font("Yu Gothic", 12F);
-            this.btnChangePassword.Location = new System.Drawing.Point(520, 340);
+            this.btnChangePassword.Location = new System.Drawing.Point(353, 338);
             this.btnChangePassword.Name = "btnChangePassword";
-            this.btnChangePassword.Size = new System.Drawing.Size(241, 44);
+            this.btnChangePassword.Size = new System.Drawing.Size(246, 44);
             this.btnChangePassword.TabIndex = 11;
             this.btnChangePassword.Text = "Change Password";
             this.btnChangePassword.UseVisualStyleBackColor = false;
@@ -217,9 +217,9 @@
             this.btnSupport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnSupport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSupport.Font = new System.Drawing.Font("Yu Gothic", 12F);
-            this.btnSupport.Location = new System.Drawing.Point(805, 340);
+            this.btnSupport.Location = new System.Drawing.Point(655, 341);
             this.btnSupport.Name = "btnSupport";
-            this.btnSupport.Size = new System.Drawing.Size(241, 44);
+            this.btnSupport.Size = new System.Drawing.Size(246, 44);
             this.btnSupport.TabIndex = 12;
             this.btnSupport.Text = "Support";
             this.btnSupport.UseVisualStyleBackColor = false;
@@ -263,7 +263,7 @@
             this.btnReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReport.Font = new System.Drawing.Font("Yu Gothic", 12F);
-            this.btnReport.Location = new System.Drawing.Point(496, 154);
+            this.btnReport.Location = new System.Drawing.Point(951, 341);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(248, 44);
             this.btnReport.TabIndex = 15;
