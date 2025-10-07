@@ -17,7 +17,7 @@ namespace BankApp
 
         private void btnChange_Click(object sender, EventArgs e)
         {
-            // 1. Empty field check
+            //Empty field check
             if (string.IsNullOrWhiteSpace(txtOld.Text) ||
                 string.IsNullOrWhiteSpace(txtNew.Text) ||
                 string.IsNullOrWhiteSpace(txtConfirm.Text))
@@ -26,14 +26,14 @@ namespace BankApp
                 return;
             }
 
-            // 2. New password length check
+            //New password length check
             if (txtNew.Text.Length < 6)
             {
                 MessageBox.Show("New password must be at least 6 characters long.", "Weak Password", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // 3. Confirm password match check
+            //Confirm password match check
             if (txtNew.Text != txtConfirm.Text)
             {
                 MessageBox.Show("New password and confirm password do not match.", "Mismatch", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -44,7 +44,7 @@ namespace BankApp
             {
                 con.Open();
 
-                // 4. Validate old password
+                //Validate old password
                 SqlCommand checkOld = new SqlCommand(
                     "SELECT COUNT(*) FROM Customers WHERE Customer_ID=@cid AND Password=@old", con);
                 checkOld.Parameters.AddWithValue("@cid", Session.CustomerID);
