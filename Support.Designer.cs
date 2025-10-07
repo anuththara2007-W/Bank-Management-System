@@ -59,7 +59,7 @@ namespace BankApp
             // 
             // txtMessage
             // 
-            this.txtMessage.Location = new System.Drawing.Point(305, 27);
+            this.txtMessage.Location = new System.Drawing.Point(610, 214);
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.Size = new System.Drawing.Size(360, 22);
             this.txtMessage.TabIndex = 27;
@@ -67,7 +67,7 @@ namespace BankApp
             // lblAmount
             // 
             this.lblAmount.AutoSize = true;
-            this.lblAmount.Location = new System.Drawing.Point(139, 30);
+            this.lblAmount.Location = new System.Drawing.Point(308, 217);
             this.lblAmount.Name = "lblAmount";
             this.lblAmount.Size = new System.Drawing.Size(64, 16);
             this.lblAmount.TabIndex = 26;
