@@ -228,7 +228,7 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.BackColor = System.Drawing.Color.White;
+            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
