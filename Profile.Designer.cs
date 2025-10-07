@@ -47,7 +47,8 @@
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(532, 215);
+            this.txtAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
+            this.txtAddress.Location = new System.Drawing.Point(551, 203);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(360, 22);
             this.txtAddress.TabIndex = 11;
@@ -63,6 +64,7 @@
             // 
             // txtPhone
             // 
+            this.txtPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
             this.txtPhone.Location = new System.Drawing.Point(532, 175);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(360, 22);
@@ -79,6 +81,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
             this.txtEmail.Location = new System.Drawing.Point(532, 129);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(360, 22);
@@ -95,6 +98,7 @@
             // 
             // txtName
             // 
+            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
             this.txtName.Location = new System.Drawing.Point(532, 86);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(360, 22);
