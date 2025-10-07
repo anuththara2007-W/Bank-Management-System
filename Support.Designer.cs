@@ -59,18 +59,20 @@ namespace BankApp
             // 
             // txtMessage
             // 
-            this.txtMessage.Location = new System.Drawing.Point(610, 214);
+            this.txtMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMessage.Location = new System.Drawing.Point(458, 218);
+            this.txtMessage.Multiline = true;
             this.txtMessage.Name = "txtMessage";
-            this.txtMessage.Size = new System.Drawing.Size(360, 22);
+            this.txtMessage.Size = new System.Drawing.Size(539, 34);
             this.txtMessage.TabIndex = 27;
             // 
             // lblAmount
             // 
             this.lblAmount.AutoSize = true;
-            this.lblAmount.Font = new System.Drawing.Font("Yu Gothic", 12F);
-            this.lblAmount.Location = new System.Drawing.Point(308, 217);
+            this.lblAmount.Font = new System.Drawing.Font("Yu Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmount.Location = new System.Drawing.Point(268, 218);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(94, 26);
+            this.lblAmount.Size = new System.Drawing.Size(110, 30);
             this.lblAmount.TabIndex = 26;
             this.lblAmount.Text = "Message";
             // 
