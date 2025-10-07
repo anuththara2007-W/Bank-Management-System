@@ -88,7 +88,7 @@ namespace BankApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1280, 785);
             this.Controls.Add(this.dgvMyTickets);
             this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.btnSend);
@@ -96,6 +96,7 @@ namespace BankApp
             this.Controls.Add(this.lblAmount);
             this.Name = "Support";
             this.Text = "Support";
+            this.Load += new System.EventHandler(this.Support_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMyTickets)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

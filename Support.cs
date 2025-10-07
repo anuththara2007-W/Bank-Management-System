@@ -77,5 +77,10 @@ namespace BankApp
             customerdash.Show();
             this.Hide();
         }
+
+        private void Support_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
