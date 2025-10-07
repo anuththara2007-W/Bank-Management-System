@@ -168,7 +168,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(991, 520);
+            this.ClientSize = new System.Drawing.Size(1280, 785);
             this.Controls.Add(this.lblAddress);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblEmail);
@@ -184,6 +184,7 @@
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.lblAmount);
             this.Name = "Profile";
+            this.ShowInTaskbar = false;
             this.Text = "Profile";
             this.Load += new System.EventHandler(this.Profile_Load);
             this.ResumeLayout(false);
