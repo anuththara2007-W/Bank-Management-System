@@ -111,9 +111,6 @@ namespace BankApp
             this.Hide();
         }
 
-        private void btnGoBack_Click(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }
