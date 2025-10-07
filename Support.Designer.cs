@@ -98,6 +98,7 @@ namespace BankApp
             this.dgvMyTickets.AllowUserToResizeColumns = false;
             this.dgvMyTickets.AllowUserToResizeRows = false;
             this.dgvMyTickets.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.dgvMyTickets.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMyTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMyTickets.Location = new System.Drawing.Point(52, 454);
             this.dgvMyTickets.Name = "dgvMyTickets";
