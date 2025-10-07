@@ -147,6 +147,7 @@
             this.dgvTransactions.GridColor = System.Drawing.Color.White;
             this.dgvTransactions.Location = new System.Drawing.Point(50, 428);
             this.dgvTransactions.Name = "dgvTransactions";
+            this.dgvTransactions.ReadOnly = true;
             this.dgvTransactions.RowHeadersWidth = 51;
             this.dgvTransactions.RowTemplate.Height = 24;
             this.dgvTransactions.Size = new System.Drawing.Size(574, 253);
