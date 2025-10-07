@@ -82,8 +82,8 @@ namespace BankApp
         {
             dgvMyTickets.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridStyle.ModernizeGrid(dgvMyTickets);
-            lblLoanType.BorderStyle = BorderStyle.None;
-            lblLoanType.BackColor = Color.Transparent;
+            lblAmount.BorderStyle = BorderStyle.None;
+            lblAmount.BackColor = Color.Transparent;
         }
     }
 }
