@@ -83,7 +83,7 @@ namespace BankApp
 
                 cmd.ExecuteNonQuery();
 
-                // Update session (if you use it for display elsewhere)
+                // Update session 
                 Session.CustomerName = txtName.Text;
 
                 MessageBox.Show("Profile updated successfully.");
