@@ -61,7 +61,7 @@
             // 
             // btnDeposit
             // 
-            this.btnDeposit.BackColor = System.Drawing.Color.White;
+            this.btnDeposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnDeposit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeposit.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnDeposit.FlatAppearance.BorderSize = 0;
@@ -80,7 +80,7 @@
             // 
             // btnWithdraw
             // 
-            this.btnWithdraw.BackColor = System.Drawing.Color.White;
+            this.btnWithdraw.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnWithdraw.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnWithdraw.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnWithdraw.FlatAppearance.BorderSize = 0;
@@ -99,7 +99,7 @@
             // 
             // btnLoanRequest
             // 
-            this.btnLoanRequest.BackColor = System.Drawing.Color.White;
+            this.btnLoanRequest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnLoanRequest.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLoanRequest.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnLoanRequest.FlatAppearance.BorderSize = 0;
@@ -118,7 +118,7 @@
             // 
             // btnTransfer
             // 
-            this.btnTransfer.BackColor = System.Drawing.Color.White;
+            this.btnTransfer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnTransfer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTransfer.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnTransfer.FlatAppearance.BorderSize = 0;
@@ -171,7 +171,7 @@
             // 
             // btnProfile
             // 
-            this.btnProfile.BackColor = System.Drawing.Color.White;
+            this.btnProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnProfile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProfile.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnProfile.FlatAppearance.BorderSize = 0;
@@ -190,7 +190,7 @@
             // 
             // btnChangePassword
             // 
-            this.btnChangePassword.BackColor = System.Drawing.Color.White;
+            this.btnChangePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnChangePassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChangePassword.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnChangePassword.FlatAppearance.BorderSize = 0;
@@ -209,7 +209,7 @@
             // 
             // btnSupport
             // 
-            this.btnSupport.BackColor = System.Drawing.Color.White;
+            this.btnSupport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnSupport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSupport.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnSupport.FlatAppearance.BorderSize = 0;
@@ -256,7 +256,7 @@
             // 
             // btnReport
             // 
-            this.btnReport.BackColor = System.Drawing.Color.White;
+            this.btnReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnReport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReport.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnReport.FlatAppearance.BorderSize = 0;
