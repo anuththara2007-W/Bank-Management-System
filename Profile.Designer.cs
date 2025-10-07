@@ -48,14 +48,19 @@
             // txtAddress
             // 
             this.txtAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
-            this.txtAddress.Location = new System.Drawing.Point(551, 203);
+            this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddress.Location = new System.Drawing.Point(816, 540);
+            this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(360, 22);
+            this.txtAddress.Size = new System.Drawing.Size(360, 35);
             this.txtAddress.TabIndex = 11;
             // 
             // lblAmount
             // 
             this.lblAmount.AutoSize = true;
+            this.lblAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.lblAmount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblAmount.Location = new System.Drawing.Point(409, 218);
             this.lblAmount.Name = "lblAmount";
             this.lblAmount.Size = new System.Drawing.Size(58, 16);
@@ -65,14 +70,19 @@
             // txtPhone
             // 
             this.txtPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
-            this.txtPhone.Location = new System.Drawing.Point(532, 175);
+            this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.Location = new System.Drawing.Point(816, 454);
+            this.txtPhone.Multiline = true;
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(360, 22);
+            this.txtPhone.Size = new System.Drawing.Size(360, 39);
             this.txtPhone.TabIndex = 13;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Location = new System.Drawing.Point(409, 178);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 16);
@@ -82,14 +92,19 @@
             // txtEmail
             // 
             this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
-            this.txtEmail.Location = new System.Drawing.Point(532, 129);
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(816, 373);
+            this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(360, 22);
+            this.txtEmail.Size = new System.Drawing.Size(360, 36);
             this.txtEmail.TabIndex = 15;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Location = new System.Drawing.Point(409, 132);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 16);
@@ -99,14 +114,19 @@
             // txtName
             // 
             this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
-            this.txtName.Location = new System.Drawing.Point(532, 86);
+            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(816, 288);
+            this.txtName.Multiline = true;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(360, 22);
+            this.txtName.Size = new System.Drawing.Size(360, 36);
             this.txtName.TabIndex = 17;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Location = new System.Drawing.Point(409, 89);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 16);
@@ -115,27 +135,33 @@
             // 
             // btnUpdate
             // 
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Location = new System.Drawing.Point(542, 292);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(189, 30);
             this.btnUpdate.TabIndex = 18;
             this.btnUpdate.Text = "Submit";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(410, 434);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(141, 47);
             this.button1.TabIndex = 19;
             this.button1.Text = "Go Back";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblPhone
             // 
             this.lblPhone.AutoSize = true;
+            this.lblPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.lblPhone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblPhone.Location = new System.Drawing.Point(121, 111);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(44, 16);
@@ -145,6 +171,8 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
+            this.lblEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.lblEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblEmail.Location = new System.Drawing.Point(121, 72);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(44, 16);
@@ -154,6 +182,8 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
+            this.lblName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.lblName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblName.Location = new System.Drawing.Point(121, 33);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(44, 16);
@@ -163,6 +193,8 @@
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
+            this.lblAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.lblAddress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblAddress.Location = new System.Drawing.Point(121, 135);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(44, 16);
