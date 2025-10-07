@@ -205,6 +205,7 @@ namespace BankApp
             this.Controls.Add(this.lblAmount);
             this.Controls.Add(this.lblLoanType);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoanRequest";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoanRequest";
