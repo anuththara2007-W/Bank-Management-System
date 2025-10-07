@@ -183,9 +183,9 @@
             this.lblPhone.Font = new System.Drawing.Font("Yu Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhone.Location = new System.Drawing.Point(109, 529);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(76, 30);
+            this.lblPhone.Size = new System.Drawing.Size(80, 30);
             this.lblPhone.TabIndex = 20;
-            this.lblPhone.Text = "Name";
+            this.lblPhone.Text = "Phone";
             // 
             // lblEmail
             // 
