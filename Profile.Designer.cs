@@ -219,9 +219,9 @@
             this.lblAddress.Font = new System.Drawing.Font("Yu Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddress.Location = new System.Drawing.Point(109, 626);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(76, 30);
+            this.lblAddress.Size = new System.Drawing.Size(99, 30);
             this.lblAddress.TabIndex = 23;
-            this.lblAddress.Text = "Name";
+            this.lblAddress.Text = "Address";
             // 
             // Profile
             // 
