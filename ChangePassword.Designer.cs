@@ -38,7 +38,7 @@ namespace BankApp
             this.lblneww = new System.Windows.Forms.Label();
             this.txtConfirm = new System.Windows.Forms.TextBox();
             this.lblconfirm = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnGoBack = new System.Windows.Forms.Button();
             this.lblabout = new System.Windows.Forms.Label();
             this.lblContact = new System.Windows.Forms.Label();
             this.lblHome = new System.Windows.Forms.Label();
@@ -117,23 +117,23 @@ namespace BankApp
             this.lblconfirm.TabIndex = 19;
             this.lblconfirm.Text = "Confirm New Password";
             // 
-            // button1
+            // btnGoBack
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(352, 663);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(224, 47);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "Go Back";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnGoBack.BackColor = System.Drawing.Color.White;
+            this.btnGoBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGoBack.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnGoBack.FlatAppearance.BorderSize = 0;
+            this.btnGoBack.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btnGoBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGoBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGoBack.Location = new System.Drawing.Point(352, 663);
+            this.btnGoBack.Name = "btnGoBack";
+            this.btnGoBack.Size = new System.Drawing.Size(224, 47);
+            this.btnGoBack.TabIndex = 26;
+            this.btnGoBack.Text = "Go Back";
+            this.btnGoBack.UseVisualStyleBackColor = false;
+            this.btnGoBack.Click += new System.EventHandler(this.btnGoBack_Click);
             // 
             // lblabout
             // 
@@ -190,7 +190,7 @@ namespace BankApp
             this.Controls.Add(this.lblabout);
             this.Controls.Add(this.lblContact);
             this.Controls.Add(this.lblHome);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.btnChange);
             this.Controls.Add(this.txtOld);
             this.Controls.Add(this.lblOld);
@@ -220,7 +220,7 @@ namespace BankApp
         private System.Windows.Forms.Label lblneww;
         private System.Windows.Forms.TextBox txtConfirm;
         private System.Windows.Forms.Label lblconfirm;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnGoBack;
         private System.Windows.Forms.Label lblabout;
         private System.Windows.Forms.Label lblContact;
         private System.Windows.Forms.Label lblHome;
