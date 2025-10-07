@@ -80,8 +80,8 @@ namespace BankApp
 
         private void Support_Load_1(object sender, EventArgs e)
         {
-            dgvLoans.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            GridStyle.ModernizeGrid(dgvLoans);
+            dgvMyTickets.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            GridStyle.ModernizeGrid(dgvMyTickets);
         }
     }
 }
