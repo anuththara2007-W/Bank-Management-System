@@ -277,6 +277,7 @@
             this.lblabout.AutoSize = true;
             this.lblabout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.lblabout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblabout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblabout.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblabout.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblabout.Location = new System.Drawing.Point(581, 53);
@@ -292,6 +293,7 @@
             this.lblContact.AutoSize = true;
             this.lblContact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.lblContact.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblContact.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblContact.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContact.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblContact.Location = new System.Drawing.Point(763, 53);
@@ -306,6 +308,7 @@
             this.lblHome.AutoSize = true;
             this.lblHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.lblHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblHome.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHome.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblHome.Location = new System.Drawing.Point(428, 53);
