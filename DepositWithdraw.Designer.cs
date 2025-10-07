@@ -163,6 +163,7 @@ namespace Bank__Management_System
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.lblAmount);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DepositWithdraw";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DepositWithdraw";
