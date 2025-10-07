@@ -263,7 +263,7 @@
             this.btnReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReport.Font = new System.Drawing.Font("Yu Gothic", 12F);
-            this.btnReport.Location = new System.Drawing.Point(501, 207);
+            this.btnReport.Location = new System.Drawing.Point(496, 154);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(248, 44);
             this.btnReport.TabIndex = 15;
@@ -339,6 +339,7 @@
             this.Controls.Add(this.btnDeposit);
             this.Controls.Add(this.lblBalance);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CustomerDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CustomerDashboard";
