@@ -52,6 +52,7 @@ namespace BankApp
             this.btnChange.FlatAppearance.BorderSize = 0;
             this.btnChange.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.btnChange.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnChange.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChange.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -125,6 +126,7 @@ namespace BankApp
             this.btnGoBack.FlatAppearance.BorderSize = 0;
             this.btnGoBack.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.btnGoBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnGoBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGoBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGoBack.Location = new System.Drawing.Point(352, 663);
