@@ -300,7 +300,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnGoBack;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnDelete;
@@ -317,5 +316,6 @@
         private System.Windows.Forms.BindingSource bankDBDataSet1BindingSource;
         private BankDBDataSet1 bankDBDataSet1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
