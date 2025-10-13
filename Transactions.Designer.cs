@@ -54,7 +54,7 @@
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.label5.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(117, 371);
+            this.label5.Location = new System.Drawing.Point(110, 320);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(108, 25);
             this.label5.TabIndex = 15;
@@ -66,7 +66,7 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.label4.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(117, 209);
+            this.label4.Location = new System.Drawing.Point(110, 158);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(159, 25);
             this.label4.TabIndex = 14;
@@ -78,7 +78,7 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(117, 263);
+            this.label3.Location = new System.Drawing.Point(110, 212);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 25);
             this.label3.TabIndex = 13;
@@ -90,7 +90,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(117, 319);
+            this.label2.Location = new System.Drawing.Point(110, 268);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(158, 25);
             this.label2.TabIndex = 12;
@@ -101,8 +101,9 @@
             this.txtAccountID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtAccountID.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAccountID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAccountID.Location = new System.Drawing.Point(356, 370);
+            this.txtAccountID.Location = new System.Drawing.Point(355, 317);
             this.txtAccountID.Name = "txtAccountID";
+            this.txtAccountID.ReadOnly = true;
             this.txtAccountID.Size = new System.Drawing.Size(351, 27);
             this.txtAccountID.TabIndex = 20;
             // 
@@ -111,7 +112,7 @@
             this.txtTransactionDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTransactionDate.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTransactionDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTransactionDate.Location = new System.Drawing.Point(358, 317);
+            this.txtTransactionDate.Location = new System.Drawing.Point(357, 264);
             this.txtTransactionDate.Multiline = true;
             this.txtTransactionDate.Name = "txtTransactionDate";
             this.txtTransactionDate.Size = new System.Drawing.Size(351, 22);
@@ -122,7 +123,7 @@
             this.txtAmount.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtAmount.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAmount.Location = new System.Drawing.Point(354, 263);
+            this.txtAmount.Location = new System.Drawing.Point(353, 210);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(351, 27);
             this.txtAmount.TabIndex = 18;
@@ -132,7 +133,7 @@
             this.txtTransactionType.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTransactionType.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTransactionType.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTransactionType.Location = new System.Drawing.Point(355, 208);
+            this.txtTransactionType.Location = new System.Drawing.Point(354, 155);
             this.txtTransactionType.Name = "txtTransactionType";
             this.txtTransactionType.Size = new System.Drawing.Size(351, 27);
             this.txtTransactionType.TabIndex = 17;
@@ -157,7 +158,7 @@
             this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
             this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(360, 317);
+            this.dateTimePicker1.Location = new System.Drawing.Point(359, 264);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(344, 27);
             this.dateTimePicker1.TabIndex = 26;
@@ -243,9 +244,9 @@
             this.btnGoBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(233)))), ((int)(((byte)(236)))));
             this.btnGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGoBack.Font = new System.Drawing.Font("Yu Gothic", 12F);
-            this.btnGoBack.Location = new System.Drawing.Point(927, 439);
+            this.btnGoBack.Location = new System.Drawing.Point(875, 435);
             this.btnGoBack.Name = "btnGoBack";
-            this.btnGoBack.Size = new System.Drawing.Size(114, 38);
+            this.btnGoBack.Size = new System.Drawing.Size(230, 38);
             this.btnGoBack.TabIndex = 27;
             this.btnGoBack.Text = "Go Back";
             this.btnGoBack.UseVisualStyleBackColor = false;
@@ -253,7 +254,7 @@
             // 
             // btnPickCustomer
             // 
-            this.btnPickCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(233)))), ((int)(((byte)(236)))));
+            this.btnPickCustomer.BackColor = System.Drawing.Color.White;
             this.btnPickCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPickCustomer.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(233)))), ((int)(((byte)(236)))));
             this.btnPickCustomer.FlatAppearance.BorderSize = 0;
@@ -261,7 +262,7 @@
             this.btnPickCustomer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(233)))), ((int)(((byte)(236)))));
             this.btnPickCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPickCustomer.Font = new System.Drawing.Font("Yu Gothic", 12F);
-            this.btnPickCustomer.Location = new System.Drawing.Point(729, 343);
+            this.btnPickCustomer.Location = new System.Drawing.Point(270, 363);
             this.btnPickCustomer.Name = "btnPickCustomer";
             this.btnPickCustomer.Size = new System.Drawing.Size(269, 37);
             this.btnPickCustomer.TabIndex = 28;
@@ -296,6 +297,7 @@
             this.Name = "Transactions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Transactions";
+            this.Load += new System.EventHandler(this.Transactions_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

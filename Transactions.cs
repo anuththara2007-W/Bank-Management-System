@@ -176,5 +176,11 @@ namespace Bank__Management_System
                 }
             }
         }
+
+        private void Transactions_Load(object sender, EventArgs e)
+        {
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            GridStyle.ModernizeGrid(dataGridView1);
+        }
     }
 }
