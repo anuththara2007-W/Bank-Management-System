@@ -48,6 +48,8 @@ namespace Bank__Management_System
         private void btnChat_Click(object sender, EventArgs e)
         {
             ChatBot bot = new ChatBot();
+            bot.Show();
+            this.Hide();
         }
     }
 }
