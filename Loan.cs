@@ -14,7 +14,10 @@
 
             private void Loan_Load(object sender, EventArgs e)
             {
-                LoadLoans();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            GridStyle.ModernizeGrid(dataGridView1);
+
+            LoadLoans();
                 dateTimePicker1.CustomFormat = "dd/MM/yyyy";
             }
 
