@@ -32,7 +32,7 @@
             this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnAbout = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.btnContact = new System.Windows.Forms.Label();
             this.btnHome = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.SuspendLayout();
@@ -80,20 +80,20 @@
             this.btnAbout.Text = "ABOUT  US ";
             this.btnAbout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label6
+            // btnContact
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label6.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(848, 34);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 22);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "CONTACT";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnContact.AutoSize = true;
+            this.btnContact.BackColor = System.Drawing.Color.White;
+            this.btnContact.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnContact.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnContact.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnContact.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnContact.Location = new System.Drawing.Point(848, 34);
+            this.btnContact.Name = "btnContact";
+            this.btnContact.Size = new System.Drawing.Size(87, 22);
+            this.btnContact.TabIndex = 11;
+            this.btnContact.Text = "CONTACT";
+            this.btnContact.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnHome
             // 
@@ -116,7 +116,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 785);
             this.Controls.Add(this.btnAbout);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.btnContact);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.webView21);
@@ -135,7 +135,7 @@
         private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Label btnAbout;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label btnContact;
         private System.Windows.Forms.Label btnHome;
     }
 }
