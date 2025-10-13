@@ -285,8 +285,8 @@ namespace Bank__Management_System
 
         private void Customer_Load_1(object sender, EventArgs e)
         {
-            dgvAllRequests.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            GridStyle.ModernizeGrid(dgvAllRequests);
+            GridCustomer.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            GridStyle.ModernizeGrid(GridCustomer);
         }
     }
 }
