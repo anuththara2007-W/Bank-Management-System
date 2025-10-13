@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChatBot));
             this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
+            this.btnAbout = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnHome = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
@@ -65,20 +65,20 @@
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // label7
+            // btnAbout
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.White;
-            this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label7.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(684, 35);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(101, 22);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "ABOUT  US ";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAbout.AutoSize = true;
+            this.btnAbout.BackColor = System.Drawing.Color.White;
+            this.btnAbout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbout.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAbout.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAbout.Location = new System.Drawing.Point(684, 35);
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Size = new System.Drawing.Size(101, 22);
+            this.btnAbout.TabIndex = 12;
+            this.btnAbout.Text = "ABOUT  US ";
+            this.btnAbout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
             // 
@@ -115,7 +115,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 785);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.btnAbout);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.btnRefresh);
@@ -134,7 +134,7 @@
 
         private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
         private System.Windows.Forms.Button btnRefresh;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label btnAbout;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label btnHome;
     }
