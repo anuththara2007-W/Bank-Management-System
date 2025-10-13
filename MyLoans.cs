@@ -24,7 +24,7 @@ namespace BankApp
         {
             using (SqlConnection con = new SqlConnection(connString))
             {
-                string query = "SELECT Loan_ID, Loan_Type, Amount, Status FROM Loans WHERE Customer_ID=@cid";
+                string query = "SELECT Loan_ID, Loan_Type, Amount, Status FROM Loan WHERE Customer_ID=@cid";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, con);
                 adapter.SelectCommand.Parameters.AddWithValue("@cid", Session.CustomerID);
                 DataTable dt = new DataTable();
