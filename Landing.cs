@@ -44,5 +44,10 @@ namespace Bank__Management_System
             string url = "https://wa.me/94707266991";
             System.Diagnostics.Process.Start(url);
         }
+
+        private void btnChat_Click(object sender, EventArgs e)
+        {
+            ChatBot bot = new ChatBot();
+        }
     }
 }

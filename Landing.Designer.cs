@@ -219,6 +219,7 @@
             this.btnChat.TabIndex = 11;
             this.btnChat.Text = "?";
             this.btnChat.UseVisualStyleBackColor = false;
+            this.btnChat.Click += new System.EventHandler(this.btnChat_Click);
             // 
             // Landing
             // 
