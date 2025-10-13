@@ -39,6 +39,12 @@
             // 
             // dgvSupport
             // 
+            this.dgvSupport.AllowUserToAddRows = false;
+            this.dgvSupport.AllowUserToDeleteRows = false;
+            this.dgvSupport.AllowUserToResizeColumns = false;
+            this.dgvSupport.AllowUserToResizeRows = false;
+            this.dgvSupport.BackgroundColor = System.Drawing.Color.White;
+            this.dgvSupport.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvSupport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSupport.Location = new System.Drawing.Point(81, 181);
             this.dgvSupport.Name = "dgvSupport";
@@ -56,6 +62,7 @@
             this.btnGoBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.btnGoBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.btnGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGoBack.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGoBack.Location = new System.Drawing.Point(654, 596);
             this.btnGoBack.Name = "btnGoBack";
             this.btnGoBack.Size = new System.Drawing.Size(288, 47);
@@ -73,6 +80,7 @@
             this.btnReply.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.btnReply.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.btnReply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReply.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReply.Location = new System.Drawing.Point(321, 599);
             this.btnReply.Name = "btnReply";
             this.btnReply.Size = new System.Drawing.Size(278, 41);
@@ -83,14 +91,18 @@
             // 
             // txtReply
             // 
-            this.txtReply.Location = new System.Drawing.Point(435, 81);
+            this.txtReply.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtReply.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReply.Location = new System.Drawing.Point(509, 469);
+            this.txtReply.Multiline = true;
             this.txtReply.Name = "txtReply";
-            this.txtReply.Size = new System.Drawing.Size(360, 22);
+            this.txtReply.Size = new System.Drawing.Size(550, 26);
             this.txtReply.TabIndex = 32;
             // 
             // lblAmount
             // 
             this.lblAmount.AutoSize = true;
+            this.lblAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.lblAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAmount.Location = new System.Drawing.Point(284, 469);
             this.lblAmount.Name = "lblAmount";
