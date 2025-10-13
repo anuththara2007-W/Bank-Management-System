@@ -43,6 +43,7 @@ namespace Bank__Management_System
         {
             Landing land = new Landing();
             land.Show();
+            this.Hide();
         }
     }
 }
