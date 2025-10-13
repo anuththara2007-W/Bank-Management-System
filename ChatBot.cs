@@ -25,6 +25,19 @@ namespace Bank__Management_System
             webView21.Reload();
         }
 
-     
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            About About = new About();
+            About.Show();
+            this.Hide();
+        }
+
+        private void btnContact_Click(object sender, EventArgs e)
+        {
+            Contact contact = new Contact();
+            contact.Show();
+            this.Hide();
+        }
+
     }
 }
