@@ -38,6 +38,8 @@ namespace BankApp
                 dgvAllRequests.DataSource = dt;
                 dgvAllRequests.ReadOnly = true;
                 dgvAllRequests.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                dgvAllRequests.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                GridStyle.ModernizeGrid(dgvAllRequests);
             }
         }
 
