@@ -50,22 +50,36 @@ namespace BankApp
             // 
             // btnApprove
             // 
-            this.btnApprove.Location = new System.Drawing.Point(188, 96);
+            this.btnApprove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnApprove.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnApprove.FlatAppearance.BorderSize = 0;
+            this.btnApprove.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnApprove.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnApprove.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnApprove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnApprove.Location = new System.Drawing.Point(298, 546);
             this.btnApprove.Name = "btnApprove";
-            this.btnApprove.Size = new System.Drawing.Size(180, 44);
+            this.btnApprove.Size = new System.Drawing.Size(281, 61);
             this.btnApprove.TabIndex = 1;
             this.btnApprove.Text = "Approve";
-            this.btnApprove.UseVisualStyleBackColor = true;
+            this.btnApprove.UseVisualStyleBackColor = false;
             this.btnApprove.Click += new System.EventHandler(this.btnApprove_Click);
             // 
             // btnReject
             // 
-            this.btnReject.Location = new System.Drawing.Point(629, 89);
+            this.btnReject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnReject.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnReject.FlatAppearance.BorderSize = 0;
+            this.btnReject.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnReject.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnReject.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnReject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReject.Location = new System.Drawing.Point(687, 549);
             this.btnReject.Name = "btnReject";
-            this.btnReject.Size = new System.Drawing.Size(232, 58);
+            this.btnReject.Size = new System.Drawing.Size(296, 58);
             this.btnReject.TabIndex = 2;
             this.btnReject.Text = "Reject";
-            this.btnReject.UseVisualStyleBackColor = true;
+            this.btnReject.UseVisualStyleBackColor = false;
             this.btnReject.Click += new System.EventHandler(this.btnReject_Click);
             // 
             // btnBack
@@ -76,9 +90,9 @@ namespace BankApp
             this.btnBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Location = new System.Drawing.Point(504, 653);
+            this.btnBack.Location = new System.Drawing.Point(504, 657);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(278, 48);
+            this.btnBack.Size = new System.Drawing.Size(278, 43);
             this.btnBack.TabIndex = 3;
             this.btnBack.Text = "Go Back";
             this.btnBack.UseVisualStyleBackColor = false;
