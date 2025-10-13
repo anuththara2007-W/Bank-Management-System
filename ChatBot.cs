@@ -24,5 +24,7 @@ namespace Bank__Management_System
             // Simply reload the current page
             webView21.Reload();
         }
+
+     
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChatBot));
             this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -48,6 +49,7 @@
             this.webView21.Size = new System.Drawing.Size(1277, 787);
             this.webView21.TabIndex = 1;
             this.webView21.ZoomFactor = 1D;
+            this.webView21.Click += new System.EventHandler(this.webView21_Click);
             // 
             // btnRefresh
             // 
@@ -111,6 +113,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.webView21);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ChatBot";
             this.Text = "ChatBot";
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
