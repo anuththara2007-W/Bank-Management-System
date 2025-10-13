@@ -3,7 +3,6 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using static System.Collections.Specialized.BitVector32;
 
 namespace BankApp
 {
