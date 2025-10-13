@@ -40,6 +40,7 @@
             this.lblCount3 = new System.Windows.Forms.Label();
             this.lblCount2 = new System.Windows.Forms.Label();
             this.lblCount1 = new System.Windows.Forms.Label();
+            this.btnBot = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCustomer
@@ -218,6 +219,23 @@
             this.lblCount1.TabIndex = 58;
             this.lblCount1.Text = "0";
             // 
+            // btnBot
+            // 
+            this.btnBot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnBot.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBot.FlatAppearance.BorderSize = 0;
+            this.btnBot.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btnBot.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnBot.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnBot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBot.Font = new System.Drawing.Font("Yu Gothic", 12F);
+            this.btnBot.Location = new System.Drawing.Point(527, 374);
+            this.btnBot.Name = "btnBot";
+            this.btnBot.Size = new System.Drawing.Size(226, 36);
+            this.btnBot.TabIndex = 61;
+            this.btnBot.Text = "Manage Bot";
+            this.btnBot.UseVisualStyleBackColor = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -226,6 +244,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1280, 785);
+            this.Controls.Add(this.btnBot);
             this.Controls.Add(this.lblCount3);
             this.Controls.Add(this.lblCount2);
             this.Controls.Add(this.lblCount1);
@@ -260,5 +279,6 @@
         private System.Windows.Forms.Label lblCount3;
         private System.Windows.Forms.Label lblCount2;
         private System.Windows.Forms.Label lblCount1;
+        private System.Windows.Forms.Button btnBot;
     }
 }
