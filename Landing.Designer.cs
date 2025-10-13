@@ -37,7 +37,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.btnHome = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.btnContact = new System.Windows.Forms.Label();
             this.btnAbout = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnChat = new System.Windows.Forms.Button();
@@ -159,20 +159,20 @@
             this.btnHome.Text = "HOME  ";
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label6
+            // btnContact
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label6.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(598, 53);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 22);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "CONTACT";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.btnContact.AutoSize = true;
+            this.btnContact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnContact.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnContact.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnContact.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnContact.Location = new System.Drawing.Point(598, 53);
+            this.btnContact.Name = "btnContact";
+            this.btnContact.Size = new System.Drawing.Size(87, 22);
+            this.btnContact.TabIndex = 8;
+            this.btnContact.Text = "CONTACT";
+            this.btnContact.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnContact.Click += new System.EventHandler(this.label6_Click);
             // 
             // btnAbout
             // 
@@ -230,7 +230,7 @@
             this.Controls.Add(this.btnChat);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnAbout);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.btnContact);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button2);
@@ -257,7 +257,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label btnHome;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label btnContact;
         private System.Windows.Forms.Label btnAbout;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnChat;
