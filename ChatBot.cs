@@ -39,5 +39,10 @@ namespace Bank__Management_System
             this.Hide();
         }
 
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            Landing land = new Landing();
+            land.Show();
+        }
     }
 }

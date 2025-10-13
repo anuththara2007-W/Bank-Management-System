@@ -109,6 +109,7 @@
             this.btnHome.TabIndex = 10;
             this.btnHome.Text = "HOME  ";
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // ChatBot
             // 
