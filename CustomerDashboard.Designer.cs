@@ -45,6 +45,7 @@
             this.lblabout = new System.Windows.Forms.Label();
             this.lblContact = new System.Windows.Forms.Label();
             this.lblHome = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoans)).BeginInit();
             this.SuspendLayout();
@@ -320,6 +321,16 @@
             this.lblHome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblHome.Click += new System.EventHandler(this.lblHome_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(543, 167);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(191, 38);
+            this.button1.TabIndex = 33;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // CustomerDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -327,6 +338,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1280, 785);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblabout);
             this.Controls.Add(this.lblContact);
             this.Controls.Add(this.lblHome);
@@ -373,5 +385,6 @@
         private System.Windows.Forms.Label lblabout;
         private System.Windows.Forms.Label lblContact;
         private System.Windows.Forms.Label lblHome;
+        private System.Windows.Forms.Button button1;
     }
 }

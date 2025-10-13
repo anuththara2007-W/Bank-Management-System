@@ -216,5 +216,12 @@ namespace BankApp
             contact.Show();
             this.Hide();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MyLoans loans = new MyLoans();
+            loans.Show();
+            this
+        }
     }
 }
