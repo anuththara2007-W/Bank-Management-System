@@ -40,7 +40,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnChat = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -203,22 +203,22 @@
             this.label8.Text = "CONTACT US";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button3
+            // btnChat
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(541, 630);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(156, 32);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "?";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnChat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnChat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChat.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnChat.FlatAppearance.BorderSize = 0;
+            this.btnChat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnChat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnChat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChat.Location = new System.Drawing.Point(1199, 689);
+            this.btnChat.Name = "btnChat";
+            this.btnChat.Size = new System.Drawing.Size(27, 32);
+            this.btnChat.TabIndex = 11;
+            this.btnChat.Text = "?";
+            this.btnChat.UseVisualStyleBackColor = false;
             // 
             // Landing
             // 
@@ -227,7 +227,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1280, 785);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnChat);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -260,6 +260,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnChat;
     }
 }
