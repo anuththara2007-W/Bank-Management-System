@@ -114,6 +114,7 @@ namespace BankApp
             this.Controls.Add(this.btnApprove);
             this.Controls.Add(this.dgvAllRequests);
             this.Name = "LoanRequestsApproval";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllRequests)).EndInit();
             this.ResumeLayout(false);
 
