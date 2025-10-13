@@ -14,6 +14,8 @@ namespace Bank__Management_System
 
         private void Employee_Load(object sender, EventArgs e)
         {
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            GridStyle.ModernizeGrid(dataGridView1);
             LoadEmployee();
         }
 
