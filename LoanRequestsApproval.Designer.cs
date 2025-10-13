@@ -47,11 +47,11 @@ namespace BankApp
             this.dgvAllRequests.BackgroundColor = System.Drawing.Color.White;
             this.dgvAllRequests.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvAllRequests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAllRequests.Location = new System.Drawing.Point(84, 189);
+            this.dgvAllRequests.Location = new System.Drawing.Point(76, 183);
             this.dgvAllRequests.Name = "dgvAllRequests";
             this.dgvAllRequests.RowHeadersWidth = 51;
             this.dgvAllRequests.RowTemplate.Height = 24;
-            this.dgvAllRequests.Size = new System.Drawing.Size(1109, 308);
+            this.dgvAllRequests.Size = new System.Drawing.Size(1109, 286);
             this.dgvAllRequests.TabIndex = 0;
             // 
             // btnApprove
@@ -63,9 +63,10 @@ namespace BankApp
             this.btnApprove.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.btnApprove.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.btnApprove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnApprove.Location = new System.Drawing.Point(298, 546);
+            this.btnApprove.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnApprove.Location = new System.Drawing.Point(289, 516);
             this.btnApprove.Name = "btnApprove";
-            this.btnApprove.Size = new System.Drawing.Size(281, 61);
+            this.btnApprove.Size = new System.Drawing.Size(281, 55);
             this.btnApprove.TabIndex = 1;
             this.btnApprove.Text = "Approve";
             this.btnApprove.UseVisualStyleBackColor = false;
@@ -80,9 +81,10 @@ namespace BankApp
             this.btnReject.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.btnReject.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.btnReject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReject.Location = new System.Drawing.Point(687, 549);
+            this.btnReject.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReject.Location = new System.Drawing.Point(678, 519);
             this.btnReject.Name = "btnReject";
-            this.btnReject.Size = new System.Drawing.Size(296, 58);
+            this.btnReject.Size = new System.Drawing.Size(296, 52);
             this.btnReject.TabIndex = 2;
             this.btnReject.Text = "Reject";
             this.btnReject.UseVisualStyleBackColor = false;
@@ -96,9 +98,10 @@ namespace BankApp
             this.btnBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Location = new System.Drawing.Point(504, 657);
+            this.btnBack.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(495, 620);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(278, 43);
+            this.btnBack.Size = new System.Drawing.Size(278, 37);
             this.btnBack.TabIndex = 3;
             this.btnBack.Text = "Go Back";
             this.btnBack.UseVisualStyleBackColor = false;
@@ -108,7 +111,7 @@ namespace BankApp
             // 
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1280, 785);
+            this.ClientSize = new System.Drawing.Size(1264, 741);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnReject);
             this.Controls.Add(this.btnApprove);
