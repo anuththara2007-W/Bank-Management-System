@@ -39,6 +39,7 @@
             // webView21
             // 
             this.webView21.AllowExternalDrop = true;
+            this.webView21.BackColor = System.Drawing.Color.White;
             this.webView21.CreationProperties = null;
             this.webView21.DefaultBackgroundColor = System.Drawing.Color.White;
             this.webView21.Location = new System.Drawing.Point(1, -3);
@@ -49,6 +50,7 @@
             // 
             // btnRefreshs
             // 
+            this.btnRefreshs.BackColor = System.Drawing.Color.White;
             this.btnRefreshs.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefreshs.BackgroundImage")));
             this.btnRefreshs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRefreshs.Cursor = System.Windows.Forms.Cursors.Hand;
