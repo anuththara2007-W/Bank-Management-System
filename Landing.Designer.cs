@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Landing));
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSignup = new System.Windows.Forms.Button();
             this.btnsignin = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,23 +43,23 @@
             this.btnChat = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btnSignup
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(183, 631);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(156, 32);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "SIGN UP";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSignup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnSignup.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSignup.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSignup.FlatAppearance.BorderSize = 0;
+            this.btnSignup.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnSignup.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnSignup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSignup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignup.Location = new System.Drawing.Point(183, 631);
+            this.btnSignup.Name = "btnSignup";
+            this.btnSignup.Size = new System.Drawing.Size(156, 32);
+            this.btnSignup.TabIndex = 1;
+            this.btnSignup.Text = "SIGN UP";
+            this.btnSignup.UseVisualStyleBackColor = false;
+            this.btnSignup.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnsignin
             // 
@@ -236,7 +236,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnsignin);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSignup);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Landing";
@@ -248,7 +248,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSignup;
         private System.Windows.Forms.Button btnsignin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

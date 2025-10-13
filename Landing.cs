@@ -38,7 +38,7 @@ namespace Bank__Management_System
             this.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnSignup_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Please Contact the bank ! ");
             string url = "https://wa.me/94707266991";
