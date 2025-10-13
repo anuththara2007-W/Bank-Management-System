@@ -145,6 +145,7 @@ namespace Bank__Management_System
         {
             ManageBot bot = new ManageBot();
             bot.Show();
+            this.Hide();
         }
     }
 }
