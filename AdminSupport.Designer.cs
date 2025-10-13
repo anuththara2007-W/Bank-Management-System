@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminSupport));
             this.dgvSupport = new System.Windows.Forms.DataGridView();
             this.btnGoBack = new System.Windows.Forms.Button();
             this.btnReply = new System.Windows.Forms.Button();
@@ -39,31 +40,45 @@
             // dgvSupport
             // 
             this.dgvSupport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSupport.Location = new System.Drawing.Point(181, 218);
+            this.dgvSupport.Location = new System.Drawing.Point(81, 181);
             this.dgvSupport.Name = "dgvSupport";
             this.dgvSupport.RowHeadersWidth = 51;
             this.dgvSupport.RowTemplate.Height = 24;
-            this.dgvSupport.Size = new System.Drawing.Size(690, 150);
+            this.dgvSupport.Size = new System.Drawing.Size(1102, 210);
             this.dgvSupport.TabIndex = 35;
             // 
             // btnGoBack
             // 
-            this.btnGoBack.Location = new System.Drawing.Point(472, 397);
+            this.btnGoBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnGoBack.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnGoBack.FlatAppearance.BorderSize = 0;
+            this.btnGoBack.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnGoBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnGoBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGoBack.Location = new System.Drawing.Point(654, 596);
             this.btnGoBack.Name = "btnGoBack";
-            this.btnGoBack.Size = new System.Drawing.Size(141, 47);
+            this.btnGoBack.Size = new System.Drawing.Size(288, 47);
             this.btnGoBack.TabIndex = 34;
             this.btnGoBack.Text = "Go Back";
-            this.btnGoBack.UseVisualStyleBackColor = true;
+            this.btnGoBack.UseVisualStyleBackColor = false;
             this.btnGoBack.Click += new System.EventHandler(this.btnGoBack_Click);
             // 
             // btnReply
             // 
-            this.btnReply.Location = new System.Drawing.Point(445, 158);
+            this.btnReply.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnReply.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnReply.FlatAppearance.BorderSize = 0;
+            this.btnReply.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnReply.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnReply.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnReply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReply.Location = new System.Drawing.Point(321, 599);
             this.btnReply.Name = "btnReply";
-            this.btnReply.Size = new System.Drawing.Size(189, 30);
+            this.btnReply.Size = new System.Drawing.Size(278, 41);
             this.btnReply.TabIndex = 33;
             this.btnReply.Text = "Send";
-            this.btnReply.UseVisualStyleBackColor = true;
+            this.btnReply.UseVisualStyleBackColor = false;
             this.btnReply.Click += new System.EventHandler(this.btnReply_Click);
             // 
             // txtReply
@@ -76,9 +91,10 @@
             // lblAmount
             // 
             this.lblAmount.AutoSize = true;
-            this.lblAmount.Location = new System.Drawing.Point(269, 84);
+            this.lblAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmount.Location = new System.Drawing.Point(284, 469);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(64, 16);
+            this.lblAmount.Size = new System.Drawing.Size(93, 25);
             this.lblAmount.TabIndex = 31;
             this.lblAmount.Text = "Message";
             // 
@@ -86,12 +102,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1052, 525);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1264, 741);
             this.Controls.Add(this.dgvSupport);
             this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.btnReply);
             this.Controls.Add(this.txtReply);
             this.Controls.Add(this.lblAmount);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminSupport";
             this.Text = "AdminSupport";
             ((System.ComponentModel.ISupportInitialize)(this.dgvSupport)).EndInit();
