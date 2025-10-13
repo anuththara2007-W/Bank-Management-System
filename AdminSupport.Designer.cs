@@ -124,6 +124,7 @@
             this.Controls.Add(this.lblAmount);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminSupport";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminSupport";
             this.Load += new System.EventHandler(this.AdminSupport_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSupport)).EndInit();
