@@ -221,7 +221,7 @@ namespace BankApp
         {
             MyLoans loans = new MyLoans();
             loans.Show();
-            this
+            this.Hide();
         }
     }
 }
