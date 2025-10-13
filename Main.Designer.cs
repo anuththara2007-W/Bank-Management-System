@@ -44,7 +44,7 @@
             // 
             // btnCustomer
             // 
-            this.btnCustomer.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCustomer.FlatAppearance.BorderSize = 0;
             this.btnCustomer.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
@@ -62,7 +62,7 @@
             // 
             // btnAccount
             // 
-            this.btnAccount.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnAccount.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAccount.FlatAppearance.BorderSize = 0;
             this.btnAccount.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
@@ -80,7 +80,7 @@
             // 
             // btnTransaction
             // 
-            this.btnTransaction.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnTransaction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnTransaction.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTransaction.FlatAppearance.BorderSize = 0;
             this.btnTransaction.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
@@ -98,7 +98,7 @@
             // 
             // btnLoan
             // 
-            this.btnLoan.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnLoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnLoan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLoan.FlatAppearance.BorderSize = 0;
             this.btnLoan.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
@@ -116,7 +116,7 @@
             // 
             // btnEmployee
             // 
-            this.btnEmployee.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnEmployee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEmployee.FlatAppearance.BorderSize = 0;
             this.btnEmployee.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
@@ -134,7 +134,7 @@
             // 
             // btnLoanRq
             // 
-            this.btnLoanRq.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnLoanRq.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnLoanRq.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLoanRq.FlatAppearance.BorderSize = 0;
             this.btnLoanRq.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
@@ -152,7 +152,7 @@
             // 
             // btnSupport
             // 
-            this.btnSupport.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSupport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnSupport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSupport.FlatAppearance.BorderSize = 0;
             this.btnSupport.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
@@ -170,7 +170,7 @@
             // 
             // btnLogOut
             // 
-            this.btnLogOut.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogOut.FlatAppearance.BorderSize = 0;
             this.btnLogOut.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
