@@ -38,7 +38,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnHome = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.btnAbout = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnChat = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -174,20 +174,20 @@
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
-            // label7
+            // btnAbout
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label7.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(434, 54);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(101, 22);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "ABOUT  US ";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            this.btnAbout.AutoSize = true;
+            this.btnAbout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnAbout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAbout.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAbout.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAbout.Location = new System.Drawing.Point(434, 54);
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Size = new System.Drawing.Size(101, 22);
+            this.btnAbout.TabIndex = 9;
+            this.btnAbout.Text = "ABOUT  US ";
+            this.btnAbout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAbout.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -230,7 +230,7 @@
             this.ClientSize = new System.Drawing.Size(1280, 785);
             this.Controls.Add(this.btnChat);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.btnAbout);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.label4);
@@ -259,7 +259,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label btnHome;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label btnAbout;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnChat;
     }
