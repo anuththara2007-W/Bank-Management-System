@@ -18,7 +18,9 @@ namespace Bank__Management_System
         {
             LoadAccounts();
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            GridStyle.ModernizeGrid(dataGridView1); //grid style class , modernizegrid method , pass the grid
+            GridStyle.ModernizeGrid(dataGridView1);
+
+          //grid style class , modernizegrid method , pass the grid
         }
 
         private void LoadAccounts()
@@ -175,6 +177,7 @@ namespace Bank__Management_System
 
         private void ShowCustomerPicker()
         {
+            
             // Create popup form
             Form popup = new Form();
             popup.Text = "Select Customer";
@@ -186,7 +189,8 @@ namespace Bank__Management_System
             customerGrid.Dock = DockStyle.Fill;
             customerGrid.ReadOnly = true;
             customerGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
+            customerGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            GridStyle.ModernizeGrid(customerGrid);
             // Load customers into popup grid
             try
             {
