@@ -98,6 +98,7 @@
             // 
             // txtAccountID
             // 
+            this.txtAccountID.BackColor = System.Drawing.Color.White;
             this.txtAccountID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtAccountID.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAccountID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -142,15 +143,15 @@
             // 
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.WindowText;
-            this.dataGridView1.Location = new System.Drawing.Point(77, 507);
+            this.dataGridView1.Location = new System.Drawing.Point(92, 504);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1128, 237);
+            this.dataGridView1.Size = new System.Drawing.Size(1122, 237);
             this.dataGridView1.TabIndex = 25;
             // 
             // dateTimePicker1
