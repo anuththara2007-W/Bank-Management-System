@@ -172,7 +172,6 @@
             this.btnContact.TabIndex = 8;
             this.btnContact.Text = "CONTACT";
             this.btnContact.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnContact.Click += new System.EventHandler(this.label6_Click);
             // 
             // btnAbout
             // 
