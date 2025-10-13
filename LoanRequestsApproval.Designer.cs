@@ -30,6 +30,7 @@ namespace BankApp
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoanRequestsApproval));
             this.dgvAllRequests = new System.Windows.Forms.DataGridView();
             this.btnApprove = new System.Windows.Forms.Button();
             this.btnReject = new System.Windows.Forms.Button();
@@ -69,17 +70,25 @@ namespace BankApp
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(460, 497);
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Location = new System.Drawing.Point(504, 653);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(205, 49);
+            this.btnBack.Size = new System.Drawing.Size(278, 48);
             this.btnBack.TabIndex = 3;
             this.btnBack.Text = "Go Back";
-            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // LoanRequestsApproval
             // 
-            this.ClientSize = new System.Drawing.Size(1170, 570);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1280, 785);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnReject);
             this.Controls.Add(this.btnApprove);
