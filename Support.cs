@@ -44,7 +44,7 @@ namespace BankApp
             }
 
             MessageBox.Show("Message sent to support.");
-            MessageBox.Show
+            MessageBox.Show("We have received your message. Our team will contact you.");
             txtMessage.Clear();
             LoadMyTickets(); // refresh grid
         }
