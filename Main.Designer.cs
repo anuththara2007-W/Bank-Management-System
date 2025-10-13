@@ -235,6 +235,7 @@
             this.btnBot.TabIndex = 61;
             this.btnBot.Text = "Manage Bot";
             this.btnBot.UseVisualStyleBackColor = false;
+            this.btnBot.Click += new System.EventHandler(this.btnBot_Click);
             // 
             // Main
             // 

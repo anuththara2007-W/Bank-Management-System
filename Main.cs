@@ -140,5 +140,11 @@ namespace Bank__Management_System
             support.Show();
             this.Hide();    
         }
+
+        private void btnBot_Click(object sender, EventArgs e)
+        {
+            ManageBot bot = new ManageBot();
+            bot.Show();
+        }
     }
 }
