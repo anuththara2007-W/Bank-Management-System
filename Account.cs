@@ -189,6 +189,7 @@ namespace Bank__Management_System
             customerGrid.Dock = DockStyle.Fill;
             customerGrid.ReadOnly = true;
             customerGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
             customerGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridStyle.ModernizeGrid(customerGrid);
             // Load customers into popup grid
