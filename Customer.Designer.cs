@@ -302,6 +302,7 @@
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtPhoneNo);
             this.Controls.Add(this.txtCustomerName);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Customer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer";
