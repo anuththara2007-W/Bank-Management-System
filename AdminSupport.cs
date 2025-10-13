@@ -115,5 +115,11 @@ namespace BankApp
             admins.Show();
             this.Hide();
         }
+
+        private void AdminSupport_Load_1(object sender, EventArgs e)
+        {
+            dgvSupport.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            GridStyle.ModernizeGrid(dgvSupport);
+        }
     }
 }
