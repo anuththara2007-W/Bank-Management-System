@@ -40,12 +40,18 @@ namespace BankApp
             // 
             // dgvAllRequests
             // 
+            this.dgvAllRequests.AllowUserToAddRows = false;
+            this.dgvAllRequests.AllowUserToDeleteRows = false;
+            this.dgvAllRequests.AllowUserToResizeColumns = false;
+            this.dgvAllRequests.AllowUserToResizeRows = false;
+            this.dgvAllRequests.BackgroundColor = System.Drawing.Color.White;
+            this.dgvAllRequests.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvAllRequests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAllRequests.Location = new System.Drawing.Point(23, 267);
+            this.dgvAllRequests.Location = new System.Drawing.Point(84, 189);
             this.dgvAllRequests.Name = "dgvAllRequests";
             this.dgvAllRequests.RowHeadersWidth = 51;
             this.dgvAllRequests.RowTemplate.Height = 24;
-            this.dgvAllRequests.Size = new System.Drawing.Size(1109, 183);
+            this.dgvAllRequests.Size = new System.Drawing.Size(1109, 308);
             this.dgvAllRequests.TabIndex = 0;
             // 
             // btnApprove
