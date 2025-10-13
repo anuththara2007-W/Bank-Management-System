@@ -302,6 +302,7 @@
             this.Name = "Customer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer";
+            this.Load += new System.EventHandler(this.Customer_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.GridCustomer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
