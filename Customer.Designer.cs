@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customer));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.txtCustomerName = new System.Windows.Forms.TextBox();
             this.txtPhoneNo = new System.Windows.Forms.TextBox();
@@ -61,7 +62,7 @@
             this.txtCustomerName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCustomerName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerName.Location = new System.Drawing.Point(255, 224);
+            this.txtCustomerName.Location = new System.Drawing.Point(257, 190);
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(351, 27);
             this.txtCustomerName.TabIndex = 2;
@@ -71,7 +72,7 @@
             this.txtPhoneNo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPhoneNo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPhoneNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhoneNo.Location = new System.Drawing.Point(254, 279);
+            this.txtPhoneNo.Location = new System.Drawing.Point(259, 253);
             this.txtPhoneNo.Name = "txtPhoneNo";
             this.txtPhoneNo.Size = new System.Drawing.Size(351, 27);
             this.txtPhoneNo.TabIndex = 3;
@@ -81,7 +82,7 @@
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(262, 332);
+            this.txtEmail.Location = new System.Drawing.Point(257, 315);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(351, 27);
             this.txtEmail.TabIndex = 4;
@@ -91,7 +92,7 @@
             this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress.Location = new System.Drawing.Point(256, 386);
+            this.txtAddress.Location = new System.Drawing.Point(258, 378);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(351, 27);
             this.txtAddress.TabIndex = 5;
@@ -102,11 +103,11 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(87, 336);
+            this.label2.Location = new System.Drawing.Point(85, 320);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 25);
+            this.label2.Size = new System.Drawing.Size(63, 25);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Email";
+            this.label2.Text = "Email:";
             // 
             // label3
             // 
@@ -114,11 +115,11 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(87, 280);
+            this.label3.Location = new System.Drawing.Point(86, 257);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 25);
+            this.label3.Size = new System.Drawing.Size(71, 25);
             this.label3.TabIndex = 8;
-            this.label3.Text = "Phone";
+            this.label3.Text = "Phone:";
             // 
             // label4
             // 
@@ -126,11 +127,11 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.label4.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(87, 226);
+            this.label4.Location = new System.Drawing.Point(83, 193);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(153, 25);
+            this.label4.Size = new System.Drawing.Size(157, 25);
             this.label4.TabIndex = 9;
-            this.label4.Text = "Customer Name";
+            this.label4.Text = "Customer Name:";
             // 
             // label5
             // 
@@ -138,11 +139,11 @@
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.label5.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(87, 388);
+            this.label5.Location = new System.Drawing.Point(85, 379);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 25);
+            this.label5.Size = new System.Drawing.Size(86, 25);
             this.label5.TabIndex = 10;
-            this.label5.Text = "Address";
+            this.label5.Text = "Address:";
             // 
             // btnSave
             // 
@@ -200,9 +201,10 @@
             // 
             // GridCustomer
             // 
-            this.GridCustomer.AllowUserToOrderColumns = true;
+            this.GridCustomer.AllowUserToResizeColumns = false;
+            this.GridCustomer.AllowUserToResizeRows = false;
             this.GridCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.GridCustomer.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.GridCustomer.BackgroundColor = System.Drawing.Color.White;
             this.GridCustomer.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.GridCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridCustomer.GridColor = System.Drawing.SystemColors.WindowText;
@@ -280,6 +282,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1280, 785);
             this.Controls.Add(this.label6);
