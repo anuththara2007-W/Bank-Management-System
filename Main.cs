@@ -147,5 +147,12 @@ namespace Bank__Management_System
             bot.Show();
             this.Hide();
         }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            Landing land = new Landing;
+            land.Show();
+            this.Hide();
+        }
     }
 }

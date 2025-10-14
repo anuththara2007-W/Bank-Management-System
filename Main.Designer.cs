@@ -41,6 +41,9 @@
             this.lblCount2 = new System.Windows.Forms.Label();
             this.lblCount1 = new System.Windows.Forms.Label();
             this.btnBot = new System.Windows.Forms.Button();
+            this.btnAbout = new System.Windows.Forms.Label();
+            this.btnContact = new System.Windows.Forms.Label();
+            this.btnHome = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnCustomer
@@ -53,7 +56,7 @@
             this.btnCustomer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomer.Font = new System.Drawing.Font("Yu Gothic", 12F);
-            this.btnCustomer.Location = new System.Drawing.Point(63, 147);
+            this.btnCustomer.Location = new System.Drawing.Point(74, 442);
             this.btnCustomer.Name = "btnCustomer";
             this.btnCustomer.Size = new System.Drawing.Size(226, 38);
             this.btnCustomer.TabIndex = 1;
@@ -71,9 +74,9 @@
             this.btnAccount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAccount.Font = new System.Drawing.Font("Yu Gothic", 12F);
-            this.btnAccount.Location = new System.Drawing.Point(63, 228);
+            this.btnAccount.Location = new System.Drawing.Point(363, 436);
             this.btnAccount.Name = "btnAccount";
-            this.btnAccount.Size = new System.Drawing.Size(226, 37);
+            this.btnAccount.Size = new System.Drawing.Size(247, 45);
             this.btnAccount.TabIndex = 2;
             this.btnAccount.Text = "Accounts";
             this.btnAccount.UseVisualStyleBackColor = false;
@@ -89,9 +92,9 @@
             this.btnTransaction.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnTransaction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTransaction.Font = new System.Drawing.Font("Yu Gothic", 12F);
-            this.btnTransaction.Location = new System.Drawing.Point(63, 303);
+            this.btnTransaction.Location = new System.Drawing.Point(669, 436);
             this.btnTransaction.Name = "btnTransaction";
-            this.btnTransaction.Size = new System.Drawing.Size(226, 37);
+            this.btnTransaction.Size = new System.Drawing.Size(247, 45);
             this.btnTransaction.TabIndex = 3;
             this.btnTransaction.Text = "Transactions";
             this.btnTransaction.UseVisualStyleBackColor = false;
@@ -107,9 +110,9 @@
             this.btnLoan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnLoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoan.Font = new System.Drawing.Font("Yu Gothic", 12F);
-            this.btnLoan.Location = new System.Drawing.Point(63, 383);
+            this.btnLoan.Location = new System.Drawing.Point(968, 546);
             this.btnLoan.Name = "btnLoan";
-            this.btnLoan.Size = new System.Drawing.Size(226, 36);
+            this.btnLoan.Size = new System.Drawing.Size(247, 44);
             this.btnLoan.TabIndex = 4;
             this.btnLoan.Text = "Loans";
             this.btnLoan.UseVisualStyleBackColor = false;
@@ -125,9 +128,9 @@
             this.btnEmployee.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmployee.Font = new System.Drawing.Font("Yu Gothic", 12F);
-            this.btnEmployee.Location = new System.Drawing.Point(63, 468);
+            this.btnEmployee.Location = new System.Drawing.Point(669, 546);
             this.btnEmployee.Name = "btnEmployee";
-            this.btnEmployee.Size = new System.Drawing.Size(226, 36);
+            this.btnEmployee.Size = new System.Drawing.Size(247, 44);
             this.btnEmployee.TabIndex = 5;
             this.btnEmployee.Text = "Employees";
             this.btnEmployee.UseVisualStyleBackColor = false;
@@ -143,9 +146,9 @@
             this.btnLoanRq.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnLoanRq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoanRq.Font = new System.Drawing.Font("Yu Gothic", 12F);
-            this.btnLoanRq.Location = new System.Drawing.Point(63, 621);
+            this.btnLoanRq.Location = new System.Drawing.Point(63, 546);
             this.btnLoanRq.Name = "btnLoanRq";
-            this.btnLoanRq.Size = new System.Drawing.Size(226, 36);
+            this.btnLoanRq.Size = new System.Drawing.Size(247, 44);
             this.btnLoanRq.TabIndex = 7;
             this.btnLoanRq.Text = "Loan Requests ";
             this.btnLoanRq.UseVisualStyleBackColor = false;
@@ -161,9 +164,9 @@
             this.btnSupport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnSupport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSupport.Font = new System.Drawing.Font("Yu Gothic", 12F);
-            this.btnSupport.Location = new System.Drawing.Point(57, 552);
+            this.btnSupport.Location = new System.Drawing.Point(363, 549);
             this.btnSupport.Name = "btnSupport";
-            this.btnSupport.Size = new System.Drawing.Size(232, 36);
+            this.btnSupport.Size = new System.Drawing.Size(253, 44);
             this.btnSupport.TabIndex = 8;
             this.btnSupport.Text = "Customer Support";
             this.btnSupport.UseVisualStyleBackColor = false;
@@ -179,7 +182,7 @@
             this.btnLogOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Yu Gothic", 12F);
-            this.btnLogOut.Location = new System.Drawing.Point(63, 690);
+            this.btnLogOut.Location = new System.Drawing.Point(524, 678);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(226, 36);
             this.btnLogOut.TabIndex = 9;
@@ -191,7 +194,7 @@
             this.lblCount3.AutoSize = true;
             this.lblCount3.BackColor = System.Drawing.Color.White;
             this.lblCount3.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCount3.Location = new System.Drawing.Point(1040, 218);
+            this.lblCount3.Location = new System.Drawing.Point(915, 210);
             this.lblCount3.Name = "lblCount3";
             this.lblCount3.Size = new System.Drawing.Size(64, 69);
             this.lblCount3.TabIndex = 60;
@@ -202,7 +205,7 @@
             this.lblCount2.AutoSize = true;
             this.lblCount2.BackColor = System.Drawing.Color.White;
             this.lblCount2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCount2.Location = new System.Drawing.Point(760, 218);
+            this.lblCount2.Location = new System.Drawing.Point(605, 210);
             this.lblCount2.Name = "lblCount2";
             this.lblCount2.Size = new System.Drawing.Size(64, 69);
             this.lblCount2.TabIndex = 59;
@@ -213,7 +216,7 @@
             this.lblCount1.AutoSize = true;
             this.lblCount1.BackColor = System.Drawing.Color.White;
             this.lblCount1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCount1.Location = new System.Drawing.Point(475, 218);
+            this.lblCount1.Location = new System.Drawing.Point(258, 210);
             this.lblCount1.Name = "lblCount1";
             this.lblCount1.Size = new System.Drawing.Size(64, 69);
             this.lblCount1.TabIndex = 58;
@@ -229,13 +232,56 @@
             this.btnBot.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnBot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBot.Font = new System.Drawing.Font("Yu Gothic", 12F);
-            this.btnBot.Location = new System.Drawing.Point(527, 374);
+            this.btnBot.Location = new System.Drawing.Point(968, 436);
             this.btnBot.Name = "btnBot";
-            this.btnBot.Size = new System.Drawing.Size(226, 36);
+            this.btnBot.Size = new System.Drawing.Size(247, 50);
             this.btnBot.TabIndex = 61;
             this.btnBot.Text = "Manage Bot";
             this.btnBot.UseVisualStyleBackColor = false;
             this.btnBot.Click += new System.EventHandler(this.btnBot_Click);
+            // 
+            // btnAbout
+            // 
+            this.btnAbout.AutoSize = true;
+            this.btnAbout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnAbout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAbout.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAbout.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAbout.Location = new System.Drawing.Point(596, 51);
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Size = new System.Drawing.Size(101, 22);
+            this.btnAbout.TabIndex = 64;
+            this.btnAbout.Text = "ABOUT  US ";
+            this.btnAbout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnContact
+            // 
+            this.btnContact.AutoSize = true;
+            this.btnContact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnContact.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnContact.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnContact.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnContact.Location = new System.Drawing.Point(760, 50);
+            this.btnContact.Name = "btnContact";
+            this.btnContact.Size = new System.Drawing.Size(87, 22);
+            this.btnContact.TabIndex = 63;
+            this.btnContact.Text = "CONTACT";
+            this.btnContact.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnHome
+            // 
+            this.btnHome.AutoSize = true;
+            this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHome.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnHome.Location = new System.Drawing.Point(469, 51);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(69, 22);
+            this.btnHome.TabIndex = 62;
+            this.btnHome.Text = "HOME  ";
+            this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // Main
             // 
@@ -245,6 +291,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1280, 785);
+            this.Controls.Add(this.btnAbout);
+            this.Controls.Add(this.btnContact);
+            this.Controls.Add(this.btnHome);
             this.Controls.Add(this.btnBot);
             this.Controls.Add(this.lblCount3);
             this.Controls.Add(this.lblCount2);
@@ -281,5 +330,8 @@
         private System.Windows.Forms.Label lblCount2;
         private System.Windows.Forms.Label lblCount1;
         private System.Windows.Forms.Button btnBot;
+        private System.Windows.Forms.Label btnAbout;
+        private System.Windows.Forms.Label btnContact;
+        private System.Windows.Forms.Label btnHome;
     }
 }
