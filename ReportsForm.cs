@@ -16,8 +16,8 @@ namespace Bank__Management_System
         private void ReportsForm_Load(object sender, EventArgs e)
         {
             LoadTransactionsReport();
-            this.reportViewer2.RefreshReport();
-            this.reportViewer3.RefreshReport();
+            this.reportViewer1.RefreshReport();
+            this.reportViewer1.RefreshReport();
         }
 
         private void LoadTransactionsReport()
