@@ -16,32 +16,46 @@ namespace Bank__Management_System
         private void ReportsForm_Load(object sender, EventArgs e)
         {
             LoadTransactionsReport();
+            this.reportViewer2.RefreshReport();
         }
 
         private void LoadTransactionsReport()
         {
-            // 🔹 1. Your SQL connection
-            string connectionString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
-            string query = "SELECT * FROM transactions";
-
-            // 🔹 2. Fetch data from SQL
-            DataTable dt = new DataTable();
-            using (SqlConnection con = new SqlConnection(connectionString))
+            try
             {
-                SqlDataAdapter da = new SqlDataAdapter(query, con);
-                da.Fill(dt);
+                string connectionString = "Data Source=DESKTOP-XXXXXXX\\SQLEXPRESS;Initial Catalog=BankDB;Integrated Security=True;";
+                string query = "SELECT TID, Transaction_Type, Amount, Transaction_Date, Customer_ID, Purpose FROM transactions";
+
+                DataTable dt = new DataTable();
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    SqlDataAdapter da = new SqlDataAdapter(query, con);
+                    da.Fill(dt);
+                }
+
+                reportViewer1.LocalReport.DataSources.Clear();
+                ReportDataSource rds = new ReportDataSource("DataSet1", dt);
+                reportViewer1.LocalReport.DataSources.Add(rds);
+
+                // ✅ Your RDLC is directly in the project folder (not in a subfolder)
+                string reportPath = System.IO.Path.Combine(Application.StartupPath, "Report1.rdlc");
+
+                // Optional: Debug check
+                if (!System.IO.File.Exists(reportPath))
+                {
+                    MessageBox.Show("Report file not found at: " + reportPath);
+                    return;
+                }
+
+                reportViewer1.LocalReport.ReportPath = reportPath;
+                reportViewer1.RefreshReport();
             }
-
-            // 🔹 3. Set ReportViewer properties
-            reportViewer1.LocalReport.DataSources.Clear();
-            ReportDataSource rds = new ReportDataSource("BankDataSet_Transactions", dt);
-            reportViewer1.LocalReport.DataSources.Add(rds);
-
-            // 🔹 4. Link to RDLC file
-            reportViewer1.LocalReport.ReportPath = @"Reports\TransactionsReport.rdlc";
-
-            // 🔹 5. Refresh the report
-            reportViewer1.RefreshReport();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading report:\n" + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
     }
 }
