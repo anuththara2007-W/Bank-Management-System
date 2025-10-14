@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
             // reportViewer1
@@ -42,21 +41,11 @@
             this.reportViewer1.Size = new System.Drawing.Size(1093, 618);
             this.reportViewer1.TabIndex = 0;
             // 
-            // reportViewer2
-            // 
-            this.reportViewer2.DocumentMapWidth = 19;
-            this.reportViewer2.Location = new System.Drawing.Point(722, 133);
-            this.reportViewer2.Name = "reportViewer2";
-            this.reportViewer2.ServerReport.BearerToken = null;
-            this.reportViewer2.Size = new System.Drawing.Size(21, 67);
-            this.reportViewer2.TabIndex = 1;
-            // 
             // ReportsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1093, 618);
-            this.Controls.Add(this.reportViewer2);
             this.Controls.Add(this.reportViewer1);
             this.Name = "ReportsForm";
             this.Text = "ReportsForm";
@@ -68,6 +57,5 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer2;
     }
 }

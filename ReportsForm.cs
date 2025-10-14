@@ -17,13 +17,14 @@ namespace Bank__Management_System
         {
             LoadTransactionsReport();
             this.reportViewer2.RefreshReport();
+            this.reportViewer3.RefreshReport();
         }
 
         private void LoadTransactionsReport()
         {
             try
             {
-                string connectionString = "Data Source=DESKTOP-XXXXXXX\\SQLEXPRESS;Initial Catalog=BankDB;Integrated Security=True;";
+                string connectionString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
                 string query = "SELECT TID, Transaction_Type, Amount, Transaction_Date, Customer_ID, Purpose FROM transactions";
 
                 DataTable dt = new DataTable();
