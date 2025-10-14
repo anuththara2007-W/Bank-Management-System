@@ -514,7 +514,7 @@
     <Height>11.69in</Height>
     <Style />
   </Body>
-  <Width>7.57277in</Width>
+  <Width>8.27in</Width>
   <Page>
     <PageHeader>
       <Height>1.89167in</Height>
@@ -525,8 +525,8 @@
           <Source>Embedded</Source>
           <Value>icon</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0.28in</Top>
-          <Left>2.575in</Left>
+          <Top>0.26611in</Top>
+          <Left>2.99014in</Left>
           <Height>0.38333in</Height>
           <Width>0.45833in</Width>
           <Style>
@@ -554,8 +554,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.29389in</Top>
-          <Left>3.16319in</Left>
+          <Top>0.28in</Top>
+          <Left>3.57833in</Left>
           <Height>0.38333in</Height>
           <Width>2.23333in</Width>
           <ZIndex>1</ZIndex>
@@ -594,8 +594,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>0.71889in</Top>
-          <Left>2.36319in</Left>
+          <Top>0.705in</Top>
+          <Left>2.77833in</Left>
           <Height>0.25in</Height>
           <Width>3.03333in</Width>
           <ZIndex>2</ZIndex>
