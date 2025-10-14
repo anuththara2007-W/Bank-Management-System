@@ -150,7 +150,7 @@ namespace Bank__Management_System
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            Landing land = new Landing;
+            Landing land = new Landing();
             land.Show();
             this.Hide();
         }
