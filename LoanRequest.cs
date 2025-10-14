@@ -41,7 +41,9 @@ namespace BankApp
 
             //Select the first item only if the combo box is not empty
             if (cmbLoanType.Items.Count > 0)
+            {
                 cmbLoanType.SelectedIndex = 0;
+            }
         }
 
         private void btnSubmitLoan_Click(object sender, EventArgs e)
