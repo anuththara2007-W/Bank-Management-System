@@ -15,6 +15,7 @@ namespace Bank__Management_System
 
         private void ReportsForm_Load(object sender, EventArgs e)
         {
+            LoadTransactionsReport();
         }
 
         private void LoadTransactionsReport()
