@@ -31,7 +31,7 @@ namespace BankApp
             LoadRecentTransactions();
             LoadLoanSummary();
 
-            // Grid settings
+            // Grid modernzine settings
             dgvLoans.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridStyle.ModernizeGrid(dgvLoans);
 
@@ -39,7 +39,7 @@ namespace BankApp
             GridStyle.ModernizeGrid(dgvTransactions);
 
 
-            // Label styles
+            // Label transperancy
             lblBalance.BackColor = Color.Transparent;
             lblCustomerName.BackColor = Color.Transparent;
         }
@@ -63,7 +63,7 @@ namespace BankApp
                     balance = Convert.ToDecimal(result);
                 }
 
-                lblBalance.Text = "Rs " + balance.ToString("N2");
+                lblBalance.Text = "Rs " + balance.ToString();
             }
         }
 
