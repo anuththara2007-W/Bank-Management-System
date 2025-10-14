@@ -753,6 +753,7 @@
       <Style>
         <Border>
           <Style>None</Style>
+          <Width>12pt</Width>
         </Border>
       </Style>
     </PageHeader>
