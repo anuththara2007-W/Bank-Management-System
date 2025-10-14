@@ -23,7 +23,7 @@ namespace Bank__Management_System
             try
             {
                 // 💡 Change this to your real server name & database name
-                string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=BankDB;Integrated Security=True;";
+                string connectionString = @"Data Source = (localdb)\Local; Initial Catalog = BankDB; Integrated Security = True; Encrypt = False";
 
                 // 💡 Use the customer ID from your Session
                 int custID = Session.CustomerID;
