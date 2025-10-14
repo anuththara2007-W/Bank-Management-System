@@ -21,7 +21,7 @@ namespace Bank__Management_System
         private void LoadTransactionsReport()
         {
             // 🔹 1. Your SQL connection
-            string connectionString = "Data Source=YOUR_SERVER_NAME;Initial Catalog=YOUR_DATABASE_NAME;Integrated Security=True";
+            string connectionString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
             string query = "SELECT * FROM transactions";
 
             // 🔹 2. Fetch data from SQL
