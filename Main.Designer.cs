@@ -253,6 +253,7 @@
             this.btnAbout.TabIndex = 64;
             this.btnAbout.Text = "ABOUT  US ";
             this.btnAbout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
             // 
             // btnContact
             // 

@@ -154,5 +154,12 @@ namespace Bank__Management_System
             land.Show();
             this.Hide();
         }
+
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            About about = new About();
+            about.Show();
+            this.Hide();
+        }
     }
 }
