@@ -80,7 +80,7 @@ namespace Bank__Management_System
                     cmd.Parameters.AddWithValue("@Customer_Name", txtCustomerName.Text);
                     cmd.Parameters.AddWithValue("@phone", txtPhoneNo.Text);
                     cmd.Parameters.AddWithValue("@Email", txtEmail.Text );
-                    cmd.Parameters.AddWithValue("@Address", txtAddress.Text ?? "");
+                    cmd.Parameters.AddWithValue("@Address", txtAddress.Text );
                     cmd.Parameters.AddWithValue("@Username", txtUsername.Text);
                     cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
 
