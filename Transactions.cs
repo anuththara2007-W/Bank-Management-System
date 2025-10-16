@@ -37,7 +37,7 @@ namespace Bank__Management_System
                     // Check if Account_ID exists
                     SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM accounts WHERE Account_ID = @aid", con);
                     checkCmd.Parameters.AddWithValue("@aid", int.Parse(txtAccountID.Text));
-                    int exists = (int)checkCmd.ExecuteScalar();
+                    int exists = (int)checkCmd.ExecuteScalar(); //ExecuteScalar() returns an object.
                     if (exists == 0)
                     {
                         MessageBox.Show("Account ID not found! Please create the account first.");
