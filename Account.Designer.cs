@@ -243,7 +243,6 @@ namespace Bank__Management_System
             this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "Clear";
             this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // dateTimePicker1
             // 
