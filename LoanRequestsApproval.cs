@@ -22,15 +22,7 @@ namespace BankApp
         {
             using (SqlConnection con = new SqlConnection(connString))
             using (SqlDataAdapter da = new SqlDataAdapter(
-                @"SELECT 
-                     RequestID,
-                     Customer_ID,
-                     LoanType,
-                     Amount,
-                     Status,
-                     RequestDate
-                  FROM LoanRequests
-                  ORDER BY RequestDate DESC", con))
+               @"SELECT RequestID, Customer_ID, LoanType, Amount, Status, RequestDate FROM LoanRequests ORDER BY RequestDate DESC", con))
             {
                 DataTable dt = new DataTable();
                 da.Fill(dt);
