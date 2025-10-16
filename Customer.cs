@@ -147,7 +147,7 @@ namespace Bank__Management_System
         {
             if (selectedCustomerId == -1)
             {
-                MessageBox.Show("⚠ Select a customer first!");
+                MessageBox.Show("Select a customer first!");
                 return;
             }
 
