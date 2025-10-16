@@ -90,13 +90,13 @@ namespace Bank__Management_System
                     cmd.ExecuteNonQuery();
                 }
 
-                MessageBox.Show("✅ Customer Saved Successfully");
+                MessageBox.Show("Customer Saved Successfully");
                 LoadCustomerData(); // Refresh grid
                 ClearFields();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error saving: {ex.Message}");
+                MessageBox.Show($"Error saving: " + ex.Message);
             }
         }
 
