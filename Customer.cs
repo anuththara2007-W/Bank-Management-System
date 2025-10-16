@@ -175,9 +175,7 @@ namespace Bank__Management_System
             }
         }
 
-        // =========================
         // Clear input fields
-        // =========================
         private void ClearFields()
         {
             txtCustomerName.Clear();
@@ -189,9 +187,7 @@ namespace Bank__Management_System
             selectedCustomerId = -1;
         }
 
-        // =========================
         // Load Selected Customer from Grid
-        // =========================
         private void GridCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -216,7 +212,7 @@ namespace Bank__Management_System
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error selecting customer: {ex.Message}");
+                MessageBox.Show("Error saving: " + ex.Message);
             }
         }
 
