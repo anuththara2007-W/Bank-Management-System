@@ -230,7 +230,7 @@ namespace Bank__Management_System
                         // Close the popup
                         popup.Close();
                     }
-                };
+                }; // whole assignment ends, semicolon marks 
 
                 popup.Controls.Add(customerGrid);
                 popup.ShowDialog();
