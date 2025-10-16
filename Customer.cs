@@ -46,6 +46,8 @@ namespace Bank__Management_System
 
                     GridCustomer.DataSource = dt;
 
+                    int rows =  cmd.ExecuteNonQuery();
+
                    
                 }
             }
