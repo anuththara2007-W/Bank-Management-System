@@ -460,7 +460,6 @@
     <Style>
       <Border>
         <Style>None</Style>
-        <Width>2pt</Width>
       </Border>
     </Style>
   </Body>
@@ -703,12 +702,11 @@
       <Style>
         <Border>
           <Style>None</Style>
-          <Width>12pt</Width>
         </Border>
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>11.3in</Height>
+      <Height>1.3in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -773,8 +771,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>0.04167in</Top>
-          <Left>4.47806in</Left>
+          <Top>0.05556in</Top>
+          <Left>4.30306in</Left>
           <Height>0.25in</Height>
           <Width>3.84166in</Width>
           <ZIndex>1</ZIndex>
@@ -837,7 +835,7 @@ Unauthorized distribution, copying, or disclosure is prohibited.
         </Border>
       </Style>
     </PageFooter>
-    <PageHeight>4.27in</PageHeight>
+    <PageHeight>8.27in</PageHeight>
     <PageWidth>11.69in</PageWidth>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
