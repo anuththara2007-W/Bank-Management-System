@@ -51,18 +51,8 @@ namespace Bank__Management_System
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"❌ Error: {ex.Message}\n\nConnection String: {connectionString}");
+                MessageBox.Show($"❌ Error: " + ex);
 
-                // Show empty grid structure even if error
-                DataTable emptyTable = new DataTable();
-                emptyTable.Columns.Add("Customer_ID", typeof(int));
-                emptyTable.Columns.Add("Customer_Name", typeof(string));
-                emptyTable.Columns.Add("phone", typeof(string));
-                emptyTable.Columns.Add("Email", typeof(string));
-                emptyTable.Columns.Add("Address", typeof(string));
-                emptyTable.Columns.Add("Username", typeof(string));
-                emptyTable.Columns.Add("Password", typeof(string));
-                GridCustomer.DataSource = emptyTable;
             }
         }
 
