@@ -57,9 +57,7 @@ namespace Bank__Management_System
             }
         }
 
-        // =========================
         // Add New Customer
-        // =========================
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtCustomerName.Text) ||
@@ -67,7 +65,7 @@ namespace Bank__Management_System
                 string.IsNullOrWhiteSpace(txtUsername.Text) ||
                 string.IsNullOrWhiteSpace(txtPassword.Text))
             {
-                MessageBox.Show("⚠ Please fill all required fields!");
+                MessageBox.Show(" Please fill all required fields!");
                 return;
             }
 
