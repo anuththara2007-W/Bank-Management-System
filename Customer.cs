@@ -203,26 +203,33 @@ namespace Bank__Management_System
                     if (row.Cells["Customer_ID"].Value != null &&
                         !string.IsNullOrEmpty(row.Cells["Customer_ID"].Value.ToString()))
                     {
-                        // Store the Customer_ID in a variable
-                        selectedCustomerId = Convert.ToInt32(row.Cells["Customer_ID"].Value);
+// Store the Customer_ID in a variable
+
+        selectedCustomerId = Convert.ToInt32(row.Cells["Customer_ID"].Value);
 
                         // Get Customer Name from the row and put it in the textbox
-                        txtCustomerName.Text = row.Cells["Customer_Name"].Value?.ToString() ?? "";
 
-                        // Get Phone number and put it in the textbox
-                        txtPhoneNo.Text = row.Cells["phone"].Value?.ToString() ?? "";
+        txtCustomerName.Text = row.Cells["Customer_Name"].Value?.ToString() ?? "";
 
-                        // Get Email and put it in the textbox
-                        txtEmail.Text = row.Cells["Email"].Value?.ToString() ?? "";
+// Get Phone number and put it in the textbox
 
-                        // Get Address and put it in the textbox
-                        txtAddress.Text = row.Cells["Address"].Value?.ToString() ?? "";
+        txtPhoneNo.Text = row.Cells["phone"].Value?.ToString() ?? "";
 
-                        // Get Username and put it in the textbox
-                        txtUsername.Text = row.Cells["Username"].Value?.ToString() ?? "";
+// Get Email and put it in the textbox
 
-                        // Get Password and put it in the textbox
-                        txtPassword.Text = row.Cells["Password"].Value?.ToString() ?? "";
+        txtEmail.Text = row.Cells["Email"].Value?.ToString() ?? "";
+
+// Get Address and put it in the textbox
+
+        txtAddress.Text = row.Cells["Address"].Value?.ToString() ?? "";
+
+// Get Username and put it in the textbox
+
+        txtUsername.Text = row.Cells["Username"].Value?.ToString() ?? "";
+
+// Get Password and put it in the textbox
+
+        txtPassword.Text = row.Cells["Password"].Value?.ToString() ?? "";
                     }
                 }
             }
