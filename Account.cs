@@ -36,7 +36,7 @@ namespace Bank__Management_System
             }
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
         {
             txtAccountType.Clear();
             txtBalance.Clear();
