@@ -55,15 +55,29 @@ namespace Bank__Management_System
                 {
                     con.Open();
 
+                    // Create a SQL command to count how many records exist in the Customers table
+                    // where the Customer_ID matches the given parameter @cid.
                     SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM Customers WHERE Customer_ID = @cid", con);
+
+                    // Add the parameter value for @cid by converting the text entered in txtCustomerID
+                    // to an integer and binding it safely to the SQL command (helps prevent SQL injection).
                     checkCmd.Parameters.AddWithValue("@cid", int.Parse(txtCustomerID.Text));
+
+                    // Execute the SQL command and get a single value (the count result).
+                    // ExecuteScalar() returns the first column of the first row of the result set.
+                    // The result is converted to an integer and stored in 'exists'.
                     int exists = (int)checkCmd.ExecuteScalar();
 
+                    // Check if no customer record was found (count = 0).
                     if (exists == 0)
                     {
+                        // Show a message to the user indicating the Customer ID does not exist.
                         MessageBox.Show("Customer ID not found! Please create the customer first.");
+
+                        // Exit the current method immediately to prevent further execution.
                         return;
                     }
+
 
                     SqlCommand cmd = new SqlCommand(
                         "INSERT INTO Accounts (Account_Type, Balance, Date_Opened, Customer_Name, Customer_ID) " +
