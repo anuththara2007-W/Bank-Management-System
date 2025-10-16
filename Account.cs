@@ -17,10 +17,11 @@ namespace Bank__Management_System
         private void Account_Load(object sender, EventArgs e)
         {
             LoadAccounts();
+
+            //grid style class , modernizegrid method , pass the grid
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridStyle.ModernizeGrid(dataGridView1);
 
-          //grid style class , modernizegrid method , pass the grid
         }
 
         private void LoadAccounts()
