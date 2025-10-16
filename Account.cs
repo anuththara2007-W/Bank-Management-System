@@ -79,7 +79,7 @@ namespace Bank__Management_System
                     con.Close();
 
                     MessageBox.Show("Record saved successfully");
-                    btnAdd_Click(null, null);
+                    btnClear_Click(null, null);
                     LoadAccounts();
                 }
             }
