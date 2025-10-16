@@ -65,7 +65,7 @@ namespace Bank__Management_System
                 string.IsNullOrWhiteSpace(txtUsername.Text) ||
                 string.IsNullOrWhiteSpace(txtPassword.Text) ||
                 string.IsNullOrWhiteSpace(txtEmail.Text) || 
-                string.IsNullOrWhiteSpace(txtAddress.Text)
+                string.IsNullOrWhiteSpace(txtAddress.Text))
 
             {
                 MessageBox.Show(" Please fill all required fields!");
