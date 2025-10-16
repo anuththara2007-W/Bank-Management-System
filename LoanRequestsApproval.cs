@@ -43,7 +43,7 @@ namespace BankApp
                 return;
             }
 
-            int requestId = Convert.ToInt32(dgvAllRequests.SelectedRows[0].Cells["RequestID"].Value);
+            int requestId = Convert.ToInt32(dgvAllRequests.SelectedRows[0].Cells["RequestID"].Value); //Get the RequestID from the first selected row as a number
 
             using (SqlConnection con = new SqlConnection(connString))
             using (SqlCommand cmd = new SqlCommand(
