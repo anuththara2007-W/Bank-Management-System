@@ -193,7 +193,7 @@ namespace Bank__Management_System
         {
             try
             {
-                // Make sure the clicked row is not the header
+                // Make sure the clicked row is not the header of the grid
                 if (e.RowIndex >= 0)
                 {
                     // Get the row that was clicked
