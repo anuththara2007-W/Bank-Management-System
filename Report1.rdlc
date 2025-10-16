@@ -6,25 +6,25 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>0.89028in</Width>
+              <Width>1.21607in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.89028in</Width>
+              <Width>1.21607in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.82153in</Width>
+              <Width>1.14732in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>1.32579in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>1.32579in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>1.32579in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.03125in</Width>
+              <Width>0.35704in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -42,6 +42,7 @@
                             <TextRun>
                               <Value>TID</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -75,6 +76,7 @@
                             <TextRun>
                               <Value>Transaction Type</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -499,15 +501,20 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
+        <RepeatColumnHeaders>true</RepeatColumnHeaders>
+        <RepeatRowHeaders>true</RepeatRowHeaders>
         <DataSetName>DataSet1</DataSetName>
         <Top>0.44667in</Top>
-        <Left>0.97624in</Left>
+        <Left>0.35611in</Left>
         <Height>0.5in</Height>
-        <Width>5.63334in</Width>
+        <Width>7.91389in</Width>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
+          <VerticalAlign>Middle</VerticalAlign>
+          <WritingMode>Horizontal</WritingMode>
+          <UnicodeBiDi>Embed</UnicodeBiDi>
         </Style>
       </Tablix>
     </ReportItems>
@@ -526,7 +533,7 @@
           <Value>icon</Value>
           <Sizing>FitProportional</Sizing>
           <Top>0.26611in</Top>
-          <Left>2.99014in</Left>
+          <Left>2.9482in</Left>
           <Height>0.38333in</Height>
           <Width>0.45833in</Width>
           <Style>
@@ -555,7 +562,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>0.28in</Top>
-          <Left>3.57833in</Left>
+          <Left>3.53639in</Left>
           <Height>0.38333in</Height>
           <Width>2.23333in</Width>
           <ZIndex>1</ZIndex>
@@ -595,7 +602,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
           <Top>0.705in</Top>
-          <Left>2.77833in</Left>
+          <Left>2.73639in</Left>
           <Height>0.25in</Height>
           <Width>3.03333in</Width>
           <ZIndex>2</ZIndex>
