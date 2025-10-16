@@ -130,7 +130,7 @@ namespace Bank__Management_System
                     cmd.ExecuteNonQuery();
                 }
 
-                MessageBox.Show("✅ Customer Updated Successfully");
+                MessageBox.Show("Customer Updated Successfully");
                 LoadCustomerData();
                 ClearFields();
             }
