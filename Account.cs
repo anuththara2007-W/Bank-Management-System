@@ -108,8 +108,7 @@ namespace Bank__Management_System
                 {
                     con.Open();
 
-                    SqlCommand cmd = new SqlCommand(
-                        "UPDATE Accounts SET Account_Type=@account_type, Balance=@balance, Date_Opened=@date_opened, Customer_Name=@customer_name WHERE Customer_ID=@customer_id", con);
+                    SqlCommand cmd = new SqlCommand("UPDATE Accounts SET Account_Type=@account_type, Balance=@balance, Date_Opened=@date_opened, Customer_Name=@customer_name WHERE Customer_ID=@customer_id", con);
 
                     cmd.Parameters.AddWithValue("@account_type", txtAccountType.Text);
                     cmd.Parameters.AddWithValue("@balance", decimal.Parse(txtBalance.Text));
@@ -201,8 +200,10 @@ namespace Bank__Management_System
             customerGrid.ReadOnly = true;
             customerGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
+            //Styles for the grid
             customerGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridStyle.ModernizeGrid(customerGrid);
+
             // Load customers into popup grid
             try
             {
@@ -215,14 +216,18 @@ namespace Bank__Management_System
                     da.Fill(dt);
                     customerGrid.DataSource = dt;
                 }
-
-                // Handle customer selection
+                // When a row is double-clicked
                 customerGrid.CellDoubleClick += (s, args) => {
                     if (args.RowIndex >= 0)
                     {
+                        // Get the clicked row
                         DataGridViewRow row = customerGrid.Rows[args.RowIndex];
+
+                        // Fill Customer ID and Name into text boxes
                         txtCustomerID.Text = row.Cells["Customer_ID"].Value.ToString();
                         txtname.Text = row.Cells["Customer_Name"].Value.ToString();
+
+                        // Close the popup
                         popup.Close();
                     }
                 };
