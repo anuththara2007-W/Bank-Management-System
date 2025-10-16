@@ -15,7 +15,6 @@ namespace Bank__Management_System
             InitializeComponent();
 
             // Load data immediately after form initialization
-            // This ensures it runs regardless of event wiring
             this.WindowState = FormWindowState.Normal;
             this.Shown += Customer_Shown; // Use Shown event instead of Load
         }
@@ -26,15 +25,13 @@ namespace Bank__Management_System
             LoadCustomerData();
         }
 
-        // Alternative: If you prefer Load event, make sure it's wired up
+        // Alternative
         private void Customer_Load(object sender, EventArgs e)
         {
             LoadCustomerData();
         }
 
-        // =========================
-        // Load Customers into Grid - SIMPLIFIED VERSION
-        // =========================
+        // Load Customers into Grid 
         private void LoadCustomerData()
         {
             try
@@ -47,22 +44,9 @@ namespace Bank__Management_System
                     DataTable dt = new DataTable();
                     da.Fill(dt);
 
-                    // Simple binding - this should always work
                     GridCustomer.DataSource = dt;
 
-                    // Optional: Customize column headers
-                    if (GridCustomer.Columns.Count > 0)
-                    {
-                        GridCustomer.Columns["Customer_ID"].HeaderText = "ID";
-                        GridCustomer.Columns["Customer_Name"].HeaderText = "Name";
-                        GridCustomer.Columns["phone"].HeaderText = "Phone";
-                        GridCustomer.Columns["Customer_ID"].Width = 60;
-                        GridCustomer.Columns["Customer_Name"].Width = 150;
-                        GridCustomer.Columns["phone"].Width = 120;
-                    }
-
-                    // Show status in title bar instead of popup
-                    this.Text = $"Customer Management - {dt.Rows.Count} customers loaded";
+                   
                 }
             }
             catch (Exception ex)
