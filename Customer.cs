@@ -250,7 +250,7 @@ namespace Bank__Management_System
         }
 
         private void Customer_Load_1(object sender, EventArgs e)
-        {
+        {   //grid view design
             GridCustomer.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             GridStyle.ModernizeGrid(GridCustomer);
         }
