@@ -28,22 +28,17 @@ namespace Bank__Management_System
                 //get the cus id from the session
                 int custID = Session.CustomerID;
 
-                // SQL query to get all transactions for the customer, ordered by date descending
                 string query = "SELECT * FROM transactions WHERE Customer_ID = @custID ORDER BY Transaction_Date DESC";
 
-                // Create a DataTable to store the query results
                 DataTable dt = new DataTable();
 
-                // Connect to the database and fill the DataTable
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
-                    // Create a DataAdapter with the query and connection
                     SqlDataAdapter da = new SqlDataAdapter(query, con);
 
                     // Add the parameter to the query to safely pass the customer ID
                     da.SelectCommand.Parameters.AddWithValue("@custID", custID);
 
-                    // Fill the DataTable with the results of the query
                     da.Fill(dt);
                 }
 
@@ -52,7 +47,7 @@ namespace Bank__Management_System
 
                 // Create a new ReportDataSource using the DataTable
                 ReportDataSource rds = new ReportDataSource();
-                rds.Name = "DataSet1"; // Must match the dataset name in the RDLC file
+                rds.Name = "DataSet1"; 
                 rds.Value = dt;
 
                 // Add the new data source to the ReportViewer
