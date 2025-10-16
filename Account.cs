@@ -221,7 +221,7 @@ namespace Bank__Management_System
                     if (args.RowIndex >= 0)
                     {
                         // Get the clicked row
-                        DataGridViewRow row = customerGrid.Rows[args.RowIndex];
+                        DataGridViewRow row = customerGrid.Rows[args.RowIndex];  //pick the clicked row from all rows.
 
                         // Fill Customer ID and Name into text boxes
                         txtCustomerID.Text = row.Cells["Customer_ID"].Value.ToString();
