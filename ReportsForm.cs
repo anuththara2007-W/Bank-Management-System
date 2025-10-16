@@ -23,7 +23,6 @@ namespace Bank__Management_System
             {
                 try
                 {
-                // Connection string to connect to the database
                 string connectionString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
 
                 // Get the customer ID from session
