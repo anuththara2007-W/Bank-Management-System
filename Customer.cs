@@ -216,34 +216,8 @@ namespace Bank__Management_System
             }
         }
 
-        // =========================
-        // Manual Refresh Button
-        // =========================
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            LoadCustomerData();
-            MessageBox.Show("Grid refreshed!");
-        }
-
-        // =========================
-        // Test Database Connection
-        // =========================
-        private void btnTestConnection_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                using (SqlConnection con = new SqlConnection(connectionString))
-                {
-                    con.Open();
-                    MessageBox.Show("✅ Database connection successful!");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"❌ Connection failed: {ex.Message}");
-            }
-        }
-
+      
+      
         private void btnGoBack_Click(object sender, EventArgs e)
         {
             Main admins = new Main();
