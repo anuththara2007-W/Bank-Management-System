@@ -117,8 +117,7 @@ namespace Bank__Management_System
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand(
-                        "UPDATE Customers SET Customer_Name=@Customer_Name, phone=@phone, Email=@Email, " +
-                        "Address=@Address, Username=@Username, Password=@Password WHERE Customer_ID=@Customer_ID", con);
+                        "UPDATE Customers SET Customer_Name=@Customer_Name, phone=@phone, Email=@Email, Address=@Address, Username=@Username, Password=@Password WHERE Customer_ID=@Customer_ID", con);
 
                     cmd.Parameters.AddWithValue("@Customer_Name", txtCustomerName.Text);
                     cmd.Parameters.AddWithValue("@phone", txtPhoneNo.Text);
