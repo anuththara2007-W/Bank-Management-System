@@ -45,8 +45,7 @@ namespace Bank__Management_System
                     }
 
                     SqlCommand cmd = new SqlCommand(
-                        "INSERT INTO Transactions (TID, Transaction_Type, Amount, Transaction_Date, Account_ID) " +
-                        "VALUES (@TID, @Transaction_Type, @Amount, @Transaction_Date, @Account_ID)", con);
+                        "INSERT INTO Transactions (TID, Transaction_Type, Amount, Transaction_Date, Account_ID VALUES (@TID, @Transaction_Type, @Amount, @Transaction_Date, @Account_ID)", con);
 
                     cmd.Parameters.AddWithValue("@Transaction_Type", txtTransactionType.Text);
                     cmd.Parameters.AddWithValue("@Amount", decimal.Parse(txtAmount.Text));
@@ -78,7 +77,7 @@ namespace Bank__Management_System
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
-                dataGridView1.AutoGenerateColumns = true; // force showing all columns
+                dataGridView1.AutoGenerateColumns = true; //It tells the grid to **show all columns from the data automatically
                 dataGridView1.DataSource = dt;
             }
         }
