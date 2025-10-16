@@ -23,34 +23,53 @@ namespace Bank__Management_System
             {
                 try
                 {
-                    // 🔹 Your real connection string
-                    string connectionString = @"Data Source = (localdb)\Local; Initial Catalog = BankDB; Integrated Security = True; Encrypt = False";
-                    int custID = Session.CustomerID;
+                // Connection string to connect to the database
+                string connectionString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
 
-                    // 🔹 Always pull the latest data
-                    string query = "SELECT * FROM transactions WHERE Customer_ID = @custID ORDER BY Transaction_Date DESC";
+                // Get the customer ID from session
+                int custID = Session.CustomerID;
 
-                    DataTable dt = new DataTable();
-                    using (SqlConnection con = new SqlConnection(connectionString))
-                    {
-                        SqlDataAdapter da = new SqlDataAdapter(query, con);
-                        da.SelectCommand.Parameters.AddWithValue("@custID", custID);
-                        da.Fill(dt);
-                    }
+                // SQL query to get all transactions for the customer, ordered by date descending
+                string query = "SELECT * FROM transactions WHERE Customer_ID = @custID ORDER BY Transaction_Date DESC";
 
-                    // 🔹 Clear old data and load new
-                    reportViewer1.LocalReport.DataSources.Clear();
-                    ReportDataSource rds = new ReportDataSource("DataSet1", dt);
-                    reportViewer1.LocalReport.DataSources.Add(rds);
+                // Create a DataTable to store the query results
+                DataTable dt = new DataTable();
 
-                    string reportPath = System.IO.Path.Combine(Application.StartupPath, "Report1.rdlc");
-                    reportViewer1.LocalReport.ReportPath = reportPath;
+                // Connect to the database and fill the DataTable
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    // Create a DataAdapter with the query and connection
+                    SqlDataAdapter da = new SqlDataAdapter(query, con);
 
-                    // 🔹 This forces the viewer to reload the new dataset
-                    reportViewer1.LocalReport.Refresh();
-                    reportViewer1.RefreshReport();
+                    // Add the parameter to the query to safely pass the customer ID
+                    da.SelectCommand.Parameters.AddWithValue("@custID", custID);
+
+                    // Fill the DataTable with the results of the query
+                    da.Fill(dt);
                 }
-                catch (Exception ex)
+
+                // Clear any old data sources from the ReportViewer
+                reportViewer1.LocalReport.DataSources.Clear();
+
+                // Create a new ReportDataSource using the DataTable
+                ReportDataSource rds = new ReportDataSource();
+                rds.Name = "DataSet1"; // Must match the dataset name in the RDLC file
+                rds.Value = dt;
+
+                // Add the new data source to the ReportViewer
+                reportViewer1.LocalReport.DataSources.Add(rds);
+
+                // Set the path of the RDLC report file
+                string reportPath = System.IO.Path.Combine(Application.StartupPath, "Report1.rdlc");
+                reportViewer1.LocalReport.ReportPath = reportPath;
+
+                // Refresh the ReportViewer to show the updated data
+                reportViewer1.RefreshReport();
+
+
+
+            }
+            catch (Exception ex)
                 {
                     MessageBox.Show("Error loading report:\n" + ex.Message);
                 }
