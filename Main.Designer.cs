@@ -192,7 +192,7 @@
             // lblCount3
             // 
             this.lblCount3.AutoSize = true;
-            this.lblCount3.BackColor = System.Drawing.Color.White;
+            this.lblCount3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.lblCount3.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCount3.Location = new System.Drawing.Point(915, 210);
             this.lblCount3.Name = "lblCount3";
@@ -203,7 +203,7 @@
             // lblCount2
             // 
             this.lblCount2.AutoSize = true;
-            this.lblCount2.BackColor = System.Drawing.Color.White;
+            this.lblCount2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.lblCount2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCount2.Location = new System.Drawing.Point(605, 210);
             this.lblCount2.Name = "lblCount2";
@@ -214,7 +214,7 @@
             // lblCount1
             // 
             this.lblCount1.AutoSize = true;
-            this.lblCount1.BackColor = System.Drawing.Color.White;
+            this.lblCount1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.lblCount1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCount1.Location = new System.Drawing.Point(258, 210);
             this.lblCount1.Name = "lblCount1";
