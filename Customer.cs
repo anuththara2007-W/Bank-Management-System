@@ -140,9 +140,7 @@ namespace Bank__Management_System
             }
         }
 
-        // =========================
         // Delete Selected Customer
-        // =========================
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (selectedCustomerId == -1)
