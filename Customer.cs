@@ -188,36 +188,53 @@ namespace Bank__Management_System
         }
 
         // Load Selected Customer from Grid
+        // This method runs when the user clicks on a cell in the customer grid
         private void GridCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
+                // Make sure the clicked row is not the header
                 if (e.RowIndex >= 0)
                 {
+                    // Get the row that was clicked
                     DataGridViewRow row = GridCustomer.Rows[e.RowIndex];
 
-                    // Check if the row has data
+                    // Check if the row has a Customer_ID value
                     if (row.Cells["Customer_ID"].Value != null &&
                         !string.IsNullOrEmpty(row.Cells["Customer_ID"].Value.ToString()))
                     {
+                        // Store the Customer_ID in a variable
                         selectedCustomerId = Convert.ToInt32(row.Cells["Customer_ID"].Value);
+
+                        // Get Customer Name from the row and put it in the textbox
                         txtCustomerName.Text = row.Cells["Customer_Name"].Value?.ToString() ?? "";
+
+                        // Get Phone number and put it in the textbox
                         txtPhoneNo.Text = row.Cells["phone"].Value?.ToString() ?? "";
+
+                        // Get Email and put it in the textbox
                         txtEmail.Text = row.Cells["Email"].Value?.ToString() ?? "";
+
+                        // Get Address and put it in the textbox
                         txtAddress.Text = row.Cells["Address"].Value?.ToString() ?? "";
+
+                        // Get Username and put it in the textbox
                         txtUsername.Text = row.Cells["Username"].Value?.ToString() ?? "";
+
+                        // Get Password and put it in the textbox
                         txtPassword.Text = row.Cells["Password"].Value?.ToString() ?? "";
                     }
                 }
             }
             catch (Exception ex)
             {
+                // Show a message if an error occurs
                 MessageBox.Show("Error saving: " + ex.Message);
             }
         }
 
-      
-      
+
+
         private void btnGoBack_Click(object sender, EventArgs e)
         {
             Main admins = new Main();
