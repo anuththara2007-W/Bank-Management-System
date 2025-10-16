@@ -100,9 +100,9 @@ namespace Bank__Management_System
             }
         }
 
-        // =========================
+        
         // Update Selected Customer
-        // =========================
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (selectedCustomerId == -1)
