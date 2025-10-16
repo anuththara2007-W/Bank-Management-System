@@ -51,7 +51,7 @@ namespace Bank__Management_System
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"❌ Error: " + ex.Message );
+                MessageBox.Show($" Error: " + ex.Message );
 
             }
         }
