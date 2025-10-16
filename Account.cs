@@ -55,18 +55,15 @@ namespace Bank__Management_System
                 {
                     con.Open();
 
-                    // Create a SQL command to count how many records exist in the Customers table
-                    // where the Customer_ID matches the given parameter @cid.
+                    //A SQL command to count how many records exist in the Customers table
+                    // where the Customer_ID matches  @cid (cid = Customer ID)
                     SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM Customers WHERE Customer_ID = @cid", con);
 
                     // Add the parameter value for @cid by converting the text entered in txtCustomerID
-                    // to an integer and binding it safely to the SQL command (helps prevent SQL injection).
                     checkCmd.Parameters.AddWithValue("@cid", int.Parse(txtCustomerID.Text));
 
-                    // Execute the SQL command and get a single value (the count result).
-                    // ExecuteScalar() returns the first column of the first row of the result set.
-                    // The result is converted to an integer and stored in 'exists'.
-                    int exists = (int)checkCmd.ExecuteScalar();
+                    // Runs the query and stores the count result as an integer in 'exists'
+                    int exists = (int)checkCmd.ExecuteScalar();// (int) converts the result from ExecuteScalar (which is an object) into an integer value.
 
                     // Check if no customer record was found (count = 0).
                     if (exists == 0)
@@ -77,7 +74,7 @@ namespace Bank__Management_System
                         // Exit the current method immediately to prevent further execution.
                         return;
                     }
-
+                    // above code check wheter the customer id exists in the customers table or not
 
                     SqlCommand cmd = new SqlCommand(
                         "INSERT INTO Accounts (Account_Type, Balance, Date_Opened, Customer_Name, Customer_ID) " +
@@ -112,8 +109,7 @@ namespace Bank__Management_System
                     con.Open();
 
                     SqlCommand cmd = new SqlCommand(
-                        "UPDATE Accounts SET Account_Type=@account_type, Balance=@balance, Date_Opened=@date_opened, Customer_Name=@customer_name " +
-                        "WHERE Customer_ID=@customer_id", con);
+                        "UPDATE Accounts SET Account_Type=@account_type, Balance=@balance, Date_Opened=@date_opened, Customer_Name=@customer_name WHERE Customer_ID=@customer_id", con);
 
                     cmd.Parameters.AddWithValue("@account_type", txtAccountType.Text);
                     cmd.Parameters.AddWithValue("@balance", decimal.Parse(txtBalance.Text));
