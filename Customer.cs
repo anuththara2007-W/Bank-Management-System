@@ -136,7 +136,7 @@ namespace Bank__Management_System
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error updating: {ex.Message}");
+                MessageBox.Show("Error saving: " + ex.Message);
             }
         }
 
