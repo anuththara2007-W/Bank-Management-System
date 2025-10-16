@@ -25,7 +25,7 @@ namespace Bank__Management_System
                 {
                 string connectionString = @"Data Source=(localdb)\Local;Initial Catalog=BankDB;Integrated Security=True;Encrypt=False";
 
-                // Get the customer ID from session
+                //get the cus id from the session
                 int custID = Session.CustomerID;
 
                 // SQL query to get all transactions for the customer, ordered by date descending
