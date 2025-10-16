@@ -75,8 +75,7 @@ namespace Bank__Management_System
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand(
-                        "INSERT INTO Customers (Customer_Name, phone, Email, Address, Username, Password) " +
-                        "VALUES (@Customer_Name, @phone, @Email, @Address, @Username, @Password)", con);
+                        "INSERT INTO Customers (Customer_Name, phone, Email, Address, Username, Password) VALUES (@Customer_Name, @phone, @Email, @Address, @Username, @Password)", con);
 
                     cmd.Parameters.AddWithValue("@Customer_Name", txtCustomerName.Text);
                     cmd.Parameters.AddWithValue("@phone", txtPhoneNo.Text);
