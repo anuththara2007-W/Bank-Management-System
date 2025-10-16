@@ -439,9 +439,11 @@
         </TablixRowHierarchy>
         <RepeatColumnHeaders>true</RepeatColumnHeaders>
         <RepeatRowHeaders>true</RepeatRowHeaders>
+        <FixedColumnHeaders>true</FixedColumnHeaders>
+        <FixedRowHeaders>true</FixedRowHeaders>
         <DataSetName>DataSet1</DataSetName>
         <Top>0.46334in</Top>
-        <Left>0.96622in</Left>
+        <Left>0.3561in</Left>
         <Height>0.48333in</Height>
         <Width>7.5497in</Width>
         <Style>
@@ -473,8 +475,8 @@
           <Source>Embedded</Source>
           <Value>icon</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0.25222in</Top>
-          <Left>3.95392in</Left>
+          <Top>0.26611in</Top>
+          <Left>2.99767in</Left>
           <Height>0.38333in</Height>
           <Width>0.45833in</Width>
           <Style>
@@ -502,8 +504,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.26611in</Top>
-          <Left>4.54211in</Left>
+          <Top>0.28in</Top>
+          <Left>3.58586in</Left>
           <Height>0.38333in</Height>
           <Width>2.23333in</Width>
           <ZIndex>1</ZIndex>
@@ -542,8 +544,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>0.69111in</Top>
-          <Left>3.74211in</Left>
+          <Top>0.705in</Top>
+          <Left>2.78586in</Left>
           <Height>0.25in</Height>
           <Width>3.03333in</Width>
           <ZIndex>2</ZIndex>
