@@ -168,5 +168,12 @@ namespace Bank__Management_System
             contact.Show();
             this.Hide();
         }
+
+        private void logout_click(object sender, EventArgs e)
+        {
+            Landing land = new Landing();
+            land.Show();
+            this.Hide();
+        }
     }
 }

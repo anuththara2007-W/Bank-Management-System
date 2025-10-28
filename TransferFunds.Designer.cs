@@ -41,6 +41,9 @@ namespace BankApp
             this.lblPurpose = new System.Windows.Forms.Label();
             this.lblBalance = new System.Windows.Forms.Label();
             this.TransactionsGrid = new System.Windows.Forms.DataGridView();
+            this.lblabout = new System.Windows.Forms.Label();
+            this.lblContact = new System.Windows.Forms.Label();
+            this.lblHome = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.TransactionsGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -170,6 +173,54 @@ namespace BankApp
             this.TransactionsGrid.Size = new System.Drawing.Size(1188, 234);
             this.TransactionsGrid.TabIndex = 26;
             // 
+            // lblabout
+            // 
+            this.lblabout.AutoSize = true;
+            this.lblabout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.lblabout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblabout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblabout.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblabout.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblabout.Location = new System.Drawing.Point(569, 56);
+            this.lblabout.Name = "lblabout";
+            this.lblabout.Size = new System.Drawing.Size(101, 22);
+            this.lblabout.TabIndex = 35;
+            this.lblabout.Text = "ABOUT  US ";
+            this.lblabout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblabout.Click += new System.EventHandler(this.lblabout_Click);
+            // 
+            // lblContact
+            // 
+            this.lblContact.AutoSize = true;
+            this.lblContact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.lblContact.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblContact.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblContact.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContact.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblContact.Location = new System.Drawing.Point(751, 56);
+            this.lblContact.Name = "lblContact";
+            this.lblContact.Size = new System.Drawing.Size(87, 22);
+            this.lblContact.TabIndex = 34;
+            this.lblContact.Text = "CONTACT";
+            this.lblContact.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblContact.Click += new System.EventHandler(this.lblContact_Click);
+            // 
+            // lblHome
+            // 
+            this.lblHome.AutoSize = true;
+            this.lblHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.lblHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblHome.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHome.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblHome.Location = new System.Drawing.Point(416, 56);
+            this.lblHome.Name = "lblHome";
+            this.lblHome.Size = new System.Drawing.Size(69, 22);
+            this.lblHome.TabIndex = 33;
+            this.lblHome.Text = "HOME  ";
+            this.lblHome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblHome.Click += new System.EventHandler(this.lblHome_Click);
+            // 
             // TransferFunds
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -177,6 +228,9 @@ namespace BankApp
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1280, 785);
+            this.Controls.Add(this.lblabout);
+            this.Controls.Add(this.lblContact);
+            this.Controls.Add(this.lblHome);
             this.Controls.Add(this.TransactionsGrid);
             this.Controls.Add(this.lblBalance);
             this.Controls.Add(this.txtPurpose);
@@ -212,5 +266,8 @@ namespace BankApp
         private System.Windows.Forms.Label lblPurpose;
         private System.Windows.Forms.Label lblBalance;
         private System.Windows.Forms.DataGridView TransactionsGrid;
+        private System.Windows.Forms.Label lblabout;
+        private System.Windows.Forms.Label lblContact;
+        private System.Windows.Forms.Label lblHome;
     }
 }

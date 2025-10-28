@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageBot));
             this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.btnRefreshs = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblGoBack = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRefreshs)).BeginInit();
             this.SuspendLayout();
@@ -61,25 +61,25 @@
             this.btnRefreshs.TabStop = false;
             this.btnRefreshs.Click += new System.EventHandler(this.btnRefreshs_Click);
             // 
-            // label1
+            // lblGoBack
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label1.Font = new System.Drawing.Font("Yu Gothic", 12F);
-            this.label1.Location = new System.Drawing.Point(942, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 26);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Go Back <-|";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lblGoBack.AutoSize = true;
+            this.lblGoBack.BackColor = System.Drawing.Color.White;
+            this.lblGoBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblGoBack.Font = new System.Drawing.Font("Yu Gothic", 12F);
+            this.lblGoBack.Location = new System.Drawing.Point(942, 30);
+            this.lblGoBack.Name = "lblGoBack";
+            this.lblGoBack.Size = new System.Drawing.Size(127, 26);
+            this.lblGoBack.TabIndex = 5;
+            this.lblGoBack.Text = "Go Back <-|";
+            this.lblGoBack.Click += new System.EventHandler(this.goback_Click);
             // 
             // ManageBot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 785);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblGoBack);
             this.Controls.Add(this.btnRefreshs);
             this.Controls.Add(this.webView21);
             this.Name = "ManageBot";
@@ -96,6 +96,6 @@
 
         private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
         private System.Windows.Forms.PictureBox btnRefreshs;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblGoBack;
     }
 }

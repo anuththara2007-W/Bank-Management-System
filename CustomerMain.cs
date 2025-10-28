@@ -23,7 +23,7 @@ namespace Bank__Management_System
 
         private void btnAccounts_Click(object sender, EventArgs e)
         {
-            new MyAccounts().Show(); // ✅ correct form
+            new MyAccounts().Show(); 
         }
 
         private void btnTransactions_Click(object sender, EventArgs e)

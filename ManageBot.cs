@@ -33,7 +33,7 @@ namespace Bank__Management_System
             this.Hide();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void goback_Click(object sender, EventArgs e)
         {
             Main admin = new Main();
             admin.Show();

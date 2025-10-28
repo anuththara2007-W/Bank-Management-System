@@ -66,17 +66,19 @@ namespace BankApp
             // 
             // txtOld
             // 
-            this.txtOld.Location = new System.Drawing.Point(493, 282);
+            this.txtOld.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.txtOld.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtOld.Location = new System.Drawing.Point(533, 256);
             this.txtOld.Multiline = true;
             this.txtOld.Name = "txtOld";
-            this.txtOld.Size = new System.Drawing.Size(411, 34);
+            this.txtOld.Size = new System.Drawing.Size(433, 34);
             this.txtOld.TabIndex = 24;
             // 
             // lblOld
             // 
             this.lblOld.AutoSize = true;
             this.lblOld.Font = new System.Drawing.Font("Yu Gothic", 12F);
-            this.lblOld.Location = new System.Drawing.Point(249, 285);
+            this.lblOld.Location = new System.Drawing.Point(255, 260);
             this.lblOld.Name = "lblOld";
             this.lblOld.Size = new System.Drawing.Size(140, 26);
             this.lblOld.TabIndex = 23;
@@ -84,17 +86,19 @@ namespace BankApp
             // 
             // txtNew
             // 
-            this.txtNew.Location = new System.Drawing.Point(493, 344);
+            this.txtNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.txtNew.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNew.Location = new System.Drawing.Point(533, 345);
             this.txtNew.Multiline = true;
             this.txtNew.Name = "txtNew";
-            this.txtNew.Size = new System.Drawing.Size(411, 34);
+            this.txtNew.Size = new System.Drawing.Size(433, 34);
             this.txtNew.TabIndex = 22;
             // 
             // lblneww
             // 
             this.lblneww.AutoSize = true;
             this.lblneww.Font = new System.Drawing.Font("Yu Gothic", 12F);
-            this.lblneww.Location = new System.Drawing.Point(249, 344);
+            this.lblneww.Location = new System.Drawing.Point(254, 350);
             this.lblneww.Name = "lblneww";
             this.lblneww.Size = new System.Drawing.Size(150, 26);
             this.lblneww.TabIndex = 21;
@@ -102,17 +106,19 @@ namespace BankApp
             // 
             // txtConfirm
             // 
-            this.txtConfirm.Location = new System.Drawing.Point(493, 407);
+            this.txtConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.txtConfirm.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtConfirm.Location = new System.Drawing.Point(533, 437);
             this.txtConfirm.Multiline = true;
             this.txtConfirm.Name = "txtConfirm";
-            this.txtConfirm.Size = new System.Drawing.Size(411, 34);
+            this.txtConfirm.Size = new System.Drawing.Size(433, 34);
             this.txtConfirm.TabIndex = 20;
             // 
             // lblconfirm
             // 
             this.lblconfirm.AutoSize = true;
             this.lblconfirm.Font = new System.Drawing.Font("Yu Gothic", 12F);
-            this.lblconfirm.Location = new System.Drawing.Point(249, 407);
+            this.lblconfirm.Location = new System.Drawing.Point(254, 445);
             this.lblconfirm.Name = "lblconfirm";
             this.lblconfirm.Size = new System.Drawing.Size(229, 26);
             this.lblconfirm.TabIndex = 19;

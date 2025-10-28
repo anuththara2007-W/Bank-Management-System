@@ -247,6 +247,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Profile";
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Profile";
             this.Load += new System.EventHandler(this.Profile_Load);
             this.ResumeLayout(false);

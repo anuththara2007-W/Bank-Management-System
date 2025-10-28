@@ -59,6 +59,7 @@
             this.btnSignup.TabIndex = 1;
             this.btnSignup.Text = "SIGN UP";
             this.btnSignup.UseVisualStyleBackColor = false;
+            this.btnSignup.Click += new System.EventHandler(this.btnSignup_Click);
             // 
             // btnsignin
             // 
@@ -143,6 +144,7 @@
             this.label4.Size = new System.Drawing.Size(99, 19);
             this.label4.TabIndex = 6;
             this.label4.Text = "0707266991";
+            this.label4.Click += new System.EventHandler(this.btnChat_Click);
             // 
             // btnHome
             // 
@@ -185,6 +187,7 @@
             this.btnAbout.TabIndex = 9;
             this.btnAbout.Text = "ABOUT  US ";
             this.btnAbout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
             // 
             // label8
             // 
@@ -199,6 +202,7 @@
             this.label8.TabIndex = 10;
             this.label8.Text = "CONTACT US";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label8.Click += new System.EventHandler(this.btnSignup_Click);
             // 
             // btnChat
             // 
@@ -241,6 +245,7 @@
             this.Name = "Landing";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Landing";
+            this.Click += new System.EventHandler(this.btnContact_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -100,6 +100,7 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "CONTACT";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.call_Click);
             // 
             // instagram
             // 

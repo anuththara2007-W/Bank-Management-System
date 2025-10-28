@@ -145,7 +145,7 @@
             this.txtLoanID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtLoanID.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtLoanID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLoanID.Location = new System.Drawing.Point(357, 151);
+            this.txtLoanID.Location = new System.Drawing.Point(355, 152);
             this.txtLoanID.Name = "txtLoanID";
             this.txtLoanID.Size = new System.Drawing.Size(344, 27);
             this.txtLoanID.TabIndex = 20;
