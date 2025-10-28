@@ -48,7 +48,7 @@
             // 
             // btnCustomer
             // 
-            this.btnCustomer.BackColor = System.Drawing.Color.White;
+            this.btnCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCustomer.FlatAppearance.BorderSize = 0;
             this.btnCustomer.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
@@ -66,7 +66,7 @@
             // 
             // btnAccount
             // 
-            this.btnAccount.BackColor = System.Drawing.Color.White;
+            this.btnAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnAccount.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAccount.FlatAppearance.BorderSize = 0;
             this.btnAccount.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
@@ -84,7 +84,7 @@
             // 
             // btnTransaction
             // 
-            this.btnTransaction.BackColor = System.Drawing.Color.White;
+            this.btnTransaction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnTransaction.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTransaction.FlatAppearance.BorderSize = 0;
             this.btnTransaction.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
@@ -102,7 +102,7 @@
             // 
             // btnLoan
             // 
-            this.btnLoan.BackColor = System.Drawing.Color.White;
+            this.btnLoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnLoan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLoan.FlatAppearance.BorderSize = 0;
             this.btnLoan.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
@@ -110,7 +110,7 @@
             this.btnLoan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnLoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoan.Font = new System.Drawing.Font("Yu Gothic", 12F);
-            this.btnLoan.Location = new System.Drawing.Point(968, 546);
+            this.btnLoan.Location = new System.Drawing.Point(669, 546);
             this.btnLoan.Name = "btnLoan";
             this.btnLoan.Size = new System.Drawing.Size(247, 44);
             this.btnLoan.TabIndex = 4;
@@ -120,7 +120,7 @@
             // 
             // btnEmployee
             // 
-            this.btnEmployee.BackColor = System.Drawing.Color.White;
+            this.btnEmployee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEmployee.FlatAppearance.BorderSize = 0;
             this.btnEmployee.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
@@ -128,7 +128,7 @@
             this.btnEmployee.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmployee.Font = new System.Drawing.Font("Yu Gothic", 12F);
-            this.btnEmployee.Location = new System.Drawing.Point(669, 546);
+            this.btnEmployee.Location = new System.Drawing.Point(363, 549);
             this.btnEmployee.Name = "btnEmployee";
             this.btnEmployee.Size = new System.Drawing.Size(247, 44);
             this.btnEmployee.TabIndex = 5;
@@ -138,7 +138,7 @@
             // 
             // btnLoanRq
             // 
-            this.btnLoanRq.BackColor = System.Drawing.Color.White;
+            this.btnLoanRq.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnLoanRq.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLoanRq.FlatAppearance.BorderSize = 0;
             this.btnLoanRq.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
@@ -156,7 +156,7 @@
             // 
             // btnSupport
             // 
-            this.btnSupport.BackColor = System.Drawing.Color.White;
+            this.btnSupport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnSupport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSupport.FlatAppearance.BorderSize = 0;
             this.btnSupport.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
@@ -164,7 +164,7 @@
             this.btnSupport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnSupport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSupport.Font = new System.Drawing.Font("Yu Gothic", 12F);
-            this.btnSupport.Location = new System.Drawing.Point(363, 549);
+            this.btnSupport.Location = new System.Drawing.Point(964, 546);
             this.btnSupport.Name = "btnSupport";
             this.btnSupport.Size = new System.Drawing.Size(253, 44);
             this.btnSupport.TabIndex = 8;
@@ -174,7 +174,7 @@
             // 
             // btnLogOut
             // 
-            this.btnLogOut.BackColor = System.Drawing.Color.White;
+            this.btnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogOut.FlatAppearance.BorderSize = 0;
             this.btnLogOut.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
@@ -225,7 +225,7 @@
             // 
             // btnBot
             // 
-            this.btnBot.BackColor = System.Drawing.Color.White;
+            this.btnBot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnBot.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBot.FlatAppearance.BorderSize = 0;
             this.btnBot.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
