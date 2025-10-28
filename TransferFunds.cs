@@ -113,7 +113,7 @@ namespace BankApp
                         return;
                     }
 
-                    // use column index instead of reader["ColumnName"]
+                    // use column index instead of reader["ColumnName"] for fastser data access but risky 
                     int accountId = reader.GetInt32(0);     // first column
                     decimal balance = reader.GetDecimal(1); // second column
 

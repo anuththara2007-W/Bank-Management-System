@@ -87,9 +87,9 @@ namespace BankApp
                     con.Open();
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("❌ Loan request rejected.");
+MessageBox.Show("❌ Loan request rejected.");
                     LoadRequests();
-                }
+}
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error rejecting loan: " + ex.Message);
